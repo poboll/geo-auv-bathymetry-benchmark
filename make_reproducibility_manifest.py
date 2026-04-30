@@ -57,6 +57,9 @@ PATTERNS = {
     ],
     "release_metadata": [
         "README.md",
+        "RELEASE_NOTES_*.md",
+        "CITATION.cff",
+        ".zenodo.json",
         "environment.yml",
         ".gitignore",
     ],
@@ -103,14 +106,21 @@ def main() -> None:
                     )
 
     payload = {
-        "manifest_version": "2026-04-29",
+        "manifest_version": "2026-04-30",
         "workspace": str(ROOT),
         "primary_run": "run_5",
         "scope_note": (
-            "Draft-time reproducibility manifest for public-bathymetry numerical "
-            "benchmark artifacts. It is not a minted DOI archive; use it to assemble "
-            "a GitHub/Zenodo release before journal submission."
+            "Reproducibility manifest for the public-bathymetry numerical benchmark "
+            "artifacts archived through the GitHub/Zenodo release series."
         ),
+        "archive": {
+            "github_repository": "https://github.com/poboll/geo-auv-bathymetry-benchmark",
+            "github_release_tag": "v0.1.0",
+            "github_release_commit": "625fb6a",
+            "zenodo_concept_doi": "10.5281/zenodo.19919505",
+            "zenodo_version_doi": "10.5281/zenodo.19919506",
+            "zenodo_record_url": "https://zenodo.org/records/19919506",
+        },
         "source_data": [
             {
                 "name": "GEBCO 2025 Grid",

@@ -70,4 +70,8 @@ The latest validated run is `run_5`. The strongest supported claim is that terra
 
 GitHub release repository: <https://github.com/poboll/geo-auv-bathymetry-benchmark>.
 
-A Zenodo DOI should be minted from this GitHub repository before final journal submission, then inserted into the manuscript Data Availability statement.
+Zenodo concept DOI for the release series: <https://doi.org/10.5281/zenodo.19919505>.
+
+Initial `v0.1.0` archive DOI: <https://doi.org/10.5281/zenodo.19919506>.
+
+The repository includes `.zenodo.json` and `CITATION.cff` so that subsequent releases preserve manuscript-aligned authorship metadata rather than relying on the GitHub account display name.

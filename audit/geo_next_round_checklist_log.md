@@ -325,6 +325,92 @@ Evidence files:
 - `paper_refined.pdf`
 - `geo_public_bathy_rebuild.pdf`
 
+## 2026-04-30 Zenodo DOI and Release-Metadata Closure
+
+【x】Verified that the GitHub `v0.1.0` release triggered Zenodo DOI minting.
+
+Evidence commands:
+
+```bash
+env -u http_proxy -u https_proxy -u all_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY gh release view v0.1.0 --repo poboll/geo-auv-bathymetry-benchmark --json tagName,url,targetCommitish,isDraft,isPrerelease,publishedAt,assets
+env -u http_proxy -u https_proxy -u all_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY curl -sSI https://zenodo.org/badge/latestdoi/1225197024
+env -u http_proxy -u https_proxy -u all_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY curl -sS https://zenodo.org/api/records/19919506
+```
+
+Evidence output:
+
+- GitHub release: `v0.1.0`, non-draft, non-prerelease, published `2026-04-30T12:59:10Z`;
+- GitHub release assets: `mdpi_jmse_jmse_submission_draft.pdf`, `paper_refined.pdf`, `reproducibility_manifest.json`;
+- Zenodo concept DOI: `10.5281/zenodo.19919505`;
+- Zenodo `v0.1.0` archive DOI: `10.5281/zenodo.19919506`;
+- Zenodo record URL: `https://zenodo.org/records/19919506`.
+
+【x】Updated the manuscript Data Availability statements to cite the real GitHub release and Zenodo DOI instead of a pending DOI note.
+
+Evidence files:
+
+- `manuscript/mdpi_jmse/template.tex`
+- `manuscript/latex/template.tex`
+
+Implemented text boundary:
+
+- release tag: `v0.1.0`;
+- release commit: `625fb6a`;
+- Zenodo release-series DOI: `https://doi.org/10.5281/zenodo.19919505`;
+- initial version archive DOI: `https://doi.org/10.5281/zenodo.19919506`.
+
+【x】Added release-metadata files so later Zenodo releases carry manuscript-aligned authorship.
+
+Evidence files:
+
+- `.zenodo.json`
+- `CITATION.cff`
+- `README.md`
+- `RELEASE_NOTES_v0.1.0.md`
+
+Reason:
+
+- the auto-created Zenodo `v0.1.0` metadata inherited the GitHub account display name; `.zenodo.json` now specifies Changlong Li, Zengye Su, and Yudan Nie with the Guangzhou College of Commerce affiliation for subsequent DOI-bearing releases.
+
+【x】Recompiled both manuscripts after the DOI update and performed log QA.
+
+Evidence commands:
+
+```bash
+cd manuscript/mdpi_jmse
+xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_tablefit_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_tablefit_pass2.log
+rg -n -e 'Undefined control sequence' -e 'undefined references' -e 'Citation .* undefined' -e 'Reference .* undefined' -e 'Overfull \\hbox' compile_after_zenodo_doi_tablefit_pass2.log template.log
+
+cd manuscript/latex
+xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_pass2.log
+rg -n -e 'Undefined control sequence' -e 'undefined references' -e 'Citation .* undefined' -e 'Reference .* undefined' -e 'Overfull \\hbox' compile_after_zenodo_doi_pass2.log template.log
+```
+
+Evidence output:
+
+- MDPI/JMSE draft output: `template.pdf`, 36 pages;
+- working manuscript output: `template.pdf`, 34 pages;
+- no undefined citation/reference warnings;
+- no overfull `hbox` warnings after the MDPI table-width and bibliography-linebreaking cleanup;
+- the remaining MDPI bibliography messages are underfull line-break warnings only.
+
+【x】Regenerated the release repository reproducibility manifest after the DOI and metadata update.
+
+Evidence command:
+
+```bash
+conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260430_zenodo_doi.log
+```
+
+Evidence output:
+
+- manifest version: `2026-04-30`;
+- primary run: `run_5`;
+- archive metadata includes GitHub release `v0.1.0`, commit `625fb6a`, Zenodo concept DOI `10.5281/zenodo.19919505`, and Zenodo version DOI `10.5281/zenodo.19919506`;
+- manifest entry count: `113`.
+
 ## GitHub release package and Data Availability update (2026-04-30)
 
 【x】Regenerated the reproducibility manifest after the PSO baseline and final PDF sync.
@@ -386,8 +472,8 @@ Evidence files:
 
 Text boundary:
 
-- the manuscripts now cite `https://github.com/poboll/geo-auv-bathymetry-benchmark` and commit `2805231`;
-- they still do not claim a Zenodo DOI until a DOI-bearing archive is minted before final journal submission.
+- at this checkpoint, the manuscripts cited `https://github.com/poboll/geo-auv-bathymetry-benchmark` and commit `2805231`;
+- this GitHub-only Data Availability checkpoint is superseded by the 2026-04-30 Zenodo DOI closure below.
 
 【x】Recompiled both manuscripts after the GitHub Data Availability update.
 

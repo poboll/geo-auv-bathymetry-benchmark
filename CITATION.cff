@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this benchmark package, please cite the archived release series and the associated manuscript."
+title: "Terrain-Aware AUV Survey-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks"
+type: software
+authors:
+  - family-names: Li
+    given-names: Changlong
+    orcid: "https://orcid.org/0000-0003-2892-3993"
+    affiliation: "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China"
+  - family-names: Su
+    given-names: Zengye
+    affiliation: "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China"
+  - family-names: Nie
+    given-names: Yudan
+    affiliation: "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China"
+repository-code: "https://github.com/poboll/geo-auv-bathymetry-benchmark"
+doi: "10.5281/zenodo.19919505"
+url: "https://github.com/poboll/geo-auv-bathymetry-benchmark"
+license: "CC-BY-4.0"
+version: "0.1.0"
+date-released: "2026-04-30"
+keywords:
+  - AUV-assisted bathymetric surveying
+  - autonomous maritime systems
+  - multibeam echo sounder
+  - survey-line planning
+  - coverage path planning
+  - GEBCO
+  - public bathymetry benchmark

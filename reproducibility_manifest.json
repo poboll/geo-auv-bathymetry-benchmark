@@ -1,8 +1,16 @@
 {
-  "manifest_version": "2026-04-29",
+  "manifest_version": "2026-04-30",
   "workspace": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark",
   "primary_run": "run_5",
-  "scope_note": "Draft-time reproducibility manifest for public-bathymetry numerical benchmark artifacts. It is not a minted DOI archive; use it to assemble a GitHub/Zenodo release before journal submission.",
+  "scope_note": "Reproducibility manifest for the public-bathymetry numerical benchmark artifacts archived through the GitHub/Zenodo release series.",
+  "archive": {
+    "github_repository": "https://github.com/poboll/geo-auv-bathymetry-benchmark",
+    "github_release_tag": "v0.1.0",
+    "github_release_commit": "625fb6a",
+    "zenodo_concept_doi": "10.5281/zenodo.19919505",
+    "zenodo_version_doi": "10.5281/zenodo.19919506",
+    "zenodo_record_url": "https://zenodo.org/records/19919506"
+  },
   "source_data": [
     {
       "name": "GEBCO 2025 Grid",
@@ -547,50 +555,68 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 129185,
-      "sha256": "10bebc3ef27ad8be4d3b2ff8e0291df911441cd168220a80511ed1544e492525"
+      "size_bytes": 129274,
+      "sha256": "bfb3b975ef184deff18f57208c7fc421e1a0b61164bb7b616537ff0c4992a9e8"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 5920733,
-      "sha256": "39c56dc57f6044aa6dca0a2f041d7e9b818716226592b75cae981809d6ad6f97"
+      "size_bytes": 5921124,
+      "sha256": "fbd634ed540f1b4c0a997b91ca09aef48689ffeab99f760ff1cda07a3f4ea71c"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 129110,
-      "sha256": "477541578a5c5f9b9cb041fab23aeb911f0e89a38e8ced7a867cb5dd58ec9a03"
+      "size_bytes": 129209,
+      "sha256": "9c979239282ff0c70fdce8f35f3ca141fcd3715ab791bedfdbb32ae236ca0f28"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 5857674,
-      "sha256": "76f3e9b8e9a304b6e295522a72c72bba85a3a252b8aa006ed042323211a77f5d"
+      "size_bytes": 5857826,
+      "sha256": "47648a519581f2061c33f0ca37e88f4aefc48eda63f67a85477903856605a0e5"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 5920733,
-      "sha256": "39c56dc57f6044aa6dca0a2f041d7e9b818716226592b75cae981809d6ad6f97"
+      "size_bytes": 5921124,
+      "sha256": "fbd634ed540f1b4c0a997b91ca09aef48689ffeab99f760ff1cda07a3f4ea71c"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 5920733,
-      "sha256": "39c56dc57f6044aa6dca0a2f041d7e9b818716226592b75cae981809d6ad6f97"
+      "size_bytes": 5921124,
+      "sha256": "fbd634ed540f1b4c0a997b91ca09aef48689ffeab99f760ff1cda07a3f4ea71c"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 5857674,
-      "sha256": "76f3e9b8e9a304b6e295522a72c72bba85a3a252b8aa006ed042323211a77f5d"
+      "size_bytes": 5857826,
+      "sha256": "47648a519581f2061c33f0ca37e88f4aefc48eda63f67a85477903856605a0e5"
     },
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 3830,
-      "sha256": "33cc834a5fa49cd1722c595934003bf469215471ab750bcd8c947ab7324a3ff0"
+      "size_bytes": 4027,
+      "sha256": "40029b22414487dd2394d27f02da6a13864a084b140cb10a73bb4270deeb49e6"
+    },
+    {
+      "category": "release_metadata",
+      "path": "RELEASE_NOTES_v0.1.0.md",
+      "size_bytes": 1487,
+      "sha256": "8ef818146594d7b7bbf959c5a62b59cc9aed424d1230c485fafd27775c6b75e9"
+    },
+    {
+      "category": "release_metadata",
+      "path": "CITATION.cff",
+      "size_bytes": 1273,
+      "sha256": "90377680995ddc9feb3190318e05ad901f05e793461c7121c8e3451df6690fa1"
+    },
+    {
+      "category": "release_metadata",
+      "path": ".zenodo.json",
+      "size_bytes": 2210,
+      "sha256": "04da121c58cac9e6de6a2a778315e6b62e47ad8e9e6437b51ea6561ecc4f1609"
     },
     {
       "category": "release_metadata",

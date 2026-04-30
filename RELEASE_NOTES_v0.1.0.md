@@ -28,3 +28,8 @@ This is a public-bathymetry numerical benchmark and reproducibility package. It 
 - USGS Southern Cascadia 30 m composite bathymetry, DOI: `10.5066/P9C5DBMR`.
 
 Large raw source bathymetry archives are not committed; the release includes small processed caches and derived CSV/JSON outputs.
+
+## Archive DOI
+
+- Zenodo concept DOI for the release series: <https://doi.org/10.5281/zenodo.19919505>.
+- Initial `v0.1.0` archive DOI: <https://doi.org/10.5281/zenodo.19919506>.

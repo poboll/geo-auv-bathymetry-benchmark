@@ -449,7 +449,7 @@ Table~\ref{tab:evidence_map} summarizes how the subsequent figures and tables ar
 	\label{tab:evidence_map}
 	\footnotesize
 	\renewcommand{\arraystretch}{1.16}
-	\begin{tabular}{@{}p{0.24\linewidth}p{0.25\linewidth}p{0.25\linewidth}p{0.18\linewidth}@{}}
+	\begin{tabular}{@{}p{0.23\linewidth}p{0.24\linewidth}p{0.24\linewidth}p{0.17\linewidth}@{}}
 		\toprule[1bp]
 			\textbf{Question addressed} & \textbf{Evidence used} & \textbf{Supported finding} & \textbf{Boundary} \\
 		\midrule[1bp]
@@ -681,7 +681,7 @@ Table~\ref{tab:sensitivity_diagnostics} summarizes the additional public-scene d
 	\label{tab:sensitivity_diagnostics}
 	\scriptsize
 	\renewcommand{\arraystretch}{1.12}
-	\begin{tabular}{@{}p{0.18\linewidth}p{0.20\linewidth}p{0.34\linewidth}p{0.19\linewidth}@{}}
+	\begin{tabular}{@{}p{0.17\linewidth}p{0.19\linewidth}p{0.32\linewidth}p{0.18\linewidth}@{}}
 		\toprule[1bp]
 		\textbf{Diagnostic} & \textbf{Values tested} & \textbf{Observed public-scene outcome} & \textbf{Remaining boundary} \\
 		\midrule[1bp]
@@ -784,7 +784,7 @@ Table~\ref{tab:reviewer_risk_matrix} summarizes which interpretations are direct
 	\label{tab:reviewer_risk_matrix}
 	\scriptsize
 	\renewcommand{\arraystretch}{1.13}
-	\begin{tabular}{@{}p{0.22\linewidth}p{0.24\linewidth}p{0.25\linewidth}p{0.20\linewidth}@{}}
+	\begin{tabular}{@{}p{0.21\linewidth}p{0.23\linewidth}p{0.24\linewidth}p{0.18\linewidth}@{}}
 		\toprule[1bp]
 		\textbf{Issue} & \textbf{Why it matters} & \textbf{Evidence from this study} & \textbf{Remaining boundary} \\
 		\midrule[1bp]
@@ -819,7 +819,7 @@ Taken together, these results support a specific claim: geometry-aware spacing i
 
 \informedconsent{Not applicable.}
 
-\dataavailability{The public bathymetric source data used in this study are derived from the GEBCO 2025 Grid \cite{gebco2025grid} and from the USGS Southern Cascadia 30 m composite multibeam bathymetry release used for the independent extension check \cite{dartnell2026southerncascadia}. The GEBCO source product has DOI 10.5285/37c52e96-24ea-67ce-e063-7086abc05f29, and the USGS data release has DOI 10.5066/P9C5DBMR. The manuscript-specific benchmark outputs, supplemental GEBCO scene-expansion CSV/JSON files, uncertainty-replay CSV/JSON files, coarse-prior/fine-grid replay CSV/JSON files, PSO baseline CSV/JSON files, penalty-weight sensitivity CSV/JSON files, turning-aware post-evaluation CSV file, bootstrap confidence-interval CSV file, figure-generation scripts, LaTeX artifacts, and reproducibility manifest with SHA-256 checksums are available in the public GitHub repository \url{https://github.com/poboll/geo-auv-bathymetry-benchmark} (initial release commit: \texttt{2805231}). A DOI-bearing Zenodo archive should be minted from this repository before final journal submission and inserted here when available.}
+\dataavailability{The public bathymetric source data used in this study are derived from the GEBCO 2025 Grid \cite{gebco2025grid} and from the USGS Southern Cascadia 30 m composite multibeam bathymetry release used for the independent extension check \cite{dartnell2026southerncascadia}. The GEBCO source product has DOI 10.5285/37c52e96-24ea-67ce-e063-7086abc05f29, and the USGS data release has DOI 10.5066/P9C5DBMR. The manuscript-specific benchmark outputs, supplemental GEBCO scene-expansion CSV/JSON files, uncertainty-replay CSV/JSON files, coarse-prior/fine-grid replay CSV/JSON files, PSO baseline CSV/JSON files, penalty-weight sensitivity CSV/JSON files, turning-aware post-evaluation CSV file, bootstrap confidence-interval CSV file, figure-generation scripts, LaTeX artifacts, and reproducibility manifest with SHA-256 checksums are available in the public GitHub repository \url{https://github.com/poboll/geo-auv-bathymetry-benchmark} (release tag: \texttt{v0.1.0}; release commit: \texttt{625fb6a}). The release series is archived on Zenodo under the concept DOI \url{https://doi.org/10.5281/zenodo.19919505}; the initial \texttt{v0.1.0} archive DOI is \url{https://doi.org/10.5281/zenodo.19919506}.}
 
 \acknowledgments{The authors acknowledge the GEBCO Compilation Group for providing the public bathymetric source products used to construct the benchmark scenes in this study.}
 
@@ -835,6 +835,7 @@ MBES & Multibeam Echo Sounder\\
 USGS & United States Geological Survey
 \end{tabular}}
 
+\sloppy
 \begin{thebibliography}{999}
 \bibitem{gebco2025grid}
 GEBCO Compilation Group. GEBCO 2025 Grid. \textit{General Bathymetric Chart of the Oceans}. 2025. doi:10.5285/37c52e96-24ea-67ce-e063-7086abc05f29.

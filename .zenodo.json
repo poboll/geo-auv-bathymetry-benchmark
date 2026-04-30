@@ -1,0 +1,51 @@
+{
+  "title": "Terrain-Aware AUV Survey-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks",
+  "upload_type": "software",
+  "description": "Manuscript-specific code, derived public-bathymetry benchmark outputs, figure-generation scripts, LaTeX sources, compiled PDFs, and SHA-256 reproducibility manifest for a public-grid numerical benchmark of terrain-aware AUV-assisted MBES survey-line planning. The package supports public GEBCO 2025 scenes, synthetic stress tests, a USGS Southern Cascadia 30 m public-grid extension, coarse-prior/fine-grid replay, execution-uncertainty replay, PSO and GA diagnostics, and sensitivity analyses. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, or navigation-safety readiness.",
+  "creators": [
+    {
+      "name": "Li, Changlong",
+      "affiliation": "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China",
+      "orcid": "0000-0003-2892-3993"
+    },
+    {
+      "name": "Su, Zengye",
+      "affiliation": "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China"
+    },
+    {
+      "name": "Nie, Yudan",
+      "affiliation": "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "AUV-assisted bathymetric surveying",
+    "autonomous maritime systems",
+    "multibeam echo sounder",
+    "survey-line planning",
+    "coverage path planning",
+    "GEBCO",
+    "public bathymetry benchmark"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/poboll/geo-auv-bathymetry-benchmark",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://doi.org/10.5285/37c52e96-24ea-67ce-e063-7086abc05f29",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://doi.org/10.5066/P9C5DBMR",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    }
+  ]
+}
