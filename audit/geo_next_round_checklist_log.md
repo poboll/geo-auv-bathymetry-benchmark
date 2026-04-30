@@ -426,6 +426,100 @@ Remaining publication task:
 
 - mint a Zenodo DOI from the GitHub repository after the final pre-submission release, then replace the placeholder Zenodo sentence in Data Availability with the real DOI.
 
+## Penalty-weight sensitivity closure (2026-04-30)
+
+【x】Added and ran an objective penalty-weight sensitivity diagnostic on the public GEBCO scenes.
+
+Purpose:
+
+- answer the reviewer concern that the public result might be an artifact of the chosen coverage/overlap penalty weights in the planning score;
+- keep the test within the numerical public-bathymetry benchmark boundary, without claiming field validation.
+
+Evidence files:
+
+- `make_penalty_weight_sensitivity.py`
+- `sensitivity/penalty_weight_sensitivity_raw.csv`
+- `sensitivity/penalty_weight_sensitivity_summary.csv`
+- `sensitivity/penalty_weight_sensitivity.json`
+- `latex/pic/journal_penalty_weight_sensitivity.png`
+- `mdpi_jmse/pic/journal_penalty_weight_sensitivity.png`
+
+Evidence command:
+
+```bash
+conda run -n uu python make_penalty_weight_sensitivity.py > make_penalty_weight_sensitivity_20260430.log
+```
+
+Evidence output:
+
+- `coverage_penalty_weight`: `40, 80, 160`
+- `overlap_penalty_weight`: `1.5, 3.0, 6.0`
+- Hybrid GA seeds: `0--4`
+- Cascadia line-family mode stayed at `psi=0 deg`, `N=116` for Adaptive and Hybrid GA.
+- Monterey line-family mode stayed at `psi=90 deg`, `N=59` for Adaptive and Hybrid GA.
+- Hybrid path-gain range stayed narrow: `0.8474--0.8476%` on Cascadia and `0.6551--0.6574%` on Monterey.
+
+Interpretation:
+
+- the public-scene result is not a single objective-weight artifact under the tested local grid;
+- the weights are still treated as declared design parameters, not universal constants.
+
+【x】Integrated the penalty-weight diagnostic into both manuscripts.
+
+Evidence files:
+
+- `mdpi_jmse/template.tex`
+- `latex/template.tex`
+
+Changes:
+
+- Table 11 now includes an `Objective penalty weights` row;
+- the sensitivity paragraph now states that the public line-family modes remain stable under the \(3\times3\) weight grid.
+
+【x】Recompiled and checked both manuscripts after the penalty-weight sensitivity integration.
+
+Evidence commands:
+
+```bash
+cd mdpi_jmse
+xelatex -interaction=nonstopmode template.tex > compile_after_penalty_weight_sensitivity_20260430_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_penalty_weight_sensitivity_20260430_pass2.log
+cd ../latex
+xelatex -interaction=nonstopmode template.tex > compile_after_penalty_weight_sensitivity_20260430_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_penalty_weight_sensitivity_20260430_pass2.log
+```
+
+Evidence output:
+
+- MDPI/JMSE draft page count: `36`
+- working manuscript page count: `33`
+- no undefined citations or references;
+- MDPI/JMSE draft has only small overfull warnings, maximum about `13.24pt`;
+- working manuscript grep returned no overfull/error matches.
+
+【x】Rendered and inspected the updated MDPI sensitivity table page.
+
+Evidence file:
+
+- `mdpi_jmse/review_pages_penalty/page-24.pdf.png`
+
+Observation:
+
+- the added penalty-weight row is visible and readable on page 24; it increases table density but does not break the page layout.
+
+【x】Regenerated the reproducibility manifest after adding the penalty-weight diagnostic.
+
+Evidence command:
+
+```bash
+conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260430_penalty_weight.log
+```
+
+Evidence output:
+
+- `reproducibility_manifest.json` now contains `81` entries;
+- penalty-weight raw CSV, summary CSV, JSON, figure, and script are included.
+
 ## 2026-04-30 Coarse-prior / fine-grid replay strengthening pass
 
 【x】Added a stronger public-grid validation diagnostic without claiming sea-trial or mission-log evidence.

@@ -11,7 +11,7 @@ The study is framed as a public-bathymetry numerical benchmark for AUV-assisted 
 - `geo_public_bathy_benchmark.py`: main public-bathymetry benchmark runner.
 - `make_*.py`: figure, sensitivity, uncertainty replay, turning-aware, coarse-prior replay, PSO baseline, and manifest scripts.
 - `run_5/`: latest validated benchmark outputs used as the main evidence source.
-- `sensitivity/`: beam-angle, overlap-target, prior-depth, prior-relief, and grid-resolution diagnostics.
+- `sensitivity/`: beam-angle, overlap-target, prior-depth, prior-relief, grid-resolution, and objective penalty-weight diagnostics.
 - `uncertainty_replay/`: execution-uncertainty replay outputs.
 - `survey_grade_extension_usgs_cascadia/`: independent USGS Southern Cascadia 30 m public-grid extension.
 - `coarse_prior_replay/`: coarse-prior to fine-grid replay outputs.
@@ -43,6 +43,7 @@ python geo_public_bathy_benchmark.py
 python make_public_bootstrap_ci.py
 python make_turning_aware_posteval.py
 python make_sensitivity_study.py
+python make_penalty_weight_sensitivity.py
 python make_uncertainty_replay.py
 python make_survey_grade_extension.py
 python make_coarse_prior_replay.py

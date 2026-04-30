@@ -60,6 +60,7 @@ PATTERNS = {
         "geo_public_bathy_benchmark.py",
         "make_journal_figures.py",
         "make_sensitivity_study.py",
+        "make_penalty_weight_sensitivity.py",
         "make_uncertainty_replay.py",
         "make_survey_grade_extension.py",
         "make_turning_aware_posteval.py",

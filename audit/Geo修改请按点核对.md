@@ -900,7 +900,7 @@ Discussion 建议结构：
 【x】新增 turning-aware evaluation。
 【x】新增至少一个外部风格优化 baseline。
 【x】新增 Fixed 10%、15%、20% overlap baselines。
-【】新增 penalty weight sensitivity。
+【x】新增 penalty weight sensitivity。
 【】新增 coverage target sensitivity。
 
 ## C. 统计与复现
