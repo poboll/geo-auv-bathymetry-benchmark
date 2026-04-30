@@ -325,6 +325,107 @@ Evidence files:
 - `paper_refined.pdf`
 - `geo_public_bathy_rebuild.pdf`
 
+## GitHub release package and Data Availability update (2026-04-30)
+
+【x】Regenerated the reproducibility manifest after the PSO baseline and final PDF sync.
+
+Evidence command:
+
+```bash
+conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260430_after_pso.log
+```
+
+Evidence output:
+
+- `reproducibility_manifest.json` contains `76` entries in the active round2 workspace.
+- It includes `pso_baseline_outputs`, `coarse_prior_replay_outputs`, `run_5`, manuscript PDFs, figure outputs, and reproduction scripts.
+
+【x】Created a clean GitHub release repository outside the dirty PaperForge root.
+
+Evidence path:
+
+- `/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark`
+
+Packaging choices:
+
+- included manuscript sources/PDFs, `run_5`, sensitivity, uncertainty replay, USGS extension, coarse-prior replay, PSO baseline, processed GEBCO caches, source scripts, audit reports, `README.md`, `environment.yml`, and `reproducibility_manifest.json`;
+- excluded `public_bathy/raw/` because it contains large raw public bathymetry archives; source-data DOI links are recorded instead;
+- final package size is about `72M`, with no file larger than `50M`.
+
+【x】Initialized the release repository, committed, created the GitHub repository, and pushed to `main`.
+
+Evidence commands:
+
+```bash
+git init -b main
+git add .
+git commit -m "fix: 增强Geo论文公开基准实验与MDPI稿件"
+env -u http_proxy -u https_proxy -u all_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY gh repo create poboll/geo-auv-bathymetry-benchmark --public --description "Public-bathymetry numerical benchmark for terrain-aware AUV multibeam survey-line planning" --source . --remote origin --push
+git remote set-url origin git@github.com:poboll/geo-auv-bathymetry-benchmark.git
+```
+
+Evidence output:
+
+- GitHub URL: `https://github.com/poboll/geo-auv-bathymetry-benchmark`
+- Initial commit: `2805231 fix: 增强Geo论文公开基准实验与MDPI稿件`
+- Repository visibility: `PUBLIC`
+- Default branch: `main`
+
+Technical note:
+
+- `gh` initially failed because the shell had stale proxy variables pointing to `127.0.0.1:6152/6153`; unsetting those variables confirmed the keyring token was valid. The remote was then switched to SSH because `ssh -T git@github.com` authenticated as `poboll`.
+
+【x】Updated Data Availability in both manuscripts to include the real GitHub repository.
+
+Evidence files:
+
+- `mdpi_jmse/template.tex`
+- `latex/template.tex`
+- `mdpi_jmse/template.pdf`
+- `latex/template.pdf`
+
+Text boundary:
+
+- the manuscripts now cite `https://github.com/poboll/geo-auv-bathymetry-benchmark` and commit `2805231`;
+- they still do not claim a Zenodo DOI until a DOI-bearing archive is minted before final journal submission.
+
+【x】Recompiled both manuscripts after the GitHub Data Availability update.
+
+Evidence commands:
+
+```bash
+xelatex -interaction=nonstopmode template.tex > compile_after_github_data_availability_20260430_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_github_data_availability_20260430_pass2.log
+rg -n -e "Undefined control sequence" -e "LaTeX Error" -e "Package .* Error" -e "Citation .* undefined" -e "Reference .* undefined" -e "Rerun to get cross-references" -e "Overfull" compile_after_github_data_availability_20260430_pass2.log
+```
+
+Evidence output:
+
+- MDPI/JMSE draft page count: `36`
+- working manuscript page count: `33`
+- no undefined citations or references;
+- MDPI/JMSE draft retains only small overfull warnings, maximum about `13.24pt`;
+- working manuscript grep returned no overfull/error matches.
+
+【x】Pushed the Data Availability update to GitHub.
+
+Evidence commands:
+
+```bash
+git commit -m "fix: 更新Geo论文数据可用性仓库链接"
+git push
+git ls-remote origin main
+```
+
+Evidence output:
+
+- latest remote commit: `9e55352c8dd976067351c8d3c38620cfd630276a`
+- `git status --short --branch` in the release repo reports `## main...origin/main`.
+
+Remaining publication task:
+
+- mint a Zenodo DOI from the GitHub repository after the final pre-submission release, then replace the placeholder Zenodo sentence in Data Availability with the real DOI.
+
 ## 2026-04-30 Coarse-prior / fine-grid replay strengthening pass
 
 【x】Added a stronger public-grid validation diagnostic without claiming sea-trial or mission-log evidence.

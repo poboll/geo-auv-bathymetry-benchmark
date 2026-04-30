@@ -638,14 +638,21 @@ python make_figures.py --input outputs/
 
 ### 必须打钩清单
 
-【】创建 GitHub 仓库。
-【】上传 preprocessing、benchmark、figure scripts。
-【】上传所有 derived CSV/JSON。
-【】保留 random seeds。
-【】写清楚 GEBCO/USGS 原始数据 DOI 和下载方式。
+【x】创建 GitHub 仓库。  
+落实：`https://github.com/poboll/geo-auv-bathymetry-benchmark`，public repo，默认分支 `main`。
+【x】上传 preprocessing、benchmark、figure scripts。  
+落实：仓库根目录已上传 `geo_public_bathy_benchmark.py`、`make_journal_figures.py`、`make_sensitivity_study.py`、`make_uncertainty_replay.py`、`make_survey_grade_extension.py`、`make_coarse_prior_replay.py`、`make_pso_baseline.py`、`make_reproducibility_manifest.py` 等复现实验脚本。
+【x】上传所有 derived CSV/JSON。  
+落实：`run_5/`、`sensitivity/`、`uncertainty_replay/`、`survey_grade_extension_usgs_cascadia/`、`coarse_prior_replay/`、`pso_baseline/` 已进入 GitHub 仓库。
+【x】保留 random seeds。  
+落实：`run_5/benchmark_results.csv/json`、`run_5/public_hybrid_bootstrap_ci.csv`、`pso_baseline/pso_public_baseline_raw.csv` 和各诊断 raw CSV 保留 seed-level 结果。
+【x】写清楚 GEBCO/USGS 原始数据 DOI 和下载方式。  
+落实：`README.md`、`reproducibility_manifest.json` 与稿件 Data Availability 均写明 GEBCO DOI `10.5285/37c52e96-24ea-67ce-e063-7086abc05f29`、USGS DOI `10.5066/P9C5DBMR`；raw bathymetry archives 未纳入 GitHub。
 【】用 Zenodo 生成 DOI。
-【】Data Availability Statement 中填入真实 repo 和 DOI。
-【】不要再写 “have not yet been minted”。
+【-】Data Availability Statement 中填入真实 repo 和 DOI。  
+已填入真实 GitHub repo；Zenodo DOI 需投稿前从 GitHub release 归档后再补入。
+【x】不要再写 “have not yet been minted”。  
+落实：Data Availability 改为真实 GitHub 链接 + 投稿前补 Zenodo DOI 的正式口径。
 
 ---
 
@@ -863,12 +870,12 @@ Discussion 建议结构：
 
 ## Data Availability
 
-【】GitHub 链接。
+【x】GitHub 链接。
 【】Zenodo DOI。
-【】GEBCO DOI。
-【】USGS DOI。
-【】说明 derived data 和 scripts。
-【】说明如何复现实验。
+【x】GEBCO DOI。
+【x】USGS DOI。
+【x】说明 derived data 和 scripts。
+【x】说明如何复现实验。
 
 ---
 
@@ -889,21 +896,21 @@ Discussion 建议结构：
 
 【】GEBCO 主场景 ≥ 6 个。
 【】USGS/NOAA 高分辨率场景 ≥ 3 个。
-【】新增 coarse-prior/fine-truth replay。
-【】新增 turning-aware evaluation。
-【】新增至少一个外部风格优化 baseline。
-【】新增 Fixed 10%、15%、20% overlap baselines。
+【x】新增 coarse-prior/fine-truth replay。
+【x】新增 turning-aware evaluation。
+【x】新增至少一个外部风格优化 baseline。
+【x】新增 Fixed 10%、15%、20% overlap baselines。
 【】新增 penalty weight sensitivity。
 【】新增 coverage target sensitivity。
 
 ## C. 统计与复现
 
-【】所有 GA 结果 mean ± std。
-【】关键结果 95% CI。
-【】每个随机实验报告 seeds。
-【】报告 feasible seed count。
-【】公开代码。
-【】公开 derived CSV/JSON。
+【x】所有 GA 结果 mean ± std。
+【x】关键结果 95% CI。
+【x】每个随机实验报告 seeds。
+【x】报告 feasible seed count。
+【x】公开代码。
+【x】公开 derived CSV/JSON。
 【】Zenodo DOI 已生成。
 
 ## D. 结果叙事
@@ -1216,11 +1223,11 @@ graph LR
 【】补充最新文献综述并更新参考文献列表；引用近年权威资料如【66†L82-L86】【44†L44-L51】等。  
 【】增加覆盖率定义、计算公式及多次试验的统计结果（均值±置信区间）。  
 【】明确报告覆盖率不是单次结果：添加覆盖率置信区间图表。  
-【】完成粗→细地形回放实验，绘制粗/细网格覆盖对比图表。  
+【x】完成粗→细地形回放实验，绘制粗/细网格覆盖对比图表。  
 【】实现并评估Dubins路径平滑，对比原始/平滑路径长度及覆盖度。  
 【】进行惩罚权重扫描实验，并绘制权重与覆盖率/路径长度关系图。  
-【】实现PSO或CMA-ES算法并与现有GA进行性能对比（表格或柱状图）。  
-【】完成多次随机种子运行，输出统计结果（箱线图或误差棒）。  
+【x】实现PSO或CMA-ES算法并与现有GA进行性能对比（表格或柱状图）。  
+【x】完成多次随机种子运行，输出统计结果（箱线图或误差棒）。  
 【】为至少6-10个代表性场景生成地形复杂度指标（如坡度标准差）。  
 【】自动分类/分层场景，并列出各层候选场景清单（附坐标、分辨率、指标）。  
 【】模拟覆盖失败模式并可视化未覆盖区域（生成热点图）。  
