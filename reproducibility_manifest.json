@@ -481,50 +481,50 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 126524,
-      "sha256": "a838d8b9eb92d05248b5c1df62a6b65c499208877624868879b775d5bbb0f5ae"
+      "size_bytes": 126403,
+      "sha256": "d4701500addaf0c544a601bd148d3240783b9889d6b0d95bc67b23088207d503"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 5916131,
-      "sha256": "e187affe7216dce2b58bb0b40b7e6420d8e47f2ee28f3033fdf4c9ce590632f5"
+      "size_bytes": 5917843,
+      "sha256": "f8bd28ccf5dc961ebbf5c92c59af60ace5ad79472925b6182c08666c5c50fdb0"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 126449,
-      "sha256": "1a75a86b60f5281a514dc1e9e693f31a37e1d77f1d85f4d1015a0564f206ba7d"
+      "size_bytes": 126328,
+      "sha256": "c6399c05a6aa1d5f036ba14b0f89fa4d5c2959925d1766f01dd38fd4b4844c3a"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 5854705,
-      "sha256": "5508910602b4191fa4cd0f223cd8453f4bb75ef99cafd51e53f5ae03882cf7c8"
+      "size_bytes": 5855268,
+      "sha256": "dea6ca6f6dcf0f13f8f0a18c8ab7313a0e84d69f8491344426524e4e9376088a"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 5916131,
-      "sha256": "e187affe7216dce2b58bb0b40b7e6420d8e47f2ee28f3033fdf4c9ce590632f5"
+      "size_bytes": 5917843,
+      "sha256": "f8bd28ccf5dc961ebbf5c92c59af60ace5ad79472925b6182c08666c5c50fdb0"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 5916131,
-      "sha256": "e187affe7216dce2b58bb0b40b7e6420d8e47f2ee28f3033fdf4c9ce590632f5"
+      "size_bytes": 5917843,
+      "sha256": "f8bd28ccf5dc961ebbf5c92c59af60ace5ad79472925b6182c08666c5c50fdb0"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 5854705,
-      "sha256": "5508910602b4191fa4cd0f223cd8453f4bb75ef99cafd51e53f5ae03882cf7c8"
+      "size_bytes": 5855268,
+      "sha256": "dea6ca6f6dcf0f13f8f0a18c8ab7313a0e84d69f8491344426524e4e9376088a"
     },
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 3586,
-      "sha256": "50342153f1ee64815bce561af0c5f8057e0026de018bc1a26e1cb929e8a290bc"
+      "size_bytes": 3638,
+      "sha256": "52df8eb512e600999b6a0da4fd9b738f20f0af970b22ff982792687c62f1957a"
     },
     {
       "category": "release_metadata",

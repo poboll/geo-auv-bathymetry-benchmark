@@ -1,6 +1,6 @@
 # Terrain-Aware AUV Bathymetry Benchmark
 
-This repository contains the manuscript-specific code, derived data, figures, and LaTeX artifacts for:
+This public repository contains the manuscript-specific code, derived data, figures, and LaTeX artifacts for:
 
 **Terrain-Aware AUV Survey-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks**
 
@@ -65,4 +65,6 @@ The latest validated run is `run_5`. The strongest supported claim is that terra
 
 ## Archive Status
 
-This repository is prepared for GitHub release. A Zenodo DOI should be minted from the GitHub repository before journal submission, then inserted into the manuscript Data Availability statement.
+GitHub release repository: <https://github.com/poboll/geo-auv-bathymetry-benchmark>.
+
+A Zenodo DOI should be minted from this GitHub repository before final journal submission, then inserted into the manuscript Data Availability statement.
