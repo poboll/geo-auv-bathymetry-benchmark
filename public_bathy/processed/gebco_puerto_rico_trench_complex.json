@@ -1,0 +1,28 @@
+{
+  "scene_id": "gebco_puerto_rico_trench_complex",
+  "source": "GEBCO 2025 global bathymetry subset",
+  "download_url": "https://download.gebco.net",
+  "license": "GEBCO 2025 Grid terms of use",
+  "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_puerto_rico_trench_complex/data.tif",
+  "crop_bounds": {
+    "left": -67.5,
+    "bottom": 18.500000000000004,
+    "right": -65.5,
+    "top": 20.500000000000004,
+    "crs": "EPSG:4326"
+  },
+  "resolution_m": 1763.611,
+  "depth_range_m": [
+    2.0,
+    8398.0
+  ],
+  "terrain_class": "complex_relief",
+  "missing_value_handling": {
+    "valid_fraction_before_fill": 0.9995555555555555,
+    "filled_cells": 8,
+    "fill_strategy": "local_median_fill"
+  },
+  "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_30_Apr_2026_7ccbc9b77a86",
+  "basket_id": "GEBCO_30_Apr_2026_7ccbc9b77a86",
+  "provider": "gebco"
+}

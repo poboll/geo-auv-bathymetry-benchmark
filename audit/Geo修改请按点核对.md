@@ -894,7 +894,8 @@ Discussion 建议结构：
 
 ## B. 数据与实验
 
-【】GEBCO 主场景 ≥ 6 个。
+【-】GEBCO 主场景 ≥ 6 个。  
+已完成补充层：主 benchmark 仍保持 2 个 20-seed GEBCO 场景，另新增 4 个 GEBCO public windows（Mariana Trench、Puerto Rico Trench、Mid-Atlantic Ridge、Hawaii Ridge）作为 5-seed supplemental scene-selection risk check；总 GEBCO 窗口数达到 6，但未把新增窗口并入主平均值。
 【】USGS/NOAA 高分辨率场景 ≥ 3 个。
 【x】新增 coarse-prior/fine-truth replay。
 【x】新增 turning-aware evaluation。

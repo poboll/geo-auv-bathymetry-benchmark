@@ -1,0 +1,28 @@
+{
+  "scene_id": "gebco_hawaii_ridge_moderate",
+  "source": "GEBCO 2025 global bathymetry subset",
+  "download_url": "https://download.gebco.net",
+  "license": "GEBCO 2025 Grid terms of use",
+  "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_hawaii_ridge_moderate/data.tif",
+  "crop_bounds": {
+    "left": -162.0,
+    "bottom": 22.000000000000004,
+    "right": -160.0,
+    "top": 24.000000000000004,
+    "crs": "EPSG:4326"
+  },
+  "resolution_m": 1722.195,
+  "depth_range_m": [
+    17.0,
+    5020.0
+  ],
+  "terrain_class": "ridge_relief",
+  "missing_value_handling": {
+    "valid_fraction_before_fill": 1.0,
+    "filled_cells": 0,
+    "fill_strategy": "none"
+  },
+  "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_30_Apr_2026_fe0072fbab6d",
+  "basket_id": "GEBCO_30_Apr_2026_fe0072fbab6d",
+  "provider": "gebco"
+}

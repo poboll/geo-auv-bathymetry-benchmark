@@ -1,0 +1,114 @@
+[
+  {
+    "scene_id": "gebco_mariana_trench_complex",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_mariana_trench_complex/data.tif",
+    "crop_bounds": {
+      "left": 140.99999999999997,
+      "bottom": 10.999999999999998,
+      "right": 142.99999999999997,
+      "top": 13.000000000000002,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1830.04,
+    "depth_range_m": [
+      1220.0,
+      10878.0
+    ],
+    "terrain_class": "complex_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_30_Apr_2026_a4977633e864",
+    "basket_id": "GEBCO_30_Apr_2026_a4977633e864",
+    "provider": "gebco"
+  },
+  {
+    "scene_id": "gebco_puerto_rico_trench_complex",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_puerto_rico_trench_complex/data.tif",
+    "crop_bounds": {
+      "left": -67.5,
+      "bottom": 18.500000000000004,
+      "right": -65.5,
+      "top": 20.500000000000004,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1763.611,
+    "depth_range_m": [
+      2.0,
+      8398.0
+    ],
+    "terrain_class": "complex_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 0.9995555555555555,
+      "filled_cells": 8,
+      "fill_strategy": "local_median_fill"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_30_Apr_2026_7ccbc9b77a86",
+    "basket_id": "GEBCO_30_Apr_2026_7ccbc9b77a86",
+    "provider": "gebco"
+  },
+  {
+    "scene_id": "gebco_mid_atlantic_ridge_moderate",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_mid_atlantic_ridge_moderate/data.tif",
+    "crop_bounds": {
+      "left": -31.000000000000004,
+      "bottom": 35.0,
+      "right": -29.0,
+      "top": 37.0,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1513.61,
+    "depth_range_m": [
+      2111.0,
+      3726.0
+    ],
+    "terrain_class": "ridge_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_30_Apr_2026_59eb97946614",
+    "basket_id": "GEBCO_30_Apr_2026_59eb97946614",
+    "provider": "gebco"
+  },
+  {
+    "scene_id": "gebco_hawaii_ridge_moderate",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_hawaii_ridge_moderate/data.tif",
+    "crop_bounds": {
+      "left": -162.0,
+      "bottom": 22.000000000000004,
+      "right": -160.0,
+      "top": 24.000000000000004,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1722.195,
+    "depth_range_m": [
+      17.0,
+      5020.0
+    ],
+    "terrain_class": "ridge_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_30_Apr_2026_fe0072fbab6d",
+    "basket_id": "GEBCO_30_Apr_2026_fe0072fbab6d",
+    "provider": "gebco"
+  }
+]

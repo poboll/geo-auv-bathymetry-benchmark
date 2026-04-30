@@ -281,6 +281,30 @@
       "sha256": "7e2e8ecfd15e2ad5a6b17c446c7ade18ecff62de51a9ea24dfa8da3e3295d96e"
     },
     {
+      "category": "gebco_scene_expansion_outputs",
+      "path": "gebco_scene_expansion/gebco_scene_expansion_raw.csv",
+      "size_bytes": 5514,
+      "sha256": "ef3c7614783900914d5626f14ebaa20453c6ac4dcdc66400a4f1b70fbbcf058e"
+    },
+    {
+      "category": "gebco_scene_expansion_outputs",
+      "path": "gebco_scene_expansion/gebco_scene_expansion_summary.csv",
+      "size_bytes": 6004,
+      "sha256": "6d83aa55343ea1478f63fe29af1d9ad15af9555bcb0baa5d9b3de40014f21a58"
+    },
+    {
+      "category": "gebco_scene_expansion_outputs",
+      "path": "gebco_scene_expansion/gebco_scene_expansion_summary.json",
+      "size_bytes": 37096,
+      "sha256": "f92d5be47e40478d203da6d05362f2b2d10bcb24139597b19e0dcdfb4ee638b1"
+    },
+    {
+      "category": "gebco_scene_expansion_outputs",
+      "path": "gebco_scene_expansion/public_scene_manifest.json",
+      "size_bytes": 4062,
+      "sha256": "fef046c8e69f76a77fb6051e8977ae01198dba67b3d784b26eb06c6fea704cfc"
+    },
+    {
       "category": "figure_outputs",
       "path": "manuscript/latex/pic/journal_ablation_seed.png",
       "size_bytes": 126544,
@@ -297,6 +321,12 @@
       "path": "manuscript/latex/pic/journal_coarse_prior_replay.png",
       "size_bytes": 274871,
       "sha256": "b94ae91c615d3b265c296f3a73061ecbcf7489c9e440d20666942b6562052d0a"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_gebco_scene_expansion.png",
+      "size_bytes": 352977,
+      "sha256": "6c1be9c3706bfa978ab696a865e6016ff3ae0cb50c3c1eff8a36e5e4a00d905a"
     },
     {
       "category": "figure_outputs",
@@ -414,6 +444,12 @@
     },
     {
       "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_gebco_scene_expansion.png",
+      "size_bytes": 352977,
+      "sha256": "6c1be9c3706bfa978ab696a865e6016ff3ae0cb50c3c1eff8a36e5e4a00d905a"
+    },
+    {
+      "category": "figure_outputs",
       "path": "manuscript/mdpi_jmse/pic/journal_metric_heatmap.png",
       "size_bytes": 250734,
       "sha256": "5e89de99d55aefa1ed5748e629a94cbeb40c4fbcaf0bdeaa211e8c7014e32402"
@@ -511,50 +547,50 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 127122,
-      "sha256": "b67075fd2daf2757aaa0ad5b5b4f721102990e6621c568a4def08444f78caed8"
+      "size_bytes": 129185,
+      "sha256": "10bebc3ef27ad8be4d3b2ff8e0291df911441cd168220a80511ed1544e492525"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 5918477,
-      "sha256": "143df58363659ae28ce6937ab68e66403a7db987a4c0a9f19d1a13e6b9025b8c"
+      "size_bytes": 5920733,
+      "sha256": "39c56dc57f6044aa6dca0a2f041d7e9b818716226592b75cae981809d6ad6f97"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 127047,
-      "sha256": "4e8cb0d48e34e6aa570a418305013ccd788cf0f0c14f4dbf96ce63b6c0898261"
+      "size_bytes": 129110,
+      "sha256": "477541578a5c5f9b9cb041fab23aeb911f0e89a38e8ced7a867cb5dd58ec9a03"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 5855903,
-      "sha256": "55ad62b26b7ded807671a93e672a30b51825129fe842a9cce752624689f96bba"
+      "size_bytes": 5857674,
+      "sha256": "76f3e9b8e9a304b6e295522a72c72bba85a3a252b8aa006ed042323211a77f5d"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 5918477,
-      "sha256": "143df58363659ae28ce6937ab68e66403a7db987a4c0a9f19d1a13e6b9025b8c"
+      "size_bytes": 5920733,
+      "sha256": "39c56dc57f6044aa6dca0a2f041d7e9b818716226592b75cae981809d6ad6f97"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 5918477,
-      "sha256": "143df58363659ae28ce6937ab68e66403a7db987a4c0a9f19d1a13e6b9025b8c"
+      "size_bytes": 5920733,
+      "sha256": "39c56dc57f6044aa6dca0a2f041d7e9b818716226592b75cae981809d6ad6f97"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 5855903,
-      "sha256": "55ad62b26b7ded807671a93e672a30b51825129fe842a9cce752624689f96bba"
+      "size_bytes": 5857674,
+      "sha256": "76f3e9b8e9a304b6e295522a72c72bba85a3a252b8aa006ed042323211a77f5d"
     },
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 3706,
-      "sha256": "4e2a8cd9bede7bbd0fcdf7e446e285cbc131b5dfb18dc1abaacabf18b8f25f1b"
+      "size_bytes": 3830,
+      "sha256": "33cc834a5fa49cd1722c595934003bf469215471ab750bcd8c947ab7324a3ff0"
     },
     {
       "category": "release_metadata",
@@ -633,6 +669,12 @@
       "path": "make_pso_baseline.py",
       "size_bytes": 10946,
       "sha256": "a780874acf25f7fb0a9be2095a11ebd08a8d769bf265060caf4a236cd4ad84f6"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_gebco_scene_expansion.py",
+      "size_bytes": 10061,
+      "sha256": "9cca158640492a8018e3ad30477e1a6edd5b48f6764049b93e7789916a4cd43f"
     }
   ]
 }

@@ -11,6 +11,7 @@ The study is framed as a public-bathymetry numerical benchmark for AUV-assisted 
 - `geo_public_bathy_benchmark.py`: main public-bathymetry benchmark runner.
 - `make_*.py`: figure, sensitivity, uncertainty replay, turning-aware, coarse-prior replay, PSO baseline, and manifest scripts.
 - `run_5/`: latest validated benchmark outputs used as the main evidence source.
+- `gebco_scene_expansion/`: supplemental four-window GEBCO scene-selection risk check.
 - `sensitivity/`: beam-angle, overlap-target, prior-depth, prior-relief, grid-resolution, and objective penalty-weight diagnostics.
 - `uncertainty_replay/`: execution-uncertainty replay outputs.
 - `survey_grade_extension_usgs_cascadia/`: independent USGS Southern Cascadia 30 m public-grid extension.
@@ -40,6 +41,7 @@ Typical commands from the repository root:
 ```bash
 conda activate uu
 python geo_public_bathy_benchmark.py
+python make_gebco_scene_expansion.py
 python make_public_bootstrap_ci.py
 python make_turning_aware_posteval.py
 python make_sensitivity_study.py

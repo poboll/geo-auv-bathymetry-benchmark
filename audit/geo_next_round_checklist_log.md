@@ -520,6 +520,95 @@ Evidence output:
 - `reproducibility_manifest.json` now contains `81` entries;
 - penalty-weight raw CSV, summary CSV, JSON, figure, and script are included.
 
+## Supplemental four-window GEBCO scene expansion (2026-04-30)
+
+【x】Added and ran a supplemental GEBCO scene-expansion diagnostic to reduce scene-selection risk.
+
+Purpose:
+
+- address the reviewer concern that two primary GEBCO public scenes may look cherry-picked;
+- preserve the main benchmark boundary by keeping `run_5` as the two-scene, 20-seed public GEBCO baseline and treating the new windows as a five-seed supplemental check.
+
+Evidence files:
+
+- `make_gebco_scene_expansion.py`
+- `gebco_scene_expansion/gebco_scene_expansion_raw.csv`
+- `gebco_scene_expansion/gebco_scene_expansion_summary.csv`
+- `gebco_scene_expansion/gebco_scene_expansion_summary.json`
+- `gebco_scene_expansion/public_scene_manifest.json`
+- `latex/pic/journal_gebco_scene_expansion.png`
+- `mdpi_jmse/pic/journal_gebco_scene_expansion.png`
+
+Evidence command:
+
+```bash
+conda run -n uu python make_gebco_scene_expansion.py > make_gebco_scene_expansion_20260430.log
+```
+
+Evidence output:
+
+- four additional GEBCO 2025 public windows were downloaded and processed:
+  - Mariana Trench;
+  - Puerto Rico Trench;
+  - Mid-Atlantic Ridge;
+  - Hawaii Ridge.
+- all tested methods remained feasible on the four supplemental windows;
+- Fixed-Spacing started with low excess-overlap burdens of `0.44--0.68%`;
+- Adaptive Spacing removed the excess overlap and gave `0.49--0.68%` path gain;
+- Hybrid GA gave nearly the same path-gain range with residual excess overlap of `0.01--0.18%` and feasible seed rate `1.0`.
+
+Interpretation:
+
+- the added GEBCO windows do not create a dramatic path-compression story;
+- they strengthen the paper in a more credible way: additional GEBCO public-grid scenes also behave like low-overlap cases where terrain-aware spacing mainly improves overlap discipline.
+
+【x】Integrated the supplemental GEBCO scene-expansion result into both manuscripts.
+
+Evidence files:
+
+- `mdpi_jmse/template.tex`
+- `latex/template.tex`
+
+Changes:
+
+- Methods now describes the four-window GEBCO expansion and its five-seed boundary;
+- Results now states that the supplemental GEBCO windows reduce scene-selection risk but are not merged into the main two-scene public average;
+- Data Availability now lists the supplemental GEBCO scene-expansion CSV/JSON files.
+
+【x】Recompiled and checked both manuscripts after integrating the GEBCO scene expansion.
+
+Evidence commands:
+
+```bash
+cd mdpi_jmse
+xelatex -interaction=nonstopmode template.tex > compile_after_gebco_scene_expansion_20260430_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_gebco_scene_expansion_20260430_pass2.log
+cd ../latex
+xelatex -interaction=nonstopmode template.tex > compile_after_gebco_scene_expansion_20260430_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_gebco_scene_expansion_20260430_pass2.log
+```
+
+Evidence output:
+
+- MDPI/JMSE draft page count: `36`
+- working manuscript page count: `34`
+- no undefined citations or references;
+- MDPI/JMSE draft has only small overfull warnings, maximum about `13.24pt`;
+- working manuscript grep returned no overfull/error matches.
+
+【x】Regenerated the reproducibility manifest after the supplemental GEBCO expansion.
+
+Evidence command:
+
+```bash
+conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260430_gebco_expansion.log
+```
+
+Evidence output:
+
+- `reproducibility_manifest.json` now contains `87` entries;
+- supplemental GEBCO expansion raw CSV, summary CSV, JSON manifest, figure, and script are included.
+
 ## 2026-04-30 Coarse-prior / fine-grid replay strengthening pass
 
 【x】Added a stronger public-grid validation diagnostic without claiming sea-trial or mission-log evidence.

@@ -34,6 +34,10 @@ PATTERNS = {
         "pso_baseline/*.csv",
         "pso_baseline/*.json",
     ],
+    "gebco_scene_expansion_outputs": [
+        "gebco_scene_expansion/*.csv",
+        "gebco_scene_expansion/*.json",
+    ],
     "figure_outputs": [
         "manuscript/latex/pic/journal_*.png",
         "manuscript/latex/pic/method_pipeline.pdf",
@@ -68,6 +72,7 @@ PATTERNS = {
         "make_method_pipeline_figure.py",
         "make_coarse_prior_replay.py",
         "make_pso_baseline.py",
+        "make_gebco_scene_expansion.py",
     ],
 }
 
