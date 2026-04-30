@@ -1,0 +1,20 @@
+section,parameter,value
+fixed_geometry,beam_angle_deg,120.0
+fixed_geometry,target_overlap,0.15
+fixed_geometry,target_coverage_pct,97.0
+fixed_geometry,excess_overlap_feasible_pct,3.0
+grid,synthetic_width_m,7408.0
+grid,synthetic_height_m,9260.0
+grid,public_crop_width_m,7408.0
+grid,public_crop_height_m,9260.0
+grid,grid_nx,120
+grid,grid_ny,150
+search,angle_candidates_deg,"[0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165]"
+search,constant_quantiles,"[0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5]"
+search,adaptive_quantiles,"[0.2, 0.25, 0.3, 0.35]"
+search,ga_generations,10
+search,ga_population,10
+search,ga_seeds,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]"
+public_data_policy,source_priority,"[""GEBCO 2025 public grid""]"
+public_data_policy,selection_rule,"""overview sliding-window selection at target complexity quantile"""
+public_data_policy,missing_value_handling,"""discard low-valid windows, then median-fill residual missing cells"""

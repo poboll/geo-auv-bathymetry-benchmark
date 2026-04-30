@@ -1,0 +1,602 @@
+{
+  "manifest_version": "2026-04-29",
+  "workspace": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark",
+  "primary_run": "run_5",
+  "scope_note": "Draft-time reproducibility manifest for public-bathymetry numerical benchmark artifacts. It is not a minted DOI archive; use it to assemble a GitHub/Zenodo release before journal submission.",
+  "source_data": [
+    {
+      "name": "GEBCO 2025 Grid",
+      "doi": "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29",
+      "role": "Primary public gridded bathymetry benchmark source"
+    },
+    {
+      "name": "USGS Southern Cascadia 30 m composite bathymetry",
+      "doi": "10.5066/P9C5DBMR",
+      "role": "Independent higher-resolution public-grid extension source"
+    }
+  ],
+  "entries": [
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/benchmark_method_statistics.csv",
+      "size_bytes": 10018,
+      "sha256": "3e3198f6e154d8d49f0432b12f3563fdcdd3d685573ca2d204b28c384744906c"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/benchmark_results.csv",
+      "size_bytes": 36347,
+      "sha256": "b14b49d7cf4ea9c3b03f533e7ca5ecc5052e111322d236673841655b6a555124"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/implementation_details.csv",
+      "size_bytes": 991,
+      "sha256": "09ad41c240e887ba365eeac2322398dbcc1bcafdbab1addf1bd6dfc8dafd6e32"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/public_hybrid_bootstrap_ci.csv",
+      "size_bytes": 1426,
+      "sha256": "53ab4932317c67ae5ef197aa2824bd5d785f3297c4061cf639a902f96c15f05c"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/turning_aware_public_posteval.csv",
+      "size_bytes": 1500,
+      "sha256": "ead0a8e953cc670357c7ff9973d9c527c0c393b7a3eb82420995a07fddbab209"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/benchmark_results.json",
+      "size_bytes": 95961,
+      "sha256": "91568ec3031b1be55296f7d3fb88df12803395ced97e10e95009765b18680f83"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/benchmark_summary.json",
+      "size_bytes": 41152,
+      "sha256": "03a4522d73c5760a71d13b273e0be4fafbae4fd96b3ad797941e82e902c59041"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/final_info.json",
+      "size_bytes": 45064,
+      "sha256": "a0b8bd4b3c713ad90ece89a640f75f315aa90bfd8033cc33b14fcf3bb4865dc8"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/implementation_details.json",
+      "size_bytes": 1284,
+      "sha256": "2b30433128dc4a9070ba07fcbfaef78180f04e2ed2b69aca5323ca661dd97a2d"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/public_scene_manifest.json",
+      "size_bytes": 2025,
+      "sha256": "c226801bc710d407f2349d216301d6800de34d9b20110c81194cfa876a55ba98"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/benchmark_method_statistics.csv",
+      "size_bytes": 6104,
+      "sha256": "6b2478aa65ecf15fcdc9ebd9d63d6a421d03c2017a9f23a5aec066b1c61a6930"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/benchmark_results.csv",
+      "size_bytes": 24358,
+      "sha256": "e3bd2d702834f2c8e754705890413d12f64beceddf577c59e39bd87403f4143d"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/benchmark_results.json",
+      "size_bytes": 60064,
+      "sha256": "34a610904403a5e8dfffb12aa804bb306f0ca89871360734a9a2bda86c4afa23"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/benchmark_summary.json",
+      "size_bytes": 28661,
+      "sha256": "a93a631b8abe90c2170b3fa67d4b40d287d4cbd1d74d88555c74b534f168c015"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/public_scene_manifest.json",
+      "size_bytes": 4774,
+      "sha256": "625d45010f0db1eac51f643115d67e96bc2966d183af5e5542b4e2db2add3f80"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/beam_angle_sensitivity_raw.csv",
+      "size_bytes": 10109,
+      "sha256": "f435486988267b9c9f8b0d09fafd3ff8f037fbd25741108d79a77b5f4db40aa0"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/beam_angle_sensitivity_summary.csv",
+      "size_bytes": 10727,
+      "sha256": "a61d0a6d4c25cb6c291373306d84cad268e9ecfb4f64056e1e830a506aaa7be4"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/prior_depth_bias_sensitivity_raw.csv",
+      "size_bytes": 7888,
+      "sha256": "06dedb9d0ffa6a031bdb5a27e47d6c942889c2d932d1dd09343cc56a13e1a7a8"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/prior_depth_bias_sensitivity_summary.csv",
+      "size_bytes": 8336,
+      "sha256": "f3e0d418d441de9427a328ef3e6d3ddc93f421d5cd2d45e037a29fc5c9be7982"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/prior_relief_scale_sensitivity_raw.csv",
+      "size_bytes": 7820,
+      "sha256": "0984e17a3ccd871110abd03bd76d2e1cce4d0d2cbe2ed142ef19091d62ac2124"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/prior_relief_scale_sensitivity_summary.csv",
+      "size_bytes": 8315,
+      "sha256": "56ee0f023277bfd1a5e1fd3e7bf0bc54e01c8658c678a0bf9d6fb40f35f9c319"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/resolution_sensitivity_raw.csv",
+      "size_bytes": 8957,
+      "sha256": "f9a8bc6e38bed8c6109c281147daa58ae240d8e399e398a03680f970e4bd29a3"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/resolution_sensitivity_summary.csv",
+      "size_bytes": 8741,
+      "sha256": "d3ae64f2d25b97557bcbf4b6fb681db63d0be40f4a45da4cf390bd940a20fd7c"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/target_overlap_sensitivity_raw.csv",
+      "size_bytes": 7823,
+      "sha256": "ed2ad5f6cc1833f5867d7891415b187dacaea43b553cc1fbe63d0c64d37de316"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/target_overlap_sensitivity_summary.csv",
+      "size_bytes": 8081,
+      "sha256": "bb53b722b28a2708a4c4144ff2f128f2754306744ffdd70bef464e7e8fa99027"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/beam_angle_sensitivity.json",
+      "size_bytes": 63412,
+      "sha256": "d055455679f911400a55153a82c48e0f742c56759468824efb2eb6cbe66ea528"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/prior_depth_bias_sensitivity.json",
+      "size_bytes": 49962,
+      "sha256": "9278e54552052f99b7616a4754ade94017334e509a61133bc46771c15fe255e2"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/prior_relief_scale_sensitivity.json",
+      "size_bytes": 49859,
+      "sha256": "7bf35d62ef2626ab777a9b3bfe99af692e1baef244170cf1bd136d180c67b5b3"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/resolution_sensitivity.json",
+      "size_bytes": 55173,
+      "sha256": "c71a65e24321f7fa503e21541409b9c4528eb23cf712eac8154c2dbe6961e045"
+    },
+    {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/target_overlap_sensitivity.json",
+      "size_bytes": 49151,
+      "sha256": "31b0ff152148b0bb3fd5fb6cdc0d805d74acd60f03c3a7e8bad0aa7cac79f376"
+    },
+    {
+      "category": "uncertainty_outputs",
+      "path": "uncertainty_replay/uncertainty_replay_raw.csv",
+      "size_bytes": 672874,
+      "sha256": "ad79e6710b0558a409476685c42da0f80c6f5c15ee1faa6ec4b26116a5dacf86"
+    },
+    {
+      "category": "uncertainty_outputs",
+      "path": "uncertainty_replay/uncertainty_replay_summary.csv",
+      "size_bytes": 6618,
+      "sha256": "e7fcb0f4d24c9da1807c2ab62d67a3db29f643406ddd09bf0d02f1f7f15f8985"
+    },
+    {
+      "category": "uncertainty_outputs",
+      "path": "uncertainty_replay/uncertainty_replay_summary.json",
+      "size_bytes": 17935,
+      "sha256": "41f7ad1ad0d2e8170b6c1d8f113829258d1fd715fef6f5782a5707f46bca6dc1"
+    },
+    {
+      "category": "coarse_prior_replay_outputs",
+      "path": "coarse_prior_replay/coarse_prior_replay_raw.csv",
+      "size_bytes": 16944,
+      "sha256": "d204128877434ef445aa17ba74362aebdab43c3d32977b3b03a793e8c4f12b71"
+    },
+    {
+      "category": "coarse_prior_replay_outputs",
+      "path": "coarse_prior_replay/coarse_prior_replay_summary.csv",
+      "size_bytes": 18046,
+      "sha256": "05519a0b5f7c6caa8b5c0c3a046b6dbadd863d3465aea6d6ca7d5a121c3fa950"
+    },
+    {
+      "category": "coarse_prior_replay_outputs",
+      "path": "coarse_prior_replay/coarse_prior_replay_summary.json",
+      "size_bytes": 71308,
+      "sha256": "1162a7324a185a7525cb83cadd52112472dad8e29c5d98506bec177e5e2dd6f8"
+    },
+    {
+      "category": "coarse_prior_replay_outputs",
+      "path": "coarse_prior_replay/public_scene_manifest.json",
+      "size_bytes": 4954,
+      "sha256": "a0241f64ab51c75a0b14014ba1292846111c0920a14e31b307f308c26b82eb2d"
+    },
+    {
+      "category": "coarse_prior_replay_outputs",
+      "path": "coarse_prior_replay/README.md",
+      "size_bytes": 1998,
+      "sha256": "15964033b6a03ee732112ff666498112b16cd252a89aab74e9417a077395bd6b"
+    },
+    {
+      "category": "pso_baseline_outputs",
+      "path": "pso_baseline/pso_public_baseline_raw.csv",
+      "size_bytes": 8209,
+      "sha256": "3ecf909da33d6c14ab4f00be939bb292c270043c627293357f6c7bb2b9d594cd"
+    },
+    {
+      "category": "pso_baseline_outputs",
+      "path": "pso_baseline/pso_public_baseline_summary.csv",
+      "size_bytes": 3338,
+      "sha256": "2a1a94360924d73146d6acbb55c1ccfd98646b62ebad34a84b82aea4834cbe7f"
+    },
+    {
+      "category": "pso_baseline_outputs",
+      "path": "pso_baseline/pso_public_baseline_summary.json",
+      "size_bytes": 7963,
+      "sha256": "7e2e8ecfd15e2ad5a6b17c446c7ade18ecff62de51a9ea24dfa8da3e3295d96e"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_ablation_seed.png",
+      "size_bytes": 126544,
+      "sha256": "cdcbd6f477883c3c71b5ca2820598182bc9d91abaa6e2b2b78086b3c3a0d5148"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_cascadia_routes.png",
+      "size_bytes": 1038492,
+      "sha256": "028b292d2949fea30b3cb23141b1e113cc87e24881f6cb974f2805125127f288"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_coarse_prior_replay.png",
+      "size_bytes": 274871,
+      "sha256": "b94ae91c615d3b265c296f3a73061ecbcf7489c9e440d20666942b6562052d0a"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_metric_heatmap.png",
+      "size_bytes": 250734,
+      "sha256": "5e89de99d55aefa1ed5748e629a94cbeb40c4fbcaf0bdeaa211e8c7014e32402"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_monterey_routes.png",
+      "size_bytes": 1231632,
+      "sha256": "4bf986e06548159f6ba1481a083c286a92f0c97962aa4bd43868596acce02e2d"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_overlap_regime.png",
+      "size_bytes": 203076,
+      "sha256": "4d4813335f8540db84061a3285fb344a04515b0b5dff30082123318c0d77578d"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_pso_baseline.png",
+      "size_bytes": 185550,
+      "sha256": "543924d31fab52997a7f2662f08e0f84064d4df94c98122cb9ef11def5b1dba6"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_public_layout_matrix.png",
+      "size_bytes": 862746,
+      "sha256": "2b1e6b362c8ad7b434290a0b07e1ead305da62911c7486e1b54a90d167ef4cd6"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_scene_atlas.png",
+      "size_bytes": 1064891,
+      "sha256": "16e760c95daf1392f02aa60abdaf38e71f0c42c2c325fbd51173d38f2466fb8e"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_sensitivity_beam_angle.png",
+      "size_bytes": 202507,
+      "sha256": "e2932d36ce5493c9040d4706a043f278ca9853cd8f1e1dcf0896c291fd3651bc"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_sensitivity_overlap_target.png",
+      "size_bytes": 307826,
+      "sha256": "508d003625b488f92e854178c9566314f0ff2a5f6500679b6d4345c7175b0115"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_sensitivity_prior_depth_bias.png",
+      "size_bytes": 218823,
+      "sha256": "34abe203ea398bcd1baecd2404e8b08bbfa1ca9233f02449806358fd09966f55"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_sensitivity_prior_relief_scale.png",
+      "size_bytes": 206376,
+      "sha256": "5221ede0ec70ceda94abadcab42db9f9633d574b5fe5b115dd6ae805cc9bd6bc"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_sensitivity_resolution.png",
+      "size_bytes": 303557,
+      "sha256": "c9d6b768d0bc85dd31132136e92ff93033999d30f651d30de51febfe1ba066b3"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_uncertainty_replay.png",
+      "size_bytes": 258257,
+      "sha256": "eea42fc6b754a43248e05088953fb26c03bb81f43f0a46830256f860faa2e3c6"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_usgs_extension.png",
+      "size_bytes": 590287,
+      "sha256": "bf773688a25e412b94eb59f9b6edb6f9ac5605f235ef878ac9ecb1791f9c73ba"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/method_pipeline.pdf",
+      "size_bytes": 13222,
+      "sha256": "48e4208866d1c374bb79c7d85c463fe259db5a66f706ec3c79a1954a0c90551b"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/method_pipeline.tex",
+      "size_bytes": 2635,
+      "sha256": "bf8195cf4821fa101f86ed55dda1f357e205f0d147f14fbe06f1ef2bb6ed3a20"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_ablation_seed.png",
+      "size_bytes": 126544,
+      "sha256": "cdcbd6f477883c3c71b5ca2820598182bc9d91abaa6e2b2b78086b3c3a0d5148"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_cascadia_routes.png",
+      "size_bytes": 1038492,
+      "sha256": "028b292d2949fea30b3cb23141b1e113cc87e24881f6cb974f2805125127f288"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_coarse_prior_replay.png",
+      "size_bytes": 274871,
+      "sha256": "b94ae91c615d3b265c296f3a73061ecbcf7489c9e440d20666942b6562052d0a"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_metric_heatmap.png",
+      "size_bytes": 250734,
+      "sha256": "5e89de99d55aefa1ed5748e629a94cbeb40c4fbcaf0bdeaa211e8c7014e32402"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_monterey_routes.png",
+      "size_bytes": 1231632,
+      "sha256": "4bf986e06548159f6ba1481a083c286a92f0c97962aa4bd43868596acce02e2d"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_overlap_regime.png",
+      "size_bytes": 203076,
+      "sha256": "4d4813335f8540db84061a3285fb344a04515b0b5dff30082123318c0d77578d"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_pso_baseline.png",
+      "size_bytes": 185550,
+      "sha256": "543924d31fab52997a7f2662f08e0f84064d4df94c98122cb9ef11def5b1dba6"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_public_layout_matrix.png",
+      "size_bytes": 862746,
+      "sha256": "2b1e6b362c8ad7b434290a0b07e1ead305da62911c7486e1b54a90d167ef4cd6"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_scene_atlas.png",
+      "size_bytes": 1064891,
+      "sha256": "16e760c95daf1392f02aa60abdaf38e71f0c42c2c325fbd51173d38f2466fb8e"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_sensitivity_beam_angle.png",
+      "size_bytes": 202507,
+      "sha256": "e2932d36ce5493c9040d4706a043f278ca9853cd8f1e1dcf0896c291fd3651bc"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_sensitivity_overlap_target.png",
+      "size_bytes": 307826,
+      "sha256": "508d003625b488f92e854178c9566314f0ff2a5f6500679b6d4345c7175b0115"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_sensitivity_prior_depth_bias.png",
+      "size_bytes": 218823,
+      "sha256": "34abe203ea398bcd1baecd2404e8b08bbfa1ca9233f02449806358fd09966f55"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_sensitivity_prior_relief_scale.png",
+      "size_bytes": 206376,
+      "sha256": "5221ede0ec70ceda94abadcab42db9f9633d574b5fe5b115dd6ae805cc9bd6bc"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_sensitivity_resolution.png",
+      "size_bytes": 303557,
+      "sha256": "c9d6b768d0bc85dd31132136e92ff93033999d30f651d30de51febfe1ba066b3"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_uncertainty_replay.png",
+      "size_bytes": 258257,
+      "sha256": "eea42fc6b754a43248e05088953fb26c03bb81f43f0a46830256f860faa2e3c6"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_usgs_extension.png",
+      "size_bytes": 590287,
+      "sha256": "bf773688a25e412b94eb59f9b6edb6f9ac5605f235ef878ac9ecb1791f9c73ba"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/method_pipeline.pdf",
+      "size_bytes": 13222,
+      "sha256": "48e4208866d1c374bb79c7d85c463fe259db5a66f706ec3c79a1954a0c90551b"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/method_pipeline.tex",
+      "size_bytes": 2635,
+      "sha256": "bf8195cf4821fa101f86ed55dda1f357e205f0d147f14fbe06f1ef2bb6ed3a20"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/template.tex",
+      "size_bytes": 126524,
+      "sha256": "a838d8b9eb92d05248b5c1df62a6b65c499208877624868879b775d5bbb0f5ae"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/template.pdf",
+      "size_bytes": 5916131,
+      "sha256": "e187affe7216dce2b58bb0b40b7e6420d8e47f2ee28f3033fdf4c9ce590632f5"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/template.tex",
+      "size_bytes": 126449,
+      "sha256": "1a75a86b60f5281a514dc1e9e693f31a37e1d77f1d85f4d1015a0564f206ba7d"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/template.pdf",
+      "size_bytes": 5854705,
+      "sha256": "5508910602b4191fa4cd0f223cd8453f4bb75ef99cafd51e53f5ae03882cf7c8"
+    },
+    {
+      "category": "manuscripts",
+      "path": "paper_refined.pdf",
+      "size_bytes": 5916131,
+      "sha256": "e187affe7216dce2b58bb0b40b7e6420d8e47f2ee28f3033fdf4c9ce590632f5"
+    },
+    {
+      "category": "manuscripts",
+      "path": "geo_public_bathy_rebuild.pdf",
+      "size_bytes": 5916131,
+      "sha256": "e187affe7216dce2b58bb0b40b7e6420d8e47f2ee28f3033fdf4c9ce590632f5"
+    },
+    {
+      "category": "manuscripts",
+      "path": "mdpi_jmse_jmse_submission_draft.pdf",
+      "size_bytes": 5854705,
+      "sha256": "5508910602b4191fa4cd0f223cd8453f4bb75ef99cafd51e53f5ae03882cf7c8"
+    },
+    {
+      "category": "release_metadata",
+      "path": "README.md",
+      "size_bytes": 3586,
+      "sha256": "50342153f1ee64815bce561af0c5f8057e0026de018bc1a26e1cb929e8a290bc"
+    },
+    {
+      "category": "release_metadata",
+      "path": "environment.yml",
+      "size_bytes": 147,
+      "sha256": "bca0bcaac813e94d0a8406e20301431f0c492769287939f624ac8f861db75fae"
+    },
+    {
+      "category": "release_metadata",
+      "path": ".gitignore",
+      "size_bytes": 135,
+      "sha256": "0bd7f7cc66f401f86ec18d7658aeb5fc40a6313f22cf392ea36beab933f7417b"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "geo_public_bathy_benchmark.py",
+      "size_bytes": 90489,
+      "sha256": "0d123bf52a2e5d8f85d53fcdb1aeb219b91f516ba76e745da557e69cf7ddc34a"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_journal_figures.py",
+      "size_bytes": 53073,
+      "sha256": "984bb99adbaf99006cf40f7f5d7d2a12cb5ea80afc34bcdda0dd95f34681b613"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_sensitivity_study.py",
+      "size_bytes": 42489,
+      "sha256": "6db939741f5e8f05b2390f6c8df4591b1fc39b41750b810c6419ad77ba2d1e03"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_uncertainty_replay.py",
+      "size_bytes": 14861,
+      "sha256": "ee168e6194f2a2a3d92c1736f0f12b1459c4b22a1b4ff8716b0201019d5e0f68"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_survey_grade_extension.py",
+      "size_bytes": 21302,
+      "sha256": "628dfec423e6a00b190c5adf60977f7ae43bccd94d6985fddc36d56ddce628f2"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_turning_aware_posteval.py",
+      "size_bytes": 2255,
+      "sha256": "58832643604ab359f17739ae911f19b8e21d9a5875b6f893878bcff1ba660956"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_public_bootstrap_ci.py",
+      "size_bytes": 3322,
+      "sha256": "171970cb2082d6774c0e3346c5e451283cb4996f7fe8e95b3f06dec97603d687"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_method_pipeline_figure.py",
+      "size_bytes": 1225,
+      "sha256": "6fbab8530ca98b306eccba933657783966da48bd239de5b721f49649d90b7c50"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_coarse_prior_replay.py",
+      "size_bytes": 19478,
+      "sha256": "def5a36b037b86132db411d06304971006ce86d0c5b497f7d713cd5747cfe57a"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_pso_baseline.py",
+      "size_bytes": 10946,
+      "sha256": "a780874acf25f7fb0a9be2095a11ebd08a8d769bf265060caf4a236cd4ad84f6"
+    }
+  ]
+}

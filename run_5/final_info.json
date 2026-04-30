@@ -1,0 +1,1257 @@
+{
+  "geo_public_bathy_benchmark": {
+    "means": {
+      "overall_score_mean": 0.7280014085703179,
+      "public_hybrid_path_gain_pct_mean": 0.7516978595129359,
+      "public_hybrid_coverage_pct_mean": 99.29583333333335,
+      "public_hybrid_excess_overlap_pct_mean": 0.09519151033144424,
+      "public_hybrid_feasibility_rate_mean": 1.0,
+      "public_hybrid_orientation_consistency_mean": 1.0,
+      "public_hybrid_line_count_consistency_mean": 1.0,
+      "synthetic_hybrid_path_gain_pct_mean": 12.340830088090529,
+      "synthetic_hybrid_coverage_pct_mean": 98.56222222222222,
+      "synthetic_hybrid_excess_overlap_pct_mean": 2.4063369595192796,
+      "synthetic_hybrid_feasibility_rate_mean": 0.6666666666666666,
+      "total_planning_time_s_mean": 0.34272171257768064
+    },
+    "stderrs": {
+      "overall_score_stderr": 0.0,
+      "public_hybrid_path_gain_pct_stderr": 0.09589535470149291,
+      "public_hybrid_coverage_pct_stderr": 0.3291666666666728,
+      "public_hybrid_excess_overlap_pct_stderr": 0.010328418305791405,
+      "public_hybrid_feasibility_rate_stderr": 0.0,
+      "public_hybrid_orientation_consistency_stderr": 0.0,
+      "public_hybrid_line_count_consistency_stderr": 0.0,
+      "synthetic_hybrid_path_gain_pct_stderr": 6.821970783308368,
+      "synthetic_hybrid_coverage_pct_stderr": 0.9298893690558724,
+      "synthetic_hybrid_excess_overlap_pct_stderr": 2.384496688752683,
+      "synthetic_hybrid_feasibility_rate_stderr": 0.33333333333333337,
+      "total_planning_time_s_stderr": 0.04706505607061003
+    },
+    "final_info_dict": {
+      "summary_rows": [
+        {
+          "scene_id": "gebco_cascadia_margin_moderate",
+          "scene_name": "GEBCO Cascadia Margin",
+          "scene_group": "public",
+          "terrain_class": "moderate_slope",
+          "method": "Adaptive Spacing w/o GA",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 116,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 15038.223860078393,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 15038.223860078393,
+          "path_length_km_max": 15038.223860078393,
+          "coverage_pct_mean": 99.33333333333333,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 99.33333333333333,
+          "coverage_pct_max": 99.33333333333333,
+          "excess_overlap_pct_mean": 0.0,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.0,
+          "excess_overlap_pct_max": 0.0,
+          "planning_time_s_mean": 0.7053650000016205,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.7053650000016205,
+          "planning_time_s_max": 0.7053650000016205,
+          "line_count_mean": 116.0,
+          "line_count_std": 0.0,
+          "line_count_min": 116.0,
+          "line_count_max": 116.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_cascadia_margin_moderate",
+          "scene_name": "GEBCO Cascadia Margin",
+          "scene_group": "public",
+          "terrain_class": "moderate_slope",
+          "method": "Fixed-Spacing",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 117,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 15166.70891059631,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 15166.70891059631,
+          "path_length_km_max": 15166.70891059631,
+          "coverage_pct_mean": 100.0,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 100.0,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 0.7985185185185184,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.7985185185185184,
+          "excess_overlap_pct_max": 0.7985185185185184,
+          "planning_time_s_mean": 0.06336533298599534,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.06336533298599534,
+          "planning_time_s_max": 0.06336533298599534,
+          "line_count_mean": 117.0,
+          "line_count_std": 0.0,
+          "line_count_min": 117.0,
+          "line_count_max": 117.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_cascadia_margin_moderate",
+          "scene_name": "GEBCO Cascadia Margin",
+          "scene_group": "public",
+          "terrain_class": "moderate_slope",
+          "method": "Fixed-Swath GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 75.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 111,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 15068.187342088157,
+          "path_length_km_std": 3.752563346282194,
+          "path_length_km_min": 15060.95568768795,
+          "path_length_km_max": 15073.907557848403,
+          "coverage_pct_mean": 99.71944444444445,
+          "coverage_pct_std": 0.25393907779361136,
+          "coverage_pct_min": 98.93333333333332,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 1.453272118017587,
+          "excess_overlap_pct_std": 0.5200672593278822,
+          "excess_overlap_pct_min": 0.7365541136091018,
+          "excess_overlap_pct_max": 2.676417090267136,
+          "planning_time_s_mean": 0.7013870770984795,
+          "planning_time_s_std": 0.04983694417170582,
+          "planning_time_s_min": 0.6383675409888383,
+          "planning_time_s_max": 0.8431743339897366,
+          "line_count_mean": 111.0,
+          "line_count_std": 0.0,
+          "line_count_min": 111.0,
+          "line_count_max": 111.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_cascadia_margin_moderate",
+          "scene_name": "GEBCO Cascadia Margin",
+          "scene_group": "public",
+          "terrain_class": "moderate_slope",
+          "method": "Full Geometry-Aware Hybrid GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 116,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 15038.15691505044,
+          "path_length_km_std": 0.07426755873655061,
+          "path_length_km_min": 15037.95287480725,
+          "path_length_km_max": 15038.223860078393,
+          "coverage_pct_mean": 98.96666666666667,
+          "coverage_pct_std": 0.3402785236893554,
+          "coverage_pct_min": 98.66666666666667,
+          "coverage_pct_max": 99.33333333333333,
+          "excess_overlap_pct_mean": 0.10551992863723565,
+          "excess_overlap_pct_std": 0.12678431111128513,
+          "excess_overlap_pct_min": 0.0,
+          "excess_overlap_pct_max": 0.4793535101948629,
+          "planning_time_s_mean": 0.6991354500496527,
+          "planning_time_s_std": 0.08806732239986811,
+          "planning_time_s_min": 0.610093458002666,
+          "planning_time_s_max": 1.0168945840123342,
+          "line_count_mean": 116.0,
+          "line_count_std": 0.0,
+          "line_count_min": 116.0,
+          "line_count_max": 116.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_cascadia_margin_moderate",
+          "scene_name": "GEBCO Cascadia Margin",
+          "scene_group": "public",
+          "terrain_class": "moderate_slope",
+          "method": "Simple Greedy",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 75.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 111,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 15084.319183647674,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 15084.319183647674,
+          "path_length_km_max": 15084.319183647674,
+          "coverage_pct_mean": 99.9888888888889,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 99.9888888888889,
+          "coverage_pct_max": 99.9888888888889,
+          "excess_overlap_pct_mean": 0.009497456851851986,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.009497456851851986,
+          "excess_overlap_pct_max": 0.009497456851851986,
+          "planning_time_s_mean": 0.7842214170086663,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.7842214170086663,
+          "planning_time_s_max": 0.7842214170086663,
+          "line_count_mean": 111.0,
+          "line_count_std": 0.0,
+          "line_count_min": 111.0,
+          "line_count_max": 111.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_monterey_canyon_complex",
+          "scene_name": "GEBCO Monterey Canyon",
+          "scene_group": "public",
+          "terrain_class": "complex_relief",
+          "method": "Adaptive Spacing w/o GA",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 90.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 59,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 6656.620000000051,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 6656.620000000051,
+          "path_length_km_max": 6656.620000000051,
+          "coverage_pct_mean": 100.0,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 100.0,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 0.0,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.0,
+          "excess_overlap_pct_max": 0.0,
+          "planning_time_s_mean": 0.5932290839991765,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.5932290839991765,
+          "planning_time_s_max": 0.5932290839991765,
+          "line_count_mean": 59.0,
+          "line_count_std": 0.0,
+          "line_count_min": 59.0,
+          "line_count_max": 59.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_monterey_canyon_complex",
+          "scene_name": "GEBCO Monterey Canyon",
+          "scene_group": "public",
+          "terrain_class": "complex_relief",
+          "method": "Fixed-Spacing",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 73,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 6700.516576082025,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 6700.516576082025,
+          "path_length_km_max": 6700.516576082025,
+          "coverage_pct_mean": 99.33333333333333,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 99.33333333333333,
+          "coverage_pct_max": 99.33333333333333,
+          "excess_overlap_pct_mean": 0.8148148148148147,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.8148148148148147,
+          "excess_overlap_pct_max": 0.8148148148148147,
+          "planning_time_s_mean": 0.043287082997267134,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.043287082997267134,
+          "planning_time_s_max": 0.043287082997267134,
+          "line_count_mean": 73.0,
+          "line_count_std": 0.0,
+          "line_count_min": 73.0,
+          "line_count_max": 73.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_monterey_canyon_complex",
+          "scene_name": "GEBCO Monterey Canyon",
+          "scene_group": "public",
+          "terrain_class": "complex_relief",
+          "method": "Fixed-Swath GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 90.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 59,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 6656.458400975173,
+          "path_length_km_std": 0.0765832897263528,
+          "path_length_km_min": 6656.314594810904,
+          "path_length_km_max": 6656.644466346497,
+          "coverage_pct_mean": 99.5,
+          "coverage_pct_std": 0.49853586801343125,
+          "coverage_pct_min": 98.33333333333333,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 0.45918085148955734,
+          "excess_overlap_pct_std": 0.22150680367968228,
+          "excess_overlap_pct_min": 0.11004813315633359,
+          "excess_overlap_pct_max": 0.9217715880663542,
+          "planning_time_s_mean": 0.33883670215000167,
+          "planning_time_s_std": 0.05148747285118964,
+          "planning_time_s_min": 0.3015699170064181,
+          "planning_time_s_max": 0.5425273340079002,
+          "line_count_mean": 59.0,
+          "line_count_std": 0.0,
+          "line_count_min": 59.0,
+          "line_count_max": 59.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_monterey_canyon_complex",
+          "scene_name": "GEBCO Monterey Canyon",
+          "scene_group": "public",
+          "terrain_class": "complex_relief",
+          "method": "Full Geometry-Aware Hybrid GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 90.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 59,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 6656.574420540773,
+          "path_length_km_std": 0.053236830247798045,
+          "path_length_km_min": 6656.457284226268,
+          "path_length_km_max": 6656.620000000051,
+          "coverage_pct_mean": 99.62500000000001,
+          "coverage_pct_std": 0.42534815461169795,
+          "coverage_pct_min": 99.16666666666667,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 0.08486309202565284,
+          "excess_overlap_pct_std": 0.11540755612967425,
+          "excess_overlap_pct_min": 0.0,
+          "excess_overlap_pct_max": 0.46446096580011725,
+          "planning_time_s_mean": 0.33935258540223,
+          "planning_time_s_std": 0.038052307600860216,
+          "planning_time_s_min": 0.29937083400727715,
+          "planning_time_s_max": 0.45378374999563675,
+          "line_count_mean": 59.0,
+          "line_count_std": 0.0,
+          "line_count_min": 59.0,
+          "line_count_max": 59.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "gebco_monterey_canyon_complex",
+          "scene_name": "GEBCO Monterey Canyon",
+          "scene_group": "public",
+          "terrain_class": "complex_relief",
+          "method": "Simple Greedy",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 90.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 59,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 6656.3676243300515,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 6656.3676243300515,
+          "path_length_km_max": 6656.3676243300515,
+          "coverage_pct_mean": 99.17777777777778,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 99.17777777777778,
+          "coverage_pct_max": 99.17777777777778,
+          "excess_overlap_pct_mean": 0.30069568518518475,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.30069568518518475,
+          "excess_overlap_pct_max": 0.30069568518518475,
+          "planning_time_s_mean": 0.5604800839937525,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.5604800839937525,
+          "planning_time_s_max": 0.5604800839937525,
+          "line_count_mean": 59.0,
+          "line_count_std": 0.0,
+          "line_count_min": 59.0,
+          "line_count_max": 59.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "synthetic_complex",
+          "scene_name": "Complex Terrain",
+          "scene_group": "synthetic",
+          "terrain_class": "complex_relief",
+          "method": "Adaptive Spacing w/o GA",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 105.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 40,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 254.42831497779022,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 254.42831497779022,
+          "path_length_km_max": 254.42831497779022,
+          "coverage_pct_mean": 96.87777777777778,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 96.87777777777778,
+          "coverage_pct_max": 96.87777777777778,
+          "excess_overlap_pct_mean": 7.121152941554071,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 7.121152941554071,
+          "excess_overlap_pct_max": 7.121152941554071,
+          "planning_time_s_mean": 0.5130087500001537,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.5130087500001537,
+          "planning_time_s_max": 0.5130087500001537,
+          "line_count_mean": 40.0,
+          "line_count_std": 0.0,
+          "line_count_min": 40.0,
+          "line_count_max": 40.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_complex",
+          "scene_name": "Complex Terrain",
+          "scene_group": "synthetic",
+          "terrain_class": "complex_relief",
+          "method": "Fixed-Spacing",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 45,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 342.37612472999996,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 342.37612472999996,
+          "path_length_km_max": 342.37612472999996,
+          "coverage_pct_mean": 96.1888888888889,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 96.1888888888889,
+          "coverage_pct_max": 96.1888888888889,
+          "excess_overlap_pct_mean": 28.497640907255647,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 28.497640907255647,
+          "excess_overlap_pct_max": 28.497640907255647,
+          "planning_time_s_mean": 0.02420462500595022,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.02420462500595022,
+          "planning_time_s_max": 0.02420462500595022,
+          "line_count_mean": 45.0,
+          "line_count_std": 0.0,
+          "line_count_min": 45.0,
+          "line_count_max": 45.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_complex",
+          "scene_name": "Complex Terrain",
+          "scene_group": "synthetic",
+          "terrain_class": "complex_relief",
+          "method": "Fixed-Swath GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 150.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 57,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 342.78653906773,
+          "path_length_km_std": 0.18323747820500072,
+          "path_length_km_min": 342.4150171841898,
+          "path_length_km_max": 343.0726947832075,
+          "coverage_pct_mean": 96.55638888888888,
+          "coverage_pct_std": 0.04460042074761072,
+          "coverage_pct_min": 96.47222222222223,
+          "coverage_pct_max": 96.61666666666666,
+          "excess_overlap_pct_mean": 27.899286215415845,
+          "excess_overlap_pct_std": 0.05379404500517643,
+          "excess_overlap_pct_min": 27.814545765387606,
+          "excess_overlap_pct_max": 28.004538155483825,
+          "planning_time_s_mean": 0.32733623949970936,
+          "planning_time_s_std": 0.021829928549126496,
+          "planning_time_s_min": 0.3002262499940116,
+          "planning_time_s_max": 0.3750924999912968,
+          "line_count_mean": 57.0,
+          "line_count_std": 0.0,
+          "line_count_min": 57.0,
+          "line_count_max": 57.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_complex",
+          "scene_name": "Complex Terrain",
+          "scene_group": "synthetic",
+          "terrain_class": "complex_relief",
+          "method": "Full Geometry-Aware Hybrid GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 105.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 40,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 254.13084998283793,
+          "path_length_km_std": 0.1910656940144466,
+          "path_length_km_min": 253.82151992663327,
+          "path_length_km_max": 254.44241904242028,
+          "coverage_pct_mean": 96.82111111111111,
+          "coverage_pct_std": 0.034132715028515816,
+          "coverage_pct_min": 96.75555555555555,
+          "coverage_pct_max": 96.87777777777778,
+          "excess_overlap_pct_mean": 7.175263451813724,
+          "excess_overlap_pct_std": 0.05936696731236524,
+          "excess_overlap_pct_min": 7.064497485068287,
+          "excess_overlap_pct_max": 7.289344557660367,
+          "planning_time_s_mean": 0.25431726449751296,
+          "planning_time_s_std": 0.01754378313033232,
+          "planning_time_s_min": 0.2264646669937065,
+          "planning_time_s_max": 0.2883535829896573,
+          "line_count_mean": 40.0,
+          "line_count_std": 0.0,
+          "line_count_min": 40.0,
+          "line_count_max": 40.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_complex",
+          "scene_name": "Complex Terrain",
+          "scene_group": "synthetic",
+          "terrain_class": "complex_relief",
+          "method": "Simple Greedy",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 150.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 57,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 342.8150422813723,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 342.8150422813723,
+          "path_length_km_max": 342.8150422813723,
+          "coverage_pct_mean": 96.57777777777777,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 96.57777777777777,
+          "coverage_pct_max": 96.57777777777777,
+          "excess_overlap_pct_mean": 27.805247332878377,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 27.805247332878377,
+          "excess_overlap_pct_max": 27.805247332878377,
+          "planning_time_s_mean": 0.34737929099355824,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.34737929099355824,
+          "planning_time_s_max": 0.34737929099355824,
+          "line_count_mean": 57.0,
+          "line_count_std": 0.0,
+          "line_count_min": 57.0,
+          "line_count_max": 57.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_flat",
+          "scene_name": "Flat Seafloor",
+          "scene_group": "synthetic",
+          "terrain_class": "flat",
+          "method": "Adaptive Spacing w/o GA",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 26,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 201.44145911860127,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 201.44145911860127,
+          "path_length_km_max": 201.44145911860127,
+          "coverage_pct_mean": 99.33333333333333,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 99.33333333333333,
+          "coverage_pct_max": 99.33333333333333,
+          "excess_overlap_pct_mean": 0.0,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.0,
+          "excess_overlap_pct_max": 0.0,
+          "planning_time_s_mean": 0.43474120800965466,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.43474120800965466,
+          "planning_time_s_max": 0.43474120800965466,
+          "line_count_mean": 26.0,
+          "line_count_std": 0.0,
+          "line_count_min": 26.0,
+          "line_count_max": 26.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "synthetic_flat",
+          "scene_name": "Flat Seafloor",
+          "scene_group": "synthetic",
+          "terrain_class": "flat",
+          "method": "Fixed-Spacing",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 27,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 208.860307806,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 208.860307806,
+          "path_length_km_max": 208.860307806,
+          "coverage_pct_mean": 98.66666666666667,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 98.66666666666667,
+          "coverage_pct_max": 98.66666666666667,
+          "excess_overlap_pct_mean": 3.611543204114926,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 3.611543204114926,
+          "excess_overlap_pct_max": 3.611543204114926,
+          "planning_time_s_mean": 0.020869333995506167,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.020869333995506167,
+          "planning_time_s_max": 0.020869333995506167,
+          "line_count_mean": 27.0,
+          "line_count_std": 0.0,
+          "line_count_min": 27.0,
+          "line_count_max": 27.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_flat",
+          "scene_name": "Flat Seafloor",
+          "scene_group": "synthetic",
+          "terrain_class": "flat",
+          "method": "Fixed-Swath GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 75.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 27,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 203.11768133479586,
+          "path_length_km_std": 0.18575839984431763,
+          "path_length_km_min": 202.80246028587723,
+          "path_length_km_max": 203.53375529203893,
+          "coverage_pct_mean": 99.99777777777777,
+          "coverage_pct_std": 0.0033235724534235265,
+          "coverage_pct_min": 99.9888888888889,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 0.06012383937384985,
+          "excess_overlap_pct_std": 0.0383379815737463,
+          "excess_overlap_pct_min": 0.0,
+          "excess_overlap_pct_max": 0.14701289603443224,
+          "planning_time_s_mean": 0.19794041679924704,
+          "planning_time_s_std": 0.011454966137119835,
+          "planning_time_s_min": 0.17939379200106487,
+          "planning_time_s_max": 0.2263464580028085,
+          "line_count_mean": 27.0,
+          "line_count_std": 0.0,
+          "line_count_min": 27.0,
+          "line_count_max": 27.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "synthetic_flat",
+          "scene_name": "Flat Seafloor",
+          "scene_group": "synthetic",
+          "terrain_class": "flat",
+          "method": "Full Geometry-Aware Hybrid GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 26,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 201.43124710158685,
+          "path_length_km_std": 0.007905100394723048,
+          "path_length_km_min": 201.41660556846384,
+          "path_length_km_max": 201.44145911860127,
+          "coverage_pct_mean": 98.86666666666667,
+          "coverage_pct_std": 0.31344156398774703,
+          "coverage_pct_min": 98.66666666666667,
+          "coverage_pct_max": 99.33333333333333,
+          "excess_overlap_pct_mean": 0.0,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.0,
+          "excess_overlap_pct_max": 0.0,
+          "planning_time_s_mean": 0.1819116312508413,
+          "planning_time_s_std": 0.010125877840423153,
+          "planning_time_s_min": 0.16672500000277068,
+          "planning_time_s_max": 0.20716266700765118,
+          "line_count_mean": 26.0,
+          "line_count_std": 0.0,
+          "line_count_min": 26.0,
+          "line_count_max": 26.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "synthetic_flat",
+          "scene_name": "Flat Seafloor",
+          "scene_group": "synthetic",
+          "terrain_class": "flat",
+          "method": "Simple Greedy",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 75.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 27,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 203.55740082513105,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 203.55740082513105,
+          "path_length_km_max": 203.55740082513105,
+          "coverage_pct_mean": 99.99444444444444,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 99.99444444444444,
+          "coverage_pct_max": 99.99444444444444,
+          "excess_overlap_pct_mean": 0.10749376392454518,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.10749376392454518,
+          "excess_overlap_pct_max": 0.10749376392454518,
+          "planning_time_s_mean": 0.2563694580021547,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.2563694580021547,
+          "planning_time_s_max": 0.2563694580021547,
+          "line_count_mean": 27.0,
+          "line_count_std": 0.0,
+          "line_count_min": 27.0,
+          "line_count_max": 27.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "synthetic_uniform_slope",
+          "scene_name": "Uniform Slope",
+          "scene_group": "synthetic",
+          "terrain_class": "moderate_slope",
+          "method": "Adaptive Spacing w/o GA",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 120.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 29,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 179.32895893798405,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 179.32895893798405,
+          "path_length_km_max": 179.32895893798405,
+          "coverage_pct_mean": 100.0,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 100.0,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 0.00014804239168771167,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 0.00014804239168771167,
+          "excess_overlap_pct_max": 0.00014804239168771167,
+          "planning_time_s_mean": 0.47053116699680686,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.47053116699680686,
+          "planning_time_s_max": 0.47053116699680686,
+          "line_count_mean": 29.0,
+          "line_count_std": 0.0,
+          "line_count_min": 29.0,
+          "line_count_max": 29.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "synthetic_uniform_slope",
+          "scene_name": "Uniform Slope",
+          "scene_group": "synthetic",
+          "terrain_class": "moderate_slope",
+          "method": "Fixed-Spacing",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 0.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 25,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 194.02565653800002,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 194.02565653800002,
+          "path_length_km_max": 194.02565653800002,
+          "coverage_pct_mean": 97.18333333333334,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 97.18333333333334,
+          "coverage_pct_max": 97.18333333333334,
+          "excess_overlap_pct_mean": 9.828537975319383,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 9.828537975319383,
+          "excess_overlap_pct_max": 9.828537975319383,
+          "planning_time_s_mean": 0.02192270899831783,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.02192270899831783,
+          "planning_time_s_max": 0.02192270899831783,
+          "line_count_mean": 25.0,
+          "line_count_std": 0.0,
+          "line_count_min": 25.0,
+          "line_count_max": 25.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_uniform_slope",
+          "scene_name": "Uniform Slope",
+          "scene_group": "synthetic",
+          "terrain_class": "moderate_slope",
+          "method": "Fixed-Swath GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 105.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 25,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 187.12146200529696,
+          "path_length_km_std": 0.27684701537572093,
+          "path_length_km_min": 186.710443971939,
+          "path_length_km_max": 187.59548898633489,
+          "coverage_pct_mean": 97.26638888888888,
+          "coverage_pct_std": 0.08213514829897658,
+          "coverage_pct_min": 97.11666666666666,
+          "coverage_pct_max": 97.44444444444444,
+          "excess_overlap_pct_mean": 7.503064827390657,
+          "excess_overlap_pct_std": 0.11360905130485946,
+          "excess_overlap_pct_min": 7.2109765668028905,
+          "excess_overlap_pct_max": 7.627076635170571,
+          "planning_time_s_mean": 0.1909237438972923,
+          "planning_time_s_std": 0.008777003183031132,
+          "planning_time_s_min": 0.17963983298977837,
+          "planning_time_s_max": 0.20959979100734927,
+          "line_count_mean": 25.0,
+          "line_count_std": 0.0,
+          "line_count_min": 25.0,
+          "line_count_max": 25.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        },
+        {
+          "scene_id": "synthetic_uniform_slope",
+          "scene_name": "Uniform Slope",
+          "scene_group": "synthetic",
+          "terrain_class": "moderate_slope",
+          "method": "Full Geometry-Aware Hybrid GA",
+          "n_runs": 20,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 120.0,
+              "count": 20
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 29,
+              "count": 20
+            }
+          ],
+          "path_length_km_mean": 179.10280846120034,
+          "path_length_km_std": 0.16902183985038996,
+          "path_length_km_min": 178.86878045402398,
+          "path_length_km_max": 179.32895893798405,
+          "coverage_pct_mean": 99.99888888888889,
+          "coverage_pct_std": 0.0029063797987808337,
+          "coverage_pct_min": 99.9888888888889,
+          "coverage_pct_max": 100.0,
+          "excess_overlap_pct_mean": 0.043747426744114346,
+          "excess_overlap_pct_std": 0.038487797377630424,
+          "excess_overlap_pct_min": 0.00014804239168771167,
+          "excess_overlap_pct_max": 0.10732843869652609,
+          "planning_time_s_mean": 0.20239424380124546,
+          "planning_time_s_std": 0.011226066094144928,
+          "planning_time_s_min": 0.1820410840009572,
+          "planning_time_s_max": 0.2168437090003863,
+          "line_count_mean": 29.0,
+          "line_count_std": 0.0,
+          "line_count_min": 29.0,
+          "line_count_max": 29.0,
+          "feasible_mean": 1.0,
+          "feasible_std": 0.0,
+          "feasible_min": 1.0,
+          "feasible_max": 1.0
+        },
+        {
+          "scene_id": "synthetic_uniform_slope",
+          "scene_name": "Uniform Slope",
+          "scene_group": "synthetic",
+          "terrain_class": "moderate_slope",
+          "method": "Simple Greedy",
+          "n_runs": 1,
+          "orientation_consistency": 1.0,
+          "line_count_consistency": 1.0,
+          "orientation_modes": [
+            {
+              "orientation_deg": 105.0,
+              "count": 1
+            }
+          ],
+          "line_count_modes": [
+            {
+              "line_count": 25,
+              "count": 1
+            }
+          ],
+          "path_length_km_mean": 188.00781486393606,
+          "path_length_km_std": 0.0,
+          "path_length_km_min": 188.00781486393606,
+          "path_length_km_max": 188.00781486393606,
+          "coverage_pct_mean": 97.33888888888889,
+          "coverage_pct_std": 0.0,
+          "coverage_pct_min": 97.33888888888889,
+          "coverage_pct_max": 97.33888888888889,
+          "excess_overlap_pct_mean": 7.755492646662441,
+          "excess_overlap_pct_std": 0.0,
+          "excess_overlap_pct_min": 7.755492646662441,
+          "excess_overlap_pct_max": 7.755492646662441,
+          "planning_time_s_mean": 0.29553291700722184,
+          "planning_time_s_std": 0.0,
+          "planning_time_s_min": 0.29553291700722184,
+          "planning_time_s_max": 0.29553291700722184,
+          "line_count_mean": 25.0,
+          "line_count_std": 0.0,
+          "line_count_min": 25.0,
+          "line_count_max": 25.0,
+          "feasible_mean": 0.0,
+          "feasible_std": 0.0,
+          "feasible_min": 0.0,
+          "feasible_max": 0.0
+        }
+      ],
+      "public_hybrid_path_gain_pct": [
+        0.8475932142144288,
+        0.655802504811443
+      ],
+      "public_hybrid_coverage_pct": [
+        98.96666666666667,
+        99.62500000000001
+      ],
+      "public_hybrid_excess_overlap_pct": [
+        0.10551992863723565,
+        0.08486309202565284
+      ],
+      "public_hybrid_feasibility_rate": [
+        1.0,
+        1.0
+      ],
+      "public_hybrid_orientation_consistency": [
+        1.0,
+        1.0
+      ],
+      "public_hybrid_line_count_consistency": [
+        1.0,
+        1.0
+      ],
+      "synthetic_hybrid_path_gain_pct": [
+        25.774365784633147,
+        3.5569519084083927,
+        7.691172571230051
+      ],
+      "synthetic_hybrid_coverage_pct": [
+        96.82111111111111,
+        98.86666666666667,
+        99.99888888888889
+      ],
+      "synthetic_hybrid_excess_overlap_pct": [
+        7.175263451813724,
+        0.0,
+        0.043747426744114346
+      ],
+      "synthetic_hybrid_feasibility_rate": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "total_planning_time_s": [
+        0.7053650000016205,
+        0.06336533298599534,
+        0.7013870770984795,
+        0.6991354500496527,
+        0.7842214170086663,
+        0.5932290839991765,
+        0.043287082997267134,
+        0.33883670215000167,
+        0.33935258540223,
+        0.5604800839937525,
+        0.5130087500001537,
+        0.02420462500595022,
+        0.32733623949970936,
+        0.25431726449751296,
+        0.34737929099355824,
+        0.43474120800965466,
+        0.020869333995506167,
+        0.19794041679924704,
+        0.1819116312508413,
+        0.2563694580021547,
+        0.47053116699680686,
+        0.02192270899831783,
+        0.1909237438972923,
+        0.20239424380124546,
+        0.29553291700722184
+      ]
+    }
+  }
+}

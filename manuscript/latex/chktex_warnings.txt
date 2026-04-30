@@ -1,0 +1,78 @@
+chktex: WARNING -- Compilation of regular expression \[(?![^\]\[{}]*{(?![^\]\[{}]*}))[^\]]*\[ failed with error repetition-operator operand invalid.
+Warning 8 at 47:32: Wrong length of dash may have been used.
+Warning 8 at 47:37: Wrong length of dash may have been used.
+Warning 8 at 47:42: Wrong length of dash may have been used.
+Warning 8 at 48:32: Wrong length of dash may have been used.
+Warning 8 at 48:37: Wrong length of dash may have been used.
+Warning 8 at 48:42: Wrong length of dash may have been used.
+Warning 8 at 49:32: Wrong length of dash may have been used.
+Warning 8 at 49:37: Wrong length of dash may have been used.
+Warning 8 at 49:42: Wrong length of dash may have been used.
+Warning 8 at 63:629: Wrong length of dash may have been used.
+Warning 1 at 69:16: Command terminated with space.
+Warning 2 at 82:365: Non-breaking space (`~') should have been used.
+Warning 2 at 82:647: Non-breaking space (`~') should have been used.
+Warning 2 at 84:305: Non-breaking space (`~') should have been used.
+Warning 2 at 88:205: Non-breaking space (`~') should have been used.
+Warning 2 at 88:477: Non-breaking space (`~') should have been used.
+Warning 2 at 94:226: Non-breaking space (`~') should have been used.
+Warning 2 at 94:460: Non-breaking space (`~') should have been used.
+Warning 2 at 98:457: Non-breaking space (`~') should have been used.
+Warning 2 at 98:732: Non-breaking space (`~') should have been used.
+Warning 2 at 100:327: Non-breaking space (`~') should have been used.
+Warning 2 at 100:448: Non-breaking space (`~') should have been used.
+Warning 8 at 106:378: Wrong length of dash may have been used.
+Warning 8 at 112:40: Wrong length of dash may have been used.
+Warning 8 at 112:458: Wrong length of dash may have been used.
+Warning 8 at 118:32: Wrong length of dash may have been used.
+Warning 8 at 127:93: Wrong length of dash may have been used.
+Warning 8 at 127:139: Wrong length of dash may have been used.
+Warning 8 at 132:62: Wrong length of dash may have been used.
+Warning 2 at 134:579: Non-breaking space (`~') should have been used.
+Warning 8 at 136:118: Wrong length of dash may have been used.
+Warning 2 at 152:543: Non-breaking space (`~') should have been used.
+Warning 2 at 152:724: Non-breaking space (`~') should have been used.
+Warning 2 at 176:16: Non-breaking space (`~') should have been used.
+Warning 8 at 182:46: Wrong length of dash may have been used.
+Warning 24 at 183:8: Delete this space to maintain correct pagereferences.
+Warning 8 at 214:456: Wrong length of dash may have been used.
+Warning 8 at 216:98: Wrong length of dash may have been used.
+Warning 8 at 252:747: Wrong length of dash may have been used.
+Warning 8 at 277:421: Wrong length of dash may have been used.
+Warning 8 at 281:438: Wrong length of dash may have been used.
+Warning 24 at 300:8: Delete this space to maintain correct pagereferences.
+Warning 13 at 312:195: Intersentence spacing (`\@') should perhaps be used.
+Warning 8 at 312:329: Wrong length of dash may have been used.
+Warning 24 at 313:8: Delete this space to maintain correct pagereferences.
+Warning 8 at 318:158: Wrong length of dash may have been used.
+Warning 8 at 322:963: Wrong length of dash may have been used.
+Warning 24 at 329:8: Delete this space to maintain correct pagereferences.
+Warning 13 at 357:448: Intersentence spacing (`\@') should perhaps be used.
+Warning 24 at 369:8: Delete this space to maintain correct pagereferences.
+Warning 8 at 375:282: Wrong length of dash may have been used.
+Warning 24 at 387:8: Delete this space to maintain correct pagereferences.
+Warning 2 at 426:88: Non-breaking space (`~') should have been used.
+Warning 8 at 433:485: Wrong length of dash may have been used.
+Warning 12 at 463:113: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 466:109: Interword spacing (`\ ') should perhaps be used.
+Warning 8 at 466:171: Wrong length of dash may have been used.
+Warning 12 at 469:109: Interword spacing (`\ ') should perhaps be used.
+Warning 13 at 472:110: Intersentence spacing (`\@') should perhaps be used.
+Warning 12 at 475:162: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 478:123: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 481:115: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 484:95: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 487:111: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 490:87: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 493:100: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 496:104: Interword spacing (`\ ') should perhaps be used.
+Warning 8 at 496:168: Wrong length of dash may have been used.
+Warning 13 at 499:118: Intersentence spacing (`\@') should perhaps be used.
+Warning 8 at 499:179: Wrong length of dash may have been used.
+Warning 12 at 502:95: Interword spacing (`\ ') should perhaps be used.
+Warning 8 at 502:143: Wrong length of dash may have been used.
+Warning 12 at 505:122: Interword spacing (`\ ') should perhaps be used.
+Warning 12 at 508:145: Interword spacing (`\ ') should perhaps be used.
+Warning 8 at 508:180: Wrong length of dash may have been used.
+Warning 13 at 511:69: Intersentence spacing (`\@') should perhaps be used.
+Warning 12 at 511:80: Interword spacing (`\ ') should perhaps be used.

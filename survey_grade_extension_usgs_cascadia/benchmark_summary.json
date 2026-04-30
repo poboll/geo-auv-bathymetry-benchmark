@@ -1,0 +1,863 @@
+{
+  "final_means": {
+    "overall_score_mean": 0.528444111278726,
+    "public_hybrid_path_gain_pct_mean": 8.290648287827258,
+    "public_hybrid_coverage_pct_mean": 98.74611111111112,
+    "public_hybrid_excess_overlap_pct_mean": 0.5772679167474769,
+    "public_hybrid_feasibility_rate_mean": 1.0,
+    "public_hybrid_orientation_consistency_mean": 1.0,
+    "public_hybrid_line_count_consistency_mean": 1.0,
+    "synthetic_hybrid_path_gain_pct_mean": 0.0,
+    "synthetic_hybrid_coverage_pct_mean": 0.0,
+    "synthetic_hybrid_excess_overlap_pct_mean": 0.0,
+    "synthetic_hybrid_feasibility_rate_mean": 0.0,
+    "total_planning_time_s_mean": 0.1670892564370297
+  },
+  "final_stderrs": {
+    "overall_score_stderr": 0.0,
+    "public_hybrid_path_gain_pct_stderr": 8.373958485423836,
+    "public_hybrid_coverage_pct_stderr": 0.15388888888889105,
+    "public_hybrid_excess_overlap_pct_stderr": 0.5772679167474768,
+    "public_hybrid_feasibility_rate_stderr": 0.0,
+    "public_hybrid_orientation_consistency_stderr": 0.0,
+    "public_hybrid_line_count_consistency_stderr": 0.0,
+    "synthetic_hybrid_path_gain_pct_stderr": 0.0,
+    "synthetic_hybrid_coverage_pct_stderr": 0.0,
+    "synthetic_hybrid_excess_overlap_pct_stderr": 0.0,
+    "synthetic_hybrid_feasibility_rate_stderr": 0.0,
+    "total_planning_time_s_stderr": 0.03622813394242894
+  },
+  "summary_rows": [
+    {
+      "scene_id": "usgs_southern_cascadia_30m_high",
+      "scene_name": "USGS Cascadia 30 m High",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_high",
+      "method": "Adaptive Spacing w/o GA",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 135.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 12,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 73.89166194729708,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 73.89166194729708,
+      "path_length_km_max": 73.89166194729708,
+      "coverage_pct_mean": 98.55000000000001,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 98.55000000000001,
+      "coverage_pct_max": 98.55000000000001,
+      "excess_overlap_pct_mean": 2.2372345564469054,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 2.2372345564469054,
+      "excess_overlap_pct_max": 2.2372345564469054,
+      "planning_time_s_mean": 0.4392848339921329,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.4392848339921329,
+      "planning_time_s_max": 0.4392848339921329,
+      "line_count_mean": 12.0,
+      "line_count_std": 0.0,
+      "line_count_min": 12.0,
+      "line_count_max": 12.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_high",
+      "scene_name": "USGS Cascadia 30 m High",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_high",
+      "method": "Fixed-Spacing",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 0.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 12,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 97.254304852,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 97.254304852,
+      "path_length_km_max": 97.254304852,
+      "coverage_pct_mean": 97.2,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 97.2,
+      "coverage_pct_max": 97.2,
+      "excess_overlap_pct_mean": 29.960005980349994,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 29.960005980349994,
+      "excess_overlap_pct_max": 29.960005980349994,
+      "planning_time_s_mean": 0.011173958017025143,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.011173958017025143,
+      "planning_time_s_max": 0.011173958017025143,
+      "line_count_mean": 12.0,
+      "line_count_std": 0.0,
+      "line_count_min": 12.0,
+      "line_count_max": 12.0,
+      "feasible_mean": 0.0,
+      "feasible_std": 0.0,
+      "feasible_min": 0.0,
+      "feasible_max": 0.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_high",
+      "scene_name": "USGS Cascadia 30 m High",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_high",
+      "method": "Fixed-Swath GA",
+      "n_runs": 20,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 90.0,
+          "count": 20
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 9,
+          "count": 20
+        }
+      ],
+      "path_length_km_mean": 90.16387023528266,
+      "path_length_km_std": 0.06209148383433902,
+      "path_length_km_min": 90.06849987204933,
+      "path_length_km_max": 90.30413996933348,
+      "coverage_pct_mean": 97.00583333333333,
+      "coverage_pct_std": 0.1684357860880148,
+      "coverage_pct_min": 96.61111111111111,
+      "coverage_pct_max": 97.26666666666667,
+      "excess_overlap_pct_mean": 21.84813267892211,
+      "excess_overlap_pct_std": 0.9025053353062157,
+      "excess_overlap_pct_min": 20.27195239471723,
+      "excess_overlap_pct_max": 23.293598761485878,
+      "planning_time_s_mean": 0.12204861024947604,
+      "planning_time_s_std": 0.008020595431954776,
+      "planning_time_s_min": 0.10996408300707117,
+      "planning_time_s_max": 0.1364679160178639,
+      "line_count_mean": 9.0,
+      "line_count_std": 0.0,
+      "line_count_min": 9.0,
+      "line_count_max": 9.0,
+      "feasible_mean": 0.0,
+      "feasible_std": 0.0,
+      "feasible_min": 0.0,
+      "feasible_max": 0.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_high",
+      "scene_name": "USGS Cascadia 30 m High",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_high",
+      "method": "Full Geometry-Aware Hybrid GA",
+      "n_runs": 20,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 135.0,
+          "count": 20
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 12,
+          "count": 20
+        }
+      ],
+      "path_length_km_mean": 72.90322226476133,
+      "path_length_km_std": 0.2678096148602491,
+      "path_length_km_min": 72.05220703025746,
+      "path_length_km_max": 73.37333893638746,
+      "coverage_pct_mean": 98.43833333333333,
+      "coverage_pct_std": 0.10321190123336203,
+      "coverage_pct_min": 98.19444444444444,
+      "coverage_pct_max": 98.6,
+      "excess_overlap_pct_mean": 1.7318037502424306,
+      "excess_overlap_pct_std": 0.15018862014805398,
+      "excess_overlap_pct_min": 1.4185772851411391,
+      "excess_overlap_pct_max": 2.0223229190098486,
+      "planning_time_s_mean": 0.14686096659861506,
+      "planning_time_s_std": 0.010102074663778611,
+      "planning_time_s_min": 0.12393925001379102,
+      "planning_time_s_max": 0.16305283299880102,
+      "line_count_mean": 12.0,
+      "line_count_std": 0.0,
+      "line_count_min": 12.0,
+      "line_count_max": 12.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_high",
+      "scene_name": "USGS Cascadia 30 m High",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_high",
+      "method": "Simple Greedy",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 90.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 9,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 89.879061846,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 89.879061846,
+      "path_length_km_max": 89.879061846,
+      "coverage_pct_mean": 97.15,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 97.15,
+      "coverage_pct_max": 97.15,
+      "excess_overlap_pct_mean": 25.981666464827498,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 25.981666464827498,
+      "excess_overlap_pct_max": 25.981666464827498,
+      "planning_time_s_mean": 0.1602658329939004,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.1602658329939004,
+      "planning_time_s_max": 0.1602658329939004,
+      "line_count_mean": 9.0,
+      "line_count_std": 0.0,
+      "line_count_min": 9.0,
+      "line_count_max": 9.0,
+      "feasible_mean": 0.0,
+      "feasible_std": 0.0,
+      "feasible_min": 0.0,
+      "feasible_max": 0.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_low",
+      "scene_name": "USGS Cascadia 30 m Low",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_low",
+      "method": "Adaptive Spacing w/o GA",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 0.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 6,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 52.11,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 52.11,
+      "path_length_km_max": 52.11,
+      "coverage_pct_mean": 100.0,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 100.0,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 0.0,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 0.0,
+      "excess_overlap_pct_max": 0.0,
+      "planning_time_s_mean": 0.4135810839943588,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.4135810839943588,
+      "planning_time_s_max": 0.4135810839943588,
+      "line_count_mean": 6.0,
+      "line_count_std": 0.0,
+      "line_count_min": 6.0,
+      "line_count_max": 6.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_low",
+      "scene_name": "USGS Cascadia 30 m Low",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_low",
+      "method": "Fixed-Spacing",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 0.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 6,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 51.93,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 51.93,
+      "path_length_km_max": 51.93,
+      "coverage_pct_mean": 100.0,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 100.0,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 1.6333333333333329,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 1.6333333333333329,
+      "excess_overlap_pct_max": 1.6333333333333329,
+      "planning_time_s_mean": 0.01559304099646397,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.01559304099646397,
+      "planning_time_s_max": 0.01559304099646397,
+      "line_count_mean": 6.0,
+      "line_count_std": 0.0,
+      "line_count_min": 6.0,
+      "line_count_max": 6.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_low",
+      "scene_name": "USGS Cascadia 30 m Low",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_low",
+      "method": "Fixed-Swath GA",
+      "n_runs": 20,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 15.0,
+          "count": 20
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 7,
+          "count": 20
+        }
+      ],
+      "path_length_km_mean": 52.99428827099522,
+      "path_length_km_std": 0.46778723590403315,
+      "path_length_km_min": 52.05969318352911,
+      "path_length_km_max": 53.80468078954789,
+      "coverage_pct_mean": 99.53416666666666,
+      "coverage_pct_std": 0.7464933726602019,
+      "coverage_pct_min": 97.59444444444443,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 0.00207010844741147,
+      "excess_overlap_pct_std": 0.0064112061163754544,
+      "excess_overlap_pct_min": 0.0,
+      "excess_overlap_pct_max": 0.02289253334853225,
+      "planning_time_s_mean": 0.12269418125069934,
+      "planning_time_s_std": 0.009254470670901353,
+      "planning_time_s_min": 0.10647645802237093,
+      "planning_time_s_max": 0.13845929197850637,
+      "line_count_mean": 7.0,
+      "line_count_std": 0.0,
+      "line_count_min": 7.0,
+      "line_count_max": 7.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_low",
+      "scene_name": "USGS Cascadia 30 m Low",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_low",
+      "method": "Full Geometry-Aware Hybrid GA",
+      "n_runs": 20,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 0.0,
+          "count": 20
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 6,
+          "count": 20
+        }
+      ],
+      "path_length_km_mean": 51.9732629856119,
+      "path_length_km_std": 0.05544772412915572,
+      "path_length_km_min": 51.84408002631985,
+      "path_length_km_max": 52.06334510898327,
+      "coverage_pct_mean": 98.9,
+      "coverage_pct_std": 0.44721359549995493,
+      "coverage_pct_min": 98.0,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 0.0,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 0.0,
+      "excess_overlap_pct_max": 0.0,
+      "planning_time_s_mean": 0.10884291040274548,
+      "planning_time_s_std": 0.0118048390126245,
+      "planning_time_s_min": 0.09185037499992177,
+      "planning_time_s_max": 0.12685879098717123,
+      "line_count_mean": 6.0,
+      "line_count_std": 0.0,
+      "line_count_min": 6.0,
+      "line_count_max": 6.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_low",
+      "scene_name": "USGS Cascadia 30 m Low",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_low",
+      "method": "Simple Greedy",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 15.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 7,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 54.62896401783094,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 54.62896401783094,
+      "path_length_km_max": 54.62896401783094,
+      "coverage_pct_mean": 99.99444444444444,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 99.99444444444444,
+      "coverage_pct_max": 99.99444444444444,
+      "excess_overlap_pct_mean": 0.2396900878394984,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 0.2396900878394984,
+      "excess_overlap_pct_max": 0.2396900878394984,
+      "planning_time_s_mean": 0.17418504200759344,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.17418504200759344,
+      "planning_time_s_max": 0.17418504200759344,
+      "line_count_mean": 7.0,
+      "line_count_std": 0.0,
+      "line_count_min": 7.0,
+      "line_count_max": 7.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_medium",
+      "scene_name": "USGS Cascadia 30 m Medium",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_medium",
+      "method": "Adaptive Spacing w/o GA",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 0.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 6,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 52.11,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 52.11,
+      "path_length_km_max": 52.11,
+      "coverage_pct_mean": 100.0,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 100.0,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 0.0,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 0.0,
+      "excess_overlap_pct_max": 0.0,
+      "planning_time_s_mean": 0.40194174999487586,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.40194174999487586,
+      "planning_time_s_max": 0.40194174999487586,
+      "line_count_mean": 6.0,
+      "line_count_std": 0.0,
+      "line_count_min": 6.0,
+      "line_count_max": 6.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_medium",
+      "scene_name": "USGS Cascadia 30 m Medium",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_medium",
+      "method": "Fixed-Spacing",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 0.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 6,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 51.93,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 51.93,
+      "path_length_km_max": 51.93,
+      "coverage_pct_mean": 100.0,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 100.0,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 1.6333333333333329,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 1.6333333333333329,
+      "excess_overlap_pct_max": 1.6333333333333329,
+      "planning_time_s_mean": 0.010539834009250626,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.010539834009250626,
+      "planning_time_s_max": 0.010539834009250626,
+      "line_count_mean": 6.0,
+      "line_count_std": 0.0,
+      "line_count_min": 6.0,
+      "line_count_max": 6.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_medium",
+      "scene_name": "USGS Cascadia 30 m Medium",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_medium",
+      "method": "Fixed-Swath GA",
+      "n_runs": 20,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 15.0,
+          "count": 20
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 7,
+          "count": 20
+        }
+      ],
+      "path_length_km_mean": 52.99428827099522,
+      "path_length_km_std": 0.46778723590403315,
+      "path_length_km_min": 52.05969318352911,
+      "path_length_km_max": 53.80468078954789,
+      "coverage_pct_mean": 99.53416666666666,
+      "coverage_pct_std": 0.7464933726602019,
+      "coverage_pct_min": 97.59444444444443,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 0.00207010844741147,
+      "excess_overlap_pct_std": 0.0064112061163754544,
+      "excess_overlap_pct_min": 0.0,
+      "excess_overlap_pct_max": 0.02289253334853225,
+      "planning_time_s_mean": 0.12209527494560461,
+      "planning_time_s_std": 0.006568331031642449,
+      "planning_time_s_min": 0.11155333399074152,
+      "planning_time_s_max": 0.1347552499792073,
+      "line_count_mean": 7.0,
+      "line_count_std": 0.0,
+      "line_count_min": 7.0,
+      "line_count_max": 7.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_medium",
+      "scene_name": "USGS Cascadia 30 m Medium",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_medium",
+      "method": "Full Geometry-Aware Hybrid GA",
+      "n_runs": 20,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 0.0,
+          "count": 20
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 6,
+          "count": 20
+        }
+      ],
+      "path_length_km_mean": 51.9732629856119,
+      "path_length_km_std": 0.05544772412915572,
+      "path_length_km_min": 51.84408002631985,
+      "path_length_km_max": 52.06334510898327,
+      "coverage_pct_mean": 98.9,
+      "coverage_pct_std": 0.44721359549995493,
+      "coverage_pct_min": 98.0,
+      "coverage_pct_max": 100.0,
+      "excess_overlap_pct_mean": 0.0,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 0.0,
+      "excess_overlap_pct_max": 0.0,
+      "planning_time_s_mean": 0.10665702709957259,
+      "planning_time_s_std": 0.010508867805061311,
+      "planning_time_s_min": 0.09464029199443758,
+      "planning_time_s_max": 0.12539862500852905,
+      "line_count_mean": 6.0,
+      "line_count_std": 0.0,
+      "line_count_min": 6.0,
+      "line_count_max": 6.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_medium",
+      "scene_name": "USGS Cascadia 30 m Medium",
+      "scene_group": "public",
+      "terrain_class": "survey_grade_cascadia_medium",
+      "method": "Simple Greedy",
+      "n_runs": 1,
+      "orientation_consistency": 1.0,
+      "line_count_consistency": 1.0,
+      "orientation_modes": [
+        {
+          "orientation_deg": 15.0,
+          "count": 1
+        }
+      ],
+      "line_count_modes": [
+        {
+          "line_count": 7,
+          "count": 1
+        }
+      ],
+      "path_length_km_mean": 54.62896401783094,
+      "path_length_km_std": 0.0,
+      "path_length_km_min": 54.62896401783094,
+      "path_length_km_max": 54.62896401783094,
+      "coverage_pct_mean": 99.99444444444444,
+      "coverage_pct_std": 0.0,
+      "coverage_pct_min": 99.99444444444444,
+      "coverage_pct_max": 99.99444444444444,
+      "excess_overlap_pct_mean": 0.2396900878394984,
+      "excess_overlap_pct_std": 0.0,
+      "excess_overlap_pct_min": 0.2396900878394984,
+      "excess_overlap_pct_max": 0.2396900878394984,
+      "planning_time_s_mean": 0.1505745000031311,
+      "planning_time_s_std": 0.0,
+      "planning_time_s_min": 0.1505745000031311,
+      "planning_time_s_max": 0.1505745000031311,
+      "line_count_mean": 7.0,
+      "line_count_std": 0.0,
+      "line_count_min": 7.0,
+      "line_count_max": 7.0,
+      "feasible_mean": 1.0,
+      "feasible_std": 0.0,
+      "feasible_min": 1.0,
+      "feasible_max": 1.0
+    }
+  ],
+  "public_scene_manifest": [
+    {
+      "scene_id": "usgs_southern_cascadia_30m_low",
+      "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+      "download_url": "https://doi.org/10.5066/P9C5DBMR",
+      "license": "USGS public data release",
+      "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+      "crop_bounds": {
+        "left": 362621.1584084583,
+        "bottom": 4538189.412716693,
+        "right": 370031.1584084583,
+        "top": 4547459.412716693,
+        "crs": "EPSG:26910"
+      },
+      "raw_resolution_m": {
+        "x": 30.0,
+        "y": 30.0
+      },
+      "planner_grid_resolution_m": 62.269,
+      "depth_range_m": [
+        569.05810546875,
+        834.4691162109375
+      ],
+      "terrain_class": "survey_grade_cascadia_low",
+      "selection_metrics": {
+        "valid_fraction": 1.0,
+        "slope_mean": 0.02706821513581937,
+        "depth_std": 52.51197795508083,
+        "relief": 266.88458251953125,
+        "complexity": 3.4835937096573444,
+        "overview_col": 276.0,
+        "overview_row": 304.0,
+        "complexity_rank": 14,
+        "candidate_count": 56,
+        "complexity_quantile_empirical": 0.2545454545454545,
+        "requested_complexity_quantile": 0.25
+      },
+      "missing_value_handling": {
+        "valid_fraction_before_fill": 1.0,
+        "filled_cells": 0,
+        "fill_strategy": "none"
+      },
+      "provider": "USGS",
+      "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_medium",
+      "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+      "download_url": "https://doi.org/10.5066/P9C5DBMR",
+      "license": "USGS public data release",
+      "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+      "crop_bounds": {
+        "left": 331871.1584084583,
+        "bottom": 4599749.412716693,
+        "right": 339281.1584084583,
+        "top": 4609019.412716693,
+        "crs": "EPSG:26910"
+      },
+      "raw_resolution_m": {
+        "x": 30.0,
+        "y": 30.0
+      },
+      "planner_grid_resolution_m": 62.269,
+      "depth_range_m": [
+        820.5799560546875,
+        1339.02392578125
+      ],
+      "terrain_class": "survey_grade_cascadia_medium",
+      "selection_metrics": {
+        "valid_fraction": 1.0,
+        "slope_mean": 0.1254618397628207,
+        "depth_std": 101.57608283773953,
+        "relief": 520.871826171875,
+        "complexity": 6.857821344047664,
+        "overview_col": 264.0,
+        "overview_row": 280.0,
+        "complexity_rank": 30,
+        "candidate_count": 56,
+        "complexity_quantile_empirical": 0.5454545454545454,
+        "requested_complexity_quantile": 0.55
+      },
+      "missing_value_handling": {
+        "valid_fraction_before_fill": 1.0,
+        "filled_cells": 0,
+        "fill_strategy": "none"
+      },
+      "provider": "USGS",
+      "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+    },
+    {
+      "scene_id": "usgs_southern_cascadia_30m_high",
+      "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+      "download_url": "https://doi.org/10.5066/P9C5DBMR",
+      "license": "USGS public data release",
+      "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+      "crop_bounds": {
+        "left": 347261.1584084583,
+        "bottom": 4702319.412716693,
+        "right": 354671.1584084583,
+        "top": 4711589.412716693,
+        "crs": "EPSG:26910"
+      },
+      "raw_resolution_m": {
+        "x": 30.0,
+        "y": 30.0
+      },
+      "planner_grid_resolution_m": 62.269,
+      "depth_range_m": [
+        146.3936004638672,
+        1131.604248046875
+      ],
+      "terrain_class": "survey_grade_cascadia_high",
+      "selection_metrics": {
+        "valid_fraction": 0.9861640658779136,
+        "slope_mean": 0.1412861155217056,
+        "depth_std": 181.6838184471652,
+        "relief": 993.9073333740234,
+        "complexity": 12.805616725969418,
+        "overview_col": 270.0,
+        "overview_row": 240.0,
+        "complexity_rank": 44,
+        "candidate_count": 56,
+        "complexity_quantile_empirical": 0.8,
+        "requested_complexity_quantile": 0.8
+      },
+      "missing_value_handling": {
+        "valid_fraction_before_fill": 0.9899444444444444,
+        "filled_cells": 181,
+        "fill_strategy": "local_median_fill"
+      },
+      "provider": "USGS",
+      "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+    }
+  ],
+  "run_counts": {
+    "total_results": 129,
+    "total_scenes": 3,
+    "public_scenes": 3,
+    "synthetic_scenes": 0
+  },
+  "figure_files": []
+}

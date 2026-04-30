@@ -1,0 +1,216 @@
+scene_id,scene_name,scene_group,terrain_class,method,seed,orientation_deg,path_length_km,coverage_pct,excess_overlap_pct,planning_time_s,line_count,feasible
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Spacing,0,0.0,208.860307806,98.66666666666667,3.611543204114926,0.025659625011030585,27,0
+synthetic_flat,Flat Seafloor,synthetic,flat,Simple Greedy,0,75.0,203.55740082513105,99.99444444444444,0.10749376392454518,0.29852191600366496,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Adaptive Spacing w/o GA,0,0.0,201.44145911860127,99.33333333333333,0.0,0.47499491699272767,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,0,75.0,202.80246028587723,100.0,0.05839235122584639,0.21165629097959027,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,0,0.0,201.43428206551525,98.66666666666667,0.0,0.20420675000059418,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,1,75.0,203.1661853973712,99.99444444444444,0.14701289603443224,0.2097539580136072,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,1,0.0,201.41660556846384,98.66666666666667,0.0,0.19763220800086856,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,2,75.0,203.30561499598574,100.0,0.048686953311865656,0.22303237501182593,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,2,0.0,201.42540194070128,98.66666666666667,0.0,0.18396450000000186,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,3,75.0,203.03762310085625,100.0,0.04724897115199813,0.22434533399064094,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,3,0.0,201.43257312261738,98.66666666666667,0.0,0.2273717499920167,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,4,75.0,203.15622471483306,99.99444444444444,0.10282459493722106,0.2142514159786515,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,4,0.0,201.42858723969312,98.66666666666667,0.0,0.17922062499565072,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,5,75.0,203.16123406389093,100.0,0.06728141438628604,0.23242529202252626,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,5,0.0,201.43732905148588,98.66666666666667,0.0,0.20851504101301543,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,6,75.0,203.0701626666959,100.0,0.06187664907201697,0.2059064170171041,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,6,0.0,201.44145911860127,99.33333333333333,0.0,0.22242504099267535,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,7,75.0,202.87730902320257,100.0,0.01321949298238566,0.22634370799642056,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,7,0.0,201.4336929820792,98.66666666666667,0.0,0.20490770900505595,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,8,75.0,203.09558469658887,100.0,0.08440228591961003,0.21973541600164026,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,8,0.0,201.44145911860127,99.33333333333333,0.0,0.22748166698147543,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,9,75.0,203.2784901321864,100.0,0.09365934199686864,0.25103608300560154,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,9,0.0,201.42134793815495,98.66666666666667,0.0,0.24623391701607034,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,10,75.0,203.4205961080113,100.0,0.035142750777778085,0.24436158299795352,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,10,0.0,201.42383875683097,98.66666666666667,0.0,0.22261562501080334,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,11,75.0,203.07787441631172,100.0,0.052855295677334664,0.21404666698072106,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,11,0.0,201.43504787578675,98.66666666666667,0.0,0.17834766700980254,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,12,75.0,203.21653012748337,99.99444444444444,0.0,0.2049770419835113,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,12,0.0,201.42082963271525,98.66666666666667,0.0,0.19554666598560289,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,13,75.0,203.02851291639996,100.0,0.053052127091468754,0.20596816699253395,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,13,0.0,201.421135017561,99.33333333333333,0.0,0.21126137499231845,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,14,75.0,202.91141912850213,100.0,0.02287453732237218,0.23492412499035709,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,14,0.0,201.44145911860127,99.33333333333333,0.0,0.20313208299921826,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,15,75.0,202.91355918477353,99.99444444444444,0.08304657357092582,0.23600995799642988,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,15,0.0,201.43359916579348,99.33333333333333,0.0,0.20394916701479815,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,16,75.0,203.14744961558785,99.99444444444444,0.006140128906844358,0.21668083299300633,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,16,0.0,201.44145911860127,99.33333333333333,0.0,0.2061388750153128,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,17,75.0,202.91881977071762,99.99444444444444,0.12422628470009224,0.19785687502007931,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,17,0.0,201.4275411922689,98.66666666666667,0.0,0.20048104101442732,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,18,75.0,203.23422105860234,99.9888888888889,0.07042626502368976,0.20261466698138975,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,18,0.0,201.42856086610362,98.66666666666667,0.0,0.17792437499156222,26,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Fixed-Swath GA,19,75.0,203.53375529203893,100.0,0.030107873387960195,0.20122345798881724,27,1
+synthetic_flat,Flat Seafloor,synthetic,flat,Full Geometry-Aware Hybrid GA,19,0.0,201.43873314156167,98.66666666666667,0.0,0.17438524999306537,26,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Spacing,0,0.0,194.02565653800002,97.18333333333334,9.828537975319383,0.01935375001630746,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Simple Greedy,0,105.0,188.00781486393606,97.33888888888889,7.755492646662441,0.27563112499774434,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Adaptive Spacing w/o GA,0,120.0,179.32895893798405,100.0,0.00014804239168771167,0.4776066670019645,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,0,105.0,187.41983178042113,97.37222222222222,7.593593472181868,0.2000794159830548,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,0,120.0,178.91490387924313,100.0,0.09158019907406902,0.22976124999695458,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,1,105.0,187.2519724948168,97.25555555555555,7.54070882069846,0.20806425000773743,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,1,120.0,179.32895893798405,100.0,0.00014804239168771167,0.20452345800003968,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,2,105.0,187.58857369198668,97.25,7.627076635170571,0.24113804099033587,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,2,120.0,179.32895893798405,100.0,0.00014804239168771167,0.20757741600391455,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,3,105.0,187.14264963409127,97.32777777777778,7.40850849082984,0.1847901660075877,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,3,120.0,179.29934658464242,100.0,0.004939638889576162,0.19038300000829622,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,4,105.0,187.59548898633489,97.26666666666667,7.588487969024361,0.17893024999648333,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,4,120.0,179.03261813757732,100.0,0.06112766910545047,0.19949116598581895,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,5,105.0,187.54682603268114,97.17777777777778,7.614167533893879,0.18619274999946356,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,5,120.0,178.90497620239069,99.9888888888889,0.10732843869652609,0.20556929198210128,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,6,105.0,186.8618920293239,97.22222222222221,7.527325078647631,0.19488125000498258,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,6,120.0,179.0941138496747,99.99444444444444,0.06527675508202653,0.20171870800550096,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,7,105.0,187.19578345354233,97.27777777777777,7.611945677821596,0.1857382919988595,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,7,120.0,179.04328157766534,100.0,0.049733829276479694,1.02994833298726,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,8,105.0,186.82874055763298,97.14444444444445,7.52625806499328,0.7706921669887379,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,8,120.0,179.19945760741157,100.0,0.03526527876915318,0.6291602080164012,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,9,105.0,186.88142438843562,97.18333333333334,7.418254352896893,0.19959741699858569,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,9,120.0,179.21081130523856,100.0,0.0026373627705738693,0.2905265830049757,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,10,105.0,186.94862528940527,97.18333333333334,7.542501268884594,0.2598403340089135,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,10,120.0,179.0702639992682,100.0,0.014313491697038752,0.39130879202275537,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,11,105.0,187.29525734012074,97.26666666666667,7.5497918500684476,0.21572562502115034,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,11,120.0,179.0221079560527,99.99444444444444,0.06542381042335106,0.2920012919930741,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,12,105.0,186.8248785373176,97.32222222222222,7.416848914560605,0.2222510410065297,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,12,120.0,178.86878045402398,100.0,0.10231346462877479,0.23182762498618104,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,13,105.0,187.059930621168,97.25,7.534994322109766,0.2061473749927245,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,13,120.0,179.32895893798405,100.0,0.00014804239168771167,0.21951250001438893,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,14,105.0,187.22191627708202,97.33888888888889,7.616524819201151,0.20213274998241104,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,14,120.0,178.89815611889222,100.0,0.055658123087483975,0.21052862500073388,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,15,105.0,186.710443971939,97.37222222222222,7.2109765668028905,0.1990866249834653,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,15,120.0,179.32895893798405,100.0,0.00014804239168771167,0.21474575001047924,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,16,105.0,186.92819690499152,97.11666666666666,7.542918094266935,0.2255562500213273,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,16,120.0,178.9291739404132,100.0,0.07576371365947472,0.2193834999925457,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,17,105.0,187.20483647962268,97.27777777777777,7.347394106110157,0.21635579102439806,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,17,120.0,179.1319477618116,100.0,0.03294349827183231,0.22523133299546316,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,18,105.0,187.16475170378442,97.44444444444444,7.316672966693448,0.24951270798919722,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,18,120.0,179.22863966606562,100.0,0.011224413180884315,0.22549087498919107,29,1
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Fixed-Swath GA,19,105.0,186.7572199312406,97.27777777777777,7.526347542956759,0.20286120800301433,25,0
+synthetic_uniform_slope,Uniform Slope,synthetic,moderate_slope,Full Geometry-Aware Hybrid GA,19,120.0,178.89175443169884,100.0,0.098826678702841,0.2140457920031622,29,1
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Spacing,0,0.0,342.37612472999996,96.1888888888889,28.497640907255647,0.029937125014839694,45,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Simple Greedy,0,150.0,342.8150422813723,96.57777777777777,27.805247332878377,0.3850525000016205,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Adaptive Spacing w/o GA,0,105.0,254.42831497779022,96.87777777777778,7.121152941554071,0.5344479170162231,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,0,150.0,342.9053910410398,96.59444444444445,27.891347794970848,0.373166624980513,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,0,105.0,254.22902417037486,96.77777777777777,7.1816500440496585,0.2916540000005625,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,1,150.0,342.89429601285735,96.61111111111111,27.920740842449778,0.3463689579803031,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,1,105.0,254.44241904242028,96.75555555555555,7.253829204521381,0.27989504201104864,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,2,150.0,342.79798519080566,96.47777777777777,27.919866886756672,0.3467993330268655,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,2,105.0,253.95113045509456,96.77777777777777,7.289344557660367,0.2595603329828009,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,3,150.0,342.7273069417796,96.49444444444445,28.004538155483825,0.3366836670029443,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,3,105.0,254.15162391577033,96.85555555555555,7.168997130913669,0.24366079198080115,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,4,150.0,342.746170307963,96.56666666666666,27.845310150940577,0.33746566699119285,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,4,105.0,253.96656181690068,96.83333333333334,7.130317438507888,0.26050779200159013,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,5,150.0,342.6731594894819,96.49444444444445,27.86065505660094,0.3325321669981349,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,5,105.0,254.21352552575192,96.82777777777778,7.258357366498742,0.25081216599210165,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,6,150.0,342.93122951749586,96.57777777777777,27.860297793961177,0.3350698750000447,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,6,105.0,253.89466953185934,96.83888888888889,7.164614630419034,0.2500845000031404,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,7,150.0,342.8229731851593,96.53333333333333,27.92428424061096,0.32991295799729414,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,7,105.0,254.43716742387988,96.83333333333334,7.177219796421664,0.25279787500039674,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,8,150.0,342.9897537910983,96.5611111111111,27.920591123674704,0.3356683749880176,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,8,105.0,254.3709748624365,96.87777777777778,7.143894284648808,0.24990891700144857,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,9,150.0,342.5932073116421,96.47222222222223,27.926155168998125,0.33139808298437856,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,9,105.0,254.1767276015955,96.85555555555555,7.256809983665045,0.24840191699331626,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,10,150.0,342.9251375028489,96.56666666666666,27.8403695092251,0.3330362920241896,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,10,105.0,254.19009535184844,96.81111111111112,7.18880705505634,0.28215350001119077,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,11,150.0,343.03564943140833,96.52222222222223,27.968680684068627,0.35076608299277723,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,11,105.0,254.26729921678591,96.87222222222222,7.184406546667336,0.2488794999953825,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,12,150.0,342.90302645669783,96.57777777777777,27.937213123138523,0.3431938750145491,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,12,105.0,254.02695276035664,96.85000000000001,7.130568909510201,0.26475079098599963,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,13,150.0,342.5456702162278,96.58333333333333,27.814545765387606,0.3299116669804789,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,13,105.0,254.0715268342336,96.83333333333334,7.112604711978355,0.25091637499281205,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,14,150.0,342.6027897605592,96.61666666666666,27.822650272042775,0.3523291250166949,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,14,105.0,254.0656904704764,96.8,7.170139758957924,0.2586372920195572,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,15,150.0,342.6188867680855,96.53888888888889,27.864072228625325,0.32389287499245256,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,15,105.0,253.93747253992493,96.78888888888889,7.150220325030137,0.2633363330096472,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,16,150.0,342.4150171841898,96.56666666666666,27.94247197703327,0.3380199170205742,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,16,105.0,254.18437263100196,96.78333333333333,7.2172962446455475,0.26030545801040716,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,17,150.0,343.0726947832075,96.61666666666666,27.967447491923707,0.34669312500045635,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,17,105.0,253.82151992663327,96.84444444444445,7.064497485068287,0.29049733400461264,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,18,150.0,342.59551336764696,96.58888888888889,27.834065017981313,0.3651187499926891,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,18,105.0,253.85086626927256,96.80555555555556,7.075188686800435,0.27406516700284556,40,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Fixed-Swath GA,19,150.0,342.934923094405,96.56666666666666,27.920421024443012,0.322627041983651,57,0
+synthetic_complex,Complex Terrain,synthetic,complex_relief,Full Geometry-Aware Hybrid GA,19,105.0,254.3673793101404,96.8,7.186504875253653,0.25028050001128577,40,0
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Spacing,0,0.0,15166.70891059631,100.0,0.7985185185185184,0.07203229202423245,117,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Simple Greedy,0,75.0,15084.319183647674,99.9888888888889,0.009497456851851986,0.8745149580063298,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Adaptive Spacing w/o GA,0,0.0,15038.223860078393,99.33333333333333,0.0,0.748389957996551,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,0,75.0,15072.65900053597,100.0,0.7365541136091018,0.7097936250211205,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,0,0.0,15038.151353299834,99.33333333333333,0.017754944001838673,0.6634386249934323,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,1,75.0,15060.95568768795,99.46666666666667,1.9680309218902807,0.7410520000266843,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,1,0.0,15038.132129077272,98.66666666666667,0.09615307101296579,0.7321889589948114,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,2,75.0,15071.541002739135,99.87222222222222,1.0105193316239103,0.8468264999974053,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,2,0.0,15038.186461415387,98.66666666666667,0.12063838321477975,0.8124251250119414,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,3,75.0,15071.648514612529,99.93333333333332,0.8564291977065043,0.72582079199492,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,3,0.0,15038.167326861087,98.66666666666667,0.0358239719493603,0.6914804579864722,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,4,75.0,15072.728123114914,99.71111111111111,1.2668665859176387,0.7192810840206221,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,4,0.0,15038.223860078393,99.33333333333333,0.0,0.6927802500140388,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,5,75.0,15067.369836038422,98.93333333333332,2.676417090267136,0.6919952500029467,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,5,0.0,15037.95287480725,98.66666666666667,0.032189008120580155,0.7147370419988874,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,6,75.0,15069.133663703496,99.80555555555556,1.6892491056418655,0.7473523330118041,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,6,0.0,15038.185303017577,98.66666666666667,0.11202583806354252,0.7079581670113839,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,7,75.0,15065.895378060968,99.65555555555555,1.5947186442958865,0.713355790998321,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,7,0.0,15038.118332088465,98.66666666666667,0.4793535101948629,0.6936374999932013,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,8,75.0,15072.723554522541,99.93888888888888,0.9924350076387657,0.6986016249866225,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,8,0.0,15038.223860078393,99.33333333333333,0.0,0.6824525830161292,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,9,75.0,15062.113480551188,99.66111111111111,1.8174138079211144,0.7512706659908872,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,9,0.0,15038.223860078393,99.33333333333333,0.0,0.659127165999962,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,10,75.0,15065.131918456715,99.53888888888889,1.7432289256408682,0.6675859169918112,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,10,0.0,15038.156566999354,98.66666666666667,0.1241459171535219,0.6819026659941301,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,11,75.0,15064.0410195051,99.43888888888888,2.1097057519591,0.6903057500021532,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,11,0.0,15038.138430800387,98.66666666666667,0.27074978347474526,0.6918315000075381,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,12,75.0,15064.64140531986,99.6888888888889,1.4522517574613907,0.672469082986936,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,12,0.0,15038.186954711968,99.33333333333333,0.15391068844486552,0.6730224589991849,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,13,75.0,15073.907557848403,99.93333333333332,0.8311773823056259,0.663290666998364,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,13,0.0,15038.223860078393,99.33333333333333,0.0,0.6874640419846401,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,14,75.0,15064.887691709697,99.6,1.588496909517713,0.6852818329934962,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,14,0.0,15038.032532372597,98.66666666666667,0.2299499147434906,0.6688818749971688,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,15,75.0,15069.459238747828,99.77777777777777,0.8322973062203584,0.6853727079869714,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,15,0.0,15038.223860078393,99.33333333333333,0.0,0.6457579159759916,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,16,75.0,15068.980596017504,99.87777777777778,1.5918457541942503,0.6804055829998106,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,16,0.0,15038.223860078393,99.33333333333333,0.0,0.6677941249799915,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,17,75.0,15069.48933033923,99.62222222222222,2.0305349033642686,0.693395666021388,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,17,0.0,15038.195937012873,99.33333333333333,0.07733462461178231,0.6489435420080554,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,18,75.0,15067.732663243196,99.96666666666667,1.1490480376489511,0.6904428340203594,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,18,0.0,15038.038175310907,98.66666666666667,0.28774862639887644,0.7408142920176033,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Swath GA,19,75.0,15068.707179008545,99.96666666666667,1.1282218255270067,0.662391290999949,111,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,19,0.0,15038.1527627635,98.66666666666667,0.07262029135950054,0.6655314159870613,116,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Spacing,0,0.0,6700.516576082025,99.33333333333333,0.8148148148148147,0.04457354202168062,73,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Simple Greedy,0,90.0,6656.3676243300515,99.17777777777778,0.30069568518518475,0.7564306250133086,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Adaptive Spacing w/o GA,0,90.0,6656.620000000051,100.0,0.0,1.89346300001489,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,0,90.0,6656.514593442284,100.0,0.4650822467368889,0.4254820829955861,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,0,90.0,6656.620000000051,100.0,0.0,0.3112721669895109,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,1,90.0,6656.424230646415,100.0,0.3502788542916953,0.31197254100698046,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,1,90.0,6656.620000000051,100.0,0.0,0.3017094169917982,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,2,90.0,6656.537790195653,100.0,0.5634869441479723,0.30876070901285857,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,2,90.0,6656.620000000051,100.0,0.0,0.3032073749927804,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,3,90.0,6656.477168847246,99.16666666666667,0.6816114289953197,0.31249912502244115,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,3,90.0,6656.620000000051,100.0,0.0,0.31852120798430406,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,4,90.0,6656.396853153001,99.16666666666667,0.33357828560668795,0.28963458401267417,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,4,90.0,6656.547473748718,99.16666666666667,0.007684744332857689,0.2895579170144629,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,5,90.0,6656.399517460562,99.16666666666667,0.652725899665279,0.2906989170005545,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,5,90.0,6656.486502297005,100.0,0.12672119973036983,0.29005179202067666,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,6,90.0,6656.381808787268,99.16666666666667,0.5361860797330555,0.29292454198002815,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,6,90.0,6656.577842791205,100.0,0.12859499620712966,0.28737741700024344,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,7,90.0,6656.415428367533,99.16666666666667,0.22635909154129094,0.29391283402219415,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,7,90.0,6656.613021799817,99.16666666666667,0.010865618508658545,0.35541400001966394,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,8,90.0,6656.540314946433,100.0,0.31018834320253563,0.322429749998264,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,8,90.0,6656.5705483833935,99.16666666666667,0.11610392836292135,0.3239389999944251,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,9,90.0,6656.467302100873,100.0,0.3433152050482054,0.3080679999839049,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,9,90.0,6656.531270035219,99.16666666666667,0.19888171260447932,0.3136401250085328,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,10,90.0,6656.499880374936,100.0,0.2736403166485979,0.32642479200148955,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,10,90.0,6656.620000000051,100.0,0.0,0.3617545839806553,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,11,90.0,6656.5214738451,99.16666666666667,0.9217715880663542,0.33974933400168084,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,11,90.0,6656.605018589165,99.16666666666667,0.020773690686440117,0.4113268750079442,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,12,90.0,6656.463426969278,99.16666666666667,0.6093294911248075,0.37118829201790504,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,12,90.0,6656.612269000877,99.16666666666667,0.1539267079611943,0.31021204200806096,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,13,90.0,6656.400036524662,99.16666666666667,0.3614817499021746,0.34468579199165106,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,13,90.0,6656.600344672872,100.0,0.18360107655310753,0.34522779201506637,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,14,90.0,6656.444339263193,99.16666666666667,0.46553383977500945,0.31642758299130946,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,14,90.0,6656.620000000051,100.0,0.0,0.31772220801212825,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,15,90.0,6656.644466346497,100.0,0.3557263778468209,0.3228095419763122,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,15,90.0,6656.5126207799085,99.16666666666667,0.08986579629006744,0.2957288339966908,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,16,90.0,6656.3769451876415,99.16666666666667,0.565082097804101,0.29187054198700935,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,16,90.0,6656.457284226268,99.16666666666667,0.1706374865906993,0.2898398750112392,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,17,90.0,6656.532880600231,100.0,0.11004813315633359,0.3259280829806812,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,17,90.0,6656.584803088315,100.0,0.023072209947898787,0.3122844999888912,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,18,90.0,6656.314594810904,98.33333333333333,0.901158755853809,0.3190660830005072,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,18,90.0,6656.48129046351,99.16666666666667,0.46446096580011725,0.2959254999877885,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Swath GA,19,90.0,6656.414967633768,100.0,0.15703230064420923,0.31372649999684654,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,19,90.0,6656.588120938873,100.0,0.002071706937115577,0.3171999169862829,59,1

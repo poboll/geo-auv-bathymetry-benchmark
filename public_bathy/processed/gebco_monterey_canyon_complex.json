@@ -1,0 +1,28 @@
+{
+  "scene_id": "gebco_monterey_canyon_complex",
+  "source": "GEBCO 2025 global bathymetry subset",
+  "download_url": "https://download.gebco.net",
+  "license": "GEBCO 2025 Grid terms of use",
+  "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_monterey_canyon_complex/data.tif",
+  "crop_bounds": {
+    "left": -123.3,
+    "bottom": 35.29999999999998,
+    "right": -122.30000000000001,
+    "top": 36.29999999999999,
+    "crs": "EPSG:4326"
+  },
+  "resolution_m": 758.72,
+  "depth_range_m": [
+    892.0,
+    3982.0
+  ],
+  "terrain_class": "complex_relief",
+  "missing_value_handling": {
+    "valid_fraction_before_fill": 1.0,
+    "filled_cells": 0,
+    "fill_strategy": "none"
+  },
+  "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_b5aacd8317d9",
+  "basket_id": "GEBCO_22_Apr_2026_b5aacd8317d9",
+  "provider": "gebco"
+}

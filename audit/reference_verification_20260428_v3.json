@@ -1,0 +1,289 @@
+[
+  {
+    "key": "gebco2025grid",
+    "title": "GEBCO 2025 Grid",
+    "doi": "10.5285/37c52e96-24ea-67ce-e063-7086abc05f29",
+    "status": "verified",
+    "source": "datacite"
+  },
+  {
+    "key": "dartnell2026southerncascadia",
+    "title": "Composite multibeam bathymetry surface and data sources of the southern Cascadia Margin offshore Oregon and northern California (version 2",
+    "doi": "10.5066/P9C5DBMR",
+    "status": "verified",
+    "source": "datacite"
+  },
+  {
+    "key": "shi2020data",
+    "title": "A data-driven intermittent online coverage path planning method for AUV-based bathymetric mapping",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "yordanova2020coverage",
+    "title": "Coverage path planning with track spacing adaptation for autonomous underwater vehicles",
+    "doi": "10.1109/LRA.2020.3003886",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "jiang2018route",
+    "title": "Route optimizing and following for autonomous underwater vehicle ladder surveys",
+    "doi": "10.1177/1729881418813271",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "li2024multi",
+    "title": "Multi-AUV coverage path planning algorithm using side-scan sonar for maritime search (ER-MCPP)",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "zhang2022online",
+    "title": "An online path planning algorithm for autonomous marine geomorphological surveys based on AUV",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "ling2023active",
+    "title": "Active Bathymetric SLAM for autonomous underwater exploration",
+    "doi": "10.1016/j.apor.2022.103439",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "shields2023feature",
+    "title": "Feature Space Exploration for Planning Initial Benthic AUV Surveys",
+    "doi": "10.55417/fr.2023021",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhao2024coastalcpp",
+    "title": "Optimal coverage path planning for USV-assisted coastal bathymetric survey: Models, solutions, and lake trials",
+    "doi": "10.1016/j.oceaneng.2024.116921",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhao2024jointcpp",
+    "title": "Joint-optimized coverage path planning framework for USV-assisted offshore bathymetric mapping: From theory to practice",
+    "doi": "10.1016/j.knosys.2024.112449",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhang2024tttslam",
+    "title": "TTT SLAM: A feature-based bathymetric SLAM framework",
+    "doi": "10.1016/j.oceaneng.2024.116777",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "krasnosky2022gp",
+    "title": "A massively parallel implementation of Gaussian process regression for real time bathymetric modeling and simultaneous localization and mapping",
+    "doi": "10.55417/fr.2022031",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "real2025acousticgraphslam",
+    "title": "Modular acoustic graph SLAM for underwater monitoring with autonomous underwater vehicles",
+    "doi": "10.1109/TASE.2025.3615829",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "xu2025usoslam",
+    "title": "USO-SLAM: SLAM with single-frame semantic object reconstruction for autonomous underwater vehicles",
+    "doi": "10.1109/TVT.2025.3568288",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "ma2023terrainreview",
+    "title": "A review of terrain aided navigation for underwater vehicles",
+    "doi": "10.1016/j.oceaneng.2023.114779",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhang2023rbpf",
+    "title": "An outlier-robust Rao-Blackwellized particle filter for underwater terrain-aided navigation",
+    "doi": "10.1016/j.oceaneng.2023.116006",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "ding2022contour",
+    "title": "A new contour-based combined matching algorithm for underwater terrain-aided strapdown inertial navigation system",
+    "doi": "10.1016/j.measurement.2022.111870",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhang2024ambiguouspf",
+    "title": "A robust particle filter for ambiguous updates of underwater terrain-aided navigation",
+    "doi": "10.1016/j.mechatronics.2023.103133",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "sture2023gpbathy",
+    "title": "Feature-based bathymetric matching of autonomous underwater vehicle transects using robust Gaussian processes",
+    "doi": "10.55417/fr.2023017",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "ma2025zonotope",
+    "title": "Constrained zonotope terrain-aided navigation method for long-range autonomous underwater vehicles",
+    "doi": "10.1109/TMECH.2025.3562845",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "yan2024dual",
+    "title": "A dual-stage coverage path planning method for bathymetric survey using an AUV in graph-based SLAM framework considering positioning uncertainty",
+    "doi": "10.1016/j.oceaneng.2024.119252",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhou2017terrain",
+    "title": "An Effective Terrain Aided Navigation for Low-Cost Autonomous Underwater Vehicles",
+    "doi": "10.3390/s17040680",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "kim2017panel",
+    "title": "Panel-based bathymetric SLAM with a multibeam echosounder",
+    "doi": "10.1109/UT.2017.7890321",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhu2025robust",
+    "title": "Robust underwater SLAM fusing bathymetric and range information",
+    "doi": "10.1016/j.measurement.2024.116223",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "xie2024three",
+    "title": "Three-Dimensional Coverage Path Planning for Cooperative Autonomous Underwater Vehicles: A Swarm Migration Genetic Algorithm Approach",
+    "doi": "10.3390/jmse12081366",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "li2024full",
+    "title": "Full coverage path planning for torpedo-type AUVs' marine survey confined in convex polygon area",
+    "doi": "10.3390/jmse12091522",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "ji2022multi",
+    "title": "Multi-underwater gliders coverage path planning based on ant colony optimization",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "wu2024complete",
+    "title": "Complete coverage path planning based on improved genetic algorithm for unmanned surface vehicle",
+    "doi": "10.3390/jmse12061025",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhang2023multi",
+    "title": "Multi-AUV cooperative search method based on dynamic optimal coverage",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "mu2025coverage",
+    "title": "Coverage path planning for multi-AUV considering ocean currents and sonar performance",
+    "doi": "10.3389/fmars.2024.1483122",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "yao2021coverage",
+    "title": "AUV path planning for coverage search of static target in ocean environment",
+    "doi": "10.1016/j.oceaneng.2021.110050",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "hadi2022drlcpp",
+    "title": "Deep reinforcement learning for adaptive path planning and control of an autonomous underwater vehicle",
+    "doi": "10.1016/j.apor.2022.103326",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "dogru2022ecocpp",
+    "title": "ECO-CPP: Energy constrained online coverage path planning",
+    "doi": "10.1016/j.robot.2022.104242",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "wang2025ddqn",
+    "title": "A DDQN-based cooperative path planning for range-based AUV cooperative navigation system towards coverage survey and positioning error suppression",
+    "doi": "10.1109/JIOT.2025.3599150",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "zhu2019complete",
+    "title": "Complete coverage path planning of autonomous underwater vehicle based on GBNN algorithm",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "han2023hybrid",
+    "title": "Hybrid-Algorithm-Based Full Coverage Search Approach With Multiple AUVs to Unknown Environments in Internet of Underwater Things",
+    "doi": "10.1109/JIOT.2023.3328973",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "kapetanovic2018side",
+    "title": "A side-scan sonar data-driven coverage planning and tracking framework",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "tang2023coverage",
+    "title": "Coverage path planning of unmanned surface vehicle based on improved biological inspired neural network",
+    "doi": "10.1016/j.oceaneng.2023.114354",
+    "status": "verified",
+    "source": "crossref"
+  },
+  {
+    "key": "cao2018real",
+    "title": "A real-time path planning algorithm for AUV in unknown underwater environment based on combining PSO and waypoint guidance",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  },
+  {
+    "key": "zhang2021path",
+    "title": "Path planning and obstacle avoidance for AUV: A review",
+    "doi": null,
+    "status": "verified",
+    "source": "title"
+  }
+]

@@ -1,0 +1,45 @@
+scene_id,scene_name,scene_group,terrain_class,method,seed,orientation_deg,path_length_km,coverage_pct,excess_overlap_pct,planning_time_s,line_count,feasible
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Fixed-Spacing,0,0.0,15166.70891059631,100.0,0.7985185185185184,0.06296958398888819,117,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Adaptive Spacing w/o GA,0,0.0,15038.223860078393,99.33333333333333,0.0,0.7577060000039637,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,0,0.0,15038.151353299834,99.33333333333333,0.017754944001838673,0.675758291996317,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,0,0.0,15038.142531254467,98.66666666666667,0.022522090766232645,0.11234116600826383,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,1,0.0,15038.132129077272,98.66666666666667,0.09615307101296579,0.6627914579876233,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,1,0.0,15038.096488291629,98.66666666666667,0.2120798917728204,0.10888275000615977,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,2,0.0,15038.186461415387,98.66666666666667,0.12063838321477975,0.6502931670111138,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,2,0.0,15038.144274411474,98.66666666666667,0.04160257454470277,0.10531808398081921,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,3,0.0,15038.167326861087,98.66666666666667,0.0358239719493603,1.1589071250054985,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,3,0.0,15038.07354691912,98.66666666666667,0.4847969767959865,0.11637358399457298,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,4,0.0,15038.223860078393,99.33333333333333,0.0,0.8090734169818461,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,4,0.0,15038.120039770061,98.66666666666667,0.11884778930789862,0.12104358299984597,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,5,0.0,15037.95287480725,98.66666666666667,0.032189008120580155,0.6846700000169221,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,5,0.0,15038.131452628602,98.66666666666667,0.016527732970452517,0.11331729200901464,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,6,0.0,15038.185303017577,98.66666666666667,0.11202583806354252,0.6500851250020787,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,6,0.0,15038.12632802883,98.66666666666667,0.16402277251739614,0.10518708298332058,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,7,0.0,15038.118332088465,98.66666666666667,0.4793535101948629,0.6510044170136098,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,7,0.0,15038.110417337486,98.66666666666667,0.24478367637224963,0.11358554201433435,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,8,0.0,15038.223860078393,99.33333333333333,0.0,0.6673521250195336,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,8,0.0,15037.962381788386,98.66666666666667,0.11565910380644133,0.110663667001063,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,Full Geometry-Aware Hybrid GA,9,0.0,15038.223860078393,99.33333333333333,0.0,0.6570415000023786,116,1
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,public,moderate_slope,PSO Local Refinement,9,0.0,15037.974694456565,98.66666666666667,0.07651191755158408,0.11091233300976455,116,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Fixed-Spacing,0,0.0,6700.516576082025,99.33333333333333,0.8148148148148147,0.03756016699480824,73,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Adaptive Spacing w/o GA,0,90.0,6656.620000000051,100.0,0.0,0.5791328330233227,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,0,90.0,6656.620000000051,100.0,0.0,0.30838575001689605,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,0,90.0,6656.501292685609,99.16666666666667,0.2996452216197481,0.05176595799275674,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,1,90.0,6656.620000000051,100.0,0.0,0.30802924997988157,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,1,90.0,6656.489005601258,99.16666666666667,0.05047873397378239,0.05218895900179632,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,2,90.0,6656.620000000051,100.0,0.0,0.3031008749967441,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,2,90.0,6656.490390356019,99.16666666666667,0.13606559511136546,0.051782249996904284,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,3,90.0,6656.620000000051,100.0,0.0,0.3104119169875048,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,3,90.0,6656.46282853092,99.16666666666667,0.011290290711164035,0.05571679101558402,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,4,90.0,6656.547473748718,99.16666666666667,0.007684744332857689,0.3142559160187375,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,4,90.0,6656.501367259871,99.16666666666667,0.035090886781233885,0.051897875004215166,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,5,90.0,6656.486502297005,100.0,0.12672119973036983,0.30558637497597374,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,5,90.0,6656.5219470898755,99.16666666666667,0.06088767332377122,0.05295837498852052,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,6,90.0,6656.577842791205,100.0,0.12859499620712966,0.30633608301286586,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,6,90.0,6656.547283977803,99.16666666666667,0.06948001340129453,0.05209379200823605,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,7,90.0,6656.613021799817,99.16666666666667,0.010865618508658545,0.3133826249977574,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,7,90.0,6656.463666146549,99.16666666666667,0.27420454544082395,0.06847037500119768,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,8,90.0,6656.5705483833935,99.16666666666667,0.11610392836292135,0.30649149999953806,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,8,90.0,6656.538333060148,99.16666666666667,0.27259847740273874,0.05338858300819993,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,Full Geometry-Aware Hybrid GA,9,90.0,6656.531270035219,99.16666666666667,0.19888171260447932,0.3114574579813052,59,1
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,public,complex_relief,PSO Local Refinement,9,90.0,6656.475785201648,99.16666666666667,0.04736001545241851,0.05281391699099913,59,1

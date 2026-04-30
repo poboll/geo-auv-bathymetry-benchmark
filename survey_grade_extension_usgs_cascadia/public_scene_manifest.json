@@ -1,0 +1,134 @@
+[
+  {
+    "scene_id": "usgs_southern_cascadia_30m_low",
+    "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+    "download_url": "https://doi.org/10.5066/P9C5DBMR",
+    "license": "USGS public data release",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "crop_bounds": {
+      "left": 362621.1584084583,
+      "bottom": 4538189.412716693,
+      "right": 370031.1584084583,
+      "top": 4547459.412716693,
+      "crs": "EPSG:26910"
+    },
+    "raw_resolution_m": {
+      "x": 30.0,
+      "y": 30.0
+    },
+    "planner_grid_resolution_m": 62.269,
+    "depth_range_m": [
+      569.05810546875,
+      834.4691162109375
+    ],
+    "terrain_class": "survey_grade_cascadia_low",
+    "selection_metrics": {
+      "valid_fraction": 1.0,
+      "slope_mean": 0.02706821513581937,
+      "depth_std": 52.51197795508083,
+      "relief": 266.88458251953125,
+      "complexity": 3.4835937096573444,
+      "overview_col": 276.0,
+      "overview_row": 304.0,
+      "complexity_rank": 14,
+      "candidate_count": 56,
+      "complexity_quantile_empirical": 0.2545454545454545,
+      "requested_complexity_quantile": 0.25
+    },
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "provider": "USGS",
+    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+  },
+  {
+    "scene_id": "usgs_southern_cascadia_30m_medium",
+    "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+    "download_url": "https://doi.org/10.5066/P9C5DBMR",
+    "license": "USGS public data release",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "crop_bounds": {
+      "left": 331871.1584084583,
+      "bottom": 4599749.412716693,
+      "right": 339281.1584084583,
+      "top": 4609019.412716693,
+      "crs": "EPSG:26910"
+    },
+    "raw_resolution_m": {
+      "x": 30.0,
+      "y": 30.0
+    },
+    "planner_grid_resolution_m": 62.269,
+    "depth_range_m": [
+      820.5799560546875,
+      1339.02392578125
+    ],
+    "terrain_class": "survey_grade_cascadia_medium",
+    "selection_metrics": {
+      "valid_fraction": 1.0,
+      "slope_mean": 0.1254618397628207,
+      "depth_std": 101.57608283773953,
+      "relief": 520.871826171875,
+      "complexity": 6.857821344047664,
+      "overview_col": 264.0,
+      "overview_row": 280.0,
+      "complexity_rank": 30,
+      "candidate_count": 56,
+      "complexity_quantile_empirical": 0.5454545454545454,
+      "requested_complexity_quantile": 0.55
+    },
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "provider": "USGS",
+    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+  },
+  {
+    "scene_id": "usgs_southern_cascadia_30m_high",
+    "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+    "download_url": "https://doi.org/10.5066/P9C5DBMR",
+    "license": "USGS public data release",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "crop_bounds": {
+      "left": 347261.1584084583,
+      "bottom": 4702319.412716693,
+      "right": 354671.1584084583,
+      "top": 4711589.412716693,
+      "crs": "EPSG:26910"
+    },
+    "raw_resolution_m": {
+      "x": 30.0,
+      "y": 30.0
+    },
+    "planner_grid_resolution_m": 62.269,
+    "depth_range_m": [
+      146.3936004638672,
+      1131.604248046875
+    ],
+    "terrain_class": "survey_grade_cascadia_high",
+    "selection_metrics": {
+      "valid_fraction": 0.9861640658779136,
+      "slope_mean": 0.1412861155217056,
+      "depth_std": 181.6838184471652,
+      "relief": 993.9073333740234,
+      "complexity": 12.805616725969418,
+      "overview_col": 270.0,
+      "overview_row": 240.0,
+      "complexity_rank": 44,
+      "candidate_count": 56,
+      "complexity_quantile_empirical": 0.8,
+      "requested_complexity_quantile": 0.8
+    },
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 0.9899444444444444,
+      "filled_cells": 181,
+      "fill_strategy": "local_median_fill"
+    },
+    "provider": "USGS",
+    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "scene_id": "gebco_cascadia_margin_moderate",
+  "source": "GEBCO 2025 global bathymetry subset",
+  "download_url": "https://download.gebco.net",
+  "license": "GEBCO 2025 Grid terms of use",
+  "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_cascadia_margin_moderate/data.tif",
+  "crop_bounds": {
+    "left": -126.8,
+    "bottom": 43.19999999999999,
+    "right": -125.2,
+    "top": 44.79999999999998,
+    "crs": "EPSG:4326"
+  },
+  "resolution_m": 1195.383,
+  "depth_range_m": [
+    1009.0,
+    3101.0
+  ],
+  "terrain_class": "moderate_slope",
+  "missing_value_handling": {
+    "valid_fraction_before_fill": 1.0,
+    "filled_cells": 0,
+    "fill_strategy": "none"
+  },
+  "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_ccf8b8e4f76c",
+  "basket_id": "GEBCO_22_Apr_2026_ccf8b8e4f76c",
+  "provider": "gebco"
+}
