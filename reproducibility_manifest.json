@@ -587,14 +587,14 @@
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 130550,
-      "sha256": "1f8513f95680ec62d4282bfed7b6d4e519b05d81ee00dd793f478a1e10ec34c6"
+      "size_bytes": 131019,
+      "sha256": "c3cb1873e7de31583490a73e727db1e3a9f9f5496227be01368c611814dfc8bd"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 6534219,
-      "sha256": "6b2e831de848f487bd5742fa1317180d8996c5094c056e8c940251660b1fe69d"
+      "size_bytes": 6531391,
+      "sha256": "b9102c96a01ced5e6868c1617cd88f3829e9c88ff4500d88459581e426f13405"
     },
     {
       "category": "manuscripts",
@@ -611,8 +611,8 @@
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 6534219,
-      "sha256": "6b2e831de848f487bd5742fa1317180d8996c5094c056e8c940251660b1fe69d"
+      "size_bytes": 6531391,
+      "sha256": "b9102c96a01ced5e6868c1617cd88f3829e9c88ff4500d88459581e426f13405"
     },
     {
       "category": "release_metadata",

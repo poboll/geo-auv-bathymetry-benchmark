@@ -400,6 +400,68 @@ python3 make_reproducibility_manifest.py
 # Wrote .../reproducibility_manifest.json with 117 entries
 ```
 
+## 2026-05-01 MDPI DOI-footer cleanup
+
+【x】Removed the MDPI submit-mode production DOI placeholder from the pre-submission PDF footer.
+
+Problem:
+
+- The MDPI class generated `https://doi.org/10.3390/jmse1010000` in the page footer even though no production DOI exists yet.
+- This was a template artifact, not a manuscript DOI, and would look unpolished in a pre-submission draft.
+
+Evidence file:
+
+- `mdpi_jmse/template.tex`
+
+Implementation:
+
+- Added a local `\AtBeginDocument{...}` fancyhdr override in the MDPI template.
+- The override removes only the right-footer production DOI placeholder while preserving the version/journal header and page numbering.
+- The official MDPI class file was not modified.
+
+Verification commands:
+
+```bash
+cd /Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/mdpi_jmse
+xelatex -interaction=nonstopmode template.tex > compile_after_mdpi_doi_footer_20260501_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_mdpi_doi_footer_20260501_pass2.log
+strings template.pdf | rg "10\\.3390/jmse1010000|doi.org/10\\.3390" || true
+gs -dSAFER -dBATCH -dNOPAUSE -sDEVICE=png16m -r180 -dFirstPage=16 -dLastPage=16 -sOutputFile=review_pages_doi_footer_20260501/page_16.png template.pdf
+```
+
+Evidence output:
+
+- MDPI PDF still compiles to `36` pages.
+- QA grep found no undefined citation/reference, no overfull hbox, no emergency stop.
+- PDF string check found no `10.3390/jmse1010000` or `doi.org/10.3390` placeholder.
+- Rendered page 16 confirmed the footer DOI placeholder is gone.
+
+【x】Freed local disk space required for continued LaTeX compilation without deleting experiment outputs.
+
+Action:
+
+- Removed regenerated Serena code-index cache and LaTeX visual-QA scratch folders (`review_pages*`, `review_figures*`, `preview_pages`, `checkpoints`) from the active workspace.
+- Kept manuscript sources, PDFs, CSV/JSON outputs, raw bathymetry data, scripts, and GitHub artifacts.
+
+Evidence:
+
+- Available disk space improved from about `169 MiB` to about `1.0 GiB`.
+
+【x】Re-synchronized the cleaned MDPI PDF and updated reproducibility manifests.
+
+Evidence commands and output:
+
+```bash
+cp "$BASE/mdpi_jmse/template.pdf" "$BASE/mdpi_jmse_jmse_submission_draft.pdf"
+cp "$BASE/mdpi_jmse/template.tex" "$REPO/manuscript/mdpi_jmse/template.tex"
+cp "$BASE/mdpi_jmse/template.pdf" "$REPO/manuscript/mdpi_jmse/template.pdf"
+cp "$BASE/mdpi_jmse_jmse_submission_draft.pdf" "$REPO/mdpi_jmse_jmse_submission_draft.pdf"
+python3 "$BASE/make_reproducibility_manifest.py"
+# Wrote .../reproducibility_manifest.json with 90 entries
+python3 "$REPO/make_reproducibility_manifest.py"
+# Wrote .../reproducibility_manifest.json with 117 entries
+```
+
 ## 2026-04-30 Zenodo DOI and Release Metadata Closure
 
 【x】Verified that GitHub release `v0.1.0` minted a Zenodo DOI after the repository was bound to Zenodo.

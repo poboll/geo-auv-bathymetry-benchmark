@@ -32,6 +32,18 @@
 \renewcommand{\leftcolumnCright}{}
 \renewcommand{\contentleftcolumn}{}
 \makeatother
+% The MDPI class prints a generated DOI placeholder in submit mode when no
+% production DOI exists. Remove it from this pre-submission PDF while preserving
+% the journal/version header and page numbers.
+\AtBeginDocument{%
+  \fancyfoot[R]{}%
+  \fancypagestyle{plain}{%
+    \renewcommand{\footrulewidth}{0.4pt}%
+    \fancyhead{\null\vspace{8pt}}%
+    \fancyfoot[L]{\fontsize{8}{8}\selectfont Version {\today} submitted to {\em \journalname}}%
+    \fancyfoot[R]{}%
+  }%
+}
 
 \Title{Terrain-Aware AUV Survey-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks}
 
