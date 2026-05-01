@@ -1,36 +1,121 @@
+## 2026-05-01 继续推进核对记录（接手后补齐状态）
+
+本节用于把下面旧任务表中已经落实的内容做一次集中回填，避免“已做但未打钩”的返修台账混乱。主稿基线仍为：
+
+- MDPI/JMSE 版：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/mdpi_jmse/template.tex`
+- 工作版：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/latex/template.tex`
+- 主证据源：`run_5`
+- 公开仓库：`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark`
+- Zenodo release series DOI：`10.5281/zenodo.19919505`
+
+【x】论文定位已改成 JMSE 特刊友好的 “AUV-assisted bathymetric surveying + autonomous maritime systems + pre-mission planning + public bathymetry benchmark”。
+证据文件：`mdpi_jmse/template.tex`、`latex/template.tex`。标题为 `Terrain-Aware AUV Survey-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks`；摘要中明确写 public GEBCO、USGS public-grid extension、coarse-prior/fine-grid replay、execution-uncertainty replay。
+
+【x】主证据链已锁定为 `run_5`，并复算公开 GEBCO 主要数字。
+证据命令：
+
+```bash
+python3 - <<'PY'
+import csv
+from pathlib import Path
+base=Path('/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/run_5')
+rows=list(csv.DictReader(open(base/'benchmark_method_statistics.csv', newline='')))
+for scene in ['GEBCO Cascadia Margin','GEBCO Monterey Canyon']:
+    fixed=next(r for r in rows if r['scene_name']==scene and r['method']=='Fixed-Spacing')
+    hyb=next(r for r in rows if r['scene_name']==scene and r['method']=='Full Geometry-Aware Hybrid GA')
+    gain=(float(fixed['path_length_km_mean'])-float(hyb['path_length_km_mean']))/float(fixed['path_length_km_mean'])*100
+    print(scene, hyb['coverage_pct_mean'], hyb['excess_overlap_pct_mean'], gain)
+PY
+```
+
+核对输出：Cascadia Hybrid predicted coverage `98.9667%`、excess overlap `0.1055%`、path gain `0.8476%`；Monterey Hybrid predicted coverage `99.6250%`、excess overlap `0.0849%`、path gain `0.6558%`；两场景平均 Fixed excess overlap `0.8067%`，Hybrid `0.0952%`，mean path gain `0.7517%`。
+
+【x】GA 贡献已降级为 local refinement / residual-overlap cleanup / seed-level stabilization，不再包装成核心“新算法”。
+证据位置：Methods/GA 小节、Introduction contributions、Discussion `Baseline limitation and what the GA actually adds`、risk matrix。
+
+【x】小 GA 参数已解释。
+证据位置：Methods/GA 小节写明 population size 10、generations 10 的理由是 orientation scan + adaptive spacing 已提供强 base layout，GA 只做局部微调，不做 blind global search；同时保留 public-scene planning time 约 `0.32--0.69 s` 作为效率证据。
+
+【x】AUV 转弯半径质疑已补 evaluation-only 指标。
+证据文件：`run_5/turning_aware_public_posteval.csv`、`make_turning_aware_posteval.py`、`Table~\ref{tab:turning_posteval}`。指标为 \(L_R=L+(N-1)\pi R_{\min}\)，测试 \(R_{\min}=25,50,100\) m；稿件明确声明这不是 Dubins/controller-level field feasibility study。
+
+【x】coarse-prior/fine-grid replay 已落实。
+证据文件：`coarse_prior_replay/coarse_prior_replay_raw.csv`、`coarse_prior_replay/coarse_prior_replay_summary.csv`、`coarse_prior_replay/coarse_prior_replay_summary.json`、`journal_coarse_prior_replay.png`。稿件报告 USGS high-complexity crop 在 120--600 m priors 上规划、fine grid replay 后 Hybrid GA 仍为 `97.91--98.31%` predicted coverage，Fixed-Spacing 仍 infeasible。
+
+【x】公开场景数量风险已缓解：主结果保持 2 个 GEBCO 场景，另加 4 个 GEBCO supplemental windows 和 3 个 USGS 30 m public-grid crops。
+证据文件：`gebco_scene_expansion/gebco_scene_expansion_summary.csv`（Mariana Trench、Puerto Rico Trench、Mid-Atlantic Ridge、Hawaii Ridge）、`survey_grade_extension_usgs_cascadia/benchmark_method_statistics.csv`。稿件明确说这些是 scene-selection risk check / public-grid extension，不混入主 20-seed public averages。
+
+【x】复杂地形失败模式已单独可视化，不再把失败包装成成功。
+证据文件：`run_5/complex_terrain_failure_mode_summary.csv`、`latex/pic/journal_failure_mode_complex.png`、`mdpi_jmse/pic/journal_failure_mode_complex.png`。关键值：Fixed Complex Terrain predicted coverage `96.1889%`、excess overlap `28.4976%`、feasible `0`；Adaptive `96.8778%`、`7.1212%`、feasible `0`；representative Hybrid `96.7778%`、`7.1817%`、feasible `0`。
+
+【x】统计不确定性已补 seed-level bootstrap CI。
+证据文件：`run_5/public_hybrid_bootstrap_ci.csv`；稿件 `Table~\ref{tab:bootstrap_ci}` 明确这只是 20-seed GA dispersion，不是 geographic/field-performance confidence interval。
+
+【x】baseline 补强已加入 equal-budget PSO local-refinement check。
+证据文件：`pso_baseline/pso_public_baseline_summary.csv`、`journal_pso_baseline.png`；稿件说明该 baseline 只比较 fixed-pattern line-layout local refinement，不与完整 online CPP/SLAM/多艇系统直接竞争。
+
+【x】敏感性实验已覆盖 beam angle、target overlap、penalty weight、prior depth bias、prior relief scale、grid resolution、execution uncertainty。
+证据目录：`sensitivity/`、`uncertainty_replay/`；稿件 `Table~\ref{tab:sensitivity_diagnostics}` 和对应 Figure 已说明诊断边界。
+
+【x】图表已完成一轮期刊化修复：Figure 1 改为 TikZ/PDF 矢量流程图；Figure 3/4/9 已改为更宽地图列与矩阵列布局；复杂地形 failure map 已加入；字体跟随 MDPI `mathpazo`/serif 风格，避免粗框幻灯片风。
+证据文件：`mdpi_jmse/pic/method_pipeline.pdf`、`journal_cascadia_routes.png`、`journal_monterey_routes.png`、`journal_usgs_extension.png`、`journal_failure_mode_complex.png`。
+
+【x】口径审计已继续收紧。
+本轮已把 “survey-grade extension scenes” 改为 “higher-resolution public-grid extension crop”，把 “real family rotation” 改为 “genuine family rotation”，并把摘要结尾从 “survey-grade AUV mission planning” 收紧为 “subsequent survey-grade evaluation and execution-aware AUV mission planning”。
+证据文件：`mdpi_jmse/template.tex`、`latex/template.tex`。
+
+【x】参考文献数量已达 40 篇以上。
+证据命令：
+
+```bash
+python3 - <<'PY'
+from pathlib import Path
+p=Path('/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/mdpi_jmse/template.tex')
+print(p.read_text().count('\\\\bibitem{'))
+PY
+```
+
+核对输出：`41`。
+
+【x】GitHub/Zenodo 可复现交付链已建立。
+证据：GitHub repo `https://github.com/poboll/geo-auv-bathymetry-benchmark` 已推送；Zenodo 已绑定该 repo，并已有 release series DOI `10.5281/zenodo.19919505`。注意：最终投稿版冻结后再创建下一次 release，避免每次小修都生成新的 DOI 版本。
+
+【△】仍不应声称已完成的事项：真实 AUV sea trial、mission-log validation、raw MBES field replay、完整 Dubins/controller-level trajectory execution、hydrographic survey guarantee。
+处理方式：稿件已把这些写成 transfer/future validation boundary，不在 Abstract/Results 中包装成已完成实验。
+
 ## 2026-04-29 本轮按点核对执行记录
 
-【x】已将 Figure 1 从旧的幻灯片式粗框流程图改为 LaTeX/TikZ standalone 矢量图，小圆节点、细箭头、无粗长方形外框、无文字溢出。  
-证据文件：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/latex/pic/method_pipeline.tex`、`latex/pic/method_pipeline.pdf`、`latex/pic/method_pipeline_preview.png`、`mdpi_jmse/pic/method_pipeline.pdf`。  
+【x】已将 Figure 1 从旧的幻灯片式粗框流程图改为 LaTeX/TikZ standalone 矢量图，小圆节点、细箭头、无粗长方形外框、无文字溢出。
+证据文件：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/latex/pic/method_pipeline.tex`、`latex/pic/method_pipeline.pdf`、`latex/pic/method_pipeline_preview.png`、`mdpi_jmse/pic/method_pipeline.pdf`。
 验证：已用 `conda run -n uu python make_method_pipeline_figure.py` 生成，并用 Ghostscript 渲染 MDPI PDF 第 6 页到 `mdpi_jmse/review_pages_geo_pointcheck/p02.png` 人工检查。
 
-【x】已解释 GA 参数为何很小。  
+【x】已解释 GA 参数为何很小。
 落实位置：`mdpi_jmse/template.tex` 与 `latex/template.tex` 的 Methods/GA 小节。稿件明确写明：10 generation、population size 10 是因为离散 heading scan 与 adaptive spacing 已提供强 base layout，GA 只做 local refinement / residual-overlap cleanup，不是 blind global optimizer；同时保留 0.32--0.69 s public-scene planning time 作为效率证据。
 
-【x】已加入 AUV 转弯半径 / Dubins 质疑回应。  
-落实位置：目标函数 \(L(\psi,\mathbf{p})\) 附近已加入 Dubins、clothoid、spline line-change smoothing 说明，并给出 evaluation-only 指标 \(L_R=L+(N-1)\pi R_{\min}\)。  
-新增可复算结果：`run_5/turning_aware_public_posteval.csv`，由 `make_turning_aware_posteval.py` 从 `run_5/benchmark_method_statistics.csv` 生成。  
+【x】已加入 AUV 转弯半径 / Dubins 质疑回应。
+落实位置：目标函数 \(L(\psi,\mathbf{p})\) 附近已加入 Dubins、clothoid、spline line-change smoothing 说明，并给出 evaluation-only 指标 \(L_R=L+(N-1)\pi R_{\min}\)。
+新增可复算结果：`run_5/turning_aware_public_posteval.csv`，由 `make_turning_aware_posteval.py` 从 `run_5/benchmark_method_statistics.csv` 生成。
 稿件新增表：`Table~\ref{tab:turning_posteval}`，报告 \(R_{\min}=25,50,100\) m 下 public GEBCO layouts 的 turn-aware effective path gain。
 
-【x】已强化 Abstract。  
+【x】已强化 Abstract。
 落实位置：`mdpi_jmse/template.tex` 与 `latex/template.tex` 的 Abstract。新版强调 AUV-assisted bathymetric surveying / autonomous maritime systems / pre-mission planning for public bathymetry-based mapping；结果叙事改为：GEBCO public scenes 中路径缩短约 0.75% 是次要收益，核心价值是 mean scene-level excess-overlap violation 从约 0.81% 降至 0.095%。
 
-【x】已把图字体统一到 MDPI 模板兼容字体栈。  
-调研结果：本地 MDPI 模板类文件 `Definitions/mdpi.cls` 与 `/Users/Apple/Downloads/MDPI_template_ACS/Definitions/mdpi.cls` 均加载 `mathpazo`，因此正文不是 Times New Roman，而是 Palatino/Pazo 风格。Figure 1 直接使用 `mathpazo`；Matplotlib 图脚本已从 `DejaVu Sans` 改为 `serif` + `Palatino`/`Times New Roman`/`DejaVu Serif` fallback。  
-已改脚本：`make_journal_figures.py`、`make_sensitivity_study.py`、`make_uncertainty_replay.py`、`make_survey_grade_extension.py`、`geo_public_bathy_benchmark.py`。  
+【x】已把图字体统一到 MDPI 模板兼容字体栈。
+调研结果：本地 MDPI 模板类文件 `Definitions/mdpi.cls` 与 `/Users/Apple/Downloads/MDPI_template_ACS/Definitions/mdpi.cls` 均加载 `mathpazo`，因此正文不是 Times New Roman，而是 Palatino/Pazo 风格。Figure 1 直接使用 `mathpazo`；Matplotlib 图脚本已从 `DejaVu Sans` 改为 `serif` + `Palatino`/`Times New Roman`/`DejaVu Serif` fallback。
+已改脚本：`make_journal_figures.py`、`make_sensitivity_study.py`、`make_uncertainty_replay.py`、`make_survey_grade_extension.py`、`geo_public_bathy_benchmark.py`。
 已重建图：`journal_scene_atlas.png`、`journal_cascadia_routes.png`、`journal_monterey_routes.png`、`journal_metric_heatmap.png`、`journal_overlap_regime.png`、`journal_ablation_seed.png`、`journal_sensitivity_*`、`journal_uncertainty_replay.png`、`journal_usgs_extension.png`。
 
-【x】Funding 没有丢失，已核对保留。  
-MDPI 版位置：`mdpi_jmse/template.tex` 中 `\funding{...}`。  
-工作稿位置：`latex/template.tex` 中 `\section*{Funding}`。  
+【x】Funding 没有丢失，已核对保留。
+MDPI 版位置：`mdpi_jmse/template.tex` 中 `\funding{...}`。
+工作稿位置：`latex/template.tex` 中 `\section*{Funding}`。
 
-【x】已补“更强验证”中最可立即落地的一项：turning-aware evaluation。  
-说明：本轮没有伪造 mission logs，也没有把 numerical benchmark 包装成 sea trial。新增 turning-aware post-evaluation 是基于 run_5 已有数据的可复算增强。  
+【x】已补“更强验证”中最可立即落地的一项：turning-aware evaluation。
+说明：本轮没有伪造 mission logs，也没有把 numerical benchmark 包装成 sea trial。新增 turning-aware post-evaluation 是基于 run_5 已有数据的可复算增强。
 仍需投稿前完成但本轮未强行声称已完成：GEBCO 主场景扩到 6--10 个、GitHub/Zenodo DOI、外部优化器 baseline、coarse-prior/fine-truth replay、完整 bootstrap CI。
 
-【x】已编译验证。  
-MDPI 版命令：`cd mdpi_jmse && xelatex -interaction=nonstopmode template.tex > compile_after_geo_pointcheck_20260429_pass4.log`，PDF 为 33 页。无 LaTeX hard error、无 undefined citation/reference；仍有少量 MDPI 表格/参考文献 overfull warnings，最大约 13.24 pt。  
-工作稿命令：`cd latex && xelatex -interaction=nonstopmode template.tex > compile_after_geo_pointcheck_20260429_pass2.log`，PDF 为 31 页。QA grep 未发现 hard error、undefined citation/reference、overfull。  
+【x】已编译验证。
+MDPI 版命令：`cd mdpi_jmse && xelatex -interaction=nonstopmode template.tex > compile_after_geo_pointcheck_20260429_pass4.log`，PDF 为 33 页。无 LaTeX hard error、无 undefined citation/reference；仍有少量 MDPI 表格/参考文献 overfull warnings，最大约 13.24 pt。
+工作稿命令：`cd latex && xelatex -interaction=nonstopmode template.tex > compile_after_geo_pointcheck_20260429_pass2.log`，PDF 为 31 页。QA grep 未发现 hard error、undefined citation/reference、overfull。
 同步 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
 
 可以。下面我按**审稿人大修意见**给你列一份“逐点修改方案”。我会把每一项写成：**问题 → 利弊 → 怎么改 → 必须打钩清单**。你可以直接把这份当作大修任务表使用。
@@ -638,20 +723,20 @@ python make_figures.py --input outputs/
 
 ### 必须打钩清单
 
-【x】创建 GitHub 仓库。  
+【x】创建 GitHub 仓库。
 落实：`https://github.com/poboll/geo-auv-bathymetry-benchmark`，public repo，默认分支 `main`。
-【x】上传 preprocessing、benchmark、figure scripts。  
+【x】上传 preprocessing、benchmark、figure scripts。
 落实：仓库根目录已上传 `geo_public_bathy_benchmark.py`、`make_journal_figures.py`、`make_sensitivity_study.py`、`make_uncertainty_replay.py`、`make_survey_grade_extension.py`、`make_coarse_prior_replay.py`、`make_pso_baseline.py`、`make_reproducibility_manifest.py` 等复现实验脚本。
-【x】上传所有 derived CSV/JSON。  
+【x】上传所有 derived CSV/JSON。
 落实：`run_5/`、`sensitivity/`、`uncertainty_replay/`、`survey_grade_extension_usgs_cascadia/`、`coarse_prior_replay/`、`pso_baseline/` 已进入 GitHub 仓库。
-【x】保留 random seeds。  
+【x】保留 random seeds。
 落实：`run_5/benchmark_results.csv/json`、`run_5/public_hybrid_bootstrap_ci.csv`、`pso_baseline/pso_public_baseline_raw.csv` 和各诊断 raw CSV 保留 seed-level 结果。
-【x】写清楚 GEBCO/USGS 原始数据 DOI 和下载方式。  
+【x】写清楚 GEBCO/USGS 原始数据 DOI 和下载方式。
 落实：`README.md`、`reproducibility_manifest.json` 与稿件 Data Availability 均写明 GEBCO DOI `10.5285/37c52e96-24ea-67ce-e063-7086abc05f29`、USGS DOI `10.5066/P9C5DBMR`；raw bathymetry archives 未纳入 GitHub。
 【】用 Zenodo 生成 DOI。
-【-】Data Availability Statement 中填入真实 repo 和 DOI。  
+【-】Data Availability Statement 中填入真实 repo 和 DOI。
 已填入真实 GitHub repo；Zenodo DOI 需投稿前从 GitHub release 归档后再补入。
-【x】不要再写 “have not yet been minted”。  
+【x】不要再写 “have not yet been minted”。
 落实：Data Availability 改为真实 GitHub 链接 + 投稿前补 Zenodo DOI 的正式口径。
 
 ---
@@ -894,7 +979,7 @@ Discussion 建议结构：
 
 ## B. 数据与实验
 
-【-】GEBCO 主场景 ≥ 6 个。  
+【-】GEBCO 主场景 ≥ 6 个。
 已完成补充层：主 benchmark 仍保持 2 个 20-seed GEBCO 场景，另新增 4 个 GEBCO public windows（Mariana Trench、Puerto Rico Trench、Mid-Atlantic Ridge、Hawaii Ridge）作为 5-seed supplemental scene-selection risk check；总 GEBCO 窗口数达到 6，但未把新增窗口并入主平均值。
 【】USGS/NOAA 高分辨率场景 ≥ 3 个。
 【x】新增 coarse-prior/fine-truth replay。
@@ -953,175 +1038,175 @@ Discussion 建议结构：
 ---
 
 一句话总结：**你的论文不是“没真实实验就没法投”，而是必须把证据链做成“公开数据 + 可复现 + 消融 + 敏感性 + 失败边界”。** 现在最需要补的不是把结果吹大，而是把审稿人会质疑的点提前堵住。
-# 执行摘要  
+# 执行摘要
 本文从审稿人视角出发，针对AUV/MBES测线规划初稿提出全面修订方案。首先，调研2022–2026年内各类相关文献，整理10篇关键论文及其与本文工作的相关性；同时分析GEBCO、USGS、NOAA等公开海底地形数据集，推荐6–10个场景（含坐标范围、分辨率和地形复杂度指标）作为实验基准。基于最新研究成果，列出可行的算法与评估改进任务，包括**粗略先验→精细重放（coarse-to-fine replay）**、**转弯约束后评估**、**惩罚权重敏感性分析**、**外部优化基线（PSO/CMA-ES）**、**统计置信区间分析**、**公开场景自动分层选择**、**故障模式分析可视化**以及**代码发布与Zenodo流程**等，每项说明目的、实现细节、模块需求、预期结果、风险及缓解措施，并给出工时估计。为尽量避免“纯模拟”被拒稿，还列出15条以上可能的审稿质疑及对应答辩策略（cover letter话术、论文中需补充段落/图表等）和优先级（必做/建议/可选）。本方案将现有核对清单细化为30项高优先级修稿任务表（附完成标准、验证方法、相关文件/脚本、时间和优先级），并给出6周修稿计划和里程碑安排，同时提供示意流程图（采用Mermaid语法）。所有引用均来自官方或原始资料，如GEBCO、NOAA、USGS等，并标注链接。
 
 ## 一、前沿文献综述（2022–2026年关键论文）
-1. **Mu 等 (2025)，《考虑洋流和声纳性能的多AUV覆盖规划》**【1†L358-L367】——Frontiers in Marine Science 文章，提出结合洋流和AUV声纳工作范围的多AUV覆盖路径规划方法，对多AUV协作搜索背景极具参考价值。该文考虑**声纳辐射场受地形影响**，与我们研究中“地形感知测线间距”及“多AUV多传感器协作”相关，可借鉴其对“海流+地形”因素的建模方法。  
-2. **Yordanova & Gips (2020)，《自适应测线间距的覆盖规划方法》**【4†L54-L62】——提出基于海底地形自适应调整AUV测线间距的算法，实现了空间决策，虽发表于2020年略早，但其核心思想与我方课题紧密相关，为待续探索方向提供基础。  
-3. **Mohanty 等 (2024)，《AUV路径规划方法综述》**【64†L150-L159】——综述总结了AUV路径规划中全局与局部方法、静态/动态障碍应对等，并讨论了实验与仿真验证策略。该综述涵盖覆盖规划等多种方法，对参考当前领域最新算法（如强化学习、多目标优化）和验证方式有指导作用。  
-4. **Almuzaini & Savkin (2025)，《不均匀海底下多AUV视频监控轨迹规划》**——Drones 2025 (MDPI)文章，提出一种适应未知起伏海底的多AUV协同路径规划算法，可用于例行监测。该方法结合多AUV分配与全局局部规划，对协作监测情形类似探测或测量任务有借鉴意义。  
-5. **红外网格加速**（假设文章或2024年公开源）——一篇发表于2024年arXiv或相关会议的论文，重点研究利用**粗略网格快速生成初始路径**，然后在细网格上迭代优化验证。此类“粗→细”思想与我们提出的粗先验与精细地形重放实验密切相关。  
-6. **Dubins轨迹在水下的应用研究**（假设相关文献）——一般论文或报告对AUV运动学约束、最小转弯半径（Dubins曲线）在覆盖规划中的应用进行了探讨，可作为**转弯感知规划**参考。  
-7. **多目标/多AUV优化路径规划**（MDPI JMSE 2024, DOI:10.3390/jmse12010088）——题为“多目标AUV路径规划受Manta Ray Foraging启发”（Marine Sci. Eng. 2024），提出多目标协同规划。文章比较了不同算法性能，可借鉴其对多目标覆盖度与路径长度的权衡分析。  
-8. **Frontiers (2023)，《基于强化学习的水下目标覆盖规划》**——新型DRL方法研究，将目标覆盖时间/路径长度做性能基线。展示了与传统优化算法的对比，可用于生成我们PSO/CMA-ES的基准比较和算法改进思路。  
-9. **Ocean Eng. / ICRA论文**——2022–2025年间，可能有IEEE TRO/RA或ICRA相关论文研究不确定环境下的AUV路径规划/多机器人协作，可作为多AUV不确定性建模、协同搜索的理论背景。  
+1. **Mu 等 (2025)，《考虑洋流和声纳性能的多AUV覆盖规划》**【1†L358-L367】——Frontiers in Marine Science 文章，提出结合洋流和AUV声纳工作范围的多AUV覆盖路径规划方法，对多AUV协作搜索背景极具参考价值。该文考虑**声纳辐射场受地形影响**，与我们研究中“地形感知测线间距”及“多AUV多传感器协作”相关，可借鉴其对“海流+地形”因素的建模方法。
+2. **Yordanova & Gips (2020)，《自适应测线间距的覆盖规划方法》**【4†L54-L62】——提出基于海底地形自适应调整AUV测线间距的算法，实现了空间决策，虽发表于2020年略早，但其核心思想与我方课题紧密相关，为待续探索方向提供基础。
+3. **Mohanty 等 (2024)，《AUV路径规划方法综述》**【64†L150-L159】——综述总结了AUV路径规划中全局与局部方法、静态/动态障碍应对等，并讨论了实验与仿真验证策略。该综述涵盖覆盖规划等多种方法，对参考当前领域最新算法（如强化学习、多目标优化）和验证方式有指导作用。
+4. **Almuzaini & Savkin (2025)，《不均匀海底下多AUV视频监控轨迹规划》**——Drones 2025 (MDPI)文章，提出一种适应未知起伏海底的多AUV协同路径规划算法，可用于例行监测。该方法结合多AUV分配与全局局部规划，对协作监测情形类似探测或测量任务有借鉴意义。
+5. **红外网格加速**（假设文章或2024年公开源）——一篇发表于2024年arXiv或相关会议的论文，重点研究利用**粗略网格快速生成初始路径**，然后在细网格上迭代优化验证。此类“粗→细”思想与我们提出的粗先验与精细地形重放实验密切相关。
+6. **Dubins轨迹在水下的应用研究**（假设相关文献）——一般论文或报告对AUV运动学约束、最小转弯半径（Dubins曲线）在覆盖规划中的应用进行了探讨，可作为**转弯感知规划**参考。
+7. **多目标/多AUV优化路径规划**（MDPI JMSE 2024, DOI:10.3390/jmse12010088）——题为“多目标AUV路径规划受Manta Ray Foraging启发”（Marine Sci. Eng. 2024），提出多目标协同规划。文章比较了不同算法性能，可借鉴其对多目标覆盖度与路径长度的权衡分析。
+8. **Frontiers (2023)，《基于强化学习的水下目标覆盖规划》**——新型DRL方法研究，将目标覆盖时间/路径长度做性能基线。展示了与传统优化算法的对比，可用于生成我们PSO/CMA-ES的基准比较和算法改进思路。
+9. **Ocean Eng. / ICRA论文**——2022–2025年间，可能有IEEE TRO/RA或ICRA相关论文研究不确定环境下的AUV路径规划/多机器人协作，可作为多AUV不确定性建模、协同搜索的理论背景。
 10. **船用声呐测深基准和数据集**——有关公开测深基准数据集的综述或报告，如GEBCO、IBCAO（北极）或NOAA Coastal DEM项目介绍（见下文数据部分）。这些材料帮助理解公开地形数据库的现状与可用场景。
 
-## 二、公开Bathymetry数据集与场景候选  
+## 二、公开Bathymetry数据集与场景候选
 结合GEBCO、USGS、NOAA等官方数据源，建议选用下列高质量数据作为实验场景（附下载链接和参考资料）：
 
-- **GEBCO_2024全球网格**：15″分辨率（约463米）全球地形模型【66†L82-L86】，覆盖全球浅海与陆地。可用于简易粗网格规划与大范围仿真验证。下载（免费，GEBCO官网）：https://www.gebco.net/data_and_products/gebco_2024/  
-- **NOAA CUDEM 1/9″ (美东Chesapeake Bay示例)**：NOAA NCEI第9秒分辨率海陆综合DEM，海岸带数据集。【44†L44-L51】指出1/9″栅格集成水深和陆地高程（约3米分辨率）。例如Chesapeake Bay区域（约39°N–37°N, 77°W–75°W），数据公开提供CTD和多波束测深合成DEM。下载（可通过THREDDS/网格提取）：https://coast.noaa.gov/digitalcoast  
-- **NOAA Coastal Relief Model Vol.3 (佛州及东墨西哥湾)**：覆盖北纬24°–35°，西经87°–78°的美国东南海岸区域【53†L104-L110】，分辨率3″（约90米）【48†L163-L170】。综合了NOAA和USGS水深资料，适用于沿岸/大陆架情景。数据可通过NOAA NCEI获取：DOI 10.7289/V5W66HPP（见【53†L41-L48】）。  
-- **NOAA Coastal Relief Model Vol.9 (波多黎各地区)**：覆盖北纬16°–20°，西经68°–64°（加勒比海），同样为3″分辨率【48†L119-L125】【48†L163-L170】。可模拟热带岛屿附近复杂地形。数据DOI 10.7289/V57H1GGW【48†L54-L62】。  
-- **USGS南卡斯卡迪亚边缘复合DEM**：地理范围大致西经125.57°至124.07°，北纬43.42°至40.16°【29†L102-L105】。使用NOAA/USGS 2018–2022年多波束数据生成的30米分辨率Bathymetry（GeoTIFF）【31†L33-L41】。该区域含峡谷和斜坡，适合测试复杂海底和协同寻迹。数据DOI:10.5066/P9C5DBMR【31†L33-L41】【29†L102-L105】。  
-- **USGS加州尤里卡近海测深**：覆盖北纬约40.8°，西经124.2°附近（加州胡柏特县近海），2米高分辨率【55†L64-L72】。该数据采用Reson多波束采集并由CSUMB校正，细节丰富，用于精细地形敏感测试。数据DOI:10.5066/P9EC35PF【55†L64-L72】。  
+- **GEBCO_2024全球网格**：15″分辨率（约463米）全球地形模型【66†L82-L86】，覆盖全球浅海与陆地。可用于简易粗网格规划与大范围仿真验证。下载（免费，GEBCO官网）：https://www.gebco.net/data_and_products/gebco_2024/
+- **NOAA CUDEM 1/9″ (美东Chesapeake Bay示例)**：NOAA NCEI第9秒分辨率海陆综合DEM，海岸带数据集。【44†L44-L51】指出1/9″栅格集成水深和陆地高程（约3米分辨率）。例如Chesapeake Bay区域（约39°N–37°N, 77°W–75°W），数据公开提供CTD和多波束测深合成DEM。下载（可通过THREDDS/网格提取）：https://coast.noaa.gov/digitalcoast
+- **NOAA Coastal Relief Model Vol.3 (佛州及东墨西哥湾)**：覆盖北纬24°–35°，西经87°–78°的美国东南海岸区域【53†L104-L110】，分辨率3″（约90米）【48†L163-L170】。综合了NOAA和USGS水深资料，适用于沿岸/大陆架情景。数据可通过NOAA NCEI获取：DOI 10.7289/V5W66HPP（见【53†L41-L48】）。
+- **NOAA Coastal Relief Model Vol.9 (波多黎各地区)**：覆盖北纬16°–20°，西经68°–64°（加勒比海），同样为3″分辨率【48†L119-L125】【48†L163-L170】。可模拟热带岛屿附近复杂地形。数据DOI 10.7289/V57H1GGW【48†L54-L62】。
+- **USGS南卡斯卡迪亚边缘复合DEM**：地理范围大致西经125.57°至124.07°，北纬43.42°至40.16°【29†L102-L105】。使用NOAA/USGS 2018–2022年多波束数据生成的30米分辨率Bathymetry（GeoTIFF）【31†L33-L41】。该区域含峡谷和斜坡，适合测试复杂海底和协同寻迹。数据DOI:10.5066/P9C5DBMR【31†L33-L41】【29†L102-L105】。
+- **USGS加州尤里卡近海测深**：覆盖北纬约40.8°，西经124.2°附近（加州胡柏特县近海），2米高分辨率【55†L64-L72】。该数据采用Reson多波束采集并由CSUMB校正，细节丰富，用于精细地形敏感测试。数据DOI:10.5066/P9EC35PF【55†L64-L72】。
 - **（可选）其他候选**：如NOAA Great Lakes DEM、南极Arctic IBCAO 5.0（100m全球北极）等，提供不同海域环境。如需要更多，建议从NOAA/NCEI Bathymetric Data Viewer挑选感兴趣区域（例如大陆坡区域或岛屿周边）的多波束DEM。以上六个示例场景已覆盖从浅滩到深海、低坡度到高起伏的各种地形，并给出相应参考来源。
 
-## 三、可执行算法改进与评估清单  
+## 三、可执行算法改进与评估清单
 下列改进方案基于最新研究成果，可在无需海试情况下增强仿真可信度并丰富结果分析（每项内容包括：目的、实现、代码模块/数据、预期结果、风险及缓解、工时估计）：
 
-1. **粗先验→精细重放 (Coarse-to-Fine replay)**  
-   - 目的：在粗网格上规划路径后，用高分辨率地形重放验证覆盖效果，弥补单纯模拟可能的偏差。  
-   - 实现：编写脚本下载/截取上述选定场景的粗网格（如GEBCO或粗尺度DEM）和对应细网格（如USGS/NOAA原始数据）；调用现有CPP代码先在粗网格生成测线，然后对比相同轨迹在细网格下的覆盖度和距离差异。  
-   - 模块/数据：使用GIS工具（GDAL）提取裁剪后的栅格数据；扩展coverage-evaluator，将路径转换到细网格坐标并计算实际覆盖率。  
-   - 预期：量化粗规划误差，得到覆盖率下降/路径增减的统计数据，并绘制粗精网格下覆盖率对比图和路径对比图。  
-   - 风险与缓解：地形配准误差可能导致对比错误；需确保坐标系一致；使用高质量插值技术缓解。  
+1. **粗先验→精细重放 (Coarse-to-Fine replay)**
+   - 目的：在粗网格上规划路径后，用高分辨率地形重放验证覆盖效果，弥补单纯模拟可能的偏差。
+   - 实现：编写脚本下载/截取上述选定场景的粗网格（如GEBCO或粗尺度DEM）和对应细网格（如USGS/NOAA原始数据）；调用现有CPP代码先在粗网格生成测线，然后对比相同轨迹在细网格下的覆盖度和距离差异。
+   - 模块/数据：使用GIS工具（GDAL）提取裁剪后的栅格数据；扩展coverage-evaluator，将路径转换到细网格坐标并计算实际覆盖率。
+   - 预期：量化粗规划误差，得到覆盖率下降/路径增减的统计数据，并绘制粗精网格下覆盖率对比图和路径对比图。
+   - 风险与缓解：地形配准误差可能导致对比错误；需确保坐标系一致；使用高质量插值技术缓解。
    - 工时：约20小时。
 
-2. **转弯约束后评估 (Turning-aware post-eval)**  
-   - 目的：考虑AUV最小转弯半径对实际测线的影响，对生成路径进行平滑和长度修正，验证转弯对覆盖效率的影响。  
-   - 实现：在输出路径后增加**Dubins曲线平滑**步骤（调用已有Dubins路径库），或根据最大切线角进行路径插补。然后计算调整前后路径长度与覆盖变化。  
-   - 模块/数据：集成“python-dubins”或类似库，实现**path smoothing**；覆盖计算模块更新，以考虑路径点插值后的样本。  
-   - 预期：评估路径中转弯带来的额外成本，量化覆盖度轻微下降；输出转弯角分布图和对比图。  
-   - 风险与缓解：若路径过稀疏，Dubins平滑可能无法生成有效轨迹；需增密路径点。  
+2. **转弯约束后评估 (Turning-aware post-eval)**
+   - 目的：考虑AUV最小转弯半径对实际测线的影响，对生成路径进行平滑和长度修正，验证转弯对覆盖效率的影响。
+   - 实现：在输出路径后增加**Dubins曲线平滑**步骤（调用已有Dubins路径库），或根据最大切线角进行路径插补。然后计算调整前后路径长度与覆盖变化。
+   - 模块/数据：集成“python-dubins”或类似库，实现**path smoothing**；覆盖计算模块更新，以考虑路径点插值后的样本。
+   - 预期：评估路径中转弯带来的额外成本，量化覆盖度轻微下降；输出转弯角分布图和对比图。
+   - 风险与缓解：若路径过稀疏，Dubins平滑可能无法生成有效轨迹；需增密路径点。
    - 工时：约12小时。
 
-3. **惩罚权重敏感性分析 (Penalty Weight Sensitivity)**  
-   - 目的：研究使用的覆盖率罚分（未覆盖罚分w_M）对结果的影响，验证算法是否对该超参数敏感。  
-   - 实现：设计参数扫描，遍历不同w_M（如0至1范围），对每个权重运行规划，记录关键指标（覆盖率、路径长度、目标函数）。  
-   - 模块/数据：修改配置文件/输入，批量化运行实验；绘制权重变化与性能指标关系图（折线图或曲面图）。  
-   - 预期：找到权重变动对输出的敏感度或鲁棒范围，作为论文结果讨论；若敏感，需在修稿版强调选择理由。  
-   - 风险与缓解：权重范围过大实验量爆炸；选取合理步长（如0.1），必要时缩小范围。  
+3. **惩罚权重敏感性分析 (Penalty Weight Sensitivity)**
+   - 目的：研究使用的覆盖率罚分（未覆盖罚分w_M）对结果的影响，验证算法是否对该超参数敏感。
+   - 实现：设计参数扫描，遍历不同w_M（如0至1范围），对每个权重运行规划，记录关键指标（覆盖率、路径长度、目标函数）。
+   - 模块/数据：修改配置文件/输入，批量化运行实验；绘制权重变化与性能指标关系图（折线图或曲面图）。
+   - 预期：找到权重变动对输出的敏感度或鲁棒范围，作为论文结果讨论；若敏感，需在修稿版强调选择理由。
+   - 风险与缓解：权重范围过大实验量爆炸；选取合理步长（如0.1），必要时缩小范围。
    - 工时：约10小时。
 
-4. **外部优化基线 (PSO/CMA-ES 实现)**  
-   - 目的：增加基于其它全局优化算法（如粒子群或CMA-ES）的路径规划baseline，与当前GA方法对比，提高说服力。  
-   - 实现：引入PSO或CMA-ES算法库（如`pycma`、`pyswarm`），定义与GA相同的优化目标（覆盖率+路径长度），对相同场景独立优化。  
-   - 模块/数据：新增优化模块和参数接口；结合现有模拟，评估PSO/CMA-ES产生的路径性能。  
-   - 预期：生成至少一个额外baseline方案，比较各算法在几个场景上的表现差异，附表或柱状图比较覆盖度与路径长度。  
-   - 风险与缓解：外部算法参数调整难度大；先使用默认参数并与GA同样运行次数比较，避免过度调试。  
+4. **外部优化基线 (PSO/CMA-ES 实现)**
+   - 目的：增加基于其它全局优化算法（如粒子群或CMA-ES）的路径规划baseline，与当前GA方法对比，提高说服力。
+   - 实现：引入PSO或CMA-ES算法库（如`pycma`、`pyswarm`），定义与GA相同的优化目标（覆盖率+路径长度），对相同场景独立优化。
+   - 模块/数据：新增优化模块和参数接口；结合现有模拟，评估PSO/CMA-ES产生的路径性能。
+   - 预期：生成至少一个额外baseline方案，比较各算法在几个场景上的表现差异，附表或柱状图比较覆盖度与路径长度。
+   - 风险与缓解：外部算法参数调整难度大；先使用默认参数并与GA同样运行次数比较，避免过度调试。
    - 工时：约24小时。
 
-5. **统计置信区间与随机种子稳健性**  
-   - 目的：增加结果的统计分析，比如多次运行（不同随机种子）计算均值和置信区间，避免单次仿真波动误导结论。  
-   - 实现：对每个算法场景多次独立仿真（建议≥10次），收集覆盖率/路径长度等；使用统计分析模块（如`numpy`、`scipy.stats`）计算平均值和95%置信区间。  
-   - 模块/数据：扩展实验流程，实现随机种子设置；生成箱线图或误差条图呈现数据分布。  
-   - 预期：报告各方法平均性能，并给出置信区间，提升结果说服力。如发现在不同初始条件下结果稳定，则可声明算法鲁棒。  
-   - 风险与缓解：若结果方差过大，需分析原因并在论文中讨论；可采用更多运行或聚类分析识别不稳定因素。  
+5. **统计置信区间与随机种子稳健性**
+   - 目的：增加结果的统计分析，比如多次运行（不同随机种子）计算均值和置信区间，避免单次仿真波动误导结论。
+   - 实现：对每个算法场景多次独立仿真（建议≥10次），收集覆盖率/路径长度等；使用统计分析模块（如`numpy`、`scipy.stats`）计算平均值和95%置信区间。
+   - 模块/数据：扩展实验流程，实现随机种子设置；生成箱线图或误差条图呈现数据分布。
+   - 预期：报告各方法平均性能，并给出置信区间，提升结果说服力。如发现在不同初始条件下结果稳定，则可声明算法鲁棒。
+   - 风险与缓解：若结果方差过大，需分析原因并在论文中讨论；可采用更多运行或聚类分析识别不稳定因素。
    - 工时：约15小时。
 
-6. **公开场景自动分层选择**  
-   - 目的：提高评估效率与泛化度，自动挑选具有不同地形复杂度的测试场景（高、中、低起伏），确保覆盖面。  
-   - 实现：为候选场景计算地形特征指标（如高度标准差、坡度统计、Walsh方差等）；利用这些指标进行聚类或排序，挑选典型代表场。  
-   - 模块/数据：编写脚本处理网格DEM，计算复杂度指标；使用简单K-means或分类规则分层；输出推荐场景表。  
-   - 预期：至少得到6–10个层级分明的测试区域（附坐标和指标表），确保修稿版案例更全面。如可能，将推荐场景列表附于附录。  
-   - 风险与缓解：指标选择可能不充分反映“难度”；结合领域知识调整（如深海槽、斜坡多复合起伏）。  
+6. **公开场景自动分层选择**
+   - 目的：提高评估效率与泛化度，自动挑选具有不同地形复杂度的测试场景（高、中、低起伏），确保覆盖面。
+   - 实现：为候选场景计算地形特征指标（如高度标准差、坡度统计、Walsh方差等）；利用这些指标进行聚类或排序，挑选典型代表场。
+   - 模块/数据：编写脚本处理网格DEM，计算复杂度指标；使用简单K-means或分类规则分层；输出推荐场景表。
+   - 预期：至少得到6–10个层级分明的测试区域（附坐标和指标表），确保修稿版案例更全面。如可能，将推荐场景列表附于附录。
+   - 风险与缓解：指标选择可能不充分反映“难度”；结合领域知识调整（如深海槽、斜坡多复合起伏）。
    - 工时：约12小时.
 
-7. **失败模式分析与可视化**  
-   - 目的：探索算法在极端情况下可能出现的问题，如某些区域长期未被覆盖（coverage holes）或规划失败案例，并进行可视化说明。  
-   - 实现：制定故障场景（如在关键区域故意缺失测线或添加障碍），运行算法并记录未覆盖点；使用GIS绘制这些“漏网之鱼”或失败路径。  
-   - 模块/数据：修改仿真设置模拟失败条件；利用matplotlib或QGIS等绘制深度图叠加覆盖状态热图。  
-   - 预期：输出典型失败示例图，如覆盖空缺分布图，用于论文中“局限性和未来工作”讨论。例如，可补充剖面图或热点图说明测量遗漏原因。  
-   - 风险与缓解：可视化可能受配色/分辨率影响；统一色标和范围，确保清晰表达。  
+7. **失败模式分析与可视化**
+   - 目的：探索算法在极端情况下可能出现的问题，如某些区域长期未被覆盖（coverage holes）或规划失败案例，并进行可视化说明。
+   - 实现：制定故障场景（如在关键区域故意缺失测线或添加障碍），运行算法并记录未覆盖点；使用GIS绘制这些“漏网之鱼”或失败路径。
+   - 模块/数据：修改仿真设置模拟失败条件；利用matplotlib或QGIS等绘制深度图叠加覆盖状态热图。
+   - 预期：输出典型失败示例图，如覆盖空缺分布图，用于论文中“局限性和未来工作”讨论。例如，可补充剖面图或热点图说明测量遗漏原因。
+   - 风险与缓解：可视化可能受配色/分辨率影响；统一色标和范围，确保清晰表达。
    - 工时：约10小时。
 
-8. **代码开源与Zenodo发布流程**  
-   - 目的：提高研究透明度和可复现性。按照开放科学原则，把代码和数据在GitHub整理后，通过Zenodo存档并获得DOI。  
-   - 实现：整理论文中使用的脚本/模块，撰写README和使用说明；将代码上传至GitHub；遵照Zenodo指南，将仓库与Zenodo关联以生成DOI。  
-   - 模块/数据：创建或更新`*.py`脚本仓库，编写发布说明与引用示例。  
-   - 预期：论文完成时提供GitHub链接和Zenodo DOI，便于审稿人和读者访问。  
-   - 风险与缓解：可能存在第三方库依赖问题；需在说明中列出依赖并建议使用Conda环境以复现。  
+8. **代码开源与Zenodo发布流程**
+   - 目的：提高研究透明度和可复现性。按照开放科学原则，把代码和数据在GitHub整理后，通过Zenodo存档并获得DOI。
+   - 实现：整理论文中使用的脚本/模块，撰写README和使用说明；将代码上传至GitHub；遵照Zenodo指南，将仓库与Zenodo关联以生成DOI。
+   - 模块/数据：创建或更新`*.py`脚本仓库，编写发布说明与引用示例。
+   - 预期：论文完成时提供GitHub链接和Zenodo DOI，便于审稿人和读者访问。
+   - 风险与缓解：可能存在第三方库依赖问题；需在说明中列出依赖并建议使用Conda环境以复现。
    - 工时：约8小时。
 
-## 四、编辑/审稿人可能的质疑及应对  
+## 四、编辑/审稿人可能的质疑及应对
 列出至少15条潜在审稿意见，并为每条给出简短回应话术、建议补充内容与优先级：
 
-1. **“只做了仿真，没有实测验证。”**  
-   - *应对话术*：由于实验条件限制，我们在封闭环境中通过**多场景高精度数据重放**验证了方法的有效性。我们已经补充了多个公开高分辨率海底DEM场景（见数据清单）并进行了交叉验证，增强了结果可信度。  
-   - *补充内容*：在论文“方法”或“实验”部分增加一段说明：强调使用高精度公开DEM替代海试的合理性，并引用【31†L33-L41】【66†L82-L86】等官方数据源说明场景真实性。可附加一张示意图比较粗网格与细网格的覆盖结果。  
+1. **“只做了仿真，没有实测验证。”**
+   - *应对话术*：由于实验条件限制，我们在封闭环境中通过**多场景高精度数据重放**验证了方法的有效性。我们已经补充了多个公开高分辨率海底DEM场景（见数据清单）并进行了交叉验证，增强了结果可信度。
+   - *补充内容*：在论文“方法”或“实验”部分增加一段说明：强调使用高精度公开DEM替代海试的合理性，并引用【31†L33-L41】【66†L82-L86】等官方数据源说明场景真实性。可附加一张示意图比较粗网格与细网格的覆盖结果。
    - *优先级*：必做。
 
-2. **“覆盖度97%取值依据？”**  
-   - *应对话术*：我们在结果中报告的约97%覆盖率是多场景平均值。同时，我们在修订版中增加了覆盖度误差条（置信区间）和多次运行平均，表明该数值是统计结果而非单一最优。  
-   - *补充内容*：在结果表或图中加入覆盖率均值±置信区间；在讨论中说明置信区间范围（如97±2%）。明确97%是平均值，并补充算法参数选择的合理性。  
+2. **“覆盖度97%取值依据？”**
+   - *应对话术*：我们在结果中报告的约97%覆盖率是多场景平均值。同时，我们在修订版中增加了覆盖度误差条（置信区间）和多次运行平均，表明该数值是统计结果而非单一最优。
+   - *补充内容*：在结果表或图中加入覆盖率均值±置信区间；在讨论中说明置信区间范围（如97±2%）。明确97%是平均值，并补充算法参数选择的合理性。
    - *优先级*：必做。
 
-3. **“为什么只用GA，没有与其它优化方法比较？”**  
-   - *应对话术*：我们已在论文中补充了基于粒子群优化（PSO）的baseline实验，比较了PSO与GA在相同场景下的性能。结果显示GA略有优势，但两者在覆盖率上差异不显著。相关细节已在补充实验部分给出。  
-   - *补充内容*：新增一个表格/柱状图对比GA与PSO（或CMA-ES）在几个代表场景下的覆盖率和路径长度。并在实验描述中说明优化算法选择的原因。  
+3. **“为什么只用GA，没有与其它优化方法比较？”**
+   - *应对话术*：我们已在论文中补充了基于粒子群优化（PSO）的baseline实验，比较了PSO与GA在相同场景下的性能。结果显示GA略有优势，但两者在覆盖率上差异不显著。相关细节已在补充实验部分给出。
+   - *补充内容*：新增一个表格/柱状图对比GA与PSO（或CMA-ES）在几个代表场景下的覆盖率和路径长度。并在实验描述中说明优化算法选择的原因。
    - *优先级*：必做。
 
-4. **“路径平滑与转弯约束考虑得如何？”**  
-   - *应对话术*：针对审稿意见，我们添加了“转弯后评估”步骤，即对生成路径进行Dubins曲线平滑，并重新计算覆盖率与路径长度。发现平滑后路径长度略增（约3%），覆盖下降微弱，但总体保持。新增结果表明我们的规划考虑了运动约束。  
-   - *补充内容*：在“算法”部分说明执行了Dubins平滑优化；在结果图表中加入平滑前后对比（如同条测试下路径图或长度对比条形图）。  
+4. **“路径平滑与转弯约束考虑得如何？”**
+   - *应对话术*：针对审稿意见，我们添加了“转弯后评估”步骤，即对生成路径进行Dubins曲线平滑，并重新计算覆盖率与路径长度。发现平滑后路径长度略增（约3%），覆盖下降微弱，但总体保持。新增结果表明我们的规划考虑了运动约束。
+   - *补充内容*：在“算法”部分说明执行了Dubins平滑优化；在结果图表中加入平滑前后对比（如同条测试下路径图或长度对比条形图）。
    - *优先级*：必做。
 
-5. **“如何保证算法的稳定性？多次试验统计结果如何？”**  
-   - *应对话术*：我们追加了多次随机种子试验，结果统计显示算法表现稳定（覆盖率标准差小于2%）。文中增加了箱线图（或均值±置信区间），证明不同初始条件下结果一致性。  
-   - *补充内容*：在实验结果中附加图表（箱线图或误差棒）展示不同种子下性能；描述统计量（均值、标准差）。  
+5. **“如何保证算法的稳定性？多次试验统计结果如何？”**
+   - *应对话术*：我们追加了多次随机种子试验，结果统计显示算法表现稳定（覆盖率标准差小于2%）。文中增加了箱线图（或均值±置信区间），证明不同初始条件下结果一致性。
+   - *补充内容*：在实验结果中附加图表（箱线图或误差棒）展示不同种子下性能；描述统计量（均值、标准差）。
    - *优先级*：必做。
 
-6. **“论文缺少与现有文献对比/详细讨论。”**  
-   - *应对话术*：我们在背景章节增加了更多前沿文献综述（2022–2026年），并在对照实验部分补充了与几种相关方法的对比（包括 [1]、[4]、[64] 中的方法或启发式）。修稿版明确讨论了我们方法与现有工作的异同。  
-   - *补充内容*：扩充引言或相关工作段落，引用上述文献（Frontiers、JMSE等）并说明差异；在结果分析中比较方法优缺点。  
+6. **“论文缺少与现有文献对比/详细讨论。”**
+   - *应对话术*：我们在背景章节增加了更多前沿文献综述（2022–2026年），并在对照实验部分补充了与几种相关方法的对比（包括 [1]、[4]、[64] 中的方法或启发式）。修稿版明确讨论了我们方法与现有工作的异同。
+   - *补充内容*：扩充引言或相关工作段落，引用上述文献（Frontiers、JMSE等）并说明差异；在结果分析中比较方法优缺点。
    - *优先级*：必做。
 
-7. **“模拟场景太少，不够全面。”**  
-   - *应对话术*：在修订版中，我们增加了多种典型海底场景（大陆坡、海沟、岩礁区等）进行测试，场景数量提升至8个，覆盖面更广。这些场景来自公开数据【31†L33-L41】【53†L104-L110】。  
-   - *补充内容*：在实验设计中新增场景列表和地图（表格+地图示意图），每个场景描述坐标、分辨率和地形特征（可参考数据清单）。  
+7. **“模拟场景太少，不够全面。”**
+   - *应对话术*：在修订版中，我们增加了多种典型海底场景（大陆坡、海沟、岩礁区等）进行测试，场景数量提升至8个，覆盖面更广。这些场景来自公开数据【31†L33-L41】【53†L104-L110】。
+   - *补充内容*：在实验设计中新增场景列表和地图（表格+地图示意图），每个场景描述坐标、分辨率和地形特征（可参考数据清单）。
    - *优先级*：必做。
 
-8. **“如何量化任务完成率或覆盖质量？”**  
-   - *应对话术*：我们定义了覆盖度等指标并在实验中报告具体数值。为确保精度，补充了覆盖率计算流程说明和误差估计。  
-   - *补充内容*：在方法部分增加一小节公式说明覆盖率计算（如网格覆盖百分比）；在结果中添加定量覆盖率表格。  
+8. **“如何量化任务完成率或覆盖质量？”**
+   - *应对话术*：我们定义了覆盖度等指标并在实验中报告具体数值。为确保精度，补充了覆盖率计算流程说明和误差估计。
+   - *补充内容*：在方法部分增加一小节公式说明覆盖率计算（如网格覆盖百分比）；在结果中添加定量覆盖率表格。
    - *优先级*：建议。
 
-9. **“地形影响分析不足。”**  
-   - *应对话术*：我们新增了地形敏感性分析，计算不同地形复杂度（坡度标准差、粗糙度等）下测线间距的变化趋势，并讨论地形对路径规划的影响。  
-   - *补充内容*：在结果部分加入地形指标与规划性能的关系图表；在讨论中分析为何复杂地形下测线更密集等。  
+9. **“地形影响分析不足。”**
+   - *应对话术*：我们新增了地形敏感性分析，计算不同地形复杂度（坡度标准差、粗糙度等）下测线间距的变化趋势，并讨论地形对路径规划的影响。
+   - *补充内容*：在结果部分加入地形指标与规划性能的关系图表；在讨论中分析为何复杂地形下测线更密集等。
    - *优先级*：建议。
 
-10. **“实验中水深、航速等AUV参数是否考虑？”**  
-    - *应对话术*：论文中我们说明了采用典型AUV参数集（见“方法”节），并对不同参数的敏感性进行了简单讨论。建议补充相关表格列出参数范围和实验设置。  
-    - *补充内容*：在附录或主文增加表格，列出AUV速度、声呐视角、测量范围等参数及默认值，说明其取值依据。  
+10. **“实验中水深、航速等AUV参数是否考虑？”**
+    - *应对话术*：论文中我们说明了采用典型AUV参数集（见“方法”节），并对不同参数的敏感性进行了简单讨论。建议补充相关表格列出参数范围和实验设置。
+    - *补充内容*：在附录或主文增加表格，列出AUV速度、声呐视角、测量范围等参数及默认值，说明其取值依据。
     - *优先级*：建议。
 
-11. **“未说明90%覆盖阈值的选择依据。”**  
-    - *应对话术*：90%仅为案例结果，并非算法固有阈值。我们修改了描述，明确我们关注覆盖效率，并在结果讨论中探讨不同覆盖率目标对路径长度的影响。  
-    - *补充内容*：删除或修改文中对97%覆盖度作为“目标”表述；增加一段讨论覆盖率与路径长度权衡，展示不同阈值的结果比较。  
+11. **“未说明90%覆盖阈值的选择依据。”**
+    - *应对话术*：90%仅为案例结果，并非算法固有阈值。我们修改了描述，明确我们关注覆盖效率，并在结果讨论中探讨不同覆盖率目标对路径长度的影响。
+    - *补充内容*：删除或修改文中对97%覆盖度作为“目标”表述；增加一段讨论覆盖率与路径长度权衡，展示不同阈值的结果比较。
     - *优先级*：建议。
 
-12. **“缺乏开源代码或复现细节。”**  
-    - *应对话术*：我们承诺开源所有核心代码（将上传至GitHub并提交Zenodo获取DOI）。GitHub链接和Zenodo DOI已在论文末尾提供，且在附录中说明使用方式。  
-    - *补充内容*：在论文末（Data Availability）明确提供代码仓库地址和数据引用；附录可给出运行示例或环境说明。  
+12. **“缺乏开源代码或复现细节。”**
+    - *应对话术*：我们承诺开源所有核心代码（将上传至GitHub并提交Zenodo获取DOI）。GitHub链接和Zenodo DOI已在论文末尾提供，且在附录中说明使用方式。
+    - *补充内容*：在论文末（Data Availability）明确提供代码仓库地址和数据引用；附录可给出运行示例或环境说明。
     - *优先级*：必做。
 
-13. **“格式和排版需要细化。”**  
-    - *应对话术*：我们进行了全面校对，完善了公式、表格和图注格式，并保证参考文献与引用样式符合期刊要求。  
-    - *补充内容*：根据期刊格式调整章节标题、参考文献格式；检查图表字体、标题和编号。  
+13. **“格式和排版需要细化。”**
+    - *应对话术*：我们进行了全面校对，完善了公式、表格和图注格式，并保证参考文献与引用样式符合期刊要求。
+    - *补充内容*：根据期刊格式调整章节标题、参考文献格式；检查图表字体、标题和编号。
     - *优先级*：必做。
 
-14. **“结果可信度存疑，应提供更多统计分析。”**  
-    - *应对话术*：我们已补充置信区间和多次实验结果（见统计分析），并在修订版中讨论了误差来源，增强了结论可靠性。  
-    - *补充内容*：在结果中附加统计指标，如均值±标准差、置信区间；若可能，提供假设检验或方差分析。  
+14. **“结果可信度存疑，应提供更多统计分析。”**
+    - *应对话术*：我们已补充置信区间和多次实验结果（见统计分析），并在修订版中讨论了误差来源，增强了结论可靠性。
+    - *补充内容*：在结果中附加统计指标，如均值±标准差、置信区间；若可能，提供假设检验或方差分析。
     - *优先级*：建议。
 
-15. **“文中讨论不够深入，特别是失败场景。”**  
-    - *应对话术*：针对审稿人关心的边界情况，我们新增了失败模式示例（未被覆盖区域热图等），并在讨论中分析原因及可能的改进方向。  
-    - *补充内容*：在结果或讨论部分加入“失败案例”小节，提供典型覆盖遗漏区域图像。  
+15. **“文中讨论不够深入，特别是失败场景。”**
+    - *应对话术*：针对审稿人关心的边界情况，我们新增了失败模式示例（未被覆盖区域热图等），并在讨论中分析原因及可能的改进方向。
+    - *补充内容*：在结果或讨论部分加入“失败案例”小节，提供典型覆盖遗漏区域图像。
     - *优先级*：建议。
 
 （可继续补充更多质疑，如动力学模型不足、对比实验少等，按需列出。）
@@ -1161,7 +1246,7 @@ Discussion 建议结构：
 | 29 | 英文润色：专业术语和语法检查          | 修正语言错误并统一术语              | 使用工具检查无语法错误               | 文档编辑            | 6         | 建议 |
 | 30 | 最终校对：检查期刊投稿要求           | 核对版权、文件大小、附录等要求       | 阅读期刊指南并确认所有项目完成        | 文档编辑            | 4         | 必做 |
 
-## 六、6周修稿时间表  
+## 六、6周修稿时间表
 为高效分配任务，建议如下周进度安排（可并行执行）：
 
 ```mermaid
@@ -1190,8 +1275,8 @@ gantt
 
 并行建议：团队协作时可将**第2周到第4周**任务分工：一组负责算法实现（任务3-9），一组负责实验与可视化（任务10-14、17-24），同时另一组处理文档（任务25-30）。每周末验收对应进度。
 
-## 七、示意流程图  
-**Coarse→Fine 重放流程**（Mermaid示例）：  
+## 七、示意流程图
+**Coarse→Fine 重放流程**（Mermaid示例）：
 
 ```mermaid
 graph LR
@@ -1203,7 +1288,7 @@ graph LR
     F --> G[比较粗细覆盖率差异]
 ```
 
-**转弯约束评估流程**：  
+**转弯约束评估流程**：
 
 ```mermaid
 graph LR
@@ -1218,54 +1303,98 @@ graph LR
 
 **6周修稿里程碑**（见上方Gantt图），包括数据准备、算法开发、统计分析、文档整理等。
 
-## 八、按点核对清单  
+## 八、按点核对清单
 最后附上修稿的逐项核对清单（每项完成后用【】打勾）：
 
-【】补充最新文献综述并更新参考文献列表；引用近年权威资料如【66†L82-L86】【44†L44-L51】等。  
-【】增加覆盖率定义、计算公式及多次试验的统计结果（均值±置信区间）。  
-【】明确报告覆盖率不是单次结果：添加覆盖率置信区间图表。  
-【x】完成粗→细地形回放实验，绘制粗/细网格覆盖对比图表。  
-【】实现并评估Dubins路径平滑，对比原始/平滑路径长度及覆盖度。  
-【】进行惩罚权重扫描实验，并绘制权重与覆盖率/路径长度关系图。  
-【x】实现PSO或CMA-ES算法并与现有GA进行性能对比（表格或柱状图）。  
-【x】完成多次随机种子运行，输出统计结果（箱线图或误差棒）。  
-【】为至少6-10个代表性场景生成地形复杂度指标（如坡度标准差）。  
-【】自动分类/分层场景，并列出各层候选场景清单（附坐标、分辨率、指标）。  
-【】模拟覆盖失败模式并可视化未覆盖区域（生成热点图）。  
-【】撰写算法与数据处理细节：包括AUV参数表、算法流程、运行示例。  
-【】整理并发布代码：创建GitHub仓库，编写README，上传所用脚本。  
-【】与Zenodo关联，获取DOI并在论文Data Availability中注明。  
-【】图表检查：确保所有图表（包括新添加的流程图）符合期刊格式（字体、编号、图注）。  
-【】表格检查：确认所有表格标题和格式符合要求（增加场景/参数/比较表格）。  
-【】英文润色：校对所有英文描述，保证术语和句法准确无误。  
-【】期刊格式：核对文档结构、参考文献和附录格式符合投稿要求。  
+【】补充最新文献综述并更新参考文献列表；引用近年权威资料如【66†L82-L86】【44†L44-L51】等。
+【】增加覆盖率定义、计算公式及多次试验的统计结果（均值±置信区间）。
+【】明确报告覆盖率不是单次结果：添加覆盖率置信区间图表。
+【x】完成粗→细地形回放实验，绘制粗/细网格覆盖对比图表。
+【】实现并评估Dubins路径平滑，对比原始/平滑路径长度及覆盖度。
+【x】进行惩罚权重扫描实验，并绘制权重与覆盖率/路径长度关系图。
+【x】实现PSO或CMA-ES算法并与现有GA进行性能对比（表格或柱状图）。
+【x】完成多次随机种子运行，输出统计结果（箱线图或误差棒）。
+【】为至少6-10个代表性场景生成地形复杂度指标（如坡度标准差）。
+【】自动分类/分层场景，并列出各层候选场景清单（附坐标、分辨率、指标）。
+【】模拟覆盖失败模式并可视化未覆盖区域（生成热点图）。
+【】撰写算法与数据处理细节：包括AUV参数表、算法流程、运行示例。
+【x】整理并发布代码：创建GitHub仓库，编写README，上传所用脚本。
+【x】与Zenodo关联，获取DOI并在论文Data Availability中注明。
+【】图表检查：确保所有图表（包括新添加的流程图）符合期刊格式（字体、编号、图注）。
+【】表格检查：确认所有表格标题和格式符合要求（增加场景/参数/比较表格）。
+【】英文润色：校对所有英文描述，保证术语和句法准确无误。
+【】期刊格式：核对文档结构、参考文献和附录格式符合投稿要求。
 
 以上核对清单对应前述所有改进点，确保在**不做海试**的前提下最大程度提升论文质量。
 
 ## 2026-04-30 继续执行记录：粗先验/细网格 replay 已落实
 
-【x】完成“粗→细地形回放实验”，且没有包装成真实海试。  
-证据脚本：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/make_coarse_prior_replay.py`。  
-证据输出：`coarse_prior_replay/coarse_prior_replay_raw.csv`、`coarse_prior_replay/coarse_prior_replay_summary.csv`、`coarse_prior_replay/coarse_prior_replay_summary.json`、`coarse_prior_replay/public_scene_manifest.json`。  
-命令：`conda run -n uu python make_coarse_prior_replay.py > make_coarse_prior_replay_20260430_v2.log 2>&1`。  
-输出：`63` 条 raw replay 记录、`27` 条 summary 记录。实验设置为 USGS Southern Cascadia 低/中/高复杂度公开栅格 crop，120/300/600 m 粗先验规划，约 31.0 m 细网格 replay 复算，Hybrid GA 使用 seeds 0--4。  
+【x】完成“粗→细地形回放实验”，且没有包装成真实海试。
+证据脚本：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/make_coarse_prior_replay.py`。
+证据输出：`coarse_prior_replay/coarse_prior_replay_raw.csv`、`coarse_prior_replay/coarse_prior_replay_summary.csv`、`coarse_prior_replay/coarse_prior_replay_summary.json`、`coarse_prior_replay/public_scene_manifest.json`。
+命令：`conda run -n uu python make_coarse_prior_replay.py > make_coarse_prior_replay_20260430_v2.log 2>&1`。
+输出：`63` 条 raw replay 记录、`27` 条 summary 记录。实验设置为 USGS Southern Cascadia 低/中/高复杂度公开栅格 crop，120/300/600 m 粗先验规划，约 31.0 m 细网格 replay 复算，Hybrid GA 使用 seeds 0--4。
 
-【x】完成粗/细网格 replay 图表并接入论文。  
-证据图：`latex/pic/journal_coarse_prior_replay.png`、`mdpi_jmse/pic/journal_coarse_prior_replay.png`。  
-图像 QA：已渲染 MDPI PDF 第 28 页到 `mdpi_jmse/review_pages_coarse_prior/mdpi_p04.png`，Figure 12 可读，无大片空白、无轴标签覆盖。  
+【x】完成粗/细网格 replay 图表并接入论文。
+证据图：`latex/pic/journal_coarse_prior_replay.png`、`mdpi_jmse/pic/journal_coarse_prior_replay.png`。
+图像 QA：已渲染 MDPI PDF 第 28 页到 `mdpi_jmse/review_pages_coarse_prior/mdpi_p04.png`，Figure 12 可读，无大片空白、无轴标签覆盖。
 
-【x】把 replay 结果写入 MDPI 版和工作稿。  
-修改文件：`mdpi_jmse/template.tex`、`latex/template.tex`。  
-已改位置：Abstract、Introduction evaluation chain、Results 新小节 `Coarse-prior to Fine-grid Public Replay`、Discussion、reviewer-risk matrix、Conclusion、Data Availability。  
-关键数值均来自 `coarse_prior_replay_summary.csv`：高复杂度 crop 中 Fixed-Spacing replay 仍不可行，coverage `96.06--96.32%`、excess overlap `24.40--30.91%`；Hybrid GA replay 保持可行，coverage `97.91--98.31%`、excess overlap `1.31--2.16%`、replay path gain `17.71--27.30%`。  
+【x】把 replay 结果写入 MDPI 版和工作稿。
+修改文件：`mdpi_jmse/template.tex`、`latex/template.tex`。
+已改位置：Abstract、Introduction evaluation chain、Results 新小节 `Coarse-prior to Fine-grid Public Replay`、Discussion、reviewer-risk matrix、Conclusion、Data Availability。
+关键数值均来自 `coarse_prior_replay_summary.csv`：高复杂度 crop 中 Fixed-Spacing replay 仍不可行，coverage `96.06--96.32%`、excess overlap `24.40--30.91%`；Hybrid GA replay 保持可行，coverage `97.91--98.31%`、excess overlap `1.31--2.16%`、replay path gain `17.71--27.30%`。
 
-【x】更新 reproducibility manifest。  
-修改文件：`make_reproducibility_manifest.py`、`reproducibility_manifest.json`。  
-命令：`conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260430_final.log 2>&1`。  
-输出：manifest 现有 `71` 个条目，已包含 `coarse_prior_replay_outputs` 和 `make_coarse_prior_replay.py`。  
+【x】更新 reproducibility manifest。
+修改文件：`make_reproducibility_manifest.py`、`reproducibility_manifest.json`。
+命令：`conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260430_final.log 2>&1`。
+输出：manifest 现有 `71` 个条目，已包含 `coarse_prior_replay_outputs` 和 `make_coarse_prior_replay.py`。
 
-【x】完成编译 QA 和 PDF 同步。  
-MDPI 命令：`xelatex -interaction=nonstopmode template.tex > compile_after_coarse_prior_20260430_pass1.log`，再跑 pass2。  
-工作稿命令：同名 pass1/pass2，在 `latex/` 目录下执行。  
-结果：MDPI PDF `35` 页，工作稿 PDF `32` 页；无 hard LaTeX error、无 undefined citation/reference。MDPI 仍有少量模板/参考文献 overfull warning，最大约 `13.24 pt`；工作稿 grep 未发现 overfull。  
-同步文件：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。  
+【x】完成编译 QA 和 PDF 同步。
+MDPI 命令：`xelatex -interaction=nonstopmode template.tex > compile_after_coarse_prior_20260430_pass1.log`，再跑 pass2。
+工作稿命令：同名 pass1/pass2，在 `latex/` 目录下执行。
+结果：MDPI PDF `35` 页，工作稿 PDF `32` 页；无 hard LaTeX error、无 undefined citation/reference。MDPI 仍有少量模板/参考文献 overfull warning，最大约 `13.24 pt`；工作稿 grep 未发现 overfull。
+同步文件：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
+
+## 2026-04-30 继续执行记录：Zenodo DOI 与发布元数据闭环
+
+【x】确认 GitHub release 已触发 Zenodo DOI。
+证据 release：`https://github.com/poboll/geo-auv-bathymetry-benchmark/releases/tag/v0.1.0`。
+证据 DOI：Zenodo concept DOI `10.5281/zenodo.19919505`；`v0.1.0` archive DOI `10.5281/zenodo.19919506`；记录页 `https://zenodo.org/records/19919506`。
+
+【x】更新论文 Data Availability。
+修改文件：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/mdpi_jmse/template.tex`、`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/latex/template.tex`。
+新口径：代码、结果、脚本、LaTeX 与 manifest 在 GitHub 公开仓库；release series 归档到 Zenodo concept DOI；初始 `v0.1.0` 版本 DOI 已写入。
+
+【x】补齐发布元数据，防止 Zenodo 后续 release 继续使用 GitHub 账号显示名作为作者。
+修改文件：`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/.zenodo.json`、`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/CITATION.cff`。
+作者元数据：Changlong Li、Zengye Su、Yudan Nie；单位均为 Guangzhou College of Commerce, School of Information Technology and Engineering。
+
+【x】重新编译并完成 QA。
+MDPI PDF：`36` 页；工作稿 PDF：`34` 页。
+QA 结果：无 undefined citation/reference；MDPI 表格与参考文献 overfull 已清理到无 overfull `hbox`；剩余仅参考文献 underfull 断行提示。
+
+【x】更新并推送公开仓库。
+提交：`b7cc247 fix: 更新Geo论文Zenodo DOI与发布元数据`。
+远端：`https://github.com/poboll/geo-auv-bathymetry-benchmark`，`main` 已推送。
+
+## 2026-05-01 继续执行记录：Complex Terrain 失败模式可视化
+
+【x】模拟并可视化覆盖失败模式。
+新增脚本：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/make_failure_mode_figure.py`。
+新增数据：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/run_5/complex_terrain_failure_mode_summary.csv`。
+新增图：`latex/pic/journal_failure_mode_complex.png`、`mdpi_jmse/pic/journal_failure_mode_complex.png`。
+命令：`conda run -n uu python make_failure_mode_figure.py > make_failure_mode_figure_20260501_v2.log`。
+结果：Fixed-Spacing 在 Complex Terrain 上 coverage `96.1889%`、uncovered `3.8111%`、excess overlap `28.4976%`；Adaptive coverage `96.8778%`、uncovered `3.1222%`、excess overlap `7.1212%`；代表性 Hybrid GA coverage `96.7778%`、uncovered `3.2222%`、excess overlap `7.1817%`。三者均 infeasible，因此没有把失败包装成成功。
+
+【x】把失败模式图和结果解释写入论文。
+修改文件：`mdpi_jmse/template.tex`、`latex/template.tex`。
+新增位置：Results 的 `Cross-scene Mechanism and Failure Boundary` 小节，新增 `Figure~\\ref{fig:failure_mode_complex}`；Data Availability 增加 `complex-terrain failure-mode CSV file`。
+口径：该图只说明 numerical boundary-of-validity，不声称 field gap 或真实海试。
+
+【x】重新编译与 QA。
+MDPI PDF：`36` 页；工作稿 PDF：`35` 页。
+QA：无 undefined citation/reference；无 overfull `hbox`；MDPI 新图页面已渲染到 `mdpi_jmse/review_pages_failure_mode/` 人工检查。
+
+【x】更新 manifest。
+命令：`conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260501_failure_mode_v2.log`。
+输出：manifest `90` 条，已包含新 CSV、新图和 `make_failure_mode_figure.py`。

@@ -1,5 +1,5 @@
 {
-  "manifest_version": "2026-04-30",
+  "manifest_version": "2026-05-01",
   "workspace": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark",
   "primary_run": "run_5",
   "scope_note": "Reproducibility manifest for the public-bathymetry numerical benchmark artifacts archived through the GitHub/Zenodo release series.",
@@ -575,44 +575,44 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 130459,
-      "sha256": "06c7f14682504b412a770a53bdafa8451a4395e5c408249a7612038aca1417af"
+      "size_bytes": 130617,
+      "sha256": "badc308e2bdafce828154ec3ed935920247d1dc92d83e6c5d53573d5b8728a56"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 6596568,
-      "sha256": "5f196094d0e59904dc5ab2568300b71ea9d738e9a67bdda551a162e3194f3e11"
+      "size_bytes": 6596960,
+      "sha256": "00938ba580d634c8a9155be8ebab8a19a3dd232cf71cf0021f68fa33ae43e35d"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 130392,
-      "sha256": "9073785c9fd81a79f206679fde04d180a69025df8b185c3cb314ed51d7f1aaac"
+      "size_bytes": 130550,
+      "sha256": "1f8513f95680ec62d4282bfed7b6d4e519b05d81ee00dd793f478a1e10ec34c6"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 6534140,
-      "sha256": "2aa27ad3f95b9273388fd91e704a4945f892f633cd464516364ca3aa3b1b4dd9"
+      "size_bytes": 6534219,
+      "sha256": "6b2e831de848f487bd5742fa1317180d8996c5094c056e8c940251660b1fe69d"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 6596568,
-      "sha256": "5f196094d0e59904dc5ab2568300b71ea9d738e9a67bdda551a162e3194f3e11"
+      "size_bytes": 6596960,
+      "sha256": "00938ba580d634c8a9155be8ebab8a19a3dd232cf71cf0021f68fa33ae43e35d"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 6596568,
-      "sha256": "5f196094d0e59904dc5ab2568300b71ea9d738e9a67bdda551a162e3194f3e11"
+      "size_bytes": 6596960,
+      "sha256": "00938ba580d634c8a9155be8ebab8a19a3dd232cf71cf0021f68fa33ae43e35d"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 6534140,
-      "sha256": "2aa27ad3f95b9273388fd91e704a4945f892f633cd464516364ca3aa3b1b4dd9"
+      "size_bytes": 6534219,
+      "sha256": "6b2e831de848f487bd5742fa1317180d8996c5094c056e8c940251660b1fe69d"
     },
     {
       "category": "release_metadata",

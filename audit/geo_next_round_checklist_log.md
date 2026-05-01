@@ -325,6 +325,81 @@ Evidence files:
 - `paper_refined.pdf`
 - `geo_public_bathy_rebuild.pdf`
 
+## 2026-05-01 claim-scope tightening, checklist consolidation, and GitHub sync
+
+- Update time: 2026-05-01 CST
+
+【x】Completed one more reviewer-facing claim-discipline pass on both manuscript sources.
+
+Evidence files:
+
+- `mdpi_jmse/template.tex`
+- `latex/template.tex`
+
+Specific edits:
+
+- changed the abstract ending from a possible survey-grade implication to “subsequent survey-grade evaluation and execution-aware AUV mission planning”;
+- changed “connect ... with survey-grade transfer conditions” to “requirements for survey-grade transfer”;
+- changed “survey-grade extension scenes” to “the harder synthetic scene and the high-complexity public-grid extension crop”;
+- changed “terrain-aware spacing is robust to this controlled prior-resolution mismatch” to “stable under this controlled prior-resolution mismatch”;
+- added the four-window GEBCO expansion to the reviewer-risk matrix row about public-scene count;
+- changed “real family rotation” to “genuine family rotation”.
+
+【x】Consolidated the external point-by-point checklist into a current evidence ledger.
+
+Evidence file:
+
+- `/Users/Apple/Developer/Pycharm/q/Geo修改请按点核对.md`
+
+Added a 2026-05-01 section that marks the completed items for: run_5 evidence lock, GA local-refinement explanation, turn-aware post-evaluation, coarse-prior/fine-grid replay, four-window GEBCO expansion, USGS public-grid extension, complex-terrain failure map, bootstrap CI, PSO local-refinement baseline, sensitivity diagnostics, figure polish, reference count, GitHub/Zenodo status, and non-claimable field-validation boundaries.
+
+【x】Recompiled both manuscript variants after the claim-scope pass.
+
+Evidence commands:
+
+```bash
+cd /Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/mdpi_jmse
+xelatex -interaction=nonstopmode template.tex > compile_after_claim_scope_20260501_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_claim_scope_20260501_pass2.log
+
+cd /Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/latex
+xelatex -interaction=nonstopmode template.tex > compile_after_claim_scope_20260501_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_claim_scope_20260501_pass2.log
+```
+
+Evidence output:
+
+- MDPI/JMSE PDF: `kMDItemNumberOfPages = 36`, no undefined citations/references and no overfull hbox warnings; remaining warnings are MDPI/template underfull notices and standard package notices.
+- Working PDF: `kMDItemNumberOfPages = 33`, no undefined citations/references and no overfull/underfull hbox warnings except the standard `inputenc` notice.
+- Both manuscripts contain `41` bibliography entries, `14` figures, and `12` tables.
+
+【x】Re-synchronized the compiled PDFs and manuscript source snapshots into the GitHub release repository.
+
+Evidence commands:
+
+```bash
+rsync -a "$BASE/latex/" "$REPO/manuscript/latex/"
+rsync -a "$BASE/mdpi_jmse/" "$REPO/manuscript/mdpi_jmse/"
+cp "$BASE/paper_refined.pdf" "$REPO/paper_refined.pdf"
+cp "$BASE/geo_public_bathy_rebuild.pdf" "$REPO/geo_public_bathy_rebuild.pdf"
+cp "$BASE/mdpi_jmse_jmse_submission_draft.pdf" "$REPO/mdpi_jmse_jmse_submission_draft.pdf"
+cp /Users/Apple/Developer/Pycharm/q/Geo修改请按点核对.md "$REPO/audit/Geo修改请按点核对.md"
+```
+
+【x】Regenerated SHA-256 reproducibility manifests after the source/PDF sync.
+
+Evidence commands and output:
+
+```bash
+cd /Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2
+python3 make_reproducibility_manifest.py
+# Wrote .../reproducibility_manifest.json with 90 entries
+
+cd /Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark
+python3 make_reproducibility_manifest.py
+# Wrote .../reproducibility_manifest.json with 117 entries
+```
+
 ## 2026-04-30 Zenodo DOI and Release Metadata Closure
 
 【x】Verified that GitHub release `v0.1.0` minted a Zenodo DOI after the repository was bound to Zenodo.

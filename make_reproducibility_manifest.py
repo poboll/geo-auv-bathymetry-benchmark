@@ -107,7 +107,7 @@ def main() -> None:
                     )
 
     payload = {
-        "manifest_version": "2026-04-30",
+        "manifest_version": "2026-05-01",
         "workspace": str(ROOT),
         "primary_run": "run_5",
         "scope_note": (
