@@ -325,64 +325,39 @@ Evidence files:
 - `paper_refined.pdf`
 - `geo_public_bathy_rebuild.pdf`
 
-## 2026-04-30 Zenodo DOI and Release-Metadata Closure
+## 2026-04-30 Zenodo DOI and Release Metadata Closure
 
-【x】Verified that the GitHub `v0.1.0` release triggered Zenodo DOI minting.
+【x】Verified that GitHub release `v0.1.0` minted a Zenodo DOI after the repository was bound to Zenodo.
+
+Evidence:
+
+- GitHub release URL: `https://github.com/poboll/geo-auv-bathymetry-benchmark/releases/tag/v0.1.0`
+- Zenodo concept DOI: `10.5281/zenodo.19919505`
+- Zenodo `v0.1.0` archive DOI: `10.5281/zenodo.19919506`
+- Zenodo record URL: `https://zenodo.org/records/19919506`
+
+【x】Updated both manuscript Data Availability sections from pending DOI wording to the real DOI-bearing archive wording.
+
+Evidence files:
+
+- `mdpi_jmse/template.tex`
+- `latex/template.tex`
+- `mdpi_jmse/template.pdf`
+- `latex/template.pdf`
+- `mdpi_jmse_jmse_submission_draft.pdf`
+- `paper_refined.pdf`
+
+【x】Recompiled both manuscripts after the DOI update and QA grep.
 
 Evidence commands:
 
 ```bash
-env -u http_proxy -u https_proxy -u all_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY gh release view v0.1.0 --repo poboll/geo-auv-bathymetry-benchmark --json tagName,url,targetCommitish,isDraft,isPrerelease,publishedAt,assets
-env -u http_proxy -u https_proxy -u all_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY curl -sSI https://zenodo.org/badge/latestdoi/1225197024
-env -u http_proxy -u https_proxy -u all_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY curl -sS https://zenodo.org/api/records/19919506
-```
-
-Evidence output:
-
-- GitHub release: `v0.1.0`, non-draft, non-prerelease, published `2026-04-30T12:59:10Z`;
-- GitHub release assets: `mdpi_jmse_jmse_submission_draft.pdf`, `paper_refined.pdf`, `reproducibility_manifest.json`;
-- Zenodo concept DOI: `10.5281/zenodo.19919505`;
-- Zenodo `v0.1.0` archive DOI: `10.5281/zenodo.19919506`;
-- Zenodo record URL: `https://zenodo.org/records/19919506`.
-
-【x】Updated the manuscript Data Availability statements to cite the real GitHub release and Zenodo DOI instead of a pending DOI note.
-
-Evidence files:
-
-- `manuscript/mdpi_jmse/template.tex`
-- `manuscript/latex/template.tex`
-
-Implemented text boundary:
-
-- release tag: `v0.1.0`;
-- release commit: `625fb6a`;
-- Zenodo release-series DOI: `https://doi.org/10.5281/zenodo.19919505`;
-- initial version archive DOI: `https://doi.org/10.5281/zenodo.19919506`.
-
-【x】Added release-metadata files so later Zenodo releases carry manuscript-aligned authorship.
-
-Evidence files:
-
-- `.zenodo.json`
-- `CITATION.cff`
-- `README.md`
-- `RELEASE_NOTES_v0.1.0.md`
-
-Reason:
-
-- the auto-created Zenodo `v0.1.0` metadata inherited the GitHub account display name; `.zenodo.json` now specifies Changlong Li, Zengye Su, and Yudan Nie with the Guangzhou College of Commerce affiliation for subsequent DOI-bearing releases.
-
-【x】Recompiled both manuscripts after the DOI update and performed log QA.
-
-Evidence commands:
-
-```bash
-cd manuscript/mdpi_jmse
+cd mdpi_jmse
 xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_tablefit_pass1.log
 xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_tablefit_pass2.log
 rg -n -e 'Undefined control sequence' -e 'undefined references' -e 'Citation .* undefined' -e 'Reference .* undefined' -e 'Overfull \\hbox' compile_after_zenodo_doi_tablefit_pass2.log template.log
 
-cd manuscript/latex
+cd latex
 xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_pass1.log
 xelatex -interaction=nonstopmode template.tex > compile_after_zenodo_doi_pass2.log
 rg -n -e 'Undefined control sequence' -e 'undefined references' -e 'Citation .* undefined' -e 'Reference .* undefined' -e 'Overfull \\hbox' compile_after_zenodo_doi_pass2.log template.log
@@ -390,26 +365,105 @@ rg -n -e 'Undefined control sequence' -e 'undefined references' -e 'Citation .* 
 
 Evidence output:
 
-- MDPI/JMSE draft output: `template.pdf`, 36 pages;
-- working manuscript output: `template.pdf`, 34 pages;
-- no undefined citation/reference warnings;
-- no overfull `hbox` warnings after the MDPI table-width and bibliography-linebreaking cleanup;
-- the remaining MDPI bibliography messages are underfull line-break warnings only.
+- MDPI/JMSE PDF: 36 pages;
+- working manuscript PDF: 34 pages;
+- no undefined citations/references;
+- no overfull `hbox` warnings after MDPI table-width and bibliography cleanup.
 
-【x】Regenerated the release repository reproducibility manifest after the DOI and metadata update.
+【x】Updated the public GitHub repository with DOI metadata files and pushed the commit.
+
+Evidence files:
+
+- `.zenodo.json`
+- `CITATION.cff`
+- `README.md`
+- `RELEASE_NOTES_v0.1.0.md`
+- `reproducibility_manifest.json`
+
+Evidence output:
+
+- pushed commit: `b7cc247 fix: 更新Geo论文Zenodo DOI与发布元数据`;
+- remote repository remains public at `https://github.com/poboll/geo-auv-bathymetry-benchmark`.
+
+## 2026-05-01 Failure-mode Visualization and Claim Boundary Pass
+
+【x】Added a dedicated Complex Terrain failure-mode visualization instead of leaving the failure case as only an aggregate metric.
+
+Evidence script:
+
+- `make_failure_mode_figure.py`
+
+Evidence outputs:
+
+- `run_5/complex_terrain_failure_mode_summary.csv`
+- `latex/pic/journal_failure_mode_complex.png`
+- `mdpi_jmse/pic/journal_failure_mode_complex.png`
 
 Evidence command:
 
 ```bash
-conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260430_zenodo_doi.log
+conda run -n uu python make_failure_mode_figure.py > make_failure_mode_figure_20260501_v2.log
+```
+
+Evidence values:
+
+- Fixed-Spacing Complex Terrain: coverage `96.1889%`, uncovered cells `3.8111%`, excess overlap `28.4976%`, feasible `0`;
+- Adaptive Spacing without GA: coverage `96.8778%`, uncovered cells `3.1222%`, excess overlap `7.1212%`, feasible `0`;
+- representative Hybrid GA: coverage `96.7778%`, uncovered cells `3.2222%`, excess overlap `7.1817%`, feasible `0`.
+
+Interpretation:
+
+- the new figure shows the zero-predicted-coverage cells and residual overlap fields directly;
+- it strengthens the limitation honestly: adaptive spacing suppresses the broad Fixed-Spacing overlap field but does not eliminate localized predicted gaps under a single-heading fixed-pattern line family.
+
+【x】Integrated the failure-mode figure and CSV into both manuscripts.
+
+Evidence files:
+
+- `mdpi_jmse/template.tex`
+- `latex/template.tex`
+
+Specific edits:
+
+- updated the Results roadmap to cite `Figure~\ref{fig:failure_mode_complex}`;
+- added `Figure~\ref{fig:failure_mode_complex}` before the cross-scene metric matrix;
+- added a paragraph explaining that the Complex Terrain result remains a genuine failure case rather than a hidden success;
+- updated Data Availability to list the complex-terrain failure-mode CSV file;
+- revised Data Availability from a fixed `v0.1.0` snapshot claim to the stable Zenodo concept DOI release-series wording, because the current working manuscript is newer than the initial `v0.1.0` archive.
+
+【x】Recompiled both manuscripts after the failure-mode integration.
+
+Evidence commands:
+
+```bash
+cd mdpi_jmse
+xelatex -interaction=nonstopmode template.tex > compile_after_failure_mode_da_20260501_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_failure_mode_da_20260501_pass2.log
+
+cd latex
+xelatex -interaction=nonstopmode template.tex > compile_after_failure_mode_da_20260501_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_failure_mode_da_20260501_pass2.log
 ```
 
 Evidence output:
 
-- manifest version: `2026-04-30`;
-- primary run: `run_5`;
-- archive metadata includes GitHub release `v0.1.0`, commit `625fb6a`, Zenodo concept DOI `10.5281/zenodo.19919505`, and Zenodo version DOI `10.5281/zenodo.19919506`;
-- manifest entry count: `113`.
+- MDPI/JMSE PDF: `36` pages;
+- working manuscript PDF: `35` pages;
+- QA grep found no undefined citations/references and no overfull `hbox` warnings;
+- rendered MDPI pages `19--21` to `mdpi_jmse/review_pages_failure_mode/` and manually inspected the new failure-mode page.
+
+【x】Regenerated the reproducibility manifest after the failure-mode addition.
+
+Evidence command:
+
+```bash
+conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260501_failure_mode_v2.log
+```
+
+Evidence output:
+
+- manifest entry count: `90`;
+- manifest now includes `run_5/complex_terrain_failure_mode_summary.csv`, `journal_failure_mode_complex.png`, and `make_failure_mode_figure.py`.
 
 ## GitHub release package and Data Availability update (2026-04-30)
 
@@ -472,8 +526,8 @@ Evidence files:
 
 Text boundary:
 
-- at this checkpoint, the manuscripts cited `https://github.com/poboll/geo-auv-bathymetry-benchmark` and commit `2805231`;
-- this GitHub-only Data Availability checkpoint is superseded by the 2026-04-30 Zenodo DOI closure below.
+- the manuscripts now cite `https://github.com/poboll/geo-auv-bathymetry-benchmark` and commit `2805231`;
+- they still do not claim a Zenodo DOI until a DOI-bearing archive is minted before final journal submission.
 
 【x】Recompiled both manuscripts after the GitHub Data Availability update.
 

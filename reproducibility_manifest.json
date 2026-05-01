@@ -5,11 +5,13 @@
   "scope_note": "Reproducibility manifest for the public-bathymetry numerical benchmark artifacts archived through the GitHub/Zenodo release series.",
   "archive": {
     "github_repository": "https://github.com/poboll/geo-auv-bathymetry-benchmark",
-    "github_release_tag": "v0.1.0",
-    "github_release_commit": "625fb6a",
     "zenodo_concept_doi": "10.5281/zenodo.19919505",
-    "zenodo_version_doi": "10.5281/zenodo.19919506",
-    "zenodo_record_url": "https://zenodo.org/records/19919506"
+    "zenodo_concept_url": "https://doi.org/10.5281/zenodo.19919505",
+    "initial_archived_release_tag": "v0.1.0",
+    "initial_archived_release_commit": "625fb6a",
+    "initial_archived_version_doi": "10.5281/zenodo.19919506",
+    "initial_archived_record_url": "https://zenodo.org/records/19919506",
+    "note": "The concept DOI identifies the release series and should resolve to the latest DOI-bearing archive after a final pre-submission release is minted."
   },
   "source_data": [
     {
@@ -35,6 +37,12 @@
       "path": "run_5/benchmark_results.csv",
       "size_bytes": 36347,
       "sha256": "b14b49d7cf4ea9c3b03f533e7ca5ecc5052e111322d236673841655b6a555124"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/complex_terrain_failure_mode_summary.csv",
+      "size_bytes": 643,
+      "sha256": "d81ff78e465ff641a7dec5e6da17eb3c54655fd110e150e04af5d5c186af6c2b"
     },
     {
       "category": "benchmark_outputs",
@@ -332,6 +340,12 @@
     },
     {
       "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_failure_mode_complex.png",
+      "size_bytes": 746274,
+      "sha256": "aa83d0ae52a8f7a9a4ec5ebe318020e5c4ae5f4a1c6f2ce03ea804eacff844f1"
+    },
+    {
+      "category": "figure_outputs",
       "path": "manuscript/latex/pic/journal_gebco_scene_expansion.png",
       "size_bytes": 352977,
       "sha256": "6c1be9c3706bfa978ab696a865e6016ff3ae0cb50c3c1eff8a36e5e4a00d905a"
@@ -452,6 +466,12 @@
     },
     {
       "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_failure_mode_complex.png",
+      "size_bytes": 746274,
+      "sha256": "aa83d0ae52a8f7a9a4ec5ebe318020e5c4ae5f4a1c6f2ce03ea804eacff844f1"
+    },
+    {
+      "category": "figure_outputs",
       "path": "manuscript/mdpi_jmse/pic/journal_gebco_scene_expansion.png",
       "size_bytes": 352977,
       "sha256": "6c1be9c3706bfa978ab696a865e6016ff3ae0cb50c3c1eff8a36e5e4a00d905a"
@@ -555,50 +575,50 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 129274,
-      "sha256": "bfb3b975ef184deff18f57208c7fc421e1a0b61164bb7b616537ff0c4992a9e8"
+      "size_bytes": 130459,
+      "sha256": "06c7f14682504b412a770a53bdafa8451a4395e5c408249a7612038aca1417af"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 5921124,
-      "sha256": "fbd634ed540f1b4c0a997b91ca09aef48689ffeab99f760ff1cda07a3f4ea71c"
+      "size_bytes": 6596568,
+      "sha256": "5f196094d0e59904dc5ab2568300b71ea9d738e9a67bdda551a162e3194f3e11"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 129209,
-      "sha256": "9c979239282ff0c70fdce8f35f3ca141fcd3715ab791bedfdbb32ae236ca0f28"
+      "size_bytes": 130392,
+      "sha256": "9073785c9fd81a79f206679fde04d180a69025df8b185c3cb314ed51d7f1aaac"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 5857826,
-      "sha256": "47648a519581f2061c33f0ca37e88f4aefc48eda63f67a85477903856605a0e5"
+      "size_bytes": 6534140,
+      "sha256": "2aa27ad3f95b9273388fd91e704a4945f892f633cd464516364ca3aa3b1b4dd9"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 5921124,
-      "sha256": "fbd634ed540f1b4c0a997b91ca09aef48689ffeab99f760ff1cda07a3f4ea71c"
+      "size_bytes": 6596568,
+      "sha256": "5f196094d0e59904dc5ab2568300b71ea9d738e9a67bdda551a162e3194f3e11"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 5921124,
-      "sha256": "fbd634ed540f1b4c0a997b91ca09aef48689ffeab99f760ff1cda07a3f4ea71c"
+      "size_bytes": 6596568,
+      "sha256": "5f196094d0e59904dc5ab2568300b71ea9d738e9a67bdda551a162e3194f3e11"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 5857826,
-      "sha256": "47648a519581f2061c33f0ca37e88f4aefc48eda63f67a85477903856605a0e5"
+      "size_bytes": 6534140,
+      "sha256": "2aa27ad3f95b9273388fd91e704a4945f892f633cd464516364ca3aa3b1b4dd9"
     },
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 4027,
-      "sha256": "40029b22414487dd2394d27f02da6a13864a084b140cb10a73bb4270deeb49e6"
+      "size_bytes": 4307,
+      "sha256": "bc87f16ebf5c41c5e7a6c09febcd66b322131e659842ea4f171459775d1763ec"
     },
     {
       "category": "release_metadata",
@@ -701,6 +721,12 @@
       "path": "make_gebco_scene_expansion.py",
       "size_bytes": 10061,
       "sha256": "9cca158640492a8018e3ad30477e1a6edd5b48f6764049b93e7789916a4cd43f"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_failure_mode_figure.py",
+      "size_bytes": 7830,
+      "sha256": "bdec68d513ab3dcaae91c0f0d0491382486b38712b97f99260b914c5ded2c6e7"
     }
   ]
 }

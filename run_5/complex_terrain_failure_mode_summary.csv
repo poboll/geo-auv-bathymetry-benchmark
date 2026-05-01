@@ -1,0 +1,4 @@
+scene_id,scene_name,method,orientation_deg,line_count,path_length_km,predicted_coverage_pct,uncovered_pct,excess_overlap_pct,max_cell_excess_overlap_pct,feasible
+synthetic_complex,Complex Terrain,Fixed-Spacing,0.0,45,342.37612472999996,96.1888888888889,3.811111111111111,28.497640907255647,68.82388200625842,0
+synthetic_complex,Complex Terrain,Adaptive Spacing w/o GA,105.0,40,254.42831497779022,96.87777777777778,3.1222222222222222,7.121152941554071,47.78281382791881,0
+synthetic_complex,Complex Terrain,Full Geometry-Aware Hybrid GA,105.0,40,254.22902417037486,96.77777777777777,3.2222222222222223,7.1816500440496585,57.17843706269823,0

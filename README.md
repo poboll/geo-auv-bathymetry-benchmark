@@ -75,3 +75,5 @@ Zenodo concept DOI for the release series: <https://doi.org/10.5281/zenodo.19919
 Initial `v0.1.0` archive DOI: <https://doi.org/10.5281/zenodo.19919506>.
 
 The repository includes `.zenodo.json` and `CITATION.cff` so that subsequent releases preserve manuscript-aligned authorship metadata rather than relying on the GitHub account display name.
+
+Development note: `main` may contain manuscript refinements after the initial `v0.1.0` archive. For journal submission, mint a final GitHub release after the manuscript is frozen; the Zenodo concept DOI above will resolve to the latest DOI-bearing archive in the release series.

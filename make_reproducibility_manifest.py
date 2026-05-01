@@ -76,6 +76,7 @@ PATTERNS = {
         "make_coarse_prior_replay.py",
         "make_pso_baseline.py",
         "make_gebco_scene_expansion.py",
+        "make_failure_mode_figure.py",
     ],
 }
 
@@ -115,11 +116,17 @@ def main() -> None:
         ),
         "archive": {
             "github_repository": "https://github.com/poboll/geo-auv-bathymetry-benchmark",
-            "github_release_tag": "v0.1.0",
-            "github_release_commit": "625fb6a",
             "zenodo_concept_doi": "10.5281/zenodo.19919505",
-            "zenodo_version_doi": "10.5281/zenodo.19919506",
-            "zenodo_record_url": "https://zenodo.org/records/19919506",
+            "zenodo_concept_url": "https://doi.org/10.5281/zenodo.19919505",
+            "initial_archived_release_tag": "v0.1.0",
+            "initial_archived_release_commit": "625fb6a",
+            "initial_archived_version_doi": "10.5281/zenodo.19919506",
+            "initial_archived_record_url": "https://zenodo.org/records/19919506",
+            "note": (
+                "The concept DOI identifies the release series and should resolve to "
+                "the latest DOI-bearing archive after a final pre-submission release "
+                "is minted."
+            ),
         },
         "source_data": [
             {
