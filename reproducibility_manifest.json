@@ -1,5 +1,5 @@
 {
-  "manifest_version": "2026-05-01",
+  "manifest_version": "2026-05-02",
   "workspace": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark",
   "primary_run": "run_5",
   "scope_note": "Reproducibility manifest for the public-bathymetry numerical benchmark artifacts archived through the GitHub/Zenodo release series.",
@@ -575,44 +575,44 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 130617,
-      "sha256": "badc308e2bdafce828154ec3ed935920247d1dc92d83e6c5d53573d5b8728a56"
+      "size_bytes": 131043,
+      "sha256": "273ce3b928ec59391491051c24d25512a8c0d5fca27537f62f6dc208e364adef"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 6596960,
-      "sha256": "00938ba580d634c8a9155be8ebab8a19a3dd232cf71cf0021f68fa33ae43e35d"
+      "size_bytes": 6597502,
+      "sha256": "c0978967acea951b1fd690f3043e2e00f544cebd5bc1dc37c4032fad2de5c7a4"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 131019,
-      "sha256": "c3cb1873e7de31583490a73e727db1e3a9f9f5496227be01368c611814dfc8bd"
+      "size_bytes": 131445,
+      "sha256": "ae5d236a71d460d0371b86a8d288c126d0ae2a4076b9ae59b1e6619324237396"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 6531391,
-      "sha256": "b9102c96a01ced5e6868c1617cd88f3829e9c88ff4500d88459581e426f13405"
+      "size_bytes": 6531839,
+      "sha256": "30b6e5a780c10588a2ed07cba7c603a7c4e806a9015e23ee779233663cda987c"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 6596960,
-      "sha256": "00938ba580d634c8a9155be8ebab8a19a3dd232cf71cf0021f68fa33ae43e35d"
+      "size_bytes": 6597502,
+      "sha256": "c0978967acea951b1fd690f3043e2e00f544cebd5bc1dc37c4032fad2de5c7a4"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 6596960,
-      "sha256": "00938ba580d634c8a9155be8ebab8a19a3dd232cf71cf0021f68fa33ae43e35d"
+      "size_bytes": 6597502,
+      "sha256": "c0978967acea951b1fd690f3043e2e00f544cebd5bc1dc37c4032fad2de5c7a4"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 6531391,
-      "sha256": "b9102c96a01ced5e6868c1617cd88f3829e9c88ff4500d88459581e426f13405"
+      "size_bytes": 6531839,
+      "sha256": "30b6e5a780c10588a2ed07cba7c603a7c4e806a9015e23ee779233663cda987c"
     },
     {
       "category": "release_metadata",
@@ -667,6 +667,96 @@
       "path": "submission_package/reviewer_risk_response_sheet.md",
       "size_bytes": 5740,
       "sha256": "cc8bf12e39d579c7200c5e9944ad3ecbcf4a81ef04f602e4003695b31c99ef83"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/AI_HANDOFF_MAJOR_REVISION_2026-04-24.md",
+      "size_bytes": 8986,
+      "sha256": "dc9ed8b73c7b1a200a2129a424ebeec71055b29fbae109b386d811aa0f55527d"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/DEEP_LITERATURE_POSITIONING_20260426.md",
+      "size_bytes": 5238,
+      "sha256": "cd8ab3ce903f804b7d690fd8999074e843e393a56e0c2bf7115ca3819ce2f4c9"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/GEBCO_DATA_BOUNDARY_AUDIT_20260426.md",
+      "size_bytes": 2981,
+      "sha256": "65e0dd8d35ff79f71624eea55378bad792bb8425334e832e4d0c34f60f73c44a"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/Geo修改请按点核对.md",
+      "size_bytes": 87601,
+      "sha256": "dd0477018bd126f2cfa7ef0e17517d2e13d931ecd3219cba12ffca8bb9275948"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/REVIEWER_OBJECTION_MATRIX_20260427.md",
+      "size_bytes": 6652,
+      "sha256": "4eb63b3eb976a5941255ed2fbcf9478fcc9f92583d67c7dd1e62ce7634735316"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/SCI_REAUDIT_REPORT_20260426.md",
+      "size_bytes": 15796,
+      "sha256": "761f7ddbcd94ebcb51a81832dfc21cd7a9afdc57824383536460cf683127ee6f"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/SURVEY_GRADE_EXTENSION_20260427.md",
+      "size_bytes": 5989,
+      "sha256": "dff4856bad89aebc785cd2fcf4db989466f0108297dc1f6acf7938308890f64c"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/SURVEY_GRADE_PILOT_20260427.md",
+      "size_bytes": 5541,
+      "sha256": "70fff4f9246717c02b3b1d3ec955c2ff0abe96b72c9c0bc397be3c1153da4c8d"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/geo_next_round_checklist_log.md",
+      "size_bytes": 185279,
+      "sha256": "9f255e137ba262657f9248a479ff1d1eb32e10940bca9786116e3498d2cbc746"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/journal_target_assessment_20260429.md",
+      "size_bytes": 5706,
+      "sha256": "8df76d3a16ff5c3f42a8480dcac8306035d026e8263768e074ebe46f09c524e6"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/literature_verification_notes.md",
+      "size_bytes": 4612,
+      "sha256": "c5e56eaa569dfc7cb5e7cfe4036a5ca4875c91bc7d94cd161e2dc73df3358d60"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/reproducibility_notes.md",
+      "size_bytes": 9662,
+      "sha256": "ff696f49a39d5257e77811728df68c9198abdfa41d34ef92246e5b0e030e671d"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/reviewer_critique_and_revision_20260429.md",
+      "size_bytes": 4929,
+      "sha256": "b63a4ebd0aec08c1598b589abbb3ad50c59b7513bc1e502428ee2bf25c94d5ea"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/verify_run_metrics.md",
+      "size_bytes": 4039,
+      "sha256": "81908d8b927d7910137aff420ac2eca8c793c7032516528c787b65bedb88b8ec"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/reference_verification_20260428_v3.json",
+      "size_bytes": 9785,
+      "sha256": "19fd7066d4e02434fb98edaafcaa99cb5e7bb72f7322cb3bd748316a6fee4325"
     },
     {
       "category": "reproduction_scripts",

@@ -1398,3 +1398,27 @@ QA：无 undefined citation/reference；无 overfull `hbox`；MDPI 新图页面�
 【x】更新 manifest。
 命令：`conda run -n uu python make_reproducibility_manifest.py > make_reproducibility_manifest_20260501_failure_mode_v2.log`。
 输出：manifest `90` 条，已包含新 CSV、新图和 `make_failure_mode_figure.py`。
+
+## 2026-05-02 继续执行记录：参考文献 DOI 与元数据审计
+
+【x】修正 9 条此前缺 DOI 或元数据不稳的参考文献。
+修改文件：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/mdpi_jmse/template.tex`、`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/latex/template.tex`、`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/reference_verification_20260428_v3.json`。
+修正条目：`shi2020data`、`li2024multi`、`zhang2022online`、`ji2022multi`、`zhang2023multi`、`zhu2019complete`、`kapetanovic2018side`、`cao2018real`、`zhang2021path`。
+核验 DOI：`10.3390/app10196688`、`10.1016/j.oceaneng.2024.117396`、`10.1016/j.engappai.2022.105548`、`10.3390/electronics11193021`、`10.1016/j.oceaneng.2023.116168`、`10.1007/s10846-018-0787-7`、`10.1016/j.arcontrol.2018.10.012`、`10.3390/s19010020`、`10.1016/j.oceaneng.2021.109355`。
+
+【x】完成参考文献数量与 DOI 完整性检查。
+命令：用 Python 正则扫描两份 `template.tex` 的 `\bibitem` 块并检查是否包含 `doi:`。
+输出：MDPI/JMSE 版 `41` 条参考文献，缺 DOI `0`；工作稿 `41` 条参考文献，缺 DOI `0`；`reference_verification_20260428_v3.json` 也是 `41` 条记录，缺 DOI `0`。
+
+【x】重新编译并完成 QA。
+MDPI 命令：`xelatex -interaction=nonstopmode template.tex > compile_after_reference_doi_audit_20260502_pass1.log`；第二遍输出到 `compile_after_reference_doi_audit_20260502_pass2.log`。
+工作稿命令同上。
+结果：MDPI/JMSE PDF `36` 页；工作稿 PDF `36` 页。无 undefined citation/reference、无 fatal error、无 overfull hbox；MDPI 投稿版中未检出模板占位 DOI `10.3390/jmse1010000`。
+
+【x】同步 PDF 交付件。
+更新文件：`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/mdpi_jmse_jmse_submission_draft.pdf`、`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/paper_refined.pdf`、`/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/geo_public_bathy_rebuild.pdf`。
+
+【x】重新生成并扩展 manifest。
+修改文件：`make_reproducibility_manifest.py`。
+新增：把返修台账和 `reference_verification_20260428_v3.json` 纳入 `audit_trail` 校验类别，并兼容工作区 `latex/`、`mdpi_jmse/` 与 GitHub 仓库 `manuscript/latex/`、`manuscript/mdpi_jmse/` 两种目录结构。
+输出：工作区 manifest `105` 条；GitHub 仓库 manifest `135` 条。

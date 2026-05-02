@@ -325,6 +325,105 @@ Evidence files:
 - `paper_refined.pdf`
 - `geo_public_bathy_rebuild.pdf`
 
+## 2026-05-02 reference DOI audit and rebuild
+
+【x】补齐并修正 9 条此前缺 DOI 或元数据不稳的参考文献。
+
+Evidence files:
+
+- `mdpi_jmse/template.tex`
+- `latex/template.tex`
+- `reference_verification_20260428_v3.json`
+
+Verified corrections:
+
+- `shi2020data`: DOI `10.3390/app10196688`; authors corrected to Shi J, Zhou M.
+- `li2024multi`: DOI `10.1016/j.oceaneng.2024.117396`; title normalized without the informal `ER-MCPP` parenthetical; full author list and article number added.
+- `zhang2022online`: corrected to `Engineering Applications of Artificial Intelligence` 2023, 118:105548; DOI `10.1016/j.engappai.2022.105548`.
+- `ji2022multi`: corrected to `Electronics` 11(19):3021; DOI `10.3390/electronics11193021`.
+- `zhang2023multi`: corrected to `Ocean Engineering` 288:116168; DOI `10.1016/j.oceaneng.2023.116168`.
+- `zhu2019complete`: corrected to Zhu D, Tian C, Sun B, Luo C, `Journal of Intelligent \& Robotic Systems` 94(1):237--249; DOI `10.1007/s10846-018-0787-7`.
+- `kapetanovic2018side`: corrected page range to 268--280; DOI `10.1016/j.arcontrol.2018.10.012`.
+- `cao2018real`: corrected from an erroneous IEEE Access 2018 entry to Yan et al., `Sensors` 2019, 19(1):20; DOI `10.3390/s19010020`.
+- `zhang2021path`: corrected from an erroneous JMSE entry to Cheng et al., `Ocean Engineering` 235:109355; DOI `10.1016/j.oceaneng.2021.109355`.
+
+Evidence command:
+
+```bash
+env -u http_proxy -u https_proxy -u HTTP_PROXY -u HTTPS_PROXY -u ALL_PROXY -u all_proxy python3 - <<'PY'
+import json, urllib.request
+for doi in ['10.3390/app10196688','10.1016/j.oceaneng.2024.117396','10.1016/j.engappai.2022.105548','10.3390/electronics11193021','10.1016/j.oceaneng.2023.116168','10.1007/s10846-018-0787-7','10.1016/j.arcontrol.2018.10.012','10.3390/s19010020','10.1016/j.oceaneng.2021.109355']:
+    req=urllib.request.Request('https://doi.org/'+doi, headers={'Accept':'application/vnd.citationstyles.csl+json'})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        data=json.loads(r.read().decode())
+    print(doi, data.get('title'), data.get('container-title'), data.get('volume'), data.get('page'))
+PY
+```
+
+【x】完成参考文献机械一致性检查。
+
+Evidence command:
+
+```bash
+python3 - <<'PY'
+from pathlib import Path
+import re
+for sub in ['mdpi_jmse','latex']:
+    p=Path('/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2')/sub/'template.tex'
+    s=p.read_text()
+    keys=re.findall(r'\\bibitem\{([^}]+)\}(.+?)(?=\\bibitem\{|\\end\{thebibliography\})', s, flags=re.S)
+    missing=[k for k,b in keys if 'doi:' not in b.lower()]
+    print(sub, 'bibitems', len(keys), 'missing doi', missing)
+PY
+```
+
+Evidence output:
+
+- `mdpi_jmse bibitems 41 missing doi []`
+- `latex bibitems 41 missing doi []`
+- `reference_verification_20260428_v3.json`: 41 entries, 0 missing DOI.
+
+【x】重新编译 MDPI/JMSE 投稿版与工作稿。
+
+Evidence commands:
+
+```bash
+cd mdpi_jmse
+xelatex -interaction=nonstopmode template.tex > compile_after_reference_doi_audit_20260502_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_reference_doi_audit_20260502_pass2.log
+
+cd ../latex
+xelatex -interaction=nonstopmode template.tex > compile_after_reference_doi_audit_20260502_pass1.log
+xelatex -interaction=nonstopmode template.tex > compile_after_reference_doi_audit_20260502_pass2.log
+```
+
+Evidence output:
+
+- MDPI/JMSE PDF: `mdpi_jmse/template.pdf`, 36 pages; no undefined citation/reference, no LaTeX fatal error, no overfull hbox, and no placeholder DOI `10.3390/jmse1010000`. Remaining warnings are MDPI narrow-column underfull notices and standard package notices.
+- Working PDF: `latex/template.pdf`, 36 pages; QA grep only reports the standard `inputenc package ignored with utf8 based engines` notice.
+- Synced root deliverables: `mdpi_jmse_jmse_submission_draft.pdf`, `paper_refined.pdf`, and `geo_public_bathy_rebuild.pdf`.
+
+【x】扩展并重新生成 reproducibility manifest。
+
+Evidence file:
+
+- `make_reproducibility_manifest.py`
+
+Change:
+
+- Added an `audit_trail` category so the reference-verification JSON and revision logs are checksummed together with the manuscript, data, figures, scripts, and submission package.
+
+Evidence command and output:
+
+```bash
+python3 make_reproducibility_manifest.py > make_reproducibility_manifest_20260502_reference_doi_audit_v3.log
+# Wrote .../reproducibility_manifest.json with 105 entries
+
+cd /Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark
+python3 make_reproducibility_manifest.py > make_reproducibility_manifest_20260502_reference_doi_audit_v2.log
+# Wrote .../reproducibility_manifest.json with 135 entries
+```
+
 ## 2026-05-01 claim-scope tightening, checklist consolidation, and GitHub sync
 
 - Update time: 2026-05-01 CST

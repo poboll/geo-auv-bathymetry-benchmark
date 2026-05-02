@@ -39,6 +39,9 @@ PATTERNS = {
         "gebco_scene_expansion/*.json",
     ],
     "figure_outputs": [
+        "latex/pic/journal_*.png",
+        "latex/pic/method_pipeline.pdf",
+        "latex/pic/method_pipeline.tex",
         "manuscript/latex/pic/journal_*.png",
         "manuscript/latex/pic/method_pipeline.pdf",
         "manuscript/latex/pic/method_pipeline.tex",
@@ -47,6 +50,10 @@ PATTERNS = {
         "manuscript/mdpi_jmse/pic/method_pipeline.tex",
     ],
     "manuscripts": [
+        "latex/template.tex",
+        "latex/template.pdf",
+        "mdpi_jmse/template.tex",
+        "mdpi_jmse/template.pdf",
         "manuscript/latex/template.tex",
         "manuscript/latex/template.pdf",
         "manuscript/mdpi_jmse/template.tex",
@@ -65,6 +72,21 @@ PATTERNS = {
     ],
     "submission_package": [
         "submission_package/*.md",
+    ],
+    "audit_trail": [
+        "geo_next_round_checklist_log.md",
+        "reference_verification_20260428_v3.json",
+        "literature_verification_notes.md",
+        "verify_run_metrics.md",
+        "journal_target_assessment_*.md",
+        "reviewer_critique_and_revision_*.md",
+        "REVIEWER_OBJECTION_MATRIX_*.md",
+        "SCI_REAUDIT_REPORT_*.md",
+        "DEEP_LITERATURE_POSITIONING_*.md",
+        "GEBCO_DATA_BOUNDARY_AUDIT_*.md",
+        "SURVEY_GRADE_*.md",
+        "audit/*.md",
+        "audit/reference_verification_20260428_v3.json",
     ],
     "reproduction_scripts": [
         "geo_public_bathy_benchmark.py",
@@ -110,7 +132,7 @@ def main() -> None:
                     )
 
     payload = {
-        "manifest_version": "2026-05-01",
+        "manifest_version": "2026-05-02",
         "workspace": str(ROOT),
         "primary_run": "run_5",
         "scope_note": (

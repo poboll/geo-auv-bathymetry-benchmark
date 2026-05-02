@@ -16,7 +16,7 @@
   {
     "key": "shi2020data",
     "title": "A data-driven intermittent online coverage path planning method for AUV-based bathymetric mapping",
-    "doi": null,
+    "doi": "10.3390/app10196688",
     "status": "verified",
     "source": "title"
   },
@@ -36,15 +36,15 @@
   },
   {
     "key": "li2024multi",
-    "title": "Multi-AUV coverage path planning algorithm using side-scan sonar for maritime search (ER-MCPP)",
-    "doi": null,
+    "title": "Multi-AUV coverage path planning algorithm using side-scan sonar for maritime search",
+    "doi": "10.1016/j.oceaneng.2024.117396",
     "status": "verified",
     "source": "title"
   },
   {
     "key": "zhang2022online",
     "title": "An online path planning algorithm for autonomous marine geomorphological surveys based on AUV",
-    "doi": null,
+    "doi": "10.1016/j.engappai.2022.105548",
     "status": "verified",
     "source": "title"
   },
@@ -191,7 +191,7 @@
   {
     "key": "ji2022multi",
     "title": "Multi-underwater gliders coverage path planning based on ant colony optimization",
-    "doi": null,
+    "doi": "10.3390/electronics11193021",
     "status": "verified",
     "source": "title"
   },
@@ -205,7 +205,7 @@
   {
     "key": "zhang2023multi",
     "title": "Multi-AUV cooperative search method based on dynamic optimal coverage",
-    "doi": null,
+    "doi": "10.1016/j.oceaneng.2023.116168",
     "status": "verified",
     "source": "title"
   },
@@ -247,7 +247,7 @@
   {
     "key": "zhu2019complete",
     "title": "Complete coverage path planning of autonomous underwater vehicle based on GBNN algorithm",
-    "doi": null,
+    "doi": "10.1007/s10846-018-0787-7",
     "status": "verified",
     "source": "title"
   },
@@ -261,7 +261,7 @@
   {
     "key": "kapetanovic2018side",
     "title": "A side-scan sonar data-driven coverage planning and tracking framework",
-    "doi": null,
+    "doi": "10.1016/j.arcontrol.2018.10.012",
     "status": "verified",
     "source": "title"
   },
@@ -275,14 +275,14 @@
   {
     "key": "cao2018real",
     "title": "A real-time path planning algorithm for AUV in unknown underwater environment based on combining PSO and waypoint guidance",
-    "doi": null,
+    "doi": "10.3390/s19010020",
     "status": "verified",
     "source": "title"
   },
   {
     "key": "zhang2021path",
     "title": "Path planning and obstacle avoidance for AUV: A review",
-    "doi": null,
+    "doi": "10.1016/j.oceaneng.2021.109355",
     "status": "verified",
     "source": "title"
   }
