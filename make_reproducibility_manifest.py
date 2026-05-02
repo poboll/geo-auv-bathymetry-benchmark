@@ -63,6 +63,9 @@ PATTERNS = {
         "environment.yml",
         ".gitignore",
     ],
+    "submission_package": [
+        "submission_package/*.md",
+    ],
     "reproduction_scripts": [
         "geo_public_bathy_benchmark.py",
         "make_journal_figures.py",

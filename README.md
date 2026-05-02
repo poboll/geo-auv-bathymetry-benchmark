@@ -20,6 +20,7 @@ The study is framed as a public-bathymetry numerical benchmark for AUV-assisted 
 - `public_bathy/processed/`: small processed GEBCO scene caches used by the benchmark.
 - `manuscript/mdpi_jmse/`: MDPI/JMSE draft source and compiled PDF.
 - `manuscript/latex/`: working manuscript source and compiled PDF.
+- `submission_package/`: cover letter draft, reviewer-risk response sheet, and final submission checklist.
 - `audit/`: revision logs, data-boundary notes, reference checks, and reviewer-risk notes.
 - `reproducibility_manifest.json`: SHA-256 manifest for manuscript-specific artifacts.
 

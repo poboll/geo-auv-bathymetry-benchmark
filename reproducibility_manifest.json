@@ -617,8 +617,8 @@
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 4307,
-      "sha256": "bc87f16ebf5c41c5e7a6c09febcd66b322131e659842ea4f171459775d1763ec"
+      "size_bytes": 4414,
+      "sha256": "f73bae7cad9c64aafd127af8e232ae80982ac03b0ece8879e29cc984cdc69199"
     },
     {
       "category": "release_metadata",
@@ -649,6 +649,24 @@
       "path": ".gitignore",
       "size_bytes": 135,
       "sha256": "0bd7f7cc66f401f86ec18d7658aeb5fc40a6313f22cf392ea36beab933f7417b"
+    },
+    {
+      "category": "submission_package",
+      "path": "submission_package/JMSE_cover_letter_draft.md",
+      "size_bytes": 3396,
+      "sha256": "7dbcfb926e725597f0c168f1f2c379f8de5338c89e848bca12186534932b916b"
+    },
+    {
+      "category": "submission_package",
+      "path": "submission_package/final_submission_checklist.md",
+      "size_bytes": 3266,
+      "sha256": "b22692775f161f46bdce18b43736fdcec364c187838ac2aa283ca21d36dae9ca"
+    },
+    {
+      "category": "submission_package",
+      "path": "submission_package/reviewer_risk_response_sheet.md",
+      "size_bytes": 5740,
+      "sha256": "cc8bf12e39d579c7200c5e9944ad3ecbcf4a81ef04f602e4003695b31c99ef83"
     },
     {
       "category": "reproduction_scripts",

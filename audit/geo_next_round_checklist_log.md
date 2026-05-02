@@ -462,6 +462,46 @@ python3 "$REPO/make_reproducibility_manifest.py"
 # Wrote .../reproducibility_manifest.json with 117 entries
 ```
 
+## 2026-05-02 submission package preparation
+
+【x】Prepared a submission-support package for the JMSE Special Issue route.
+
+New files:
+
+- `submission_package/JMSE_cover_letter_draft.md`
+- `submission_package/reviewer_risk_response_sheet.md`
+- `submission_package/final_submission_checklist.md`
+
+Purpose:
+
+- The cover letter frames the manuscript for the JMSE Special Issue “Advancements in Autonomous Systems for Complex Maritime Operations”.
+- The reviewer-risk sheet gives ready-to-use responses for the main likely objections: no sea trial, modest public route-length gain, small GA budget, turning-radius limitation, small primary GEBCO set, GEBCO not survey-grade, Complex Terrain failure, scene-selection risk, and overclaim risk.
+- The final checklist records the concrete submission state for manuscript files, formatting QA, evidence QA, claim-boundary QA, compile QA, and repository/archive readiness.
+
+【x】Added the submission package to the reproducibility manifest.
+
+Modified files:
+
+- `make_reproducibility_manifest.py`
+- `reproducibility_manifest.json`
+
+Evidence commands and output:
+
+```bash
+python3 "$BASE/make_reproducibility_manifest.py"
+# Wrote .../reproducibility_manifest.json with 93 entries
+python3 "$REPO/make_reproducibility_manifest.py"
+# Wrote .../reproducibility_manifest.json with 120 entries
+```
+
+【x】Synchronized the submission package into the public GitHub release repository.
+
+Destination:
+
+- `/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/submission_package/`
+
+Repository README updated to list the new `submission_package/` directory.
+
 ## 2026-04-30 Zenodo DOI and Release Metadata Closure
 
 【x】Verified that GitHub release `v0.1.0` minted a Zenodo DOI after the repository was bound to Zenodo.
