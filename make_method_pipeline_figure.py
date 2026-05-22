@@ -6,8 +6,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-LATEX_PIC = ROOT / "latex" / "pic"
-MDPI_PIC = ROOT / "mdpi_jmse" / "pic"
+LATEX_PIC = ROOT / "manuscript" / "latex" / "pic"
+MDPI_PIC = ROOT / "manuscript" / "mdpi_jmse" / "pic"
 SOURCE = LATEX_PIC / "method_pipeline.tex"
 PDF = LATEX_PIC / "method_pipeline.pdf"
 PNG = LATEX_PIC / "method_pipeline_preview.png"

@@ -1,17 +1,19 @@
-\documentclass[tikz,border=3pt]{standalone}
+\documentclass[tikz,border=4pt]{standalone}
 \usepackage[T1]{fontenc}
 \usepackage{mathpazo}
 \usepackage{amsmath}
 \usetikzlibrary{arrows.meta,positioning,calc,decorations.pathreplacing}
 
-\definecolor{pfblue}{HTML}{DCEAF7}
-\definecolor{pfteal}{HTML}{DDEFE8}
-\definecolor{pfgold}{HTML}{F6E9C6}
-\definecolor{pfviolet}{HTML}{E9E1F0}
-\definecolor{pfslate}{HTML}{E4EBF1}
-\definecolor{pforange}{HTML}{F2D8C6}
+\definecolor{pfblue}{HTML}{D7E7F2}
+\definecolor{pfteal}{HTML}{D9EEE6}
+\definecolor{pfgold}{HTML}{F4E5BC}
+\definecolor{pfviolet}{HTML}{E8DDF0}
+\definecolor{pfslate}{HTML}{E5ECF2}
+\definecolor{pforange}{HTML}{F1D5BF}
+\definecolor{pfrose}{HTML}{EFD8D2}
 \definecolor{pfink}{HTML}{202A34}
 \definecolor{pfmuted}{HTML}{596674}
+\definecolor{pfline}{HTML}{74808B}
 
 \begin{document}
 \begin{tikzpicture}[
@@ -19,29 +21,29 @@
     >=Latex,
     pstep/.style={
         circle,
-        draw=black!38,
-        line width=0.36pt,
-        minimum size=8.6mm,
+        draw=pfline!60,
+        line width=0.33pt,
+        minimum size=8.9mm,
         inner sep=0pt,
         font=\bfseries\small,
         text=pfink
     },
     label/.style={
         align=center,
-        text width=27mm,
+        text width=28mm,
         font=\bfseries\footnotesize,
         text=pfink
     },
     sublabel/.style={
         align=center,
-        text width=27mm,
+        text width=29mm,
         font=\scriptsize,
         text=pfmuted
     },
     arrow/.style={
-        -{Latex[length=2.1mm,width=1.35mm]},
-        draw=black!43,
-        line width=0.38pt
+        -{Latex[length=2.0mm,width=1.25mm]},
+        draw=pfline!72,
+        line width=0.35pt
     },
     note/.style={
         align=center,
@@ -50,37 +52,47 @@
     }
 ]
 
-\node[pstep, fill=pfblue] (s1) at (0,0) {1};
-\node[pstep, fill=pfteal] (s2) at (2.55,0) {2};
-\node[pstep, fill=pfgold] (s3) at (5.10,0) {3};
-\node[pstep, fill=pforange] (s4) at (7.65,0) {4};
-\node[pstep, fill=pfviolet] (s5) at (10.20,0) {5};
-\node[pstep, fill=pfslate] (s6) at (12.75,0) {6};
+\node[pstep, fill=pfblue] (s1) at (0,0.92) {1};
+\node[pstep, fill=pfteal] (s2) at (2.55,0.92) {2};
+\node[pstep, fill=pfgold] (s3) at (5.10,0.92) {3};
+\node[pstep, fill=pforange] (s4) at (7.65,0.92) {4};
+\node[pstep, fill=pfviolet] (s5) at (10.20,0.92) {5};
+\node[pstep, fill=pfrose] (s6) at (12.75,0.92) {6};
 
 \foreach \a/\b in {s1/s2,s2/s3,s3/s4,s4/s5,s5/s6}
     \draw[arrow] (\a.east) -- (\b.west);
 
-\node[label, below=2.4mm of s1] {Prior inputs};
-\node[sublabel, below=10.0mm of s1] {public grid\\MBES settings\\targets};
+\node[label, above=2.0mm of s1] {Prior inputs};
+\node[sublabel, below=2.5mm of s1] {public grid\\MBES settings\\targets};
 
-\node[label, below=2.4mm of s2] {Swath model};
-\node[sublabel, below=10.0mm of s2] {terrain-aware\\cross-track\\footprint};
+\node[label, above=2.0mm of s2] {Swath model};
+\node[sublabel, below=2.5mm of s2] {cross-track\\terrain footprint};
 
-\node[label, below=2.4mm of s3] {Heading scan};
-\node[sublabel, below=10.0mm of s3] {select global\\orientation \(\psi\)};
+\node[label, above=2.0mm of s3] {Heading scan};
+\node[sublabel, below=2.5mm of s3] {select global\\orientation \(\psi\)};
 
-\node[label, below=2.4mm of s4] {Adaptive base};
-\node[sublabel, below=10.0mm of s4] {quantile spacing\\fixed sweep order};
+\node[label, above=2.0mm of s4] {Adaptive base};
+\node[sublabel, below=2.5mm of s4] {quantile spacing\\fixed sweep order};
 
-\node[label, below=2.4mm of s5] {GA refinement};
-\node[sublabel, below=10.0mm of s5] {local cleanup\\seed stability};
+\node[label, above=2.0mm of s5] {GA refinement};
+\node[sublabel, below=2.5mm of s5] {local perturbation\\gate audit};
 
-\node[label, below=2.4mm of s6] {Metrics};
-\node[sublabel, below=10.0mm of s6] {predicted coverage\\overlap\\path length};
+\node[label, above=2.0mm of s6] {Metrics};
+\node[sublabel, below=2.5mm of s6] {coverage\\overlap\\path length};
 
-\draw[decorate,decoration={brace,amplitude=3.0pt,mirror},draw=black!32,line width=0.30pt]
-    ($(s1.south west)+(-0.16,-2.15)$) -- ($(s6.south east)+(0.16,-2.15)$)
-    node[midway,below=4.5pt,note] {public-bathymetry numerical benchmark; fixed-pattern pre-mission layout};
+\draw[decorate,decoration={brace,amplitude=3.0pt,mirror},draw=pfline!45,line width=0.30pt]
+    ($(s1.south west)+(-0.14,-1.42)$) -- ($(s2.south east)+(0.14,-1.42)$)
+    node[midway,below=4.2pt,note] {data and sensing layer};
+
+\draw[decorate,decoration={brace,amplitude=3.0pt,mirror},draw=pfline!45,line width=0.30pt]
+    ($(s3.south west)+(-0.14,-1.42)$) -- ($(s5.south east)+(0.14,-1.42)$)
+    node[midway,below=4.2pt,note] {fixed-line optimizer};
+
+\draw[decorate,decoration={brace,amplitude=3.0pt,mirror},draw=pfline!45,line width=0.30pt]
+    ($(s6.south west)+(-0.14,-1.42)$) -- ($(s6.south east)+(0.14,-1.42)$)
+    node[midway,below=4.2pt,note] {evidence layer};
+
+\node[note] at (6.38,-2.10) {public-bathymetry numerical benchmark; fixed-pattern pre-mission survey-line layout};
 
 \end{tikzpicture}
 \end{document}

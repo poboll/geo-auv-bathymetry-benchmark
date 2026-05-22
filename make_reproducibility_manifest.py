@@ -24,15 +24,87 @@ PATTERNS = {
     "uncertainty_outputs": [
         "uncertainty_replay/*.csv",
         "uncertainty_replay/*.json",
+        "uncertainty_replay/*.png",
+    ],
+    "uncertainty_margin_outputs": [
+        "uncertainty_margin_replay/*.csv",
+        "uncertainty_margin_replay/*.json",
+        "uncertainty_margin_replay/*.md",
+        "uncertainty_margin_replay/*.png",
+    ],
+    "current_drift_outputs": [
+        "current_drift_replay/*.csv",
+        "current_drift_replay/*.json",
+        "current_drift_replay/*.md",
+        "current_drift_replay/*.png",
+    ],
+    "current_aware_margin_outputs": [
+        "current_aware_margin_optimizer/*.csv",
+        "current_aware_margin_optimizer/*.json",
+        "current_aware_margin_optimizer/*.md",
+        "current_aware_margin_optimizer/*.png",
+    ],
+    "execution_risk_refinement_outputs": [
+        "execution_risk_refinement/*.csv",
+        "execution_risk_refinement/*.json",
+        "execution_risk_refinement/*.md",
+        "execution_risk_refinement/*.png",
+    ],
+    "structured_prior_error_outputs": [
+        "structured_prior_error_replay/*.csv",
+        "structured_prior_error_replay/*.json",
+        "structured_prior_error_replay/*.md",
+        "structured_prior_error_replay/*.png",
+    ],
+    "segmented_heading_outputs": [
+        "segmented_heading_extension/*.csv",
+        "segmented_heading_extension/*.json",
+        "segmented_heading_extension/*.md",
+        "segmented_heading_extension/*.png",
     ],
     "coarse_prior_replay_outputs": [
         "coarse_prior_replay/*.csv",
         "coarse_prior_replay/*.json",
         "coarse_prior_replay/*.md",
     ],
+    "threshold_local_failure_outputs": [
+        "threshold_local_failure_extension/*.csv",
+        "threshold_local_failure_extension/*.json",
+        "threshold_local_failure_extension/*.md",
+        "threshold_local_failure_extension/*.png",
+    ],
+    "submission_boundary_outputs": [
+        "submission_boundary_diagnostics/*.csv",
+        "submission_boundary_diagnostics/*.json",
+        "submission_boundary_diagnostics/*.md",
+    ],
+    "heading_resolution_outputs": [
+        "heading_resolution_diagnostic/*.csv",
+        "heading_resolution_diagnostic/*.json",
+        "heading_resolution_diagnostic/*.md",
+        "heading_resolution_diagnostic/*.png",
+    ],
+    "public_window_statistics_outputs": [
+        "public_window_statistics/*.csv",
+        "public_window_statistics/*.json",
+        "public_window_statistics/*.md",
+        "public_window_statistics/*.png",
+    ],
+    "ga_surrogate_audit_outputs": [
+        "ga_surrogate_audit/*.csv",
+        "ga_surrogate_audit/*.json",
+        "ga_surrogate_audit/*.md",
+        "ga_surrogate_audit/*.png",
+    ],
     "pso_baseline_outputs": [
         "pso_baseline/*.csv",
         "pso_baseline/*.json",
+    ],
+    "vehicle_aware_outputs": [
+        "vehicle_aware_posteval/*.csv",
+        "vehicle_aware_posteval/*.json",
+        "vehicle_aware_posteval/*.md",
+        "vehicle_aware_posteval/*.png",
     ],
     "gebco_scene_expansion_outputs": [
         "gebco_scene_expansion/*.csv",
@@ -64,6 +136,7 @@ PATTERNS = {
     ],
     "release_metadata": [
         "README.md",
+        "README_submission.md",
         "RELEASE_NOTES_*.md",
         "CITATION.cff",
         ".zenodo.json",
@@ -96,12 +169,24 @@ PATTERNS = {
         "make_uncertainty_replay.py",
         "make_survey_grade_extension.py",
         "make_turning_aware_posteval.py",
+        "make_vehicle_aware_posteval.py",
+        "make_segmented_heading_extension.py",
+        "make_structured_prior_error_replay.py",
+        "make_uncertainty_margin_replay.py",
+        "make_current_drift_replay.py",
+        "make_current_aware_margin_optimizer.py",
+        "make_execution_risk_refinement.py",
         "make_public_bootstrap_ci.py",
         "make_method_pipeline_figure.py",
         "make_coarse_prior_replay.py",
         "make_pso_baseline.py",
         "make_gebco_scene_expansion.py",
         "make_failure_mode_figure.py",
+        "make_threshold_local_failure_extension.py",
+        "make_submission_boundary_diagnostics.py",
+        "make_heading_resolution_diagnostic.py",
+        "make_public_window_statistics.py",
+        "make_ga_surrogate_audit.py",
     ],
 }
 
@@ -148,9 +233,8 @@ def main() -> None:
             "initial_archived_version_doi": "10.5281/zenodo.19919506",
             "initial_archived_record_url": "https://zenodo.org/records/19919506",
             "note": (
-                "The concept DOI identifies the release series and should resolve to "
-                "the latest DOI-bearing archive after a final pre-submission release "
-                "is minted."
+                "The concept DOI identifies the release series. The current manuscript "
+                "package cites the fixed version DOI listed above."
             ),
         },
         "source_data": [
