@@ -38,7 +38,7 @@
 - 页数：`manuscript/mdpi_jmse/template.pdf` 为 46 pages；`manuscript/latex/template.pdf` 为 46 pages。
 - 严格日志扫描：无 `LaTeX Error`、`Undefined control sequence`、undefined citation/reference、`Rerun`、`Overfull`、`Float too large`、`Fatal`、`Emergency stop`。
 - 引用审计命令：`python audit/verify_references_20260514.py`
-- 引用审计结果：`total 42 failed 1 et_al 0`；唯一自动失败为 `zhou2017terrain` 的 DOI `10.3390/s17040680` 返回 HTTP 403，属于 DOI/出版商访问策略问题，需要人工确认但不表示文献不存在。
+- 引用审计结果：`total 42 failed 1 et_al 0`；唯一自动失败为 `zhou2017terrain` 的 DOI `10.3390/s17040680` 返回 HTTP 403，属于 DOI/出版商访问策略问题；已用 MDPI 官方页面人工确认该 Sensors 2017, 17(4), 680 条目真实存在。
 
 ## 2026-05-22 Codex 按点核对执行记录
 
