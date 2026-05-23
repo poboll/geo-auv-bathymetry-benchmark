@@ -279,9 +279,9 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             p99[i, j] = row["cell_excess_overlap_p99_mean"]
             strict_pass[i, j] = row["pass_C99_O2_mean"]
 
-    jhs.apply_rc(base_font=8.65)
+    jhs.apply_rc(base_font=8.92)
 
-    fig, axes_grid = plt.subplots(2, 3, figsize=(7.25, 3.72), facecolor=jhs.BG)
+    fig, axes_grid = plt.subplots(2, 3, figsize=(7.35, 3.66), facecolor=jhs.BG)
     axes = list(axes_grid.flat)
     matrices = [
         (
@@ -345,9 +345,9 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             data.shape[0],
             rotate_x=0,
         )
-        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.95)
+        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=7.08)
 
-    fig.subplots_adjust(left=0.072, right=0.996, top=0.922, bottom=0.105, wspace=0.095, hspace=0.235)
+    fig.subplots_adjust(left=0.066, right=0.998, top=0.926, bottom=0.092, wspace=0.062, hspace=0.180)
     OUT.mkdir(parents=True, exist_ok=True)
     _save_white_rgb_figure(fig, OUT / "threshold_local_failure_journal.png")
     for pic_dir in PIC_DIRS:

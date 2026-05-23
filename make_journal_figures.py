@@ -114,19 +114,19 @@ DETAIL_BATHY = LinearSegmentedColormap.from_list(
 )
 PATH_GAIN_CMAP = LinearSegmentedColormap.from_list(
     "journal_path_gain",
-    ["#f7fbfc", "#e3eef2", "#b9d3de", "#78a9bf", "#2f6f91"],
+    ["#f8fbfb", "#e7f0ef", "#c2dad8", "#7fb3b2", "#2f7580"],
 )
 COVERAGE_CMAP = LinearSegmentedColormap.from_list(
     "journal_coverage",
-    ["#b97358", "#ddb99a", "#f7f5ee", "#b7d5d1", "#4e8f9d"],
+    ["#bb765f", "#dfbea2", "#f8f4ea", "#bfd9d3", "#4c8b8d"],
 )
 OVERLAP_CMAP = LinearSegmentedColormap.from_list(
     "journal_overlap",
-    ["#fffdf5", "#f3e4bf", "#dfb678", "#bd6f56", "#7e3f3d"],
+    ["#fffaf0", "#f0dfba", "#d9a66f", "#ae6150", "#74393a"],
 )
 TIME_CMAP = LinearSegmentedColormap.from_list(
     "journal_time",
-    ["#fafbfb", "#e3e8eb", "#bac6cc", "#7f929d", "#435661"],
+    ["#fbfbfa", "#e6e4df", "#c3c7c3", "#879997", "#465b61"],
 )
 LIGHT = LightSource(azdeg=318, altdeg=42)
 
@@ -1080,7 +1080,7 @@ def annotate_heatmap(ax, im, data: np.ndarray, fmt: str, mark_bad=None) -> None:
                 fmt.format(value),
                 ha="center",
                 va="center",
-                fontsize=6.95,
+                fontsize=7.08,
                 fontweight="normal",
                 color=cell_text_color(im, value),
             )
@@ -1125,16 +1125,16 @@ def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
         ),
     ]
 
-    fig, axes = plt.subplots(2, 2, figsize=(7.25, 4.92), facecolor=BG)
+    fig, axes = plt.subplots(2, 2, figsize=(7.35, 4.78), facecolor=BG)
     for panel_idx, (ax, (data, cmap, norm, title, fmt)) in enumerate(zip(axes.ravel(), metric_specs)):
         im = ax.imshow(data, cmap=cmap, norm=norm, aspect="auto", interpolation="nearest")
-        ax.set_title(title, loc="left", color=TEXT, fontweight="semibold", fontsize=8.05, pad=4.0)
+        ax.set_title(title, loc="left", color=TEXT, fontweight="semibold", fontsize=8.25, pad=2.9)
         ax.set_xticks(np.arange(len(METHODS)))
         ax.set_xticklabels(method_labels, color=TEXT)
         for tick in ax.get_xticklabels():
             tick.set_fontweight("normal")
         ax.xaxis.tick_top()
-        ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=1.25, length=0.0)
+        ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=0.85, length=0.0)
         ax.set_yticks(np.arange(len(scene_labels)))
         if panel_idx in (0, 2):
             ax.set_yticklabels(scene_labels, color=TEXT)
@@ -1147,8 +1147,8 @@ def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
             spine.set_visible(False)
         ax.tick_params(which="minor", bottom=False, left=False)
         annotate_heatmap(ax, im, data, fmt)
-    fig.subplots_adjust(left=0.104, right=0.997, top=0.938, bottom=0.050, wspace=0.060, hspace=0.160)
-    fig.savefig(PIC / "journal_metric_heatmap.png", bbox_inches="tight", facecolor="white", pad_inches=0.016)
+    fig.subplots_adjust(left=0.098, right=0.998, top=0.940, bottom=0.046, wspace=0.045, hspace=0.122)
+    fig.savefig(PIC / "journal_metric_heatmap.png", bbox_inches="tight", facecolor="white", pad_inches=0.010)
     plt.close(fig)
 
 

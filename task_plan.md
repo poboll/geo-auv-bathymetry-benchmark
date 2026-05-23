@@ -85,3 +85,14 @@
 - [x] 重新生成图源、双遍编译两套 LaTeX、渲染 MDPI PDF 热图页并人工 QA。
 - [x] 最新日志为 `compile_after_heatmap_system_v26b_20260523_pass2.log`；两套 PDF 均 49 pages，严格扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
 - [x] 引用审计、manifest 与 release gate 再次通过：45 references / 0 failed / 0 et_al；manifest 297 entries；release gate 四项阻断为 0。
+
+## 2026-05-23 v27b Heatmap-system Addendum
+
+- [x] 在 v26 基础上继续做热图二次返修：Figure 8/11/12/13/15/16/17 统一为更克制的 ivory / slate-teal / muted-rust / gray-slate 期刊配色。
+- [x] 图内字体统一为 Arial / Helvetica Neue / Helvetica / DejaVu Sans fallback，基础字号、tick 字号和 cell annotation 略增。
+- [x] v27 初版发现 Figure 11/17 上下排标题偏贴；v27b 已回调 `hspace` 和图面高度，避免标题、行列标签与 caption 挤压。
+- [x] 两套 LaTeX 热图插入尺寸同步调整为更接近正文宽度，Figure 8/11/12/13/16/17 在 PDF 中不再出现异常宽空白。
+- [x] v27b QA 截图目录为 `audit/heatmap_review_20260523_v27/pdf_pages_after_v27b/`，覆盖 Figure 8/11/12/13/15/16/17 所在页。
+- [x] 最新日志为 `compile_after_heatmap_system_v27b_20260523_pass2.log`；两套 PDF 均 49 pages，严格扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
+- [x] 引用审计、manifest 与 release gate 再次通过：45 references / 0 failed / 0 et_al；manifest 297 entries；release gate 四项阻断为 0。
+- [ ] 若用户确认当前 v27b 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。

@@ -74,8 +74,8 @@ Status date: 2026-05-23
 
 ## Compile QA
 
-- [x] MDPI PDF compiled to 49 pages after the May 23 v25d footprint-validity and heatmap polish pass.
-- [x] Working PDF compiled to 49 pages after the May 23 v25d footprint-validity and heatmap polish pass.
+- [x] MDPI PDF compiled to 49 pages after the May 23 v27b heatmap-system refinement pass.
+- [x] Working PDF compiled to 49 pages after the May 23 v27b heatmap-system refinement pass.
 - [x] Abstract rechecked after the May 23 v24 pass: 199 words by the local LaTeX-stripped counter.
 - [x] No undefined citation/reference warnings in latest MDPI compile log.
 - [x] No overfull hbox warnings in latest MDPI compile log.
@@ -83,8 +83,8 @@ Status date: 2026-05-23
 - [x] No sparse/blank figure pages detected in the May 14 rendered contact-sheet QA.
 - [x] Working PDF compiled and retained.
 - [x] Latest compile logs:
-  - `manuscript/mdpi_jmse/compile_after_footprint_validity_v25d_20260523_pass2.log`
-  - `manuscript/latex/compile_after_footprint_validity_v25d_20260523_pass2.log`
+  - `manuscript/mdpi_jmse/compile_after_heatmap_system_v27b_20260523_pass2.log`
+  - `manuscript/latex/compile_after_heatmap_system_v27b_20260523_pass2.log`
 
 ## Repository and Archive
 
@@ -163,3 +163,14 @@ Status date: 2026-05-23
 - [x] Visual QA artifacts: before pages in `audit/heatmap_review_20260523_v26/pdf_pages_before/`; final after pages in `audit/heatmap_review_20260523_v26/pdf_pages_after_v26b/` for pages 25, 32, 33, 34, 37, 38, and 39.
 - [x] Latest compile logs: `manuscript/mdpi_jmse/compile_after_heatmap_system_v26b_20260523_pass2.log` and `manuscript/latex/compile_after_heatmap_system_v26b_20260523_pass2.log`; both output 49 pages and strict scans report no hard LaTeX errors, undefined references/citations, rerun warnings, overfull boxes, float-too-large warnings, fatal errors, or emergency stops.
 - [x] Latest audit rerun: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 297 entries; `check_release_readiness.py` reports all release-blocking counts as 0.
+
+## 2026-05-23 v27b Heatmap-system Refinement Addendum
+
+- [x] The heatmap family was refined again after v26: Figure 8/11/12/13/15/16/17 now use a restrained ivory / slate-teal / muted-rust / gray-slate palette and unified Arial/Helvetica-style sans-serif typography.
+- [x] v27 initially made some multi-row heatmaps too tight; v27b restores enough vertical separation for Figure 11 and Figure 17 while keeping the matrices wider and more readable in the PDF.
+- [x] Figure 8/11/12/13/16/17 LaTeX insertion widths now use `\textwidth` with modest height caps, reducing perceived source-image whitespace without stretching the matrices.
+- [x] Python static check passed for all heatmap scripts: `journal_heatmap_style.py`, `make_journal_figures.py`, `make_structured_prior_error_replay.py`, `make_uncertainty_replay.py`, `make_uncertainty_margin_replay.py`, `make_threshold_local_failure_extension.py`, `make_footprint_validity_audit.py`, and `make_coarse_prior_replay.py`.
+- [x] Visual QA artifacts: `audit/heatmap_review_20260523_v27/pdf_pages_after_v27b/` for pages 25, 32, 33, 34, 37, 38, and 39; page images are 1191 x 1684 px and were manually inspected.
+- [x] Latest compile logs: `manuscript/mdpi_jmse/compile_after_heatmap_system_v27b_20260523_pass2.log` and `manuscript/latex/compile_after_heatmap_system_v27b_20260523_pass2.log`; both output 49 pages and strict scans report no hard LaTeX errors, undefined references/citations, rerun warnings, overfull boxes, float-too-large warnings, fatal errors, or emergency stops.
+- [x] Latest audit rerun: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 297 entries; `check_release_readiness.py` reports all release-blocking counts as 0.
+- [x] No claim boundary changed in the v27b visual pass: figures remain public-grid numerical benchmark evidence, not field/lake/sea trials, raw MBES validation, hydrographic QA, or navigation-safety evidence.

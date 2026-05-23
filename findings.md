@@ -222,3 +222,15 @@
 - 低饱和蓝绿/暖赭/灰蓝色带比原来的高饱和蓝红更适合 JMSE/SCI 版面：coverage/feasible 用冷色正向语义，overlap/failure 用暖色风险语义，planning time 用灰蓝；没有改变任何 CSV/JSON 数值或 claim。
 - 最终 PDF QA 覆盖 `audit/heatmap_review_20260523_v26/pdf_pages_after_v26b/page_25.png`、`page_32.png`、`page_33.png`、`page_34.png`、`page_37.png`、`page_38.png`、`page_39.png`；人工检查无热图异常大空白、标题/坐标遮挡、透明黑底、色条覆盖或 caption 与图不一致。
 - 本轮是视觉与可读性返修，不新增 sea/field/lake trial、raw MBES validation、hydrographic QA 或 navigation-safety readiness 声称；public-grid numerical benchmark 边界保持不变。
+
+## 2026-05-23 v27b 热图二次返修发现
+
+- v26 已解决主要留白和字体混乱，但 v27 初版继续压缩间距后，Figure 11 和 Figure 17 出现上下排标题偏贴的问题；这说明热图不能只追求紧凑，还要给 panel title 和 tick label 留出稳定间隔。
+- v27b 的有效折中是：`wspace` 继续收紧以减少左右空白，`hspace` 对多排热图适度回调，图源宽度配合 LaTeX `\textwidth` 显示。这样 Figure 8/11/12/13/17 都更满，但没有标题互相压住。
+- 当前热图配色更适合论文主体：coverage/feasibility 用低饱和 teal，failure/overlap tail 用 muted rust，时间和 disagreement 用 gray-slate。相比高饱和蓝红，审稿人读图时更容易分清“正向指标”和“风险指标”，也不容易像 Excel/幻灯片图。
+- 字体策略最终统一为图内 sans-serif：Arial / Helvetica Neue / Helvetica / DejaVu Sans fallback。正文仍由 LaTeX/MDPI 模板字体控制；图内字号控制在 PDF 页面上可读，不继续追求 Times New Roman 单图效果。
+- Figure 15 的六热图结构是当前更合适的版本：右下角不再浪费为 Reading guide，而是显示默认 \(C97/O3\) pass-rate，使严格 \(C99/O2\) 与默认门槛可直接对照。
+- Figure 16 的核心数值未变：0 个 \(C97/O3\) feasibility decision 被 side-specific footprint audit 改变；最大覆盖差 0.50 pp、最大 mean excess-overlap 差 1.217 pp、最大 local count disagreement 10.42%。本轮只改善图面，不改变证据。
+- Figure 17 页面仍有一些下方正文排版留白，但源图本身已铺满正文宽度，热图没有右侧残留空白；该留白来自 caption 和后续段落在 MDPI 双约束浮动中的排版，不属于图像生成缺陷。
+- v27b 最终验证状态：两套 LaTeX 均为 49 pages；严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large 或 rerun；引用审计 45 references / 0 failed / 0 et_al；manifest 297 entries；release gate 四项阻断为 0。
+- Claim boundary 保持稳定：所有新增/重绘图都只支持 public-grid numerical planning benchmark，不支持写成真实海试、mission logs、raw MBES validation、hydrographic QA 或 navigation-safety readiness。

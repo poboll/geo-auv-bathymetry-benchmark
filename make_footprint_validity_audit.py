@@ -173,21 +173,21 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def make_figure(rows: list[dict[str, Any]]) -> None:
-    jhs.apply_rc(base_font=8.75)
+    jhs.apply_rc(base_font=8.95)
     plt.rcParams.update({"axes.unicode_minus": False})
     rows = sorted(rows, key=lambda r: (r["scene_id"], METHOD_ORDER.get(str(r["method"]), 99)))
     row_labels = [f"{row['scene_label']}  {row['method_label']}" for row in rows]
     delta_cmap = mcolors.LinearSegmentedColormap.from_list(
         "footprint_delta",
-        ["#5f82a8", "#f7f7f2", "#c99c62"],
+        ["#587c92", "#f8f4ea", "#ba765b"],
     )
     disagreement_cmap = mcolors.LinearSegmentedColormap.from_list(
         "footprint_disagreement",
-        ["#f8fafc", "#d9e3eb", "#9aaec2", "#4d657f"],
+        ["#fbfbfa", "#e4e9e8", "#a8bbb8", "#536c72"],
     )
     risk_cmap = mcolors.LinearSegmentedColormap.from_list(
         "footprint_risk",
-        ["#fffaf0", "#f6dfba", "#e2ad75", "#ba6658"],
+        ["#fffaf0", "#f0d9ad", "#d69a67", "#a9584d"],
     )
     metrics = [
         (
@@ -224,27 +224,27 @@ def make_figure(rows: list[dict[str, Any]]) -> None:
     for col, (_, _, norm, cmap, _) in enumerate(metrics):
         rgba[:, col, :] = cmap(norm(data[:, col]))
 
-    fig = plt.figure(figsize=(7.15, 3.60), facecolor="white")
-    ax = fig.add_axes([0.270, 0.080, 0.715, 0.805])
+    fig = plt.figure(figsize=(7.35, 3.58), facecolor="white")
+    ax = fig.add_axes([0.252, 0.072, 0.735, 0.820])
     ax.imshow(rgba, aspect="auto", interpolation="nearest")
     ax.set_xticks(np.arange(len(metrics)))
-    ax.set_xticklabels([title for _, title, *_ in metrics], fontsize=8.15, color=jhs.TEXT)
+    ax.set_xticklabels([title for _, title, *_ in metrics], fontsize=8.28, color=jhs.TEXT)
     ax.xaxis.tick_top()
-    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, length=0, pad=4)
+    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, length=0, pad=3)
     for tick in ax.get_xticklabels():
         tick.set_fontweight("semibold")
         tick.set_linespacing(0.88)
     ax.set_yticks(np.arange(len(row_labels)))
-    ax.set_yticklabels(row_labels, fontsize=7.95, color=jhs.TEXT)
-    ax.tick_params(axis="y", length=0, pad=4)
+    ax.set_yticklabels(row_labels, fontsize=8.05, color=jhs.TEXT)
+    ax.tick_params(axis="y", length=0, pad=3)
     for i, tick in enumerate(ax.get_yticklabels()):
         tick.set_color(jhs.TEXT if i % 3 == 0 else jhs.MUTED)
     ax.set_xticks(np.arange(-0.5, len(metrics), 1), minor=True)
     ax.set_yticks(np.arange(-0.5, len(row_labels), 1), minor=True)
-    ax.grid(which="minor", color="white", linewidth=0.62)
+    ax.grid(which="minor", color=jhs.GRID, linewidth=0.46)
     ax.tick_params(which="minor", bottom=False, left=False)
     for y in [2.5, 5.5]:
-        ax.axhline(y, color="#e8edf2", linewidth=1.15)
+        ax.axhline(y, color=jhs.GROUP, linewidth=0.70)
     for spine in ax.spines.values():
         spine.set_visible(False)
     ax.set_facecolor("white")
@@ -258,7 +258,7 @@ def make_figure(rows: list[dict[str, Any]]) -> None:
                 fmt.format(value),
                 ha="center",
                 va="center",
-                fontsize=7.75,
+                fontsize=7.92,
                 color=jhs.cell_text_color(cmap, norm, value),
                 fontweight="normal",
             )

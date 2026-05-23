@@ -228,3 +228,19 @@
 - 重新运行引用审计 `python3 audit/verify_references_20260514.py`，结果为 `total 45 failed 0 et_al 0`。
 - 重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 仍为 297 entries；`python3 check_release_readiness.py` 输出 missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
 - 已回写 `/Users/Apple/Developer/Pycharm/q/Geo修改请按点核对.md`、`audit/Geo修改请按点核对.md`、`submission_package/final_submission_checklist.md`、`task_plan.md`、`progress.md`、`findings.md`，记录本轮命令、图源、PDF 截图和 claim boundary。
+
+## 2026-05-23 v27b
+
+- 继续按用户最新反馈做热图二次返修：目标是进一步压缩热图间距、降低配色突兀感、统一图内字体，并检查 Figure 8/15/16/17 的 PDF 页面效果。
+- 修改 `journal_heatmap_style.py`：配色从 v26 的蓝绿/暖赭进一步收敛为 ivory / slate-teal / muted-rust / gray-slate；字体 fallback 增加 Helvetica Neue；基础字号、tick 字号和 annotation 字号略增；分组线改为很细的浅色 separator。
+- 修改 `make_journal_figures.py`、`make_structured_prior_error_replay.py`、`make_uncertainty_replay.py`、`make_uncertainty_margin_replay.py`、`make_coarse_prior_replay.py`：扩大有效矩阵区域，收紧 `wspace`，同时把 Figure 11/17 等多排热图的 `hspace` 回调到不会压标题的范围。
+- 修改 `make_threshold_local_failure_extension.py` 和 `make_footprint_validity_audit.py`：保持 Figure 15 的六热图结构和 Figure 16 的 side-specific audit 数值不变，只微调字体、色带、grid/separator 和有效绘图区。
+- 同步两套 LaTeX：Figure 8/11/12/13/16/17 的 `includegraphics` 宽度改为 `\textwidth`，高度上限微增，避免热图源图在 PDF 中显得偏窄或留白过大。
+- 重新编译两套 LaTeX 两遍，最终日志为 `compile_after_heatmap_system_v27b_20260523_pass2.log`，两套 PDF 均输出 49 pages。
+- 严格日志扫描两套 v27b pass2 日志只命中 `Output written on template.pdf (49 pages)`；无 LaTeX Error、Undefined control sequence、undefined citation/reference、Rerun、Overfull、Float too large、Fatal 或 Emergency stop。
+- 完成 Python 静态检查：`python3 -m py_compile journal_heatmap_style.py make_journal_figures.py make_structured_prior_error_replay.py make_uncertainty_replay.py make_uncertainty_margin_replay.py make_threshold_local_failure_extension.py make_footprint_validity_audit.py make_coarse_prior_replay.py`，输出 `py_compile_ok`。
+- 渲染 v27b MDPI PDF 热图页到 `audit/heatmap_review_20260523_v27/pdf_pages_after_v27b/`：page 25/32/33/34/37/38/39；页面尺寸均为 `1191 x 1684` px。
+- 人工查看 `page_25.png`、`page_37.png`、`page_38.png`、`page_39.png`：Figure 8 无中间大空白；Figure 15 无右下残留说明块；Figure 16 标签和数值可读；Figure 17 图源宽度正常，页面空白来自 caption/正文排版而不是热图残留。
+- 重新运行引用审计 `python3 audit/verify_references_20260514.py`，结果为 `total 45 failed 0 et_al 0`。
+- 重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 297 entries；`python3 check_release_readiness.py` 输出 missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
+- 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。本轮不创建 GitHub release / Zenodo DOI，因为稿件仍处于 pre-submission working draft。

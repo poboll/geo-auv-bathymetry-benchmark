@@ -1,5 +1,33 @@
 # 对JMSE目标稿的严格评审与大修方案
 
+## 2026-05-23 Codex v27b 热图二次返修按点核对执行记录
+
+【x】继续按老师/用户反馈把主文热图体系做第二轮期刊化收口。
+文件/命令/证据：
+- 返修对象：Figure 8 `journal_metric_heatmap.png`、Figure 11 `journal_structured_prior_error_replay.png`、Figure 12 `journal_uncertainty_replay.png`、Figure 13 `journal_uncertainty_margin_replay.png`、Figure 15 `journal_threshold_local_failure.png`、Figure 16 `journal_footprint_validity_audit.png`、Figure 17 `journal_coarse_prior_replay.png`。
+- 修改脚本：`journal_heatmap_style.py`、`make_journal_figures.py`、`make_structured_prior_error_replay.py`、`make_uncertainty_replay.py`、`make_uncertainty_margin_replay.py`、`make_threshold_local_failure_extension.py`、`make_footprint_validity_audit.py`、`make_coarse_prior_replay.py`。
+- 具体改动：统一 ivory / slate-teal / muted-rust / gray-slate 低饱和配色；字体 fallback 统一为 Arial / Helvetica Neue / Helvetica / DejaVu Sans；单元格数字和 tick 字号略增；Figure 8/11/12/13/17 的 `wspace/hspace` 收紧但避免标题贴边；Figure 15 保留默认 `C97/O3` pass-rate 小热图；Figure 16 继续使用统一 sans-serif 热图语言。
+- v27 初版发现 Figure 11/17 上下排标题过近；v27b 已回调 panel 间距并重新渲染确认。
+
+【x】PDF 页面级视觉 QA 已按 v27b 复查。
+文件/命令/证据：
+- QA 截图目录：`audit/heatmap_review_20260523_v27/pdf_pages_after_v27b/`。
+- 关键截图：`page_25.png`、`page_32.png`、`page_33.png`、`page_34.png`、`page_37.png`、`page_38.png`、`page_39.png`。
+- 图片尺寸核验：上述页面均为 `1191 x 1684` px。
+- 人工检查结论：Figure 8 不再出现左右/中间异常宽空白；Figure 15 无右下说明空白或标题遮挡；Figure 16 行列标签和数值可读；Figure 17 源图宽度正常，页面剩余空间来自 caption 和正文流式排版，不属于图源留白缺陷。
+
+【x】v27b 编译、引用、manifest 与 release gate 已重新闭环。
+文件/命令/证据：
+- Python 静态检查：`python3 -m py_compile journal_heatmap_style.py make_journal_figures.py make_structured_prior_error_replay.py make_uncertainty_replay.py make_uncertainty_margin_replay.py make_threshold_local_failure_extension.py make_footprint_validity_audit.py make_coarse_prior_replay.py`，结果 `py_compile_ok`。
+- MDPI 编译：`manuscript/mdpi_jmse/compile_after_heatmap_system_v27b_20260523_pass2.log`。
+- 工作稿编译：`manuscript/latex/compile_after_heatmap_system_v27b_20260523_pass2.log`。
+- 严格日志扫描：两套日志只命中 `Output written on template.pdf (49 pages)`；无 LaTeX Error、Undefined control sequence、undefined citation/reference、Rerun、Overfull、Float too large、Fatal 或 Emergency stop。
+- 引用审计命令：`python3 audit/verify_references_20260514.py`；结果：`total 45 failed 0 et_al 0`。
+- manifest 命令：`conda run -n uu python make_reproducibility_manifest.py`；结果：`reproducibility_manifest.json` 为 297 entries。
+- release gate 命令：`python3 check_release_readiness.py`；输出：`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 交付 PDF 已刷新：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
+- 边界未变：仍严格表述为 public-grid numerical planning benchmark，不包装为 field/lake/sea trial、raw MBES validation、hydrographic QA 或 navigation-safety readiness。
+
 ## 2026-05-23 Codex v26 热图体系返修按点核对执行记录
 
 【x】按老师/用户反馈把主文热图体系整体返修，而不是只修单张 Figure 16。

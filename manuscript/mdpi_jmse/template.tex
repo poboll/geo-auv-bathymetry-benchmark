@@ -681,7 +681,7 @@ The 30-seed run changes the earlier interpretation in a concrete way. On Complex
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.96\textwidth,height=0.34\textheight,keepaspectratio]{pic/journal_metric_heatmap.png}
+	\includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{pic/journal_metric_heatmap.png}
 	\caption{Cross-scene metric matrix from the reported benchmark. Each panel is a scene-by-method heatmap of benchmark means: path gain relative to Fixed-Spacing, predicted coverage, excess-overlap violation, and planning time. The top two rows are the public GEBCO scenes and the bottom three rows are synthetic stress tests, so the figure exposes both the public-data pattern and the complex-terrain failure boundary in one compact view. Stochastic GA methods report 50-seed means, and all coverage values are numerical predictions rather than field measurements.}
 	\label{fig:results}
 \end{figure}
@@ -904,7 +904,7 @@ Figure~\ref{fig:structured_prior_error} adds a stronger prior-map robustness che
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.95\textwidth,height=0.34\textheight,keepaspectratio]{pic/journal_structured_prior_error_replay.png}
+	\includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{pic/journal_structured_prior_error_replay.png}
 	\caption{Structured prior-error replay. The planner receives a perturbed prior bathymetry grid, while the final line family is replayed on the unperturbed truth grid. Rows combine scene and prior-error scenario; abbreviated row labels use Casc. for Cascadia, Mont. for Monterey, USGS-H for the high-complexity USGS crop, Nom. for nominal, Corr. for correlated bias, Slope for slope-amplified error, and Wall for localized wall bias. Columns compare Fixed-Spacing, Adaptive Spacing without GA, and Hybrid GA. The four panels report replay feasibility, replay coverage margin relative to the 97 percent acceptance gate, replay excess-overlap violation, and path gain relative to Fixed-Spacing. Color intensity and the printed cell values indicate feasibility loss, negative coverage margin, or overlap violation. The diagnostic is a controlled public-grid prior-error replay, not a calibrated geostatistical uncertainty model or a field survey.}
 	\label{fig:structured_prior_error}
 \end{figure}
@@ -916,7 +916,7 @@ Figure~\ref{fig:uncertainty_replay} reports the Monte Carlo execution-uncertaint
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.94\textwidth,height=0.31\textheight,keepaspectratio]{pic/journal_uncertainty_replay.png}
+	\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{pic/journal_uncertainty_replay.png}
 	\caption{Execution-uncertainty replay on the two public GEBCO layouts. Rows combine scene and perturbation level, with Mod. and Strong denoting the moderate and strong execution-error envelopes. Columns compare Fixed-Spacing, Adaptive Spacing without GA, and Hybrid GA. The four panels report feasibility rate, mean predicted coverage, fifth-percentile coverage margin relative to the 97 percent gate, and the 95th-percentile excess-overlap tail. Color intensity and the printed cell values indicate feasibility loss, negative lower-tail coverage margin, mean coverage below the gate, or overlap tail above the 3 percent gate. Under moderate perturbations, Hybrid GA remains feasible in 300/300 Cascadia trials and 299/300 Monterey trials; under strong perturbations, all methods lose substantial feasibility margin, indicating that execution-aware safety margins would be needed before field use.}
 	\label{fig:uncertainty_replay}
 \end{figure}
@@ -928,7 +928,7 @@ The previous replay injects execution error after planning. To test whether the 
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.94\textwidth,height=0.31\textheight,keepaspectratio]{pic/journal_uncertainty_margin_replay.png}
+	\includegraphics[width=\textwidth,height=0.33\textheight,keepaspectratio]{pic/journal_uncertainty_margin_replay.png}
 	\caption{Uncertainty-aware margin selection under the declared execution-error envelope. Rows combine scene and perturbation level, with Mod. and Strong denoting the moderate and strong execution-error envelopes and USGS-H denoting the high-complexity USGS crop. Columns compare Fixed-Spacing, Adaptive Spacing without GA, Hybrid GA, and the selected uncertainty-aware margin variant (UA-Hybrid). The four panels report feasibility rate, fifth-percentile coverage margin relative to the 97 percent gate, 95th-percentile excess-overlap tail, and path-cost change relative to the nominal Hybrid GA. Color intensity and the printed cell values indicate feasibility loss, negative coverage margin, excess-overlap tail above the 3 percent gate, or path cost above 2 percent. The diagnostic selects a pre-mission spacing margin; it does not model current, control, SLAM feedback, or field logs.}
 	\label{fig:uncertainty_margin_replay}
 \end{figure}
@@ -971,7 +971,7 @@ The main evaluator uses a total-width proxy for raster coverage and adjacent-spa
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=\textwidth,height=0.43\textheight,keepaspectratio]{pic/journal_footprint_validity_audit.png}
+	\includegraphics[width=\textwidth,height=0.44\textheight,keepaspectratio]{pic/journal_footprint_validity_audit.png}
 	\caption{Side-specific footprint validity audit for representative layouts on the two GEBCO public scenes and the USGS high-complexity crop. The audit preserves port/starboard reach asymmetry and compares the resulting raster counts with the manuscript total-width proxy. \(\Delta C\) and \(\Delta O\) denote side-specific minus proxy coverage and mean excess-overlap differences; cell-count disagreement reports the fraction of grid cells whose coverage multiplicity changes; side p99 excess reports the side-specific 99th-percentile cellwise excess-overlap tail. The audit checks evaluator stability for planning conclusions; it is not beam-level acoustic ray tracing, raw MBES product validation, or hydrographic QA.}
 	\label{fig:footprint_validity_audit}
 \end{figure}
@@ -983,7 +983,7 @@ The preceding diagnostics still plan and evaluate on nominally matched grids, so
 
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[width=0.95\textwidth,height=0.34\textheight,keepaspectratio]{pic/journal_coarse_prior_replay.png}
+	\includegraphics[width=\textwidth,height=0.36\textheight,keepaspectratio]{pic/journal_coarse_prior_replay.png}
 	\caption{Coarse-prior to fine-grid replay on the USGS Southern Cascadia public bathymetry grid. Low, medium, and high-complexity crops are planned on 120, 300, 600, and 900~m coarsened priors, then the same fixed-pattern line families are replayed on the fine public grid without re-optimization. Row labels abbreviate crop complexity and prior cell size, e.g., L120, M300, and H900. The heatmaps report replay coverage, coverage loss relative to the coarse-prior prediction, replay excess-overlap violation, and replay feasibility. All entries are recomputed from \texttt{coarse\_prior\_replay/coarse\_prior\_replay\_summary.csv}; Hybrid GA values are 20-seed means for this diagnostic.}
 	\label{fig:coarse_prior_replay}
 \end{figure}
