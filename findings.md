@@ -193,3 +193,21 @@
 - 关键页视觉 QA：第 1 页新标题不溢出；第 10 页参数表未越界；第 22 页 public-window 表可读且未压缩成密集横线图。
 - v24+ 复核后引用审计已回到 45 references / 0 failed / 0 et_al；`kim2017panel` 和 `li2024full` 的 DOI/出版商自动访问可能偶发 SSL EOF、418 或 403，但 Crossref/DOI 元数据已核验，脚本已记录人工 fallback 以免把访问策略误判成假文献。
 - v24+ manifest 为 290 entries，release-readiness gate 继续全 0 阻断；这说明当前证据目录、PDF、两套 LaTeX、manifest 与 Git 跟踪关系已满足后续 release/Zenodo 归档前的结构要求。仍不应在用户确认冻结投稿版前创建新 release。
+
+## 2026-05-23 v25 老师新意见再评估
+
+- 当前最值得继续硬补的不是扩大 GA 或继续堆图，而是把 evaluator 物理简化做成可审计证据。老师指出的 “total-width proxy / horizontal raster cell-center evaluator 与真实 MBES survey product 有鸿沟” 是 P0 风险。
+- 可本地落地的补强方案是 side-specific footprint validity audit：不做完整声线折射/姿态/声速模型，但至少保留 port/starboard footprint 分解，用同一批代表布局重算 coverage/overlap，量化 total-width proxy 与更细 footprint 子模型之间的差异。
+- 这项 audit 的合理表述边界：它能提高 planning-evaluator 透明度，不能替代 beam-level acoustic ray tracing、raw MBES line products、field/lake trials 或 hydrographic QA。
+- v25 footprint validity audit 结果：在 GEBCO Cascadia、GEBCO Monterey、USGS High 的 Fixed/Adaptive/Hybrid 代表布局上，side-specific port/starboard 子模型没有改变任何 \(C97/O3\) feasibility decision。
+- 关键数值来自 `footprint_validity_audit/footprint_validity_summary.json`：`max_abs_coverage_delta_pp=0.5`、`mean_abs_coverage_delta_pp=0.0827`、`max_abs_overlap_delta_pp=1.2166`、`mean_abs_overlap_delta_pp=0.2600`、`max_count_disagreement_pct=10.4167`、`feasibility_changes_C97_O3=0`。
+- 解释边界：该结果支持“benchmark-level conclusion stable under stronger planning-layer footprint check”；但 USGS High 仍有 7.66--10.42% local coverage-count disagreement，所以不能把当前 evaluator 包装成 raw-MBES product QA。
+
+## 2026-05-23 v25d 热图与最终 QA 发现
+
+- 用户指出的新 footprint 热图问题成立：初版源图虽可读，但放入 PDF 后因为图内大标题和底部长说明占高，矩阵本体偏矮，字体显小，视觉上仍有“展示图”而非期刊矩阵的感觉。
+- 最终修复策略是把解释完全交给 LaTeX caption：源 PNG 去掉图内标题/脚注，保留 4 列核心指标和 9 行代表布局；这比继续堆图内说明更适合 SCI/PDF 排版。
+- 字体策略：该图改为 Times New Roman/STIX serif fallback，使 Figure 16 在 MDPI PDF 中更接近正文/表格观感；其它既有热图仍为 sans-serif 矩阵风格，未在本轮强行大范围改图以避免引入新排版风险。
+- 最终 PDF QA 结果：`audit/page_preview_20260523_v25d_final/mdpi_page_37.png` 中 Figure 16 无遮挡、无截断、无异常空白，矩阵和数值可读；周边 caption 明确该审计不是 beam-level ray tracing、raw MBES validation 或 hydrographic QA。
+- 引用审计中的 GEBCO/IHO SSL EOF 是官方站点 TLS 抖动，不是文献真实性问题；最终脚本记录 manual fallback 后，`audit/reference_verification_20260514_v2.md` 为 45 references / 0 failed / 0 et_al。
+- 当前可发布结构状态：manifest 297 entries，release gate 全 0 阻断。仍不建议在用户最终确认“冻结投稿版”前创建 GitHub release，因为 Zenodo 会自动 mint 新 DOI。

@@ -108,6 +108,12 @@ PATTERNS = {
         "ga_surrogate_audit/*.md",
         "ga_surrogate_audit/*.png",
     ],
+    "footprint_validity_audit_outputs": [
+        "footprint_validity_audit/*.csv",
+        "footprint_validity_audit/*.json",
+        "footprint_validity_audit/*.md",
+        "footprint_validity_audit/*.png",
+    ],
     "pso_baseline_outputs": [
         "pso_baseline/*.csv",
         "pso_baseline/*.json",
@@ -211,6 +217,7 @@ PATTERNS = {
         "make_heading_resolution_diagnostic.py",
         "make_public_window_statistics.py",
         "make_ga_surrogate_audit.py",
+        "make_footprint_validity_audit.py",
         "make_claim_consistency_audit.py",
         "make_sensitivity_evidence_figures.py",
         "journal_heatmap_style.py",

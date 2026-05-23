@@ -18,6 +18,7 @@ The repository name is historical. The submitted manuscript treats the package a
 - `uncertainty_replay/`: execution-uncertainty replay outputs.
 - `survey_grade_extension_usgs_cascadia/`: independent USGS Southern Cascadia 30 m public-grid extension.
 - `coarse_prior_replay/`: coarse-prior to fine-grid replay outputs.
+- `footprint_validity_audit/`: total-width proxy versus side-specific port/starboard footprint validity audit.
 - `pso_baseline/`: equal-budget PSO local-refinement diagnostic.
 - `public_bathy/processed/`: small processed GEBCO scene caches used by the benchmark.
 - `manuscript/mdpi_jmse/`: MDPI/JMSE draft source and compiled PDF.
@@ -68,7 +69,7 @@ xelatex -interaction=nonstopmode template.tex
 
 ## Current Evidence Boundary
 
-The latest validated run is `run_5`. The strongest supported claim is that terrain-aware adaptive spacing improves overlap discipline and repeatability for offline fixed-pattern survey-line design on public bathymetric priors. Local GA cleanup is optional and gate-controlled. Public GEBCO route shortening is modest; the main public-scene result is overlap discipline and coverage/overlap balance. The nine-window public audit separates low-overlap public windows from the overlap-stressed USGS high-complexity crop, and the coarse-prior replay, threshold/local-failure, \(W_{\max}\), surrogate, and GA-gate diagnostics are used as public-grid stress checks, not as sea-trial evidence.
+The latest validated run is `run_5`. The strongest supported claim is that terrain-aware adaptive spacing improves overlap discipline and repeatability for offline fixed-pattern survey-line design on public bathymetric priors. Local GA cleanup is optional and gate-controlled. Public GEBCO route shortening is modest; the main public-scene result is overlap discipline and coverage/overlap balance. The nine-window public audit separates low-overlap public windows from the overlap-stressed USGS high-complexity crop, and the coarse-prior replay, threshold/local-failure, \(W_{\max}\), surrogate, footprint-validity, and GA-gate diagnostics are used as public-grid stress checks, not as sea-trial evidence.
 
 For a compact submission reproduction map, see `README_submission.md`.
 

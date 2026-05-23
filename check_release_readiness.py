@@ -45,6 +45,7 @@ REQUIRED_DIRS = [
     "public_window_statistics",
     "vehicle_aware_posteval",
     "ga_surrogate_audit",
+    "footprint_validity_audit",
 ]
 
 

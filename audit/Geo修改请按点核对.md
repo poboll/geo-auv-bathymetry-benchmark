@@ -1,5 +1,65 @@
 # 对JMSE目标稿的严格评审与大修方案
 
+## 2026-05-23 Codex v25 footprint-validity 按点核对执行记录
+
+【x】P0：针对 total-width proxy / horizontal raster evaluator 与真实 MBES footprint 产品之间的鸿沟，新增 side-specific footprint validity audit。
+文件/命令/证据：
+- 仓库：`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark`
+- 新脚本：`make_footprint_validity_audit.py`
+- 命令：`conda run -n uu python make_footprint_validity_audit.py`
+- 输出：`footprint_validity_audit/footprint_validity_raw.csv`、`footprint_validity_audit/footprint_validity_summary.json`、`footprint_validity_audit/journal_footprint_validity_audit.png`
+- 同步图片：`manuscript/latex/pic/journal_footprint_validity_audit.png`、`manuscript/mdpi_jmse/pic/journal_footprint_validity_audit.png`
+- 关键结果：9 个代表性 scene-method 布局中，side-specific port/starboard 子模型没有改变任何 `C97/O3` feasibility decision；最大覆盖差 0.50 pp，平均覆盖差 0.083 pp；最大 mean-excess-overlap 差 1.217 pp，平均差 0.260 pp；最大 coverage-count disagreement 为 10.42%。
+
+【x】P0：正文已把该审计写成 validity audit，而不是伪装成海试/水文测量 QA。
+文件/证据：
+- 修改文件：`manuscript/mdpi_jmse/template.tex`、`manuscript/latex/template.tex`
+- Methods：在 total-width proxy 段落说明新增 side-specific audit，并明确仍不包含 roll/pitch/heave、sound-speed、beam-level quality。
+- Results：新增 `Side-specific Footprint Validity Audit` 小节和 `Figure~\ref{fig:footprint_validity_audit}`。
+- Discussion：写明 benchmark conclusion stable under stronger planning-layer footprint check，但 USGS High 仍有 7.66--10.42% local count disagreement，不能上升为 survey-product QA。
+- Risk matrix：新增 `Footprint model fidelity` 行。
+- Conclusion/Data Availability：同步加入 side-specific footprint validity audit 和 claim boundary。
+
+【x】图件 QA：新 footprint audit 图已二轮重绘。
+文件/命令/证据：
+- 初版发现第三、第四列标题挤压；已修改 `make_footprint_validity_audit.py`，将长标题拆行、调整列宽和顶部空白。
+- 行顺序改为 `Fixed -> Adaptive -> Hybrid`，方便按 baseline-to-method 读图。
+- 用 Codex 图像查看确认新版 `footprint_validity_audit/journal_footprint_validity_audit.png` 无标题重叠、无大片异常空白、数值可读。
+
+【x】复现与投稿材料已同步准备。
+文件/证据：
+- 新增说明：`footprint_validity_audit/README.md`
+- 修改：`README.md`、`README_submission.md`、`submission_package/JMSE_cover_letter_draft.md`
+- 处理内容：把 footprint-validity audit 纳入 evidence map 和 cover letter，并明确其是 planning-layer validity check，不是 beam-level acoustic ray tracing、raw MBES product validation、field/lake/sea trial 或 hydrographic QA。
+
+【x】热图专项返修：按“间距大、配色不好、字体不好”的反馈重绘 Figure 16。
+文件/命令/证据：
+- 修改脚本：`make_footprint_validity_audit.py`
+- 重新生成命令：`conda run -n uu python make_footprint_validity_audit.py`
+- 图源：`footprint_validity_audit/journal_footprint_validity_audit.png`
+- 同步图源：`manuscript/latex/pic/journal_footprint_validity_audit.png`、`manuscript/mdpi_jmse/pic/journal_footprint_validity_audit.png`
+- 具体改动：删除图内重复大标题和底部小字说明，扩大矩阵有效区域；字体改为 Times New Roman/STIX serif fallback；列标题和单元格数字放大；色带改为低饱和蓝灰/暖色风险色；行顺序保持 `Fixed -> Adaptive -> Hybrid`，避免读图跳跃。
+- 数值未变：`footprint_validity_audit/footprint_validity_summary.json` 仍为 9 行代表布局、`feasibility_changes_C97_O3=0`、最大覆盖差 0.50 pp、最大 mean excess-overlap 差 1.217 pp、最大 local count disagreement 10.42%。
+
+【x】PDF 页面级视觉 QA 已完成。
+文件/命令/证据：
+- 编译后渲染目录：`audit/page_preview_20260523_v25d_final/`
+- 关键截图：`audit/page_preview_20260523_v25d_final/mdpi_page_37.png`、`audit/page_preview_20260523_v25d_final/mdpi_page_38.png`
+- 人工检查结果：Figure 16 在 PDF 中无标题遮挡、无截断、无异常大空白；矩阵数字和行列标签可读；caption 保持正式期刊口径，明确该图不是 beam-level acoustic ray tracing、raw MBES validation 或 hydrographic QA。
+
+【x】最终编译、引用审计、manifest 和 release gate 已闭环。
+文件/命令/证据：
+- MDPI 编译：`manuscript/mdpi_jmse/compile_after_footprint_validity_v25d_20260523_pass2.log`
+- 工作稿编译：`manuscript/latex/compile_after_footprint_validity_v25d_20260523_pass2.log`
+- 严格日志扫描结果：两套日志只命中 `Output written on template.pdf (49 pages)`；无 LaTeX Error、Undefined control sequence、undefined citation/reference、Rerun、Overfull、Float too large、Fatal 或 Emergency stop。
+- 引用审计命令：`python3 audit/verify_references_20260514.py`
+- 引用审计结果：`total 45 failed 0 et_al 0`；GEBCO TID 与 IHO C-13 官方 URL 偶发 TLS EOF 已在脚本中作为 manual fallback 记录，不作为假文献处理。
+- manifest 命令：`conda run -n uu python make_reproducibility_manifest.py`
+- manifest 结果：`reproducibility_manifest.json` 为 297 entries。
+- release gate 命令：`python check_release_readiness.py`
+- release gate 输出：`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 已刷新交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
+
 ## 2026-05-23 Codex release-readiness 执行记录
 
 【x】GitHub/Zenodo 发布链状态已核对。

@@ -46,6 +46,7 @@ Status date: 2026-05-23
 - [x] Submission-boundary diagnostics are recorded in `submission_boundary_diagnostics/` with \(W_{\max}=1200/1800/2400\) sensitivity and GA gate/practical-significance CSV/JSON files.
 - [x] Heading-resolution diagnostic is recorded in `heading_resolution_diagnostic/`; the \(5^{\circ}\) audit reproduces Adaptive Spacing headings and metrics on the two GEBCO scenes and USGS High.
 - [x] Nine-window paired public statistics are recorded in `public_window_statistics/`; both terrain-aware methods improve overlap in 9/9 public windows, with one-sided Wilcoxon \(p=0.00195\).
+- [x] Side-specific footprint validity audit is recorded in `footprint_validity_audit/`; the port/starboard audit changes 0/9 audited \(C97/O3\) feasibility decisions and records maximum coverage and overlap deltas of 0.50 pp and 1.217 pp.
 - [x] Submission reproduction map is recorded in `README_submission.md`.
 - [x] Latest five-point PDF page preview is recorded in `audit/page_preview_20260515_user_5point_v16/contact_sheet.png`.
 - [x] Latest Fig. 2/Fig. 6/Fig. 14 PDF page preview is recorded in `audit/page_preview_20260515_v17b_after/contact_sheet.png`.
@@ -67,13 +68,14 @@ Status date: 2026-05-23
 - [x] \(W_{\max}=1800\) m is described as a declared benchmark range cap, not an unconstrained sonar-range claim.
 - [x] \(W_{\max}\) sensitivity is now explicitly reported in the manuscript; the 2400 m USGS High negative boundary is retained rather than hidden.
 - [x] GA practical-significance and operational-gate diagnostic is now reported; GA remains optional local cleanup rather than a main-effect claim.
+- [x] Side-specific footprint validity audit is framed as planning-evaluator validity evidence, not beam-level acoustic ray tracing, raw MBES product validation, field/lake/sea trial, or hydrographic QA.
 - [x] Repository `geo-auv-bathymetry-benchmark` is explicitly described as historical naming in README, Data Availability, and cover letter.
 - [x] Cover letter no longer frames the manuscript as a GA-based AUV survey planner and states the no-field/no-hydrographic-QA boundary.
 
 ## Compile QA
 
-- [x] MDPI PDF compiled to 47 pages after the May 23 v24 benchmark/robustness patch.
-- [x] Working PDF compiled to 47 pages after the May 23 v24 benchmark/robustness patch.
+- [x] MDPI PDF compiled to 49 pages after the May 23 v25d footprint-validity and heatmap polish pass.
+- [x] Working PDF compiled to 49 pages after the May 23 v25d footprint-validity and heatmap polish pass.
 - [x] Abstract rechecked after the May 23 v24 pass: 199 words by the local LaTeX-stripped counter.
 - [x] No undefined citation/reference warnings in latest MDPI compile log.
 - [x] No overfull hbox warnings in latest MDPI compile log.
@@ -81,8 +83,8 @@ Status date: 2026-05-23
 - [x] No sparse/blank figure pages detected in the May 14 rendered contact-sheet QA.
 - [x] Working PDF compiled and retained.
 - [x] Latest compile logs:
-  - `manuscript/mdpi_jmse/compile_after_benchmark_robustness_v24_20260523_pass2.log`
-  - `manuscript/latex/compile_after_benchmark_robustness_v24_20260523_pass2.log`
+  - `manuscript/mdpi_jmse/compile_after_footprint_validity_v25d_20260523_pass2.log`
+  - `manuscript/latex/compile_after_footprint_validity_v25d_20260523_pass2.log`
 
 ## Repository and Archive
 
@@ -90,7 +92,7 @@ Status date: 2026-05-23
 - [x] Zenodo concept DOI: `10.5281/zenodo.19919505`
 - [x] Initial archived version DOI: `10.5281/zenodo.19919506`
 - [x] DOI `10.5281/zenodo.19919506` was checked through DOI.org and resolves to Zenodo record `19919506`.
-- [x] Reproducibility manifest generated for current workspace: 289 entries.
+- [x] Reproducibility manifest generated for current workspace: 297 entries.
 - [x] README, `README_submission.md`, `CITATION.cff`, `.zenodo.json`, Data Availability, and cover letter use the current fixed-line MBES benchmark/robustness manuscript title/framing.
 - [x] Release-readiness gate added as `check_release_readiness.py`; run it before creating any Zenodo-triggering GitHub release.
 - [x] GEBCO TID URL updated to the current official GEBCO TID page.
@@ -143,3 +145,12 @@ Status date: 2026-05-23
 - [x] Visual QA rendered and inspected `audit/page_preview_20260523_v24/mdpi_key_page_01_v24b.png`, `mdpi_key_page_10_v24b.png`, and `mdpi_key_page_22_v24b.png`; title, parameter table, and public-window table are readable and not clipped.
 - [x] MDPI and working PDFs compiled to 47 pages with logs `compile_after_benchmark_robustness_v24_20260523_pass2.log`; strict scan found no LaTeX hard errors, undefined references/citations, overfull boxes, float-too-large warnings, fatal errors, or rerun warnings.
 - [x] v24+ reference/release audit rerun: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 290 entries; `check_release_readiness.py` reports 0 missing required paths, 0 empty required dirs, 0 untracked manifest entries, and 0 tracked core files missing from the manifest.
+
+## 2026-05-23 v25 Footprint-validity Addendum
+
+- [x] Added `make_footprint_validity_audit.py` and `footprint_validity_audit/` to compare the manuscript total-width proxy with a side-specific port/starboard footprint submodel on GEBCO Cascadia, GEBCO Monterey, and USGS High representative layouts.
+- [x] The audit output is `footprint_validity_raw.csv`, `footprint_validity_summary.json`, and `journal_footprint_validity_audit.png`; the figure is copied into both manuscript figure directories.
+- [x] Key audit result: 0 \(C97/O3\) feasibility changes across 9 audited scene-method layouts; maximum absolute coverage delta 0.50 pp; maximum absolute mean excess-overlap delta 1.217 pp; maximum local count disagreement 10.42%.
+- [x] The new audit is written into Methods, Results, Discussion, risk matrix, Conclusion, Data Availability, README, README_submission, cover letter, and this checklist as planning-layer evidence rather than field or survey-product validation.
+- [x] The audit heatmap was redrawn after PDF QA: duplicate in-figure title/note removed, matrix spacing tightened, Times/STIX-style font applied, and PDF page preview `audit/page_preview_20260523_v25d_final/mdpi_page_37.png` confirms no clipping, overlap, or abnormal blank area.
+- [x] Latest reference/release audit after v25d: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `python check_release_readiness.py` reports 0 missing required paths, 0 empty required dirs, 0 untracked manifest entries, and 0 tracked core files missing from the manifest.

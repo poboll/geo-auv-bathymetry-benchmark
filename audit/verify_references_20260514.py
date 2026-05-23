@@ -14,6 +14,22 @@ OUT_JSON = ROOT / "audit" / "reference_verification_20260514_v2.json"
 OUT_MD = ROOT / "audit" / "reference_verification_20260514_v2.md"
 
 MANUAL_FALLBACKS = {
+    "gebco_tid_grid": {
+        "ok": True,
+        "status": "verified_manual_fallback",
+        "title": "GEBCO Type Identifier (TID) Grid",
+        "container": "General Bathymetric Chart of the Oceans",
+        "publisher": "GEBCO",
+        "manual_note": "Official GEBCO TID Grid page checked on 2026-05-23; automated URL checks can intermittently fail with TLS EOF on the GEBCO site.",
+    },
+    "iho_c13": {
+        "ok": True,
+        "status": "verified_manual_fallback",
+        "title": "C-13 Manual on Hydrography",
+        "container": "IHO Publication C-13",
+        "publisher": "International Hydrographic Organization",
+        "manual_note": "Official IHO C-13 chapter/index PDF checked on 2026-05-23; automated URL checks can intermittently fail with TLS EOF on the IHO site.",
+    },
     "kim2017panel": {
         "ok": True,
         "status": "verified_manual_fallback",
@@ -169,6 +185,15 @@ def main() -> None:
             time.sleep(0.12)
         elif isinstance(url, str) and url:
             result.update(fetch_url(url))
+            fallback = MANUAL_FALLBACKS.get(str(ref.get("key")))
+            if (not result.get("ok")) and fallback is not None:
+                result.update(
+                    {
+                        "automated_status": result.get("status"),
+                        "automated_error": result.get("error"),
+                    }
+                )
+                result.update(fallback)
         else:
             result.update({"ok": False, "status": "no_doi_or_url"})
         results.append(result)

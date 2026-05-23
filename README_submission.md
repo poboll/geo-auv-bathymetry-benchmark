@@ -32,6 +32,12 @@ conda run -n uu python make_heading_resolution_diagnostic.py --scenes all
 conda run -n uu python make_public_window_statistics.py
 ```
 
+Regenerate the side-specific footprint validity audit:
+
+```bash
+conda run -n uu python make_footprint_validity_audit.py
+```
+
 Refresh the reproducibility manifest with SHA-256 checksums:
 
 ```bash
@@ -69,6 +75,7 @@ xelatex -interaction=nonstopmode template.tex
 - `submission_boundary_diagnostics/`: \(W_{\max}\) cap sensitivity, raw Hybrid GA vs Adaptive Spacing practical deltas, and conservative GA gate diagnostics.
 - `heading_resolution_diagnostic/`: \(15^{\circ}\) versus \(5^{\circ}\) deterministic heading-resolution audit.
 - `public_window_statistics/`: paired statistics across the two main GEBCO windows, four supplemental GEBCO windows, and three USGS 30 m crops.
+- `footprint_validity_audit/`: total-width proxy versus side-specific port/starboard footprint validity audit.
 - `survey_grade_extension_usgs_cascadia/`: USGS 30 m public-grid extension.
 - `coarse_prior_replay/`, `structured_prior_error_replay/`, `uncertainty_replay/`, `uncertainty_margin_replay/`, and `current_drift_replay/`: transfer and execution-boundary diagnostics.
 - `reproducibility_manifest.json`: file inventory and SHA-256 checksums for the current workspace.
@@ -78,7 +85,7 @@ xelatex -interaction=nonstopmode template.tex
 
 ## Claim Boundary
 
-The manuscript is a depth-referenced MBES fixed-line public-grid planning benchmark and robustness study. The current title/framing is `Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study`. It does not claim field validation, hydrographic-quality assurance, navigation-safety readiness, mission-log replay, or altitude-controlled AUV execution.
+The manuscript is a depth-referenced MBES fixed-line public-grid planning benchmark and robustness study. The current title/framing is `Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study`. The side-specific footprint audit is a planning-evaluator validity check, not beam-level acoustic ray tracing or raw MBES product validation. The manuscript does not claim field validation, hydrographic-quality assurance, navigation-safety readiness, mission-log replay, or altitude-controlled AUV execution.
 
 ### Additional v21 Diagnostics
 
@@ -101,5 +108,5 @@ check_release_readiness.py` exits with code 0, both manuscript PDFs compile
 cleanly, and the checklist in
 `submission_package/final_submission_checklist.md` records the exact release
 tag and DOI. The initial archived DOI is `10.5281/zenodo.19919506`; a new
-GitHub release should only be created when the 46-page manuscript package is
+GitHub release should only be created when the current manuscript package is
 ready to be frozen as a new version.

@@ -61,3 +61,18 @@
 - [x] 两套 LaTeX 重新编译为 47 pages；严格日志扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
 - [x] v24+ 重新跑引用审计、manifest 和 release gate：45 references / 0 failed / 0 et_al，manifest 290 entries，release-readiness 四项阻断均为 0。
 - [ ] 若用户确认当前 v24 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。
+
+## 2026-05-23 v25 Footprint/Validity Addendum
+
+- [x] 新增 side-specific footprint validity audit，回应老师关于 total-width proxy 与更接近 MBES port/starboard footprint 子模型差异的 P0 质疑。
+- [x] 将 audit 输出写入 CSV/JSON/PNG，并准备纳入 manifest/release readiness。
+- [x] 回写 Methods/Results/Discussion/Conclusion：明确该 audit 是 planning-evaluator validity check，不是 beam-level acoustic ray tracing 或 sea-trial validation。
+- [x] 重新编译两套 LaTeX，严格扫描日志，更新外部核对 MD。
+
+## 2026-05-23 v25d Final Heatmap/QA Addendum
+
+- [x] 按用户反馈重绘 footprint validity heatmap：去掉图内重复大标题和底部小字，改为更紧凑的论文矩阵；字体切到 Times New Roman/STIX serif fallback，色带改为低饱和蓝灰/暖色风险色。
+- [x] Figure 16 的 LaTeX 插入高度从 `0.36\textheight` 调整到 `0.43\textheight`，PDF 页面级 QA 确认矩阵本体更大、无标题遮挡、无异常留白。
+- [x] 两套 LaTeX 均完成 v25d 双遍编译：`compile_after_footprint_validity_v25d_20260523_pass2.log` 输出 49 pages，严格扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
+- [x] 引用审计脚本增加 GEBCO TID 与 IHO C-13 官方 URL 的 manual fallback，用于处理官网 TLS EOF 抖动；最终 `python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al。
+- [x] 重新生成 `reproducibility_manifest.json` 为 297 entries；`python check_release_readiness.py` 输出 missing/empty/untracked/core-not-in-manifest 全为 0。

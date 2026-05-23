@@ -192,3 +192,21 @@
 - 渲染并人工抽查关键页：`audit/page_preview_20260523_v24/mdpi_key_page_01_v24b.png`、`mdpi_key_page_10_v24b.png`、`mdpi_key_page_22_v24b.png`；首页标题不溢出，参数表清晰，public-window 统计表已从蚂蚁字改为可读纵向表。
 - v24+ 投稿前硬核验收口：重新运行 `python3 audit/verify_references_20260514.py`，结果为 45 references / 0 failed / 0 et_al；重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 290 entries；重新运行 `python3 check_release_readiness.py`，missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
 - `audit/verify_references_20260514.py` 增加 `kim2017panel` 与 `li2024full` 的人工核验 fallback 说明；两条 DOI 已通过 Crossref/DOI 元数据核验，fallback 仅用于防止 IEEE/MDPI 自动访问 418/403 或 SSL EOF 被误判为假引用。
+
+## 2026-05-23 v25
+
+- 读取老师最新版 `/Users/Apple/Developer/Pycharm/q/Geo修改请按点核对.md`，确认新增 P0 风险集中在：外部验证仍不够像真实 MBES、total-width proxy 物理简化、GA 不应再当主角、seed-level 统计与 scene-level 泛化要分开。
+- 确定本轮优先不伪装海试，而是新增 side-specific footprint validity audit：在 GEBCO Cascadia、GEBCO Monterey 和 USGS High 上，对 Fixed/Adaptive/Hybrid 代表布局比较当前 total-width evaluator 与 port/starboard side-specific 子模型的覆盖和重叠差异。
+- 新增 `make_footprint_validity_audit.py`，复用现有 benchmark planner 与 threshold scene loader，生成 `footprint_validity_audit/footprint_validity_raw.csv`、`footprint_validity_summary.json` 和 `journal_footprint_validity_audit.png`，并同步 PNG 到两套 manuscript 图片目录。
+- 运行 `conda run -n uu python make_footprint_validity_audit.py`，输出摘要：9 行代表布局，最大覆盖差 0.50 pp，平均覆盖差 0.083 pp，最大 mean-excess-overlap 差 1.217 pp，平均差 0.260 pp，最大 coverage-count disagreement 10.42%，`feasibility_changes_C97_O3=0`。
+- 视觉 QA 发现初版图列标题挤压，已修改 `make_footprint_validity_audit.py`：长标题拆行、收紧顶部空白、行顺序改为 Fixed -> Adaptive -> Hybrid；重新运行后图面无标题重叠，输出为白底 RGB PNG。
+- 两套 LaTeX 已写回 v25 footprint validity audit：Methods 增加 total-width proxy 的审计说明，Results 新增 `Side-specific Footprint Validity Audit` 小节和 Figure，Discussion 增加 footprint fidelity 解释，risk matrix 新增 footprint model fidelity 行，Conclusion 和 Data Availability 加入 side-specific boundary。
+- 同步更新 `README.md`、`README_submission.md`、`submission_package/JMSE_cover_letter_draft.md` 和新增 `footprint_validity_audit/README.md`，明确该 audit 是 planning-layer validity check，不是 beam-level acoustic ray tracing、raw MBES product validation 或 sea trial。
+- 按用户对热图“间距大、配色不好、字体不好”的反馈，继续修改 `make_footprint_validity_audit.py`：去掉图内重复标题和底部说明，矩阵有效区域增大到 78.5% 轴高；字体改为 Times New Roman/STIX serif fallback；色带改为低饱和蓝灰/暖色风险色；单元格文字和行列标签同步放大。
+- 两套 LaTeX 中 Figure 16 插入高度从 `0.36\textheight` 调整到 `0.43\textheight`，重新运行 `conda run -n uu python make_footprint_validity_audit.py`，核心数值不变：9 行代表布局、`feasibility_changes_C97_O3=0`、最大覆盖差 0.50 pp、最大 mean excess-overlap 差 1.217 pp、最大 local count disagreement 10.42%。
+- 重新编译 `manuscript/mdpi_jmse` 与 `manuscript/latex` 两遍，最终日志为 `compile_after_footprint_validity_v25d_20260523_pass2.log`；两套 PDF 均输出 49 pages。
+- 严格日志扫描只命中正常 `Output written on template.pdf (49 pages)`；无 LaTeX Error、Undefined control sequence、undefined citation/reference、Rerun、Overfull、Float too large、Fatal 或 Emergency stop。
+- 使用 PyMuPDF 渲染并人工查看 `audit/page_preview_20260523_v25d_final/mdpi_page_37.png` 与 `mdpi_page_38.png`；Figure 16 在 PDF 中无标题遮挡、无异常大空白、无截断，矩阵和数值可读。
+- 引用审计发现 IHO C-13 与 GEBCO TID 官方页面偶发 TLS EOF，不是文献不存在；将 IHO URL 改为官方可访问的 C-13 chapter/index PDF，并在 `audit/verify_references_20260514.py` 中为 GEBCO TID 与 IHO C-13 增加 manual fallback 记录。
+- 最终运行 `python3 audit/verify_references_20260514.py`，结果为 `total 45 failed 0 et_al 0`；重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 297 entries；重新运行 `python check_release_readiness.py`，missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
+- 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`，时间戳为 2026-05-23 v25d。
