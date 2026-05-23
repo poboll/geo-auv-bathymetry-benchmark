@@ -78,7 +78,7 @@ xelatex -interaction=nonstopmode template.tex
 
 ## Claim Boundary
 
-The manuscript is a depth-referenced MBES fixed-line public-grid planning benchmark. It does not claim field validation, hydrographic-quality assurance, navigation-safety readiness, mission-log replay, or altitude-controlled AUV execution.
+The manuscript is a depth-referenced MBES fixed-line public-grid planning benchmark. The current title/framing is `Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors`. It does not claim field validation, hydrographic-quality assurance, navigation-safety readiness, mission-log replay, or altitude-controlled AUV execution.
 
 ### Additional v21 Diagnostics
 

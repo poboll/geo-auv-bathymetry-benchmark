@@ -173,3 +173,12 @@
 - `manuscript/latex/Definitions/` 是工作稿独立编译所需的 MDPI class/template 文件，但此前是未跟踪目录；新 release 若要求两套 LaTeX 均可编译，应把该目录纳入 Git。
 - GEBCO TID 审计应以 audit summary、basket id 和检索元数据为主；不宜在 Data Availability 中强调“维护下载的 TID GeoTIFF subsets”，因为 raw/source public products 应通过官方 GEBCO DOI/服务重新获取。
 - 新增 `check_release_readiness.py` 后，投稿包具备了一个可重复的 release gate：required PDFs/source files、evidence directories、manifest-vs-Git 一次性检查，适合在 mint Zenodo DOI 前运行。
+
+## 2026-05-23 v23 JMSE叙事与审稿风险发现
+
+- 当前稿最大风险不再是“没有实验”，而是证据过多导致主线被稀释；本轮将 story 收敛为 fixed-line survey design -> adaptive spacing -> public-regime evidence -> boundary diagnostics。
+- 文献和标准层面，IHO C-13、NOAA HSSD 2025、AusSeabed Guidelines 可支撑一个关键说法：overlap/spacing 应由项目要求、深度、声呐范围、质量控制和 survey objective 决定；本文 15/20/C97/O3/Wmax 是 benchmark gate，不是 hydrographic standard。
+- GA 小参数可防守，但必须解释成 local cleanup：主 benchmark 数据显示 Hybrid GA planning time 为 0.32--0.94 s，且 public GEBCO 上 Adaptive Spacing 已贡献主要效果，GA 不应被包装成主算法创新。
+- 九窗口 public audit 应按 regime 读：8 个 low-overlap windows 的 median path gain 约 0.67%，主要是 overlap regularization；USGS High 是唯一 overlap-stressed public window，才承担大收益证据。
+- 新增引用后参考文献总数为 45；自动核验 0 failed/0 et_al。MDPI 站点 403 问题需要 DOI redirect fallback，不应误判为假文献。
+- 新增 implementation map 如果直接塞长路径会造成 overfull；用短路径/目录级说明更适合 MDPI 版面。

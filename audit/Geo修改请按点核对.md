@@ -346,3 +346,25 @@ JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励
 - 输出：`audit/reference_verification_20260514_v2.md/json`。
 - 结果：42 references，0 `et_al`；4 条 automated DOI failure，分别为 `shi2020data`、`jiang2018route`、`li2024full`、`ji2022multi`。
 - 解释：失败原因为 DOI/出版商访问策略或 SSL EOF，不是本轮新增引用，也不是文献不存在。本轮未修改 bibliography；这些文献此前和本轮均可通过出版商页面/检索结果人工核验为真实条目。
+## 2026-05-23 v23 JMSE叙事收束与参数依据补强【已完成】
+
+- 【已完成】标题进一步收窄：主稿、工作稿、README、CITATION、Zenodo 元数据和 cover letter 已统一为 `Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors`，减少 “mapping/完整AUV部署” 的误读。
+- 【已完成】摘要重写并压回 200 words：强化 `pre-mission fixed-line survey design`、`public-prior grid`、`adaptive spacing`、`GA only gated local refinement`、九窗口统计和 C97/O3 不等于 C99/O2 tail-safe 的边界；本地 LaTeX-stripped counter 输出 `abstract_words 200`。
+- 【已完成】贡献点从 5 条压缩为 3 条：public-grid benchmark、quantile-based adaptive spacing、regime/boundary diagnostics；GA 明确为 optional gated local refinement，不再像主创新。
+- 【已完成】Methods 增加 benchmark parameter rationale：引入 IHO C-13、NOAA HSSD 2025、AusSeabed Australian Multibeam Guidelines，说明 15% overlap target、20% ceiling、C97/O3 gate、`Wmax=1800 m` 是 benchmark design choices，不是 hydrographic standards。
+- 【已完成】GA 小参数质疑已处理：正文说明 population=10、generations=10 的原因是 heading scan + adaptive spacing 已给出强 base layout，GA 只做 local cleanup；并写入主 benchmark Hybrid GA 时间范围 0.32--0.94 s、GEBCO public-scene mean 0.92/0.56 s。
+- 【已完成】Results 增加 regime 分层解释：九窗口 audit 不只报总均值，还拆成 8 个 low-overlap public windows 与 1 个 overlap-stressed USGS high crop；低重叠组主要是 overlap regularization，高压力组才出现 24--25% 路径收益和 27--28 pp overlap cleanup。
+- 【已完成】新增 implementation map 表：把 swath model、planner variants、public-window statistics、boundary diagnostics、replay diagnostics、release manifest 映射到脚本与 CSV/JSON 输出；初版导致 overfull，已缩短路径并重编消除 overfull。
+- 【已完成】AI-assisted disclosure 从 Methods 移到 back matter 的 `\useofartificialintelligence{...}`，Acknowledgments 保持事实性感谢 GEBCO。
+- 【已完成】Discussion/Conclusion 强化 tail-risk boundary：明确默认 C97/O3 feasibility 不代表 stricter C99/O2、C99.5/O2 或 project-specific QA thresholds 下的 tail-safe overlap control。
+- 【已完成】segmented-heading 叙事降级：Discussion 中改成 boundary note，不再像第二篇论文或第二个主方法。
+- 【已完成】引用核验更新：参考文献 45 条，`python3 audit/verify_references_20260514.py` 输出 `total 45 failed 0 et_al 0`；脚本补充 DOI redirect fallback，避免 MDPI/出版商 403 被误判为假引用。
+- 【已完成】编译验证：`manuscript/mdpi_jmse` 与 `manuscript/latex` 均运行 `xelatex -interaction=nonstopmode template.tex` 两遍，最新日志 `compile_after_jmse_narrative_v23_20260523_pass2.log`，两套 PDF 均 46 pages；严格扫描无 LaTeX Error、undefined citation/reference、Overfull、Float too large、Fatal、Emergency stop 或 Rerun 命中。
+- 【已完成】release-readiness 验证：`python3 check_release_readiness.py` 输出 `manifest_entries=289`、`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`；`conda run -n uu python make_reproducibility_manifest.py` 已重写 289-entry manifest。
+- 【已完成】交付 PDF 已刷新：`manuscript/mdpi_jmse/template.pdf`、`manuscript/latex/template.pdf`、根目录 `mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf` 均更新到本轮 v23 编译结果。
+
+### v23 后仍需人工确认【保留】
+
+- 【待确认】不要立即创建 GitHub release/Zenodo DOI，除非确认当前 46 页 v23 就是冻结投稿版；Zenodo 已绑定仓库，release 后会生成新版本 DOI。
+- 【待确认】投稿前作者需再人工核对 title page、funding、邮箱、MDPI submission form 中 AI disclosure 与 Data Availability 粘贴格式。
+

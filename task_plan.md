@@ -39,3 +39,14 @@
 - 2026-05-22 v20 老师大修清单继续硬补：新增 `heading_resolution_diagnostic/` 和 `public_window_statistics/`，回应 P11 航向分辨率、P7 外部效度、P9 统计不足。\(5^{\circ}\) 诊断显示 Adaptive Spacing 在 GEBCO Cascadia、GEBCO Monterey 和 USGS High 上与 \(15^{\circ}\) 主扫描完全一致；九窗口 paired audit 显示 Adaptive/Hybrid 均在 9/9 public windows 上改善 overlap，Wilcoxon \(p=0.00195\)，路径收益 7/9 为正，Wilcoxon \(p=0.00977\)。两套 PDF 均为 45 页，严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large、Fatal/Emergency stop；manifest 为 257 entries。
 - 2026-05-22 v21 Figure 1 与 P12 surrogate 审稿风险继续硬补：Figure 1 重绘为 LaTeX/TikZ 小圆节点细箭头图；新增 `ga_surrogate_audit/`，验证 stride-3 GA fitness 与 full-grid rescoring 的本地排名一致性。三场景 Spearman 为 0.934/0.968/0.989，最大 full-grid regret 为 0.0610%。两套 PDF 均为 46 页，严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large、Fatal/Emergency stop；manifest 为 264 entries。
 - 2026-05-23 v22 release-readiness 收紧进行中：新增 `check_release_readiness.py`，`make_reproducibility_manifest.py` 改为只纳入 Git-tracked artifact 并记录当前 Git revision；Data Availability 将 GEBCO TID 原始 GeoTIFF 再分发表述改为 TID 审计表、basket id 与检索元数据。下一步是精确 stage 正文承诺的证据目录、重跑 manifest/readiness、编译两套 PDF 并推送。
+
+## 2026-05-23 v23 Addendum
+
+- [x] 收窄 JMSE 标题、摘要、关键词、贡献点和 cover letter 叙事。
+- [x] 补 Methods 参数依据：IHO C-13、NOAA HSSD 2025、AusSeabed Guidelines；明确 15%/20%/C97/O3/Wmax 为 benchmark choices。
+- [x] 解释 GA population=10/generations=10 的合理性，并把 GA 定位为 deterministic adaptive base 周围的 local cleanup。
+- [x] 按 low-overlap vs overlap-stressed regime 收束九窗口 public statistics。
+- [x] 新增 implementation map，把公式、脚本与 CSV/JSON 输出对应起来。
+- [x] 将 AI-assisted disclosure 移到 back matter。
+- [x] 编译两套 PDF、严格日志扫描、引用审计、manifest 与 release-readiness gate。
+- [ ] 若用户确认当前 v23 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。

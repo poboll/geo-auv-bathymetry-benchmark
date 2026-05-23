@@ -2,7 +2,7 @@
 
 This public repository contains the manuscript-specific code, derived data, figures, and LaTeX artifacts for:
 
-**Terrain-Aware Fixed-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks**
+**Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors**
 
 The study is framed as a public-bathymetry numerical benchmark for depth-referenced MBES fixed-line planning. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.
 
@@ -68,7 +68,7 @@ xelatex -interaction=nonstopmode template.tex
 
 ## Current Evidence Boundary
 
-The latest validated run is `run_5`. The strongest supported claim is that terrain-aware spacing with optional local GA cleanup improves overlap discipline and repeatability for offline fixed-pattern survey-line planning on public bathymetry benchmarks. Public GEBCO route shortening is modest; the main public-scene result is overlap discipline and coverage/overlap balance. Higher-complexity USGS, coarse-prior replay, threshold/local-failure, and submission-boundary \(W_{\max}\)/GA-gate diagnostics are used as public-grid stress checks, not as sea-trial evidence.
+The latest validated run is `run_5`. The strongest supported claim is that terrain-aware adaptive spacing improves overlap discipline and repeatability for offline fixed-pattern survey-line design on public bathymetric priors. Local GA cleanup is optional and gate-controlled. Public GEBCO route shortening is modest; the main public-scene result is overlap discipline and coverage/overlap balance. The nine-window public audit separates low-overlap public windows from the overlap-stressed USGS high-complexity crop, and the coarse-prior replay, threshold/local-failure, \(W_{\max}\), surrogate, and GA-gate diagnostics are used as public-grid stress checks, not as sea-trial evidence.
 
 For a compact submission reproduction map, see `README_submission.md`.
 

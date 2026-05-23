@@ -1,6 +1,6 @@
 # Final Submission Checklist
 
-Status date: 2026-05-22
+Status date: 2026-05-23
 
 ## Manuscript Files
 
@@ -21,7 +21,7 @@ Status date: 2026-05-22
 - [x] Funding retained.
 - [x] Data Availability includes GitHub repository, Zenodo concept DOI, and initial fixed version DOI.
 - [x] Data Availability no longer contains conditional "if later frozen release..." submission placeholder wording.
-- [x] GenAI/AI-assisted-tool disclosure is included in Methods and Acknowledgments is kept factual.
+- [x] GenAI/AI-assisted-tool disclosure is included in the back matter via `\useofartificialintelligence{...}` and Acknowledgments is kept factual.
 - [x] References count is above 40.
 - [x] Abbreviations section follows the unframed MDPI template style; no artificial table borders were added.
 
@@ -50,6 +50,7 @@ Status date: 2026-05-22
 - [x] Latest five-point PDF page preview is recorded in `audit/page_preview_20260515_user_5point_v16/contact_sheet.png`.
 - [x] Latest Fig. 2/Fig. 6/Fig. 14 PDF page preview is recorded in `audit/page_preview_20260515_v17b_after/contact_sheet.png`.
 - [x] Latest reference audit is recorded in `audit/reference_verification_20260514_v2.md`.
+- [x] JMSE v23 narrative patch adds IHO C-13, NOAA HSSD 2025, and AusSeabed Guidelines as benchmark-parameter rationale references.
 
 ## Claim Boundary QA
 
@@ -71,17 +72,17 @@ Status date: 2026-05-22
 
 ## Compile QA
 
-- [x] MDPI PDF compiled to 45 pages after the May 22 heading-resolution and public-window statistics patch.
-- [x] Working PDF compiled to 45 pages after the May 22 heading-resolution and public-window statistics patch.
-- [x] Abstract rechecked after the May 15 pass: 197 words by the local LaTeX-stripped counter.
+- [x] MDPI PDF compiled to 46 pages after the May 23 JMSE narrative/parameter-rationale patch.
+- [x] Working PDF compiled to 46 pages after the May 23 JMSE narrative/parameter-rationale patch.
+- [x] Abstract rechecked after the May 23 pass: 200 words by the local LaTeX-stripped counter.
 - [x] No undefined citation/reference warnings in latest MDPI compile log.
 - [x] No overfull hbox warnings in latest MDPI compile log.
 - [x] No `Float too large`, fatal, or emergency-stop messages in the latest strict log scan.
 - [x] No sparse/blank figure pages detected in the May 14 rendered contact-sheet QA.
 - [x] Working PDF compiled and retained.
 - [x] Latest compile logs:
-  - `manuscript/mdpi_jmse/compile_after_public_window_stats_20260522_pass2.log`
-  - `manuscript/latex/compile_after_public_window_stats_20260522_pass2.log`
+  - `manuscript/mdpi_jmse/compile_after_jmse_narrative_v23_20260523_pass2.log`
+  - `manuscript/latex/compile_after_jmse_narrative_v23_20260523_pass2.log`
 
 ## Repository and Archive
 
@@ -89,12 +90,12 @@ Status date: 2026-05-22
 - [x] Zenodo concept DOI: `10.5281/zenodo.19919505`
 - [x] Initial archived version DOI: `10.5281/zenodo.19919506`
 - [x] DOI `10.5281/zenodo.19919506` was checked through DOI.org and resolves to Zenodo record `19919506`.
-- [x] Reproducibility manifest generated for current workspace: 257 entries.
+- [x] Reproducibility manifest generated for current workspace: 289 entries.
 - [x] README, `README_submission.md`, `CITATION.cff`, `.zenodo.json`, Data Availability, and cover letter use the current fixed-line MBES manuscript title/framing.
 - [x] Release-readiness gate added as `check_release_readiness.py`; run it before creating any Zenodo-triggering GitHub release.
 - [x] GEBCO TID URL updated to the current official GEBCO TID page.
 - [x] Four bibliography entries using `et al.` were expanded or corrected.
-- [x] Automatic reference audit reports 42 references and 0 `et al.` entries; the only automated DOI failure is `xie2024three`, caused by HTTP 403 on DOI resolution, and the MDPI article page confirms the title, authors, journal, year, volume/issue, article number, and DOI.
+- [x] Automatic reference audit reports 45 references, 0 failed DOI/URL checks, and 0 `et al.` entries after adding DOI redirect fallback.
 
 ## Final Actions Before Actual Submission
 
@@ -120,4 +121,15 @@ Status date: 2026-05-22
 - [x] Data Availability wording changed from redistributing downloaded GEBCO TID GeoTIFF subsets to reporting GEBCO TID audit CSV/JSON, TID basket identifiers, and retrieval metadata; raw GEBCO and USGS source products remain cited through official DOI landing pages.
 - [x] `make_reproducibility_manifest.py` now filters manifest entries to Git-tracked files and records the current Git revision, reducing the risk that a GitHub/Zenodo release cites local-only evidence.
 - [x] `check_release_readiness.py` added as a release gate for required PDFs, source files, evidence directories, and manifest/Git consistency.
-- [ ] Run `python check_release_readiness.py` after staging the final evidence files and before creating a new GitHub release.
+- [x] `python check_release_readiness.py` passes after the v23 manuscript/manifest update: missing required paths, empty required dirs, untracked manifest entries, and tracked core files not in manifest are all 0.
+
+## 2026-05-23 v23 JMSE Narrative Addendum
+
+- [x] Title narrowed across manuscript, README, `CITATION.cff`, `.zenodo.json`, and cover letter to `Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors`.
+- [x] Abstract rewritten to emphasize fixed-line survey design, public bathymetric priors, adaptive spacing, and GA as gated local refinement; it now explicitly states that C97/O3 feasibility does not imply tail-safe C99/O2 or project-specific QA performance.
+- [x] Contribution bullets reduced from five to three: reproducible public-grid benchmark, quantile-based adaptive spacing, and regime/boundary diagnostics.
+- [x] Methods now justify 15% overlap target, 20% ceiling, C97/O3 gate, and \(W_{\max}=1800\) m as benchmark choices, with IHO/NOAA/AusSeabed references.
+- [x] Methods now explains why GA population 10 and generations 10 are appropriate for local cleanup after deterministic heading/adaptive-spacing initialization, and reports 0.32--0.94 s Hybrid GA timing.
+- [x] Results now separates nine-window public statistics into low-overlap windows and the overlap-stressed USGS high-complexity crop.
+- [x] Supplementary/Reproducibility Evidence now includes a compact implementation map from formulas to scripts and CSV/JSON outputs.
+- [x] Discussion demotes segmented-heading to a boundary note and keeps the manuscript focused on fixed-line geometry.

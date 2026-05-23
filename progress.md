@@ -160,3 +160,19 @@
 - 修改 `make_reproducibility_manifest.py`：manifest 只纳入 Git-tracked 文件，并在 archive metadata 中记录当前 Git revision 和 dirty-worktree 状态；同时加入 GEBCO TID audit 的 CSV/JSON/README/basket_id 元数据模式，避免把 `.tif/.zip` 源产品纳入 release manifest。
 - 同步修改两套 LaTeX Data Availability：将“downloaded TID GeoTIFF subsets”改为“GEBCO TID audit CSV/JSON, TID basket identifiers and retrieval metadata”，保留 GEBCO/USGS 官方 DOI 作为源数据入口，避免公共源数据再分发口径过满。
 - 更新 `README.md`、`README_submission.md` 与 `submission_package/final_submission_checklist.md`，加入 release-readiness gate 和“新 DOI minted 后再替换初始 DOI”的明确动作项。
+
+## 2026-05-23 v23
+
+- 按老师最新严格评审意见完成 JMSE 叙事收束：标题改为 `Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors`，并同步两套 LaTeX、README、README_submission、CITATION、.zenodo 和 cover letter。
+- 摘要重写为 200 words：突出 pre-mission fixed-line survey design、public bathymetric prior、adaptive spacing 主效应、GA only gated local refinement、九窗口 public audit 和 C97/O3 不代表 C99/O2 tail-safe 的边界。
+- 贡献点从五条压缩为三条：public-grid benchmark、quantile-based adaptive spacing、regime/boundary diagnostics；GA 从贡献叙事中降为 optional gated refinement。
+- Methods 新增 IHO C-13、NOAA HSSD 2025、AusSeabed Australian Multibeam Guidelines 作为 benchmark-parameter rationale，明确 15% overlap target、20% ceiling、C97/O3、Wmax=1800 m 都是 declared numerical benchmark choices，不是 hydrographic standards。
+- Methods 补强 GA 小参数解释：population=10/generations=10 是因为 heading scan + adaptive spacing 已给出强 base layout，GA 只做 local cleanup；写入 Hybrid GA 主 benchmark 时间范围 0.32--0.94 s、GEBCO public means 0.92/0.56 s。
+- Results 补入 nine-window regime split：8 个 low-overlap public windows 与 1 个 overlap-stressed USGS high crop 分开解释，避免把小样本均值写成统一全球收益。
+- Supplementary/Reproducibility Evidence 增加 implementation map 表，映射公式/统计到脚本和 CSV/JSON；初次编译发现该表 overfull，缩短路径和列内容后重新编译，严格日志扫描已无 overfull。
+- AI-assisted tools disclosure 从 Methods 移到 back matter `\useofartificialintelligence{...}`；Acknowledgments 保持事实性。
+- Discussion/Conclusion 收紧：segmented-heading 改为 boundary note；Conclusion 明确 C97/O3 feasibility 不等于 C99/O2、C99.5/O2 或 project-specific QA 下的 tail-safe overlap control。
+- 编译两套 PDF：`compile_after_jmse_narrative_v23_20260523_pass2.log`，均为 46 pages；严格扫描无 LaTeX Error、Undefined control sequence、undefined citations/references、Overfull、Float too large、Fatal、Emergency stop 或 Rerun。
+- 引用审计脚本增加 DOI redirect fallback；最新 `python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al。
+- 重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 289 entries；`python3 check_release_readiness.py` 通过，missing/untracked/core-not-in-manifest 均为 0。
+- 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
