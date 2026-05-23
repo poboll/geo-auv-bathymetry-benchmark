@@ -211,3 +211,14 @@
 - 最终 PDF QA 结果：`audit/page_preview_20260523_v25d_final/mdpi_page_37.png` 中 Figure 16 无遮挡、无截断、无异常空白，矩阵和数值可读；周边 caption 明确该审计不是 beam-level ray tracing、raw MBES validation 或 hydrographic QA。
 - 引用审计中的 GEBCO/IHO SSL EOF 是官方站点 TLS 抖动，不是文献真实性问题；最终脚本记录 manual fallback 后，`audit/reference_verification_20260514_v2.md` 为 45 references / 0 failed / 0 et_al。
 - 当前可发布结构状态：manifest 297 entries，release gate 全 0 阻断。仍不建议在用户最终确认“冻结投稿版”前创建 GitHub release，因为 Zenodo 会自动 mint 新 DOI。
+
+## 2026-05-23 v26 热图体系 QA 发现
+
+- 本轮用户反馈“热图间距大、配色不好、字体不好”不只适用于 Figure 16；源图 contact sheet 显示 Figure 8/11/12/13/15/16/17 的字体层级和色带仍有多轮返修痕迹，需要作为热图体系统一，而不是单图修补。
+- Figure 8 的主要空白来自 5x5 矩阵使用 `aspect="equal"`，使两列 panel 中间出现明显宽空白；改为 `aspect="auto"` 并收紧 `wspace` 后，在 PDF 第 25 页不再出现中间大空白。
+- Figure 15 旧版右下角 Reading guide 文字块既占空白，又让图像像幻灯片说明页；替换为默认 \(C97/O3\) pass-rate 小热图后，图面信息密度更均衡，也让严格 \(C99/O2\) 与默认 \(C97/O3\) 的解释更直接。
+- Figure 15 初次加入第六个小热图后出现列标签/面板标题挤压，原因是 3 列标签旋转造成纵向空间浪费；将列标签改为水平、单元格 `aspect="auto"` 后，PDF 第 37 页无标题覆盖。
+- Figure 16 使用 serif 字体在单张图中有效，但放进整套热图后显得像不同来源的图；统一回 Arial/Helvetica/DejaVu Sans fallback 后，和 Figure 8/11/12/13/15/17 的视觉语言一致。
+- 低饱和蓝绿/暖赭/灰蓝色带比原来的高饱和蓝红更适合 JMSE/SCI 版面：coverage/feasible 用冷色正向语义，overlap/failure 用暖色风险语义，planning time 用灰蓝；没有改变任何 CSV/JSON 数值或 claim。
+- 最终 PDF QA 覆盖 `audit/heatmap_review_20260523_v26/pdf_pages_after_v26b/page_25.png`、`page_32.png`、`page_33.png`、`page_34.png`、`page_37.png`、`page_38.png`、`page_39.png`；人工检查无热图异常大空白、标题/坐标遮挡、透明黑底、色条覆盖或 caption 与图不一致。
+- 本轮是视觉与可读性返修，不新增 sea/field/lake trial、raw MBES validation、hydrographic QA 或 navigation-safety readiness 声称；public-grid numerical benchmark 边界保持不变。

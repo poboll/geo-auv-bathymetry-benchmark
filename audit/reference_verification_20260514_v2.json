@@ -196,13 +196,20 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.1016/j.apor.2022.103439",
-    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S0141118722003686",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "Active Bathymetric SLAM for autonomous underwater exploration",
+    "container": "Applied Ocean Research",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          1
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Elsevier BV",
+    "doi_crossref": "10.1016/j.apor.2022.103439"
   },
   {
     "key": "shields2023feature",
@@ -211,13 +218,20 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.55417/fr.2023021",
-    "resolved_url": "https://ieeexplore.ieee.org/document/10876092/",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "Feature Space Exploration for Planning Initial Benthic AUV Surveys",
+    "container": "Field Robotics",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          4
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi_crossref": "10.55417/fr.2023021"
   },
   {
     "key": "zhao2024coastalcpp",
@@ -534,20 +548,19 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_manual_fallback",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.1109/UT.2017.7890321",
-    "resolved_url": "http://ieeexplore.ieee.org/document/7890321/",
-    "http_status": 302,
-    "automated_status": "verified_doi_redirects",
-    "automated_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "status": "verified_crossref",
     "title": "Panel-based bathymetric SLAM with a multibeam echosounder",
     "container": "2017 IEEE Underwater Technology (UT)",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "type": "proceedings-article",
     "publisher": "IEEE",
-    "doi_crossref": "10.1109/ut.2017.7890321",
-    "manual_note": "Crossref metadata verified via API on 2026-05-23; DOI redirects to IEEE Xplore document 7890321."
+    "doi_crossref": "10.1109/ut.2017.7890321"
   },
   {
     "key": "zhu2025robust",
@@ -624,21 +637,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Multi-Underwater Gliders Coverage Path Planning Based on Ant Colony Optimization",
-    "container": "Electronics",
-    "issued": {
-      "date-parts": [
-        [
-          2022,
-          9,
-          23
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "MDPI AG",
-    "doi_crossref": "10.3390/electronics11193021"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.3390/electronics11193021",
+    "resolved_url": "https://www.mdpi.com/2079-9292/11/19/3021",
+    "http_status": 302
   },
   {
     "key": "wu2024complete",
@@ -825,13 +830,21 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.1109/JIOT.2023.3328973",
-    "resolved_url": "https://ieeexplore.ieee.org/document/10302225/",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "Hybrid-Algorithm-Based Full Coverage Search Approach With Multiple AUVs to Unknown Environments in Internet of Underwater Things",
+    "container": "IEEE Internet of Things Journal",
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          3,
+          15
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi_crossref": "10.1109/jiot.2023.3328973"
   },
   {
     "key": "kapetanovic2018side",

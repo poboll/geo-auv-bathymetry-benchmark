@@ -1,5 +1,38 @@
 # 对JMSE目标稿的严格评审与大修方案
 
+## 2026-05-23 Codex v26 热图体系返修按点核对执行记录
+
+【x】按老师/用户反馈把主文热图体系整体返修，而不是只修单张 Figure 16。
+文件/命令/证据：
+- 返修对象：Figure 8 `journal_metric_heatmap.png`、Figure 11 `journal_structured_prior_error_replay.png`、Figure 12 `journal_uncertainty_replay.png`、Figure 13 `journal_uncertainty_margin_replay.png`、Figure 15 `journal_threshold_local_failure.png`、Figure 16 `journal_footprint_validity_audit.png`、Figure 17 `journal_coarse_prior_replay.png`。
+- 修改脚本：`journal_heatmap_style.py`、`make_journal_figures.py`、`make_structured_prior_error_replay.py`、`make_uncertainty_replay.py`、`make_uncertainty_margin_replay.py`、`make_threshold_local_failure_extension.py`、`make_footprint_validity_audit.py`、`make_coarse_prior_replay.py`。
+- 重新生成命令：`conda run -n uu python refresh_visuals_from_existing_outputs.py`，随后单独运行 `conda run -n uu python make_threshold_local_failure_extension.py --seed-count 20` 与 `conda run -n uu python make_footprint_validity_audit.py`。
+- 输出同步：两套图源目录 `manuscript/latex/pic/` 与 `manuscript/mdpi_jmse/pic/` 已同步更新；根目录交付 PDF `mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf` 已刷新。
+
+【x】热图“间距大、配色不好、字体不好”已逐项修复。
+文件/命令/证据：
+- 间距：统一收紧 `wspace/hspace`、缩小标题/tick padding；Figure 8 从方形单元导致的左右大空白改为填满 panel 的矩阵版式；Figure 15 去掉右下角大段 Reading guide 空白块。
+- 配色：统一改为低饱和蓝绿/暖赭/灰蓝色带，避免高饱和蓝红和 Excel 感；风险色只在失败/overlap tail 上使用，coverage/feasibility 保持清晰的冷色正向语义。
+- 字体：热图统一回到 Arial/Helvetica/DejaVu Sans fallback；Figure 16 从 v25d 的临时 serif 风格改回同一套无衬线图内字体，避免整篇图件像多轮拼接。
+- Figure 15 结构：将原右下角说明块替换为默认 `C97/O3` pass-rate 小热图，并同步 caption，形成 `C99/O2` strict screen 与 `C97/O3` default gate 的直接对比。
+
+【x】PDF 页面级视觉 QA 已完成，确认不是只看源 PNG。
+文件/命令/证据：
+- before 截图目录：`audit/heatmap_review_20260523_v26/pdf_pages_before/`，当前稿热图页为 25、32、33、34、36、37、38 页。
+- after 截图目录：`audit/heatmap_review_20260523_v26/pdf_pages_after_v26b/`，最终热图页为 25、32、33、34、37、38、39 页。
+- 关键截图：`page_25.png` 对应 Figure 8；`page_32.png` 对应 Figure 11；`page_33.png` 对应 Figure 12；`page_34.png` 对应 Figure 13；`page_37.png` 对应 Figure 15；`page_38.png` 对应 Figure 16；`page_39.png` 对应 Figure 17。
+- 人工检查结论：Figure 8 无明显中间大空白；Figure 11--13 颜色和字体层级一致；Figure 15 无标题/坐标重叠且右下不再残留说明空白；Figure 16 行列标签和单元格数字可读；Figure 17 未见宽度残留、黑底、透明层或异常留白。
+
+【x】编译、引用、manifest 与 release gate 已重新闭环。
+文件/命令/证据：
+- MDPI 编译：`manuscript/mdpi_jmse/compile_after_heatmap_system_v26b_20260523_pass2.log`
+- 工作稿编译：`manuscript/latex/compile_after_heatmap_system_v26b_20260523_pass2.log`
+- 严格日志扫描：两套日志只命中 `Output written on template.pdf (49 pages)`；无 LaTeX Error、Undefined control sequence、undefined citation/reference、Rerun、Overfull、Float too large、Fatal 或 Emergency stop。
+- 引用审计命令：`python3 audit/verify_references_20260514.py`；结果：`total 45 failed 0 et_al 0`。
+- manifest 命令：`conda run -n uu python make_reproducibility_manifest.py`；结果：`reproducibility_manifest.json` 为 297 entries。
+- release gate 命令：`python3 check_release_readiness.py`；输出：`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 边界未变：所有图仍表达 public-grid numerical planning benchmark，不新增 sea/field/lake trial、raw MBES validation、survey-grade QA 或 navigation-safety readiness 声称。
+
 ## 2026-05-23 Codex v25 footprint-validity 按点核对执行记录
 
 【x】P0：针对 total-width proxy / horizontal raster evaluator 与真实 MBES footprint 产品之间的鸿沟，新增 side-specific footprint validity audit。

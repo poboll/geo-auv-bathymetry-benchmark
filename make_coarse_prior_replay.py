@@ -258,7 +258,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def make_figure(summary_rows: list[dict[str, Any]]) -> None:
-    jhs.apply_rc(base_font=8.06)
+    jhs.apply_rc(base_font=8.65)
     label_order = ["low", "medium", "high"]
     prior_order = sorted({float(row["target_prior_cell_m"]) for row in summary_rows})
     row_keys = [(label, cell) for label in label_order for cell in prior_order]
@@ -294,7 +294,7 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             cmap = jhs.COVERAGE_CMAP
         matrices.append((title, fmt, data, (cmap, norm), key))
 
-    fig, axes = plt.subplots(2, 2, figsize=(7.25, 3.90), facecolor=jhs.BG)
+    fig, axes = plt.subplots(2, 2, figsize=(7.25, 4.02), facecolor=jhs.BG)
     row_labels = [f"{label[0].upper()}{int(cell)}" for label, cell in row_keys]
     col_labels = [METHOD_LABELS[method] for method in method_order]
     for ax_idx, (ax, (title, fmt, data, style, key)) in enumerate(zip(axes.ravel(), matrices)):
@@ -316,8 +316,8 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             mark_bad = lambda value: value < 1.0
         else:
             mark_bad = None
-        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.18)
-    fig.subplots_adjust(left=0.126, right=0.996, top=0.920, bottom=0.062, wspace=0.08, hspace=0.20)
+        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.82)
+    fig.subplots_adjust(left=0.118, right=0.997, top=0.932, bottom=0.050, wspace=0.055, hspace=0.155)
     OUT.mkdir(parents=True, exist_ok=True)
     jhs.save_white_rgb(fig, OUT / "coarse_prior_replay_journal.png", pad_inches=0.018)
     for pic_dir in PIC_DIRS:

@@ -20,38 +20,38 @@ BG = "#ffffff"
 
 PATH_GAIN_CMAP = LinearSegmentedColormap.from_list(
     "journal_path_gain",
-    ["#f7fbff", "#deebf7", "#9ecae1", "#3182bd", "#08519c"],
+    ["#f7fbfc", "#e3eef2", "#b9d3de", "#78a9bf", "#2f6f91"],
 )
 COVERAGE_CMAP = LinearSegmentedColormap.from_list(
     "journal_coverage",
-    ["#b35c3a", "#e6b27e", "#f7f7f2", "#92c5de", "#2b6c9f"],
+    ["#b97358", "#ddb99a", "#f7f5ee", "#b7d5d1", "#4e8f9d"],
 )
 OVERLAP_CMAP = LinearSegmentedColormap.from_list(
     "journal_overlap",
-    ["#fffff5", "#fee6b8", "#fdbb84", "#e34a33", "#7f0000"],
+    ["#fffdf5", "#f3e4bf", "#dfb678", "#bd6f56", "#7e3f3d"],
 )
 TIME_CMAP = LinearSegmentedColormap.from_list(
     "journal_time",
-    ["#f8fafc", "#dbe2ea", "#a8b4c0", "#64748b", "#334155"],
+    ["#fafbfb", "#e3e8eb", "#bac6cc", "#7f929d", "#435661"],
 )
 FAILURE_CMAP = LinearSegmentedColormap.from_list(
     "journal_failure",
-    ["#fffff5", "#fee6b8", "#fdbb84", "#d7301f", "#7f0000"],
+    ["#fffdf5", "#f3e2b9", "#dfa96f", "#b86155", "#74383b"],
 )
 
 
-def apply_rc(base_font: float = 8.80) -> None:
+def apply_rc(base_font: float = 8.85) -> None:
     plt.rcParams.update(
         {
             "font.family": "sans-serif",
-            "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
-            "font.serif": ["Helvetica", "Arial", "DejaVu Sans"],
+            "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
+            "font.serif": ["Arial", "Helvetica", "DejaVu Sans"],
             "mathtext.fontset": "dejavusans",
             "font.size": base_font,
-            "axes.titlesize": 8.00,
-            "axes.labelsize": 7.40,
-            "xtick.labelsize": 6.90,
-            "ytick.labelsize": 6.90,
+            "axes.titlesize": 8.15,
+            "axes.labelsize": 7.70,
+            "xtick.labelsize": 7.15,
+            "ytick.labelsize": 7.15,
             "axes.linewidth": 0.0,
             "savefig.dpi": 420,
         }
@@ -75,16 +75,16 @@ def style_heatmap_axis(
     group_every: int | None = None,
     group_start: int = 0,
 ) -> None:
-    ax.set_title(title, loc="left", color=TEXT, fontweight="semibold", fontsize=7.75, pad=4.8)
+    ax.set_title(title, loc="left", color=TEXT, fontweight="semibold", fontsize=8.05, pad=3.6)
     ax.set_xticks(np.arange(len(col_labels)))
     ax.set_xticklabels(col_labels, color=TEXT, rotation=rotate_x, ha="left" if rotate_x else "center")
     ax.xaxis.tick_top()
-    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=1.7, length=0.0)
+    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=1.15, length=0.0)
     for tick in ax.get_xticklabels():
         tick.set_fontweight("normal")
     ax.set_yticks(np.arange(n_rows))
     ax.set_yticklabels(row_labels if row_labels is not None else [])
-    ax.tick_params(axis="y", length=0.0, pad=2.0)
+    ax.tick_params(axis="y", length=0.0, pad=1.5)
     ax.tick_params(which="minor", bottom=False, left=False)
     for spine in ax.spines.values():
         spine.set_visible(False)
@@ -99,7 +99,7 @@ def annotate_cells(
     fmt: str,
     *,
     mark_bad: Callable[[float], bool] | None = None,
-    fontsize: float = 6.65,
+    fontsize: float = 7.00,
 ) -> None:
     for i in range(data.shape[0]):
         for j in range(data.shape[1]):

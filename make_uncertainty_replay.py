@@ -286,9 +286,9 @@ def make_figure(summary_rows: list[dict[str, float | str | int]]) -> None:
         for scenario in scenario_order:
             row_labels.append(f"{scene_short_labels.get(scene_id, scene_names[scene_id])} {scenario_short_labels.get(scenario, scenario)}")
 
-    jhs.apply_rc(base_font=8.10)
-    fig = plt.figure(figsize=(7.25, 3.66), facecolor=jhs.BG)
-    grid = fig.add_gridspec(2, 2, wspace=0.08, hspace=0.20)
+    jhs.apply_rc(base_font=8.70)
+    fig = plt.figure(figsize=(7.25, 3.78), facecolor=jhs.BG)
+    grid = fig.add_gridspec(2, 2, wspace=0.055, hspace=0.155)
 
     lookup = {(row["scene_id"], row["scenario"], row["method"]): row for row in public}
     def matrix(metric: str) -> np.ndarray:
@@ -350,8 +350,8 @@ def make_figure(summary_rows: list[dict[str, float | str | int]]) -> None:
             data.shape[0],
             group_every=len(scenario_order),
         )
-        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.35)
-    fig.subplots_adjust(left=0.125, right=0.996, top=0.920, bottom=0.075, wspace=0.08, hspace=0.20)
+        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.95)
+    fig.subplots_adjust(left=0.120, right=0.997, top=0.932, bottom=0.062, wspace=0.055, hspace=0.155)
     jhs.save_white_rgb(fig, OUT / "uncertainty_replay.png", pad_inches=0.018)
     for pic_dir in PIC_DIRS:
         jhs.save_white_rgb(fig, pic_dir / "journal_uncertainty_replay.png", pad_inches=0.018)

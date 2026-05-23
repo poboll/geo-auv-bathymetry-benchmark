@@ -210,3 +210,21 @@
 - 引用审计发现 IHO C-13 与 GEBCO TID 官方页面偶发 TLS EOF，不是文献不存在；将 IHO URL 改为官方可访问的 C-13 chapter/index PDF，并在 `audit/verify_references_20260514.py` 中为 GEBCO TID 与 IHO C-13 增加 manual fallback 记录。
 - 最终运行 `python3 audit/verify_references_20260514.py`，结果为 `total 45 failed 0 et_al 0`；重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 297 entries；重新运行 `python check_release_readiness.py`，missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
 - 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`，时间戳为 2026-05-23 v25d。
+
+## 2026-05-23 v26
+
+- 按用户最新反馈继续做热图体系返修，目标不是新实验，而是解决主文热图“间距大、配色不好、字体不好”和 Figure 15/16 在 PDF 里的期刊感不足问题。
+- 先渲染当前 MDPI PDF 热图页作为 before 证据：`audit/heatmap_review_20260523_v26/pdf_pages_before/page_25.png`、`page_32.png`、`page_33.png`、`page_34.png`、`page_36.png`、`page_37.png`、`page_38.png`，并查看 `audit/heatmap_review_20260523_v26/source_heatmap_contact.png`。
+- 修改 `journal_heatmap_style.py`：统一低饱和蓝绿/暖赭/灰蓝色带，提升基础字号，收紧 title/tick padding，并把默认图内字体设置为 Arial/Helvetica/DejaVu Sans fallback。
+- 修改 `make_journal_figures.py`：Figure 8 从方形单元改为填满 panel 的矩阵热图，收紧 `wspace/hspace`，修正 `annotate_heatmap` 缩进，并同步更柔和的 palette。
+- 修改 `make_structured_prior_error_replay.py`、`make_uncertainty_replay.py`、`make_uncertainty_margin_replay.py`、`make_coarse_prior_replay.py`：统一 replay 热图的画布比例、面板间距、单元格字号和 `jhs` 样式。
+- 修改 `make_threshold_local_failure_extension.py`：Figure 15 去掉右下角 Reading guide 文字块，新增 `(f) Pass C97/O3` 小热图，与 `(e) Pass C99/O2` 形成默认门槛/严格门槛对比；后续将列标签改回水平并把单元格设为 `aspect="auto"`，解决标题/坐标挤压和源图空白。
+- 修改 `make_footprint_validity_audit.py`：Figure 16 从 v25d 临时 serif 风格改回统一 sans-serif 图内字体，并略微扩大矩阵有效区域，保持数值、行列、caption 证据边界不变。
+- 使用已有 CSV/JSON 重绘图源：`conda run -n uu python refresh_visuals_from_existing_outputs.py`；单独刷新 Figure 15 和 Figure 16：`conda run -n uu python make_threshold_local_failure_extension.py --seed-count 20`、`conda run -n uu python make_footprint_validity_audit.py`。
+- 完成 Python 静态检查：`python3 -m py_compile journal_heatmap_style.py make_journal_figures.py make_structured_prior_error_replay.py make_uncertainty_replay.py make_uncertainty_margin_replay.py make_threshold_local_failure_extension.py make_footprint_validity_audit.py make_coarse_prior_replay.py`，无语法错误。
+- 重新编译两套 LaTeX 两遍，最终日志为 `compile_after_heatmap_system_v26b_20260523_pass2.log`；严格扫描两套日志仅命中 `Output written on template.pdf (49 pages)`。
+- 渲染最终 MDPI PDF 热图页到 `audit/heatmap_review_20260523_v26/pdf_pages_after_v26b/`：page 25/32/33/34/37/38/39。人工检查确认 Figure 8 无明显左右大空白，Figure 11--13 色彩/字体层级一致，Figure 15 无右下残留说明空白或标题覆盖，Figure 16 行列标签和数值可读，Figure 17 未见异常宽度残留。
+- 重新复制交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
+- 重新运行引用审计 `python3 audit/verify_references_20260514.py`，结果为 `total 45 failed 0 et_al 0`。
+- 重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 仍为 297 entries；`python3 check_release_readiness.py` 输出 missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
+- 已回写 `/Users/Apple/Developer/Pycharm/q/Geo修改请按点核对.md`、`audit/Geo修改请按点核对.md`、`submission_package/final_submission_checklist.md`、`task_plan.md`、`progress.md`、`findings.md`，记录本轮命令、图源、PDF 截图和 claim boundary。

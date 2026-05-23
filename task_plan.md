@@ -76,3 +76,12 @@
 - [x] 两套 LaTeX 均完成 v25d 双遍编译：`compile_after_footprint_validity_v25d_20260523_pass2.log` 输出 49 pages，严格扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
 - [x] 引用审计脚本增加 GEBCO TID 与 IHO C-13 官方 URL 的 manual fallback，用于处理官网 TLS EOF 抖动；最终 `python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al。
 - [x] 重新生成 `reproducibility_manifest.json` 为 297 entries；`python check_release_readiness.py` 输出 missing/empty/untracked/core-not-in-manifest 全为 0。
+
+## 2026-05-23 v26 Heatmap-system Addendum
+
+- [x] 按用户最新反馈把热图返修从单张 Figure 16 扩展到主文热图体系：Figure 8/11/12/13/15/16/17。
+- [x] 统一低饱和蓝绿/暖赭/灰蓝配色、Arial/Helvetica/DejaVu Sans fallback 字体、紧凑 `wspace/hspace` 和较清晰单元格字号。
+- [x] Figure 8 改为填满 panel 的矩阵版式，减少左右大空白；Figure 15 将右下说明块替换为默认 \(C97/O3\) pass-rate 热图；Figure 16 回到统一 sans-serif 图内字体。
+- [x] 重新生成图源、双遍编译两套 LaTeX、渲染 MDPI PDF 热图页并人工 QA。
+- [x] 最新日志为 `compile_after_heatmap_system_v26b_20260523_pass2.log`；两套 PDF 均 49 pages，严格扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
+- [x] 引用审计、manifest 与 release gate 再次通过：45 references / 0 failed / 0 et_al；manifest 297 entries；release gate 四项阻断为 0。

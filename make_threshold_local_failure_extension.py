@@ -279,11 +279,10 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             p99[i, j] = row["cell_excess_overlap_p99_mean"]
             strict_pass[i, j] = row["pass_C99_O2_mean"]
 
-    jhs.apply_rc(base_font=8.00)
+    jhs.apply_rc(base_font=8.65)
 
-    fig, axes_grid = plt.subplots(2, 3, figsize=(7.25, 3.62), facecolor=jhs.BG)
-    axes = list(axes_grid.flat[:5])
-    axes_grid.flat[5].axis("off")
+    fig, axes_grid = plt.subplots(2, 3, figsize=(7.25, 3.72), facecolor=jhs.BG)
+    axes = list(axes_grid.flat)
     matrices = [
         (
             coverage,
@@ -325,47 +324,30 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             "{:.2f}",
             lambda value: value < 1.0,
         ),
+        (
+            np.asarray([[float(lookup[(scene_id, method)]["pass_C97_O3_mean"]) for method in method_names] for scene_id in scene_ids], dtype=float),
+            mcolors.Normalize(vmin=0.0, vmax=1.0),
+            jhs.COVERAGE_CMAP,
+            "(f) Pass C97/O3",
+            "{:.2f}",
+            lambda value: value < 1.0,
+        ),
     ]
     xlabels = [METHOD_LABELS[method] for method in method_names]
     ylabels = ["Cascadia", "Monterey", "USGS-H"]
     for ax_idx, (ax, (data, norm, cmap, title, fmt, mark_bad)) in enumerate(zip(axes, matrices)):
-        ax.imshow(data, cmap=cmap, norm=norm, aspect="equal", interpolation="nearest")
+        ax.imshow(data, cmap=cmap, norm=norm, aspect="auto", interpolation="nearest")
         jhs.style_heatmap_axis(
             ax,
             title,
             xlabels,
             ylabels if ax_idx in (0, 3) else None,
             data.shape[0],
-            rotate_x=32,
+            rotate_x=0,
         )
-        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.45)
+        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.95)
 
-    axes_grid.flat[5].text(
-        0.0,
-        0.96,
-        "Reading guide",
-        ha="left",
-        va="top",
-        fontsize=7.55,
-        fontweight="semibold",
-        color=jhs.TEXT,
-        transform=axes_grid.flat[5].transAxes,
-    )
-    axes_grid.flat[5].text(
-        0.0,
-        0.78,
-        "C99/O2 is stricter than the\nreported C97/O3 benchmark gate.\n\n"
-        "Largest-gap and p99-excess panels\nexpose local failures hidden by means.\n\n"
-        "Hybrid values are 20-seed means;\nFixed and Adaptive are deterministic.",
-        ha="left",
-        va="top",
-        fontsize=6.35,
-        color=jhs.MUTED,
-        linespacing=1.18,
-        transform=axes_grid.flat[5].transAxes,
-    )
-
-    fig.subplots_adjust(left=0.080, right=0.992, top=0.920, bottom=0.122, wspace=0.16, hspace=0.34)
+    fig.subplots_adjust(left=0.072, right=0.996, top=0.922, bottom=0.105, wspace=0.095, hspace=0.235)
     OUT.mkdir(parents=True, exist_ok=True)
     _save_white_rgb_figure(fig, OUT / "threshold_local_failure_journal.png")
     for pic_dir in PIC_DIRS:

@@ -173,15 +173,8 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def make_figure(rows: list[dict[str, Any]]) -> None:
-    jhs.apply_rc(base_font=8.7)
-    plt.rcParams.update(
-        {
-            "font.family": "serif",
-            "font.serif": ["Times New Roman", "STIXGeneral", "DejaVu Serif"],
-            "mathtext.fontset": "stix",
-            "axes.unicode_minus": False,
-        }
-    )
+    jhs.apply_rc(base_font=8.75)
+    plt.rcParams.update({"axes.unicode_minus": False})
     rows = sorted(rows, key=lambda r: (r["scene_id"], METHOD_ORDER.get(str(r["method"]), 99)))
     row_labels = [f"{row['scene_label']}  {row['method_label']}" for row in rows]
     delta_cmap = mcolors.LinearSegmentedColormap.from_list(
@@ -231,19 +224,19 @@ def make_figure(rows: list[dict[str, Any]]) -> None:
     for col, (_, _, norm, cmap, _) in enumerate(metrics):
         rgba[:, col, :] = cmap(norm(data[:, col]))
 
-    fig = plt.figure(figsize=(7.15, 3.55), facecolor="white")
-    ax = fig.add_axes([0.285, 0.085, 0.695, 0.785])
+    fig = plt.figure(figsize=(7.15, 3.60), facecolor="white")
+    ax = fig.add_axes([0.270, 0.080, 0.715, 0.805])
     ax.imshow(rgba, aspect="auto", interpolation="nearest")
     ax.set_xticks(np.arange(len(metrics)))
     ax.set_xticklabels([title for _, title, *_ in metrics], fontsize=8.15, color=jhs.TEXT)
     ax.xaxis.tick_top()
-    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, length=0, pad=6)
+    ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, length=0, pad=4)
     for tick in ax.get_xticklabels():
         tick.set_fontweight("semibold")
         tick.set_linespacing(0.88)
     ax.set_yticks(np.arange(len(row_labels)))
     ax.set_yticklabels(row_labels, fontsize=7.95, color=jhs.TEXT)
-    ax.tick_params(axis="y", length=0, pad=5)
+    ax.tick_params(axis="y", length=0, pad=4)
     for i, tick in enumerate(ax.get_yticklabels()):
         tick.set_color(jhs.TEXT if i % 3 == 0 else jhs.MUTED)
     ax.set_xticks(np.arange(-0.5, len(metrics), 1), minor=True)

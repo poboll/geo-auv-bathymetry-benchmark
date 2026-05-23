@@ -391,9 +391,9 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
     overlap = metric_matrix(summary_rows, scene_order, scenario_order, "replay_excess_overlap_pct_mean")
     path_gain = metric_matrix(summary_rows, scene_order, scenario_order, "path_gain_vs_truth_fixed_pct_mean")
 
-    jhs.apply_rc(base_font=8.10)
-    fig = plt.figure(figsize=(7.25, 3.95), facecolor=jhs.BG)
-    grid = fig.add_gridspec(2, 2, wspace=0.08, hspace=0.20)
+    jhs.apply_rc(base_font=8.70)
+    fig = plt.figure(figsize=(7.25, 4.08), facecolor=jhs.BG)
+    grid = fig.add_gridspec(2, 2, wspace=0.055, hspace=0.155)
     panels = [
         ("(a) Replay feasible rate", feasible, jhs.COVERAGE_CMAP, Normalize(vmin=0.0, vmax=1.0), "{:.2f}", lambda value: value < 1.0),
         (
@@ -434,8 +434,8 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             data.shape[0],
             group_every=len(scenario_order),
         )
-        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.25)
-    fig.subplots_adjust(left=0.135, right=0.996, top=0.920, bottom=0.060, wspace=0.08, hspace=0.20)
+        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.85)
+    fig.subplots_adjust(left=0.128, right=0.997, top=0.932, bottom=0.050, wspace=0.055, hspace=0.155)
 
     out_path = OUT / "structured_prior_error_replay.png"
     jhs.save_white_rgb(fig, out_path, pad_inches=0.018)

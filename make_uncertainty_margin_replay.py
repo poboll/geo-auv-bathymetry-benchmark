@@ -447,9 +447,9 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
     overlap_p95 = matrix("excess_overlap_pct_p95")
     path_cost = matrix("path_cost_vs_hybrid_pct")
 
-    jhs.apply_rc(base_font=8.08)
-    fig = plt.figure(figsize=(7.25, 3.76), facecolor=jhs.BG)
-    grid = fig.add_gridspec(2, 2, wspace=0.08, hspace=0.20)
+    jhs.apply_rc(base_font=8.70)
+    fig = plt.figure(figsize=(7.25, 3.90), facecolor=jhs.BG)
+    grid = fig.add_gridspec(2, 2, wspace=0.055, hspace=0.155)
 
     panels = [
         (
@@ -498,8 +498,8 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
             data.shape[0],
             group_every=len(scenarios),
         )
-        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.20)
-    fig.subplots_adjust(left=0.126, right=0.996, top=0.920, bottom=0.075, wspace=0.08, hspace=0.20)
+        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.85)
+    fig.subplots_adjust(left=0.120, right=0.997, top=0.932, bottom=0.062, wspace=0.055, hspace=0.155)
 
     out_path = OUT / "uncertainty_margin_replay.png"
     jhs.save_white_rgb(fig, out_path, pad_inches=0.018)
