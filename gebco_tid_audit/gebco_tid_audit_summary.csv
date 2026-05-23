@@ -1,0 +1,9 @@
+scene_id,scene_label,tid_value,cell_count,cell_fraction,cell_percent
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,10,601,0.004075792100694444,0.4075792100694444
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,11,134254,0.9104682074652778,91.04682074652777
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,40,8028,0.054443359375,5.4443359375
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,44,4573,0.031012641059027776,3.1012641059027777
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,10,14,0.00024305555555555555,0.024305555555555556
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,11,54993,0.9547395833333333,95.47395833333333
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,40,1684,0.029236111111111112,2.923611111111111
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,44,909,0.01578125,1.578125

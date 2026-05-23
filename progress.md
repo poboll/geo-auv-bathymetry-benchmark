@@ -150,3 +150,13 @@
 - 更新交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
 - PDF 视觉 QA：渲染 `audit/page_preview_20260522_surrogate_fig1_v21/page_05.png`、`page_27.png`、`page_28.png`、`page_29.png`。人工检查 Figure 1 无文字溢出/厚框，Table 14 无截断、遮挡、异常空白或压缩。
 - 重新运行引用审计 `python audit/verify_references_20260514.py`，结果为 42 references、0 et_al、4 automated DOI failures。失败项为 DOI.org/出版商访问策略或 SSL EOF：`shi2020data`、`jiang2018route`、`li2024full`、`ji2022multi`；本轮未改参考文献，且这些条目已通过出版商/检索结果人工核验为真实存在，属于网络解析失败而非假文献。
+
+## 2026-05-23
+
+- 继续按用户要求推进“生成点子到代码运行、收数写回、分析收束”的投稿前闭环，优先处理 Zenodo/GitHub release 可复现性，而不是继续堆实验图。
+- 运行 `gh auth status`，确认 GitHub CLI 已以 `poboll` 登录，具备 `repo` 和 `workflow` scope；`gh release list --limit 20` 显示当前只有 `v0.1.0` release，对应 2026-04-30 初始归档。
+- 检查 manifest-vs-Git 跟踪关系，发现当前 `reproducibility_manifest.json` 中 264 entries 只有 142 个已被 Git 跟踪，122 个是本地未跟踪 artifact；如果直接新建 release，会出现正文/manifest 声称有证据、Zenodo 包里缺文件的风险。
+- 新增 `check_release_readiness.py`，作为 GitHub/Zenodo release 前的 gate：检查核心 PDF/源文件、必需证据目录、manifest entries 是否全部被 Git 跟踪。
+- 修改 `make_reproducibility_manifest.py`：manifest 只纳入 Git-tracked 文件，并在 archive metadata 中记录当前 Git revision 和 dirty-worktree 状态；同时加入 GEBCO TID audit 的 CSV/JSON/README/basket_id 元数据模式，避免把 `.tif/.zip` 源产品纳入 release manifest。
+- 同步修改两套 LaTeX Data Availability：将“downloaded TID GeoTIFF subsets”改为“GEBCO TID audit CSV/JSON, TID basket identifiers and retrieval metadata”，保留 GEBCO/USGS 官方 DOI 作为源数据入口，避免公共源数据再分发口径过满。
+- 更新 `README.md`、`README_submission.md` 与 `submission_package/final_submission_checklist.md`，加入 release-readiness gate 和“新 DOI minted 后再替换初始 DOI”的明确动作项。

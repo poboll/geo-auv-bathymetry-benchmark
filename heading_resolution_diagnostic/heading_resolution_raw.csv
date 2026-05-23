@@ -1,0 +1,13 @@
+scene_id,scene_label,terrain_class,heading_set,heading_step_deg,method,orientation_deg,line_count,path_length_km,coverage_pct,excess_overlap_pct,score,feasible_97_3,planning_time_s
+gebco_cascadia_margin_moderate,GEBCO Cascadia,moderate_slope,15deg,15,Simple Greedy,75.0,111,15084.319183647674,99.9888888888889,0.009497456851851986,15084.34767601823,1,0.8247962500026915
+gebco_cascadia_margin_moderate,GEBCO Cascadia,moderate_slope,15deg,15,Adaptive Spacing w/o GA,0.0,116,15038.223860078393,99.33333333333333,0.0,15038.223860078393,1,0.9925470829912229
+gebco_cascadia_margin_moderate,GEBCO Cascadia,moderate_slope,5deg,5,Simple Greedy,95.0,94,15065.836708169189,100.0,0.09344585755555554,15066.117045741856,1,2.526305958002922
+gebco_cascadia_margin_moderate,GEBCO Cascadia,moderate_slope,5deg,5,Adaptive Spacing w/o GA,0.0,116,15038.223860078393,99.33333333333333,0.0,15038.223860078393,1,2.3763780419976683
+gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,15deg,15,Simple Greedy,90.0,59,6656.3676243300515,99.17777777777778,0.30069568518518475,6657.2697113856075,1,0.5142228749900823
+gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,15deg,15,Adaptive Spacing w/o GA,90.0,59,6656.620000000051,100.0,0.0,6656.620000000051,1,0.5929547920095501
+gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,5deg,5,Simple Greedy,90.0,59,6656.3676243300515,99.17777777777778,0.30069568518518475,6657.2697113856075,1,2.2650013330130605
+gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,5deg,5,Adaptive Spacing w/o GA,90.0,59,6656.620000000051,100.0,0.0,6656.620000000051,1,1.9478266249934677
+usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,15deg,15,Simple Greedy,90.0,9,89.879061846,97.15,25.981666464827498,167.82406124048248,0,0.14890462499170098
+usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,15deg,15,Adaptive Spacing w/o GA,135.0,12,73.89166194729708,98.55000000000001,2.2372345564469054,80.6033656166378,1,0.42513187500298955
+usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,5deg,5,Simple Greedy,90.0,9,89.879061846,97.15,25.981666464827498,167.82406124048248,0,0.44771408299857285
+usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,5deg,5,Adaptive Spacing w/o GA,135.0,12,73.89166194729708,98.55000000000001,2.2372345564469054,80.6033656166378,1,1.282905625004787

@@ -1,0 +1,486 @@
+[
+  {
+    "scene_id": "gebco_cascadia_margin_moderate_prior_error_nominal_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_cascadia_margin_moderate/data.tif",
+    "crop_bounds": {
+      "left": -126.8,
+      "bottom": 43.19999999999999,
+      "right": -125.2,
+      "top": 44.79999999999998,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1195.383,
+    "depth_range_m": [
+      1009.0,
+      3101.0
+    ],
+    "terrain_class": "moderate_slope",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "basket_id": "GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "provider": "gebco",
+    "prior_error_scenario": "nominal",
+    "prior_error_description": "Truth grid used as the planning prior.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 0.0,
+    "prior_error_mae_m": 0.0,
+    "prior_error_abs_p95_m": 0.0,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "gebco_cascadia_margin_moderate_prior_error_correlated_bias_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_cascadia_margin_moderate/data.tif",
+    "crop_bounds": {
+      "left": -126.8,
+      "bottom": 43.19999999999999,
+      "right": -125.2,
+      "top": 44.79999999999998,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1195.383,
+    "depth_range_m": [
+      1009.0,
+      3101.0
+    ],
+    "terrain_class": "moderate_slope",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "basket_id": "GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "provider": "gebco",
+    "prior_error_scenario": "correlated_bias",
+    "prior_error_description": "Low-frequency spatially correlated bathymetric bias with 35 m RMS target scale.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 35.0,
+    "prior_error_mae_m": 27.862146478992454,
+    "prior_error_abs_p95_m": 67.93713030799836,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "gebco_cascadia_margin_moderate_prior_error_slope_amplified_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_cascadia_margin_moderate/data.tif",
+    "crop_bounds": {
+      "left": -126.8,
+      "bottom": 43.19999999999999,
+      "right": -125.2,
+      "top": 44.79999999999998,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1195.383,
+    "depth_range_m": [
+      1009.0,
+      3101.0
+    ],
+    "terrain_class": "moderate_slope",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "basket_id": "GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "provider": "gebco",
+    "prior_error_scenario": "slope_amplified",
+    "prior_error_description": "Correlated map error amplified on high-gradient seabed cells.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 29.00617410355579,
+    "prior_error_mae_m": 21.491049261402225,
+    "prior_error_abs_p95_m": 56.97851585496962,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "gebco_cascadia_margin_moderate_prior_error_canyon_wall_bias_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_cascadia_margin_moderate/data.tif",
+    "crop_bounds": {
+      "left": -126.8,
+      "bottom": 43.19999999999999,
+      "right": -125.2,
+      "top": 44.79999999999998,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 1195.383,
+    "depth_range_m": [
+      1009.0,
+      3101.0
+    ],
+    "terrain_class": "moderate_slope",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "basket_id": "GEBCO_22_Apr_2026_ccf8b8e4f76c",
+    "provider": "gebco",
+    "prior_error_scenario": "canyon_wall_bias",
+    "prior_error_description": "Correlated prior error with localized high-slope canyon-wall perturbations.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 24.939870430280553,
+    "prior_error_mae_m": 18.209635913948397,
+    "prior_error_abs_p95_m": 51.672214869352004,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "gebco_monterey_canyon_complex_prior_error_nominal_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_monterey_canyon_complex/data.tif",
+    "crop_bounds": {
+      "left": -123.3,
+      "bottom": 35.29999999999998,
+      "right": -122.30000000000001,
+      "top": 36.29999999999999,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 758.72,
+    "depth_range_m": [
+      892.0,
+      3982.0
+    ],
+    "terrain_class": "complex_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_b5aacd8317d9",
+    "basket_id": "GEBCO_22_Apr_2026_b5aacd8317d9",
+    "provider": "gebco",
+    "prior_error_scenario": "nominal",
+    "prior_error_description": "Truth grid used as the planning prior.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 0.0,
+    "prior_error_mae_m": 0.0,
+    "prior_error_abs_p95_m": 0.0,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "gebco_monterey_canyon_complex_prior_error_correlated_bias_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_monterey_canyon_complex/data.tif",
+    "crop_bounds": {
+      "left": -123.3,
+      "bottom": 35.29999999999998,
+      "right": -122.30000000000001,
+      "top": 36.29999999999999,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 758.72,
+    "depth_range_m": [
+      892.0,
+      3982.0
+    ],
+    "terrain_class": "complex_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_b5aacd8317d9",
+    "basket_id": "GEBCO_22_Apr_2026_b5aacd8317d9",
+    "provider": "gebco",
+    "prior_error_scenario": "correlated_bias",
+    "prior_error_description": "Low-frequency spatially correlated bathymetric bias with 35 m RMS target scale.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 34.99999999999999,
+    "prior_error_mae_m": 27.618245936039468,
+    "prior_error_abs_p95_m": 70.15765653032622,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "gebco_monterey_canyon_complex_prior_error_slope_amplified_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_monterey_canyon_complex/data.tif",
+    "crop_bounds": {
+      "left": -123.3,
+      "bottom": 35.29999999999998,
+      "right": -122.30000000000001,
+      "top": 36.29999999999999,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 758.72,
+    "depth_range_m": [
+      892.0,
+      3982.0
+    ],
+    "terrain_class": "complex_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_b5aacd8317d9",
+    "basket_id": "GEBCO_22_Apr_2026_b5aacd8317d9",
+    "provider": "gebco",
+    "prior_error_scenario": "slope_amplified",
+    "prior_error_description": "Correlated map error amplified on high-gradient seabed cells.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 31.30531624391633,
+    "prior_error_mae_m": 23.45049533598198,
+    "prior_error_abs_p95_m": 62.78613713841363,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "gebco_monterey_canyon_complex_prior_error_canyon_wall_bias_seed0",
+    "source": "GEBCO 2025 global bathymetry subset",
+    "download_url": "https://download.gebco.net",
+    "license": "GEBCO 2025 Grid terms of use",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_monterey_canyon_complex/data.tif",
+    "crop_bounds": {
+      "left": -123.3,
+      "bottom": 35.29999999999998,
+      "right": -122.30000000000001,
+      "top": 36.29999999999999,
+      "crs": "EPSG:4326"
+    },
+    "resolution_m": 758.72,
+    "depth_range_m": [
+      892.0,
+      3982.0
+    ],
+    "terrain_class": "complex_relief",
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 1.0,
+      "filled_cells": 0,
+      "fill_strategy": "none"
+    },
+    "queue_download_url": "https://download.gebco.net/api/queue/download/GEBCO_22_Apr_2026_b5aacd8317d9",
+    "basket_id": "GEBCO_22_Apr_2026_b5aacd8317d9",
+    "provider": "gebco",
+    "prior_error_scenario": "canyon_wall_bias",
+    "prior_error_description": "Correlated prior error with localized high-slope canyon-wall perturbations.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 24.68522075938452,
+    "prior_error_mae_m": 18.2554445994431,
+    "prior_error_abs_p95_m": 51.327299128409564,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "usgs_southern_cascadia_30m_high_prior_error_nominal_seed0",
+    "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+    "download_url": "https://doi.org/10.5066/P9C5DBMR",
+    "license": "USGS public data release",
+    "raw_file": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "crop_bounds": {
+      "left": 347261.1584084583,
+      "bottom": 4702319.412716693,
+      "right": 354671.1584084583,
+      "top": 4711589.412716693,
+      "crs": "EPSG:26910"
+    },
+    "raw_resolution_m": {
+      "x": 30.0,
+      "y": 30.0
+    },
+    "planner_grid_resolution_m": 62.269,
+    "depth_range_m": [
+      146.3936004638672,
+      1131.604248046875
+    ],
+    "terrain_class": "survey_grade_cascadia_high",
+    "selection_metrics": {
+      "valid_fraction": 0.9861640658779136,
+      "slope_mean": 0.1412861155217056,
+      "depth_std": 181.6838184471652,
+      "relief": 993.9073333740234,
+      "complexity": 12.805616725969418,
+      "overview_col": 270.0,
+      "overview_row": 240.0,
+      "complexity_rank": 44,
+      "candidate_count": 56,
+      "complexity_quantile_empirical": 0.8,
+      "requested_complexity_quantile": 0.8
+    },
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 0.9899444444444444,
+      "filled_cells": 181,
+      "fill_strategy": "local_median_fill"
+    },
+    "provider": "USGS",
+    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "prior_error_scenario": "nominal",
+    "prior_error_description": "Truth grid used as the planning prior.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 0.0,
+    "prior_error_mae_m": 0.0,
+    "prior_error_abs_p95_m": 0.0,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "usgs_southern_cascadia_30m_high_prior_error_correlated_bias_seed0",
+    "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+    "download_url": "https://doi.org/10.5066/P9C5DBMR",
+    "license": "USGS public data release",
+    "raw_file": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "crop_bounds": {
+      "left": 347261.1584084583,
+      "bottom": 4702319.412716693,
+      "right": 354671.1584084583,
+      "top": 4711589.412716693,
+      "crs": "EPSG:26910"
+    },
+    "raw_resolution_m": {
+      "x": 30.0,
+      "y": 30.0
+    },
+    "planner_grid_resolution_m": 62.269,
+    "depth_range_m": [
+      146.3936004638672,
+      1131.604248046875
+    ],
+    "terrain_class": "survey_grade_cascadia_high",
+    "selection_metrics": {
+      "valid_fraction": 0.9861640658779136,
+      "slope_mean": 0.1412861155217056,
+      "depth_std": 181.6838184471652,
+      "relief": 993.9073333740234,
+      "complexity": 12.805616725969418,
+      "overview_col": 270.0,
+      "overview_row": 240.0,
+      "complexity_rank": 44,
+      "candidate_count": 56,
+      "complexity_quantile_empirical": 0.8,
+      "requested_complexity_quantile": 0.8
+    },
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 0.9899444444444444,
+      "filled_cells": 181,
+      "fill_strategy": "local_median_fill"
+    },
+    "provider": "USGS",
+    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "prior_error_scenario": "correlated_bias",
+    "prior_error_description": "Low-frequency spatially correlated bathymetric bias with 35 m RMS target scale.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 35.0,
+    "prior_error_mae_m": 27.781455109712475,
+    "prior_error_abs_p95_m": 68.17595461924395,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "usgs_southern_cascadia_30m_high_prior_error_slope_amplified_seed0",
+    "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+    "download_url": "https://doi.org/10.5066/P9C5DBMR",
+    "license": "USGS public data release",
+    "raw_file": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "crop_bounds": {
+      "left": 347261.1584084583,
+      "bottom": 4702319.412716693,
+      "right": 354671.1584084583,
+      "top": 4711589.412716693,
+      "crs": "EPSG:26910"
+    },
+    "raw_resolution_m": {
+      "x": 30.0,
+      "y": 30.0
+    },
+    "planner_grid_resolution_m": 62.269,
+    "depth_range_m": [
+      146.3936004638672,
+      1131.604248046875
+    ],
+    "terrain_class": "survey_grade_cascadia_high",
+    "selection_metrics": {
+      "valid_fraction": 0.9861640658779136,
+      "slope_mean": 0.1412861155217056,
+      "depth_std": 181.6838184471652,
+      "relief": 993.9073333740234,
+      "complexity": 12.805616725969418,
+      "overview_col": 270.0,
+      "overview_row": 240.0,
+      "complexity_rank": 44,
+      "candidate_count": 56,
+      "complexity_quantile_empirical": 0.8,
+      "requested_complexity_quantile": 0.8
+    },
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 0.9899444444444444,
+      "filled_cells": 181,
+      "fill_strategy": "local_median_fill"
+    },
+    "provider": "USGS",
+    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "prior_error_scenario": "slope_amplified",
+    "prior_error_description": "Correlated map error amplified on high-gradient seabed cells.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 35.801755722550794,
+    "prior_error_mae_m": 27.406703659536493,
+    "prior_error_abs_p95_m": 71.0012376247546,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  },
+  {
+    "scene_id": "usgs_southern_cascadia_30m_high_prior_error_canyon_wall_bias_seed0",
+    "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
+    "download_url": "https://doi.org/10.5066/P9C5DBMR",
+    "license": "USGS public data release",
+    "raw_file": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "crop_bounds": {
+      "left": 347261.1584084583,
+      "bottom": 4702319.412716693,
+      "right": 354671.1584084583,
+      "top": 4711589.412716693,
+      "crs": "EPSG:26910"
+    },
+    "raw_resolution_m": {
+      "x": 30.0,
+      "y": 30.0
+    },
+    "planner_grid_resolution_m": 62.269,
+    "depth_range_m": [
+      146.3936004638672,
+      1131.604248046875
+    ],
+    "terrain_class": "survey_grade_cascadia_high",
+    "selection_metrics": {
+      "valid_fraction": 0.9861640658779136,
+      "slope_mean": 0.1412861155217056,
+      "depth_std": 181.6838184471652,
+      "relief": 993.9073333740234,
+      "complexity": 12.805616725969418,
+      "overview_col": 270.0,
+      "overview_row": 240.0,
+      "complexity_rank": 44,
+      "candidate_count": 56,
+      "complexity_quantile_empirical": 0.8,
+      "requested_complexity_quantile": 0.8
+    },
+    "missing_value_handling": {
+      "valid_fraction_before_fill": 0.9899444444444444,
+      "filled_cells": 181,
+      "fill_strategy": "local_median_fill"
+    },
+    "provider": "USGS",
+    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "prior_error_scenario": "canyon_wall_bias",
+    "prior_error_description": "Correlated prior error with localized high-slope canyon-wall perturbations.",
+    "prior_error_seed": 0,
+    "prior_error_rmse_m": 25.679200402648604,
+    "prior_error_mae_m": 19.270442332533566,
+    "prior_error_abs_p95_m": 53.02919664978119,
+    "prior_error_policy": "Plan on a spatially perturbed prior and replay the same line family on the truth grid."
+  }
+]

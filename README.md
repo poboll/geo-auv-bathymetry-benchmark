@@ -1,10 +1,12 @@
-# Terrain-Aware AUV Bathymetry Benchmark
+# Terrain-Aware Fixed-Line MBES Bathymetry Benchmark
 
 This public repository contains the manuscript-specific code, derived data, figures, and LaTeX artifacts for:
 
-**Terrain-Aware AUV Survey-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks**
+**Terrain-Aware Fixed-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks**
 
-The study is framed as a public-bathymetry numerical benchmark for AUV-assisted multibeam survey-line planning. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, or navigation-safety readiness.
+The study is framed as a public-bathymetry numerical benchmark for depth-referenced MBES fixed-line planning. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.
+
+The repository name is historical. The submitted manuscript treats the package as a depth-referenced MBES fixed-line planning benchmark; altitude-aware AUV execution remains future work.
 
 ## Contents
 
@@ -21,6 +23,7 @@ The study is framed as a public-bathymetry numerical benchmark for AUV-assisted 
 - `manuscript/mdpi_jmse/`: MDPI/JMSE draft source and compiled PDF.
 - `manuscript/latex/`: working manuscript source and compiled PDF.
 - `submission_package/`: cover letter draft, reviewer-risk response sheet, and final submission checklist.
+- `README_submission.md`: compact submission-facing reproduction commands and evidence map.
 - `audit/`: revision logs, data-boundary notes, reference checks, and reviewer-risk notes.
 - `reproducibility_manifest.json`: SHA-256 manifest for manuscript-specific artifacts.
 
@@ -65,7 +68,9 @@ xelatex -interaction=nonstopmode template.tex
 
 ## Current Evidence Boundary
 
-The latest validated run is `run_5`. The strongest supported claim is that terrain-aware spacing with a small local GA refinement improves overlap discipline and repeatability for offline fixed-pattern survey-line planning on public bathymetry benchmarks. Public GEBCO route shortening is modest; the main public-scene result is excess-overlap suppression. Higher-complexity USGS and coarse-prior replay diagnostics are used as public-grid stress checks, not as sea-trial evidence.
+The latest validated run is `run_5`. The strongest supported claim is that terrain-aware spacing with optional local GA cleanup improves overlap discipline and repeatability for offline fixed-pattern survey-line planning on public bathymetry benchmarks. Public GEBCO route shortening is modest; the main public-scene result is overlap discipline and coverage/overlap balance. Higher-complexity USGS, coarse-prior replay, threshold/local-failure, and submission-boundary \(W_{\max}\)/GA-gate diagnostics are used as public-grid stress checks, not as sea-trial evidence.
+
+For a compact submission reproduction map, see `README_submission.md`.
 
 ## Archive Status
 
@@ -77,4 +82,4 @@ Initial `v0.1.0` archive DOI: <https://doi.org/10.5281/zenodo.19919506>.
 
 The repository includes `.zenodo.json` and `CITATION.cff` so that subsequent releases preserve manuscript-aligned authorship metadata rather than relying on the GitHub account display name.
 
-Development note: `main` may contain manuscript refinements after the initial `v0.1.0` archive. For journal submission, mint a final GitHub release after the manuscript is frozen; the Zenodo concept DOI above will resolve to the latest DOI-bearing archive in the release series.
+Development note: `main` may contain manuscript refinements after the initial `v0.1.0` archive. Before minting a Zenodo-triggering GitHub release, run `python check_release_readiness.py` and confirm that the manifest entries are Git-tracked. Any future release should keep the same fixed-line MBES benchmark framing and update `CITATION.cff`, `.zenodo.json`, `README_submission.md`, and `submission_package/final_submission_checklist.md` together.

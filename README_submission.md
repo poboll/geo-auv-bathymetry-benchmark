@@ -38,6 +38,13 @@ Refresh the reproducibility manifest with SHA-256 checksums:
 conda run -n uu python make_reproducibility_manifest.py
 ```
 
+Check that the manifest and the submission-critical evidence directories are
+actually tracked by Git before creating a GitHub release:
+
+```bash
+python check_release_readiness.py
+```
+
 Compile the MDPI/JMSE manuscript:
 
 ```bash
@@ -65,6 +72,9 @@ xelatex -interaction=nonstopmode template.tex
 - `survey_grade_extension_usgs_cascadia/`: USGS 30 m public-grid extension.
 - `coarse_prior_replay/`, `structured_prior_error_replay/`, `uncertainty_replay/`, `uncertainty_margin_replay/`, and `current_drift_replay/`: transfer and execution-boundary diagnostics.
 - `reproducibility_manifest.json`: file inventory and SHA-256 checksums for the current workspace.
+- `check_release_readiness.py`: release-gate audit that flags missing required
+  manuscript artifacts, empty evidence directories, and manifest entries that
+  are not tracked by Git.
 
 ## Claim Boundary
 
@@ -83,3 +93,13 @@ Regenerate the Figure 1 TikZ workflow used by both manuscript tracks:
 ```bash
 conda run -n uu python make_method_pipeline_figure.py
 ```
+
+## Release Gate
+
+Do not mint a Zenodo-triggering GitHub release until `python
+check_release_readiness.py` exits with code 0, both manuscript PDFs compile
+cleanly, and the checklist in
+`submission_package/final_submission_checklist.md` records the exact release
+tag and DOI. The initial archived DOI is `10.5281/zenodo.19919506`; a new
+GitHub release should only be created when the 46-page manuscript package is
+ready to be frozen as a new version.

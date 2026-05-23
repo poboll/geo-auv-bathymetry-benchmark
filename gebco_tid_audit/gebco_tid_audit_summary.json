@@ -1,0 +1,100 @@
+{
+  "rows": [
+    {
+      "scene_id": "gebco_cascadia_margin_moderate",
+      "scene_label": "GEBCO Cascadia Margin",
+      "tid_value": 10,
+      "cell_count": 601,
+      "cell_fraction": 0.004075792100694444,
+      "cell_percent": 0.4075792100694444
+    },
+    {
+      "scene_id": "gebco_cascadia_margin_moderate",
+      "scene_label": "GEBCO Cascadia Margin",
+      "tid_value": 11,
+      "cell_count": 134254,
+      "cell_fraction": 0.9104682074652778,
+      "cell_percent": 91.04682074652777
+    },
+    {
+      "scene_id": "gebco_cascadia_margin_moderate",
+      "scene_label": "GEBCO Cascadia Margin",
+      "tid_value": 40,
+      "cell_count": 8028,
+      "cell_fraction": 0.054443359375,
+      "cell_percent": 5.4443359375
+    },
+    {
+      "scene_id": "gebco_cascadia_margin_moderate",
+      "scene_label": "GEBCO Cascadia Margin",
+      "tid_value": 44,
+      "cell_count": 4573,
+      "cell_fraction": 0.031012641059027776,
+      "cell_percent": 3.1012641059027777
+    },
+    {
+      "scene_id": "gebco_monterey_canyon_complex",
+      "scene_label": "GEBCO Monterey Canyon",
+      "tid_value": 10,
+      "cell_count": 14,
+      "cell_fraction": 0.00024305555555555555,
+      "cell_percent": 0.024305555555555556
+    },
+    {
+      "scene_id": "gebco_monterey_canyon_complex",
+      "scene_label": "GEBCO Monterey Canyon",
+      "tid_value": 11,
+      "cell_count": 54993,
+      "cell_fraction": 0.9547395833333333,
+      "cell_percent": 95.47395833333333
+    },
+    {
+      "scene_id": "gebco_monterey_canyon_complex",
+      "scene_label": "GEBCO Monterey Canyon",
+      "tid_value": 40,
+      "cell_count": 1684,
+      "cell_fraction": 0.029236111111111112,
+      "cell_percent": 2.923611111111111
+    },
+    {
+      "scene_id": "gebco_monterey_canyon_complex",
+      "scene_label": "GEBCO Monterey Canyon",
+      "tid_value": 44,
+      "cell_count": 909,
+      "cell_fraction": 0.01578125,
+      "cell_percent": 1.578125
+    }
+  ],
+  "metadata": [
+    {
+      "scene_id": "gebco_cascadia_margin_moderate",
+      "scene_label": "GEBCO Cascadia Margin",
+      "tid_tif": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/gebco_tid_audit/gebco_cascadia_margin_moderate/gebco_2025_tid_n44.8_s43.2_w-126.8_e-125.2_geotiff.tif",
+      "grid_id": 2,
+      "data_source_id": 6,
+      "format_id": 2,
+      "valid_tid_cells": 147456,
+      "tid_values": {
+        "10": 601,
+        "11": 134254,
+        "40": 8028,
+        "44": 4573
+      }
+    },
+    {
+      "scene_id": "gebco_monterey_canyon_complex",
+      "scene_label": "GEBCO Monterey Canyon",
+      "tid_tif": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/gebco_tid_audit/gebco_monterey_canyon_complex/gebco_2025_tid_n36.3_s35.3_w-123.3_e-122.3_geotiff.tif",
+      "grid_id": 2,
+      "data_source_id": 6,
+      "format_id": 2,
+      "valid_tid_cells": 57600,
+      "tid_values": {
+        "10": 14,
+        "11": 54993,
+        "40": 1684,
+        "44": 909
+      }
+    }
+  ]
+}

@@ -11,7 +11,12 @@
     "initial_archived_release_commit": "625fb6a",
     "initial_archived_version_doi": "10.5281/zenodo.19919506",
     "initial_archived_record_url": "https://zenodo.org/records/19919506",
-    "note": "The concept DOI identifies the release series. The current manuscript package cites the fixed version DOI listed above."
+    "note": "The concept DOI identifies the release series. The current manuscript package cites the fixed version DOI listed above.",
+    "current_git_revision": {
+      "head_commit": "f61ec7468471dffc5f9b6b11f904f31b7d0842e1",
+      "head_short": "f61ec74",
+      "dirty_worktree_at_manifest_time": true
+    }
   },
   "source_data": [
     {
@@ -93,6 +98,48 @@
       "sha256": "c2ba97f155eca3b866d0f753ad1da2996608a77823bbac6723c3a4e2ccca6098"
     },
     {
+      "category": "benchmark_outputs",
+      "path": "run_5/figure_gap_overlap_heatmaps.png",
+      "size_bytes": 290280,
+      "sha256": "558bc584b906a36ee6cc0cff0688429fa55d36b7b23f40f868960e7cecec910a"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/figure_metric_summary.png",
+      "size_bytes": 256613,
+      "sha256": "afcc23271233c2a6c1e2df8d66df49577bdc91c0b9007aff84e7013f2596cfa3"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/figure_path_triptych_gebco_cascadia_margin_moderate.png",
+      "size_bytes": 1565200,
+      "sha256": "4a3d41b3a0d2468b3dbed6ba14d4a4d83b5f4c957c41ffd579e782ec9da2773f"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/figure_path_triptych_gebco_monterey_canyon_complex.png",
+      "size_bytes": 1791605,
+      "sha256": "74fce9e88ec6acd208b8c732716884c28ffdb43f038092fcb3faf4509861205c"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/figure_public_path_overlays.png",
+      "size_bytes": 2914365,
+      "sha256": "38b241b4e2cbde315341b3b802f851bc83c754cb9d40a2ca09428e0ed4d26d80"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/figure_scene_overview.png",
+      "size_bytes": 1906634,
+      "sha256": "76ae958b73dee66a1e0f693784a8c7fa3eda3a0c11354ad37b51995eb853c888"
+    },
+    {
+      "category": "benchmark_outputs",
+      "path": "run_5/figure_seed_stability.png",
+      "size_bytes": 1316116,
+      "sha256": "4082864f90da2538feb029360cb32665dd3a20313dfbcfc8ac52c5b157dec927"
+    },
+    {
       "category": "extension_outputs",
       "path": "survey_grade_extension_usgs_cascadia/benchmark_method_statistics.csv",
       "size_bytes": 6104,
@@ -121,6 +168,54 @@
       "path": "survey_grade_extension_usgs_cascadia/public_scene_manifest.json",
       "size_bytes": 4621,
       "sha256": "a9eb96044a0d44eef3a9528c584c7ba264b3542337f994e94ecaab5957d376ce"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/README.md",
+      "size_bytes": 1499,
+      "sha256": "6ed13d87f6776b14484033d730a9a33506adef2b7e7acb11fe4dc0a18233db6b"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/survey_grade_extension_journal.png",
+      "size_bytes": 493596,
+      "sha256": "22e44e6b9aa398642cee848e4973e8787fa9fb671cf2551f765acbbee57c226c"
+    },
+    {
+      "category": "extension_outputs",
+      "path": "survey_grade_extension_usgs_cascadia/survey_grade_extension_layouts.png",
+      "size_bytes": 461621,
+      "sha256": "22f648affce0c5c232c20abde20b79bdba4d19b4a5c5fdd2cb8d09fc4cfae94a"
+    },
+    {
+      "category": "gebco_tid_audit_outputs",
+      "path": "gebco_tid_audit/gebco_tid_audit_summary.csv",
+      "size_bytes": 846,
+      "sha256": "ca5b74ed4ca77d09e10f1ffde34079bd6d0bdf43a54f61fbdf36d789231ef98a"
+    },
+    {
+      "category": "gebco_tid_audit_outputs",
+      "path": "gebco_tid_audit/gebco_tid_audit_summary.json",
+      "size_bytes": 2966,
+      "sha256": "1899ac5d8639ae60bd43d35cb574a9f56861a5907c524f558c7310d682a43acc"
+    },
+    {
+      "category": "gebco_tid_audit_outputs",
+      "path": "gebco_tid_audit/README.md",
+      "size_bytes": 457,
+      "sha256": "4b3a2034b1345d4d4b62344262d20d5575a83773daa4f1f94c2958d922dfb504"
+    },
+    {
+      "category": "gebco_tid_audit_outputs",
+      "path": "gebco_tid_audit/gebco_cascadia_margin_moderate/basket_id.txt",
+      "size_bytes": 31,
+      "sha256": "1dfdb4e151b8e39bafb3fcee0fb47d95fe4cc52af500b5bad268c0742e315797"
+    },
+    {
+      "category": "gebco_tid_audit_outputs",
+      "path": "gebco_tid_audit/gebco_monterey_canyon_complex/basket_id.txt",
+      "size_bytes": 31,
+      "sha256": "86adc2ca1060b17e0778fb9aa313478347c3e26404e01cd7e0ba6f7c43a2096d"
     },
     {
       "category": "sensitivity_outputs",
@@ -231,6 +326,12 @@
       "sha256": "d5a4220db0ce59ce5bd42526446e52ae53d45a6915d1896bc65682aa21d2329e"
     },
     {
+      "category": "sensitivity_outputs",
+      "path": "sensitivity/penalty_weight_sensitivity.png",
+      "size_bytes": 189675,
+      "sha256": "661dc403678060691f245a66b26250709fa882c8d7977b79ca09ce6cbb77344e"
+    },
+    {
       "category": "uncertainty_outputs",
       "path": "uncertainty_replay/uncertainty_replay_raw.csv",
       "size_bytes": 673157,
@@ -247,12 +348,6 @@
       "path": "uncertainty_replay/uncertainty_replay_summary.json",
       "size_bytes": 19177,
       "sha256": "8cdb420498490736173ffd4f2a3b074dbb749bea4c64b294dfc4847e1a4a18a9"
-    },
-    {
-      "category": "uncertainty_outputs",
-      "path": "uncertainty_replay/uncertainty_replay.png",
-      "size_bytes": 206925,
-      "sha256": "1069d74717630b73c9e863374350e3d3b1600cc9ab8bbe3fce4d63a63303aea9"
     },
     {
       "category": "uncertainty_margin_outputs",
@@ -495,6 +590,12 @@
       "sha256": "aa18609ff6e3e16a6ae4ac1b7dd8508d68fb5edd86a624f7a0bd992833c78b85"
     },
     {
+      "category": "coarse_prior_replay_outputs",
+      "path": "coarse_prior_replay/coarse_prior_replay_journal.png",
+      "size_bytes": 260430,
+      "sha256": "09f94c1aa9c206f7e8609fe9df666522f0e2b1ef0e70fcf97d777c1d931acbf9"
+    },
+    {
       "category": "threshold_local_failure_outputs",
       "path": "threshold_local_failure_extension/threshold_local_failure_raw.csv",
       "size_bytes": 24595,
@@ -651,6 +752,12 @@
       "sha256": "7e2e8ecfd15e2ad5a6b17c446c7ade18ecff62de51a9ea24dfa8da3e3295d96e"
     },
     {
+      "category": "pso_baseline_outputs",
+      "path": "pso_baseline/pso_public_baseline.png",
+      "size_bytes": 185550,
+      "sha256": "543924d31fab52997a7f2662f08e0f84064d4df94c98122cb9ef11def5b1dba6"
+    },
+    {
       "category": "vehicle_aware_outputs",
       "path": "vehicle_aware_posteval/vehicle_aware_raw.csv",
       "size_bytes": 835724,
@@ -703,6 +810,12 @@
       "path": "gebco_scene_expansion/public_scene_manifest.json",
       "size_bytes": 4062,
       "sha256": "fef046c8e69f76a77fb6051e8977ae01198dba67b3d784b26eb06c6fea704cfc"
+    },
+    {
+      "category": "gebco_scene_expansion_outputs",
+      "path": "gebco_scene_expansion/gebco_scene_expansion.png",
+      "size_bytes": 346324,
+      "sha256": "9984be6efcecc92f467c04f428693d91f85573e6fb167bd1502ae1689478c418"
     },
     {
       "category": "figure_outputs",
@@ -892,9 +1005,51 @@
     },
     {
       "category": "figure_outputs",
+      "path": "manuscript/latex/pic/method_pipeline.png",
+      "size_bytes": 246032,
+      "sha256": "1979a97f96eefc1806694a2acf271b49715b4399df56bdf0d9df685c4261477e"
+    },
+    {
+      "category": "figure_outputs",
       "path": "manuscript/latex/pic/method_pipeline.tex",
       "size_bytes": 3212,
       "sha256": "6639a7326aec2cb21ee0d9cb1df51e8d57ef2a07bee5edbeb7667576b76bf3ec"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/method_pipeline_preview.png",
+      "size_bytes": 15348,
+      "sha256": "f0aa1b44b03369a3cc85209625d31de0d845fc88840ea6af92cb4f2d21b3782c"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/real_metrics.png",
+      "size_bytes": 208844,
+      "sha256": "f181d1c4b7433cca8c6a5e84bf6300a30eb7cc10c6b518f96b96393ad757fd3f"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/real_path_cascadia.png",
+      "size_bytes": 1352663,
+      "sha256": "f8405c5d92838162730493a9f2275e0ed98b8c627f06fab2ebd4eb792d8f5c62"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/real_path_monterey.png",
+      "size_bytes": 1539554,
+      "sha256": "d3171b13d9d3ce08e7c0997090a3621434dc8a9fe329a7577335dcc1a95d6808"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/real_path_outputs.png",
+      "size_bytes": 2522783,
+      "sha256": "a74e045ec05a1b12c626cb258f70b03fd2ca662a1b5eeaceea2bcd41108c5ccc"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/latex/pic/real_terrain_benchmarks.png",
+      "size_bytes": 1582977,
+      "sha256": "00899406eced998c0391803961d9e1558875c73958c52930b642944ddaff1fb9"
     },
     {
       "category": "figure_outputs",
@@ -1084,63 +1239,219 @@
     },
     {
       "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/method_pipeline.png",
+      "size_bytes": 246032,
+      "sha256": "1979a97f96eefc1806694a2acf271b49715b4399df56bdf0d9df685c4261477e"
+    },
+    {
+      "category": "figure_outputs",
       "path": "manuscript/mdpi_jmse/pic/method_pipeline.tex",
       "size_bytes": 3212,
       "sha256": "6639a7326aec2cb21ee0d9cb1df51e8d57ef2a07bee5edbeb7667576b76bf3ec"
     },
     {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/real_metrics.png",
+      "size_bytes": 208844,
+      "sha256": "f181d1c4b7433cca8c6a5e84bf6300a30eb7cc10c6b518f96b96393ad757fd3f"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/real_path_cascadia.png",
+      "size_bytes": 1352663,
+      "sha256": "f8405c5d92838162730493a9f2275e0ed98b8c627f06fab2ebd4eb792d8f5c62"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/real_path_monterey.png",
+      "size_bytes": 1539554,
+      "sha256": "d3171b13d9d3ce08e7c0997090a3621434dc8a9fe329a7577335dcc1a95d6808"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/real_path_outputs.png",
+      "size_bytes": 2522783,
+      "sha256": "a74e045ec05a1b12c626cb258f70b03fd2ca662a1b5eeaceea2bcd41108c5ccc"
+    },
+    {
+      "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/real_terrain_benchmarks.png",
+      "size_bytes": 1582977,
+      "sha256": "00899406eced998c0391803961d9e1558875c73958c52930b642944ddaff1fb9"
+    },
+    {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 178861,
-      "sha256": "cae7583a669124b2bf338f8ca13a2e1cb6afbbb1b922b13367934524a80355aa"
+      "size_bytes": 178873,
+      "sha256": "7ff330e0b25f200c1caf05a6a7b61f113711201987312a39362824c249a555de"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 7450636,
-      "sha256": "0db4597534bf263915d0350bdd2dbacd69e0b53e543f40144a1103f849528188"
+      "size_bytes": 7454382,
+      "sha256": "488c764db5b8a8b5a68a45e1a4d64300a70b78b3518abdcae25a2bf707e0c897"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 178861,
-      "sha256": "cae7583a669124b2bf338f8ca13a2e1cb6afbbb1b922b13367934524a80355aa"
+      "size_bytes": 178873,
+      "sha256": "7ff330e0b25f200c1caf05a6a7b61f113711201987312a39362824c249a555de"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 7450869,
-      "sha256": "8e6319d0f93a1b8d84fe1165696f2a81b462d5fc018f8b2a727f9d77a9a9c21a"
+      "size_bytes": 7454616,
+      "sha256": "56c6fe586c9c4f68872f03c76a2b3f7eb2d765ce658126576c30d38bdeb527ed"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 7450636,
-      "sha256": "0db4597534bf263915d0350bdd2dbacd69e0b53e543f40144a1103f849528188"
+      "size_bytes": 7454616,
+      "sha256": "56c6fe586c9c4f68872f03c76a2b3f7eb2d765ce658126576c30d38bdeb527ed"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 7450636,
-      "sha256": "0db4597534bf263915d0350bdd2dbacd69e0b53e543f40144a1103f849528188"
+      "size_bytes": 7454616,
+      "sha256": "56c6fe586c9c4f68872f03c76a2b3f7eb2d765ce658126576c30d38bdeb527ed"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 7450869,
-      "sha256": "8e6319d0f93a1b8d84fe1165696f2a81b462d5fc018f8b2a727f9d77a9a9c21a"
+      "size_bytes": 7454616,
+      "sha256": "56c6fe586c9c4f68872f03c76a2b3f7eb2d765ce658126576c30d38bdeb527ed"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/journalnames.tex",
+      "size_bytes": 120406,
+      "sha256": "95306941a7ea59dc2654c0c3b811fc566de839a388e4da50677f4b752cbcfa31"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/logo-mdpi.eps",
+      "size_bytes": 563678,
+      "sha256": "f02d31469c6b2666c9de2da8d8731773bce3751d2fa99a27ff4bcf61a106cdcf"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/logo-orcid.pdf",
+      "size_bytes": 12671,
+      "sha256": "0558a0097dc4d1ffe3f4a1b3c9b4b98c6e568eac7d7439d447ca56ed1a8ec759"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/logo-updates.eps",
+      "size_bytes": 287998,
+      "sha256": "71ad8b00bcca718b62f3286af02ea56678e8199b5843d7ed4fdc86bd969c2809"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/mdpi.bst",
+      "size_bytes": 23683,
+      "sha256": "3b747eee144173c46a43562ead905c26322c7cb394e350a925d36dcf63884680"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/mdpi.cls",
+      "size_bytes": 62350,
+      "sha256": "7d0a8739d09f357ea690c5269fe68d75fa9854883356d1972e00c6716c429d59"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/mdpi_apacite.bst",
+      "size_bytes": 138426,
+      "sha256": "c7fffe0231922e5521dc360889fafe941ee26d154c1ce4e167e4ec9f2d13498f"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/mdpi_apacite.sty",
+      "size_bytes": 71315,
+      "sha256": "9e9bb23ded45f7f76236ad304d4bda2c066fb48041b272cebc20f940c17865a7"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Definitions/mdpi_chicago.bst",
+      "size_bytes": 37920,
+      "sha256": "4a73faf6e0cf1a225d1b9a41a6955d3cc29a55c5fdce662177d00eee3946ce36"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/journalnames.tex",
+      "size_bytes": 120406,
+      "sha256": "95306941a7ea59dc2654c0c3b811fc566de839a388e4da50677f4b752cbcfa31"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/logo-mdpi.eps",
+      "size_bytes": 563678,
+      "sha256": "f02d31469c6b2666c9de2da8d8731773bce3751d2fa99a27ff4bcf61a106cdcf"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/logo-orcid.pdf",
+      "size_bytes": 12671,
+      "sha256": "0558a0097dc4d1ffe3f4a1b3c9b4b98c6e568eac7d7439d447ca56ed1a8ec759"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/logo-updates.eps",
+      "size_bytes": 287998,
+      "sha256": "71ad8b00bcca718b62f3286af02ea56678e8199b5843d7ed4fdc86bd969c2809"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/mdpi.bst",
+      "size_bytes": 23683,
+      "sha256": "3b747eee144173c46a43562ead905c26322c7cb394e350a925d36dcf63884680"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/mdpi.cls",
+      "size_bytes": 62350,
+      "sha256": "7d0a8739d09f357ea690c5269fe68d75fa9854883356d1972e00c6716c429d59"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/mdpi_apacite.bst",
+      "size_bytes": 138426,
+      "sha256": "c7fffe0231922e5521dc360889fafe941ee26d154c1ce4e167e4ec9f2d13498f"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/mdpi_apacite.sty",
+      "size_bytes": 71315,
+      "sha256": "9e9bb23ded45f7f76236ad304d4bda2c066fb48041b272cebc20f940c17865a7"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/mdpi_jmse/Definitions/mdpi_chicago.bst",
+      "size_bytes": 37920,
+      "sha256": "4a73faf6e0cf1a225d1b9a41a6955d3cc29a55c5fdce662177d00eee3946ce36"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Fig/LOGO.png",
+      "size_bytes": 23870,
+      "sha256": "e30f1448d4a311aa21d8d4411da04d25ecc770882100420c43a65c1e6da0d2b8"
+    },
+    {
+      "category": "manuscripts",
+      "path": "manuscript/latex/Fig/ORCID.png",
+      "size_bytes": 47200,
+      "sha256": "8cd74b61b7060a532cfebf7a926a3a00d132a207acd7ce373db5efa6644f3c90"
     },
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 4924,
-      "sha256": "ff3160664a78b444be05305d960115eaea8e973d84ecca4261aa378d854b24d1"
+      "size_bytes": 5057,
+      "sha256": "2f7e62a9bae169a548f77da21fc3ed946840dde32537c83a089618279e412f1a"
     },
     {
       "category": "release_metadata",
       "path": "README_submission.md",
-      "size_bytes": 2708,
-      "sha256": "1f91d37b12c5398815dcadfb4e5dce440e703690b119e5d3cd084f81ebec95d4"
+      "size_bytes": 3900,
+      "sha256": "c7deac7391072a3f3980a7e4e30f025d8890bf5fadab249f053568a2bdd75816"
     },
     {
       "category": "release_metadata",
@@ -1173,6 +1484,12 @@
       "sha256": "0bd7f7cc66f401f86ec18d7658aeb5fc40a6313f22cf392ea36beab933f7417b"
     },
     {
+      "category": "release_metadata",
+      "path": "check_release_readiness.py",
+      "size_bytes": 3372,
+      "sha256": "a0b9976624f5ecb1de455aa6fdd29b5424d007deee4f01229b1ebba309555e75"
+    },
+    {
       "category": "submission_package",
       "path": "submission_package/JMSE_cover_letter_draft.md",
       "size_bytes": 4181,
@@ -1181,8 +1498,8 @@
     {
       "category": "submission_package",
       "path": "submission_package/final_submission_checklist.md",
-      "size_bytes": 7758,
-      "sha256": "0c9a79b59f755b28b495ab44c267f65655b718cd54946e8de82df0bc46a335fe"
+      "size_bytes": 9814,
+      "sha256": "02bb6205e0fa7ee8bd725da9bb26860da2fc1c19bb54c2c0624fb8eb419363b8"
     },
     {
       "category": "submission_package",
@@ -1198,129 +1515,15 @@
     },
     {
       "category": "audit_trail",
-      "path": "audit/CLAIM_CONSISTENCY_AUDIT_20260512.md",
-      "size_bytes": 863,
-      "sha256": "e017dbd13418d865e69c4b97f5e0f03d78cadaaa3fa554d8c890ee3c18cf455f"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/CRITICAL_EFFECT_AND_NEXT_STRENGTHENING_PLAN_20260511.md",
-      "size_bytes": 7602,
-      "sha256": "5c3359aee79fd51867ec20a3f9399a43e8e056fd99635d20766f7360a355285d"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/CURRENT_AWARE_MARGIN_NEGATIVE_CHECK_20260512.md",
-      "size_bytes": 4303,
-      "sha256": "dadebaa9ff0a584a7de5f07f9c2ec865ea17abfbb3e69bd0a9e9b2f445c4ae1c"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/CURRENT_DRIFT_COMMON_RANDOM_FIX_20260512.md",
-      "size_bytes": 2174,
-      "sha256": "a6e3ae51d84c4a682b8090eaf1f23b51afd6b85ccbfa1f7075ad7bd2bf71fac5"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/CURRENT_DRIFT_REPLAY_AND_MANUSCRIPT_PUSH_20260511.md",
-      "size_bytes": 4331,
-      "sha256": "c5c637cedb32306cae6a2da2e70111aa640b6827dd07c5fb756ebace4c30fe46"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/CURRENT_RESULT_VERDICT_AND_NEXT_PUSH_20260511.md",
-      "size_bytes": 6692,
-      "sha256": "4a80a046fa54bbb4c6252cc8afce9cbd412eb65dd4eb829c8bcc434f5665bd71"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/CURRENT_STATUS_AND_Q1_PUSH_20260511.md",
-      "size_bytes": 5594,
-      "sha256": "05623be2e3baadc0811a2bbd33d7ce1b90d272314b989173b47d4a0d362378f6"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/DATASET_SUFFICIENCY_AND_FRONTIER_GAP_20260511.md",
-      "size_bytes": 6288,
-      "sha256": "c21f0f2256542674130d2f9a32d45d5fdf9439ef7e799dae5a1d0a1e79110371"
-    },
-    {
-      "category": "audit_trail",
       "path": "audit/DEEP_LITERATURE_POSITIONING_20260426.md",
       "size_bytes": 5238,
       "sha256": "cd8ab3ce903f804b7d690fd8999074e843e393a56e0c2bf7115ca3819ce2f4c9"
     },
     {
       "category": "audit_trail",
-      "path": "audit/EXECUTION_RISK_REFINEMENT_20260512.md",
-      "size_bytes": 3086,
-      "sha256": "40ffb5163ff99f6e8f2050d431420d18e96b87ef67fd3dc4f9d6464aec0727ee"
-    },
-    {
-      "category": "audit_trail",
       "path": "audit/GEBCO_DATA_BOUNDARY_AUDIT_20260426.md",
       "size_bytes": 2981,
       "sha256": "65e0dd8d35ff79f71624eea55378bad792bb8425334e832e4d0c34f60f73c44a"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/GLOBAL_VIEW_MAJOR_REVISION_20260511.md",
-      "size_bytes": 8039,
-      "sha256": "1cc8f7f32b7e74c8d07f42d0393927a63d4ed0d039dc53925cfcb7998f8caca7"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/Geo修改请按点核对.md",
-      "size_bytes": 87601,
-      "sha256": "dd0477018bd126f2cfa7ef0e17517d2e13d931ecd3219cba12ffca8bb9275948"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/HARD_EVIDENCE_EXTENSION_20260514.md",
-      "size_bytes": 5297,
-      "sha256": "53b3363a81637d4337b181e80b539d7a0126b6797f42a5b3a7a491c306f0fd5d"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/HEATMAP_STYLE_AND_Q2_READINESS_20260513.md",
-      "size_bytes": 7007,
-      "sha256": "78f16cf433b84c3d5e69da577d2ebbc5e55c3f0ba93c273bafd81d7185638d71"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/ITERATION_STATUS_20260512_COMMON_RANDOM_AND_QA.md",
-      "size_bytes": 5772,
-      "sha256": "68d8f921f107c651aea4566c0e15db664ad6151b899e166394c16ecdfdcec367"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/JOURNAL_TARGET_AND_REVIEWER_ASSESSMENT_20260512.md",
-      "size_bytes": 6636,
-      "sha256": "4a5864746628fbb816cb7ea8c8ef5df5cdcb7cddb470d17b4bc3c1d4f0661da3"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/MAJOR_REVISION_REVIEWER_ITERATION_20260511.md",
-      "size_bytes": 7344,
-      "sha256": "6158fe00e79f4b6407d7259df168f4dbb9d5b5a43205e9c74e5e509a42e5d465"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/NEXT_SERVER_EXPERIMENT_PLAN_20260511.md",
-      "size_bytes": 5093,
-      "sha256": "a2174d8d47ccc4d7c0aaabc3dbfa11e9214140779782c9e6dc2733ea1ed20378"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/READINESS_AND_OPTIMIZATION_PLAN_20260511.md",
-      "size_bytes": 5587,
-      "sha256": "680022504246df8f04f3a30aae865d940d33fbc081c8c1a159a3b48c31b32874"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/RESULT_ASSESSMENT_VISUAL_REVISION_AND_NEXT_PUSH_20260511.md",
-      "size_bytes": 7146,
-      "sha256": "cbc28b79d92de0294a5b702e2a2a9b1e7ac10b1cc59188eeb36c6d197128d8ea"
     },
     {
       "category": "audit_trail",
@@ -1336,36 +1539,6 @@
     },
     {
       "category": "audit_trail",
-      "path": "audit/SEGMENTED_HEADING_RESULTS_20260511.md",
-      "size_bytes": 2636,
-      "sha256": "bbfa09d1c612fa67cd675e46a73398dd21a024435b7612f18800e2547941813f"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/SEGMENTED_TRANSITION_AWARE_RESULTS_20260511.md",
-      "size_bytes": 3808,
-      "sha256": "91fc5adbe6dcd15c72b5b721ed12edb66ec3146c2389928500da7d0e87ef50ef"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/SERVER_RESULTS_AND_MAJOR_REVISION_20260511.md",
-      "size_bytes": 13335,
-      "sha256": "1f562f31f192b57e4a7db1650ab0370eaca787c9991646685d91c2909de228dd"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/STATUS_AND_NEXT_EXPERIMENTS_20260511.md",
-      "size_bytes": 12556,
-      "sha256": "c6779ba4f192b5443efbc980075263950de91bc1f4f88e9cc09d512728eb6f13"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/STRUCTURED_PRIOR_ERROR_AND_SCI_POSITIONING_20260511.md",
-      "size_bytes": 5489,
-      "sha256": "b9163b2347bf27616902c41db3e54642a3db78bfa95cf7d1dc7f52db197276ea"
-    },
-    {
-      "category": "audit_trail",
       "path": "audit/SURVEY_GRADE_EXTENSION_20260427.md",
       "size_bytes": 5989,
       "sha256": "dff4856bad89aebc785cd2fcf4db989466f0108297dc1f6acf7938308890f64c"
@@ -1375,36 +1548,6 @@
       "path": "audit/SURVEY_GRADE_PILOT_20260427.md",
       "size_bytes": 5541,
       "sha256": "70fff4f9246717c02b3b1d3ec955c2ff0abe96b72c9c0bc397be3c1153da4c8d"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/TEACHER_MAJOR_REVISION_RESPONSE_20260514.md",
-      "size_bytes": 9487,
-      "sha256": "f5b2717bad88dc29541f5a0b4e4739718dc54387a4e1e2610717c98d573aa161"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/VISUAL_LAYOUT_AND_MAJOR_REVISION_QA_20260512.md",
-      "size_bytes": 3582,
-      "sha256": "736e062de139c3ec4ca01776c70790a1d41f47e2396908fa14aa787d4367a5ee"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/VISUAL_LAYOUT_AND_MAJOR_REVISION_QA_20260512_PASS2.md",
-      "size_bytes": 1586,
-      "sha256": "b4d0297b55d8018ebb4729ac0248d88a80b404aec0489719df02b5046f957819"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/VISUAL_LAYOUT_AND_MAJOR_REVISION_QA_20260512_PASS3.md",
-      "size_bytes": 4840,
-      "sha256": "374ae96bd1a7a3d2f3e306325149cf739a75522c13ba8bf9a592c7c265895d36"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/VISUAL_LAYOUT_AND_MAJOR_REVISION_QA_20260512_PASS4.md",
-      "size_bytes": 1866,
-      "sha256": "0c404b3c6953436435863c2d475c6f83a7c58c57dc616736e45e9fd9b5895b0f"
     },
     {
       "category": "audit_trail",
@@ -1423,18 +1566,6 @@
       "path": "audit/literature_verification_notes.md",
       "size_bytes": 4612,
       "sha256": "c5e56eaa569dfc7cb5e7cfe4036a5ca4875c91bc7d94cd161e2dc73df3358d60"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/reference_verification_20260514_v1.md",
-      "size_bytes": 5922,
-      "sha256": "66f4c287b45dd9518883bfdcc3dd6d1097b7197003af7c14014e21784a662930"
-    },
-    {
-      "category": "audit_trail",
-      "path": "audit/reference_verification_20260514_v2.md",
-      "size_bytes": 6016,
-      "sha256": "85796edfa30773a207659f8a307d5230c8db35d20c7aa9a67ce1d12c4116d14e"
     },
     {
       "category": "audit_trail",
@@ -1609,6 +1740,30 @@
       "path": "make_ga_surrogate_audit.py",
       "size_bytes": 13911,
       "sha256": "9d572e1a38c16015481e7ec78771e694ee35fcb06e98ce555185eb2061508eb2"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_claim_consistency_audit.py",
+      "size_bytes": 6343,
+      "sha256": "fa29a7962cf97e9eea300061506190bd3056e19c391b5c288ef8670be8cddfa5"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_sensitivity_evidence_figures.py",
+      "size_bytes": 11707,
+      "sha256": "5727d07e3869fd158482151ee99dccd4a5c2b9e8305a2a20ffc43b9ab1e60d9e"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "journal_heatmap_style.py",
+      "size_bytes": 4181,
+      "sha256": "fcd492c3aeb610df614de1f01ff699d8e1fb437aa39f134914e27ac0cedc302e"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "refresh_visuals_from_existing_outputs.py",
+      "size_bytes": 2767,
+      "sha256": "8c1f81885ee2bebd139bc3438988fc52b828fd61c7396d636e8fcd75a97bdd14"
     }
   ]
 }

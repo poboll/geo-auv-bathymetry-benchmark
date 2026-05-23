@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 
 
@@ -12,14 +13,24 @@ PATTERNS = {
     "benchmark_outputs": [
         "run_5/*.csv",
         "run_5/*.json",
+        "run_5/*.png",
     ],
     "extension_outputs": [
         "survey_grade_extension_usgs_cascadia/*.csv",
         "survey_grade_extension_usgs_cascadia/*.json",
+        "survey_grade_extension_usgs_cascadia/*.md",
+        "survey_grade_extension_usgs_cascadia/*.png",
+    ],
+    "gebco_tid_audit_outputs": [
+        "gebco_tid_audit/*.csv",
+        "gebco_tid_audit/*.json",
+        "gebco_tid_audit/*.md",
+        "gebco_tid_audit/*/basket_id.txt",
     ],
     "sensitivity_outputs": [
         "sensitivity/*.csv",
         "sensitivity/*.json",
+        "sensitivity/*.png",
     ],
     "uncertainty_outputs": [
         "uncertainty_replay/*.csv",
@@ -66,6 +77,7 @@ PATTERNS = {
         "coarse_prior_replay/*.csv",
         "coarse_prior_replay/*.json",
         "coarse_prior_replay/*.md",
+        "coarse_prior_replay/*.png",
     ],
     "threshold_local_failure_outputs": [
         "threshold_local_failure_extension/*.csv",
@@ -99,6 +111,7 @@ PATTERNS = {
     "pso_baseline_outputs": [
         "pso_baseline/*.csv",
         "pso_baseline/*.json",
+        "pso_baseline/*.png",
     ],
     "vehicle_aware_outputs": [
         "vehicle_aware_posteval/*.csv",
@@ -109,6 +122,7 @@ PATTERNS = {
     "gebco_scene_expansion_outputs": [
         "gebco_scene_expansion/*.csv",
         "gebco_scene_expansion/*.json",
+        "gebco_scene_expansion/*.png",
     ],
     "figure_outputs": [
         "latex/pic/journal_*.png",
@@ -116,10 +130,15 @@ PATTERNS = {
         "latex/pic/method_pipeline.tex",
         "manuscript/latex/pic/journal_*.png",
         "manuscript/latex/pic/method_pipeline.pdf",
+        "manuscript/latex/pic/method_pipeline.png",
         "manuscript/latex/pic/method_pipeline.tex",
+        "manuscript/latex/pic/method_pipeline_preview.png",
+        "manuscript/latex/pic/real_*.png",
         "manuscript/mdpi_jmse/pic/journal_*.png",
         "manuscript/mdpi_jmse/pic/method_pipeline.pdf",
+        "manuscript/mdpi_jmse/pic/method_pipeline.png",
         "manuscript/mdpi_jmse/pic/method_pipeline.tex",
+        "manuscript/mdpi_jmse/pic/real_*.png",
     ],
     "manuscripts": [
         "latex/template.tex",
@@ -133,6 +152,10 @@ PATTERNS = {
         "paper_refined.pdf",
         "geo_public_bathy_rebuild.pdf",
         "mdpi_jmse_jmse_submission_draft.pdf",
+        "manuscript/latex/Definitions/*",
+        "manuscript/mdpi_jmse/Definitions/*",
+        "manuscript/latex/Fig/*",
+        "manuscript/mdpi_jmse/Fig/*",
     ],
     "release_metadata": [
         "README.md",
@@ -142,6 +165,7 @@ PATTERNS = {
         ".zenodo.json",
         "environment.yml",
         ".gitignore",
+        "check_release_readiness.py",
     ],
     "submission_package": [
         "submission_package/*.md",
@@ -187,8 +211,53 @@ PATTERNS = {
         "make_heading_resolution_diagnostic.py",
         "make_public_window_statistics.py",
         "make_ga_surrogate_audit.py",
+        "make_claim_consistency_audit.py",
+        "make_sensitivity_evidence_figures.py",
+        "journal_heatmap_style.py",
+        "refresh_visuals_from_existing_outputs.py",
     ],
 }
+
+
+def git_tracked_paths() -> set[Path]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            capture_output=True,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return set()
+    return {ROOT / line for line in result.stdout.splitlines() if line}
+
+
+def git_revision() -> dict[str, str | bool]:
+    payload: dict[str, str | bool] = {}
+    try:
+        head = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            capture_output=True,
+        ).stdout.strip()
+        payload["head_commit"] = head
+        payload["head_short"] = head[:7]
+        dirty = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=ROOT,
+            check=True,
+            text=True,
+            capture_output=True,
+        ).stdout.strip()
+        payload["dirty_worktree_at_manifest_time"] = bool(dirty)
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        payload["head_commit"] = "unknown"
+        payload["head_short"] = "unknown"
+        payload["dirty_worktree_at_manifest_time"] = True
+    return payload
 
 
 def sha256(path: Path) -> str:
@@ -202,10 +271,11 @@ def sha256(path: Path) -> str:
 def main() -> None:
     entries: list[dict[str, object]] = []
     seen: set[Path] = set()
+    tracked = git_tracked_paths()
     for category, patterns in PATTERNS.items():
         for pattern in patterns:
             for path in sorted(ROOT.glob(pattern)):
-                if path.is_file() and path not in seen:
+                if path.is_file() and path not in seen and (not tracked or path in tracked):
                     seen.add(path)
                     entries.append(
                         {
@@ -236,6 +306,7 @@ def main() -> None:
                 "The concept DOI identifies the release series. The current manuscript "
                 "package cites the fixed version DOI listed above."
             ),
+            "current_git_revision": git_revision(),
         },
         "source_data": [
             {

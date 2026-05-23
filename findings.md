@@ -165,3 +165,11 @@
 - surrogate audit 结果支持当前实现：三类场景 Spearman 均 >= 0.934，Kendall tau 均 >= 0.804，stride-selected best candidate 的 full-grid regret 最大只有 0.0610%。这说明 stride-3 fitness 在本地微调云中可作为筛选加速，但正文仍必须保留 full-grid final rescoring 与 GA gate 作为 safeguards。
 - 新增 Table 14 后 PDF 从 45 页变为 46 页，这是新增证据表造成的正常页数增加，不是异常空白页。第 28 页表格未越界、未遮挡。
 - 引用审计本轮自动失败 4 条，但均是站点访问策略/SSL 网络问题，不是新增引用或 DOI 假条目。本轮未修改 bibliography，因此 v20 的人工核验结论仍可沿用，并在最终汇报中说明自动 DOI resolver 的局限。
+
+## 2026-05-23 release-readiness 发现
+
+- 目前 GitHub release 只有 `v0.1.0`，而当前稿件已推进到 v21/v22 的 46 页版本；如果要让 Zenodo DOI 对应当前稿，必须新建 GitHub release 后等待 Zenodo 自动生成新版本 DOI。
+- 直接 release 当前 HEAD 仍有风险：旧 manifest 的 264 entries 中只有 142 个已经被 Git 跟踪，122 个属于本地未跟踪 artifact。若不处理，Zenodo 归档包会缺少正文 Data Availability 声明的部分诊断证据。
+- `manuscript/latex/Definitions/` 是工作稿独立编译所需的 MDPI class/template 文件，但此前是未跟踪目录；新 release 若要求两套 LaTeX 均可编译，应把该目录纳入 Git。
+- GEBCO TID 审计应以 audit summary、basket id 和检索元数据为主；不宜在 Data Availability 中强调“维护下载的 TID GeoTIFF subsets”，因为 raw/source public products 应通过官方 GEBCO DOI/服务重新获取。
+- 新增 `check_release_readiness.py` 后，投稿包具备了一个可重复的 release gate：required PDFs/source files、evidence directories、manifest-vs-Git 一次性检查，适合在 mint Zenodo DOI 前运行。

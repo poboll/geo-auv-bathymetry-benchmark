@@ -91,6 +91,7 @@ Status date: 2026-05-22
 - [x] DOI `10.5281/zenodo.19919506` was checked through DOI.org and resolves to Zenodo record `19919506`.
 - [x] Reproducibility manifest generated for current workspace: 257 entries.
 - [x] README, `README_submission.md`, `CITATION.cff`, `.zenodo.json`, Data Availability, and cover letter use the current fixed-line MBES manuscript title/framing.
+- [x] Release-readiness gate added as `check_release_readiness.py`; run it before creating any Zenodo-triggering GitHub release.
 - [x] GEBCO TID URL updated to the current official GEBCO TID page.
 - [x] Four bibliography entries using `et al.` were expanded or corrected.
 - [x] Automatic reference audit reports 42 references and 0 `et al.` entries; the only automated DOI failure is `xie2024three`, caused by HTTP 403 on DOI resolution, and the MDPI article page confirms the title, authors, journal, year, volume/issue, article number, and DOI.
@@ -100,6 +101,7 @@ Status date: 2026-05-22
 - [ ] Create a final GitHub release only after the manuscript is frozen.
 - [ ] Confirm Zenodo has minted the final release DOI after the GitHub release.
 - [x] Add fixed version DOI wording to Data Availability without conditional future-release placeholder text.
+- [ ] After a final release is minted, replace the current initial version DOI with the new fixed Zenodo version DOI in Data Availability, `README.md`, `README_submission.md`, `CITATION.cff`, `.zenodo.json`, and this checklist.
 - [ ] Re-download the final PDF from the MDPI submission system after upload and inspect page 1, figure pages, references, and Data Availability.
 - [ ] Decide whether to include the cover letter text directly or adapt it to the MDPI submission form.
 - [ ] Human corresponding author should do one last title-page/funding/author-email check before upload.
@@ -112,3 +114,10 @@ Status date: 2026-05-22
 - [x] Manifest updated to 264 entries and includes `ga_surrogate_audit/` plus `make_ga_surrogate_audit.py`.
 - [x] MDPI and working PDFs compiled to 46 pages with logs `compile_after_surrogate_fig1_v21_20260522_pass2.log`; strict scan found no LaTeX hard errors, undefined references/citations, overfull boxes, float-too-large warnings, fatal errors, or rerun warnings.
 - [x] Latest delivery PDFs refreshed at repository root.
+
+## 2026-05-23 Release-Readiness Addendum
+
+- [x] Data Availability wording changed from redistributing downloaded GEBCO TID GeoTIFF subsets to reporting GEBCO TID audit CSV/JSON, TID basket identifiers, and retrieval metadata; raw GEBCO and USGS source products remain cited through official DOI landing pages.
+- [x] `make_reproducibility_manifest.py` now filters manifest entries to Git-tracked files and records the current Git revision, reducing the risk that a GitHub/Zenodo release cites local-only evidence.
+- [x] `check_release_readiness.py` added as a release gate for required PDFs, source files, evidence directories, and manifest/Git consistency.
+- [ ] Run `python check_release_readiness.py` after staging the final evidence files and before creating a new GitHub release.

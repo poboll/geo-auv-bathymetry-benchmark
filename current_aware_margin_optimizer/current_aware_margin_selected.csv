@@ -1,0 +1,4 @@
+scene_id,scene_name,selected_target_overlap,selected_quantile,selected_used_ga_cleanup,selected_selection_score,selected_base_coverage_pct,selected_base_excess_overlap_pct,selected_orientation_deg,selected_line_count,selected_path_length_km,selected_coverage_pct,selected_excess_overlap_pct
+gebco_cascadia_margin_moderate,GEBCO Cascadia Margin,0.15,0.18,1,2.6259643044128853,99.33333333333333,0.0,0.0,116,15038.223860078393,99.33333333333333,0.0
+gebco_monterey_canyon_complex,GEBCO Monterey Canyon,0.1,0.18,0,0.0,100.0,0.0,75.0,72,6318.997663461488,100.0,0.0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,0.1,0.3,1,40.63611111111118,98.92222222222222,1.9322185976332977,135.0,12,72.11489383660428,98.82777777777778,1.4173866266534898
