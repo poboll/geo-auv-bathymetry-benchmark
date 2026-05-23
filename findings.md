@@ -234,3 +234,15 @@
 - Figure 17 页面仍有一些下方正文排版留白，但源图本身已铺满正文宽度，热图没有右侧残留空白；该留白来自 caption 和后续段落在 MDPI 双约束浮动中的排版，不属于图像生成缺陷。
 - v27b 最终验证状态：两套 LaTeX 均为 49 pages；严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large 或 rerun；引用审计 45 references / 0 failed / 0 et_al；manifest 297 entries；release gate 四项阻断为 0。
 - Claim boundary 保持稳定：所有新增/重绘图都只支持 public-grid numerical planning benchmark，不支持写成真实海试、mission logs、raw MBES validation、hydrographic QA 或 navigation-safety readiness。
+
+## 2026-05-23 v28 外部启发式基线审计发现
+
+- 老师关于“只和自己定义的方法族比较”的质疑成立，因此 v28 新增了三类 external-style deterministic fixed-width heuristics，而不是继续只扩展 Adaptive/Hybrid 家族内部 ablation。
+- 三类外部启发式的解释边界是“公平、可复现、同一 evaluator 下的 survey-layout heuristic audit”，不是完整复现某篇 USV/AUV field-trial planner；这样可以正面回答外部基线不足，同时不引入无法验证的工程执行 claim。
+- 9 个 public-grid windows 的结果显示：Min-span boustrophedon 和 contour-parallel fixed-width 均为 6/9 feasible，geometry-shortest fixed-width 为 8/9 feasible；Adaptive Spacing 和 Hybrid seed-0 均为 9/9 feasible。
+- USGS High 是本轮最有价值的边界证据：外部固定宽度启发式在默认 \(C97/O3\) 下均失败，而 terrain-aware spacing methods 通过。这比单纯强调 GEBCO 主场景 0.75% 左右的路径收益更能说明本文的 practical value 在 overlap-stressed regimes。
+- 外部 baseline audit 也支持继续降调 GA：Hybrid seed-0 通过 9/9，但正文应把主因写成 terrain-aware spacing / adaptive layout regularization；GA 仍是 optional local refinement，不是主创新。
+- 新 Table 16 在 PDF 第 30 页可读且未截断，说明将外部 baseline 以表格方式加入主文比再堆一张大热图更稳。`journal_external_layout_baseline_audit.png` 已保留为 evidence figure/artifact，但主文重点仍是表格和文字解释。
+- 本轮使稿件从“内部方法族对比”进一步增强为“内部 ablation + public-window statistics + footprint validity + external heuristic audit”的证据堆栈；这对 JMSE 大修/审稿防御有明显帮助。
+- Claim boundary 未变化：v28 仍然只证明 public-grid numerical planning benchmark 下的 fixed-line layout behavior，不证明 raw MBES product quality、field/lake/sea trial performance、hydrographic QA 或 navigation safety。
+- 收尾验证状态：两套 LaTeX 均为 50 pages；严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large 或 rerun；引用审计 45 references / 0 failed / 0 et_al；manifest 313 entries；release gate 四项阻断为 0。

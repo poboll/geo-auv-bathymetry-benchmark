@@ -1,5 +1,40 @@
 # 对JMSE目标稿的严格评审与大修方案
 
+# 2026-05-23 Codex v28 外部启发式基线审计按点核对执行记录
+
+【x】按老师“对照基线不能只在自家家族里打转”的意见，补外部启发式测线布局审计。
+文件/命令/证据：
+- 新脚本：`make_external_layout_baseline_audit.py`
+- 新证据目录：`external_layout_baseline_audit/`
+- 输出文件：`external_layout_baseline_raw.csv`、`external_layout_baseline_summary.csv`、`external_layout_baseline_summary.json`、`README.md`、`journal_external_layout_baseline_audit.png`
+- 同步图源：`manuscript/latex/pic/journal_external_layout_baseline_audit.png`、`manuscript/mdpi_jmse/pic/journal_external_layout_baseline_audit.png`
+- 命令：`python3 -m py_compile make_external_layout_baseline_audit.py`；`conda run -n uu python make_external_layout_baseline_audit.py`
+- 输出规模：`raw_rows=54`、`summary_rows=6`
+- 核心结果：Min-span / Contour / Geometry-shortest 的 C97/O3 feasible windows 分别为 6/9、6/9、8/9；Adaptive 与 Hybrid seed-0 均为 9/9。USGS high-complexity crop 上三类外部 fixed-width heuristic 均未过默认 gate，支持“terrain-aware spacing 是 overlap-stressed public window 的关键层”，但不包装成全 CPP SOTA 复现。
+
+【x】两套主稿已回写新审计，并完成 PDF 级 QA。
+文件/命令/证据：
+- 修改：`manuscript/mdpi_jmse/template.tex`、`manuscript/latex/template.tex`
+- 回写位置：Methods comparator 段；Evidence map；Results 新增 `External Survey-layout Heuristic Audit` 小节与 `Table~\ref{tab:external_layout_audit}`；Supplementary and Reproducibility Evidence；Implementation map；Discussion；Data Availability。
+- 编译日志：`manuscript/mdpi_jmse/compile_after_external_layout_audit_v28_pass2.log`、`manuscript/latex/compile_after_external_layout_audit_v28_pass2.log`
+- 严格扫描：两套 log 无 hard error、undefined citation/reference、rerun、overfull、float-too-large、fatal/emergency stop。
+- PDF 输出：两套 `template.pdf` 均为 50 pages；根目录交付 PDF 已刷新。
+- 页面 QA：`audit/page_preview_20260523_external_baseline_v28/page_30.png` 显示新表位于 MDPI PDF 第 30 页，未见表格超宽、截断、遮挡或异常空白。
+
+【x】引用审计已重新通过。
+文件/命令/证据：
+- 命令：`python3 audit/verify_references_20260514.py`
+- 输出：`audit/reference_verification_20260514_v2.json`、`audit/reference_verification_20260514_v2.md`
+- 结果：`total 45 failed 0 et_al 0`
+
+【x】v28 可复现清单与 release-readiness gate 已闭环，当前仍不创建 Zenodo-triggering release。
+文件/命令/证据：
+- 命令：`conda run -n uu python make_reproducibility_manifest.py`
+- 输出：`reproducibility_manifest.json`，当前为 313 entries。
+- 命令：`python3 check_release_readiness.py`
+- 输出：`manifest_entries=313`、`tracked_files=392`、`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 结论：v28 新增外部基线审计证据已经进入 manifest 且与 Git 跟踪状态一致；因为稿件仍是 pre-submission working draft，未创建 GitHub release，也未触发新的 Zenodo DOI。
+
 ## 2026-05-23 Codex v27b 热图二次返修按点核对执行记录
 
 【x】继续按老师/用户反馈把主文热图体系做第二轮期刊化收口。

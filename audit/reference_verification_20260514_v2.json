@@ -21,14 +21,7 @@
     "url": "https://www.gebco.net/gebco-tid-grid",
     "has_et_al": false,
     "ok": true,
-    "status": "verified_manual_fallback",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "automated_status": "url_failed",
-    "automated_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "title": "GEBCO Type Identifier (TID) Grid",
-    "container": "General Bathymetric Chart of the Oceans",
-    "publisher": "GEBCO",
-    "manual_note": "Official GEBCO TID Grid page checked on 2026-05-23; automated URL checks can intermittently fail with TLS EOF on the GEBCO site."
+    "status": "url_http_200"
   },
   {
     "key": "dartnell2026southerncascadia",
@@ -37,13 +30,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
+    "status": "verified_doi_resolves",
     "error": "HTTP Error 404: Not Found",
     "crossref_status": "crossref_failed",
     "crossref_error": "HTTP Error 404: Not Found",
     "doi_url": "https://doi.org/10.5066/P9C5DBMR",
     "resolved_url": "https://cmgds.marine.usgs.gov/data-releases/datarelease/10.5066-P9C5DBMR/",
-    "http_status": 302
+    "http_status": 200
   },
   {
     "key": "iho_c13",
@@ -114,13 +107,20 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.1109/LRA.2020.3003886",
-    "resolved_url": "https://ieeexplore.ieee.org/document/9121686/",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "Coverage Path Planning With Track Spacing Adaptation for Autonomous Underwater Vehicles",
+    "container": "IEEE Robotics and Automation Letters",
+    "issued": {
+      "date-parts": [
+        [
+          2020,
+          7
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi_crossref": "10.1109/lra.2020.3003886"
   },
   {
     "key": "jiang2018route",
@@ -328,19 +328,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Modular Acoustic Graph SLAM for Underwater Monitoring With Autonomous Underwater Vehicles",
-    "container": "IEEE Transactions on Automation Science and Engineering",
-    "issued": {
-      "date-parts": [
-        [
-          2025
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
-    "doi_crossref": "10.1109/tase.2025.3615829"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1109/TASE.2025.3615829",
+    "resolved_url": "https://ieeexplore.ieee.org/document/11184576/",
+    "http_status": 302
   },
   {
     "key": "xu2025usoslam",
@@ -393,13 +387,20 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.1016/j.oceaneng.2023.116006",
-    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S0029801823023909",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "An outlier-robust Rao–Blackwellized particle filter for underwater terrain-aided navigation",
+    "container": "Ocean Engineering",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          11
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Elsevier BV",
+    "doi_crossref": "10.1016/j.oceaneng.2023.116006"
   },
   {
     "key": "ding2022contour",
@@ -698,13 +699,21 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.3389/fmars.2024.1483122",
-    "resolved_url": "https://www.frontiersin.org/articles/10.3389/fmars.2024.1483122/full",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "Coverage path planning for multi-AUV considering ocean currents and sonar performance",
+    "container": "Frontiers in Marine Science",
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          1,
+          9
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Frontiers Media SA",
+    "doi_crossref": "10.3389/fmars.2024.1483122"
   },
   {
     "key": "yao2021coverage",

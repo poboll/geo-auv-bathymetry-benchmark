@@ -46,6 +46,7 @@ REQUIRED_DIRS = [
     "vehicle_aware_posteval",
     "ga_surrogate_audit",
     "footprint_validity_audit",
+    "external_layout_baseline_audit",
 ]
 
 

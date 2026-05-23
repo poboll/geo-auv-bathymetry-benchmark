@@ -114,6 +114,12 @@ PATTERNS = {
         "footprint_validity_audit/*.md",
         "footprint_validity_audit/*.png",
     ],
+    "external_layout_baseline_audit_outputs": [
+        "external_layout_baseline_audit/*.csv",
+        "external_layout_baseline_audit/*.json",
+        "external_layout_baseline_audit/*.md",
+        "external_layout_baseline_audit/*.png",
+    ],
     "pso_baseline_outputs": [
         "pso_baseline/*.csv",
         "pso_baseline/*.json",
@@ -190,6 +196,9 @@ PATTERNS = {
         "SURVEY_GRADE_*.md",
         "audit/*.md",
         "audit/reference_verification_20260428_v3.json",
+        "audit/reference_verification_20260514_v*.json",
+        "audit/reference_verification_20260514_v*.md",
+        "audit/page_preview_20260523_external_baseline_v28/*.png",
     ],
     "reproduction_scripts": [
         "geo_public_bathy_benchmark.py",
@@ -218,6 +227,7 @@ PATTERNS = {
         "make_public_window_statistics.py",
         "make_ga_surrogate_audit.py",
         "make_footprint_validity_audit.py",
+        "make_external_layout_baseline_audit.py",
         "make_claim_consistency_audit.py",
         "make_sensitivity_evidence_figures.py",
         "journal_heatmap_style.py",

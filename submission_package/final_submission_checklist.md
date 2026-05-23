@@ -47,6 +47,7 @@ Status date: 2026-05-23
 - [x] Heading-resolution diagnostic is recorded in `heading_resolution_diagnostic/`; the \(5^{\circ}\) audit reproduces Adaptive Spacing headings and metrics on the two GEBCO scenes and USGS High.
 - [x] Nine-window paired public statistics are recorded in `public_window_statistics/`; both terrain-aware methods improve overlap in 9/9 public windows, with one-sided Wilcoxon \(p=0.00195\).
 - [x] Side-specific footprint validity audit is recorded in `footprint_validity_audit/`; the port/starboard audit changes 0/9 audited \(C97/O3\) feasibility decisions and records maximum coverage and overlap deltas of 0.50 pp and 1.217 pp.
+- [x] External survey-layout heuristic audit is recorded in `external_layout_baseline_audit/`; min-span/contour/geometry-shortest fixed-width heuristics reach 6/9, 6/9, and 8/9 feasible public windows, while Adaptive Spacing and Hybrid seed-0 reach 9/9.
 - [x] Submission reproduction map is recorded in `README_submission.md`.
 - [x] Latest five-point PDF page preview is recorded in `audit/page_preview_20260515_user_5point_v16/contact_sheet.png`.
 - [x] Latest Fig. 2/Fig. 6/Fig. 14 PDF page preview is recorded in `audit/page_preview_20260515_v17b_after/contact_sheet.png`.
@@ -74,8 +75,8 @@ Status date: 2026-05-23
 
 ## Compile QA
 
-- [x] MDPI PDF compiled to 49 pages after the May 23 v27b heatmap-system refinement pass.
-- [x] Working PDF compiled to 49 pages after the May 23 v27b heatmap-system refinement pass.
+- [x] MDPI PDF compiled to 50 pages after the May 23 v28 external-layout baseline audit pass.
+- [x] Working PDF compiled to 50 pages after the May 23 v28 external-layout baseline audit pass.
 - [x] Abstract rechecked after the May 23 v24 pass: 199 words by the local LaTeX-stripped counter.
 - [x] No undefined citation/reference warnings in latest MDPI compile log.
 - [x] No overfull hbox warnings in latest MDPI compile log.
@@ -83,8 +84,8 @@ Status date: 2026-05-23
 - [x] No sparse/blank figure pages detected in the May 14 rendered contact-sheet QA.
 - [x] Working PDF compiled and retained.
 - [x] Latest compile logs:
-  - `manuscript/mdpi_jmse/compile_after_heatmap_system_v27b_20260523_pass2.log`
-  - `manuscript/latex/compile_after_heatmap_system_v27b_20260523_pass2.log`
+  - `manuscript/mdpi_jmse/compile_after_external_layout_audit_v28_pass2.log`
+  - `manuscript/latex/compile_after_external_layout_audit_v28_pass2.log`
 
 ## Repository and Archive
 
@@ -92,7 +93,7 @@ Status date: 2026-05-23
 - [x] Zenodo concept DOI: `10.5281/zenodo.19919505`
 - [x] Initial archived version DOI: `10.5281/zenodo.19919506`
 - [x] DOI `10.5281/zenodo.19919506` was checked through DOI.org and resolves to Zenodo record `19919506`.
-- [x] Reproducibility manifest generated for current workspace: 297 entries.
+- [x] Reproducibility manifest generated for current workspace: 313 entries.
 - [x] README, `README_submission.md`, `CITATION.cff`, `.zenodo.json`, Data Availability, and cover letter use the current fixed-line MBES benchmark/robustness manuscript title/framing.
 - [x] Release-readiness gate added as `check_release_readiness.py`; run it before creating any Zenodo-triggering GitHub release.
 - [x] GEBCO TID URL updated to the current official GEBCO TID page.
@@ -174,3 +175,14 @@ Status date: 2026-05-23
 - [x] Latest compile logs: `manuscript/mdpi_jmse/compile_after_heatmap_system_v27b_20260523_pass2.log` and `manuscript/latex/compile_after_heatmap_system_v27b_20260523_pass2.log`; both output 49 pages and strict scans report no hard LaTeX errors, undefined references/citations, rerun warnings, overfull boxes, float-too-large warnings, fatal errors, or emergency stops.
 - [x] Latest audit rerun: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 297 entries; `check_release_readiness.py` reports all release-blocking counts as 0.
 - [x] No claim boundary changed in the v27b visual pass: figures remain public-grid numerical benchmark evidence, not field/lake/sea trials, raw MBES validation, hydrographic QA, or navigation-safety evidence.
+
+## 2026-05-23 v28 External-layout Baseline Audit Addendum
+
+- [x] Added `make_external_layout_baseline_audit.py` and `external_layout_baseline_audit/` to address the reviewer/teacher risk that baselines were only drawn from the manuscript's own fixed-pattern family.
+- [x] The audit covers 9 public-grid windows and compares min-span boustrophedon, contour-parallel fixed-width, geometry-shortest fixed-width, Adaptive Spacing, and Hybrid seed-0 under the same \(C97/O3\) benchmark gate.
+- [x] Key result: the three external fixed-width heuristics achieve 6/9, 6/9, and 8/9 feasible public windows; Adaptive Spacing and Hybrid seed-0 achieve 9/9. USGS High remains the decisive overlap-stressed boundary where all three external fixed-width heuristics fail and the terrain-aware layouts pass.
+- [x] Manuscript text updated in Methods, Results, Discussion, Data Availability, and the implementation map; `Table~\ref{tab:external_layout_audit}` added as the main-text evidence carrier.
+- [x] Visual QA artifacts: `audit/page_preview_20260523_external_baseline_v28/page_28.png` through `page_34.png`; page 30 was inspected and the new external-layout audit table is readable, not clipped, and not overwide.
+- [x] Latest compile logs: `manuscript/mdpi_jmse/compile_after_external_layout_audit_v28_pass2.log` and `manuscript/latex/compile_after_external_layout_audit_v28_pass2.log`; both output 50 pages and strict scans report no hard LaTeX errors, undefined references/citations, rerun warnings, overfull boxes, float-too-large warnings, fatal errors, or emergency stops.
+- [x] Latest audit rerun: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 313 entries; `check_release_readiness.py` reports all release-blocking counts as 0.
+- [x] No claim boundary changed in the v28 evidence pass: results remain public-grid numerical planning benchmark evidence, not field/lake/sea trials, raw MBES validation, hydrographic QA, mission-log validation, or navigation-safety evidence.

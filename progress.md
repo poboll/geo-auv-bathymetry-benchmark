@@ -244,3 +244,18 @@
 - 重新运行引用审计 `python3 audit/verify_references_20260514.py`，结果为 `total 45 failed 0 et_al 0`。
 - 重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 297 entries；`python3 check_release_readiness.py` 输出 missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
 - 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。本轮不创建 GitHub release / Zenodo DOI，因为稿件仍处于 pre-submission working draft。
+
+## 2026-05-23 v28
+
+- 继续按老师“外部对照不足/只和自己比”的审稿风险做证据补强，新增 external-layout baseline audit，而不是把公共网格 benchmark 伪装成 field/lake/sea trial。
+- 新增 `make_external_layout_baseline_audit.py`，并在 `uu` 环境运行 `conda run -n uu python make_external_layout_baseline_audit.py`；输出 `raw_rows=54`、`summary_rows=6`。
+- 新增 `external_layout_baseline_audit/`，包含 raw CSV、summary CSV/JSON、README 和 `journal_external_layout_baseline_audit.png`；图源同步复制到 `manuscript/mdpi_jmse/pic/` 与 `manuscript/latex/pic/`。
+- 审计覆盖 9 个 public-grid windows：2 个主 GEBCO、4 个补充 GEBCO、3 个 USGS；外部启发式包括 `Min-Span Boustrophedon`、`Contour-Parallel Fixed-Width`、`Geometry-Shortest Fixed-Width`。
+- 审计结果：Min-span/Contour/Geometry-shortest 的 \(C97/O3\) feasible counts 分别为 6/9、6/9、8/9；Adaptive Spacing 与 Hybrid seed-0 均为 9/9。USGS High 是最关键的 operation-relevant boundary：三类外部固定宽度启发式均失败，而 Adaptive/Hybrid 通过。
+- 两套 LaTeX 已回写 v28：Methods 增加 external heuristic comparator 定位；Results 新增 `External Survey-layout Heuristic Audit` 小节与 `Table~\ref{tab:external_layout_audit}`；Discussion 将该审计写成外部基线防御，不改变 GA/local-refinement 主线边界；Data Availability 和 implementation map 补入新目录与脚本。
+- 编译 `manuscript/mdpi_jmse` 与 `manuscript/latex` 两遍，最终日志为 `compile_after_external_layout_audit_v28_pass2.log`；两套 PDF 均输出 50 pages。
+- 严格日志扫描：两套日志均无 `LaTeX Error`、`Undefined control sequence`、undefined citation/reference、`Rerun`、`Overfull`、`Float too large`、`Fatal error` 或 `Emergency stop`。
+- PDF 视觉 QA：渲染 `audit/page_preview_20260523_external_baseline_v28/page_28.png` 至 `page_34.png`，人工查看第 30 页新 Table 16 可读、未截断、未超宽。
+- 引用审计再次通过：`python3 audit/verify_references_20260514.py` 输出 `total 45 failed 0 et_al 0`。
+- 本轮收尾重新运行 `conda run -n uu python make_reproducibility_manifest.py`，`reproducibility_manifest.json` 为 313 entries；`python3 check_release_readiness.py` 输出 `missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。本轮仍不创建 GitHub release / Zenodo DOI，因为用户尚未确认冻结投稿版。

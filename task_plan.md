@@ -96,3 +96,16 @@
 - [x] 最新日志为 `compile_after_heatmap_system_v27b_20260523_pass2.log`；两套 PDF 均 49 pages，严格扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
 - [x] 引用审计、manifest 与 release gate 再次通过：45 references / 0 failed / 0 et_al；manifest 297 entries；release gate 四项阻断为 0。
 - [ ] 若用户确认当前 v27b 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。
+
+## 2026-05-23 v28 External-layout Baseline Audit Addendum
+
+- [x] 按老师“外部对照不能只在自家方法族内部比较”的意见，新增 external-style survey-layout heuristic audit。
+- [x] 新增 `make_external_layout_baseline_audit.py`，在 9 个 public-grid windows 上比较 min-span boustrophedon、contour-parallel fixed-width、geometry-shortest fixed-width、Adaptive Spacing 与代表性 Hybrid seed-0。
+- [x] 新增 `external_layout_baseline_audit/`：`external_layout_baseline_raw.csv`、`external_layout_baseline_summary.csv`、`external_layout_baseline_summary.json`、`README.md`、`journal_external_layout_baseline_audit.png`。
+- [x] 核心结果写入正文：Min-span/Contour/Geometry-shortest fixed-width heuristics 的 \(C97/O3\) feasible counts 分别为 6/9、6/9、8/9；Adaptive 与 Hybrid seed-0 均为 9/9。USGS High 是外部固定宽度启发式失败但 terrain-aware spacing 通过的关键边界。
+- [x] 两套 LaTeX 同步回写 Methods、Results、Discussion、Data Availability 与 implementation map；新增 Table `tab:external_layout_audit`，图源复制到两套 manuscript `pic/`。
+- [x] 两套 LaTeX 均双遍编译为 50 pages；最新日志为 `compile_after_external_layout_audit_v28_pass2.log`，严格扫描无 hard error、undefined citation/reference、rerun、overfull、float-too-large、fatal 或 emergency stop。
+- [x] PDF 页面 QA 已渲染 `audit/page_preview_20260523_external_baseline_v28/page_28.png` 至 `page_34.png`；新 Table 16 位于第 30 页，可读且未截断。
+- [x] 引用审计通过：`python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al。
+- [x] 当前 manifest 与 release gate 已重新闭环：`conda run -n uu python make_reproducibility_manifest.py` 写出 313 entries；`python3 check_release_readiness.py` 输出 missing required paths、empty dirs、untracked manifest entries、tracked core files missing from manifest 全为 0。
+- [ ] 若用户确认当前 v28 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。
