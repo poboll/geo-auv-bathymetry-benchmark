@@ -1254,7 +1254,7 @@ def write_public_manifest(out_dir: Path, public_scenes: list[TerrainScene]) -> N
     _safe_json_dump(out_dir / "public_scene_manifest.json", manifest)
 
 
-def write_parameter_details(out_dir: Path) -> None:
+def write_parameter_details(out_dir: Path, ga_seeds: tuple[int, ...] = GA_SEEDS) -> None:
     config = {
         "fixed_geometry": {
             "beam_angle_deg": BEAM_ANGLE_DEG,
@@ -1276,7 +1276,7 @@ def write_parameter_details(out_dir: Path) -> None:
             "adaptive_quantiles": list(ADAPTIVE_QUANTILES),
             "ga_generations": GA_GENERATIONS,
             "ga_population": GA_POP_SIZE,
-            "ga_seeds": list(GA_SEEDS),
+            "ga_seeds": list(ga_seeds),
         },
         "public_data_policy": {
             "source_priority": ["GEBCO 2025 public grid"],
@@ -1435,7 +1435,7 @@ def _render_bathymetry(
         extent=extent,
         origin="lower",
         interpolation="bilinear",
-        aspect="auto",
+        aspect="equal",
         zorder=0,
     )
     levels = _contour_levels(scene.z, contour_count)
@@ -2420,7 +2420,11 @@ def build_final_info(summary_rows: list[dict[str, Any]]) -> tuple[dict[str, floa
     return means, stderrs, final_info_dict
 
 
-def run_benchmark(out_dir: Path | str, workspace_root: Path | str) -> dict[str, Any]:
+def run_benchmark(
+    out_dir: Path | str,
+    workspace_root: Path | str,
+    ga_seeds: tuple[int, ...] = GA_SEEDS,
+) -> dict[str, Any]:
     out_dir = output_dir(out_dir)
     workspace_root = Path(workspace_root)
     synthetic_scenes = terrain_generators()
@@ -2433,7 +2437,7 @@ def run_benchmark(out_dir: Path | str, workspace_root: Path | str) -> dict[str, 
         greedy_result, greedy_base = simple_greedy_plan(scene)
         adaptive_result, adaptive_base = adaptive_spacing_plan(scene)
         results.extend([fixed, greedy_result, adaptive_result])
-        for seed in GA_SEEDS:
+        for seed in ga_seeds:
             results.append(fixed_swath_ga_plan(scene, greedy_base, seed))
             results.append(full_geometry_aware_hybrid_ga_plan(scene, adaptive_base, seed))
 
@@ -2443,7 +2447,7 @@ def run_benchmark(out_dir: Path | str, workspace_root: Path | str) -> dict[str, 
 
     write_results_tables(out_dir, results, summary_rows)
     write_public_manifest(out_dir, public_scenes)
-    write_parameter_details(out_dir)
+    write_parameter_details(out_dir, ga_seeds)
     scene_overview_plot(out_dir, scenes)
     path_overlay_plot(out_dir, public_scenes, results)
     metric_summary_plot(out_dir, summary_rows)
@@ -2470,6 +2474,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run the Geo public bathymetry benchmark.")
     parser.add_argument("--out-dir", type=str, default="real_experiment_outputs", help="Artifact output directory")
     parser.add_argument(
+        "--seed-count",
+        type=int,
+        default=len(GA_SEEDS),
+        help="Number of stochastic GA seeds to run, starting at zero.",
+    )
+    parser.add_argument(
         "--workspace-root",
         type=str,
         default=None,
@@ -2478,7 +2488,10 @@ def main() -> None:
     args = parser.parse_args()
 
     workspace_root = Path(args.workspace_root) if args.workspace_root else Path(__file__).resolve().parent
-    summary = run_benchmark(out_dir=Path(args.out_dir), workspace_root=workspace_root)
+    if args.seed_count < 1:
+        raise ValueError("--seed-count must be at least 1")
+    ga_seeds = tuple(range(args.seed_count))
+    summary = run_benchmark(out_dir=Path(args.out_dir), workspace_root=workspace_root, ga_seeds=ga_seeds)
     print(json.dumps(summary["means"], indent=2))
     print(f"Saved benchmark artifacts to: {Path(args.out_dir).resolve()}")
 

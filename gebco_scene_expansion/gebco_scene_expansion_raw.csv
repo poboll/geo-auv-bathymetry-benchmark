@@ -1,29 +1,89 @@
 scene_id,scene_name,terrain_class,method,seed,orientation_deg,line_count,path_length_km,path_gain_vs_fixed_pct,coverage_pct,excess_overlap_pct,planning_time_s,feasible
-gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Fixed-Spacing,0,0.0,146,32015.95814679676,0.0,99.33333333333333,0.6814814814814812,0.07151908299420029,1
-gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Adaptive Spacing w/o GA,0,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.9386197080020793,1
-gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,0,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.7978387500043027,1
-gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,1,0.0,145,31797.599408904407,0.6820309324842064,98.66666666666667,0.243893693189,0.7271612909971736,1
-gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,2,0.0,145,31797.600305684107,0.6820281314444995,98.66666666666667,0.06758197432926354,0.7249137919861823,1
-gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,3,0.0,145,31797.524033058944,0.6822663645931484,98.66666666666667,0.15109696540067483,0.7258044159971178,1
-gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,4,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.747323374991538,1
-gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Fixed-Spacing,0,0.0,146,30861.81643020727,0.0,99.42222222222222,0.43856848827903316,0.06059633300174028,1
-gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Adaptive Spacing w/o GA,0,90.0,137,30709.76,0.49270084458943014,99.40555555555555,0.0,0.8476674999983516,1
-gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,0,90.0,137,30709.741952307213,0.49275932362557556,98.59444444444443,0.09476696843461241,0.7071662909875158,1
-gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,1,90.0,137,30709.716126000152,0.492843007316454,97.76666666666667,0.14875341234396078,0.7119127499754541,1
-gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,2,90.0,137,30709.76,0.49270084458943014,99.40555555555555,0.0,0.7160266670107376,1
-gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,3,90.0,137,30709.689350121716,0.49292976785595843,97.73888888888888,0.15448857543342434,0.7076604579924606,1
-gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,4,90.0,137,30709.59984443497,0.49321978865543803,97.75555555555555,0.5244076100071324,0.7031598330067936,1
-gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Fixed-Spacing,0,0.0,146,26518.293369635212,0.0,100.0,0.6814814814814812,0.05734095899970271,1
-gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Adaptive Spacing w/o GA,0,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.7995575419918168,1
-gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,0,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.7626990829885472,1
-gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,1,0.0,145,26337.5898699426,0.6814295971984641,98.66666666666667,0.243893693189,0.7387773750233464,1
-gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,2,0.0,145,26337.5907667223,0.681426215458592,98.66666666666667,0.06758197432926354,0.7310055829875637,1
-gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,3,0.0,145,26337.514494097137,0.681713838135135,98.66666666666667,0.15109696540067483,0.7322536670253612,1
-gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,4,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.8079755420039874,1
-gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Fixed-Spacing,0,0.0,146,30142.25528360704,0.0,98.81111111111112,0.6478185966085465,0.06570504198316485,1
-gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Adaptive Spacing w/o GA,0,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.908197041018866,1
-gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,0,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7269667079963256,1
-gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,1,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7303082500002347,1
-gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,2,0.0,145,29936.760450037214,0.6817500271175249,98.23333333333333,0.0594149485379188,0.7334581660106778,1
-gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,3,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7290172500070184,1
-gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,4,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7383127920038532,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Fixed-Spacing,0,0.0,146,32015.95814679676,0.0,99.33333333333333,0.6814814814814812,0.07736941694747657,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Adaptive Spacing w/o GA,0,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,1.0788336660480127,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,0,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,1.1285275840200484,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,1,0.0,145,31797.599408904407,0.6820309324842064,98.66666666666667,0.243893693189,1.0341370420064777,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,2,0.0,145,31797.600305684107,0.6820281314444995,98.66666666666667,0.06758197432926354,1.0267374169779941,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,3,0.0,145,31797.524033058944,0.6822663645931484,98.66666666666667,0.15109696540067483,0.8507328750565648,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,4,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.9999704170040786,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,5,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,1.0199210420250893,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,6,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.9020284999860451,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,7,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.8672239579027519,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,8,0.0,145,31797.431054071094,0.6825567791027619,98.66666666666667,0.20739242509504932,0.9021425420651212,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,9,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,1.019045792054385,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,10,0.0,145,31797.604842665045,0.682013960446034,99.33333333333333,0.2527729830907059,0.8833822080632672,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,11,0.0,145,31797.64246314625,0.6818964550412823,98.66666666666667,0.33141465233396067,0.8848744169808924,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,12,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.9012187090702355,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,13,0.0,145,31797.614388561506,0.6819841443886264,99.33333333333333,0.17963626628936988,0.9124017909634858,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,14,0.0,145,31797.60001422984,0.6820290417851056,98.66666666666667,0.2109602051927934,0.8936640410684049,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,15,0.0,145,31797.534485820084,0.6822337159961823,98.66666666666667,0.5094416067437306,0.8937826249748468,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,16,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.8823393330676481,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,17,0.0,145,31797.663364969383,0.681831169401425,99.33333333333333,0.0,0.9153048750013113,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,18,0.0,145,31797.595323541474,0.6820436928798623,99.33333333333333,0.09004302843209477,0.8846212920034304,1
+gebco_mariana_trench_complex,GEBCO Mariana Trench,complex_relief,Full Geometry-Aware Hybrid GA,19,0.0,145,31797.58683425197,0.6820702086863359,98.66666666666667,0.125430939927828,0.9040078750113025,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Fixed-Spacing,0,0.0,146,30861.81643020727,0.0,99.42222222222222,0.43856848827903316,0.07188591698650271,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Adaptive Spacing w/o GA,0,90.0,137,30709.76,0.49270084458943014,99.40555555555555,0.0,1.0202644169330597,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,0,90.0,137,30709.741952307213,0.49275932362557556,98.59444444444443,0.09476696843461241,0.8198501659790054,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,1,90.0,137,30709.716126000152,0.492843007316454,97.76666666666667,0.14875341234396078,0.8975646250182763,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,2,90.0,137,30709.76,0.49270084458943014,99.40555555555555,0.0,0.8704799159895629,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,3,90.0,137,30709.689350121716,0.49292976785595843,97.73888888888888,0.15448857543342434,0.8652742920676246,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,4,90.0,137,30709.59984443497,0.49321978865543803,97.75555555555555,0.5244076100071324,0.9035372090293095,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,5,90.0,137,30709.62563752079,0.49313621260969454,97.72777777777777,0.14825582663538536,0.8621784169226885,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,6,90.0,137,30709.686009946425,0.4929405908588728,97.7611111111111,0.5506427887441518,0.8975331250112504,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,7,90.0,137,30709.76,0.49270084458943014,99.40555555555555,0.0,0.7820117499213666,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,8,90.0,137,30709.606521460715,0.49319815342292134,97.75,0.17484654417025547,0.848213667050004,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,9,90.0,137,30709.751891011074,0.49272711974061206,98.56111111111112,0.2631531101600936,0.8617663340410218,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,10,90.0,137,30709.652609366418,0.49304881708749543,97.75555555555555,0.20735988740088593,0.8948895840439945,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,11,90.0,137,30709.600695621226,0.4932170305991966,97.75555555555555,0.38787131320010987,0.8614291669800878,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,12,90.0,137,30709.526696572655,0.4934568060146786,97.7611111111111,0.6015687685592107,0.9123360409867018,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,13,90.0,137,30709.611392391023,0.4931823703910986,97.72777777777777,0.37787044980327944,0.8276891250861809,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,14,90.0,137,30709.67342780748,0.49298136013430793,97.78333333333333,0.36027456531131324,0.8634487089002505,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,15,90.0,137,30709.70887828353,0.49286649173007474,97.75555555555555,0.1990829197048185,0.7654482499929145,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,16,90.0,137,30709.60444549544,0.4932048800693612,97.7611111111111,0.14421247499275408,0.814641583012417,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,17,90.0,137,30709.55043586742,0.4933798847653494,98.58888888888889,0.1609195567589287,0.8028132090112194,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,18,90.0,137,30709.76,0.49270084458943014,99.40555555555555,0.0,0.8390210838988423,1
+gebco_puerto_rico_trench_complex,GEBCO Puerto Rico Trench,complex_relief,Full Geometry-Aware Hybrid GA,19,90.0,137,30709.693180250444,0.4929173572814339,97.75,0.2432723676327352,0.8298767090309411,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Fixed-Spacing,0,0.0,146,26518.293369635212,0.0,100.0,0.6814814814814812,0.07030241598840803,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Adaptive Spacing w/o GA,0,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.8655818750848994,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,0,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.7787999589927495,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,1,0.0,145,26337.5898699426,0.6814295971984641,98.66666666666667,0.243893693189,0.7803040840663016,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,2,0.0,145,26337.5907667223,0.681426215458592,98.66666666666667,0.06758197432926354,0.8138181670801714,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,3,0.0,145,26337.514494097137,0.681713838135135,98.66666666666667,0.15109696540067483,0.889835458016023,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,4,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.7905461669433862,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,5,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.9075731249758974,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,6,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.9005724580492824,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,7,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.9365387500729412,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,8,0.0,145,26337.421515109287,0.6820644602002659,98.66666666666667,0.20739242509504932,0.8918729170691222,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,9,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.8888213749742135,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,10,0.0,145,26337.595303703238,0.6814091065863337,99.33333333333333,0.2527729830907059,0.8918558330042288,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,11,0.0,145,26337.632924184443,0.6812672404387611,98.66666666666667,0.33141465233396067,0.8965749170165509,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,12,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.9136370839551091,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,13,0.0,145,26337.6048495997,0.681373109185115,99.33333333333333,0.17963626628936988,0.8699577080551535,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,14,0.0,145,26337.590475268033,0.6814273145273118,98.66666666666667,0.2109602051927934,0.8806985419942066,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,15,0.0,145,26337.524946858277,0.6816744209637715,98.66666666666667,0.5094416067437306,0.8754370419774204,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,16,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.8592602499993518,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,17,0.0,145,26337.653826007576,0.6811884200454528,99.33333333333333,0.0,0.8926103749545291,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,18,0.0,145,26337.585784579664,0.6814450030274865,99.33333333333333,0.09004302843209477,0.8711952500743791,1
+gebco_mid_atlantic_ridge_moderate,GEBCO Mid-Atlantic Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,19,0.0,145,26337.57729529016,0.6814770159831641,98.66666666666667,0.125430939927828,0.8903677079360932,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Fixed-Spacing,0,0.0,146,30142.25528360704,0.0,98.81111111111112,0.6478185966085465,0.06853345897980034,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Adaptive Spacing w/o GA,0,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.9391871669795364,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,0,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,1.0316585000837222,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,1,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.8693918329663575,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,2,0.0,145,29936.760450037214,0.6817500271175249,98.23333333333333,0.0594149485379188,0.8751077500637621,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,3,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.8784417919814587,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,4,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.8713449999922886,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,5,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.8650631669443101,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,6,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.8791789578972384,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,7,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7783815419534221,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,8,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7746209999313578,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,9,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7703429999528453,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,10,0.0,145,29936.73411801325,0.6818373862872913,98.25,0.24441118909455806,0.8340513750445098,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,11,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.8483406669693068,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,12,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7793804160319269,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,13,0.0,145,29936.74510662651,0.6818009304443022,98.19444444444444,0.17862432968650024,0.77847808401566,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,14,0.0,145,29936.772873121823,0.6817088122698245,98.17222222222223,0.23624584578725005,0.9118950000265613,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,15,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.9208688749931753,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,16,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.9035325410077348,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,17,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7786554170306772,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,18,0.0,145,29936.72604160648,0.681864180588831,98.2,0.08960768018218543,0.7686935409437865,1
+gebco_hawaii_ridge_moderate,GEBCO Hawaii Ridge,ridge_relief,Full Geometry-Aware Hybrid GA,19,0.0,145,29936.79408303439,0.6816384462259838,98.19444444444444,0.0,0.7803002499276772,1

@@ -13,21 +13,25 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import rasterio
-from matplotlib.colors import LinearSegmentedColormap, Normalize, TwoSlopeNorm
+from matplotlib.colors import Normalize, TwoSlopeNorm
 from rasterio.enums import Resampling
 from rasterio.windows import Window
 
 import geo_public_bathy_benchmark as geo
+import journal_heatmap_style as jhs
 import make_survey_grade_extension as extension
 import make_survey_grade_pilot as pilot
 
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "coarse_prior_replay"
-PIC = ROOT / "latex" / "pic"
+PIC_DIRS = (
+    ROOT / "manuscript" / "latex" / "pic",
+    ROOT / "manuscript" / "mdpi_jmse" / "pic",
+)
 FINE_NX = 240
 FINE_NY = 300
-DEFAULT_PRIOR_CELLS_M = (120.0, 300.0, 600.0)
+DEFAULT_PRIOR_CELLS_M = (120.0, 300.0, 600.0, 900.0)
 DEFAULT_QUANTILES = (0.25, 0.55, 0.80)
 METHODS = (
     "Fixed-Spacing",
@@ -36,7 +40,7 @@ METHODS = (
 )
 METHOD_LABELS = {
     "Fixed-Spacing": "Fixed",
-    "Adaptive Spacing w/o GA": "Adaptive",
+    "Adaptive Spacing w/o GA": "Adapt.",
     "Full Geometry-Aware Hybrid GA": "Hybrid",
 }
 
@@ -254,22 +258,9 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def make_figure(summary_rows: list[dict[str, Any]]) -> None:
-    plt.rcParams.update(
-        {
-            "font.family": "serif",
-            "font.serif": ["Palatino", "Times New Roman", "DejaVu Serif"],
-            "mathtext.fontset": "dejavuserif",
-            "font.size": 6.2,
-            "axes.titlesize": 6.6,
-            "axes.labelsize": 6.0,
-            "xtick.labelsize": 5.2,
-            "ytick.labelsize": 5.4,
-            "axes.linewidth": 0.45,
-            "savefig.dpi": 420,
-        }
-    )
+    jhs.apply_rc(base_font=8.06)
     label_order = ["low", "medium", "high"]
-    prior_order = [120.0, 300.0, 600.0]
+    prior_order = sorted({float(row["target_prior_cell_m"]) for row in summary_rows})
     row_keys = [(label, cell) for label in label_order for cell in prior_order]
     method_order = list(METHODS)
     lookup = {
@@ -291,89 +282,58 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
                 data[i, j] = float(lookup[(label, cell, method)][key])
         if "coverage" in key and "loss" not in key:
             norm = TwoSlopeNorm(vmin=min(float(np.nanmin(data)), 96.0), vcenter=97.0, vmax=max(float(np.nanmax(data)), 100.0))
-            cmap = LinearSegmentedColormap.from_list("coverage", ["#b75a48", "#f5efe6", "#d6eee9", "#157f76"])
+            cmap = jhs.COVERAGE_CMAP
         elif "loss" in key:
             norm = Normalize(vmin=0.0, vmax=max(0.25, float(np.nanmax(data))))
-            cmap = LinearSegmentedColormap.from_list("loss", ["#f8fbfd", "#f4d6b8", "#d47a44", "#8f3f2e"])
+            cmap = jhs.OVERLAP_CMAP
         elif "overlap" in key:
             norm = Normalize(vmin=0.0, vmax=max(3.0, float(np.nanmax(data))))
-            cmap = LinearSegmentedColormap.from_list("overlap", ["#f8fbfd", "#f5d3b6", "#d87b4a", "#843424"])
+            cmap = jhs.OVERLAP_CMAP
         else:
             norm = Normalize(vmin=0.0, vmax=1.0)
-            cmap = LinearSegmentedColormap.from_list("feasible", ["#b75a48", "#f5efe6", "#d6eee9", "#157f76"])
+            cmap = jhs.COVERAGE_CMAP
         matrices.append((title, fmt, data, (cmap, norm), key))
 
-    fig, axes = plt.subplots(1, 4, figsize=(7.24, 3.78), facecolor="white")
-    row_labels = [f"{label.title()} {int(cell)} m" for label, cell in row_keys]
+    fig, axes = plt.subplots(2, 2, figsize=(7.25, 3.90), facecolor=jhs.BG)
+    row_labels = [f"{label[0].upper()}{int(cell)}" for label, cell in row_keys]
     col_labels = [METHOD_LABELS[method] for method in method_order]
-    for ax_idx, (ax, (title, fmt, data, style, _)) in enumerate(zip(axes, matrices)):
+    for ax_idx, (ax, (title, fmt, data, style, key)) in enumerate(zip(axes.ravel(), matrices)):
         cmap, norm = style
-        im = ax.imshow(data, cmap=cmap, norm=norm, aspect="auto")
-        ax.set_title(title, fontweight="bold", pad=5.0, color="#1f2933")
-        ax.set_xticks(np.arange(len(col_labels)))
-        ax.set_xticklabels(col_labels)
-        ax.xaxis.tick_top()
-        ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=1.1)
-        ax.set_yticks(np.arange(len(row_labels)))
-        ax.set_yticklabels(row_labels if ax_idx == 0 else [])
-        ax.tick_params(axis="y", length=0, pad=1.5)
-        ax.set_xticks(np.arange(-0.5, len(col_labels), 1), minor=True)
-        ax.set_yticks(np.arange(-0.5, len(row_labels), 1), minor=True)
-        ax.grid(which="minor", color="white", linewidth=0.85)
-        ax.tick_params(which="minor", bottom=False, left=False)
-        for boundary in (2.5, 5.5):
-            ax.axhline(boundary, color="#34495e", linewidth=0.55, alpha=0.45)
-        for spine in ax.spines.values():
-            spine.set_color("#c8d4df")
-            spine.set_linewidth(0.5)
-        for i in range(data.shape[0]):
-            for j in range(data.shape[1]):
-                rgba = im.cmap(im.norm(float(data[i, j])))
-                luminance = 0.2126 * rgba[0] + 0.7152 * rgba[1] + 0.0722 * rgba[2]
-                ax.text(
-                    j,
-                    i,
-                    fmt.format(float(data[i, j])),
-                    ha="center",
-                    va="center",
-                    fontsize=5.35,
-                    color="white" if luminance < 0.45 else "#23313f",
-                )
-
-    fig.text(
-        0.012,
-        0.985,
-        "Coarse-prior to fine-grid replay on USGS public bathymetry",
-        ha="left",
-        va="top",
-        fontsize=7.3,
-        fontweight="bold",
-        color="#1f2933",
-    )
-    fig.text(
-        0.012,
-        0.956,
-        "Line families are planned on 120/300/600 m priors and rescored on the fine public grid without re-optimization.",
-        ha="left",
-        va="top",
-        fontsize=5.15,
-        color="#667483",
-    )
-    fig.tight_layout(rect=(0.0, 0.02, 1.0, 0.91), w_pad=0.55)
+        ax.imshow(data, cmap=cmap, norm=norm, aspect="auto", interpolation="nearest")
+        jhs.style_heatmap_axis(
+            ax,
+            f"({chr(97 + ax_idx)}) {title}",
+            col_labels,
+            row_labels if ax_idx == 0 else None,
+            data.shape[0],
+            group_every=len(prior_order),
+        )
+        if key == "replay_coverage_pct_mean":
+            mark_bad = lambda value: value < geo.TARGET_COVERAGE_PCT
+        elif key == "replay_excess_overlap_pct_mean":
+            mark_bad = lambda value: value > geo.EXCESS_OVERLAP_FEASIBLE_PCT
+        elif key == "replay_feasible_mean":
+            mark_bad = lambda value: value < 1.0
+        else:
+            mark_bad = None
+        jhs.annotate_cells(ax, data, cmap, norm, fmt, mark_bad=mark_bad, fontsize=6.18)
+    fig.subplots_adjust(left=0.126, right=0.996, top=0.920, bottom=0.062, wspace=0.08, hspace=0.20)
     OUT.mkdir(parents=True, exist_ok=True)
-    PIC.mkdir(parents=True, exist_ok=True)
-    fig.savefig(OUT / "coarse_prior_replay_journal.png", bbox_inches="tight", facecolor="white", pad_inches=0.035)
-    fig.savefig(PIC / "journal_coarse_prior_replay.png", bbox_inches="tight", facecolor="white", pad_inches=0.035)
+    jhs.save_white_rgb(fig, OUT / "coarse_prior_replay_journal.png", pad_inches=0.018)
+    for pic_dir in PIC_DIRS:
+        pic_dir.mkdir(parents=True, exist_ok=True)
+        jhs.save_white_rgb(fig, pic_dir / "journal_coarse_prior_replay.png", pad_inches=0.018)
     plt.close(fig)
 
 
 def write_report(summary_rows: list[dict[str, Any]], seeds: tuple[int, ...]) -> None:
+    prior_cells = sorted({float(row["target_prior_cell_m"]) for row in summary_rows})
     lines = [
         "# Coarse-prior to fine-grid replay\n\n",
         "This diagnostic plans fixed-pattern line families on coarsened USGS public bathymetry priors and replays the selected layouts on a finer public grid without re-optimization. It remains a public-grid numerical replay, not mission-log validation.\n\n",
         f"- Hybrid GA seeds: {seeds[0]}--{seeds[-1]}\n",
         f"- Fine-grid shape: {FINE_NY} x {FINE_NX}\n",
-        "- Prior target cells: 120, 300, 600 m\n\n",
+        f"- Prior target cells: {', '.join(f'{cell:g}' for cell in prior_cells)} m\n\n",
         "| Crop | Prior m | Method | Replay coverage % | Coverage loss pp | Replay Oex % | Replay feasible |\n",
         "|---|---:|---|---:|---:|---:|---:|\n",
     ]

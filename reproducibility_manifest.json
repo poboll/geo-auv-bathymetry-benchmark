@@ -13,8 +13,8 @@
     "initial_archived_record_url": "https://zenodo.org/records/19919506",
     "note": "The concept DOI identifies the release series. The current manuscript package cites the fixed version DOI listed above.",
     "current_git_revision": {
-      "head_commit": "86521a8bcadb05391998926cbf3a538cf2388fd5",
-      "head_short": "86521a8",
+      "head_commit": "9e99a7b569a893567de456d3c486558c25f96195",
+      "head_short": "9e99a7b",
       "dirty_worktree_at_manifest_time": true
     }
   },
@@ -1282,44 +1282,44 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 182883,
-      "sha256": "1da8fcb85380fb6a5e9477faf0d579ddc36df30bef7b2b17b8d6e6bb3d539d98"
+      "size_bytes": 185783,
+      "sha256": "96d6406a9a89e2ea34467d40abe7f06dc1604592825df3efc5c18ed62b4f9649"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 7460911,
-      "sha256": "5fa4e5d96d3afbaf301f588d201547ce4341edc4c9fc945798db6e94e330537e"
+      "size_bytes": 7463469,
+      "sha256": "2052a63bf8e9e01430c39503bb5ad39a05a00e2bae29a426d1d617292eec80da"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 182883,
-      "sha256": "1da8fcb85380fb6a5e9477faf0d579ddc36df30bef7b2b17b8d6e6bb3d539d98"
+      "size_bytes": 185783,
+      "sha256": "96d6406a9a89e2ea34467d40abe7f06dc1604592825df3efc5c18ed62b4f9649"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 7461156,
-      "sha256": "86b1444964dea229548dde9a6c90101f1b7c7e1dfb06ceef713493292ec6ba87"
+      "size_bytes": 7463729,
+      "sha256": "71895215e0fd08df59304dcb28fbe51216151569e0a5a4a78baf0503ba4a483a"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 7460911,
-      "sha256": "5fa4e5d96d3afbaf301f588d201547ce4341edc4c9fc945798db6e94e330537e"
+      "size_bytes": 7463729,
+      "sha256": "71895215e0fd08df59304dcb28fbe51216151569e0a5a4a78baf0503ba4a483a"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 7460911,
-      "sha256": "5fa4e5d96d3afbaf301f588d201547ce4341edc4c9fc945798db6e94e330537e"
+      "size_bytes": 7463469,
+      "sha256": "2052a63bf8e9e01430c39503bb5ad39a05a00e2bae29a426d1d617292eec80da"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 7461156,
-      "sha256": "86b1444964dea229548dde9a6c90101f1b7c7e1dfb06ceef713493292ec6ba87"
+      "size_bytes": 7463729,
+      "sha256": "71895215e0fd08df59304dcb28fbe51216151569e0a5a4a78baf0503ba4a483a"
     },
     {
       "category": "manuscripts",
@@ -1444,14 +1444,14 @@
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 5161,
-      "sha256": "137c3678d8fa0ddce013f48cd375d745c609df280fc5dbf364c8941f5eae1372"
+      "size_bytes": 5230,
+      "sha256": "65b67257576a223696543fb32993ff2e05719e3243767d65bf70d363c9355608"
     },
     {
       "category": "release_metadata",
       "path": "README_submission.md",
-      "size_bytes": 4021,
-      "sha256": "23db556d677d12d71681b55953dfb2d36546d728706d3571f25854a3cadea705"
+      "size_bytes": 4077,
+      "sha256": "13d818cc04ff140d7ae131d7931ca2141fda03c968d5cda6d7c8f44931ca31dc"
     },
     {
       "category": "release_metadata",
@@ -1462,14 +1462,14 @@
     {
       "category": "release_metadata",
       "path": "CITATION.cff",
-      "size_bytes": 1261,
-      "sha256": "bb226f8e76ba731bff6c038dc26e37601dfdb69d0acffd01d3e61f426b86f6c2"
+      "size_bytes": 1296,
+      "sha256": "e2c5164fbf4c92d54584ef208d5a7c2892a4c50b9dac6ddf88fa6c0310ca6718"
     },
     {
       "category": "release_metadata",
       "path": ".zenodo.json",
-      "size_bytes": 2231,
-      "sha256": "57ece9941e85cb02f8bd17178ed85c054ca427a59fa1485ebe75348fc73aa77d"
+      "size_bytes": 2287,
+      "sha256": "cdf0687412e4690d7252607f7f7a575b77c1d806a4c0781e024dd5a3feae4183"
     },
     {
       "category": "release_metadata",
@@ -1492,14 +1492,14 @@
     {
       "category": "submission_package",
       "path": "submission_package/JMSE_cover_letter_draft.md",
-      "size_bytes": 4404,
-      "sha256": "2ac8ec7c1e5bd72c00a86a0e857ab3a1cf2fb0500464af8fa709cbd3345d0c6e"
+      "size_bytes": 4496,
+      "sha256": "57fcbd464cab1acde7c617dc192017415f487ba55cd50093540c00f4c4ee9d71"
     },
     {
       "category": "submission_package",
       "path": "submission_package/final_submission_checklist.md",
-      "size_bytes": 9814,
-      "sha256": "02bb6205e0fa7ee8bd725da9bb26860da2fc1c19bb54c2c0624fb8eb419363b8"
+      "size_bytes": 13076,
+      "sha256": "7dfa763601a69c87d9f885de540f779272f28c0e5934eaa83c0b6809bb0985dd"
     },
     {
       "category": "submission_package",
@@ -1566,6 +1566,12 @@
       "path": "audit/literature_verification_notes.md",
       "size_bytes": 4612,
       "sha256": "c5e56eaa569dfc7cb5e7cfe4036a5ca4875c91bc7d94cd161e2dc73df3358d60"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/reference_verification_20260514_v2.md",
+      "size_bytes": 6247,
+      "sha256": "a4a542a094ae65c036823f4aa722afe1c07142dbec580a043a4493e8825a9baf"
     },
     {
       "category": "audit_trail",

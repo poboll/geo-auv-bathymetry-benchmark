@@ -349,20 +349,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "USO-SLAM: SLAM With Single-Frame Semantic Object Reconstruction for Autonomous Underwater Vehicles",
-    "container": "IEEE Transactions on Vehicular Technology",
-    "issued": {
-      "date-parts": [
-        [
-          2025,
-          10
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
-    "doi_crossref": "10.1109/tvt.2025.3568288"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1109/TVT.2025.3568288",
+    "resolved_url": "https://ieeexplore.ieee.org/document/11018231/",
+    "http_status": 302
   },
   {
     "key": "ma2023terrainreview",
@@ -525,21 +518,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "An Effective Terrain Aided Navigation for Low-Cost Autonomous Underwater Vehicles",
-    "container": "Sensors",
-    "issued": {
-      "date-parts": [
-        [
-          2017,
-          3,
-          25
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "MDPI AG",
-    "doi_crossref": "10.3390/s17040680"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.3390/s17040680",
+    "resolved_url": "https://www.mdpi.com/1424-8220/17/4/680",
+    "http_status": 302
   },
   {
     "key": "kim2017panel",
@@ -569,20 +554,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Robust underwater SLAM fusing bathymetric and range information",
-    "container": "Measurement",
-    "issued": {
-      "date-parts": [
-        [
-          2025,
-          1
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Elsevier BV",
-    "doi_crossref": "10.1016/j.measurement.2024.116223"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1016/j.measurement.2024.116223",
+    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S0263224124021080",
+    "http_status": 302
   },
   {
     "key": "xie2024three",
@@ -591,21 +569,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Three-Dimensional Coverage Path Planning for Cooperative Autonomous Underwater Vehicles: A Swarm Migration Genetic Algorithm Approach",
-    "container": "Journal of Marine Science and Engineering",
-    "issued": {
-      "date-parts": [
-        [
-          2024,
-          8,
-          11
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "MDPI AG",
-    "doi_crossref": "10.3390/jmse12081366"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.3390/jmse12081366",
+    "resolved_url": "https://www.mdpi.com/2077-1312/12/8/1366",
+    "http_status": 302
   },
   {
     "key": "li2024full",
@@ -637,21 +607,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Multi-Underwater Gliders Coverage Path Planning Based on Ant Colony Optimization",
-    "container": "Electronics",
-    "issued": {
-      "date-parts": [
-        [
-          2022,
-          9,
-          23
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "MDPI AG",
-    "doi_crossref": "10.3390/electronics11193021"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.3390/electronics11193021",
+    "resolved_url": "https://www.mdpi.com/2079-9292/11/19/3021",
+    "http_status": 302
   },
   {
     "key": "wu2024complete",

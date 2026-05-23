@@ -10,7 +10,7 @@
     "path_length_km": 51.93,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 1.6333333333333329,
-    "planning_time_s": 0.01559304099646397,
+    "planning_time_s": 0.013228041992988437,
     "line_count": 6,
     "feasible": 1
   },
@@ -25,7 +25,7 @@
     "path_length_km": 54.62896401783094,
     "coverage_pct": 99.99444444444444,
     "excess_overlap_pct": 0.2396900878394984,
-    "planning_time_s": 0.17418504200759344,
+    "planning_time_s": 0.14417912499629892,
     "line_count": 7,
     "feasible": 1
   },
@@ -40,7 +40,7 @@
     "path_length_km": 52.11,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.4135810839943588,
+    "planning_time_s": 0.40264345800096635,
     "line_count": 6,
     "feasible": 1
   },
@@ -55,7 +55,7 @@
     "path_length_km": 53.10708302852422,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.018509635599697153,
-    "planning_time_s": 0.12222575000487268,
+    "planning_time_s": 0.12494199999491684,
     "line_count": 7,
     "feasible": 1
   },
@@ -70,7 +70,7 @@
     "path_length_km": 52.00652797081012,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12536941698635928,
+    "planning_time_s": 0.10557329100265633,
     "line_count": 6,
     "feasible": 1
   },
@@ -85,7 +85,7 @@
     "path_length_km": 52.571758035665376,
     "coverage_pct": 98.03888888888889,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.13845929197850637,
+    "planning_time_s": 0.12325116699503269,
     "line_count": 7,
     "feasible": 1
   },
@@ -100,7 +100,7 @@
     "path_length_km": 51.93716541470703,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12177054202766158,
+    "planning_time_s": 0.1147192499920493,
     "line_count": 6,
     "feasible": 1
   },
@@ -115,7 +115,7 @@
     "path_length_km": 52.994507427316385,
     "coverage_pct": 99.06111111111112,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12420037502306513,
+    "planning_time_s": 0.10552616600762121,
     "line_count": 7,
     "feasible": 1
   },
@@ -130,7 +130,7 @@
     "path_length_km": 52.00395421932175,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12102508300449699,
+    "planning_time_s": 0.09603216699906625,
     "line_count": 6,
     "feasible": 1
   },
@@ -145,7 +145,7 @@
     "path_length_km": 53.14862859186159,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11603545901016332,
+    "planning_time_s": 0.13447237499349285,
     "line_count": 7,
     "feasible": 1
   },
@@ -160,7 +160,7 @@
     "path_length_km": 51.977157542138386,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11081720900256187,
+    "planning_time_s": 0.11052062499220483,
     "line_count": 6,
     "feasible": 1
   },
@@ -175,7 +175,7 @@
     "path_length_km": 52.22465030626928,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10714445798657835,
+    "planning_time_s": 0.13253891699423548,
     "line_count": 7,
     "feasible": 1
   },
@@ -190,7 +190,7 @@
     "path_length_km": 52.00145457433149,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09266933400067501,
+    "planning_time_s": 0.10501625000324566,
     "line_count": 6,
     "feasible": 1
   },
@@ -205,7 +205,7 @@
     "path_length_km": 52.88015824518688,
     "coverage_pct": 98.44444444444444,
     "excess_overlap_pct": 0.02289253334853225,
-    "planning_time_s": 0.12515216699102893,
+    "planning_time_s": 0.12238270899979398,
     "line_count": 7,
     "feasible": 1
   },
@@ -220,7 +220,7 @@
     "path_length_km": 51.9526673428931,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10042137498385273,
+    "planning_time_s": 0.10580862499773502,
     "line_count": 6,
     "feasible": 1
   },
@@ -235,7 +235,7 @@
     "path_length_km": 53.22594010103562,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12938137497985736,
+    "planning_time_s": 0.11836891699931584,
     "line_count": 7,
     "feasible": 1
   },
@@ -250,7 +250,7 @@
     "path_length_km": 52.06334510898327,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12685879098717123,
+    "planning_time_s": 0.11071162500593346,
     "line_count": 6,
     "feasible": 1
   },
@@ -265,7 +265,7 @@
     "path_length_km": 53.47500887566892,
     "coverage_pct": 98.90555555555555,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.13266404101159424,
+    "planning_time_s": 0.11861041700467467,
     "line_count": 7,
     "feasible": 1
   },
@@ -280,7 +280,7 @@
     "path_length_km": 51.96881244873616,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11775225002202205,
+    "planning_time_s": 0.11319137499958742,
     "line_count": 6,
     "feasible": 1
   },
@@ -295,7 +295,7 @@
     "path_length_km": 53.03953259717052,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12481079099234194,
+    "planning_time_s": 0.11396062500716653,
     "line_count": 7,
     "feasible": 1
   },
@@ -310,7 +310,7 @@
     "path_length_km": 52.0464456016317,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09870916701038368,
+    "planning_time_s": 0.11459954199381173,
     "line_count": 6,
     "feasible": 1
   },
@@ -325,7 +325,7 @@
     "path_length_km": 53.292634298175905,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10958700001356192,
+    "planning_time_s": 0.15656912499980535,
     "line_count": 7,
     "feasible": 1
   },
@@ -340,7 +340,7 @@
     "path_length_km": 51.958180548111535,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.0939637080009561,
+    "planning_time_s": 0.11619658299605362,
     "line_count": 6,
     "feasible": 1
   },
@@ -355,7 +355,7 @@
     "path_length_km": 52.87157464157163,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10647645802237093,
+    "planning_time_s": 0.15668462500616442,
     "line_count": 7,
     "feasible": 1
   },
@@ -370,7 +370,7 @@
     "path_length_km": 51.84408002631985,
     "coverage_pct": 98.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11234308301936835,
+    "planning_time_s": 0.1131448329979321,
     "line_count": 6,
     "feasible": 1
   },
@@ -385,7 +385,7 @@
     "path_length_km": 53.501730552609935,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12697629199828953,
+    "planning_time_s": 0.1298791250010254,
     "line_count": 7,
     "feasible": 1
   },
@@ -400,7 +400,7 @@
     "path_length_km": 51.95485455846241,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09185037499992177,
+    "planning_time_s": 0.1078996249998454,
     "line_count": 6,
     "feasible": 1
   },
@@ -415,7 +415,7 @@
     "path_length_km": 53.213247043014775,
     "coverage_pct": 99.26666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10798566701123491,
+    "planning_time_s": 0.14586812499328516,
     "line_count": 7,
     "feasible": 1
   },
@@ -430,7 +430,7 @@
     "path_length_km": 51.915019577446074,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11222654097946361,
+    "planning_time_s": 0.1194712920114398,
     "line_count": 6,
     "feasible": 1
   },
@@ -445,7 +445,7 @@
     "path_length_km": 53.80468078954789,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12433074999717064,
+    "planning_time_s": 0.13752429198939353,
     "line_count": 7,
     "feasible": 1
   },
@@ -460,7 +460,7 @@
     "path_length_km": 52.004640657214345,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09915245798765682,
+    "planning_time_s": 0.14289591599663254,
     "line_count": 6,
     "feasible": 1
   },
@@ -475,7 +475,7 @@
     "path_length_km": 53.62648018038292,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12293804198270664,
+    "planning_time_s": 0.15941012499388307,
     "line_count": 7,
     "feasible": 1
   },
@@ -490,7 +490,7 @@
     "path_length_km": 51.99447946688362,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09639045799849555,
+    "planning_time_s": 0.12184400000842288,
     "line_count": 6,
     "feasible": 1
   },
@@ -505,7 +505,7 @@
     "path_length_km": 52.449391845435514,
     "coverage_pct": 97.59444444444443,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12617408300866373,
+    "planning_time_s": 0.13927341699309181,
     "line_count": 7,
     "feasible": 1
   },
@@ -520,7 +520,7 @@
     "path_length_km": 52.03302902601543,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11555099999532104,
+    "planning_time_s": 0.11437037499854341,
     "line_count": 6,
     "feasible": 1
   },
@@ -535,7 +535,7 @@
     "path_length_km": 52.762750534946996,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11970745798316784,
+    "planning_time_s": 0.11475104100827593,
     "line_count": 7,
     "feasible": 1
   },
@@ -550,7 +550,7 @@
     "path_length_km": 51.907872852322704,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10253041700343601,
+    "planning_time_s": 0.13993174998904578,
     "line_count": 6,
     "feasible": 1
   },
@@ -565,7 +565,7 @@
     "path_length_km": 53.20447437003705,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12983462499687448,
+    "planning_time_s": 0.15214420898701064,
     "line_count": 7,
     "feasible": 1
   },
@@ -580,7 +580,7 @@
     "path_length_km": 51.884276011510835,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.1245513750181999,
+    "planning_time_s": 0.1250572499993723,
     "line_count": 6,
     "feasible": 1
   },
@@ -595,7 +595,7 @@
     "path_length_km": 52.43184077195392,
     "coverage_pct": 99.5111111111111,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12329004201455973,
+    "planning_time_s": 0.1593713329930324,
     "line_count": 7,
     "feasible": 1
   },
@@ -610,7 +610,7 @@
     "path_length_km": 52.019663795619394,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11316837501362897,
+    "planning_time_s": 0.11174449999816716,
     "line_count": 6,
     "feasible": 1
   },
@@ -625,7 +625,7 @@
     "path_length_km": 52.05969318352911,
     "coverage_pct": 99.86111111111111,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.13650950000737794,
+    "planning_time_s": 0.11699645798944402,
     "line_count": 7,
     "feasible": 1
   },
@@ -640,7 +640,7 @@
     "path_length_km": 51.99163296877888,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09973725001327693,
+    "planning_time_s": 0.11675229200045578,
     "line_count": 6,
     "feasible": 1
   },
@@ -655,7 +655,7 @@
     "path_length_km": 51.93,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 1.6333333333333329,
-    "planning_time_s": 0.010539834009250626,
+    "planning_time_s": 0.010703624997404404,
     "line_count": 6,
     "feasible": 1
   },
@@ -670,7 +670,7 @@
     "path_length_km": 54.62896401783094,
     "coverage_pct": 99.99444444444444,
     "excess_overlap_pct": 0.2396900878394984,
-    "planning_time_s": 0.1505745000031311,
+    "planning_time_s": 0.16141120900283568,
     "line_count": 7,
     "feasible": 1
   },
@@ -685,7 +685,7 @@
     "path_length_km": 52.11,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.40194174999487586,
+    "planning_time_s": 0.4048947919945931,
     "line_count": 6,
     "feasible": 1
   },
@@ -700,7 +700,7 @@
     "path_length_km": 53.10708302852422,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.018509635599697153,
-    "planning_time_s": 0.11155333399074152,
+    "planning_time_s": 0.12745962498593144,
     "line_count": 7,
     "feasible": 1
   },
@@ -715,7 +715,7 @@
     "path_length_km": 52.00652797081012,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09818641701713204,
+    "planning_time_s": 0.11505554099858273,
     "line_count": 6,
     "feasible": 1
   },
@@ -730,7 +730,7 @@
     "path_length_km": 52.571758035665376,
     "coverage_pct": 98.03888888888889,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11509174999082461,
+    "planning_time_s": 0.11767675000010058,
     "line_count": 7,
     "feasible": 1
   },
@@ -745,7 +745,7 @@
     "path_length_km": 51.93716541470703,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10529158401186578,
+    "planning_time_s": 0.10629870799311902,
     "line_count": 6,
     "feasible": 1
   },
@@ -760,7 +760,7 @@
     "path_length_km": 52.994507427316385,
     "coverage_pct": 99.06111111111112,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12407254098798148,
+    "planning_time_s": 0.12526491700555198,
     "line_count": 7,
     "feasible": 1
   },
@@ -775,7 +775,7 @@
     "path_length_km": 52.00395421932175,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12387179199140519,
+    "planning_time_s": 0.1222353750054026,
     "line_count": 6,
     "feasible": 1
   },
@@ -790,7 +790,7 @@
     "path_length_km": 53.14862859186159,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11991500001749955,
+    "planning_time_s": 0.13949229200079571,
     "line_count": 7,
     "feasible": 1
   },
@@ -805,7 +805,7 @@
     "path_length_km": 51.977157542138386,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12088283398770727,
+    "planning_time_s": 0.10505983300390653,
     "line_count": 6,
     "feasible": 1
   },
@@ -820,7 +820,7 @@
     "path_length_km": 52.22465030626928,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.1265704589895904,
+    "planning_time_s": 0.13722200000484008,
     "line_count": 7,
     "feasible": 1
   },
@@ -835,7 +835,7 @@
     "path_length_km": 52.00145457433149,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10443624999606982,
+    "planning_time_s": 0.1287363750016084,
     "line_count": 6,
     "feasible": 1
   },
@@ -850,7 +850,7 @@
     "path_length_km": 52.88015824518688,
     "coverage_pct": 98.44444444444444,
     "excess_overlap_pct": 0.02289253334853225,
-    "planning_time_s": 0.134292207978433,
+    "planning_time_s": 0.1508928340044804,
     "line_count": 7,
     "feasible": 1
   },
@@ -865,7 +865,7 @@
     "path_length_km": 51.9526673428931,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12137570799677633,
+    "planning_time_s": 0.12515525000344496,
     "line_count": 6,
     "feasible": 1
   },
@@ -880,7 +880,7 @@
     "path_length_km": 53.22594010103562,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12178516699350439,
+    "planning_time_s": 0.1461723329994129,
     "line_count": 7,
     "feasible": 1
   },
@@ -895,7 +895,7 @@
     "path_length_km": 52.06334510898327,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.1101907919801306,
+    "planning_time_s": 0.1363183339999523,
     "line_count": 6,
     "feasible": 1
   },
@@ -910,7 +910,7 @@
     "path_length_km": 53.47500887566892,
     "coverage_pct": 98.90555555555555,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.1347552499792073,
+    "planning_time_s": 0.1326662499923259,
     "line_count": 7,
     "feasible": 1
   },
@@ -925,7 +925,7 @@
     "path_length_km": 51.96881244873616,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12175104097696021,
+    "planning_time_s": 0.12247641599969938,
     "line_count": 6,
     "feasible": 1
   },
@@ -940,7 +940,7 @@
     "path_length_km": 53.03953259717052,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12718700000550598,
+    "planning_time_s": 0.1608459999988554,
     "line_count": 7,
     "feasible": 1
   },
@@ -955,7 +955,7 @@
     "path_length_km": 52.0464456016317,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09822783301933669,
+    "planning_time_s": 0.12268583299010061,
     "line_count": 6,
     "feasible": 1
   },
@@ -970,7 +970,7 @@
     "path_length_km": 53.292634298175905,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12886658299248666,
+    "planning_time_s": 0.11858191600185819,
     "line_count": 7,
     "feasible": 1
   },
@@ -985,7 +985,7 @@
     "path_length_km": 51.958180548111535,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09755624999525025,
+    "planning_time_s": 0.11328125,
     "line_count": 6,
     "feasible": 1
   },
@@ -1000,7 +1000,7 @@
     "path_length_km": 52.87157464157163,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12302558298688382,
+    "planning_time_s": 0.1413315420068102,
     "line_count": 7,
     "feasible": 1
   },
@@ -1015,7 +1015,7 @@
     "path_length_km": 51.84408002631985,
     "coverage_pct": 98.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09464662501704879,
+    "planning_time_s": 0.1104680830030702,
     "line_count": 6,
     "feasible": 1
   },
@@ -1030,7 +1030,7 @@
     "path_length_km": 53.501730552609935,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11231450000195764,
+    "planning_time_s": 0.1073555830080295,
     "line_count": 7,
     "feasible": 1
   },
@@ -1045,7 +1045,7 @@
     "path_length_km": 51.95485455846241,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09464029199443758,
+    "planning_time_s": 0.11184549999597948,
     "line_count": 6,
     "feasible": 1
   },
@@ -1060,7 +1060,7 @@
     "path_length_km": 53.213247043014775,
     "coverage_pct": 99.26666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11476062500150874,
+    "planning_time_s": 0.14193124999292195,
     "line_count": 7,
     "feasible": 1
   },
@@ -1075,7 +1075,7 @@
     "path_length_km": 51.915019577446074,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10095220798393711,
+    "planning_time_s": 0.09605179200298153,
     "line_count": 6,
     "feasible": 1
   },
@@ -1090,7 +1090,7 @@
     "path_length_km": 53.80468078954789,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12639416701858863,
+    "planning_time_s": 0.12770324999291915,
     "line_count": 7,
     "feasible": 1
   },
@@ -1105,7 +1105,7 @@
     "path_length_km": 52.004640657214345,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.0954475829785224,
+    "planning_time_s": 0.11171316700347234,
     "line_count": 6,
     "feasible": 1
   },
@@ -1120,7 +1120,7 @@
     "path_length_km": 53.62648018038292,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11626816698117182,
+    "planning_time_s": 0.11374333300045691,
     "line_count": 7,
     "feasible": 1
   },
@@ -1135,7 +1135,7 @@
     "path_length_km": 51.99447946688362,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.09718908401555382,
+    "planning_time_s": 0.11385574999439996,
     "line_count": 6,
     "feasible": 1
   },
@@ -1150,7 +1150,7 @@
     "path_length_km": 52.449391845435514,
     "coverage_pct": 97.59444444444443,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11961529101245105,
+    "planning_time_s": 0.1263044160004938,
     "line_count": 7,
     "feasible": 1
   },
@@ -1165,7 +1165,7 @@
     "path_length_km": 52.03302902601543,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12539862500852905,
+    "planning_time_s": 0.114863166003488,
     "line_count": 6,
     "feasible": 1
   },
@@ -1180,7 +1180,7 @@
     "path_length_km": 52.762750534946996,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12459329099510796,
+    "planning_time_s": 0.15006849999190308,
     "line_count": 7,
     "feasible": 1
   },
@@ -1195,7 +1195,7 @@
     "path_length_km": 51.907872852322704,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10493258302449249,
+    "planning_time_s": 0.12308995799685363,
     "line_count": 6,
     "feasible": 1
   },
@@ -1210,7 +1210,7 @@
     "path_length_km": 53.20447437003705,
     "coverage_pct": 100.0,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11950983299175277,
+    "planning_time_s": 0.14408149999508169,
     "line_count": 7,
     "feasible": 1
   },
@@ -1225,7 +1225,7 @@
     "path_length_km": 51.884276011510835,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10474262500065379,
+    "planning_time_s": 0.11528245800582226,
     "line_count": 6,
     "feasible": 1
   },
@@ -1240,7 +1240,7 @@
     "path_length_km": 52.43184077195392,
     "coverage_pct": 99.5111111111111,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.11720204199082218,
+    "planning_time_s": 0.1235532080027042,
     "line_count": 7,
     "feasible": 1
   },
@@ -1255,7 +1255,7 @@
     "path_length_km": 52.019663795619394,
     "coverage_pct": 98.66666666666667,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10389891601516865,
+    "planning_time_s": 0.12263912499474827,
     "line_count": 6,
     "feasible": 1
   },
@@ -1270,7 +1270,7 @@
     "path_length_km": 52.05969318352911,
     "coverage_pct": 99.86111111111111,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.12413270800607279,
+    "planning_time_s": 0.1288068750000093,
     "line_count": 7,
     "feasible": 1
   },
@@ -1285,7 +1285,7 @@
     "path_length_km": 51.99163296877888,
     "coverage_pct": 99.33333333333333,
     "excess_overlap_pct": 0.0,
-    "planning_time_s": 0.10952149998047389,
+    "planning_time_s": 0.11175520899996627,
     "line_count": 6,
     "feasible": 1
   },
@@ -1300,7 +1300,7 @@
     "path_length_km": 97.254304852,
     "coverage_pct": 97.2,
     "excess_overlap_pct": 29.960005980349994,
-    "planning_time_s": 0.011173958017025143,
+    "planning_time_s": 0.017501417009043507,
     "line_count": 12,
     "feasible": 0
   },
@@ -1315,7 +1315,7 @@
     "path_length_km": 89.879061846,
     "coverage_pct": 97.15,
     "excess_overlap_pct": 25.981666464827498,
-    "planning_time_s": 0.1602658329939004,
+    "planning_time_s": 0.165152624991606,
     "line_count": 9,
     "feasible": 0
   },
@@ -1330,7 +1330,7 @@
     "path_length_km": 73.89166194729708,
     "coverage_pct": 98.55000000000001,
     "excess_overlap_pct": 2.2372345564469054,
-    "planning_time_s": 0.4392848339921329,
+    "planning_time_s": 0.41630220800288953,
     "line_count": 12,
     "feasible": 1
   },
@@ -1345,7 +1345,7 @@
     "path_length_km": 90.14408223475753,
     "coverage_pct": 96.96111111111111,
     "excess_overlap_pct": 21.33908439636927,
-    "planning_time_s": 0.1175129160110373,
+    "planning_time_s": 0.10351558399270289,
     "line_count": 9,
     "feasible": 0
   },
@@ -1360,7 +1360,7 @@
     "path_length_km": 72.8691042136253,
     "coverage_pct": 98.55000000000001,
     "excess_overlap_pct": 1.5733972802907423,
-    "planning_time_s": 0.15425091699580662,
+    "planning_time_s": 0.14572537499770988,
     "line_count": 12,
     "feasible": 1
   },
@@ -1375,7 +1375,7 @@
     "path_length_km": 90.07308592662471,
     "coverage_pct": 96.90555555555555,
     "excess_overlap_pct": 23.211190340987923,
-    "planning_time_s": 0.11698916699970141,
+    "planning_time_s": 0.11916474999452475,
     "line_count": 9,
     "feasible": 0
   },
@@ -1390,7 +1390,7 @@
     "path_length_km": 72.82287786481395,
     "coverage_pct": 98.36111111111111,
     "excess_overlap_pct": 1.6199860002956463,
-    "planning_time_s": 0.1507851250062231,
+    "planning_time_s": 0.15190425000037067,
     "line_count": 12,
     "feasible": 1
   },
@@ -1405,7 +1405,7 @@
     "path_length_km": 90.19340092560638,
     "coverage_pct": 97.22222222222221,
     "excess_overlap_pct": 22.063595690217106,
-    "planning_time_s": 0.13383537498884834,
+    "planning_time_s": 0.11254933399322908,
     "line_count": 9,
     "feasible": 0
   },
@@ -1420,7 +1420,7 @@
     "path_length_km": 72.80812097767209,
     "coverage_pct": 98.56111111111112,
     "excess_overlap_pct": 1.7080085212686391,
-    "planning_time_s": 0.15117912500863895,
+    "planning_time_s": 0.14617895799165126,
     "line_count": 12,
     "feasible": 1
   },
@@ -1435,7 +1435,7 @@
     "path_length_km": 90.25398185504991,
     "coverage_pct": 97.21111111111111,
     "excess_overlap_pct": 20.35478288376734,
-    "planning_time_s": 0.1364679160178639,
+    "planning_time_s": 0.11024745799659286,
     "line_count": 9,
     "feasible": 0
   },
@@ -1450,7 +1450,7 @@
     "path_length_km": 72.89191814761692,
     "coverage_pct": 98.47777777777777,
     "excess_overlap_pct": 1.6277879701442524,
-    "planning_time_s": 0.1475108329905197,
+    "planning_time_s": 0.14021912500902545,
     "line_count": 12,
     "feasible": 1
   },
@@ -1465,7 +1465,7 @@
     "path_length_km": 90.13353081306305,
     "coverage_pct": 97.02222222222223,
     "excess_overlap_pct": 21.174999687309167,
-    "planning_time_s": 0.13060229198890738,
+    "planning_time_s": 0.1320097080024425,
     "line_count": 9,
     "feasible": 0
   },
@@ -1480,7 +1480,7 @@
     "path_length_km": 72.8274563288153,
     "coverage_pct": 98.30555555555556,
     "excess_overlap_pct": 1.7791855028587769,
-    "planning_time_s": 0.15361395801301114,
+    "planning_time_s": 0.15814383400720544,
     "line_count": 12,
     "feasible": 1
   },
@@ -1495,7 +1495,7 @@
     "path_length_km": 90.1609314505909,
     "coverage_pct": 97.26666666666667,
     "excess_overlap_pct": 20.946503807500026,
-    "planning_time_s": 0.12731537499348633,
+    "planning_time_s": 0.13134799999534152,
     "line_count": 9,
     "feasible": 0
   },
@@ -1510,7 +1510,7 @@
     "path_length_km": 72.95644847296327,
     "coverage_pct": 98.50555555555556,
     "excess_overlap_pct": 1.736070561734954,
-    "planning_time_s": 0.14181224998901598,
+    "planning_time_s": 0.14933104199008085,
     "line_count": 12,
     "feasible": 1
   },
@@ -1525,7 +1525,7 @@
     "path_length_km": 90.2485691567118,
     "coverage_pct": 97.15555555555555,
     "excess_overlap_pct": 20.27195239471723,
-    "planning_time_s": 0.11473100000876002,
+    "planning_time_s": 0.13867508299881592,
     "line_count": 9,
     "feasible": 0
   },
@@ -1540,7 +1540,7 @@
     "path_length_km": 72.93477107272396,
     "coverage_pct": 98.19444444444444,
     "excess_overlap_pct": 1.770516194005536,
-    "planning_time_s": 0.1442068750038743,
+    "planning_time_s": 0.12824379200174008,
     "line_count": 12,
     "feasible": 1
   },
@@ -1555,7 +1555,7 @@
     "path_length_km": 90.16982567869954,
     "coverage_pct": 96.92222222222222,
     "excess_overlap_pct": 21.800901288230715,
-    "planning_time_s": 0.10996408300707117,
+    "planning_time_s": 0.14532433300337289,
     "line_count": 9,
     "feasible": 0
   },
@@ -1570,7 +1570,7 @@
     "path_length_km": 72.83345975790567,
     "coverage_pct": 98.35000000000001,
     "excess_overlap_pct": 1.8400067095661061,
-    "planning_time_s": 0.15878349999547936,
+    "planning_time_s": 0.11990908300504088,
     "line_count": 12,
     "feasible": 1
   },
@@ -1585,7 +1585,7 @@
     "path_length_km": 90.12817031025926,
     "coverage_pct": 96.73888888888888,
     "excess_overlap_pct": 21.984619724553394,
-    "planning_time_s": 0.1233834580052644,
+    "planning_time_s": 0.11784254199301358,
     "line_count": 9,
     "feasible": 0
   },
@@ -1600,7 +1600,7 @@
     "path_length_km": 72.05220703025746,
     "coverage_pct": 98.53888888888889,
     "excess_overlap_pct": 1.4185772851411391,
-    "planning_time_s": 0.14103395800339058,
+    "planning_time_s": 0.12875337500008754,
     "line_count": 12,
     "feasible": 1
   },
@@ -1615,7 +1615,7 @@
     "path_length_km": 90.30413996933348,
     "coverage_pct": 97.04444444444445,
     "excess_overlap_pct": 22.129355963045377,
-    "planning_time_s": 0.12872604199219495,
+    "planning_time_s": 0.13987058300699573,
     "line_count": 9,
     "feasible": 0
   },
@@ -1630,7 +1630,7 @@
     "path_length_km": 73.29008914467052,
     "coverage_pct": 98.6,
     "excess_overlap_pct": 1.893664716167038,
-    "planning_time_s": 0.15564787498442456,
+    "planning_time_s": 0.16158524999627843,
     "line_count": 12,
     "feasible": 1
   },
@@ -1645,7 +1645,7 @@
     "path_length_km": 90.12723842286807,
     "coverage_pct": 96.97222222222223,
     "excess_overlap_pct": 21.893868145298775,
-    "planning_time_s": 0.11412129100062884,
+    "planning_time_s": 0.1600366659986321,
     "line_count": 9,
     "feasible": 0
   },
@@ -1660,7 +1660,7 @@
     "path_length_km": 72.61834453794481,
     "coverage_pct": 98.35555555555555,
     "excess_overlap_pct": 1.681630963814628,
-    "planning_time_s": 0.1394119999895338,
+    "planning_time_s": 0.16206708300160244,
     "line_count": 12,
     "feasible": 1
   },
@@ -1675,7 +1675,7 @@
     "path_length_km": 90.12305058130967,
     "coverage_pct": 97.17777777777778,
     "excess_overlap_pct": 23.293598761485878,
-    "planning_time_s": 0.11669295802130364,
+    "planning_time_s": 0.10447200000635348,
     "line_count": 9,
     "feasible": 0
   },
@@ -1690,7 +1690,7 @@
     "path_length_km": 72.81315520307494,
     "coverage_pct": 98.39444444444445,
     "excess_overlap_pct": 1.9875495407912183,
-    "planning_time_s": 0.16305283299880102,
+    "planning_time_s": 0.14163183300115634,
     "line_count": 12,
     "feasible": 1
   },
@@ -1705,7 +1705,7 @@
     "path_length_km": 90.14058014703141,
     "coverage_pct": 96.94444444444444,
     "excess_overlap_pct": 22.177236462063615,
-    "planning_time_s": 0.1284506660012994,
+    "planning_time_s": 0.11067929099954199,
     "line_count": 9,
     "feasible": 0
   },
@@ -1720,7 +1720,7 @@
     "path_length_km": 72.83533779034457,
     "coverage_pct": 98.48333333333333,
     "excess_overlap_pct": 1.5408598141880474,
-    "planning_time_s": 0.15648658300051466,
+    "planning_time_s": 0.1576830840058392,
     "line_count": 12,
     "feasible": 1
   },
@@ -1735,7 +1735,7 @@
     "path_length_km": 90.14651780728542,
     "coverage_pct": 97.0,
     "excess_overlap_pct": 22.77013076789153,
-    "planning_time_s": 0.13365812500705943,
+    "planning_time_s": 0.12249024999618996,
     "line_count": 9,
     "feasible": 0
   },
@@ -1750,7 +1750,7 @@
     "path_length_km": 73.1180153002585,
     "coverage_pct": 98.43888888888888,
     "excess_overlap_pct": 1.6062124674236713,
-    "planning_time_s": 0.14497720898361877,
+    "planning_time_s": 0.1323282920056954,
     "line_count": 12,
     "feasible": 1
   },
@@ -1765,7 +1765,7 @@
     "path_length_km": 90.19301846353936,
     "coverage_pct": 97.16111111111111,
     "excess_overlap_pct": 20.577205500017158,
-    "planning_time_s": 0.11943962497753091,
+    "planning_time_s": 0.13245304199517705,
     "line_count": 9,
     "feasible": 0
   },
@@ -1780,7 +1780,7 @@
     "path_length_km": 72.95418637617745,
     "coverage_pct": 98.34444444444445,
     "excess_overlap_pct": 1.8043885549914942,
-    "planning_time_s": 0.14851674999226816,
+    "planning_time_s": 0.16971583300619386,
     "line_count": 12,
     "feasible": 1
   },
@@ -1795,7 +1795,7 @@
     "path_length_km": 90.06849987204933,
     "coverage_pct": 96.81111111111112,
     "excess_overlap_pct": 22.52942053497053,
-    "planning_time_s": 0.12374041599105112,
+    "planning_time_s": 0.13561666599707678,
     "line_count": 9,
     "feasible": 0
   },
@@ -1810,7 +1810,7 @@
     "path_length_km": 73.1571030444804,
     "coverage_pct": 98.42222222222222,
     "excess_overlap_pct": 2.0223229190098486,
-    "planning_time_s": 0.12393925001379102,
+    "planning_time_s": 0.13098841700411867,
     "line_count": 12,
     "feasible": 1
   },
@@ -1825,7 +1825,7 @@
     "path_length_km": 90.13812270338013,
     "coverage_pct": 96.61111111111111,
     "excess_overlap_pct": 23.045091068616866,
-    "planning_time_s": 0.1127801249967888,
+    "planning_time_s": 0.1235702909907559,
     "line_count": 9,
     "feasible": 0
   },
@@ -1840,7 +1840,7 @@
     "path_length_km": 72.86601720047472,
     "coverage_pct": 98.57777777777777,
     "excess_overlap_pct": 1.6849787312957163,
-    "planning_time_s": 0.1404597500222735,
+    "planning_time_s": 0.15320429200073704,
     "line_count": 12,
     "feasible": 1
   },
@@ -1855,7 +1855,7 @@
     "path_length_km": 90.1406258127057,
     "coverage_pct": 96.90555555555555,
     "excess_overlap_pct": 21.173614682519833,
-    "planning_time_s": 0.11232524999650195,
+    "planning_time_s": 0.12923308400786482,
     "line_count": 9,
     "feasible": 0
   },
@@ -1870,7 +1870,7 @@
     "path_length_km": 73.00941769395924,
     "coverage_pct": 98.42777777777778,
     "excess_overlap_pct": 1.720388523343908,
-    "planning_time_s": 0.15208133298438042,
+    "planning_time_s": 0.13722120800230186,
     "line_count": 12,
     "feasible": 1
   },
@@ -1885,7 +1885,7 @@
     "path_length_km": 90.2642889845786,
     "coverage_pct": 97.07777777777777,
     "excess_overlap_pct": 21.919227638554638,
-    "planning_time_s": 0.12307887498172931,
+    "planning_time_s": 0.12832995899952948,
     "line_count": 9,
     "feasible": 0
   },
@@ -1900,7 +1900,7 @@
     "path_length_km": 73.37333893638746,
     "coverage_pct": 98.47222222222223,
     "excess_overlap_pct": 1.8978835703264179,
-    "planning_time_s": 0.12438754198956303,
+    "planning_time_s": 0.16058958299981896,
     "line_count": 12,
     "feasible": 1
   },
@@ -1915,7 +1915,7 @@
     "path_length_km": 90.12574359020915,
     "coverage_pct": 97.00555555555556,
     "excess_overlap_pct": 22.30627384032591,
-    "planning_time_s": 0.11715725000249222,
+    "planning_time_s": 0.11876904100063257,
     "line_count": 9,
     "feasible": 0
   },
@@ -1930,7 +1930,7 @@
     "path_length_km": 73.03307620106013,
     "coverage_pct": 98.40555555555555,
     "excess_overlap_pct": 1.7226591781908376,
-    "planning_time_s": 0.14508166600717232,
+    "planning_time_s": 0.16074770799605176,
     "line_count": 12,
     "feasible": 1
   }

@@ -14,6 +14,7 @@ import numpy as np
 import rasterio
 from matplotlib.colors import LinearSegmentedColormap, LightSource, Normalize, TwoSlopeNorm
 from matplotlib.lines import Line2D
+from PIL import Image
 from rasterio.enums import Resampling
 from rasterio.windows import Window
 
@@ -23,6 +24,10 @@ import make_survey_grade_pilot as pilot
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "survey_grade_extension_usgs_cascadia"
+PIC_DIRS = (
+    ROOT / "manuscript" / "latex" / "pic",
+    ROOT / "manuscript" / "mdpi_jmse" / "pic",
+)
 LIGHT = LightSource(azdeg=318, altdeg=42)
 
 
@@ -201,14 +206,14 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
 
     plt.rcParams.update(
         {
-            "font.family": "serif",
-            "font.serif": ["Palatino", "Times New Roman", "DejaVu Serif"],
-            "mathtext.fontset": "dejavuserif",
-            "font.size": 6.7,
-            "axes.titlesize": 7.2,
-            "axes.labelsize": 6.5,
-            "xtick.labelsize": 5.8,
-            "ytick.labelsize": 5.8,
+            "font.family": "sans-serif",
+            "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
+            "mathtext.fontset": "dejavusans",
+            "font.size": 7.0,
+            "axes.titlesize": 7.55,
+            "axes.labelsize": 6.75,
+            "xtick.labelsize": 6.05,
+            "ytick.labelsize": 6.05,
             "axes.linewidth": 0.45,
         }
     )
@@ -225,16 +230,17 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
         ["#fff9f2", "#f8ceb0", "#e3895d", "#7c3325"],
     )
 
-    fig = plt.figure(figsize=(7.24, 4.28), facecolor="white")
-    outer = fig.add_gridspec(1, 4, width_ratios=[2.42, 0.50, 0.50, 0.50], wspace=0.030)
-    map_grid = outer[0, 0].subgridspec(len(scenes), 1, hspace=0.040)
+    fig = plt.figure(figsize=(7.55, 5.02), facecolor="white")
+    outer = fig.add_gridspec(2, 1, height_ratios=[1.82, 1.0], hspace=0.150)
+    map_grid = outer[0, 0].subgridspec(1, len(scenes), wspace=0.060)
+    metric_grid = outer[1, 0].subgridspec(1, 3, wspace=0.190)
     fig.text(
         0.03,
         0.985,
         "USGS Southern Cascadia extension",
         ha="left",
         va="top",
-        fontsize=7.3,
+        fontsize=7.8,
         fontweight="bold",
         color="#1f2933",
     )
@@ -244,7 +250,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
         "Straight lines are fixed-pattern survey transects; matrices report extension means for each crop.",
         ha="left",
         va="top",
-        fontsize=3.95,
+        fontsize=4.35,
         color="#667483",
     )
 
@@ -263,7 +269,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
             scene.y.max() / geo.NM_TO_M,
         )
 
-        ax_map = fig.add_subplot(map_grid[row_idx, 0])
+        ax_map = fig.add_subplot(map_grid[0, row_idx])
         dx = float(np.abs(scene.x[0, 1] - scene.x[0, 0])) if scene.x.shape[1] > 1 else 1.0
         dy = float(np.abs(scene.y[1, 0] - scene.y[0, 0])) if scene.y.shape[0] > 1 else 1.0
         z_fill = np.where(np.isfinite(scene.z), scene.z, float(np.nanmedian(scene.z)))
@@ -275,7 +281,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
             dy=max(dy, 1.0),
             blend_mode="soft",
         )
-        ax_map.imshow(shaded, extent=extent, origin="lower", aspect="auto")
+        ax_map.imshow(shaded, extent=extent, origin="lower", aspect="equal")
         if float(np.nanmax(scene.z) - np.nanmin(scene.z)) > 1e-6:
             levels = np.linspace(float(np.nanmin(scene.z)), float(np.nanmax(scene.z)), 11)
             ax_map.contour(
@@ -318,7 +324,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
             transform=ax_map.transAxes,
             ha="left",
             va="top",
-            fontsize=6.05,
+            fontsize=6.35,
             fontweight="bold",
             color="#1f2933",
             bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.82, "pad": 0.55},
@@ -330,7 +336,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
             transform=ax_map.transAxes,
             ha="left",
             va="bottom",
-            fontsize=5.2,
+            fontsize=5.35,
             color="#263440",
             bbox={"boxstyle": "round,pad=0.18", "facecolor": "white", "edgecolor": "#d7e0e7", "linewidth": 0.35, "alpha": 0.86},
         )
@@ -342,7 +348,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
             transform=ax_map.transAxes,
             ha="right",
             va="bottom",
-            fontsize=4.15,
+            fontsize=4.35,
             color="#263440",
             bbox={"boxstyle": "round,pad=0.16", "facecolor": "white", "edgecolor": "#d7e0e7", "linewidth": 0.32, "alpha": 0.82},
         )
@@ -364,7 +370,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
                 framealpha=0.90,
                 borderpad=0.25,
                 handlelength=1.9,
-                fontsize=4.65,
+                fontsize=4.95,
             )
             leg.get_frame().set_edgecolor("#d7e0e7")
             leg.get_frame().set_linewidth(0.35)
@@ -377,7 +383,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
             overlap_matrix[row_idx, col_idx] = mean_result(scene.scene_id, method, "excess_overlap_pct")
 
     method_headers = ["Fixed", "Adapt.", "Hybrid"]
-    metric_axes = [fig.add_subplot(outer[0, i]) for i in range(1, 4)]
+    metric_axes = [fig.add_subplot(metric_grid[0, i]) for i in range(3)]
     cov_min = float(np.min(coverage_matrix))
     cov_max = float(np.max(coverage_matrix))
     if cov_min < 97.0 < cov_max:
@@ -392,24 +398,20 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
     ]
 
     for ax_idx, (ax, data, cmap, norm, title, fmt) in enumerate(metric_specs):
-        im = ax.imshow(data, cmap=cmap, norm=norm, aspect="auto")
-        ax.set_title(title, color="#1f2933", fontweight="bold", fontsize=5.65, pad=2.5)
+        im = ax.imshow(data, cmap=cmap, norm=norm, aspect="equal")
+        ax.set_title(title, color="#1f2933", fontweight="bold", fontsize=6.05, pad=2.8)
         ax.set_xticks(np.arange(len(methods)))
         ax.set_xticklabels(method_headers)
         ax.xaxis.tick_top()
         ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=1.2, length=0.0)
         for tick in ax.get_xticklabels():
-            tick.set_fontsize(4.85)
+            tick.set_fontsize(5.10)
         ax.set_yticks(np.arange(len(scene_labels)))
-        ax.set_yticklabels([])
-        ax.tick_params(axis="y", left=False, right=False, labelleft=False, length=0.0, pad=0.0)
+        ax.set_yticklabels(scene_labels if ax_idx == 0 else [])
+        ax.tick_params(axis="y", left=False, right=False, labelleft=ax_idx == 0, length=0.0, pad=1.5)
         for spine in ax.spines.values():
             spine.set_color("#c8d4df")
             spine.set_linewidth(0.55)
-        ax.set_xticks(np.arange(-0.5, len(methods), 1), minor=True)
-        ax.set_yticks(np.arange(-0.5, len(scene_labels), 1), minor=True)
-        ax.grid(which="minor", color="white", linewidth=0.85)
-        ax.tick_params(which="minor", bottom=False, left=False)
         for i in range(data.shape[0]):
             for j in range(data.shape[1]):
                 rgba = im.cmap(im.norm(float(data[i, j])))
@@ -420,15 +422,21 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
                     fmt.format(float(data[i, j])),
                     ha="center",
                     va="center",
-                    fontsize=5.25,
+                    fontsize=5.55,
                     color="white" if luminance < 0.43 else "#263440",
                 )
 
-    fig.subplots_adjust(left=0.03, right=0.995, top=0.915, bottom=0.062)
-    fig.savefig(OUT / "survey_grade_extension_journal.png", dpi=420, bbox_inches="tight", pad_inches=0.038)
-    pic = ROOT / "latex" / "pic"
-    pic.mkdir(parents=True, exist_ok=True)
-    fig.savefig(pic / "journal_usgs_extension.png", dpi=420, bbox_inches="tight", pad_inches=0.038)
+    fig.subplots_adjust(left=0.050, right=0.990, top=0.925, bottom=0.070)
+    output_paths = [OUT / "survey_grade_extension_journal.png"]
+    for pic_dir in PIC_DIRS:
+        pic_dir.mkdir(parents=True, exist_ok=True)
+        output_paths.append(pic_dir / "journal_usgs_extension.png")
+    for output_path in output_paths:
+        fig.savefig(output_path, dpi=420, bbox_inches="tight", facecolor="white", pad_inches=0.038)
+        rgba = Image.open(output_path).convert("RGBA")
+        bg = Image.new("RGBA", rgba.size, (255, 255, 255, 255))
+        bg.alpha_composite(rgba)
+        bg.convert("RGB").save(output_path, optimize=True)
     plt.close(fig)
 
 

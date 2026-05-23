@@ -50,7 +50,7 @@ Status date: 2026-05-23
 - [x] Latest five-point PDF page preview is recorded in `audit/page_preview_20260515_user_5point_v16/contact_sheet.png`.
 - [x] Latest Fig. 2/Fig. 6/Fig. 14 PDF page preview is recorded in `audit/page_preview_20260515_v17b_after/contact_sheet.png`.
 - [x] Latest reference audit is recorded in `audit/reference_verification_20260514_v2.md`.
-- [x] JMSE v23 narrative patch adds IHO C-13, NOAA HSSD 2025, and AusSeabed Guidelines as benchmark-parameter rationale references.
+- [x] JMSE v24 narrative patch adds a dedicated benchmark-parameter rationale table using IHO C-13, NOAA HSSD 2025, and AusSeabed Guidelines as scope references.
 
 ## Claim Boundary QA
 
@@ -72,17 +72,17 @@ Status date: 2026-05-23
 
 ## Compile QA
 
-- [x] MDPI PDF compiled to 46 pages after the May 23 JMSE narrative/parameter-rationale patch.
-- [x] Working PDF compiled to 46 pages after the May 23 JMSE narrative/parameter-rationale patch.
-- [x] Abstract rechecked after the May 23 pass: 200 words by the local LaTeX-stripped counter.
+- [x] MDPI PDF compiled to 47 pages after the May 23 v24 benchmark/robustness patch.
+- [x] Working PDF compiled to 47 pages after the May 23 v24 benchmark/robustness patch.
+- [x] Abstract rechecked after the May 23 v24 pass: 199 words by the local LaTeX-stripped counter.
 - [x] No undefined citation/reference warnings in latest MDPI compile log.
 - [x] No overfull hbox warnings in latest MDPI compile log.
 - [x] No `Float too large`, fatal, or emergency-stop messages in the latest strict log scan.
 - [x] No sparse/blank figure pages detected in the May 14 rendered contact-sheet QA.
 - [x] Working PDF compiled and retained.
 - [x] Latest compile logs:
-  - `manuscript/mdpi_jmse/compile_after_jmse_narrative_v23_20260523_pass2.log`
-  - `manuscript/latex/compile_after_jmse_narrative_v23_20260523_pass2.log`
+  - `manuscript/mdpi_jmse/compile_after_benchmark_robustness_v24_20260523_pass2.log`
+  - `manuscript/latex/compile_after_benchmark_robustness_v24_20260523_pass2.log`
 
 ## Repository and Archive
 
@@ -91,7 +91,7 @@ Status date: 2026-05-23
 - [x] Initial archived version DOI: `10.5281/zenodo.19919506`
 - [x] DOI `10.5281/zenodo.19919506` was checked through DOI.org and resolves to Zenodo record `19919506`.
 - [x] Reproducibility manifest generated for current workspace: 289 entries.
-- [x] README, `README_submission.md`, `CITATION.cff`, `.zenodo.json`, Data Availability, and cover letter use the current fixed-line MBES manuscript title/framing.
+- [x] README, `README_submission.md`, `CITATION.cff`, `.zenodo.json`, Data Availability, and cover letter use the current fixed-line MBES benchmark/robustness manuscript title/framing.
 - [x] Release-readiness gate added as `check_release_readiness.py`; run it before creating any Zenodo-triggering GitHub release.
 - [x] GEBCO TID URL updated to the current official GEBCO TID page.
 - [x] Four bibliography entries using `et al.` were expanded or corrected.
@@ -133,3 +133,13 @@ Status date: 2026-05-23
 - [x] Results now separates nine-window public statistics into low-overlap windows and the overlap-stressed USGS high-complexity crop.
 - [x] Supplementary/Reproducibility Evidence now includes a compact implementation map from formulas to scripts and CSV/JSON outputs.
 - [x] Discussion demotes segmented-heading to a boundary note and keeps the manuscript focused on fixed-line geometry.
+
+## 2026-05-23 v24 Benchmark/Robustness Addendum
+
+- [x] Title strengthened across manuscript, README, `CITATION.cff`, `.zenodo.json`, and cover letter to `Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study`.
+- [x] Abstract remains within the JMSE safe range at 199 words and now includes rank-biserial effect size 1.00 for the nine-window overlap-cleanup result.
+- [x] Methods now includes Table `tab:parameter_rationale`, which ties overlap target, overlap ceiling, C97/O3 gate, swath clipping, heading grid, score weights, and GA budget to their robustness checks.
+- [x] Results Table `tab:public_window_stats` was reformatted from a dense horizontal table into a readable vertical statistic-by-method table, including path, overlap, and coverage-delta effect-size evidence.
+- [x] Visual QA rendered and inspected `audit/page_preview_20260523_v24/mdpi_key_page_01_v24b.png`, `mdpi_key_page_10_v24b.png`, and `mdpi_key_page_22_v24b.png`; title, parameter table, and public-window table are readable and not clipped.
+- [x] MDPI and working PDFs compiled to 47 pages with logs `compile_after_benchmark_robustness_v24_20260523_pass2.log`; strict scan found no LaTeX hard errors, undefined references/citations, overfull boxes, float-too-large warnings, fatal errors, or rerun warnings.
+- [x] v24+ reference/release audit rerun: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 290 entries; `check_release_readiness.py` reports 0 missing required paths, 0 empty required dirs, 0 untracked manifest entries, and 0 tracked core files missing from the manifest.

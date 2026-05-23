@@ -20,7 +20,7 @@
 | 16 | `zhang2024tttslam` | verified_crossref | TTT SLAM: A feature-based bathymetric SLAM framework |  |
 | 17 | `krasnosky2022gp` | verified_crossref | A Massively Parallel Implementation of Gaussian Process Regression for Real Time Bathymetric Modeling and Simultaneous Localization and Mapp |  |
 | 18 | `real2025acousticgraphslam` | verified_crossref | Modular Acoustic Graph SLAM for Underwater Monitoring With Autonomous Underwater Vehicles |  |
-| 19 | `xu2025usoslam` | verified_crossref | USO-SLAM: SLAM With Single-Frame Semantic Object Reconstruction for Autonomous Underwater Vehicles |  |
+| 19 | `xu2025usoslam` | verified_doi_redirects | https://ieeexplore.ieee.org/document/11018231/ |  |
 | 20 | `ma2023terrainreview` | verified_crossref | A review of terrain aided navigation for underwater vehicles |  |
 | 21 | `zhang2023rbpf` | verified_crossref | An outlier-robust Rao–Blackwellized particle filter for underwater terrain-aided navigation |  |
 | 22 | `ding2022contour` | verified_crossref | A new Contour-Based combined matching algorithm for underwater Terrain-Aided strapdown inertial navigation system |  |
@@ -28,12 +28,12 @@
 | 24 | `sture2023gpbathy` | verified_crossref | Feature-Based Bathymetric Matching of Autonomous Underwater Vehicle Transects using Robust Gaussian Processes |  |
 | 25 | `ma2025zonotope` | verified_crossref | Constrained Zonotope Terrain-Aided Navigation Method for Long-Range Autonomous Underwater Vehicles |  |
 | 26 | `yan2024dual` | verified_crossref | A dual-stage coverage path planning method for bathymetric survey using an AUV in graph-based SLAM framework considering positioning uncerta |  |
-| 27 | `zhou2017terrain` | verified_crossref | An Effective Terrain Aided Navigation for Low-Cost Autonomous Underwater Vehicles |  |
+| 27 | `zhou2017terrain` | verified_doi_redirects | https://www.mdpi.com/1424-8220/17/4/680 |  |
 | 28 | `kim2017panel` | verified_crossref | Panel-based bathymetric SLAM with a multibeam echosounder |  |
-| 29 | `zhu2025robust` | verified_crossref | Robust underwater SLAM fusing bathymetric and range information |  |
-| 30 | `xie2024three` | verified_crossref | Three-Dimensional Coverage Path Planning for Cooperative Autonomous Underwater Vehicles: A Swarm Migration Genetic Algorithm Approach |  |
+| 29 | `zhu2025robust` | verified_doi_redirects | https://linkinghub.elsevier.com/retrieve/pii/S0263224124021080 |  |
+| 30 | `xie2024three` | verified_doi_redirects | https://www.mdpi.com/2077-1312/12/8/1366 |  |
 | 31 | `li2024full` | verified_crossref | Full Coverage Path Planning for Torpedo-Type AUVs’ Marine Survey Confined in Convex Polygon Area |  |
-| 32 | `ji2022multi` | verified_crossref | Multi-Underwater Gliders Coverage Path Planning Based on Ant Colony Optimization |  |
+| 32 | `ji2022multi` | verified_doi_redirects | https://www.mdpi.com/2079-9292/11/19/3021 |  |
 | 33 | `wu2024complete` | verified_crossref | Complete Coverage Path Planning Based on Improved Genetic Algorithm for Unmanned Surface Vehicle |  |
 | 34 | `zhang2023multi` | verified_crossref | Multi-AUV cooperative search method based on dynamic optimal coverage |  |
 | 35 | `mu2025coverage` | verified_crossref | Coverage path planning for multi-AUV considering ocean currents and sonar performance |  |

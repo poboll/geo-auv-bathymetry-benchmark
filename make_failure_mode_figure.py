@@ -9,6 +9,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import LinearSegmentedColormap
+from PIL import Image
 
 import geo_public_bathy_benchmark as bench
 
@@ -17,8 +18,8 @@ ROOT = Path(__file__).resolve().parent
 RUN = ROOT / "run_5"
 OUT_CSV = RUN / "complex_terrain_failure_mode_summary.csv"
 OUT_FIGS = [
-    ROOT / "latex" / "pic" / "journal_failure_mode_complex.png",
-    ROOT / "mdpi_jmse" / "pic" / "journal_failure_mode_complex.png",
+    ROOT / "manuscript" / "latex" / "pic" / "journal_failure_mode_complex.png",
+    ROOT / "manuscript" / "mdpi_jmse" / "pic" / "journal_failure_mode_complex.png",
 ]
 
 METHODS = [
@@ -84,9 +85,9 @@ def _plot_lines(ax: plt.Axes, scene: bench.TerrainScene, plan: bench.PlanResult)
 def make_figure(scene: bench.TerrainScene, plans: list[bench.PlanResult]) -> None:
     plt.rcParams.update(
         {
-            "font.family": "serif",
-            "font.serif": ["Palatino", "Times New Roman", "DejaVu Serif"],
-            "mathtext.fontset": "dejavuserif",
+            "font.family": "sans-serif",
+            "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
+            "mathtext.fontset": "dejavusans",
             "axes.titlesize": 8.0,
             "axes.labelsize": 7.8,
             "xtick.labelsize": 6.8,
@@ -197,14 +198,14 @@ def make_figure(scene: bench.TerrainScene, plans: list[bench.PlanResult]) -> Non
 
     cax = fig.add_axes([0.92, 0.13, 0.018, 0.32])
     cb = fig.colorbar(img, cax=cax)
-    cb.set_label("Cell excess overlap (%)", fontsize=7.6)
+    cb.set_label("Cell excess overlap (%)\nshared by panels (d)--(f)", fontsize=7.25)
     cb.ax.tick_params(labelsize=6.8)
 
-    fig.text(0.065, 0.975, "Complex Terrain failure mode under a single-heading fixed-pattern layout", fontsize=8.6)
+    fig.text(0.065, 0.968, "Complex Terrain failure mode under a single-heading fixed-pattern layout", fontsize=8.05, color="#1f2933")
     fig.text(
         0.065,
         0.025,
-        "Red overlay marks cells with zero predicted MBES coverage; rows use the same synthetic complex-relief scene and the same evaluator.",
+        "Top row: red cells indicate zero predicted coverage. Bottom row: one shared continuous colorbar reports cell excess-overlap percentage.",
         fontsize=6.7,
         color="#3c4753",
     )
@@ -212,7 +213,11 @@ def make_figure(scene: bench.TerrainScene, plans: list[bench.PlanResult]) -> Non
 
     for out_path in OUT_FIGS:
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        fig.savefig(out_path, dpi=320)
+        fig.savefig(out_path, dpi=360, facecolor="white", bbox_inches="tight", pad_inches=0.030)
+        rgba = Image.open(out_path).convert("RGBA")
+        bg = Image.new("RGBA", rgba.size, (255, 255, 255, 255))
+        bg.alpha_composite(rgba)
+        bg.convert("RGB").save(out_path, optimize=True)
     plt.close(fig)
     write_summary(rows)
 

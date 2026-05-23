@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this benchmark package, please cite the archived release series and the associated manuscript."
-title: "Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors"
+title: "Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study"
 type: software
 authors:
   - family-names: Li

@@ -50,3 +50,14 @@
 - [x] 将 AI-assisted disclosure 移到 back matter。
 - [x] 编译两套 PDF、严格日志扫描、引用审计、manifest 与 release-readiness gate。
 - [ ] 若用户确认当前 v23 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。
+
+## 2026-05-23 v24 Addendum
+
+- [x] 按老师报告继续把题目显式改成 benchmark/robustness study 口径：`Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study`。
+- [x] 摘要同步压回 199 words，并把 rank-biserial effect size 1.00 放进摘要证据链。
+- [x] Methods 新增 `tab:parameter_rationale`，把 15% overlap、20% ceiling、C97/O3、\(W_{\max}\)、heading grid、score weights、GA budget 的依据与对应诊断集中成表。
+- [x] Results 中 `tab:public_window_stats` 从横向密表重排为纵向统计表，显式展示路径、重叠、coverage delta 的 CI/p/effect-size，避免只报正向指标。
+- [x] 同步 README、README_submission、CITATION、Zenodo metadata 和 cover letter 标题/叙事。
+- [x] 两套 LaTeX 重新编译为 47 pages；严格日志扫描无 hard error、undefined citation/reference、overfull、float-too-large、fatal/emergency stop 或 rerun。
+- [x] v24+ 重新跑引用审计、manifest 和 release gate：45 references / 0 failed / 0 et_al，manifest 290 entries，release-readiness 四项阻断均为 0。
+- [ ] 若用户确认当前 v24 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。

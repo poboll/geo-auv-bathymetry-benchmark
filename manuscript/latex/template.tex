@@ -53,7 +53,7 @@
   }%
 }
 
-\Title{Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors}
+\Title{Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study}
 
 \newcommand{\orcidauthorA}{0000-0003-2892-3993}
 %\newcommand{\orcidauthorB}{0009-0007-9221-1911}
@@ -66,8 +66,8 @@
 $^{1}$ \quad School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China; 20210485@gcc.edu.cn (C.L.); szy@xs.gcc.edu.cn (Z.S.); nyd@xs.gcc.edu.cn (Y.N.)}
 \corres{Correspondence: 20210485@gcc.edu.cn}
 
-\abstract{Multibeam echo-sounder (MBES) surveys often rely on inspectable parallel-line plans, yet uniform spacing ignores terrain-driven swath variation. This study addresses pre-mission fixed-line survey design with an available prior bathymetric grid. We propose a terrain-aware spacing framework combining a depth-referenced footprint approximation, heading search, quantile-based adaptive spacing, and lightweight GA used only for gated local line-position refinement. Tests use two GEBCO~2025 public-prior windows, three synthetic mechanism tests, and a USGS Southern Cascadia 30~m multibeam-derived grid. On the GEBCO pair, terrain-aware layouts retain 98.99--99.55 percent predicted coverage, reduce mean excess-overlap violation from about 0.81 to 0.113 percent, and shorten mean path length by 0.75 percent relative to fixed spacing. Across nine public windows, overlap cleanup is positive in 9/9 cases (Wilcoxon \(p=0.00195\)), while route gain is regime dependent. The strongest stressed case is the USGS high-complexity crop, where Fixed-Spacing is infeasible at 29.96 percent excess overlap and the hybrid layout remains feasible under the declared C97/O3 gate with about 25 percent path gain. However, C97/O3 feasibility does not imply tail-safe control under stricter C99/O2 or project-specific quality thresholds. The result is a reproducible public-grid planning benchmark for MBES fixed-line geometry.}
-\keyword{Multibeam echo sounder (MBES); Survey-line design; Fixed-line planning; Public bathymetric prior; Terrain-aware spacing; Coverage path planning; Local GA refinement}
+\abstract{Multibeam echo-sounder (MBES) surveys often rely on inspectable parallel-line plans, yet uniform spacing ignores terrain-driven swath variation. This study addresses pre-mission fixed-line survey planning with an available prior bathymetric grid. We present a reproducible public-grid benchmark and a terrain-aware spacing framework combining a depth-referenced footprint approximation, heading search, quantile-based adaptive spacing, and lightweight GA used only for gated local line-position refinement. Tests use two GEBCO~2025 public-prior windows, three synthetic mechanism tests, and a USGS Southern Cascadia 30~m multibeam-derived grid. On the GEBCO pair, terrain-aware layouts retain 98.99--99.55 percent predicted coverage, reduce mean excess-overlap violation from about 0.81 to 0.113 percent, and shorten mean path length by 0.75 percent relative to fixed spacing. Across nine public windows, overlap cleanup is positive in 9/9 cases (Wilcoxon \(p=0.00195\); rank-biserial 1.00), while route gain is regime dependent. The strongest stressed case is the USGS high-complexity crop, where Fixed-Spacing is infeasible at 29.96 percent excess overlap and the hybrid layout remains feasible under the declared C97/O3 gate with about 25 percent path gain. However, C97/O3 feasibility does not imply tail-safe control under stricter C99/O2 or project-specific quality thresholds.}
+\keyword{Multibeam echo sounder (MBES); Survey-line design; Fixed-line planning; Public bathymetric prior; Reproducible benchmark; Terrain-aware spacing; Robustness diagnostics; Local GA refinement}
 
 \begin{document}
 
@@ -84,7 +84,7 @@ The proposed planner embeds the sensor--terrain model directly into this fixed-l
 
 This study makes three bounded contributions:
 \begin{itemize}
-    \item It provides a reproducible public-grid benchmark for fixed-line MBES survey design, using GEBCO~2025 public-prior windows, synthetic mechanism tests, USGS 30~m public-grid crops, and versioned CSV/JSON/figure artifacts.
+    \item It provides a reproducible public-grid benchmark and robustness study for fixed-line MBES survey design, using GEBCO~2025 public-prior windows, synthetic mechanism tests, USGS 30~m public-grid crops, and versioned CSV/JSON/figure artifacts.
     \item It develops a quantile-based adaptive-spacing framework that couples local terrain geometry to fixed-pattern line placement through a depth-referenced MBES footprint approximation and a deterministic heading search.
     \item It separates mechanism from local cleanup: public-window and stress-regime analyses show that adaptive spacing is the primary source of overlap discipline, whereas GA is an optional gated refinement layer and the threshold, prior-error, uncertainty, current-drift, vehicle-aware, and segmented-heading diagnostics define the validity boundary.
 \end{itemize}
@@ -337,7 +337,31 @@ CR(\psi,\mathbf{p}) \ge 97.0\%, \qquad O_{\mathrm{ex}}(\psi,\mathbf{p}) \le 3.0\
 \end{equation}
 This distinction affects how the benchmark should be read. The 10--20 percent overlap interval is the design intent used when constructing candidate line families, whereas the reported acceptance rule is expressed through domain-level predicted coverage and mean excess-overlap violation. The 97 percent coverage and 3 percent mean-excess-overlap gates are benchmark thresholds chosen to compare methods under a common numerical evaluator; stricter hydrographic or project-specific thresholds would need to be declared and re-evaluated before deployment.
 
-The overlap margin, coverage gate, excess-overlap gate, and swath-width cap are benchmark design choices rather than hydrographic standards. IHO hydrographic guidance treats survey line spacing as dependent on survey requirements, range scale, depth, and required overlap, and its MBES guidance notes that swath-width variation with depth can justify splitting an area into subsections with different spacing \cite{iho_c13}. NOAA's HSSD similarly places crosslines, overlap, and swath acquisition inside project specifications and quality checks rather than a single universal overlap constant \cite{noaa_hssd2025}. The AusSeabed Australian Multibeam Guidelines also frame multibeam acquisition around pre-survey planning, calibration, acquisition, processing, and reporting procedures rather than a fixed numerical spacing rule \cite{ausseabed2020guidelines}. The present \(15\%\) design margin, \(20\%\) ceiling, \(C97/O3\) acceptance gate, and \(W_{\max}=1800\)~m cap therefore define a reproducible numerical benchmark. They are exposed to sensitivity and threshold diagnostics instead of being presented as survey-order requirements.
+The overlap margin, coverage gate, excess-overlap gate, and swath-width cap are benchmark design choices rather than hydrographic standards. IHO hydrographic guidance treats survey line spacing as dependent on survey requirements, range scale, depth, and required overlap, and its MBES guidance notes that swath-width variation with depth can justify splitting an area into subsections with different spacing \cite{iho_c13}. NOAA's HSSD similarly places crosslines, overlap, and swath acquisition inside project specifications and quality checks rather than a single universal overlap constant \cite{noaa_hssd2025}. The AusSeabed Australian Multibeam Guidelines also frame multibeam acquisition around pre-survey planning, calibration, acquisition, processing, and reporting procedures rather than a fixed numerical spacing rule \cite{ausseabed2020guidelines}. The present \(15\%\) design margin, \(20\%\) ceiling, \(C97/O3\) acceptance gate, and \(W_{\max}=1800\)~m cap therefore define a reproducible numerical benchmark. Table~\ref{tab:parameter_rationale} consolidates these choices, their rationale, and the diagnostics used to audit them.
+
+\begin{table}[!htbp]
+	\centering
+	\caption{Benchmark-parameter rationale and associated robustness checks. The settings define the numerical planning benchmark used for method comparison; they are not presented as hydrographic survey-order requirements.}
+	\label{tab:parameter_rationale}
+	\scriptsize
+	\renewcommand{\arraystretch}{1.10}
+	\setlength{\tabcolsep}{3.0pt}
+	\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}@{}}
+		\toprule[1bp]
+		\textbf{Parameter} & \textbf{Default} & \textbf{Rationale} & \textbf{Audit in this study} \\
+		\midrule[1bp]
+		Target overlap margin & \(\eta_{\mathrm{tar}}=15\%\) & Planning margin inside the declared 10--20\% design band; used to generate candidate spacing rather than to certify line products. & Target-overlap diagnostic at 10\%, 15\%, and 20\%. \\
+		Excess-overlap ceiling & \(20\%\) local adjacent-spacing ceiling & Separates intended overlap from redundant overlap under the adjacent-line spacing proxy. & Threshold/local-failure audit with 1--5\% mean-excess-overlap gates and cellwise tails. \\
+		Default feasibility gate & \(C97/O3\) & Common numerical acceptance screen for comparing fixed-line layouts while keeping stricter tail checks separate. & \(C99/O2\), \(C99.5/O2\), largest-gap, and p95/p99 cellwise diagnostics. \\
+		Swath-width clipping & \(W_{\min}=30\)~m, \(W_{\max}=1800\)~m & Prevents near-singular or very deep cells from producing non-physical spacing under the depth-referenced approximation. & \(W_{\max}=1200/1800/2400\)~m submission-boundary diagnostic. \\
+		Heading grid & \(15^{\circ}\) main scan & Reproducible global orientation search for an inspectable fixed-line family. & \(5^{\circ}\) deterministic heading-resolution audit. \\
+		Score weights & 80 km per coverage pp; 3 km per overlap pp & Prioritizes coverage-gate satisfaction before route shortening in a shared scalar score. & \(3\times3\) coverage/overlap penalty-weight diagnostic. \\
+		GA budget & 10 individuals, 10 generations & Local cleanup around a deterministic heading and adaptive-spacing base, not blind global CPP search. & 50-seed repeatability, GA-gate diagnostic, and stride-3/full-grid surrogate audit. \\
+		\bottomrule[1bp]
+	\end{tabular}
+\end{table}
+
+These settings are exposed to sensitivity and threshold diagnostics instead of being presented as survey-order requirements.
 
 Because mean coverage and mean excess-overlap gates can hide local failures, the reproducibility package also reports a threshold and local-failure diagnostic. That diagnostic re-evaluates the two primary GEBCO scenes and the USGS high-complexity crop under coverage thresholds of 95, 97, 98, 99, and 99.5 percent; mean-excess-overlap gates of 1, 2, 3, and 5 percent; largest connected uncovered-patch size; and the 95th- and 99th-percentile cellwise excess-overlap tails. These diagnostics are not used to change the main benchmark gate; they audit how much margin remains if a stricter project-specific rule is imposed.
 
@@ -595,16 +619,23 @@ The same audit is more informative when read by regime. Eight public windows sta
 	\caption{Paired public-window statistics across nine public bathymetry windows. Values are computed from the two primary GEBCO scenes, four supplemental GEBCO windows, and three USGS 30~m crops. \(G_L\) is path gain relative to Fixed-Spacing, \(\Delta O\) is overlap cleanup, and \(\Delta C\) is coverage change. CI denotes a 95\% bootstrap interval for the window-level mean; \(p\) is a one-sided Wilcoxon signed-rank test for a positive paired delta.}
 	\label{tab:public_window_stats}
 	\scriptsize
-	\renewcommand{\arraystretch}{1.08}
-	\resizebox{\textwidth}{!}{%
-	\begin{tabular}{@{}lrrrrrrrr@{}}
+	\renewcommand{\arraystretch}{1.12}
+	\setlength{\tabcolsep}{4.0pt}
+	\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\centering\arraybackslash}p{0.28\linewidth}>{\centering\arraybackslash}p{0.28\linewidth}@{}}
 		\toprule[1bp]
-		\textbf{Method} & \textbf{Feasible windows} & \textbf{\(G_L\) median (\%)} & \textbf{\(G_L\) mean [95\% CI] (\%)} & \textbf{\(G_L>0\)} & \textbf{\(p_G\)} & \textbf{\(\Delta O\) median (pp)} & \textbf{\(\Delta O\) mean [95\% CI] (pp)} & \textbf{\(\Delta O>0\) / \(p_O\)} \\
+		\textbf{Statistic} & \textbf{Adaptive Spacing} & \textbf{Hybrid GA} \\
 		\midrule[1bp]
-		Adaptive Spacing & 9/9 & 0.681 & 3.041 [0.198, 8.378] & 7/9 & 0.00977 & 0.799 & 3.895 [0.719, 9.920] & 9/9 / 0.00195 \\
-		Hybrid GA & 9/9 & 0.681 & 3.213 [0.315, 8.734] & 7/9 & 0.00977 & 0.663 & 3.869 [0.595, 10.045] & 9/9 / 0.00195 \\
+		Feasible public windows & 9/9 & 9/9 \\
+		\(G_L\) median (\%) & 0.681 & 0.681 \\
+		\(G_L\) mean [95\% CI] (\%) & 3.041 [0.198, 8.378] & 3.213 [0.315, 8.734] \\
+		Positive \(G_L\) windows / \(p_G\) / \(r_{rb,G}\) & 7/9 / 0.00977 / 0.867 & 7/9 / 0.00977 / 0.867 \\
+		\(\Delta O\) median (pp) & 0.799 & 0.663 \\
+		\(\Delta O\) mean [95\% CI] (pp) & 3.895 [0.719, 9.920] & 3.869 [0.595, 10.045] \\
+		Positive \(\Delta O\) windows / \(p_O\) / \(r_{rb,O}\) & 9/9 / 0.00195 / 1.000 & 9/9 / 0.00195 / 1.000 \\
+		\(\Delta C\) median (pp) & 0.000 & -0.933 \\
+		Positive \(\Delta C\) windows / \(p_C\) / \(r_{rb,C}\) & 2/9 / 0.59375 / -0.048 & 2/9 / 0.94922 / -0.600 \\
 		\bottomrule[1bp]
-	\end{tabular}}
+	\end{tabular}
 \end{table}
 
 \subsection{Cross-scene Mechanism and Failure Boundary}

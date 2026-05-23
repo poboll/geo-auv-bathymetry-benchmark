@@ -2,7 +2,7 @@
 
 ## 2026-05-23 Codex release-readiness 执行记录
 
-【x】GitHub/Zenodo 发布链状态已核对。  
+【x】GitHub/Zenodo 发布链状态已核对。
 文件/命令/证据：
 - 仓库：`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark`
 - 命令：`gh auth status`
@@ -10,7 +10,7 @@
 - 命令：`gh release list --limit 20`
 - 结果：当前只有 `v0.1.0 Pre-submission reproducibility package`，发布时间 `2026-04-30T12:59:10Z`。当前 46 页稿件尚未 mint 新 Zenodo version DOI；正式投稿前若要 DOI 对应最新稿，应新建 GitHub release 并等待 Zenodo 自动生成新 DOI。
 
-【x】复现包 release gate 已补齐，避免 Zenodo 包缺证据。  
+【x】复现包 release gate 已补齐，避免 Zenodo 包缺证据。
 文件/命令/证据：
 - 新增脚本：`check_release_readiness.py`
 - 修改脚本：`make_reproducibility_manifest.py`
@@ -20,18 +20,18 @@
 - 核对输出：`manifest_entries=289`、`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
 - 处理内容：manifest 现在只纳入 Git-tracked artifact，并记录当前 Git revision/dirty-worktree 状态；新增 release gate 会检查核心 PDF、LaTeX 源文件、证据目录、manifest-vs-Git 一致性。
 
-【x】Data Availability 合规口径已收紧。  
+【x】Data Availability 合规口径已收紧。
 文件/命令/证据：
 - 修改文件：`manuscript/mdpi_jmse/template.tex`、`manuscript/latex/template.tex`
 - 处理内容：把 “downloaded TID GeoTIFF subsets” 改为 “GEBCO TID audit CSV/JSON files, TID basket identifiers and retrieval metadata”，避免把 GEBCO 原始/源产品再分发说得过满；GEBCO 与 USGS 原始数据仍通过官方 DOI 入口获取。
 
-【x】新增/历史证据目录与复现实验脚本已纳入 Git release 范围。  
+【x】新增/历史证据目录与复现实验脚本已纳入 Git release 范围。
 文件/命令/证据：
 - 新纳入证据目录包括：`gebco_tid_audit/`、`heading_resolution_diagnostic/`、`public_window_statistics/`、`segmented_heading_extension/`、`structured_prior_error_replay/`、`threshold_local_failure_extension/`、`submission_boundary_diagnostics/`、`uncertainty_margin_replay/`、`current_drift_replay/`、`current_aware_margin_optimizer/`、`execution_risk_refinement/`、`vehicle_aware_posteval/`。
 - 新纳入脚本包括：`make_gebco_tid_audit.py`、`make_heading_resolution_diagnostic.py`、`make_public_window_statistics.py`、`make_segmented_heading_extension.py`、`make_structured_prior_error_replay.py`、`make_submission_boundary_diagnostics.py`、`make_threshold_local_failure_extension.py`、`make_uncertainty_margin_replay.py`、`make_current_drift_replay.py`、`make_current_aware_margin_optimizer.py`、`make_execution_risk_refinement.py`、`make_vehicle_aware_posteval.py`、`journal_heatmap_style.py`、`refresh_visuals_from_existing_outputs.py`。
 - 同时补入 `manuscript/latex/Definitions/`，保证工作稿 LaTeX 目录独立可编译。
 
-【x】v22 编译和引用核验通过。  
+【x】v22 编译和引用核验通过。
 文件/命令/证据：
 - 编译命令：在 `manuscript/mdpi_jmse` 与 `manuscript/latex` 下分别运行两遍 `xelatex -interaction=nonstopmode template.tex`。
 - 最新日志：`compile_after_release_readiness_v22_20260523_pass2.log`
@@ -42,7 +42,7 @@
 
 ## 2026-05-22 Codex 按点核对执行记录
 
-【x】P11：补做 \(15^{\circ}\) vs \(5^{\circ}\) heading-resolution diagnostic。  
+【x】P11：补做 \(15^{\circ}\) vs \(5^{\circ}\) heading-resolution diagnostic。
 文件/命令/证据：
 - 脚本：`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/make_heading_resolution_diagnostic.py`
 - 命令：`conda run -n uu python make_heading_resolution_diagnostic.py --scenes all`
@@ -50,7 +50,7 @@
 - 关键结果：Adaptive Spacing 在 GEBCO Cascadia、GEBCO Monterey、USGS High 上 \(5^{\circ}\) 与 \(15^{\circ}\) 的 heading、line count、path、coverage、overlap 完全一致；Simple Greedy 仅 Cascadia 从 \(75^{\circ}\) 改为 \(95^{\circ}\)，path -0.123%，overlap +0.084 pp，feasibility 不变。
 - 写回：`manuscript/mdpi_jmse/template.tex` 与 `manuscript/latex/template.tex` 的 Methods、Sensitivity Table、Discussion、Conclusion、Data Availability。
 
-【x】P7/P9：补九窗口 public-window paired statistics，减少“两幅 GEBCO 图不够”的风险。  
+【x】P7/P9：补九窗口 public-window paired statistics，减少“两幅 GEBCO 图不够”的风险。
 文件/命令/证据：
 - 脚本：`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/make_public_window_statistics.py`
 - 命令：`conda run -n uu python make_public_window_statistics.py`
@@ -59,7 +59,7 @@
 - 关键结果：9 个 public windows 中 Adaptive 和 Hybrid 均 9/9 feasible；overlap cleanup 均为 9/9 正向，one-sided Wilcoxon \(p=0.00195\)，rank-biserial = 1.00；path gain 均为 7/9 正向，one-sided Wilcoxon \(p=0.00977\)，median gain = 0.681%。coverage delta mixed，因此 GA 继续写成 gate-controlled local refinement。
 - 写回：正文新增 `Table~\ref{tab:public_window_stats}`，并把统计口径写入 Data Availability 与复现说明。
 
-【x】复现包与 PDF QA。  
+【x】复现包与 PDF QA。
 文件/命令/证据：
 - 更新 manifest 脚本：`make_reproducibility_manifest.py`
 - 命令：`conda run -n uu python make_reproducibility_manifest.py`
@@ -69,7 +69,7 @@
 - 编译结果：两套 PDF 均为 45 pages；严格扫描无 `LaTeX Error`、`Undefined control sequence`、undefined citation/reference、`Rerun`、`Overfull`、`Float too large`、`Fatal`、`Emergency stop`。
 - PDF 抽查：PyMuPDF 确认新增九窗口统计表在第 21 页，Heading resolution 行在第 28 页；页面预览输出到 `audit/page_preview_20260522_heading_public_stats/page_21.png` 至 `page_24.png`。
 
-【x】引用真实性核验补充。  
+【x】引用真实性核验补充。
 文件/命令/证据：
 - 命令：`python audit/verify_references_20260514.py`
 - 输出：`audit/reference_verification_20260514_v2.md/json`
@@ -209,8 +209,8 @@ flowchart TD
 
 ### 投稿可行性判断
 
-**当前直接投稿 JMSE：低。**  
-**按本报告完成必改项但不补海试：中。**  
+**当前直接投稿 JMSE：低。**
+**按本报告完成必改项但不补海试：中。**
 **若再补 mission-log replay 或至少更高保真执行约束验证：中到中高。**
 
 原因非常明确。JMSE 近期确实发表过以数值/仿真为主的海洋平台路径规划论文，例如 torpedo-type AUV 的 full coverage path planning、3D cooperative AUV coverage、USV improved GA coverage planning 等，这说明“没有海试”**不是自动拒稿条件**。但同一领域更强的 bathymetric survey 论文已经把定位不确定性、lake trials 或 theory-to-practice 做到了更高层级；再叠加 JMSE 作者指南对 scientifically sound、substantial new information、reproducibility 与 data sharing 的要求，当前版本如果仍以“GA hybrid 是主要创新”出稿，竞争力明显不足。 citeturn18view2turn18view0turn20search1turn21search2turn21search1turn6view1
@@ -257,40 +257,40 @@ MDPI/JMSE 要求研究论文图件尽量高分辨率、图中文字为英文、�
 
 以下模板建议你在**完成大修后**再用，且务必诚实反映“这是可复现数值 benchmark 研究，不是 field-validated survey engineering paper”。
 
-> 尊敬的《Journal of Marine Science and Engineering》编辑：  
->   
-> 我们谨提交题为 **“[填写最终英文题目]”** 的研究论文，拟作为 Article 投稿至 JMSE。  
->   
-> 本文研究的是在已知先验海底地形格网条件下，AUV 搭载多波束测深系统进行航前固定式测线设计的问题。与在线 SLAM 重规划、多 AUV 任务分配或更广义的自治导航不同，本文聚焦于一个更窄但具有工程审查价值的问题：**如何在保持可审查 lawnmower 拓扑的前提下，利用地形驱动的条带宽度变化优化测线方向与间距。**  
->   
-> 本文的主要贡献包括：  
-> 其一，提出 terrain-aware adaptive spacing 的固定式测线设计框架；  
-> 其二，构建并公开基于 GEBCO 2025 与 USGS Southern Cascadia 30 m 数据的可复现实验基准；  
-> 其三，通过多窗口统计、先验分辨率错配与执行扰动重放，系统讨论该方法的适用边界。  
->   
-> 我们特别强调，本文报告的是**可复现的离线数值规划结果**，不将其表述为 survey-grade field validation。为支持透明复现，我们已公开处理后的 benchmark windows、脚本、配置文件、随机种子和图表生成代码，并在可引用仓储中归档版本化结果。  
->   
-> 本稿件未在其他期刊投稿，也未以期刊论文形式发表；全体作者均已阅读并同意投稿。作者之间不存在利益冲突。  
->   
-> 我们相信该研究与 JMSE 在 marine surveying、underwater robotics、bathymetric mapping 与 marine engineering methods 等方向高度契合，真诚期待贵刊审阅。  
->   
-> 此致  
-> 敬礼  
->   
-> [通讯作者姓名]  
-> [单位]  
+> 尊敬的《Journal of Marine Science and Engineering》编辑：
+>
+> 我们谨提交题为 **“[填写最终英文题目]”** 的研究论文，拟作为 Article 投稿至 JMSE。
+>
+> 本文研究的是在已知先验海底地形格网条件下，AUV 搭载多波束测深系统进行航前固定式测线设计的问题。与在线 SLAM 重规划、多 AUV 任务分配或更广义的自治导航不同，本文聚焦于一个更窄但具有工程审查价值的问题：**如何在保持可审查 lawnmower 拓扑的前提下，利用地形驱动的条带宽度变化优化测线方向与间距。**
+>
+> 本文的主要贡献包括：
+> 其一，提出 terrain-aware adaptive spacing 的固定式测线设计框架；
+> 其二，构建并公开基于 GEBCO 2025 与 USGS Southern Cascadia 30 m 数据的可复现实验基准；
+> 其三，通过多窗口统计、先验分辨率错配与执行扰动重放，系统讨论该方法的适用边界。
+>
+> 我们特别强调，本文报告的是**可复现的离线数值规划结果**，不将其表述为 survey-grade field validation。为支持透明复现，我们已公开处理后的 benchmark windows、脚本、配置文件、随机种子和图表生成代码，并在可引用仓储中归档版本化结果。
+>
+> 本稿件未在其他期刊投稿，也未以期刊论文形式发表；全体作者均已阅读并同意投稿。作者之间不存在利益冲突。
+>
+> 我们相信该研究与 JMSE 在 marine surveying、underwater robotics、bathymetric mapping 与 marine engineering methods 等方向高度契合，真诚期待贵刊审阅。
+>
+> 此致
+> 敬礼
+>
+> [通讯作者姓名]
+> [单位]
 > [邮箱]
 
 ### 致谢示例
 
-> **Acknowledgments**  
+> **Acknowledgments**
 > The authors thank the GEBCO Compilation Group and the U.S. Geological Survey for making the source bathymetric products openly available. The authors also acknowledge [laboratory / colleague name] for helpful discussions on MBES survey planning and [computing platform] for computational support.
 
 ### 数据可用性声明示例
 
 JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励共享代码、算法、原始/处理后数据与协议。对你这类数值研究，最好不要写 “data sharing is not applicable”，而应写成“**公开底图 + 你生成的 benchmark 与代码也公开**”。 citeturn6view0turn6view4
 
-> **Data Availability Statement**  
+> **Data Availability Statement**
 > The GEBCO 2025 Grid used in this study is publicly available from the GEBCO Compilation Group (DOI: 10.5285/37c52e96-24ea-67ce-e063-7086abc05f29). The USGS Southern Cascadia 30 m composite multibeam bathymetry used for the extension and replay experiments is publicly available from the U.S. Geological Survey (DOI: 10.5066/P9C5DBMR). All processed benchmark windows, configuration files, random seeds, source code, and scripts used to reproduce the figures and tables in this study are archived at Zenodo (version DOI: [to be inserted upon release]) and mirrored in a public code repository at commit [hash]. No new field observations were collected in this study; all newly generated numerical outputs are included in the archived benchmark package.
 
 ## 优先参考文献
@@ -310,12 +310,12 @@ JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励
 | P1 | **Ma, T.; Ding, S.; Li, Y.; Fan, J.** *A review of terrain aided navigation for underwater vehicles*. **Ocean Engineering**, 2023, 281:114779. | 不是直接 baseline，但非常适合支撑“为什么 prior bathymetry quality / map uncertainty 在 AUV 规划中重要”。可用于强化 Discussion 与 limitation。 citeturn11search2turn11search6 | DOI: **10.1016/j.oceaneng.2023.114779** |
 | P2 | **张泽宇，葛晨欣，靳琪，李小平.** *基于多目标规划的多波束测线布设模型*. 2025. | 可作为中文背景补充，帮助你在中文答辩/基金环境中解释多波束测线布设的几何建模思路；但不能替代国际主文献。 citeturn12search9 | DOI: **10.12179/1672-4550.20240035** |
 
-最后，再给你一个**最务实的定稿判断**：  
+最后，再给你一个**最务实的定稿判断**：
 如果你现在就投，审稿人很可能接受“这件事值得做”，但不会接受“GA hybrid 是主创新，且已足够接近实用部署”的写法；如果你按本报告完成大修，把核心贡献改写成 **adaptive spacing + reproducible benchmark + applicability boundary**，并增加多窗口统计、5° heading、TID 分层和 GA 非劣化校验，那么这篇稿子在 JMSE 的外审生存率会明显提高。 fileciteturn0file0 citeturn6view1turn5view7turn21search2turn22search5
 
 ## 2026-05-22 Codex v21 继续按点核对执行记录
 
-【x】Figure 1 返修为更像期刊图的 LaTeX/TikZ 小圆节点流程图。  
+【x】Figure 1 返修为更像期刊图的 LaTeX/TikZ 小圆节点流程图。
 文件/命令/证据：
 - 源图：`/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/manuscript/latex/pic/method_pipeline.tex`，同步到 `manuscript/mdpi_jmse/pic/method_pipeline.tex`。
 - 修复脚本：`make_method_pipeline_figure.py`，从旧 `latex/pic` 路径改为当前 `manuscript/latex/pic` 与 `manuscript/mdpi_jmse/pic`。
@@ -323,7 +323,7 @@ JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励
 - 输出：`manuscript/latex/pic/method_pipeline.pdf`、`method_pipeline_preview.png`、`manuscript/mdpi_jmse/pic/method_pipeline.pdf`。
 - PDF 证据：`audit/page_preview_20260522_surrogate_fig1_v21/page_05.png`；人工检查无文字溢出、无粗长方形外框、无明显幻灯片式卡片感。
 
-【x】P12：补 GA stride-3 surrogate evaluator 与 full-grid rescoring 的一致性诊断。  
+【x】P12：补 GA stride-3 surrogate evaluator 与 full-grid rescoring 的一致性诊断。
 文件/命令/证据：
 - 脚本：`make_ga_surrogate_audit.py`。
 - 命令：`conda run -n uu python make_ga_surrogate_audit.py --scenes all --seeds 12 --candidates-per-seed 12`。
@@ -331,7 +331,7 @@ JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励
 - 关键结果：每个场景 144 个本地候选；GEBCO Cascadia/Monterey/USGS High 的 stride-3 vs full-grid GA-fitness Spearman = 0.934/0.968/0.989，Kendall tau = 0.804/0.855/0.920，top-10 overlap = 0.80/0.70/0.80，best-stride full-grid regret = 0.0008/0.0028/0.0610%。
 - 写回：两套 LaTeX 的 Methods、Results 新增 `Table~\ref{tab:ga_surrogate_audit}`、Discussion 和 Data Availability。正文明确 stride-3 只是 local screening acceleration，最终指标仍 full-grid rescoring，GA 仍需 gate。
 
-【x】v21 编译、图表与复现包 QA。  
+【x】v21 编译、图表与复现包 QA。
 文件/命令/证据：
 - Manifest：`conda run -n uu python make_reproducibility_manifest.py`，`reproducibility_manifest.json` 更新为 264 entries。
 - 编译：在 `manuscript/mdpi_jmse` 与 `manuscript/latex` 下分别两遍 `xelatex -interaction=nonstopmode template.tex`。
@@ -340,7 +340,7 @@ JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励
 - 页面预览：`audit/page_preview_20260522_surrogate_fig1_v21/page_05.png`、`page_27.png`、`page_28.png`、`page_29.png`；Figure 1 与 Table 14 均未出现截断、遮挡或异常空白。
 - 交付 PDF 已更新：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
 
-【x】引用审计复核说明。  
+【x】引用审计复核说明。
 文件/命令/证据：
 - 命令：`python audit/verify_references_20260514.py`。
 - 输出：`audit/reference_verification_20260514_v2.md/json`。
@@ -368,3 +368,21 @@ JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励
 - 【待确认】不要立即创建 GitHub release/Zenodo DOI，除非确认当前 46 页 v23 就是冻结投稿版；Zenodo 已绑定仓库，release 后会生成新版本 DOI。
 - 【待确认】投稿前作者需再人工核对 title page、funding、邮箱、MDPI submission form 中 AI disclosure 与 Data Availability 粘贴格式。
 
+
+## 2026-05-23 v24 Benchmark/Robustness 深化闭环【已完成】
+
+- 【已完成】按老师报告继续把标题改成更像 SCI/JMSE benchmark 稿的口径：`Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study`。
+  文件/证据：`manuscript/mdpi_jmse/template.tex`、`manuscript/latex/template.tex`、`README.md`、`README_submission.md`、`CITATION.cff`、`.zenodo.json`、`submission_package/JMSE_cover_letter_draft.md` 已同步。
+- 【已完成】摘要继续压缩并强化统计证据：当前本地 LaTeX-stripped counter 为 `199 words`，摘要显式写入九窗口 overlap cleanup 的 Wilcoxon \(p=0.00195\) 和 rank-biserial 1.00。
+  文件/证据：两套 `template.tex` 的 `\abstract{...}`；命令输出记录在本轮 `progress.md`。
+- 【已完成】Methods 新增参数依据表，回应“为什么 15%/20%/C97/O3/\(W_{\max}\)/GA 小参数合理”的审稿问题。
+  文件/证据：两套 LaTeX 新增 `Table~\ref{tab:parameter_rationale}`，表内列出 target overlap、excess-overlap ceiling、default feasibility gate、swath clipping、heading grid、score weights、GA budget 的 rationale 与 audit。
+- 【已完成】九窗口统计表重新排版并补齐 effect-size 可见性。
+  文件/证据：两套 LaTeX 的 `Table~\ref{tab:public_window_stats}` 从横向密表改为纵向统计表，显式列出 \(G_L\)、\(\Delta O\)、\(\Delta C\) 的 median、mean CI、positive windows、Wilcoxon p 和 rank-biserial。Coverage delta 的混合/负向结果也保留，避免选择性报告。
+- 【已完成】视觉 QA：新标题、参数表、九窗口统计表均已渲染抽查。
+  文件/证据：`audit/page_preview_20260523_v24/mdpi_key_page_01_v24b.png`、`mdpi_key_page_10_v24b.png`、`mdpi_key_page_22_v24b.png`。人工检查：首页标题不溢出，第 10 页参数表未越界，第 22 页九窗口表可读，不再是“蚂蚁字”。
+- 【已完成】编译 QA：两套 PDF 重新编译为 47 pages。
+  命令/证据：在 `manuscript/mdpi_jmse` 与 `manuscript/latex` 下分别运行两遍 `xelatex -interaction=nonstopmode template.tex`；最新日志 `compile_after_benchmark_robustness_v24_20260523_pass2.log`；严格扫描仅命中正常 `Output written on template.pdf (47 pages)`，无 LaTeX Error、undefined citation/reference、Overfull、Float too large、Fatal、Emergency stop 或 Rerun。
+- 【已完成】v24+ 投稿前硬核验已补齐：引用审计、manifest 和 release-readiness gate 重新跑通。
+  命令/证据：`python3 audit/verify_references_20260514.py` 输出 `total 45 failed 0 et_al 0`；`conda run -n uu python make_reproducibility_manifest.py` 输出 `290 entries`；`python3 check_release_readiness.py` 输出 `missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。其中 `kim2017panel` 与 `li2024full` 已通过 Crossref/DOI 元数据核验；若 DOI/出版商自动访问偶发 403/SSL EOF，审计脚本保留人工核验 fallback，避免把站点访问策略误判为假引用。
+- 【保留待确认】暂不创建 GitHub release / Zenodo 新版本 DOI，除非确认 v24 47 页稿件就是冻结投稿版；Zenodo 已绑定仓库，release 后会自动 mint 新版本 DOI。

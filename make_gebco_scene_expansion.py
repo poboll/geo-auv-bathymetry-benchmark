@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import json
+import shutil
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
@@ -17,8 +19,12 @@ import geo_public_bathy_benchmark as geo
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "gebco_scene_expansion"
-PIC = ROOT / "latex" / "pic"
-SEEDS = tuple(range(5))
+PIC_DIRS = [
+    ROOT / "manuscript" / "latex" / "pic",
+    ROOT / "manuscript" / "mdpi_jmse" / "pic",
+]
+PIC = PIC_DIRS[0]
+DEFAULT_SEEDS = tuple(range(20))
 
 EXTRA_GEBCO_SPECS: tuple[geo.PublicSceneSpec, ...] = (
     geo.PublicSceneSpec(
@@ -137,7 +143,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
         writer.writerows(rows)
 
 
-def make_figure(summary_rows: list[dict[str, Any]]) -> None:
+def make_figure(summary_rows: list[dict[str, Any]], seeds: tuple[int, ...]) -> None:
     plt.rcParams.update(
         {
             "font.family": "serif",
@@ -175,7 +181,7 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
         if vmax is None:
             vmax = float(np.nanmax(matrix)) if np.isfinite(matrix).any() else 1.0
         cmap = matplotlib.colors.LinearSegmentedColormap.from_list(title, [low_color, high_color])
-        im = ax.imshow(matrix, cmap=cmap, vmin=vmin, vmax=vmax, aspect="auto")
+        im = ax.imshow(matrix, cmap=cmap, vmin=vmin, vmax=vmax, aspect="equal")
         ax.set_title(title, fontweight="bold", color="#202a33")
         ax.set_xticks(range(len(METHODS)))
         ax.set_xticklabels([METHOD_LABELS[m] for m in METHODS], rotation=25, ha="right")
@@ -196,7 +202,7 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
     fig.text(
         0.5,
         0.035,
-        "Supplemental GEBCO four-window expansion; Hybrid GA reports seeds 0-4 and is not merged into the main 20-seed benchmark.",
+        f"Supplemental GEBCO four-window expansion; Hybrid GA reports seeds {seeds[0]}-{seeds[-1]} and is not merged into the main benchmark.",
         ha="center",
         va="bottom",
         fontsize=6.2,
@@ -209,8 +215,21 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Run the supplemental GEBCO four-window scene expansion.")
+    parser.add_argument(
+        "--seed-count",
+        type=int,
+        default=len(DEFAULT_SEEDS),
+        help="Number of Hybrid GA seeds to run, starting at zero.",
+    )
+    args = parser.parse_args()
+    if args.seed_count < 1:
+        raise ValueError("--seed-count must be at least 1")
+    seeds = tuple(range(args.seed_count))
+
     OUT.mkdir(exist_ok=True)
-    PIC.mkdir(parents=True, exist_ok=True)
+    for pic_dir in PIC_DIRS:
+        pic_dir.mkdir(parents=True, exist_ok=True)
     raw_rows: list[dict[str, float | int | str]] = []
     scenes = [geo.load_public_scene(spec, ROOT) for spec in EXTRA_GEBCO_SPECS]
     for scene in scenes:
@@ -219,7 +238,7 @@ def main() -> None:
         fixed_path = fixed.path_length_km
         raw_rows.append(result_row(fixed, fixed_path))
         raw_rows.append(result_row(adaptive, fixed_path))
-        for seed in SEEDS:
+        for seed in seeds:
             hybrid = geo.full_geometry_aware_hybrid_ga_plan(scene, adaptive_base, seed)
             raw_rows.append(result_row(hybrid, fixed_path))
 
@@ -231,7 +250,7 @@ def main() -> None:
         json.dump(
             {
                 "scope": "Supplemental four-window GEBCO public-scene expansion; not merged into run_5 main benchmark.",
-                "hybrid_ga_seeds": list(SEEDS),
+                "hybrid_ga_seeds": list(seeds),
                 "scene_manifest": manifest,
                 "raw_rows": raw_rows,
                 "summary_rows": summary_rows,
@@ -242,7 +261,9 @@ def main() -> None:
         )
     with (OUT / "public_scene_manifest.json").open("w", encoding="utf-8") as fp:
         json.dump(manifest, fp, indent=2, ensure_ascii=False)
-    make_figure(summary_rows)
+    make_figure(summary_rows, seeds)
+    for pic_dir in PIC_DIRS[1:]:
+        shutil.copy2(PIC / "journal_gebco_scene_expansion.png", pic_dir / "journal_gebco_scene_expansion.png")
     print(f"Wrote {OUT / 'gebco_scene_expansion_summary.csv'}")
     print(f"Wrote {PIC / 'journal_gebco_scene_expansion.png'}")
 

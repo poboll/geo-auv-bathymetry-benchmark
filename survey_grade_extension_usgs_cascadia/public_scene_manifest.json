@@ -4,7 +4,7 @@
     "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
     "download_url": "https://doi.org/10.5066/P9C5DBMR",
     "license": "USGS public data release",
-    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "raw_file": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
     "crop_bounds": {
       "left": 362621.1584084583,
       "bottom": 4538189.412716693,
@@ -48,7 +48,7 @@
     "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
     "download_url": "https://doi.org/10.5066/P9C5DBMR",
     "license": "USGS public data release",
-    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "raw_file": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
     "crop_bounds": {
       "left": 331871.1584084583,
       "bottom": 4599749.412716693,
@@ -92,7 +92,7 @@
     "source": "USGS Southern Cascadia 30 m composite bathymetry, v2",
     "download_url": "https://doi.org/10.5066/P9C5DBMR",
     "license": "USGS public data release",
-    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
+    "raw_file": "/Users/Apple/Developer/paper/geo-auv-bathymetry-benchmark/public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif",
     "crop_bounds": {
       "left": 347261.1584084583,
       "bottom": 4702319.412716693,

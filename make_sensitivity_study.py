@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import importlib.util
 import json
@@ -23,7 +24,7 @@ OVERLAP_TARGETS = (0.10, 0.15, 0.20)
 RESOLUTION_STRIDES = (1, 2, 3)
 DEPTH_BIAS_VALUES = (-150.0, 0.0, 150.0)
 RELIEF_SCALE_VALUES = (0.7, 1.0, 1.3)
-SENSITIVITY_SEEDS = tuple(range(5))
+SENSITIVITY_SEEDS = tuple(range(20))
 METHODS = (
     "Fixed-Spacing",
     "Adaptive Spacing w/o GA",
@@ -812,6 +813,19 @@ def make_relief_scale_plot(summary_rows: list[dict[str, float | int | str]]) -> 
 
 
 def main() -> None:
+    global SENSITIVITY_SEEDS
+    parser = argparse.ArgumentParser(description="Run public GEBCO parameter-sensitivity diagnostics.")
+    parser.add_argument(
+        "--seed-count",
+        type=int,
+        default=len(SENSITIVITY_SEEDS),
+        help="Number of Hybrid GA seeds to run at each sensitivity setting, starting at zero.",
+    )
+    args = parser.parse_args()
+    if args.seed_count < 1:
+        raise ValueError("--seed-count must be at least 1")
+    SENSITIVITY_SEEDS = tuple(range(args.seed_count))
+
     OUT.mkdir(parents=True, exist_ok=True)
     geo = load_geo_module()
     public_scenes = [geo.load_public_scene(spec, ROOT) for spec in geo.PUBLIC_SCENE_SPECS]
@@ -1050,6 +1064,12 @@ def main() -> None:
             ensure_ascii=False,
         )
     make_relief_scale_plot(relief_scale_summary_rows)
+    try:
+        from make_sensitivity_evidence_figures import main as make_evidence_figures
+
+        make_evidence_figures()
+    except Exception as exc:
+        print(f"WARNING: could not render manuscript evidence-matrix sensitivity figures: {exc}")
 
     print(f"Wrote {OUT / 'beam_angle_sensitivity_summary.csv'}")
     print(f"Wrote {OUT / 'target_overlap_sensitivity_summary.csv'}")

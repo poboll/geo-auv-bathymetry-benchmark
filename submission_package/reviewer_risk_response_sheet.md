@@ -19,8 +19,8 @@ The paper does not sell route shortening as the main public-scene result. The ma
 
 Evidence:
 - Fixed public-scene mean excess-overlap violation: about 0.8067%.
-- Hybrid public-scene mean excess-overlap violation: about 0.0952%.
-- Hybrid predicted coverage range on the two GEBCO scenes: 98.97--99.63%.
+- Hybrid public-scene mean excess-overlap violation: about 0.113%.
+- Hybrid predicted coverage range on the two GEBCO scenes: 98.99--99.55%.
 - Monterey shows structural rotation from 0 degrees to 90 degrees and line-count reduction from 73 to 59.
 
 Where addressed:

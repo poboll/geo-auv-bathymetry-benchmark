@@ -4,6 +4,7 @@ import csv
 import importlib.util
 import json
 import math
+import shutil
 from pathlib import Path
 
 import matplotlib
@@ -17,10 +18,16 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import FancyBboxPatch, Rectangle
 from PIL import Image
 
+import journal_heatmap_style as jhs
+
 
 ROOT = Path(__file__).resolve().parent
 RUN = ROOT / "run_5"
-PIC = ROOT / "latex" / "pic"
+PIC_DIRS = [
+    ROOT / "manuscript" / "latex" / "pic",
+    ROOT / "manuscript" / "mdpi_jmse" / "pic",
+]
+PIC = PIC_DIRS[0]
 EXT = ROOT / "survey_grade_extension_usgs_cascadia"
 PUBLIC_MANIFEST = {
     row["scene_id"]: row for row in json.loads((RUN / "public_scene_manifest.json").read_text(encoding="utf-8"))
@@ -34,15 +41,15 @@ SPEC.loader.exec_module(geo)
 
 plt.rcParams.update(
     {
-        "font.family": "serif",
-        "font.serif": ["Palatino", "Times New Roman", "DejaVu Serif"],
-        "mathtext.fontset": "dejavuserif",
-        "font.size": 6.95,
-        "axes.titlesize": 7.25,
-        "axes.labelsize": 6.4,
-        "xtick.labelsize": 5.8,
-        "ytick.labelsize": 5.8,
-        "legend.fontsize": 6.45,
+        "font.family": "sans-serif",
+        "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
+        "mathtext.fontset": "dejavusans",
+        "font.size": 7.15,
+        "axes.titlesize": 7.65,
+        "axes.labelsize": 6.85,
+        "xtick.labelsize": 6.25,
+        "ytick.labelsize": 6.25,
+        "legend.fontsize": 6.75,
         "axes.linewidth": 0.45,
         "savefig.dpi": 420,
     }
@@ -107,19 +114,19 @@ DETAIL_BATHY = LinearSegmentedColormap.from_list(
 )
 PATH_GAIN_CMAP = LinearSegmentedColormap.from_list(
     "journal_path_gain",
-    ["#f7fcfb", "#d8f1ee", "#8ccfc7", "#1d8f84", "#0e5f59"],
+    ["#f7fbff", "#deebf7", "#9ecae1", "#3182bd", "#08519c"],
 )
 COVERAGE_CMAP = LinearSegmentedColormap.from_list(
     "journal_coverage",
-    ["#b84a3a", "#f6f2ec", "#d3ece8", "#1b877d"],
+    ["#b35c3a", "#e6b27e", "#f7f7f2", "#92c5de", "#2b6c9f"],
 )
 OVERLAP_CMAP = LinearSegmentedColormap.from_list(
     "journal_overlap",
-    ["#fff9f2", "#f8ceb0", "#e3895d", "#7c3325"],
+    ["#fffff5", "#fee6b8", "#fdbb84", "#e34a33", "#7f0000"],
 )
 TIME_CMAP = LinearSegmentedColormap.from_list(
     "journal_time",
-    ["#f7fafc", "#d8e2ec", "#96a8b8", "#526473"],
+    ["#f8fafc", "#dbe2ea", "#a8b4c0", "#64748b", "#334155"],
 )
 LIGHT = LightSource(azdeg=318, altdeg=42)
 
@@ -242,7 +249,7 @@ def render_terrain(
         extent=extent_nm(scene),
         origin="lower",
         interpolation=interpolation,
-        aspect="auto",
+        aspect="equal",
         zorder=0,
     )
     if contours and float(np.nanmax(z) - np.nanmin(z)) > 1e-6:
@@ -270,7 +277,7 @@ def add_panel_text(ax, label: str, *, accent: str | None = None) -> None:
         transform=ax.transAxes,
         ha="left",
         va="top",
-        fontsize=5.15,
+        fontsize=5.85,
         fontweight="bold",
         color=color,
         bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.78, "pad": 0.9},
@@ -294,17 +301,17 @@ def add_scale_bar(
     y0 = ymin + y_anchor * h
     x1 = min(x0 + length_nm, xmin + 0.94 * w)
     tick = 0.012 * h
-    effect = [pe.Stroke(linewidth=1.6, foreground="#263746"), pe.Normal()]
-    ax.plot([x0, x1], [y0, y0], color="white", linewidth=1.0, zorder=8, path_effects=effect)
-    ax.plot([x0, x0], [y0 - tick, y0 + tick], color="white", linewidth=0.8, zorder=8, path_effects=effect)
-    ax.plot([x1, x1], [y0 - tick, y0 + tick], color="white", linewidth=0.8, zorder=8, path_effects=effect)
+    effect = [pe.Stroke(linewidth=1.05, foreground="#263746"), pe.Normal()]
+    ax.plot([x0, x1], [y0, y0], color="white", linewidth=0.82, zorder=8, path_effects=effect)
+    ax.plot([x0, x0], [y0 - tick, y0 + tick], color="white", linewidth=0.68, zorder=8, path_effects=effect)
+    ax.plot([x1, x1], [y0 - tick, y0 + tick], color="white", linewidth=0.68, zorder=8, path_effects=effect)
     ax.text(
         0.5 * (x0 + x1),
         y0 + label_dy * h,
         f"{length_nm:g} NM",
         ha="center",
         va="bottom",
-        fontsize=5.2,
+        fontsize=6.10,
         color="white",
         zorder=9,
         path_effects=effect,
@@ -336,38 +343,112 @@ def local_terrain_limits(scene, ratios: tuple[float, float, float, float]) -> tu
     return terrain_limits(ratio_patch(scene, ratios))
 
 
+def set_center_square_view(ax, scene) -> None:
+    xmin, xmax, ymin, ymax = extent_nm(scene)
+    set_center_square_bounds(ax, (xmin, xmax, ymin, ymax))
+
+
+def set_center_square_bounds(ax, bounds: tuple[float, float, float, float]) -> None:
+    xmin, xmax, ymin, ymax = bounds
+    span = min(xmax - xmin, ymax - ymin)
+    cx = 0.5 * (xmin + xmax)
+    cy = 0.5 * (ymin + ymax)
+    ax.set_xlim(cx - 0.5 * span, cx + 0.5 * span)
+    ax.set_ylim(cy - 0.5 * span, cy + 0.5 * span)
+    ax.set_aspect("equal", adjustable="box")
+
+
+def make_square_map_card(ax, scene, *, panel_label: str, scale_nm: float, is_public: bool) -> None:
+    render_terrain(ax, scene)
+    set_center_square_view(ax, scene)
+    style_map_axes(ax, show_grid=False)
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_box_aspect(1.0)
+    add_panel_text(ax, panel_label, accent=TEXT)
+    ax.text(
+        0.02,
+        0.045,
+        f"{float(np.nanmin(scene.z)):.0f}-{float(np.nanmax(scene.z)):.0f} m",
+        transform=ax.transAxes,
+        ha="left",
+        va="bottom",
+        fontsize=5.35,
+        color="white",
+        path_effects=[pe.Stroke(linewidth=1.35, foreground="#263746"), pe.Normal()],
+        zorder=10,
+    )
+    ax.text(
+        0.98,
+        0.965,
+        "public grid" if is_public else "synthetic",
+        transform=ax.transAxes,
+        ha="right",
+        va="top",
+        fontsize=4.45,
+        color=PUBLIC if is_public else SYNTH,
+        bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.80, "pad": 0.55},
+        zorder=10,
+    )
+    add_scale_bar(ax, scale_nm)
+
+
+def make_atlas_note_card(ax) -> None:
+    ax.axis("off")
+    ax.set_xlim(0.0, 1.0)
+    ax.set_ylim(0.0, 1.0)
+    card = FancyBboxPatch(
+        (0.035, 0.055),
+        0.93,
+        0.89,
+        boxstyle="round,pad=0.018,rounding_size=0.026",
+        linewidth=0.55,
+        edgecolor="#d4e0e8",
+        facecolor="#f8fbfd",
+        transform=ax.transAxes,
+    )
+    ax.add_patch(card)
+    ax.text(0.085, 0.865, "(c) Evidence roles", transform=ax.transAxes, ha="left", va="top", fontsize=6.05, fontweight="bold", color=TEXT)
+    bullets = [
+        ("GEBCO", "primary public-grid\nbenchmark"),
+        ("Synthetic", "mechanism and\nfailure tests"),
+        ("USGS", "high-resolution transfer\ncheck in Fig. 14"),
+    ]
+    y = 0.70
+    for label, body in bullets:
+        color = PUBLIC if label == "GEBCO" else (SYNTH if label == "Synthetic" else "#4a6fa5")
+        ax.scatter([0.105], [y + 0.008], s=18, color=color, transform=ax.transAxes, zorder=5)
+        ax.text(0.155, y + 0.035, label, transform=ax.transAxes, ha="left", va="top", fontsize=5.15, fontweight="bold", color=TEXT)
+        ax.text(0.155, y - 0.010, body, transform=ax.transAxes, ha="left", va="top", fontsize=4.52, color=MUTED, linespacing=1.13)
+        y -= 0.19
+    ax.text(
+        0.085,
+        0.118,
+        "Square map cards keep native aspect;\ndepth ranges are local to each scene.",
+        transform=ax.transAxes,
+        ha="left",
+        va="bottom",
+        fontsize=4.25,
+        color=MUTED,
+        linespacing=1.15,
+    )
+
+
 def make_atlas(summary_rows: list[dict[str, str]]) -> None:
     del summary_rows
     scenes = all_scenes()
-    fig = plt.figure(figsize=(7.15, 4.32), facecolor=BG)
-    gs = fig.add_gridspec(2, 6, height_ratios=[1.10, 1.02], hspace=0.10, wspace=0.13)
-    axes = [
-        fig.add_subplot(gs[0, 0:3]),
-        fig.add_subplot(gs[0, 3:6]),
-        fig.add_subplot(gs[1, 0:2]),
-        fig.add_subplot(gs[1, 2:4]),
-        fig.add_subplot(gs[1, 4:6]),
+    fig = plt.figure(figsize=(7.15, 4.84), facecolor=BG)
+    gs = fig.add_gridspec(2, 3, hspace=0.07, wspace=0.08)
+    placement = [
+        (0, 0, scenes[0], "(a) Cascadia", 10.0, True),
+        (0, 1, scenes[1], "(b) Monterey", 10.0, True),
+        (1, 0, scenes[2], "(d) Flat", 1.0, False),
+        (1, 1, scenes[3], "(e) Uniform Slope", 1.0, False),
+        (1, 2, scenes[4], "(f) Complex Terrain", 1.0, False),
     ]
-    for idx, (ax, scene) in enumerate(zip(axes, scenes)):
-        render_terrain(ax, scene)
-        style_map_axes(ax, show_grid=False)
-        ax.set_xticks([])
-        ax.set_yticks([])
-        ax.set_aspect("auto", adjustable="box")
-        add_panel_text(ax, f"({chr(97 + idx)}) {short_name(scene.display_name)}", accent=TEXT)
-        ax.text(
-            0.02,
-            0.045,
-            f"{float(np.nanmin(scene.z)):.0f}-{float(np.nanmax(scene.z)):.0f} m",
-            transform=ax.transAxes,
-            ha="left",
-            va="bottom",
-            fontsize=4.75,
-            color="white",
-            path_effects=[pe.Stroke(linewidth=1.35, foreground="#263746"), pe.Normal()],
-            zorder=10,
-        )
-        add_scale_bar(ax, 10.0 if scene.scene_group == "public" else 1.0)
+    for row, col, scene, label, scale_nm, is_public in placement:
+        make_square_map_card(fig.add_subplot(gs[row, col]), scene, panel_label=label, scale_nm=scale_nm, is_public=is_public)
+    make_atlas_note_card(fig.add_subplot(gs[0, 2]))
     fig.savefig(PIC / "journal_scene_atlas.png", bbox_inches="tight", facecolor="white", pad_inches=0.025)
     plt.close(fig)
 
@@ -391,11 +472,19 @@ def compute_public_layouts():
     return layouts
 
 
-def line_positions_to_show(line_positions: np.ndarray, max_lines: int = 15) -> np.ndarray:
-    if len(line_positions) <= max_lines:
-        return np.asarray(line_positions, dtype=float)
-    idx = np.linspace(0, len(line_positions) - 1, max_lines).round().astype(int)
-    return np.asarray(line_positions, dtype=float)[np.unique(idx)]
+def line_positions_to_show(
+    line_positions: np.ndarray,
+    max_lines: int = 15,
+    *,
+    trim_edges: int = 0,
+) -> np.ndarray:
+    lines = np.asarray(line_positions, dtype=float)
+    if trim_edges > 0 and len(lines) > 2 * trim_edges:
+        lines = lines[trim_edges:-trim_edges]
+    if len(lines) <= max_lines:
+        return lines
+    idx = np.linspace(0, len(lines) - 1, max_lines).round().astype(int)
+    return lines[np.unique(idx)]
 
 
 def draw_layout(ax, scene, result, method: str, *, show_ylabel: bool, show_xlabel: bool) -> None:
@@ -498,7 +587,7 @@ def method_strip_label(ax, method: str) -> None:
         transform=ax.transAxes,
         ha="left",
         va="top",
-        fontsize=4.25,
+        fontsize=5.65,
         fontweight="bold",
         color=METHOD_COLORS[method],
         bbox={"facecolor": "white", "edgecolor": "#dbe4ec", "linewidth": 0.28, "alpha": 0.88, "pad": 0.55},
@@ -541,7 +630,7 @@ def draw_single_method_strip(
                 solid_capstyle="round",
                 path_effects=line_effect,
             )
-    ax.set_aspect("auto")
+    ax.set_aspect("equal", adjustable="box")
     ax.set_xlabel("E-W (NM)" if show_xlabel else "", color=TEXT, labelpad=1.9)
     ax.set_ylabel("N-S (NM)" if show_ylabel else "", color=TEXT, labelpad=1.9)
     if not show_xlabel:
@@ -557,7 +646,7 @@ def draw_single_method_strip(
             transform=ax.transAxes,
             ha="right",
             va="top",
-            fontsize=4.75,
+            fontsize=5.65,
             fontweight="bold",
             color=TEXT,
             bbox={"facecolor": "white", "edgecolor": "none", "alpha": 0.82, "pad": 0.72},
@@ -576,7 +665,7 @@ def add_panel_tag(ax, text: str, *, accent: str = TEXT) -> None:
         transform=ax.transAxes,
         ha="left",
         va="top",
-        fontsize=4.5,
+        fontsize=7.20,
         fontweight="bold",
         color=accent,
         bbox={"facecolor": "white", "edgecolor": "#d7e0e7", "linewidth": 0.25, "alpha": 0.88, "pad": 0.58},
@@ -594,6 +683,7 @@ def draw_public_method_panel(
     panel_tag: str,
     detail_window: tuple[float, float, float, float],
     scale_nm: float,
+    show_metrics: bool = True,
 ) -> None:
     render_terrain(
         ax,
@@ -604,12 +694,30 @@ def draw_public_method_panel(
         interpolation="bicubic",
     )
     x0, x1, y0, y1 = ratio_bounds(scene, detail_window)
-    ax.set_xlim(x0, x1)
-    ax.set_ylim(y0, y1)
+    set_center_square_bounds(ax, (x0, x1, y0, y1))
     style_map_axes(ax, show_grid=False)
     phi = math.radians(result.orientation_deg)
+    xlim = ax.get_xlim()
+    ylim = ax.get_ylim()
+    x_margin = 0.045 * (xlim[1] - xlim[0])
+    y_margin = 0.045 * (ylim[1] - ylim[0])
     line_effect = [pe.Stroke(linewidth=1.0, foreground="white", alpha=0.16), pe.Normal()]
-    for pos in line_positions_to_show(result.line_positions, max_lines=16):
+    visible_positions: list[float] = []
+    for pos in np.asarray(result.line_positions, dtype=float):
+        xs, ys = geo.line_segment_points(float(pos), phi, scene.width_m, scene.height_m)
+        if not xs.size:
+            continue
+        xs_nm = xs / geo.NM_TO_M
+        ys_nm = ys / geo.NM_TO_M
+        inside = (
+            np.nanmax(xs_nm) >= xlim[0] + x_margin
+            and np.nanmin(xs_nm) <= xlim[1] - x_margin
+            and np.nanmax(ys_nm) >= ylim[0] + y_margin
+            and np.nanmin(ys_nm) <= ylim[1] - y_margin
+        )
+        if inside:
+            visible_positions.append(float(pos))
+    for pos in line_positions_to_show(np.asarray(visible_positions), max_lines=5, trim_edges=2):
         xs, ys = geo.line_segment_points(float(pos), phi, scene.width_m, scene.height_m)
         if xs.size:
             ax.plot(
@@ -617,7 +725,7 @@ def draw_public_method_panel(
                 ys / geo.NM_TO_M,
                 color=METHOD_COLORS[method],
                 linestyle=METHOD_STYLES[method],
-                linewidth=0.78 if method != "Full Geometry-Aware Hybrid GA" else 0.92,
+                linewidth=0.96 if method != "Full Geometry-Aware Hybrid GA" else 1.12,
                 alpha=0.94,
                 zorder=9,
                 solid_capstyle="round",
@@ -625,77 +733,15 @@ def draw_public_method_panel(
             )
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.set_aspect("auto")
+    ax.set_box_aspect(1.0)
+    ax.set_aspect("equal", adjustable="box")
     add_panel_tag(ax, panel_tag, accent=METHOD_COLORS[method])
-    add_metric_chip(ax, stats, result, method)
+    if show_metrics:
+        add_metric_chip(ax, stats, result, method)
     add_scale_bar(ax, scale_nm)
 
 
-def draw_public_context_panel(
-    ax,
-    scene,
-    results: dict[str, object],
-    *,
-    panel_tag: str,
-    detail_window: tuple[float, float, float, float],
-) -> None:
-    render_terrain(ax, scene, contours=True)
-    style_map_axes(ax, show_grid=False)
-    for method in ["Fixed-Spacing", "Adaptive Spacing w/o GA", "Full Geometry-Aware Hybrid GA"]:
-        result = results[method]
-        phi = math.radians(result.orientation_deg)
-        for pos in line_positions_to_show(result.line_positions, max_lines=10):
-            xs, ys = geo.line_segment_points(float(pos), phi, scene.width_m, scene.height_m)
-            if xs.size:
-                ax.plot(
-                    xs / geo.NM_TO_M,
-                    ys / geo.NM_TO_M,
-                    color=METHOD_COLORS[method],
-                    linestyle=METHOD_STYLES[method],
-                    linewidth=0.54 if method != "Full Geometry-Aware Hybrid GA" else 0.68,
-                    alpha=0.78,
-                    zorder=7,
-                    solid_capstyle="round",
-                )
-    x0, x1, y0, y1 = ratio_bounds(scene, detail_window)
-    ax.add_patch(
-        Rectangle(
-            (x0, y0),
-            x1 - x0,
-            y1 - y0,
-            linewidth=0.85,
-            edgecolor="#ffffff",
-            facecolor="none",
-            linestyle=(0, (3, 1.7)),
-            zorder=12,
-        )
-    )
-    add_panel_tag(ax, panel_tag)
-    handles = [
-        Line2D([0], [0], color=METHOD_COLORS[m], linestyle=METHOD_STYLES[m], linewidth=1.0, label=METHOD_TEXT_LABELS[m])
-        for m in ["Fixed-Spacing", "Adaptive Spacing w/o GA", "Full Geometry-Aware Hybrid GA"]
-    ]
-    leg = ax.legend(
-        handles=handles,
-        loc="lower left",
-        bbox_to_anchor=(0.01, 0.01),
-        frameon=True,
-        framealpha=0.90,
-        borderpad=0.22,
-        handlelength=1.6,
-        fontsize=3.65,
-        ncol=1,
-    )
-    leg.get_frame().set_edgecolor("#d7e0e7")
-    leg.get_frame().set_linewidth(0.32)
-    leg.get_frame().set_facecolor("white")
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.set_aspect("auto")
-    add_scale_bar(ax, 10.0, x_anchor=0.63, y_anchor=0.078, label_dy=0.022)
-
-
-def make_scene_metric_table(
+def make_scene_summary_strip(
     ax,
     lookup: dict[tuple[str, str], dict[str, str]],
     scene_id: str,
@@ -705,31 +751,21 @@ def make_scene_metric_table(
     ax.axis("off")
     ax.set_xlim(0.0, 1.0)
     ax.set_ylim(0.0, 1.0)
+    ax.text(0.0, 0.985, "(d) Layout summary", transform=ax.transAxes, ha="left", va="top", color=TEXT, fontweight="bold", fontsize=7.05)
     ax.text(
         0.0,
-        0.995,
-        "(e) Layout metrics",
+        0.905,
+        "full-scene metrics; the three map cards above show the same layouts in a compact zoom window",
         transform=ax.transAxes,
         ha="left",
         va="top",
-        color=TEXT,
-        fontweight="bold",
-        fontsize=5.15,
-    )
-    ax.text(
-        0.0,
-        0.915,
-        "metrics use full-scene layouts; zoom panels show representative lines only",
-        transform=ax.transAxes,
-        ha="left",
-        va="top",
-        fontsize=3.55,
+        fontsize=5.80,
         color=MUTED,
     )
     ledger = FancyBboxPatch(
         (0.0, 0.13),
         1.0,
-        0.58,
+        0.56,
         boxstyle="round,pad=0.010,rounding_size=0.016",
         linewidth=0.42,
         edgecolor="#d7e2eb",
@@ -747,17 +783,17 @@ def make_scene_metric_table(
     for xpos, label in zip(x_cols, ["psi", "n", "L km", "C %", "O %"]):
         ax.text(
             xpos,
-            0.625,
+            0.60,
             label,
             transform=ax.transAxes,
             ha="right",
             va="center",
-            fontsize=3.56,
+            fontsize=5.80,
             color=MUTED,
             fontweight="bold",
         )
-    ax.plot([0.04, 0.97], [0.58, 0.58], transform=ax.transAxes, color="#d7e2eb", linewidth=0.42)
-    row_y = [0.49, 0.35, 0.21]
+    ax.plot([0.04, 0.97], [0.55, 0.55], transform=ax.transAxes, color="#d7e2eb", linewidth=0.42)
+    row_y = [0.47, 0.33, 0.19]
     for idx, (method, ypos) in enumerate(zip(methods, row_y)):
         ax.add_patch(
             Rectangle(
@@ -780,7 +816,7 @@ def make_scene_metric_table(
             transform=ax.transAxes,
             ha="left",
             va="center",
-            fontsize=3.90,
+            fontsize=6.15,
             color=METHOD_COLORS[method],
             fontweight="bold",
         )
@@ -799,7 +835,7 @@ def make_scene_metric_table(
                 transform=ax.transAxes,
                 ha="right",
                 va="center",
-                fontsize=3.76,
+                fontsize=6.05,
                 color=TEXT,
             )
 
@@ -826,18 +862,18 @@ def make_scene_delta_panel(
                 f"{value:.2f}",
                 ha="center",
                 va="bottom",
-                fontsize=3.9,
+                fontsize=4.65,
                 color=TEXT,
             )
     baseline_overlap = float(lookup[(scene_id, "Fixed-Spacing")]["excess_overlap_pct_mean"])
-    ax.set_title("(f) Path gain and residual overlap", loc="left", color=TEXT, fontweight="bold", fontsize=5.0, pad=3)
+    ax.set_title("(f) Path gain and residual overlap", loc="left", color=TEXT, fontweight="bold", fontsize=5.95, pad=3)
     ax.set_xticks(x)
     ax.set_xticklabels(["path gain", "O violation"])
     ax.set_ylim(0, 1.10)
     ax.set_yticks([0.0, 0.5, 1.0])
     ax.set_yticklabels([])
     ax.tick_params(axis="y", left=False, right=False, labelleft=False, labelright=False)
-    ax.text(0.015, 0.975, "0-1.1% scale", transform=ax.transAxes, ha="left", va="top", fontsize=3.55, color=MUTED)
+    ax.text(0.015, 0.975, "0-1.1% scale", transform=ax.transAxes, ha="left", va="top", fontsize=4.30, color=MUTED)
     ax.text(
         0.98,
         0.93,
@@ -845,7 +881,7 @@ def make_scene_delta_panel(
         transform=ax.transAxes,
         ha="right",
         va="top",
-        fontsize=3.85,
+        fontsize=4.55,
         color=MUTED,
     )
 
@@ -868,8 +904,8 @@ def make_scene_verdict_panel(ax, scene_id: str, verdict: str) -> None:
         transform=ax.transAxes,
     )
     ax.add_patch(card)
-    ax.text(0.035, 0.80, "Interpretation", transform=ax.transAxes, ha="left", va="top", fontsize=4.0, color=TEXT, fontweight="bold")
-    ax.text(0.035, 0.58, verdict, transform=ax.transAxes, ha="left", va="top", fontsize=3.7, color=MUTED, linespacing=1.20)
+    ax.text(0.035, 0.80, "Interpretation", transform=ax.transAxes, ha="left", va="top", fontsize=4.75, color=TEXT, fontweight="bold")
+    ax.text(0.035, 0.58, verdict, transform=ax.transAxes, ha="left", va="top", fontsize=4.35, color=MUTED, linespacing=1.20)
     ax.text(
         0.035,
         0.17,
@@ -877,7 +913,7 @@ def make_scene_verdict_panel(ax, scene_id: str, verdict: str) -> None:
         transform=ax.transAxes,
         ha="left",
         va="bottom",
-        fontsize=3.55,
+        fontsize=4.15,
         color=MUTED,
     )
 
@@ -896,7 +932,7 @@ def add_metric_chip(ax, stats: dict[str, str], result, method: str) -> None:
         transform=ax.transAxes,
         ha="left",
         va="top",
-        fontsize=3.45,
+        fontsize=5.35,
         linespacing=1.12,
         color=TEXT,
         bbox={"facecolor": "white", "edgecolor": "#d3dee8", "linewidth": 0.24, "alpha": 0.82, "pad": 0.50},
@@ -917,15 +953,18 @@ def make_single_public_route_figure(
     scene = layouts[scene_id]["scene"]
     plot_methods = ["Fixed-Spacing", "Adaptive Spacing w/o GA", "Full Geometry-Aware Hybrid GA"]
 
-    fig = plt.figure(figsize=(7.22, 4.38), facecolor=BG)
-    gs = fig.add_gridspec(2, 3, width_ratios=[1.06, 1.06, 0.82], height_ratios=[1.0, 1.0], wspace=0.075, hspace=0.088)
+    fig = plt.figure(figsize=(7.05, 4.56), facecolor=BG)
+    gs = fig.add_gridspec(
+        2,
+        3,
+        height_ratios=[1.0, 0.44],
+        wspace=0.055,
+        hspace=0.080,
+    )
     ax_fixed = fig.add_subplot(gs[0, 0])
     ax_adaptive = fig.add_subplot(gs[0, 1])
-    ax_hybrid = fig.add_subplot(gs[1, 0])
-    ax_context = fig.add_subplot(gs[1, 1])
-    right = gs[:, 2].subgridspec(2, 1, height_ratios=[0.56, 0.44], hspace=0.11)
-    ax_table = fig.add_subplot(right[0, 0])
-    ax_delta = fig.add_subplot(right[1, 0])
+    ax_hybrid = fig.add_subplot(gs[0, 2])
+    ax_summary = fig.add_subplot(gs[1, :])
     detail_window = PUBLIC_DETAIL_WINDOWS[scene_id]
     fig.text(
         0.046,
@@ -933,7 +972,7 @@ def make_single_public_route_figure(
         f"{short_name(scene_label)} public-scene comparison",
         ha="left",
         va="top",
-        fontsize=6.0,
+        fontsize=9.35,
         fontweight="bold",
         color=TEXT,
     )
@@ -943,7 +982,7 @@ def make_single_public_route_figure(
         "Zoom panels emphasize terrain-structured line placement; metrics remain full-scene benchmark values.",
         ha="left",
         va="top",
-        fontsize=3.8,
+        fontsize=6.25,
         color=MUTED,
     )
 
@@ -956,6 +995,7 @@ def make_single_public_route_figure(
         panel_tag="(a) Fixed",
         detail_window=detail_window,
         scale_nm=scale_nm,
+        show_metrics=False,
     )
     draw_public_method_panel(
         ax_adaptive,
@@ -966,6 +1006,7 @@ def make_single_public_route_figure(
         panel_tag="(b) Adaptive-only",
         detail_window=detail_window,
         scale_nm=scale_nm,
+        show_metrics=False,
     )
     draw_public_method_panel(
         ax_hybrid,
@@ -976,19 +1017,11 @@ def make_single_public_route_figure(
         panel_tag="(c) Hybrid",
         detail_window=detail_window,
         scale_nm=scale_nm,
+        show_metrics=False,
     )
-    draw_public_context_panel(
-        ax_context,
-        scene,
-        {method: layouts[scene_id][method] for method in plot_methods},
-        panel_tag="(d) Full-scene context",
-        detail_window=detail_window,
-    )
-
-    make_scene_metric_table(ax_table, lookup, scene_id, plot_methods, {method: layouts[scene_id][method] for method in plot_methods})
-    make_scene_delta_panel(ax_delta, lookup, scene_id, plot_methods)
-    fig.subplots_adjust(left=0.044, right=0.992, top=0.942, bottom=0.078)
-    fig.savefig(PIC / output_name, bbox_inches="tight", facecolor="white", pad_inches=0.025)
+    make_scene_summary_strip(ax_summary, lookup, scene_id, plot_methods, {method: layouts[scene_id][method] for method in plot_methods})
+    fig.subplots_adjust(left=0.026, right=0.994, top=0.905, bottom=0.050)
+    fig.savefig(PIC / output_name, bbox_inches="tight", facecolor="white", pad_inches=0.014)
     plt.close(fig)
 
 
@@ -1037,11 +1070,20 @@ def cell_text_color(im, value: float) -> str:
     return "white" if luminance < 0.43 else TEXT
 
 
-def annotate_heatmap(ax, im, data: np.ndarray, fmt: str) -> None:
+def annotate_heatmap(ax, im, data: np.ndarray, fmt: str, mark_bad=None) -> None:
     for i in range(data.shape[0]):
         for j in range(data.shape[1]):
             value = data[i, j]
-            ax.text(j, i, fmt.format(value), ha="center", va="center", fontsize=5.15, color=cell_text_color(im, value))
+            ax.text(
+                j,
+                i,
+                fmt.format(value),
+                ha="center",
+                va="center",
+        fontsize=6.35,
+                fontweight="normal",
+                color=cell_text_color(im, value),
+            )
 
 
 def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
@@ -1050,7 +1092,7 @@ def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
         name.replace("GEBCO ", "").replace(" Seafloor", "").replace(" Terrain", " terrain")
         for _, name, _ in scenes
     ]
-    method_labels = [METHOD_TEXT_LABELS[method].replace(" ", "\n") for method in METHODS]
+    method_labels = ["Fixed", "Greedy", "Adapt.", "Fix-swath", "Hybrid"]
     coverage_matrix = matrices["coverage"]
     metric_specs = [
         (
@@ -1083,16 +1125,18 @@ def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
         ),
     ]
 
-    fig, axes = plt.subplots(2, 2, figsize=(7.15, 4.12), facecolor=BG)
-    for ax, (data, cmap, norm, title, fmt) in zip(axes.ravel(), metric_specs):
-        im = ax.imshow(data, cmap=cmap, norm=norm, aspect="auto")
-        ax.set_title(title, loc="left", color=TEXT, fontweight="bold", fontsize=5.7, pad=7)
+    fig, axes = plt.subplots(2, 2, figsize=(7.25, 4.78), facecolor=BG)
+    for panel_idx, (ax, (data, cmap, norm, title, fmt)) in enumerate(zip(axes.ravel(), metric_specs)):
+        im = ax.imshow(data, cmap=cmap, norm=norm, aspect="equal", interpolation="nearest")
+        ax.set_title(title, loc="left", color=TEXT, fontweight="semibold", fontsize=7.65, pad=5.8)
         ax.set_xticks(np.arange(len(METHODS)))
         ax.set_xticklabels(method_labels, color=TEXT)
+        for tick in ax.get_xticklabels():
+            tick.set_fontweight("normal")
         ax.xaxis.tick_top()
-        ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=1.5, length=0.0)
+        ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=1.9, length=0.0)
         ax.set_yticks(np.arange(len(scene_labels)))
-        if ax in [axes[0, 0], axes[1, 0]]:
+        if panel_idx in (0, 2):
             ax.set_yticklabels(scene_labels, color=TEXT)
             for tick, (_, _, group) in zip(ax.get_yticklabels(), scenes):
                 tick.set_color(PUBLIC if group == "public" else SYNTH)
@@ -1100,16 +1144,11 @@ def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
         else:
             ax.set_yticklabels([])
         for spine in ax.spines.values():
-            spine.set_color("#c8d4df")
-            spine.set_linewidth(0.55)
-        ax.set_xticks(np.arange(-0.5, len(METHODS), 1), minor=True)
-        ax.set_yticks(np.arange(-0.5, len(scene_labels), 1), minor=True)
-        ax.grid(which="minor", color="white", linewidth=0.85)
+            spine.set_visible(False)
         ax.tick_params(which="minor", bottom=False, left=False)
-        ax.axhline(1.5, color="#d5e1ea", linewidth=1.25)
         annotate_heatmap(ax, im, data, fmt)
-    fig.tight_layout(rect=[0.0, 0.015, 1.0, 0.98], h_pad=1.02, w_pad=0.88)
-    fig.savefig(PIC / "journal_metric_heatmap.png", bbox_inches="tight", facecolor="white", pad_inches=0.025)
+    fig.tight_layout(rect=[0.0, 0.018, 1.0, 0.975], h_pad=0.70, w_pad=0.40)
+    fig.savefig(PIC / "journal_metric_heatmap.png", bbox_inches="tight", facecolor="white", pad_inches=0.020)
     plt.close(fig)
 
 
@@ -1121,7 +1160,7 @@ def make_ablation_seed(summary_rows: list[dict[str, str]], raw_rows: list[dict[s
     x = np.arange(len(public_ids))
     width = 0.23
 
-    fig = plt.figure(figsize=(6.95, 2.40), facecolor=BG)
+    fig = plt.figure(figsize=(7.05, 2.92), facecolor=BG)
     gs = fig.add_gridspec(1, 3, width_ratios=[1.0, 1.0, 1.18], wspace=0.42)
     ax_gain = fig.add_subplot(gs[0, 0])
     ax_overlap = fig.add_subplot(gs[0, 1])
@@ -1167,7 +1206,7 @@ def make_ablation_seed(summary_rows: list[dict[str, str]], raw_rows: list[dict[s
         heading_mode = max(set(row["orientation_deg"] for row in rows), key=[row["orientation_deg"] for row in rows].count)
         line_mode = max(set(row["line_count"] for row in rows), key=[row["line_count"] for row in rows].count)
         mode_count = sum(1 for row in rows if row["orientation_deg"] == heading_mode and row["line_count"] == line_mode)
-        table_values.append([f"{path_sd_m:.1f}", f"{cov_sd:.2f}", f"{ov_sd:.2f}", f"{mode_count}/20"])
+        table_values.append([f"{path_sd_m:.1f}", f"{cov_sd:.2f}", f"{ov_sd:.2f}", f"{mode_count}/{len(rows)}"])
 
     ax_table.axis("off")
     ax_table.set_title("(c) Hybrid seed dispersion", loc="left", color=TEXT, fontweight="bold", pad=3)
@@ -1180,7 +1219,7 @@ def make_ablation_seed(summary_rows: list[dict[str, str]], raw_rows: list[dict[s
         bbox=[0.0, 0.05, 1.0, 0.86],
     )
     tbl.auto_set_font_size(False)
-    tbl.set_fontsize(5.25)
+    tbl.set_fontsize(6.00)
     for (row, col), cell in tbl.get_celld().items():
         cell.set_edgecolor("#cbd6e2")
         cell.set_linewidth(0.35)
@@ -1196,7 +1235,7 @@ def make_ablation_seed(summary_rows: list[dict[str, str]], raw_rows: list[dict[s
 
     handles = [Line2D([0], [0], color=METHOD_COLORS[m], linewidth=4, label=METHOD_LABELS[m]) for m in ablation_methods]
     fig.legend(handles=handles, loc="upper center", ncol=3, frameon=False, bbox_to_anchor=(0.36, 0.985), handlelength=2.8, columnspacing=1.4)
-    fig.subplots_adjust(left=0.055, right=0.985, top=0.80, bottom=0.16, wspace=0.38)
+    fig.subplots_adjust(left=0.060, right=0.985, top=0.82, bottom=0.16, wspace=0.42)
     fig.savefig(PIC / "journal_ablation_seed.png", bbox_inches="tight", facecolor="white", pad_inches=0.025)
     plt.close(fig)
 
@@ -1272,16 +1311,21 @@ def gather_overlap_regime_records(summary_rows: list[dict[str, str]]) -> list[di
 
 def make_overlap_regime_diagnostic(summary_rows: list[dict[str, str]]) -> None:
     records = gather_overlap_regime_records(summary_rows)
-    fig, (ax_gain, ax_cleanup, ax_ladder) = plt.subplots(
-        1,
-        3,
-        figsize=(7.18, 3.18),
-        facecolor=BG,
-        gridspec_kw={"width_ratios": [1.02, 1.02, 0.92]},
+    fig = plt.figure(figsize=(7.42, 4.78), facecolor=BG)
+    grid = fig.add_gridspec(
+        2,
+        2,
+        height_ratios=[1.0, 0.74],
+        width_ratios=[1.0, 1.0],
+        hspace=0.46,
+        wspace=0.28,
     )
+    ax_gain = fig.add_subplot(grid[0, 0])
+    ax_cleanup = fig.add_subplot(grid[0, 1])
+    ax_ladder = fig.add_subplot(grid[1, :])
     for ax in [ax_gain, ax_cleanup, ax_ladder]:
         style_chart_axes(ax)
-        ax.tick_params(axis="both", labelsize=6.05)
+        ax.tick_params(axis="both", labelsize=8.10)
 
     group_styles = {
         "GEBCO public": {"color": "#148f82", "marker": "o"},
@@ -1289,24 +1333,24 @@ def make_overlap_regime_diagnostic(summary_rows: list[dict[str, str]]) -> None:
         "USGS extension": {"color": "#536678", "marker": "^"},
     }
     offsets_gain = {
-        "Cascadia": (10, 10),
-        "Monterey": (10, -14),
-        "Flat": (10, 8),
-        "Slope": (10, -12),
-        "Complex": (-14, -18),
-        "USGS-L": (14, 2),
-        "USGS-M": (12, -30),
-        "USGS-H": (-38, 10),
+        "Cascadia": (10, 9),
+        "Monterey": (10, -12),
+        "Flat": (10, 7),
+        "Slope": (10, -10),
+        "Complex": (-10, -16),
+        "USGS-L": (12, 2),
+        "USGS-M": (10, -22),
+        "USGS-H": (-44, -18),
     }
     offsets_cleanup = {
         "Cascadia": (10, 8),
-        "Monterey": (10, -14),
-        "Flat": (10, 8),
-        "Slope": (10, -14),
-        "Complex": (16, -26),
-        "USGS-L": (14, 10),
-        "USGS-M": (14, -12),
-        "USGS-H": (-42, 8),
+        "Monterey": (10, -12),
+        "Flat": (10, 7),
+        "Slope": (10, -12),
+        "Complex": (12, -20),
+        "USGS-L": (12, 8),
+        "USGS-M": (12, -10),
+        "USGS-H": (-44, -18),
     }
 
     for group, style in group_styles.items():
@@ -1314,7 +1358,7 @@ def make_overlap_regime_diagnostic(summary_rows: list[dict[str, str]]) -> None:
         ax_gain.scatter(
             [row["fixed_overlap"] for row in subset],
             [row["hybrid_gain"] for row in subset],
-            s=38,
+            s=76,
             marker=style["marker"],
             color=style["color"],
             edgecolor="white",
@@ -1326,7 +1370,7 @@ def make_overlap_regime_diagnostic(summary_rows: list[dict[str, str]]) -> None:
         ax_cleanup.scatter(
             [row["fixed_overlap"] for row in subset],
             [row["hybrid_cleanup"] for row in subset],
-            s=38,
+            s=76,
             marker=style["marker"],
             color=style["color"],
             edgecolor="white",
@@ -1345,7 +1389,7 @@ def make_overlap_regime_diagnostic(summary_rows: list[dict[str, str]]) -> None:
             (row["fixed_overlap"], row["hybrid_gain"]),
             xytext=offsets_gain[row["short"]],
             textcoords="offset points",
-            fontsize=4.35,
+            fontsize=8.30,
             color=TEXT,
             path_effects=label_effect,
         )
@@ -1354,34 +1398,43 @@ def make_overlap_regime_diagnostic(summary_rows: list[dict[str, str]]) -> None:
             (row["fixed_overlap"], row["hybrid_cleanup"]),
             xytext=offsets_cleanup[row["short"]],
             textcoords="offset points",
-            fontsize=4.35,
+            fontsize=8.30,
             color=TEXT,
             path_effects=label_effect,
         )
 
     x_max = max(float(row["fixed_overlap"]) for row in records) + 1.9
     ax_cleanup.plot([0.0, x_max], [0.0, x_max], color="#93a3b2", linewidth=0.72, linestyle=(0, (3.5, 2.2)), zorder=1)
-    ax_cleanup.text(0.975, 0.08, "1:1 cleanup", transform=ax_cleanup.transAxes, ha="right", va="bottom", fontsize=3.85, color=MUTED)
+    ax_cleanup.text(
+        0.955,
+        0.10,
+        "1:1 cleanup",
+        transform=ax_cleanup.transAxes,
+        ha="right",
+        va="bottom",
+        fontsize=8.20,
+        color=MUTED,
+    )
 
-    ax_gain.set_title("(a) Baseline overlap burden vs Hybrid path gain", loc="left", color=TEXT, fontweight="bold", fontsize=5.9, pad=4.2)
-    ax_gain.set_xlabel("Fixed-Spacing excess overlap (%)", fontsize=6.3)
-    ax_gain.set_ylabel("Hybrid path gain vs Fixed (%)", fontsize=6.3)
+    ax_gain.set_title("(a) Burden vs path gain", loc="left", color=TEXT, fontweight="bold", fontsize=8.85, pad=5.0)
+    ax_gain.set_xlabel("Fixed excess overlap (%)", fontsize=8.55)
+    ax_gain.set_ylabel("Hybrid path gain (%)", fontsize=8.55)
     ax_gain.set_xlim(-0.6, x_max)
     ax_gain.set_ylim(-1.2, 28.6)
     ax_gain.annotate(
-        "GEBCO public scenes already start\nbelow 1% fixed-baseline overlap",
+        "GEBCO\n<1% $O_{ex}$",
         xy=(0.81, 0.75),
-        xytext=(6.4, 5.8),
+        xytext=(5.8, 5.6),
         textcoords="data",
-        fontsize=4.15,
+        fontsize=8.15,
         color=MUTED,
         arrowprops={"arrowstyle": "-", "lw": 0.55, "color": "#94a5b4"},
         bbox={"facecolor": "white", "edgecolor": "#d7e2eb", "linewidth": 0.30, "alpha": 0.84, "pad": 0.48},
     )
 
-    ax_cleanup.set_title("(b) Baseline overlap burden vs Hybrid cleanup", loc="left", color=TEXT, fontweight="bold", fontsize=5.9, pad=4.2)
-    ax_cleanup.set_xlabel("Fixed-Spacing excess overlap (%)", fontsize=6.3)
-    ax_cleanup.set_ylabel("Hybrid overlap reduction (pp)", fontsize=6.3)
+    ax_cleanup.set_title("(b) Burden vs overlap cleanup", loc="left", color=TEXT, fontweight="bold", fontsize=8.85, pad=5.0)
+    ax_cleanup.set_xlabel("Fixed excess overlap (%)", fontsize=8.55)
+    ax_cleanup.set_ylabel("Overlap reduction (pp)", fontsize=8.55)
     ax_cleanup.set_xlim(-0.6, x_max)
     ax_cleanup.set_ylim(-0.5, 30.4)
 
@@ -1395,23 +1448,23 @@ def make_overlap_regime_diagnostic(summary_rows: list[dict[str, str]]) -> None:
     fixed_vals = np.asarray([float(row["fixed_overlap"]) for row in selected])
     cleanup_vals = np.asarray([float(row["hybrid_cleanup"]) for row in selected])
     hybrid_vals = np.maximum(fixed_vals - cleanup_vals, 0.0)
-    ax_ladder.barh(y + 0.18, fixed_vals, height=0.30, color="#8d96a3", alpha=0.82, label="Fixed overlap")
-    ax_ladder.barh(y - 0.18, hybrid_vals, height=0.30, color="#c56335", alpha=0.88, label="Hybrid residual")
+    ax_ladder.barh(y + 0.16, fixed_vals, height=0.27, color="#8d96a3", alpha=0.82, label="Fixed overlap")
+    ax_ladder.barh(y - 0.16, hybrid_vals, height=0.27, color="#c56335", alpha=0.88, label="Hybrid residual")
     for ypos, fixed, hybrid in zip(y, fixed_vals, hybrid_vals):
         ax_ladder.plot([hybrid, fixed], [ypos, ypos], color="#bdc7d0", linewidth=0.72, zorder=1)
     ax_ladder.set_yticks(y)
-    ax_ladder.set_yticklabels([str(row["short"]) for row in selected], fontsize=5.5)
-    ax_ladder.set_xlabel("Excess overlap (%)", fontsize=6.3)
-    ax_ladder.set_title("(c) Regime ladder", loc="left", color=TEXT, fontweight="bold", fontsize=5.9, pad=4.2)
+    ax_ladder.set_yticklabels([str(row["short"]) for row in selected], fontsize=8.20)
+    ax_ladder.set_xlabel("Excess overlap (%)", fontsize=8.55)
+    ax_ladder.set_title("(c) Regime ladder", loc="left", color=TEXT, fontweight="bold", fontsize=8.85, pad=5.0)
     ax_ladder.set_xlim(0.0, max(fixed_vals) + 3.0)
-    ax_ladder.legend(loc="lower right", frameon=True, framealpha=0.92, fontsize=4.4, borderpad=0.25)
+    ax_ladder.legend(loc="lower right", frameon=True, framealpha=0.92, fontsize=7.75, borderpad=0.25, ncol=2)
 
-    leg = ax_gain.legend(loc="upper left", frameon=True, framealpha=0.92, borderpad=0.28, fontsize=4.6, handlelength=1.3)
+    leg = ax_gain.legend(loc="upper left", frameon=True, framealpha=0.92, borderpad=0.28, fontsize=7.75, handlelength=1.3)
     leg.get_frame().set_facecolor("white")
     leg.get_frame().set_edgecolor("#d7e2eb")
     leg.get_frame().set_linewidth(0.32)
 
-    fig.subplots_adjust(left=0.070, right=0.992, top=0.90, bottom=0.18, wspace=0.34)
+    fig.subplots_adjust(left=0.082, right=0.990, top=0.925, bottom=0.120)
     fig.savefig(PIC / "journal_overlap_regime.png", bbox_inches="tight", facecolor="white", pad_inches=0.025)
     plt.close(fig)
 
@@ -1425,7 +1478,8 @@ def flatten_png(path: Path) -> None:
 
 
 def main() -> None:
-    PIC.mkdir(parents=True, exist_ok=True)
+    for pic_dir in PIC_DIRS:
+        pic_dir.mkdir(parents=True, exist_ok=True)
     summary_rows = load_summary()
     raw_rows = load_raw_rows()
     make_atlas(summary_rows)
@@ -1444,6 +1498,8 @@ def main() -> None:
         "journal_ablation_seed.png",
     ]:
         flatten_png(PIC / name)
+        for pic_dir in PIC_DIRS[1:]:
+            shutil.copy2(PIC / name, pic_dir / name)
         print(PIC / name)
 
 

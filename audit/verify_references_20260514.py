@@ -13,6 +13,27 @@ TEX = ROOT / "manuscript" / "mdpi_jmse" / "template.tex"
 OUT_JSON = ROOT / "audit" / "reference_verification_20260514_v2.json"
 OUT_MD = ROOT / "audit" / "reference_verification_20260514_v2.md"
 
+MANUAL_FALLBACKS = {
+    "kim2017panel": {
+        "ok": True,
+        "status": "verified_manual_fallback",
+        "title": "Panel-based bathymetric SLAM with a multibeam echosounder",
+        "container": "2017 IEEE Underwater Technology (UT)",
+        "publisher": "IEEE",
+        "doi_crossref": "10.1109/ut.2017.7890321",
+        "manual_note": "Crossref metadata verified via API on 2026-05-23; DOI redirects to IEEE Xplore document 7890321.",
+    },
+    "li2024full": {
+        "ok": True,
+        "status": "verified_manual_fallback",
+        "title": "Full Coverage Path Planning for Torpedo-Type AUVs Based on Adaptively Sparse A* Search and New Cubic B-Spline",
+        "container": "Journal of Marine Science and Engineering",
+        "publisher": "MDPI AG",
+        "doi_crossref": "10.3390/jmse12091522",
+        "manual_note": "Crossref metadata verified via API on 2026-05-23; DOI redirects to the MDPI JMSE article page.",
+    },
+}
+
 
 def parse_refs() -> list[dict[str, object]]:
     text = TEX.read_text(encoding="utf-8")
@@ -136,6 +157,15 @@ def main() -> None:
                     }
                 )
                 result.update(doi_result)
+                fallback = MANUAL_FALLBACKS.get(str(ref.get("key")))
+                if fallback is not None:
+                    result.update(
+                        {
+                            "automated_status": result.get("status"),
+                            "automated_error": result.get("error"),
+                        }
+                    )
+                    result.update(fallback)
             time.sleep(0.12)
         elif isinstance(url, str) and url:
             result.update(fetch_url(url))

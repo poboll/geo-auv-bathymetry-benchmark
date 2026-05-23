@@ -2,9 +2,9 @@
 
 This public repository contains the manuscript-specific code, derived data, figures, and LaTeX artifacts for:
 
-**Terrain-Aware Fixed-Line Planning for MBES Survey Design Using Public Bathymetric Priors**
+**Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study**
 
-The study is framed as a public-bathymetry numerical benchmark for depth-referenced MBES fixed-line planning. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.
+The study is framed as a reproducible public-bathymetry numerical benchmark and robustness study for depth-referenced MBES fixed-line planning. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.
 
 The repository name is historical. The submitted manuscript treats the package as a depth-referenced MBES fixed-line planning benchmark; altitude-aware AUV execution remains future work.
 

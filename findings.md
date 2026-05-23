@@ -182,3 +182,14 @@
 - 九窗口 public audit 应按 regime 读：8 个 low-overlap windows 的 median path gain 约 0.67%，主要是 overlap regularization；USGS High 是唯一 overlap-stressed public window，才承担大收益证据。
 - 新增引用后参考文献总数为 45；自动核验 0 failed/0 et_al。MDPI 站点 403 问题需要 DOI redirect fallback，不应误判为假文献。
 - 新增 implementation map 如果直接塞长路径会造成 overfull；用短路径/目录级说明更适合 MDPI 版面。
+
+## 2026-05-23 v24 benchmark/robustness 收束发现
+
+- 老师报告中仍最值得补的点不是新算法，而是让投稿第一眼看到“reproducible benchmark and robustness study”。将该短语放进标题比继续使用宽泛 `planning/design using priors` 更能降低“你到底想证明什么”的审稿风险。
+- 摘要加入 rank-biserial effect size 后仍为 199 words，未超过 JMSE 约 200 words 的安全线。
+- 参数依据原来分散在 Methods 段落中，虽然内容存在，但审稿人需要自己拼。新增 parameter-rationale 表后，15%/20%/C97/O3/\(W_{\max}\)/score weights/GA budget 的“不是标准、是 benchmark setting、已做 sensitivity”关系更直观。
+- 九窗口统计原横向表可以编译，但在 PDF 第 22 页字体过小。改为纵向统计表后，可读性明显提高，并且 coverage delta 的负向结果也进入主表，避免“只报好看的 overlap/path”的质疑。
+- v24 页数从 46 增加到 47，原因是新增 parameter-rationale 表和 public-window 表重排，不是异常空白页。
+- 关键页视觉 QA：第 1 页新标题不溢出；第 10 页参数表未越界；第 22 页 public-window 表可读且未压缩成密集横线图。
+- v24+ 复核后引用审计已回到 45 references / 0 failed / 0 et_al；`kim2017panel` 和 `li2024full` 的 DOI/出版商自动访问可能偶发 SSL EOF、418 或 403，但 Crossref/DOI 元数据已核验，脚本已记录人工 fallback 以免把访问策略误判成假文献。
+- v24+ manifest 为 290 entries，release-readiness gate 继续全 0 阻断；这说明当前证据目录、PDF、两套 LaTeX、manifest 与 Git 跟踪关系已满足后续 release/Zenodo 归档前的结构要求。仍不应在用户确认冻结投稿版前创建新 release。

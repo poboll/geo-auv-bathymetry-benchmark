@@ -1,130 +1,130 @@
 scene_id,scene_name,scene_group,terrain_class,method,seed,orientation_deg,path_length_km,coverage_pct,excess_overlap_pct,planning_time_s,line_count,feasible
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Spacing,0,0.0,51.93,100.0,1.6333333333333329,0.01559304099646397,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Simple Greedy,0,15.0,54.62896401783094,99.99444444444444,0.2396900878394984,0.17418504200759344,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Adaptive Spacing w/o GA,0,0.0,52.11,100.0,0.0,0.4135810839943588,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,0,15.0,53.10708302852422,100.0,0.018509635599697153,0.12222575000487268,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,0,0.0,52.00652797081012,99.33333333333333,0.0,0.12536941698635928,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,1,15.0,52.571758035665376,98.03888888888889,0.0,0.13845929197850637,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,1,0.0,51.93716541470703,98.66666666666667,0.0,0.12177054202766158,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,2,15.0,52.994507427316385,99.06111111111112,0.0,0.12420037502306513,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,2,0.0,52.00395421932175,99.33333333333333,0.0,0.12102508300449699,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,3,15.0,53.14862859186159,100.0,0.0,0.11603545901016332,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,3,0.0,51.977157542138386,98.66666666666667,0.0,0.11081720900256187,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,4,15.0,52.22465030626928,100.0,0.0,0.10714445798657835,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,4,0.0,52.00145457433149,99.33333333333333,0.0,0.09266933400067501,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,5,15.0,52.88015824518688,98.44444444444444,0.02289253334853225,0.12515216699102893,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,5,0.0,51.9526673428931,98.66666666666667,0.0,0.10042137498385273,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,6,15.0,53.22594010103562,100.0,0.0,0.12938137497985736,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,6,0.0,52.06334510898327,100.0,0.0,0.12685879098717123,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,7,15.0,53.47500887566892,98.90555555555555,0.0,0.13266404101159424,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,7,0.0,51.96881244873616,99.33333333333333,0.0,0.11775225002202205,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,8,15.0,53.03953259717052,100.0,0.0,0.12481079099234194,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,8,0.0,52.0464456016317,98.66666666666667,0.0,0.09870916701038368,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,9,15.0,53.292634298175905,100.0,0.0,0.10958700001356192,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,9,0.0,51.958180548111535,99.33333333333333,0.0,0.0939637080009561,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,10,15.0,52.87157464157163,100.0,0.0,0.10647645802237093,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,10,0.0,51.84408002631985,98.0,0.0,0.11234308301936835,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,11,15.0,53.501730552609935,100.0,0.0,0.12697629199828953,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,11,0.0,51.95485455846241,98.66666666666667,0.0,0.09185037499992177,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,12,15.0,53.213247043014775,99.26666666666667,0.0,0.10798566701123491,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,12,0.0,51.915019577446074,98.66666666666667,0.0,0.11222654097946361,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,13,15.0,53.80468078954789,100.0,0.0,0.12433074999717064,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,13,0.0,52.004640657214345,98.66666666666667,0.0,0.09915245798765682,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,14,15.0,53.62648018038292,100.0,0.0,0.12293804198270664,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,14,0.0,51.99447946688362,98.66666666666667,0.0,0.09639045799849555,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,15,15.0,52.449391845435514,97.59444444444443,0.0,0.12617408300866373,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,15,0.0,52.03302902601543,98.66666666666667,0.0,0.11555099999532104,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,16,15.0,52.762750534946996,100.0,0.0,0.11970745798316784,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,16,0.0,51.907872852322704,98.66666666666667,0.0,0.10253041700343601,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,17,15.0,53.20447437003705,100.0,0.0,0.12983462499687448,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,17,0.0,51.884276011510835,98.66666666666667,0.0,0.1245513750181999,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,18,15.0,52.43184077195392,99.5111111111111,0.0,0.12329004201455973,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,18,0.0,52.019663795619394,98.66666666666667,0.0,0.11316837501362897,6,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,19,15.0,52.05969318352911,99.86111111111111,0.0,0.13650950000737794,7,1
-usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,19,0.0,51.99163296877888,99.33333333333333,0.0,0.09973725001327693,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Spacing,0,0.0,51.93,100.0,1.6333333333333329,0.010539834009250626,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Simple Greedy,0,15.0,54.62896401783094,99.99444444444444,0.2396900878394984,0.1505745000031311,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Adaptive Spacing w/o GA,0,0.0,52.11,100.0,0.0,0.40194174999487586,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,0,15.0,53.10708302852422,100.0,0.018509635599697153,0.11155333399074152,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,0,0.0,52.00652797081012,99.33333333333333,0.0,0.09818641701713204,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,1,15.0,52.571758035665376,98.03888888888889,0.0,0.11509174999082461,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,1,0.0,51.93716541470703,98.66666666666667,0.0,0.10529158401186578,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,2,15.0,52.994507427316385,99.06111111111112,0.0,0.12407254098798148,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,2,0.0,52.00395421932175,99.33333333333333,0.0,0.12387179199140519,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,3,15.0,53.14862859186159,100.0,0.0,0.11991500001749955,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,3,0.0,51.977157542138386,98.66666666666667,0.0,0.12088283398770727,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,4,15.0,52.22465030626928,100.0,0.0,0.1265704589895904,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,4,0.0,52.00145457433149,99.33333333333333,0.0,0.10443624999606982,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,5,15.0,52.88015824518688,98.44444444444444,0.02289253334853225,0.134292207978433,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,5,0.0,51.9526673428931,98.66666666666667,0.0,0.12137570799677633,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,6,15.0,53.22594010103562,100.0,0.0,0.12178516699350439,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,6,0.0,52.06334510898327,100.0,0.0,0.1101907919801306,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,7,15.0,53.47500887566892,98.90555555555555,0.0,0.1347552499792073,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,7,0.0,51.96881244873616,99.33333333333333,0.0,0.12175104097696021,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,8,15.0,53.03953259717052,100.0,0.0,0.12718700000550598,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,8,0.0,52.0464456016317,98.66666666666667,0.0,0.09822783301933669,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,9,15.0,53.292634298175905,100.0,0.0,0.12886658299248666,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,9,0.0,51.958180548111535,99.33333333333333,0.0,0.09755624999525025,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,10,15.0,52.87157464157163,100.0,0.0,0.12302558298688382,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,10,0.0,51.84408002631985,98.0,0.0,0.09464662501704879,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,11,15.0,53.501730552609935,100.0,0.0,0.11231450000195764,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,11,0.0,51.95485455846241,98.66666666666667,0.0,0.09464029199443758,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,12,15.0,53.213247043014775,99.26666666666667,0.0,0.11476062500150874,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,12,0.0,51.915019577446074,98.66666666666667,0.0,0.10095220798393711,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,13,15.0,53.80468078954789,100.0,0.0,0.12639416701858863,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,13,0.0,52.004640657214345,98.66666666666667,0.0,0.0954475829785224,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,14,15.0,53.62648018038292,100.0,0.0,0.11626816698117182,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,14,0.0,51.99447946688362,98.66666666666667,0.0,0.09718908401555382,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,15,15.0,52.449391845435514,97.59444444444443,0.0,0.11961529101245105,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,15,0.0,52.03302902601543,98.66666666666667,0.0,0.12539862500852905,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,16,15.0,52.762750534946996,100.0,0.0,0.12459329099510796,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,16,0.0,51.907872852322704,98.66666666666667,0.0,0.10493258302449249,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,17,15.0,53.20447437003705,100.0,0.0,0.11950983299175277,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,17,0.0,51.884276011510835,98.66666666666667,0.0,0.10474262500065379,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,18,15.0,52.43184077195392,99.5111111111111,0.0,0.11720204199082218,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,18,0.0,52.019663795619394,98.66666666666667,0.0,0.10389891601516865,6,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,19,15.0,52.05969318352911,99.86111111111111,0.0,0.12413270800607279,7,1
-usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,19,0.0,51.99163296877888,99.33333333333333,0.0,0.10952149998047389,6,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Spacing,0,0.0,97.254304852,97.2,29.960005980349994,0.011173958017025143,12,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Simple Greedy,0,90.0,89.879061846,97.15,25.981666464827498,0.1602658329939004,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Adaptive Spacing w/o GA,0,135.0,73.89166194729708,98.55000000000001,2.2372345564469054,0.4392848339921329,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,0,90.0,90.14408223475753,96.96111111111111,21.33908439636927,0.1175129160110373,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,0,135.0,72.8691042136253,98.55000000000001,1.5733972802907423,0.15425091699580662,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,1,90.0,90.07308592662471,96.90555555555555,23.211190340987923,0.11698916699970141,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,1,135.0,72.82287786481395,98.36111111111111,1.6199860002956463,0.1507851250062231,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,2,90.0,90.19340092560638,97.22222222222221,22.063595690217106,0.13383537498884834,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,2,135.0,72.80812097767209,98.56111111111112,1.7080085212686391,0.15117912500863895,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,3,90.0,90.25398185504991,97.21111111111111,20.35478288376734,0.1364679160178639,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,3,135.0,72.89191814761692,98.47777777777777,1.6277879701442524,0.1475108329905197,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,4,90.0,90.13353081306305,97.02222222222223,21.174999687309167,0.13060229198890738,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,4,135.0,72.8274563288153,98.30555555555556,1.7791855028587769,0.15361395801301114,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,5,90.0,90.1609314505909,97.26666666666667,20.946503807500026,0.12731537499348633,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,5,135.0,72.95644847296327,98.50555555555556,1.736070561734954,0.14181224998901598,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,6,90.0,90.2485691567118,97.15555555555555,20.27195239471723,0.11473100000876002,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,6,135.0,72.93477107272396,98.19444444444444,1.770516194005536,0.1442068750038743,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,7,90.0,90.16982567869954,96.92222222222222,21.800901288230715,0.10996408300707117,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,7,135.0,72.83345975790567,98.35000000000001,1.8400067095661061,0.15878349999547936,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,8,90.0,90.12817031025926,96.73888888888888,21.984619724553394,0.1233834580052644,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,8,135.0,72.05220703025746,98.53888888888889,1.4185772851411391,0.14103395800339058,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,9,90.0,90.30413996933348,97.04444444444445,22.129355963045377,0.12872604199219495,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,9,135.0,73.29008914467052,98.6,1.893664716167038,0.15564787498442456,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,10,90.0,90.12723842286807,96.97222222222223,21.893868145298775,0.11412129100062884,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,10,135.0,72.61834453794481,98.35555555555555,1.681630963814628,0.1394119999895338,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,11,90.0,90.12305058130967,97.17777777777778,23.293598761485878,0.11669295802130364,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,11,135.0,72.81315520307494,98.39444444444445,1.9875495407912183,0.16305283299880102,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,12,90.0,90.14058014703141,96.94444444444444,22.177236462063615,0.1284506660012994,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,12,135.0,72.83533779034457,98.48333333333333,1.5408598141880474,0.15648658300051466,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,13,90.0,90.14651780728542,97.0,22.77013076789153,0.13365812500705943,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,13,135.0,73.1180153002585,98.43888888888888,1.6062124674236713,0.14497720898361877,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,14,90.0,90.19301846353936,97.16111111111111,20.577205500017158,0.11943962497753091,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,14,135.0,72.95418637617745,98.34444444444445,1.8043885549914942,0.14851674999226816,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,15,90.0,90.06849987204933,96.81111111111112,22.52942053497053,0.12374041599105112,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,15,135.0,73.1571030444804,98.42222222222222,2.0223229190098486,0.12393925001379102,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,16,90.0,90.13812270338013,96.61111111111111,23.045091068616866,0.1127801249967888,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,16,135.0,72.86601720047472,98.57777777777777,1.6849787312957163,0.1404597500222735,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,17,90.0,90.1406258127057,96.90555555555555,21.173614682519833,0.11232524999650195,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,17,135.0,73.00941769395924,98.42777777777778,1.720388523343908,0.15208133298438042,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,18,90.0,90.2642889845786,97.07777777777777,21.919227638554638,0.12307887498172931,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,18,135.0,73.37333893638746,98.47222222222223,1.8978835703264179,0.12438754198956303,12,1
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,19,90.0,90.12574359020915,97.00555555555556,22.30627384032591,0.11715725000249222,9,0
-usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,19,135.0,73.03307620106013,98.40555555555555,1.7226591781908376,0.14508166600717232,12,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Spacing,0,0.0,51.93,100.0,1.6333333333333329,0.013228041992988437,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Simple Greedy,0,15.0,54.62896401783094,99.99444444444444,0.2396900878394984,0.14417912499629892,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Adaptive Spacing w/o GA,0,0.0,52.11,100.0,0.0,0.40264345800096635,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,0,15.0,53.10708302852422,100.0,0.018509635599697153,0.12494199999491684,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,0,0.0,52.00652797081012,99.33333333333333,0.0,0.10557329100265633,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,1,15.0,52.571758035665376,98.03888888888889,0.0,0.12325116699503269,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,1,0.0,51.93716541470703,98.66666666666667,0.0,0.1147192499920493,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,2,15.0,52.994507427316385,99.06111111111112,0.0,0.10552616600762121,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,2,0.0,52.00395421932175,99.33333333333333,0.0,0.09603216699906625,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,3,15.0,53.14862859186159,100.0,0.0,0.13447237499349285,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,3,0.0,51.977157542138386,98.66666666666667,0.0,0.11052062499220483,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,4,15.0,52.22465030626928,100.0,0.0,0.13253891699423548,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,4,0.0,52.00145457433149,99.33333333333333,0.0,0.10501625000324566,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,5,15.0,52.88015824518688,98.44444444444444,0.02289253334853225,0.12238270899979398,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,5,0.0,51.9526673428931,98.66666666666667,0.0,0.10580862499773502,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,6,15.0,53.22594010103562,100.0,0.0,0.11836891699931584,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,6,0.0,52.06334510898327,100.0,0.0,0.11071162500593346,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,7,15.0,53.47500887566892,98.90555555555555,0.0,0.11861041700467467,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,7,0.0,51.96881244873616,99.33333333333333,0.0,0.11319137499958742,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,8,15.0,53.03953259717052,100.0,0.0,0.11396062500716653,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,8,0.0,52.0464456016317,98.66666666666667,0.0,0.11459954199381173,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,9,15.0,53.292634298175905,100.0,0.0,0.15656912499980535,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,9,0.0,51.958180548111535,99.33333333333333,0.0,0.11619658299605362,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,10,15.0,52.87157464157163,100.0,0.0,0.15668462500616442,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,10,0.0,51.84408002631985,98.0,0.0,0.1131448329979321,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,11,15.0,53.501730552609935,100.0,0.0,0.1298791250010254,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,11,0.0,51.95485455846241,98.66666666666667,0.0,0.1078996249998454,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,12,15.0,53.213247043014775,99.26666666666667,0.0,0.14586812499328516,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,12,0.0,51.915019577446074,98.66666666666667,0.0,0.1194712920114398,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,13,15.0,53.80468078954789,100.0,0.0,0.13752429198939353,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,13,0.0,52.004640657214345,98.66666666666667,0.0,0.14289591599663254,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,14,15.0,53.62648018038292,100.0,0.0,0.15941012499388307,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,14,0.0,51.99447946688362,98.66666666666667,0.0,0.12184400000842288,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,15,15.0,52.449391845435514,97.59444444444443,0.0,0.13927341699309181,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,15,0.0,52.03302902601543,98.66666666666667,0.0,0.11437037499854341,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,16,15.0,52.762750534946996,100.0,0.0,0.11475104100827593,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,16,0.0,51.907872852322704,98.66666666666667,0.0,0.13993174998904578,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,17,15.0,53.20447437003705,100.0,0.0,0.15214420898701064,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,17,0.0,51.884276011510835,98.66666666666667,0.0,0.1250572499993723,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,18,15.0,52.43184077195392,99.5111111111111,0.0,0.1593713329930324,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,18,0.0,52.019663795619394,98.66666666666667,0.0,0.11174449999816716,6,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Fixed-Swath GA,19,15.0,52.05969318352911,99.86111111111111,0.0,0.11699645798944402,7,1
+usgs_southern_cascadia_30m_low,USGS Cascadia 30 m Low,public,survey_grade_cascadia_low,Full Geometry-Aware Hybrid GA,19,0.0,51.99163296877888,99.33333333333333,0.0,0.11675229200045578,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Spacing,0,0.0,51.93,100.0,1.6333333333333329,0.010703624997404404,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Simple Greedy,0,15.0,54.62896401783094,99.99444444444444,0.2396900878394984,0.16141120900283568,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Adaptive Spacing w/o GA,0,0.0,52.11,100.0,0.0,0.4048947919945931,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,0,15.0,53.10708302852422,100.0,0.018509635599697153,0.12745962498593144,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,0,0.0,52.00652797081012,99.33333333333333,0.0,0.11505554099858273,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,1,15.0,52.571758035665376,98.03888888888889,0.0,0.11767675000010058,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,1,0.0,51.93716541470703,98.66666666666667,0.0,0.10629870799311902,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,2,15.0,52.994507427316385,99.06111111111112,0.0,0.12526491700555198,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,2,0.0,52.00395421932175,99.33333333333333,0.0,0.1222353750054026,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,3,15.0,53.14862859186159,100.0,0.0,0.13949229200079571,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,3,0.0,51.977157542138386,98.66666666666667,0.0,0.10505983300390653,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,4,15.0,52.22465030626928,100.0,0.0,0.13722200000484008,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,4,0.0,52.00145457433149,99.33333333333333,0.0,0.1287363750016084,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,5,15.0,52.88015824518688,98.44444444444444,0.02289253334853225,0.1508928340044804,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,5,0.0,51.9526673428931,98.66666666666667,0.0,0.12515525000344496,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,6,15.0,53.22594010103562,100.0,0.0,0.1461723329994129,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,6,0.0,52.06334510898327,100.0,0.0,0.1363183339999523,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,7,15.0,53.47500887566892,98.90555555555555,0.0,0.1326662499923259,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,7,0.0,51.96881244873616,99.33333333333333,0.0,0.12247641599969938,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,8,15.0,53.03953259717052,100.0,0.0,0.1608459999988554,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,8,0.0,52.0464456016317,98.66666666666667,0.0,0.12268583299010061,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,9,15.0,53.292634298175905,100.0,0.0,0.11858191600185819,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,9,0.0,51.958180548111535,99.33333333333333,0.0,0.11328125,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,10,15.0,52.87157464157163,100.0,0.0,0.1413315420068102,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,10,0.0,51.84408002631985,98.0,0.0,0.1104680830030702,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,11,15.0,53.501730552609935,100.0,0.0,0.1073555830080295,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,11,0.0,51.95485455846241,98.66666666666667,0.0,0.11184549999597948,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,12,15.0,53.213247043014775,99.26666666666667,0.0,0.14193124999292195,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,12,0.0,51.915019577446074,98.66666666666667,0.0,0.09605179200298153,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,13,15.0,53.80468078954789,100.0,0.0,0.12770324999291915,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,13,0.0,52.004640657214345,98.66666666666667,0.0,0.11171316700347234,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,14,15.0,53.62648018038292,100.0,0.0,0.11374333300045691,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,14,0.0,51.99447946688362,98.66666666666667,0.0,0.11385574999439996,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,15,15.0,52.449391845435514,97.59444444444443,0.0,0.1263044160004938,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,15,0.0,52.03302902601543,98.66666666666667,0.0,0.114863166003488,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,16,15.0,52.762750534946996,100.0,0.0,0.15006849999190308,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,16,0.0,51.907872852322704,98.66666666666667,0.0,0.12308995799685363,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,17,15.0,53.20447437003705,100.0,0.0,0.14408149999508169,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,17,0.0,51.884276011510835,98.66666666666667,0.0,0.11528245800582226,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,18,15.0,52.43184077195392,99.5111111111111,0.0,0.1235532080027042,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,18,0.0,52.019663795619394,98.66666666666667,0.0,0.12263912499474827,6,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Fixed-Swath GA,19,15.0,52.05969318352911,99.86111111111111,0.0,0.1288068750000093,7,1
+usgs_southern_cascadia_30m_medium,USGS Cascadia 30 m Medium,public,survey_grade_cascadia_medium,Full Geometry-Aware Hybrid GA,19,0.0,51.99163296877888,99.33333333333333,0.0,0.11175520899996627,6,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Spacing,0,0.0,97.254304852,97.2,29.960005980349994,0.017501417009043507,12,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Simple Greedy,0,90.0,89.879061846,97.15,25.981666464827498,0.165152624991606,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Adaptive Spacing w/o GA,0,135.0,73.89166194729708,98.55000000000001,2.2372345564469054,0.41630220800288953,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,0,90.0,90.14408223475753,96.96111111111111,21.33908439636927,0.10351558399270289,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,0,135.0,72.8691042136253,98.55000000000001,1.5733972802907423,0.14572537499770988,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,1,90.0,90.07308592662471,96.90555555555555,23.211190340987923,0.11916474999452475,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,1,135.0,72.82287786481395,98.36111111111111,1.6199860002956463,0.15190425000037067,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,2,90.0,90.19340092560638,97.22222222222221,22.063595690217106,0.11254933399322908,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,2,135.0,72.80812097767209,98.56111111111112,1.7080085212686391,0.14617895799165126,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,3,90.0,90.25398185504991,97.21111111111111,20.35478288376734,0.11024745799659286,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,3,135.0,72.89191814761692,98.47777777777777,1.6277879701442524,0.14021912500902545,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,4,90.0,90.13353081306305,97.02222222222223,21.174999687309167,0.1320097080024425,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,4,135.0,72.8274563288153,98.30555555555556,1.7791855028587769,0.15814383400720544,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,5,90.0,90.1609314505909,97.26666666666667,20.946503807500026,0.13134799999534152,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,5,135.0,72.95644847296327,98.50555555555556,1.736070561734954,0.14933104199008085,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,6,90.0,90.2485691567118,97.15555555555555,20.27195239471723,0.13867508299881592,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,6,135.0,72.93477107272396,98.19444444444444,1.770516194005536,0.12824379200174008,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,7,90.0,90.16982567869954,96.92222222222222,21.800901288230715,0.14532433300337289,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,7,135.0,72.83345975790567,98.35000000000001,1.8400067095661061,0.11990908300504088,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,8,90.0,90.12817031025926,96.73888888888888,21.984619724553394,0.11784254199301358,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,8,135.0,72.05220703025746,98.53888888888889,1.4185772851411391,0.12875337500008754,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,9,90.0,90.30413996933348,97.04444444444445,22.129355963045377,0.13987058300699573,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,9,135.0,73.29008914467052,98.6,1.893664716167038,0.16158524999627843,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,10,90.0,90.12723842286807,96.97222222222223,21.893868145298775,0.1600366659986321,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,10,135.0,72.61834453794481,98.35555555555555,1.681630963814628,0.16206708300160244,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,11,90.0,90.12305058130967,97.17777777777778,23.293598761485878,0.10447200000635348,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,11,135.0,72.81315520307494,98.39444444444445,1.9875495407912183,0.14163183300115634,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,12,90.0,90.14058014703141,96.94444444444444,22.177236462063615,0.11067929099954199,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,12,135.0,72.83533779034457,98.48333333333333,1.5408598141880474,0.1576830840058392,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,13,90.0,90.14651780728542,97.0,22.77013076789153,0.12249024999618996,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,13,135.0,73.1180153002585,98.43888888888888,1.6062124674236713,0.1323282920056954,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,14,90.0,90.19301846353936,97.16111111111111,20.577205500017158,0.13245304199517705,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,14,135.0,72.95418637617745,98.34444444444445,1.8043885549914942,0.16971583300619386,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,15,90.0,90.06849987204933,96.81111111111112,22.52942053497053,0.13561666599707678,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,15,135.0,73.1571030444804,98.42222222222222,2.0223229190098486,0.13098841700411867,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,16,90.0,90.13812270338013,96.61111111111111,23.045091068616866,0.1235702909907559,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,16,135.0,72.86601720047472,98.57777777777777,1.6849787312957163,0.15320429200073704,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,17,90.0,90.1406258127057,96.90555555555555,21.173614682519833,0.12923308400786482,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,17,135.0,73.00941769395924,98.42777777777778,1.720388523343908,0.13722120800230186,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,18,90.0,90.2642889845786,97.07777777777777,21.919227638554638,0.12832995899952948,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,18,135.0,73.37333893638746,98.47222222222223,1.8978835703264179,0.16058958299981896,12,1
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Fixed-Swath GA,19,90.0,90.12574359020915,97.00555555555556,22.30627384032591,0.11876904100063257,9,0
+usgs_southern_cascadia_30m_high,USGS Cascadia 30 m High,public,survey_grade_cascadia_high,Full Geometry-Aware Hybrid GA,19,135.0,73.03307620106013,98.40555555555555,1.7226591781908376,0.16074770799605176,12,1

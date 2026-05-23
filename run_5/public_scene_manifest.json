@@ -4,7 +4,7 @@
     "source": "GEBCO 2025 global bathymetry subset",
     "download_url": "https://download.gebco.net",
     "license": "GEBCO 2025 Grid terms of use",
-    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_cascadia_margin_moderate/data.tif",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_cascadia_margin_moderate/data.tif",
     "crop_bounds": {
       "left": -126.8,
       "bottom": 43.19999999999999,
@@ -32,7 +32,7 @@
     "source": "GEBCO 2025 global bathymetry subset",
     "download_url": "https://download.gebco.net",
     "license": "GEBCO 2025 Grid terms of use",
-    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260423_152326_geo_public_bathy_rebuild_round2/public_bathy/raw/gebco/gebco_monterey_canyon_complex/data.tif",
+    "raw_file": "/Users/Apple/Developer/paper/PaperForge/results/paper_writer/20260422_190114_geo_public_bathy_rebuild/public_bathy/raw/gebco/gebco_monterey_canyon_complex/data.tif",
     "crop_bounds": {
       "left": -123.3,
       "bottom": 35.29999999999998,

@@ -176,3 +176,19 @@
 - 引用审计脚本增加 DOI redirect fallback；最新 `python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al。
 - 重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 289 entries；`python3 check_release_readiness.py` 通过，missing/untracked/core-not-in-manifest 均为 0。
 - 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
+
+## 2026-05-23 v24
+
+- 读取并复核老师外部核对表 `/Users/Apple/Developer/Pycharm/q/Geo修改请按点核对.md`、仓库内 `audit/Geo修改请按点核对.md`、`task_plan.md`、`progress.md`、`findings.md` 与当前两套 LaTeX。
+- 根据老师报告中“标题更突出 benchmark、参数依据表、effect size/CI 显式展示、主线更像可复现 benchmark”的意见，继续做 v24 投稿叙事收束。
+- 两套 LaTeX 标题同步改为 `Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study`。
+- 两套摘要同步改写为 199 words：前置 reproducible public-grid benchmark，保留 adaptive spacing 主效应、GA gated local refinement、九窗口 Wilcoxon 与 rank-biserial 1.00、C97/O3 不代表 C99/O2/project-specific QA 的边界。
+- Methods 新增 `Table~\ref{tab:parameter_rationale}`：集中说明 target overlap margin、excess-overlap ceiling、C97/O3 gate、\(W_{\min}/W_{\max}\)、heading grid、score weights、GA budget 的依据和对应审计实验。
+- Results 将 `Table~\ref{tab:public_window_stats}` 从横向 11 列密表重排为纵向统计表，显式写入 \(G_L\)、\(\Delta O\)、\(\Delta C\) 的 median、mean CI、positive windows、Wilcoxon p 和 rank-biserial effect size。
+- 同步更新 `README.md`、`README_submission.md`、`CITATION.cff`、`.zenodo.json` 和 `submission_package/JMSE_cover_letter_draft.md` 的标题与 benchmark/robustness 叙事。
+- 重新编译 `manuscript/mdpi_jmse` 与 `manuscript/latex` 两遍，最终日志为 `compile_after_benchmark_robustness_v24_20260523_pass2.log`；两套 PDF 均输出 47 pages。
+- 严格日志扫描只命中正常 `Output written on template.pdf (47 pages)`；无 LaTeX Error、Undefined control sequence、undefined citation/reference、Rerun、Overfull、Float too large、Fatal 或 Emergency stop。
+- 使用 conda `uu` 环境中的 PyMuPDF 抽取 PDF 文本，确认两套 PDF 均包含新增 parameter-rationale table 与 paired public-window statistics table。
+- 渲染并人工抽查关键页：`audit/page_preview_20260523_v24/mdpi_key_page_01_v24b.png`、`mdpi_key_page_10_v24b.png`、`mdpi_key_page_22_v24b.png`；首页标题不溢出，参数表清晰，public-window 统计表已从蚂蚁字改为可读纵向表。
+- v24+ 投稿前硬核验收口：重新运行 `python3 audit/verify_references_20260514.py`，结果为 45 references / 0 failed / 0 et_al；重新运行 `conda run -n uu python make_reproducibility_manifest.py`，manifest 为 290 entries；重新运行 `python3 check_release_readiness.py`，missing required paths、empty required dirs、untracked manifest entries、tracked core files not in manifest 均为 0。
+- `audit/verify_references_20260514.py` 增加 `kim2017panel` 与 `li2024full` 的人工核验 fallback 说明；两条 DOI 已通过 Crossref/DOI 元数据核验，fallback 仅用于防止 IEEE/MDPI 自动访问 418/403 或 SSL EOF 被误判为假引用。
