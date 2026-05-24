@@ -30,13 +30,18 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_resolves",
-    "error": "HTTP Error 404: Not Found",
+    "status": "verified_manual_fallback",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
     "crossref_status": "crossref_failed",
-    "crossref_error": "HTTP Error 404: Not Found",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
     "doi_url": "https://doi.org/10.5066/P9C5DBMR",
-    "resolved_url": "https://cmgds.marine.usgs.gov/data-releases/datarelease/10.5066-P9C5DBMR/",
-    "http_status": 200
+    "automated_status": "doi_resolution_failed",
+    "automated_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "title": "Composite multibeam bathymetry surface and data sources of the southern Cascadia Margin offshore Oregon and northern California (version 2.0, April 2026)",
+    "container": "U.S. Geological Survey data release",
+    "publisher": "U.S. Geological Survey",
+    "doi_crossref": "10.5066/P9C5DBMR",
+    "manual_note": "Official USGS/CMGDS data-release page verified on 2026-05-24; DOI.org automated checks can intermittently fail with TLS EOF for this data DOI."
   },
   {
     "key": "iho_c13",
@@ -328,13 +333,19 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.1109/TASE.2025.3615829",
-    "resolved_url": "https://ieeexplore.ieee.org/document/11184576/",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "Modular Acoustic Graph SLAM for Underwater Monitoring With Autonomous Underwater Vehicles",
+    "container": "IEEE Transactions on Automation Science and Engineering",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi_crossref": "10.1109/tase.2025.3615829"
   },
   {
     "key": "xu2025usoslam",
@@ -832,21 +843,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Hybrid-Algorithm-Based Full Coverage Search Approach With Multiple AUVs to Unknown Environments in Internet of Underwater Things",
-    "container": "IEEE Internet of Things Journal",
-    "issued": {
-      "date-parts": [
-        [
-          2024,
-          3,
-          15
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
-    "doi_crossref": "10.1109/jiot.2023.3328973"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1109/JIOT.2023.3328973",
+    "resolved_url": "https://ieeexplore.ieee.org/document/10302225/",
+    "http_status": 302
   },
   {
     "key": "kapetanovic2018side",

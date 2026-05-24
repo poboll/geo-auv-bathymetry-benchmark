@@ -259,3 +259,22 @@
 - 引用审计再次通过：`python3 audit/verify_references_20260514.py` 输出 `total 45 failed 0 et_al 0`。
 - 本轮收尾重新运行 `conda run -n uu python make_reproducibility_manifest.py`，`reproducibility_manifest.json` 为 313 entries；`python3 check_release_readiness.py` 输出 `missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
 - 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。本轮仍不创建 GitHub release / Zenodo DOI，因为用户尚未确认冻结投稿版。
+
+## 2026-05-24 v29
+
+- 继续按老师核对表中“增加 turn-radius / transition-cost / Dubins 后评估主表”的高优先级意见推进，本轮不伪装真实执行，而是在 v28 已验证的 external-layout baseline rows 上新增确定性转弯半径和 mission-time proxy 审计。
+- 新增 `make_external_turning_cost_audit.py`，并运行 `python3 -m py_compile make_external_turning_cost_audit.py` 与 `conda run -n uu python make_external_turning_cost_audit.py`；输出 `raw_rows=216`、`summary_rows=6`。
+- 新增 `external_turning_cost_audit/`，包含 `external_turning_cost_raw.csv`、`external_turning_cost_summary.csv`、`external_turning_cost_summary.json`、`README.md` 与 `journal_external_turning_cost_audit.png`；图源同步复制到 `manuscript/mdpi_jmse/pic/` 与 `manuscript/latex/pic/`。
+- 审计假设：\(R_{\min}=25,50,100,200\) m；测线/转场速度 1.5 m/s；转弯弧速度 0.75 m/s；coverage/overlap gate 不重算，因为 line family 不变；该审计只是 post-planning execution-cost proxy，不是 Dubins controller、hydrodynamic simulation、mission-log replay、field validation 或 hydrographic QA。
+- 核心结果：Adaptive 与 Hybrid seed-0 在 9/9 public windows 仍为 feasible；R100/R200 median mission-time gain 均约 0.682%，positive windows 为 7/9。Geometry-shortest fixed-width 的 R100 median time gain 为 0.434%，但只 8/9 feasible；Min-span 与 Contour 只 6/9 feasible。
+- USGS High 的审稿防御点已写入正文：Min-span/Geometry-shortest 在 R100 下可显示 37.83% mission-time gain，但 coverage 只有 92.44%、mean excess overlap 7.49%，因此不能只看时间收益；Adaptive 与 Hybrid seed-0 在同一 crop 上分别保留 22.43% 和 23.41% R100 mission-time gain 且通过 C97/O3 gate。
+- 两套 LaTeX 已同步回写：Results 新增 `External Heuristic Turning-cost Audit` 小节和 Table `tab:external_turning_cost_audit`；Discussion 增加 transition-cost 与 gate 一起解释；Data Availability 与 implementation map 增加 `external_turning_cost_audit/`；evidence map 把 execution boundary 改为包含 external turning-cost audit。
+- README 与 `README_submission.md` 已补充 v29 复现命令和证据目录。
+- 重新编译 `manuscript/mdpi_jmse` 与 `manuscript/latex` 两遍，最终日志为 `compile_after_external_turning_v29_20260524_pass2.log`；两套 PDF 均输出 51 pages。
+- 严格日志扫描：两套日志只命中 `Output written on template.pdf (51 pages)`；无 LaTeX Error、Undefined control sequence、undefined citation/reference、Rerun、Overfull、Float too large、Fatal 或 Emergency stop。
+- PDF 视觉 QA：渲染 `audit/page_preview_20260524_external_turning_v29/page_29.png` 至 `page_32.png`，人工查看第 31 页 Table 17 可读、未截断、未超宽；首次渲染发现表头偏小，已缩短表头并去掉整体 `resizebox` 后重新编译确认。
+- 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。本轮仍不创建 GitHub release / Zenodo DOI，因为用户尚未确认冻结投稿版。
+- 收尾运行 `conda run -n uu python make_reproducibility_manifest.py`，`reproducibility_manifest.json` 更新为 325 entries，已纳入 `external_turning_cost_audit/`、v29 page previews、turning-cost figure copies、两套 PDF 和更新后的 README/checklist。
+- 运行 `python3 check_release_readiness.py`，输出 `manifest_entries=325`、`tracked_files=404`、`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 引用审计第一次收尾时 `dartnell2026southerncascadia` 因 DOI.org TLS EOF 失败；已在 `audit/verify_references_20260514.py` 中加入 USGS Southern Cascadia data DOI `10.5066/P9C5DBMR` manual fallback，说明官方 USGS/CMGDS data-release 页面已在 2026-05-24 人工核验。
+- 重新运行 `python3 -m py_compile audit/verify_references_20260514.py` 与 `python3 audit/verify_references_20260514.py`；最终输出 `total 45 failed 0 et_al 0`，并刷新 `audit/reference_verification_20260514_v2.json` 和 `.md`。

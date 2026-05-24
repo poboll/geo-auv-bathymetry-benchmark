@@ -11,7 +11,7 @@ The repository name is historical. The submitted manuscript treats the package a
 ## Contents
 
 - `geo_public_bathy_benchmark.py`: main public-bathymetry benchmark runner.
-- `make_*.py`: figure, sensitivity, uncertainty replay, turning-aware, coarse-prior replay, PSO baseline, and manifest scripts.
+- `make_*.py`: figure, sensitivity, uncertainty replay, turning-aware, external-baseline, coarse-prior replay, PSO baseline, and manifest scripts.
 - `run_5/`: latest validated benchmark outputs used as the main evidence source.
 - `gebco_scene_expansion/`: supplemental four-window GEBCO scene-selection risk check.
 - `sensitivity/`: beam-angle, overlap-target, prior-depth, prior-relief, grid-resolution, and objective penalty-weight diagnostics.
@@ -19,6 +19,8 @@ The repository name is historical. The submitted manuscript treats the package a
 - `survey_grade_extension_usgs_cascadia/`: independent USGS Southern Cascadia 30 m public-grid extension.
 - `coarse_prior_replay/`: coarse-prior to fine-grid replay outputs.
 - `footprint_validity_audit/`: total-width proxy versus side-specific port/starboard footprint validity audit.
+- `external_layout_baseline_audit/`: external-style fixed-width survey-layout heuristic audit.
+- `external_turning_cost_audit/`: turn-radius and mission-time proxy audit for the external-layout baseline rows.
 - `pso_baseline/`: equal-budget PSO local-refinement diagnostic.
 - `public_bathy/processed/`: small processed GEBCO scene caches used by the benchmark.
 - `manuscript/mdpi_jmse/`: MDPI/JMSE draft source and compiled PDF.
@@ -49,6 +51,8 @@ python geo_public_bathy_benchmark.py
 python make_gebco_scene_expansion.py
 python make_public_bootstrap_ci.py
 python make_turning_aware_posteval.py
+python make_external_layout_baseline_audit.py
+python make_external_turning_cost_audit.py
 python make_sensitivity_study.py
 python make_penalty_weight_sensitivity.py
 python make_uncertainty_replay.py

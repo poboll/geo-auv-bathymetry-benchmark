@@ -48,6 +48,7 @@ Status date: 2026-05-23
 - [x] Nine-window paired public statistics are recorded in `public_window_statistics/`; both terrain-aware methods improve overlap in 9/9 public windows, with one-sided Wilcoxon \(p=0.00195\).
 - [x] Side-specific footprint validity audit is recorded in `footprint_validity_audit/`; the port/starboard audit changes 0/9 audited \(C97/O3\) feasibility decisions and records maximum coverage and overlap deltas of 0.50 pp and 1.217 pp.
 - [x] External survey-layout heuristic audit is recorded in `external_layout_baseline_audit/`; min-span/contour/geometry-shortest fixed-width heuristics reach 6/9, 6/9, and 8/9 feasible public windows, while Adaptive Spacing and Hybrid seed-0 reach 9/9.
+- [x] External turning-cost audit is recorded in `external_turning_cost_audit/`; it adds \(R_{\min}=25/50/100/200\) m line-change arcs to the v28 external-layout rows and reports mission-time proxy gains without changing the C97/O3 feasibility gate.
 - [x] Submission reproduction map is recorded in `README_submission.md`.
 - [x] Latest five-point PDF page preview is recorded in `audit/page_preview_20260515_user_5point_v16/contact_sheet.png`.
 - [x] Latest Fig. 2/Fig. 6/Fig. 14 PDF page preview is recorded in `audit/page_preview_20260515_v17b_after/contact_sheet.png`.
@@ -75,8 +76,8 @@ Status date: 2026-05-23
 
 ## Compile QA
 
-- [x] MDPI PDF compiled to 50 pages after the May 23 v28 external-layout baseline audit pass.
-- [x] Working PDF compiled to 50 pages after the May 23 v28 external-layout baseline audit pass.
+- [x] MDPI PDF compiled to 51 pages after the May 24 v29 external turning-cost audit pass.
+- [x] Working PDF compiled to 51 pages after the May 24 v29 external turning-cost audit pass.
 - [x] Abstract rechecked after the May 23 v24 pass: 199 words by the local LaTeX-stripped counter.
 - [x] No undefined citation/reference warnings in latest MDPI compile log.
 - [x] No overfull hbox warnings in latest MDPI compile log.
@@ -84,8 +85,8 @@ Status date: 2026-05-23
 - [x] No sparse/blank figure pages detected in the May 14 rendered contact-sheet QA.
 - [x] Working PDF compiled and retained.
 - [x] Latest compile logs:
-  - `manuscript/mdpi_jmse/compile_after_external_layout_audit_v28_pass2.log`
-  - `manuscript/latex/compile_after_external_layout_audit_v28_pass2.log`
+  - `manuscript/mdpi_jmse/compile_after_external_turning_v29_20260524_pass2.log`
+  - `manuscript/latex/compile_after_external_turning_v29_20260524_pass2.log`
 
 ## Repository and Archive
 
@@ -186,3 +187,16 @@ Status date: 2026-05-23
 - [x] Latest compile logs: `manuscript/mdpi_jmse/compile_after_external_layout_audit_v28_pass2.log` and `manuscript/latex/compile_after_external_layout_audit_v28_pass2.log`; both output 50 pages and strict scans report no hard LaTeX errors, undefined references/citations, rerun warnings, overfull boxes, float-too-large warnings, fatal errors, or emergency stops.
 - [x] Latest audit rerun: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 313 entries; `check_release_readiness.py` reports all release-blocking counts as 0.
 - [x] No claim boundary changed in the v28 evidence pass: results remain public-grid numerical planning benchmark evidence, not field/lake/sea trials, raw MBES validation, hydrographic QA, mission-log validation, or navigation-safety evidence.
+
+## 2026-05-24 v29 External Turning-cost Audit Addendum
+
+- [x] Added `make_external_turning_cost_audit.py` and `external_turning_cost_audit/` to address the teacher/reviewer request for a turn-radius / transition-cost post-evaluation layer.
+- [x] The audit reuses the v28 54 external-layout rows and expands them to 216 deterministic rows across \(R_{\min}=25/50/100/200\) m; it applies semicircular line-change arcs and declared survey/turn speeds of 1.5 and 0.75 m/s.
+- [x] Key result: Adaptive Spacing and Hybrid seed-0 remain 9/9 feasible public windows; their median mission-time gains are 0.682% at both R100 and R200. Geometry-shortest fixed-width is 8/9 feasible; Min-span and Contour are 6/9 feasible.
+- [x] USGS High boundary retained: Min-span and Geometry-shortest can show 37.83% R100 mission-time gain, but they remain infeasible with 92.44% coverage and 7.49% mean excess overlap. The manuscript now states explicitly that shorter/faster layouts are not acceptable unless the coverage/overlap gate is passed.
+- [x] Manuscript text updated in Results, Discussion, Data Availability, evidence map, and implementation map; Table `tab:external_turning_cost_audit` added as the main-text evidence carrier.
+- [x] Visual QA artifacts: `audit/page_preview_20260524_external_turning_v29/page_29.png` through `page_32.png`; page 31 was inspected and Table 17 is readable, not clipped, and not overwide.
+- [x] Latest compile logs: `manuscript/mdpi_jmse/compile_after_external_turning_v29_20260524_pass2.log` and `manuscript/latex/compile_after_external_turning_v29_20260524_pass2.log`; both output 51 pages and strict scans report no hard LaTeX errors, undefined references/citations, rerun warnings, overfull boxes, float-too-large warnings, fatal errors, or emergency stops.
+- [x] Latest reference audit: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al. The script now includes a manual fallback for the USGS Southern Cascadia data DOI `10.5066/P9C5DBMR` because DOI.org automated checks can intermittently fail with TLS EOF even though the official USGS/CMGDS data-release page is verified.
+- [x] Latest release-readiness audit: `conda run -n uu python make_reproducibility_manifest.py` writes 325 entries; `python3 check_release_readiness.py` reports `missing_required_paths=0`, `empty_required_dirs=0`, `untracked_manifest_entries=0`, and `tracked_core_files_not_in_manifest=0`.
+- [x] No claim boundary changed in the v29 evidence pass: the audit is a deterministic post-planning execution-cost proxy, not a Dubins controller, hydrodynamic simulation, mission-log replay, field/lake/sea trial, hydrographic QA, or navigation-safety evidence.

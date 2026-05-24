@@ -1,5 +1,39 @@
 # 对JMSE目标稿的严格评审与大修方案
 
+# 2026-05-24 Codex v29 外部转弯代价审计按点核对执行记录
+
+【x】按老师“增加 turn-radius / transition-cost / Dubins 后评估主表”的意见，补外部基线转弯代价审计。
+文件/命令/证据：
+- 新脚本：`make_external_turning_cost_audit.py`
+- 新证据目录：`external_turning_cost_audit/`
+- 输出文件：`external_turning_cost_raw.csv`、`external_turning_cost_summary.csv`、`external_turning_cost_summary.json`、`README.md`、`journal_external_turning_cost_audit.png`
+- 同步图源：`manuscript/latex/pic/journal_external_turning_cost_audit.png`、`manuscript/mdpi_jmse/pic/journal_external_turning_cost_audit.png`
+- 命令：`python3 -m py_compile make_external_turning_cost_audit.py`；`conda run -n uu python make_external_turning_cost_audit.py`
+- 输出规模：`raw_rows=216`、`summary_rows=6`
+- 核心结果：Adaptive 与 Hybrid seed-0 均保持 9/9 feasible public windows，R100/R200 median mission-time gain 均约 0.682%；Geometry-shortest fixed-width 为 8/9 feasible；Min-span/Contour 为 6/9 feasible。USGS High 上外部 fixed-width heuristic 虽可显示更大 time gain，但因 coverage/overlap gate 未过，不能作为可接受布局。
+- 边界：这是 post-planning mission-time proxy，不是 Dubins controller、hydrodynamic simulation、mission-log replay、field validation、hydrographic QA 或 navigation-safety evidence。
+
+【x】两套主稿已回写新审计，并完成 PDF 级 QA。
+文件/命令/证据：
+- 修改：`manuscript/mdpi_jmse/template.tex`、`manuscript/latex/template.tex`
+- 回写位置：Evidence map；Results 新增 `External Heuristic Turning-cost Audit` 小节与 `Table~\ref{tab:external_turning_cost_audit}`；Supplementary and Reproducibility Evidence；Implementation map；Discussion；Data Availability。
+- 编译日志：`manuscript/mdpi_jmse/compile_after_external_turning_v29_20260524_pass2.log`、`manuscript/latex/compile_after_external_turning_v29_20260524_pass2.log`
+- 严格扫描：两套 log 无 hard error、undefined citation/reference、rerun、overfull、float-too-large、fatal/emergency stop。
+- PDF 输出：两套 `template.pdf` 均为 51 pages；根目录交付 PDF 已刷新。
+- 页面 QA：`audit/page_preview_20260524_external_turning_v29/page_31.png` 显示新表位于 MDPI PDF 第 31 页，未见表格超宽、截断、遮挡或异常空白；初版表头偏小已修。
+
+【x】v29 引用审计、manifest 与 release-readiness gate 已最终闭环。
+文件/命令/证据：
+- 引用审计命令：`python3 audit/verify_references_20260514.py`
+- 引用审计输出：`audit/reference_verification_20260514_v2.json`、`audit/reference_verification_20260514_v2.md`
+- 引用审计结果：`total 45 failed 0 et_al 0`
+- 修补说明：`audit/verify_references_20260514.py` 新增 `dartnell2026southerncascadia` manual fallback；USGS Southern Cascadia data DOI `10.5066/P9C5DBMR` 已在官方 USGS/CMGDS data-release 页面人工核验，fallback 只用于避免 DOI.org TLS EOF 被误判为假引用。
+- Manifest 命令：`conda run -n uu python make_reproducibility_manifest.py`
+- Manifest 输出：`reproducibility_manifest.json`，当前为 325 entries。
+- Release gate 命令：`python3 check_release_readiness.py`
+- Release gate 输出：`manifest_entries=325`、`tracked_files=404`、`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 结论：v29 新增外部转弯代价审计、页面预览、引用审计报告、交付 PDF 与 manifest/Git 跟踪状态一致；因为稿件仍是 pre-submission working draft，未创建 GitHub release，也未触发新的 Zenodo DOI。
+
 # 2026-05-23 Codex v28 外部启发式基线审计按点核对执行记录
 
 【x】按老师“对照基线不能只在自家家族里打转”的意见，补外部启发式测线布局审计。

@@ -109,3 +109,16 @@
 - [x] 引用审计通过：`python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al。
 - [x] 当前 manifest 与 release gate 已重新闭环：`conda run -n uu python make_reproducibility_manifest.py` 写出 313 entries；`python3 check_release_readiness.py` 输出 missing required paths、empty dirs、untracked manifest entries、tracked core files missing from manifest 全为 0。
 - [ ] 若用户确认当前 v28 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。
+
+## 2026-05-24 v29 External Turning-cost Audit Addendum
+
+- [x] 按老师“turn-radius / transition-cost / Dubins 后评估主表”的意见，基于 v28 的 54 条 external-layout baseline rows 新增确定性转弯半径与 mission-time proxy 审计。
+- [x] 新增 `make_external_turning_cost_audit.py` 和 `external_turning_cost_audit/`：`external_turning_cost_raw.csv`、`external_turning_cost_summary.csv`、`external_turning_cost_summary.json`、`README.md`、`journal_external_turning_cost_audit.png`。
+- [x] 审计假设：\(R_{\min}=25/50/100/200\) m；测线/转场 1.5 m/s，转弯弧 0.75 m/s；只做 post-planning execution-cost proxy，不重算 coverage/overlap，也不包装为 Dubins controller、mission-log replay 或 field validation。
+- [x] 核心结果写入正文 Table 17：Adaptive 与 Hybrid seed-0 在 9/9 public windows 仍 feasible，R100/R200 median mission-time gain 均约 0.682%；外部 fixed-width heuristic 在 USGS High 上虽可出现更大时间收益，但因为 coverage/overlap gate 未过而不能作为可接受布局。
+- [x] 两套 LaTeX 同步回写 Results、Discussion、Data Availability、Implementation map 和 evidence map；README 与 README_submission 增加复现命令和证据目录。
+- [x] 两套 LaTeX 均双遍编译为 51 pages；最新日志为 `compile_after_external_turning_v29_20260524_pass2.log`，严格扫描无 hard error、undefined citation/reference、rerun、overfull、float-too-large、fatal 或 emergency stop。
+- [x] PDF 页面 QA 已渲染 `audit/page_preview_20260524_external_turning_v29/page_29.png` 至 `page_32.png`；第 31 页 Table 17 可读，未截断、未超宽。
+- [x] v29 最终引用审计、manifest 与 release gate 已重新闭环：`python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al；`conda run -n uu python make_reproducibility_manifest.py` 写出 325 entries；`python3 check_release_readiness.py` 输出 missing/empty/untracked/core-not-in-manifest 全为 0。
+- [x] 引用审计脚本新增 USGS Southern Cascadia data DOI `10.5066/P9C5DBMR` manual fallback，用于处理 DOI.org TLS EOF 抖动；该 fallback 仅记录官方 USGS/CMGDS data-release 页面核验，不改变正文数据或 claim。
+- [ ] 若用户确认当前 v29 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。

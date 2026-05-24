@@ -120,6 +120,12 @@ PATTERNS = {
         "external_layout_baseline_audit/*.md",
         "external_layout_baseline_audit/*.png",
     ],
+    "external_turning_cost_audit_outputs": [
+        "external_turning_cost_audit/*.csv",
+        "external_turning_cost_audit/*.json",
+        "external_turning_cost_audit/*.md",
+        "external_turning_cost_audit/*.png",
+    ],
     "pso_baseline_outputs": [
         "pso_baseline/*.csv",
         "pso_baseline/*.json",
@@ -199,6 +205,7 @@ PATTERNS = {
         "audit/reference_verification_20260514_v*.json",
         "audit/reference_verification_20260514_v*.md",
         "audit/page_preview_20260523_external_baseline_v28/*.png",
+        "audit/page_preview_20260524_external_turning_v29/*.png",
     ],
     "reproduction_scripts": [
         "geo_public_bathy_benchmark.py",
@@ -228,6 +235,7 @@ PATTERNS = {
         "make_ga_surrogate_audit.py",
         "make_footprint_validity_audit.py",
         "make_external_layout_baseline_audit.py",
+        "make_external_turning_cost_audit.py",
         "make_claim_consistency_audit.py",
         "make_sensitivity_evidence_figures.py",
         "journal_heatmap_style.py",

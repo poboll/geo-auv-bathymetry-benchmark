@@ -4,7 +4,7 @@
 |---:|---|---|---|---|
 | 1 | `gebco2025grid` | verified_doi_redirects | https://www.bodc.ac.uk/data/published_data_library/catalogue/10.5285/37c52e96-24ea-67ce-e063-7086abc05f29 |  |
 | 2 | `gebco_tid_grid` | url_http_200 | https://www.gebco.net/gebco-tid-grid |  |
-| 3 | `dartnell2026southerncascadia` | verified_doi_resolves | https://cmgds.marine.usgs.gov/data-releases/datarelease/10.5066-P9C5DBMR/ |  |
+| 3 | `dartnell2026southerncascadia` | verified_manual_fallback | Composite multibeam bathymetry surface and data sources of the southern Cascadia Margin offshore Oregon and northern California (version 2.0 |  |
 | 4 | `iho_c13` | url_http_200 | https://iho.int/uploads/user/pubs/cb/c-13/english/C-13_Chapter_1_and_contents.pdf |  |
 | 5 | `noaa_hssd2025` | url_http_200 | https://nauticalcharts.noaa.gov/publications/documents/HSSD_2025-0-01.pdf |  |
 | 6 | `ausseabed2020guidelines` | verified_crossref | Australian multibeam guidelines |  |
@@ -19,7 +19,7 @@
 | 15 | `zhao2024jointcpp` | verified_crossref | Joint-optimized coverage path planning framework for USV-assisted offshore bathymetric mapping: From theory to practice |  |
 | 16 | `zhang2024tttslam` | verified_crossref | TTT SLAM: A feature-based bathymetric SLAM framework |  |
 | 17 | `krasnosky2022gp` | verified_crossref | A Massively Parallel Implementation of Gaussian Process Regression for Real Time Bathymetric Modeling and Simultaneous Localization and Mapp |  |
-| 18 | `real2025acousticgraphslam` | verified_doi_redirects | https://ieeexplore.ieee.org/document/11184576/ |  |
+| 18 | `real2025acousticgraphslam` | verified_crossref | Modular Acoustic Graph SLAM for Underwater Monitoring With Autonomous Underwater Vehicles |  |
 | 19 | `xu2025usoslam` | verified_crossref | USO-SLAM: SLAM With Single-Frame Semantic Object Reconstruction for Autonomous Underwater Vehicles |  |
 | 20 | `ma2023terrainreview` | verified_crossref | A review of terrain aided navigation for underwater vehicles |  |
 | 21 | `zhang2023rbpf` | verified_crossref | An outlier-robust Rao–Blackwellized particle filter for underwater terrain-aided navigation |  |
@@ -42,7 +42,7 @@
 | 38 | `dogru2022ecocpp` | verified_crossref | ECO-CPP: Energy constrained online coverage path planning |  |
 | 39 | `wang2025ddqn` | verified_crossref | A DDQN-Based Cooperative Path Planning for Range-Based AUV Cooperative Navigation System Towards Coverage Survey and Positioning Error Suppr |  |
 | 40 | `zhu2019complete` | verified_crossref | Complete Coverage Path Planning of Autonomous Underwater Vehicle Based on GBNN Algorithm |  |
-| 41 | `han2023hybrid` | verified_crossref | Hybrid-Algorithm-Based Full Coverage Search Approach With Multiple AUVs to Unknown Environments in Internet of Underwater Things |  |
+| 41 | `han2023hybrid` | verified_doi_redirects | https://ieeexplore.ieee.org/document/10302225/ |  |
 | 42 | `kapetanovic2018side` | verified_crossref | A side-scan sonar data-driven coverage planning and tracking framework |  |
 | 43 | `tang2023coverage` | verified_crossref | Coverage path planning of unmanned surface vehicle based on improved biological inspired neural network |  |
 | 44 | `cao2018real` | verified_crossref | A Real-Time Path Planning Algorithm for AUV in Unknown Underwater Environment Based on Combining PSO and Waypoint Guidance |  |

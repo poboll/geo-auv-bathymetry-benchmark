@@ -246,3 +246,15 @@
 - 本轮使稿件从“内部方法族对比”进一步增强为“内部 ablation + public-window statistics + footprint validity + external heuristic audit”的证据堆栈；这对 JMSE 大修/审稿防御有明显帮助。
 - Claim boundary 未变化：v28 仍然只证明 public-grid numerical planning benchmark 下的 fixed-line layout behavior，不证明 raw MBES product quality、field/lake/sea trial performance、hydrographic QA 或 navigation safety。
 - 收尾验证状态：两套 LaTeX 均为 50 pages；严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large 或 rerun；引用审计 45 references / 0 failed / 0 et_al；manifest 313 entries；release gate 四项阻断为 0。
+
+## 2026-05-24 v29 外部转弯代价审计发现
+
+- 老师关于 turn-radius / transition-cost 的质疑不能只靠 Discussion future work 回答；v29 将 v28 的 54 条 external-layout baseline rows 扩展为 216 条 deterministic turning-cost rows，形成主文 Table 17。
+- 该审计的正确解释边界是 post-planning execution-cost proxy：它给固定线族添加半圆换线弧和更慢转弯速度，用于检查“路线短/时间短”结论是否依赖忽略转弯成本；它不是 Dubins controller、控制器仿真、mission-log replay、海试或 hydrographic QA。
+- Adaptive Spacing 与 Hybrid seed-0 的 \(R_{\min}=100\) 和 \(R_{\min}=200\) median mission-time gain 都约为 0.682%，且仍是 9/9 feasible public windows。说明加入简单换线弧后，低重叠 public windows 的“小收益但稳定”解释没有被推翻。
+- 该审计同时防止一个新的误读：USGS High 上 Min-span / Geometry-shortest fixed-width 在 R100 下显示约 37.83% mission-time gain，但它们 coverage 只有 92.44%、mean excess overlap 7.49%，没有通过 C97/O3 gate。也就是说，执行时间不能脱离 coverage/overlap 可行性单独作为胜利指标。
+- Hybrid seed-0 在 USGS High 上保留 23.41% R100 mission-time gain，Adaptive 为 22.43%，且两者通过 C97/O3 gate；这比只报告几何 path gain 更贴近老师要求的 operation-relevant limitation。
+- Table 17 初版使用长表头和 `resizebox` 导致 PDF 里偏小；已改为短表头、不整体缩放。第 31 页视觉 QA 显示表格清楚、未截断、未超宽。
+- v29 对论文故事线的贡献是补齐“外部基线 + 执行代价”的交叉防御：外部启发式不是没比较，转弯半径也不是没考虑，但两者都保持在 numerical planning benchmark 边界内。
+- v29 最终收尾状态：两套 LaTeX 均为 51 pages；严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large 或 rerun；引用审计 45 references / 0 failed / 0 et_al；manifest 325 entries；release gate 四项阻断为 0。
+- `dartnell2026southerncascadia` 的 DOI `10.5066/P9C5DBMR` 偶发 DOI.org TLS EOF，不是数据源不存在。引用审计脚本已加入官方 USGS/CMGDS data-release 页面 manual fallback；正文仍按 public-grid numerical benchmark 使用 USGS 30 m data release，不把它写成 sea trial、mission log 或 survey-grade validation。

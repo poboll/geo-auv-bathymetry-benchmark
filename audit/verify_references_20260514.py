@@ -48,6 +48,15 @@ MANUAL_FALLBACKS = {
         "doi_crossref": "10.3390/jmse12091522",
         "manual_note": "Crossref metadata verified via API on 2026-05-23; DOI redirects to the MDPI JMSE article page.",
     },
+    "dartnell2026southerncascadia": {
+        "ok": True,
+        "status": "verified_manual_fallback",
+        "title": "Composite multibeam bathymetry surface and data sources of the southern Cascadia Margin offshore Oregon and northern California (version 2.0, April 2026)",
+        "container": "U.S. Geological Survey data release",
+        "publisher": "U.S. Geological Survey",
+        "doi_crossref": "10.5066/P9C5DBMR",
+        "manual_note": "Official USGS/CMGDS data-release page verified on 2026-05-24; DOI.org automated checks can intermittently fail with TLS EOF for this data DOI.",
+    },
 }
 
 
