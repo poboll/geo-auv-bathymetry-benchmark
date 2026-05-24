@@ -122,3 +122,12 @@
 - [x] v29 最终引用审计、manifest 与 release gate 已重新闭环：`python3 audit/verify_references_20260514.py` 输出 45 references / 0 failed / 0 et_al；`conda run -n uu python make_reproducibility_manifest.py` 写出 325 entries；`python3 check_release_readiness.py` 输出 missing/empty/untracked/core-not-in-manifest 全为 0。
 - [x] 引用审计脚本新增 USGS Southern Cascadia data DOI `10.5066/P9C5DBMR` manual fallback，用于处理 DOI.org TLS EOF 抖动；该 fallback 仅记录官方 USGS/CMGDS data-release 页面核验，不改变正文数据或 claim。
 - [ ] 若用户确认当前 v29 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。
+
+## 2026-05-24 v30 Blockwise Repair Addendum
+
+- [x] 新增 `make_segmented_decision_audit.py`，从既有 `segmented_heading_extension/segmented_heading_raw.csv` 复算 blockwise selector 决策。
+- [x] 生成 `segmented_decision_audit/`：CSV、JSON、README、RGB PNG 图源，并复制图源到两套 manuscript `pic/`。
+- [x] 两套 LaTeX 已回写：标题、摘要、贡献点、Methods、Results、Discussion、Conclusion、Data Availability 均升级为 gate-aware blockwise fixed-line repair 叙事。
+- [x] README、README_submission、CITATION、Zenodo metadata、cover letter、老师核对 MD 和 final checklist 已同步 v30 叙事。
+- [x] 重新编译两套 PDF、渲染新增图页、跑引用审计、manifest 和 release gate：两套 PDF 均 52 pages；引用审计 45 references / 0 failed / 0 et_al；manifest 337 entries；release gate 四项阻断为 0。
+- [ ] 若用户确认当前 v30 为冻结投稿版，再创建 GitHub release 并等待 Zenodo mint 新 DOI；否则继续作为 pre-submission working draft。

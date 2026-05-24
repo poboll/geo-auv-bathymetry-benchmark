@@ -200,3 +200,11 @@ Status date: 2026-05-23
 - [x] Latest reference audit: `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al. The script now includes a manual fallback for the USGS Southern Cascadia data DOI `10.5066/P9C5DBMR` because DOI.org automated checks can intermittently fail with TLS EOF even though the official USGS/CMGDS data-release page is verified.
 - [x] Latest release-readiness audit: `conda run -n uu python make_reproducibility_manifest.py` writes 325 entries; `python3 check_release_readiness.py` reports `missing_required_paths=0`, `empty_required_dirs=0`, `untracked_manifest_entries=0`, and `tracked_core_files_not_in_manifest=0`.
 - [x] No claim boundary changed in the v29 evidence pass: the audit is a deterministic post-planning execution-cost proxy, not a Dubins controller, hydrodynamic simulation, mission-log replay, field/lake/sea trial, hydrographic QA, or navigation-safety evidence.
+
+## 2026-05-24 v30 Blockwise Repair Addendum
+
+- [x] Segmented-heading has been upgraded from a boundary-note diagnostic to a formal gate-aware blockwise fixed-line stress-case extension.
+- [x] Manuscript title, abstract, keywords, contribution bullets, Methods, Results, Discussion, Conclusion, Data Availability, README, README_submission, `CITATION.cff`, `.zenodo.json`, and cover letter now use the blockwise-repair framing.
+- [x] Added `make_segmented_decision_audit.py` and `segmented_decision_audit/` with CSV/JSON/README/PNG outputs.
+- [x] Key decision-audit result: Synthetic Complex is repaired in 30/30 seeds; Monterey accepts blockwise layouts in 14/30 seeds; Mariana/Puerto Rico reject blockwise candidates due to coverage loss; USGS High finds coverage-preserving cleanup in 8/30 seeds but the transition-aware selector retains single-heading due to transition burden.
+- [x] v30 compile, visual page QA, reference audit, reproducibility manifest, release-readiness gate, and delivery PDFs rerun: both manuscript PDFs output 52 pages; `python3 audit/verify_references_20260514.py` reports 45 references / 0 failed / 0 et_al; `make_reproducibility_manifest.py` writes 337 entries; `check_release_readiness.py` reports all release-blocking counts as 0.

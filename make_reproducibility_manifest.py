@@ -73,6 +73,12 @@ PATTERNS = {
         "segmented_heading_extension/*.md",
         "segmented_heading_extension/*.png",
     ],
+    "segmented_decision_audit_outputs": [
+        "segmented_decision_audit/*.csv",
+        "segmented_decision_audit/*.json",
+        "segmented_decision_audit/*.md",
+        "segmented_decision_audit/*.png",
+    ],
     "coarse_prior_replay_outputs": [
         "coarse_prior_replay/*.csv",
         "coarse_prior_replay/*.json",
@@ -206,6 +212,7 @@ PATTERNS = {
         "audit/reference_verification_20260514_v*.md",
         "audit/page_preview_20260523_external_baseline_v28/*.png",
         "audit/page_preview_20260524_external_turning_v29/*.png",
+        "audit/page_preview_20260524_blockwise_v30/*.png",
     ],
     "reproduction_scripts": [
         "geo_public_bathy_benchmark.py",
@@ -217,6 +224,7 @@ PATTERNS = {
         "make_turning_aware_posteval.py",
         "make_vehicle_aware_posteval.py",
         "make_segmented_heading_extension.py",
+        "make_segmented_decision_audit.py",
         "make_structured_prior_error_replay.py",
         "make_uncertainty_margin_replay.py",
         "make_current_drift_replay.py",

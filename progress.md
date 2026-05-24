@@ -278,3 +278,18 @@
 - 运行 `python3 check_release_readiness.py`，输出 `manifest_entries=325`、`tracked_files=404`、`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
 - 引用审计第一次收尾时 `dartnell2026southerncascadia` 因 DOI.org TLS EOF 失败；已在 `audit/verify_references_20260514.py` 中加入 USGS Southern Cascadia data DOI `10.5066/P9C5DBMR` manual fallback，说明官方 USGS/CMGDS data-release 页面已在 2026-05-24 人工核验。
 - 重新运行 `python3 -m py_compile audit/verify_references_20260514.py` 与 `python3 audit/verify_references_20260514.py`；最终输出 `total 45 failed 0 et_al 0`，并刷新 `audit/reference_verification_20260514_v2.json` 和 `.md`。
+
+## 2026-05-24 v30
+
+- 按用户“老师觉得浅、创新点不足”的最新要求，选择不再空泛加料，而是把已有 segmented-heading 证据升级为 `gate-aware blockwise fixed-line extension`。
+- 新增 `make_segmented_decision_audit.py`，从 `segmented_heading_extension/segmented_heading_raw.csv` 复算 selector 逻辑，生成 `segmented_decision_audit/segmented_decision_summary.csv`、`.json`、`README.md` 和 `journal_segmented_decision_audit.png`。
+- 运行 `python3 -m py_compile make_segmented_decision_audit.py` 与 `conda run -n uu python make_segmented_decision_audit.py`，输出 `summary_rows=5`；新增 PNG 已转为 RGB 白底并复制到 `manuscript/mdpi_jmse/pic/` 与 `manuscript/latex/pic/`。
+- 复算结论：Synthetic Complex 30/30 transition-aware 选择 blockwise repair；Monterey 14/30 接受 blockwise；Mariana/Puerto Rico 0/30 接受；USGS High coverage-preserving 8/30 但 transition-aware 0/30，因 transition burden 保留 single-heading。
+- 两套 LaTeX 同步回写：标题改为 `Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors`；摘要约 190 words；贡献点改为 4 条；Methods 新增 blockwise extension；Results 新增 decision-audit 图；Discussion 删除旧 `boundary note` 表述。
+- README、README_submission、CITATION、.zenodo、cover letter、老师外部核对 MD、仓库核对 MD 和 final checklist 已同步。
+- 重新编译 `manuscript/mdpi_jmse` 与 `manuscript/latex` 两遍，最终日志为 `compile_after_blockwise_repair_v30_final_20260524_pass2.log`；两套 PDF 均输出 52 pages。
+- 严格日志扫描：两套日志无 LaTeX Error、Undefined control sequence、undefined citation/reference、actionable rerun、Overfull、Float too large、Fatal error 或 Emergency stop。
+- PDF 视觉 QA：重新渲染 `audit/page_preview_20260524_blockwise_v30/page_01.png`、`page_25.png`、`page_26.png`、`page_46.png`、`page_47.png`；第 26 页新增 decision audit 图未见黑底、裁切、图注遮挡或异常大空白。
+- 已刷新根目录交付 PDF：`mdpi_jmse_jmse_submission_draft.pdf`、`paper_refined.pdf`、`geo_public_bathy_rebuild.pdf`。
+- 收尾运行 `conda run -n uu python make_reproducibility_manifest.py`，`reproducibility_manifest.json` 更新为 337 entries；`python3 check_release_readiness.py` 输出 `manifest_entries=337`、`tracked_files=416`、`missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。
+- 重新运行 `python3 audit/verify_references_20260514.py`，最终输出 `total 45 failed 0 et_al 0`，并刷新 `audit/reference_verification_20260514_v2.json` 和 `.md`。

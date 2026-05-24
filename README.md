@@ -2,7 +2,7 @@
 
 This public repository contains the manuscript-specific code, derived data, figures, and LaTeX artifacts for:
 
-**Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study**
+**Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors**
 
 The study is framed as a reproducible public-bathymetry numerical benchmark and robustness study for depth-referenced MBES fixed-line planning. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.
 
@@ -21,6 +21,7 @@ The repository name is historical. The submitted manuscript treats the package a
 - `footprint_validity_audit/`: total-width proxy versus side-specific port/starboard footprint validity audit.
 - `external_layout_baseline_audit/`: external-style fixed-width survey-layout heuristic audit.
 - `external_turning_cost_audit/`: turn-radius and mission-time proxy audit for the external-layout baseline rows.
+- `segmented_decision_audit/`: gate-aware blockwise fixed-line accept/reject decision audit derived from the segmented-heading raw rows.
 - `pso_baseline/`: equal-budget PSO local-refinement diagnostic.
 - `public_bathy/processed/`: small processed GEBCO scene caches used by the benchmark.
 - `manuscript/mdpi_jmse/`: MDPI/JMSE draft source and compiled PDF.
@@ -53,6 +54,7 @@ python make_public_bootstrap_ci.py
 python make_turning_aware_posteval.py
 python make_external_layout_baseline_audit.py
 python make_external_turning_cost_audit.py
+python make_segmented_decision_audit.py
 python make_sensitivity_study.py
 python make_penalty_weight_sensitivity.py
 python make_uncertainty_replay.py
@@ -73,7 +75,7 @@ xelatex -interaction=nonstopmode template.tex
 
 ## Current Evidence Boundary
 
-The latest validated run is `run_5`. The strongest supported claim is that terrain-aware adaptive spacing improves overlap discipline and repeatability for offline fixed-pattern survey-line design on public bathymetric priors. Local GA cleanup is optional and gate-controlled. Public GEBCO route shortening is modest; the main public-scene result is overlap discipline and coverage/overlap balance. The nine-window public audit separates low-overlap public windows from the overlap-stressed USGS high-complexity crop, and the coarse-prior replay, threshold/local-failure, \(W_{\max}\), surrogate, footprint-validity, and GA-gate diagnostics are used as public-grid stress checks, not as sea-trial evidence.
+The latest validated run is `run_5`. The strongest supported claim is that terrain-aware adaptive spacing improves overlap discipline and repeatability for offline fixed-pattern survey-line design on public bathymetric priors. Local GA cleanup is optional and gate-controlled. The gate-aware blockwise extension is a formal stress-case repair inside the fixed-line family, not a free-form mission planner. Public GEBCO route shortening is modest; the main public-scene result is overlap discipline and coverage/overlap balance. The nine-window public audit separates low-overlap public windows from the overlap-stressed USGS high-complexity crop, and the coarse-prior replay, threshold/local-failure, \(W_{\max}\), surrogate, footprint-validity, segmented-decision, external-baseline, turning-cost, and GA-gate diagnostics are used as public-grid stress checks, not as sea-trial evidence.
 
 For a compact submission reproduction map, see `README_submission.md`.
 

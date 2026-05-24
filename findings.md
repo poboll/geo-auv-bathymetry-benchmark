@@ -258,3 +258,11 @@
 - v29 对论文故事线的贡献是补齐“外部基线 + 执行代价”的交叉防御：外部启发式不是没比较，转弯半径也不是没考虑，但两者都保持在 numerical planning benchmark 边界内。
 - v29 最终收尾状态：两套 LaTeX 均为 51 pages；严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large 或 rerun；引用审计 45 references / 0 failed / 0 et_al；manifest 325 entries；release gate 四项阻断为 0。
 - `dartnell2026southerncascadia` 的 DOI `10.5066/P9C5DBMR` 偶发 DOI.org TLS EOF，不是数据源不存在。引用审计脚本已加入官方 USGS/CMGDS data-release 页面 manual fallback；正文仍按 public-grid numerical benchmark 使用 USGS 30 m data release，不把它写成 sea trial、mission log 或 survey-grade validation。
+
+## 2026-05-24 v30 blockwise repair 发现
+
+- 老师“创新浅”的最可落地修复点不是把 GA 重新包装成主创新，而是把已有 segmented-heading 结果从边界诊断提升为有 gate 的 blockwise fixed-line stress-case extension。
+- `segmented_heading_extension/segmented_heading_raw.csv` 足以复算决策链，不需要重新跑大实验：single-heading、coverage-preserving selector、transition-aware selector、coverage/overlap/path/time 都在 raw rows 中。
+- 新 decision audit 显示四类行为：Synthetic Complex 是必须 repair；Monterey 是有 gate 的正向选择；Mariana/Puerto Rico 是 coverage-loss rejection；USGS High 是 overlap cleanup exists but transition-aware rejection。
+- 该结果可以显著改善“直线测线过于简单”的审稿风险，但边界必须保持：这是 fixed-line family 内的 blockwise extension，不是 Dubins controller、vehicle-dynamics model、mission-log replay、海试或 hydrographic QA。
+- v30 最终收尾状态：两套 LaTeX 均为 52 pages；严格日志扫描无 hard error、undefined citation/reference、Overfull、Float too large 或 actionable rerun；新增 decision audit 图的 PDF 第 26 页预览可读且无黑底/裁切；引用审计 45 references / 0 failed / 0 et_al；manifest 337 entries；release gate 四项阻断为 0。

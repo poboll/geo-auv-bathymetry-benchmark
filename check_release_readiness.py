@@ -39,6 +39,7 @@ REQUIRED_DIRS = [
     "current_aware_margin_optimizer",
     "execution_risk_refinement",
     "segmented_heading_extension",
+    "segmented_decision_audit",
     "threshold_local_failure_extension",
     "submission_boundary_diagnostics",
     "heading_resolution_diagnostic",

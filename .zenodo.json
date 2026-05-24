@@ -1,7 +1,7 @@
 {
-  "title": "Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study",
+  "title": "Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors",
   "upload_type": "software",
-  "description": "Manuscript-specific code, derived public-bathymetry benchmark outputs, figure-generation scripts, LaTeX sources, compiled PDFs, and SHA-256 reproducibility manifest for a public-grid numerical benchmark and robustness study of terrain-aware depth-referenced MBES fixed-line planning. The package supports public GEBCO 2025 scenes, synthetic stress tests, a USGS Southern Cascadia 30 m public-grid extension, coarse-prior/fine-grid replay, execution-uncertainty replay, PSO and GA diagnostics, and sensitivity analyses. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.",
+  "description": "Manuscript-specific code, derived public-bathymetry benchmark outputs, figure-generation scripts, LaTeX sources, compiled PDFs, and SHA-256 reproducibility manifest for a public-grid numerical benchmark of terrain-aware depth-referenced MBES fixed-line planning with gate-aware blockwise repair. The package supports public GEBCO 2025 scenes, synthetic stress tests, a USGS Southern Cascadia 30 m public-grid extension, coarse-prior/fine-grid replay, execution-uncertainty replay, PSO and GA diagnostics, segmented decision auditing, and sensitivity analyses. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.",
   "creators": [
     {
       "name": "Li, Changlong",
@@ -26,7 +26,8 @@
     "survey-line planning",
     "coverage path planning",
     "GEBCO",
-    "public bathymetry benchmark"
+    "public bathymetry benchmark",
+    "gate-aware blockwise repair"
   ],
   "related_identifiers": [
     {

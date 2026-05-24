@@ -37,13 +37,13 @@
 | 33 | `wu2024complete` | verified_crossref | Complete Coverage Path Planning Based on Improved Genetic Algorithm for Unmanned Surface Vehicle |  |
 | 34 | `zhang2023multi` | verified_crossref | Multi-AUV cooperative search method based on dynamic optimal coverage |  |
 | 35 | `mu2025coverage` | verified_crossref | Coverage path planning for multi-AUV considering ocean currents and sonar performance |  |
-| 36 | `yao2021coverage` | verified_crossref | AUV path planning for coverage search of static target in ocean environment |  |
-| 37 | `hadi2022drlcpp` | verified_crossref | Deep reinforcement learning for adaptive path planning and control of an autonomous underwater vehicle |  |
-| 38 | `dogru2022ecocpp` | verified_crossref | ECO-CPP: Energy constrained online coverage path planning |  |
+| 36 | `yao2021coverage` | verified_doi_redirects | https://linkinghub.elsevier.com/retrieve/pii/S0029801821013809 |  |
+| 37 | `hadi2022drlcpp` | verified_doi_redirects | https://linkinghub.elsevier.com/retrieve/pii/S0141118722002589 |  |
+| 38 | `dogru2022ecocpp` | verified_doi_redirects | https://linkinghub.elsevier.com/retrieve/pii/S0921889022001403 |  |
 | 39 | `wang2025ddqn` | verified_crossref | A DDQN-Based Cooperative Path Planning for Range-Based AUV Cooperative Navigation System Towards Coverage Survey and Positioning Error Suppr |  |
 | 40 | `zhu2019complete` | verified_crossref | Complete Coverage Path Planning of Autonomous Underwater Vehicle Based on GBNN Algorithm |  |
-| 41 | `han2023hybrid` | verified_doi_redirects | https://ieeexplore.ieee.org/document/10302225/ |  |
-| 42 | `kapetanovic2018side` | verified_crossref | A side-scan sonar data-driven coverage planning and tracking framework |  |
+| 41 | `han2023hybrid` | verified_crossref | Hybrid-Algorithm-Based Full Coverage Search Approach With Multiple AUVs to Unknown Environments in Internet of Underwater Things |  |
+| 42 | `kapetanovic2018side` | verified_doi_resolves | https://linkinghub.elsevier.com/retrieve/pii/S1367578818300476 |  |
 | 43 | `tang2023coverage` | verified_crossref | Coverage path planning of unmanned surface vehicle based on improved biological inspired neural network |  |
 | 44 | `cao2018real` | verified_crossref | A Real-Time Path Planning Algorithm for AUV in Unknown Underwater Environment Based on Combining PSO and Waypoint Guidance |  |
-| 45 | `zhang2021path` | verified_crossref | Path planning and obstacle avoidance for AUV: A review |  |
+| 45 | `zhang2021path` | verified_doi_resolves | https://linkinghub.elsevier.com/retrieve/pii/S002980182100771X |  |

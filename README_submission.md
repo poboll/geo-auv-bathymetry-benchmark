@@ -45,6 +45,12 @@ conda run -n uu python make_external_layout_baseline_audit.py
 conda run -n uu python make_external_turning_cost_audit.py
 ```
 
+Regenerate the gate-aware blockwise fixed-line decision audit:
+
+```bash
+conda run -n uu python make_segmented_decision_audit.py
+```
+
 Refresh the reproducibility manifest with SHA-256 checksums:
 
 ```bash
@@ -85,6 +91,7 @@ xelatex -interaction=nonstopmode template.tex
 - `footprint_validity_audit/`: total-width proxy versus side-specific port/starboard footprint validity audit.
 - `external_layout_baseline_audit/`: deterministic external fixed-width survey-layout heuristic audit on nine public-grid windows.
 - `external_turning_cost_audit/`: minimum-turn-radius and mission-time proxy post-evaluation for the same external-layout audit rows.
+- `segmented_decision_audit/`: gate-aware blockwise fixed-line decision audit, including coverage-preserving and transition-aware selector outcomes.
 - `survey_grade_extension_usgs_cascadia/`: USGS 30 m public-grid extension.
 - `coarse_prior_replay/`, `structured_prior_error_replay/`, `uncertainty_replay/`, `uncertainty_margin_replay/`, and `current_drift_replay/`: transfer and execution-boundary diagnostics.
 - `reproducibility_manifest.json`: file inventory and SHA-256 checksums for the current workspace.
@@ -94,7 +101,7 @@ xelatex -interaction=nonstopmode template.tex
 
 ## Claim Boundary
 
-The manuscript is a depth-referenced MBES fixed-line public-grid planning benchmark and robustness study. The current title/framing is `Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study`. The side-specific footprint audit is a planning-evaluator validity check, and the external turning-cost audit is a deterministic post-planning mission-time proxy. Neither is beam-level acoustic ray tracing, raw MBES product validation, controller simulation, mission-log replay, sea/lake/field validation, hydrographic-quality assurance, navigation-safety readiness, or altitude-controlled AUV execution.
+The manuscript is a depth-referenced MBES fixed-line public-grid planning benchmark with a gate-aware blockwise repair extension. The current title/framing is `Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors`. The side-specific footprint audit is a planning-evaluator validity check, the external turning-cost audit is a deterministic post-planning mission-time proxy, and the blockwise repair is a fixed-line stress-case extension. None of these is beam-level acoustic ray tracing, raw MBES product validation, controller simulation, mission-log replay, sea/lake/field validation, hydrographic-quality assurance, navigation-safety readiness, or altitude-controlled AUV execution.
 
 ### Additional v21 Diagnostics
 

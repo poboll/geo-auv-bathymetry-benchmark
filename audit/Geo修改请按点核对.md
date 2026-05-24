@@ -576,3 +576,15 @@ JMSE/MDPI 明确要求研究论文提供 Data Availability Statement，并鼓励
 - 【已完成】v24+ 投稿前硬核验已补齐：引用审计、manifest 和 release-readiness gate 重新跑通。
   命令/证据：`python3 audit/verify_references_20260514.py` 输出 `total 45 failed 0 et_al 0`；`conda run -n uu python make_reproducibility_manifest.py` 输出 `290 entries`；`python3 check_release_readiness.py` 输出 `missing_required_paths=0`、`empty_required_dirs=0`、`untracked_manifest_entries=0`、`tracked_core_files_not_in_manifest=0`。其中 `kim2017panel` 与 `li2024full` 已通过 Crossref/DOI 元数据核验；若 DOI/出版商自动访问偶发 403/SSL EOF，审计脚本保留人工核验 fallback，避免把站点访问策略误判为假引用。
 - 【保留待确认】暂不创建 GitHub release / Zenodo 新版本 DOI，除非确认 v24 47 页稿件就是冻结投稿版；Zenodo 已绑定仓库，release 后会自动 mint 新版本 DOI。
+
+## 2026-05-24 v30 Blockwise Repair 创新补强闭环【已完成】
+
+- 【已完成】把 segmented-heading 从“boundary note/诊断”升级为正式 stress-case extension。
+  文件/证据：两套 `template.tex` 标题改为 `Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors`；贡献点改为 4 条，新增 `gate-aware blockwise fixed-line extension`。
+- 【已完成】新增 `make_segmented_decision_audit.py`，从 `segmented_heading_extension/segmented_heading_raw.csv` 复算 selector 决策。
+  命令/证据：`python3 -m py_compile make_segmented_decision_audit.py`；`conda run -n uu python make_segmented_decision_audit.py` 输出 `summary_rows=5`。
+- 【已完成】新增证据目录 `segmented_decision_audit/`。
+  输出：`segmented_decision_summary.csv`、`segmented_decision_summary.json`、`README.md`、`journal_segmented_decision_audit.png`；PNG 已复制进两套 manuscript `pic/`，并确认是 RGB 白底。
+- 【已完成】核心结果已经写入主文：Synthetic Complex 30/30 需要 blockwise repair；Monterey 14/30 在 transition-aware gate 下接受 blockwise；Mariana/Puerto Rico 因 coverage loss 拒绝；USGS High 的 coverage-preserving selector 8/30 能清理 overlap，但 transition-aware selector 因 transition burden 保留 single-heading。
+- 【已完成】Methods 新增 `Gate-aware blockwise fixed-line extension`；Results 新增 blockwise selector 表与 decision-audit 图；Discussion 删除旧的 `boundary note` 表述，改为 constrained second variant inside fixed-line family；Conclusion 保持边界表达。
+- 【已完成】重新编译两套 PDF、渲染新增图页、引用审计、manifest、release gate 后最终确认 v30：两套 PDF 均为 52 pages；`audit/page_preview_20260524_blockwise_v30/page_01.png`、`page_25.png`、`page_26.png`、`page_46.png`、`page_47.png` 已重新渲染；`python3 audit/verify_references_20260514.py` 输出 `total 45 failed 0 et_al 0`；`conda run -n uu python make_reproducibility_manifest.py` 写出 337 entries；`python3 check_release_readiness.py` 输出 missing/empty/untracked/core-not-in-manifest 全为 0。

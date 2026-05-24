@@ -13,8 +13,8 @@
     "initial_archived_record_url": "https://zenodo.org/records/19919506",
     "note": "The concept DOI identifies the release series. The current manuscript package cites the fixed version DOI listed above.",
     "current_git_revision": {
-      "head_commit": "418bd6ace3433468c85a01407c74d9578f25d0fd",
-      "head_short": "418bd6a",
+      "head_commit": "e1852daeb4e67a1d2fb45cb934a909c00b49020b",
+      "head_short": "e1852da",
       "dirty_worktree_at_manifest_time": true
     }
   },
@@ -560,6 +560,30 @@
       "sha256": "0226d0f9b6a16b6ff797bb23bb7633cc845bcd38929fc7b35be72311fca25fd6"
     },
     {
+      "category": "segmented_decision_audit_outputs",
+      "path": "segmented_decision_audit/segmented_decision_summary.csv",
+      "size_bytes": 3617,
+      "sha256": "9268eb445c65300226c61737c5186d271bfacac1969009ff3cd8260190f231cf"
+    },
+    {
+      "category": "segmented_decision_audit_outputs",
+      "path": "segmented_decision_audit/segmented_decision_summary.json",
+      "size_bytes": 9836,
+      "sha256": "33ef7c220361b208cf6f9385e52d3a0bff436d4aa6e00fbede924848eca0bde7"
+    },
+    {
+      "category": "segmented_decision_audit_outputs",
+      "path": "segmented_decision_audit/README.md",
+      "size_bytes": 1414,
+      "sha256": "3605b1432c5d51af4a9cd28fa7553842124a2dd8913c2aecdff9b1034b08f8b4"
+    },
+    {
+      "category": "segmented_decision_audit_outputs",
+      "path": "segmented_decision_audit/journal_segmented_decision_audit.png",
+      "size_bytes": 192352,
+      "sha256": "d21d1f12b381f2be6d56e2f39a714cc4f49c257d7dc4c5a31aa7329765c9d51c"
+    },
+    {
       "category": "coarse_prior_replay_outputs",
       "path": "coarse_prior_replay/coarse_prior_replay_raw.csv",
       "size_bytes": 70940,
@@ -1029,6 +1053,12 @@
     },
     {
       "category": "figure_outputs",
+      "path": "manuscript/latex/pic/journal_segmented_decision_audit.png",
+      "size_bytes": 192352,
+      "sha256": "d21d1f12b381f2be6d56e2f39a714cc4f49c257d7dc4c5a31aa7329765c9d51c"
+    },
+    {
+      "category": "figure_outputs",
       "path": "manuscript/latex/pic/journal_segmented_heading_complex_repair.png",
       "size_bytes": 1288687,
       "sha256": "0226d0f9b6a16b6ff797bb23bb7633cc845bcd38929fc7b35be72311fca25fd6"
@@ -1281,6 +1311,12 @@
     },
     {
       "category": "figure_outputs",
+      "path": "manuscript/mdpi_jmse/pic/journal_segmented_decision_audit.png",
+      "size_bytes": 192352,
+      "sha256": "d21d1f12b381f2be6d56e2f39a714cc4f49c257d7dc4c5a31aa7329765c9d51c"
+    },
+    {
+      "category": "figure_outputs",
       "path": "manuscript/mdpi_jmse/pic/journal_segmented_heading_complex_repair.png",
       "size_bytes": 1288687,
       "sha256": "0226d0f9b6a16b6ff797bb23bb7633cc845bcd38929fc7b35be72311fca25fd6"
@@ -1402,44 +1438,44 @@
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.tex",
-      "size_bytes": 198924,
-      "sha256": "6b56b7ccc6c3b72e1887a639652d72fe656127bf7f8e6cb1689d90955bac3609"
+      "size_bytes": 202158,
+      "sha256": "d9a69d0c1f8474ca6885a3dd350d98b00a1c4c98fe4df6172fa8fa4088f92b38"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/latex/template.pdf",
-      "size_bytes": 7779756,
-      "sha256": "f77707559d8c6e9e36072be69ee08cc7697466eb04079d7e058bfd1a14b85385"
+      "size_bytes": 7969348,
+      "sha256": "31d0533b010b161a554a69e12a589dbf5fe88eb76e5e414d59603fa34a84c366"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.tex",
-      "size_bytes": 198924,
-      "sha256": "6b56b7ccc6c3b72e1887a639652d72fe656127bf7f8e6cb1689d90955bac3609"
+      "size_bytes": 202158,
+      "sha256": "d9a69d0c1f8474ca6885a3dd350d98b00a1c4c98fe4df6172fa8fa4088f92b38"
     },
     {
       "category": "manuscripts",
       "path": "manuscript/mdpi_jmse/template.pdf",
-      "size_bytes": 7780046,
-      "sha256": "b6a7eac8a1390f040244711f54d031a060ff02fc0ba911b372dc995a3885a3d1"
+      "size_bytes": 7969616,
+      "sha256": "a1474d76f487e87bd33bb7eada3ec65c2cf81be7ae9bdc64f9d04aa578335ae3"
     },
     {
       "category": "manuscripts",
       "path": "paper_refined.pdf",
-      "size_bytes": 7779756,
-      "sha256": "f77707559d8c6e9e36072be69ee08cc7697466eb04079d7e058bfd1a14b85385"
+      "size_bytes": 7969348,
+      "sha256": "31d0533b010b161a554a69e12a589dbf5fe88eb76e5e414d59603fa34a84c366"
     },
     {
       "category": "manuscripts",
       "path": "geo_public_bathy_rebuild.pdf",
-      "size_bytes": 7779756,
-      "sha256": "f77707559d8c6e9e36072be69ee08cc7697466eb04079d7e058bfd1a14b85385"
+      "size_bytes": 7969348,
+      "sha256": "31d0533b010b161a554a69e12a589dbf5fe88eb76e5e414d59603fa34a84c366"
     },
     {
       "category": "manuscripts",
       "path": "mdpi_jmse_jmse_submission_draft.pdf",
-      "size_bytes": 7780046,
-      "sha256": "b6a7eac8a1390f040244711f54d031a060ff02fc0ba911b372dc995a3885a3d1"
+      "size_bytes": 7969616,
+      "sha256": "a1474d76f487e87bd33bb7eada3ec65c2cf81be7ae9bdc64f9d04aa578335ae3"
     },
     {
       "category": "manuscripts",
@@ -1564,14 +1600,14 @@
     {
       "category": "release_metadata",
       "path": "README.md",
-      "size_bytes": 5678,
-      "sha256": "734380f47371a47c15894e6c8842286435105aea9e1671d8a062913c3adadad4"
+      "size_bytes": 6024,
+      "sha256": "dfb811034c481f178bc21484f8c39c51dc6b5e4bd6b2cebb503c960a58d62948"
     },
     {
       "category": "release_metadata",
       "path": "README_submission.md",
-      "size_bytes": 5026,
-      "sha256": "ef99cef8780be836d0d70cd590a976a1954414bac849c225f0a8b247f02e2708"
+      "size_bytes": 5385,
+      "sha256": "fbcd7ebbee33dfb533585518cd67b02b277e05279ba87594c3bfe9bddae60acf"
     },
     {
       "category": "release_metadata",
@@ -1582,14 +1618,14 @@
     {
       "category": "release_metadata",
       "path": "CITATION.cff",
-      "size_bytes": 1296,
-      "sha256": "e2c5164fbf4c92d54584ef208d5a7c2892a4c50b9dac6ddf88fa6c0310ca6718"
+      "size_bytes": 1315,
+      "sha256": "ee8cbd973382b9082e402e2303ac218755715e5e74e2b719a1f605aa10443bd7"
     },
     {
       "category": "release_metadata",
       "path": ".zenodo.json",
-      "size_bytes": 2287,
-      "sha256": "cdf0687412e4690d7252607f7f7a575b77c1d806a4c0781e024dd5a3feae4183"
+      "size_bytes": 2350,
+      "sha256": "5bb229acbf3546e23495c4ad7aa7077421155b41594857f1eca61edde5587d34"
     },
     {
       "category": "release_metadata",
@@ -1606,20 +1642,20 @@
     {
       "category": "release_metadata",
       "path": "check_release_readiness.py",
-      "size_bytes": 3477,
-      "sha256": "afcb1d7ac10a4e893e176401d73a279fdc7bc34681c45ed665752df2b581eb5f"
+      "size_bytes": 3509,
+      "sha256": "a915000825d9a7820511e4f47610c47e94c098e020a6ca73a2125164fed08900"
     },
     {
       "category": "submission_package",
       "path": "submission_package/JMSE_cover_letter_draft.md",
-      "size_bytes": 4780,
-      "sha256": "853325a9166b787a83445e6dc628edf5269293b6d54ce68138bfac7e0eb746db"
+      "size_bytes": 5090,
+      "sha256": "c22967fc989e3063d1a3a7457ead710c77007b580aa8614da192b5f95bc43b21"
     },
     {
       "category": "submission_package",
       "path": "submission_package/final_submission_checklist.md",
-      "size_bytes": 24039,
-      "sha256": "038d4067764a8712e51fbc35b82bb42ed9ef33f302b263b7976c5e40aead6e91"
+      "size_bytes": 25302,
+      "sha256": "3531ffa6e9478980bfde8bbdc859288d886108b1755a85484980aac69faaec92"
     },
     {
       "category": "submission_package",
@@ -1690,8 +1726,8 @@
     {
       "category": "audit_trail",
       "path": "audit/reference_verification_20260514_v2.md",
-      "size_bytes": 6453,
-      "sha256": "e886471b652d4bb3ebf0939055301467173cbc12d124bbd760c7ab93bc1073ef"
+      "size_bytes": 6505,
+      "sha256": "2c22b997e08e0310579e810b78e59729195b7a74fbb1e197bf18cb9f118570da"
     },
     {
       "category": "audit_trail",
@@ -1720,8 +1756,8 @@
     {
       "category": "audit_trail",
       "path": "audit/reference_verification_20260514_v2.json",
-      "size_bytes": 34611,
-      "sha256": "b7588a832e8d946a940e3063a9ffee699b01403754e27fb40cc8080fdf36d4a9"
+      "size_bytes": 35131,
+      "sha256": "b12ffa903a5fbbbf4746065e6b4fe3bda8c6f17a42e2c9b589980b1a34fbbe31"
     },
     {
       "category": "audit_trail",
@@ -1790,6 +1826,36 @@
       "sha256": "5f12a0f9debb2cfb667a393bf04697962b045814ed3d35aa3d1637bf1d598c7a"
     },
     {
+      "category": "audit_trail",
+      "path": "audit/page_preview_20260524_blockwise_v30/page_01.png",
+      "size_bytes": 70738,
+      "sha256": "e02747f5472bc0f30ca8debd10078e22e936018c082e836822b4e028eb68cd48"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/page_preview_20260524_blockwise_v30/page_25.png",
+      "size_bytes": 301701,
+      "sha256": "07322de3642f36c61a8719499aa54037b907ef078345b111403e4ae851766329"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/page_preview_20260524_blockwise_v30/page_26.png",
+      "size_bytes": 107703,
+      "sha256": "b490efb3d53c87d81cb4319e159b873c4678188396e0ad02983ab499f239ed07"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/page_preview_20260524_blockwise_v30/page_46.png",
+      "size_bytes": 80169,
+      "sha256": "2e4dd542e31f141a75bbc87938e7316e01a81ece5194f9d6b23b46e822f18d5a"
+    },
+    {
+      "category": "audit_trail",
+      "path": "audit/page_preview_20260524_blockwise_v30/page_47.png",
+      "size_bytes": 50066,
+      "sha256": "dc7fe1cbf794b5043a6b1cb107f36160a237fb3fa8faaa3218a2b7cd97170b28"
+    },
+    {
       "category": "reproduction_scripts",
       "path": "geo_public_bathy_benchmark.py",
       "size_bytes": 90919,
@@ -1842,6 +1908,12 @@
       "path": "make_segmented_heading_extension.py",
       "size_bytes": 50293,
       "sha256": "b1668a71eafec02483a59713e507efbf497647ae5ccab6993cd84549dcf077c5"
+    },
+    {
+      "category": "reproduction_scripts",
+      "path": "make_segmented_decision_audit.py",
+      "size_bytes": 13187,
+      "sha256": "d550e93430605391a27635df429db1a50114ea82054617ab3cdbe38c73cb107a"
     },
     {
       "category": "reproduction_scripts",

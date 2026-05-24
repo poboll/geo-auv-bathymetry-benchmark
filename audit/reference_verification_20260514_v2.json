@@ -31,12 +31,14 @@
     "has_et_al": false,
     "ok": true,
     "status": "verified_manual_fallback",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "error": "HTTP Error 404: Not Found",
     "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_error": "HTTP Error 404: Not Found",
     "doi_url": "https://doi.org/10.5066/P9C5DBMR",
-    "automated_status": "doi_resolution_failed",
-    "automated_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "resolved_url": "https://cmgds.marine.usgs.gov/data-releases/datarelease/10.5066-P9C5DBMR/",
+    "http_status": 302,
+    "automated_status": "verified_doi_redirects",
+    "automated_error": "HTTP Error 404: Not Found",
     "title": "Composite multibeam bathymetry surface and data sources of the southern Cascadia Margin offshore Oregon and northern California (version 2.0, April 2026)",
     "container": "U.S. Geological Survey data release",
     "publisher": "U.S. Geological Survey",
@@ -733,20 +735,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "AUV path planning for coverage search of static target in ocean environment",
-    "container": "Ocean Engineering",
-    "issued": {
-      "date-parts": [
-        [
-          2021,
-          12
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Elsevier BV",
-    "doi_crossref": "10.1016/j.oceaneng.2021.110050"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1016/j.oceaneng.2021.110050",
+    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S0029801821013809",
+    "http_status": 302
   },
   {
     "key": "hadi2022drlcpp",
@@ -755,20 +750,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Deep reinforcement learning for adaptive path planning and control of an autonomous underwater vehicle",
-    "container": "Applied Ocean Research",
-    "issued": {
-      "date-parts": [
-        [
-          2022,
-          12
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Elsevier BV",
-    "doi_crossref": "10.1016/j.apor.2022.103326"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1016/j.apor.2022.103326",
+    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S0141118722002589",
+    "http_status": 302
   },
   {
     "key": "dogru2022ecocpp",
@@ -777,20 +765,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "ECO-CPP: Energy constrained online coverage path planning",
-    "container": "Robotics and Autonomous Systems",
-    "issued": {
-      "date-parts": [
-        [
-          2022,
-          11
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Elsevier BV",
-    "doi_crossref": "10.1016/j.robot.2022.104242"
+    "status": "verified_doi_redirects",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1016/j.robot.2022.104242",
+    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S0921889022001403",
+    "http_status": 302
   },
   {
     "key": "wang2025ddqn",
@@ -843,13 +824,21 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_doi_redirects",
-    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "crossref_status": "crossref_failed",
-    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
-    "doi_url": "https://doi.org/10.1109/JIOT.2023.3328973",
-    "resolved_url": "https://ieeexplore.ieee.org/document/10302225/",
-    "http_status": 302
+    "status": "verified_crossref",
+    "title": "Hybrid-Algorithm-Based Full Coverage Search Approach With Multiple AUVs to Unknown Environments in Internet of Underwater Things",
+    "container": "IEEE Internet of Things Journal",
+    "issued": {
+      "date-parts": [
+        [
+          2024,
+          3,
+          15
+        ]
+      ]
+    },
+    "type": "journal-article",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "doi_crossref": "10.1109/jiot.2023.3328973"
   },
   {
     "key": "kapetanovic2018side",
@@ -858,19 +847,13 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "A side-scan sonar data-driven coverage planning and tracking framework",
-    "container": "Annual Reviews in Control",
-    "issued": {
-      "date-parts": [
-        [
-          2018
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Elsevier BV",
-    "doi_crossref": "10.1016/j.arcontrol.2018.10.012"
+    "status": "verified_doi_resolves",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1016/j.arcontrol.2018.10.012",
+    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S1367578818300476",
+    "http_status": 200
   },
   {
     "key": "tang2023coverage",
@@ -924,19 +907,12 @@
     "url": null,
     "has_et_al": false,
     "ok": true,
-    "status": "verified_crossref",
-    "title": "Path planning and obstacle avoidance for AUV: A review",
-    "container": "Ocean Engineering",
-    "issued": {
-      "date-parts": [
-        [
-          2021,
-          9
-        ]
-      ]
-    },
-    "type": "journal-article",
-    "publisher": "Elsevier BV",
-    "doi_crossref": "10.1016/j.oceaneng.2021.109355"
+    "status": "verified_doi_resolves",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "crossref_status": "crossref_failed",
+    "crossref_error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>",
+    "doi_url": "https://doi.org/10.1016/j.oceaneng.2021.109355",
+    "resolved_url": "https://linkinghub.elsevier.com/retrieve/pii/S002980182100771X",
+    "http_status": 200
   }
 ]

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this benchmark package, please cite the archived release series and the associated manuscript."
-title: "Terrain-Aware Fixed-Line MBES Survey Planning from Public Bathymetric Priors: A Reproducible Benchmark and Robustness Study"
+title: "Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors"
 type: software
 authors:
   - family-names: Li
@@ -27,3 +27,4 @@ keywords:
   - coverage path planning
   - GEBCO
   - public bathymetry benchmark
+  - gate-aware blockwise repair
