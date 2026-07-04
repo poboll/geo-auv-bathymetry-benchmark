@@ -19,8 +19,8 @@ from rasterio.windows import Window
 
 import geo_public_bathy_benchmark as geo
 import journal_heatmap_style as jhs
-import make_survey_grade_extension as extension
-import make_survey_grade_pilot as pilot
+import make_usgs_cascadia_extension as extension
+import make_usgs_cascadia_pilot as pilot
 
 
 ROOT = Path(__file__).resolve().parent

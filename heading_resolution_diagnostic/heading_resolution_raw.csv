@@ -7,7 +7,7 @@ gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,15deg,15,Simple Gree
 gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,15deg,15,Adaptive Spacing w/o GA,90.0,59,6656.620000000051,100.0,0.0,6656.620000000051,1,0.5929547920095501
 gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,5deg,5,Simple Greedy,90.0,59,6656.3676243300515,99.17777777777778,0.30069568518518475,6657.2697113856075,1,2.2650013330130605
 gebco_monterey_canyon_complex,GEBCO Monterey,complex_relief,5deg,5,Adaptive Spacing w/o GA,90.0,59,6656.620000000051,100.0,0.0,6656.620000000051,1,1.9478266249934677
-usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,15deg,15,Simple Greedy,90.0,9,89.879061846,97.15,25.981666464827498,167.82406124048248,0,0.14890462499170098
-usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,15deg,15,Adaptive Spacing w/o GA,135.0,12,73.89166194729708,98.55000000000001,2.2372345564469054,80.6033656166378,1,0.42513187500298955
-usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,5deg,5,Simple Greedy,90.0,9,89.879061846,97.15,25.981666464827498,167.82406124048248,0,0.44771408299857285
-usgs_southern_cascadia_30m_high,USGS High,survey_grade_cascadia_high,5deg,5,Adaptive Spacing w/o GA,135.0,12,73.89166194729708,98.55000000000001,2.2372345564469054,80.6033656166378,1,1.282905625004787
+usgs_southern_cascadia_30m_high,USGS High,usgs_cascadia_high,15deg,15,Simple Greedy,90.0,9,89.879061846,97.15,25.981666464827498,167.82406124048248,0,0.14890462499170098
+usgs_southern_cascadia_30m_high,USGS High,usgs_cascadia_high,15deg,15,Adaptive Spacing w/o GA,135.0,12,73.89166194729708,98.55000000000001,2.2372345564469054,80.6033656166378,1,0.42513187500298955
+usgs_southern_cascadia_30m_high,USGS High,usgs_cascadia_high,5deg,5,Simple Greedy,90.0,9,89.879061846,97.15,25.981666464827498,167.82406124048248,0,0.44771408299857285
+usgs_southern_cascadia_30m_high,USGS High,usgs_cascadia_high,5deg,5,Adaptive Spacing w/o GA,135.0,12,73.89166194729708,98.55000000000001,2.2372345564469054,80.6033656166378,1,1.282905625004787

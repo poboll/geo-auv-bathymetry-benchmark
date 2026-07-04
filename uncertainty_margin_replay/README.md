@@ -2,7 +2,7 @@
 
 This experiment asks whether a declared execution-error envelope can be used to select an execution-aware pre-mission line-layout margin before field execution.
 
-It does not claim closed-loop vehicle control. It selects target-overlap and swath-quantile margins, optionally accepting GA cleanup only when nominal coverage and overlap gates are preserved.
+It does not claim feedback-control vehicle control. It selects target-overlap and swath-quantile margins, optionally accepting GA cleanup only when nominal coverage and overlap gates are preserved.
 
 ## Selected Margins
 

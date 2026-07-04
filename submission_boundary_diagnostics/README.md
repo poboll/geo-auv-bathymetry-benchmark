@@ -33,4 +33,4 @@ This diagnostic is a submission-facing audit, not a replacement for the main ben
 - Changing the declared Wmax cap changes absolute line density and path totals, so the cap must remain a declared evaluator parameter.
 - The qualitative regime interpretation is the main object of this audit: GEBCO remains a low-overlap public-prior benchmark, whereas USGS High remains the overlap-stressed transfer case.
 - The conservative gate generally prevents raw GA seeds from being interpreted as operationally superior unless their route reduction is not purchased by lower coverage or higher overlap.
-- These outputs should be cited as reproducibility artifacts and boundary diagnostics, not as field validation.
+- These outputs should be cited as reproducibility artifacts and boundary diagnostics, not as deployment validation.

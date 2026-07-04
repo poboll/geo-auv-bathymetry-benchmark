@@ -301,7 +301,7 @@
       146.3936004638672,
       1131.604248046875
     ],
-    "terrain_class": "survey_grade_cascadia_high",
+    "terrain_class": "usgs_cascadia_high",
     "selection_metrics": {
       "valid_fraction": 0.9861640658779136,
       "slope_mean": 0.1412861155217056,
@@ -321,7 +321,7 @@
       "fill_strategy": "local_median_fill"
     },
     "provider": "USGS",
-    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5.",
     "prior_error_scenario": "nominal",
     "prior_error_description": "Truth grid used as the planning prior.",
     "prior_error_seed": 0,
@@ -352,7 +352,7 @@
       146.3936004638672,
       1131.604248046875
     ],
-    "terrain_class": "survey_grade_cascadia_high",
+    "terrain_class": "usgs_cascadia_high",
     "selection_metrics": {
       "valid_fraction": 0.9861640658779136,
       "slope_mean": 0.1412861155217056,
@@ -372,7 +372,7 @@
       "fill_strategy": "local_median_fill"
     },
     "provider": "USGS",
-    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5.",
     "prior_error_scenario": "correlated_bias",
     "prior_error_description": "Low-frequency spatially correlated bathymetric bias with 35 m RMS target scale.",
     "prior_error_seed": 0,
@@ -403,7 +403,7 @@
       146.3936004638672,
       1131.604248046875
     ],
-    "terrain_class": "survey_grade_cascadia_high",
+    "terrain_class": "usgs_cascadia_high",
     "selection_metrics": {
       "valid_fraction": 0.9861640658779136,
       "slope_mean": 0.1412861155217056,
@@ -423,7 +423,7 @@
       "fill_strategy": "local_median_fill"
     },
     "provider": "USGS",
-    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5.",
     "prior_error_scenario": "slope_amplified",
     "prior_error_description": "Correlated map error amplified on high-gradient seabed cells.",
     "prior_error_seed": 0,
@@ -454,7 +454,7 @@
       146.3936004638672,
       1131.604248046875
     ],
-    "terrain_class": "survey_grade_cascadia_high",
+    "terrain_class": "usgs_cascadia_high",
     "selection_metrics": {
       "valid_fraction": 0.9861640658779136,
       "slope_mean": 0.1412861155217056,
@@ -474,7 +474,7 @@
       "fill_strategy": "local_median_fill"
     },
     "provider": "USGS",
-    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+    "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5.",
     "prior_error_scenario": "canyon_wall_bias",
     "prior_error_description": "Correlated prior error with localized high-slope canyon-wall perturbations.",
     "prior_error_seed": 0,

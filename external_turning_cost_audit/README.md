@@ -8,7 +8,7 @@ This diagnostic extends the v28 external survey-layout audit with a simple execu
 - Survey/transit speed: 1.50 m/s.
 - Turn-arc speed: 0.75 m/s.
 - Coverage and overlap feasibility are not recomputed because the line family is unchanged; this is a post-planning execution-cost audit only.
-- The proxy is not a Dubins controller, hydrodynamic model, mission-log replay, field validation, or hydrographic QA.
+- The proxy is not a Dubins controller, hydrodynamic model, mission-log replay, deployment validation, or hydrographic QA.
 
 ## Summary at R100 and R200
 

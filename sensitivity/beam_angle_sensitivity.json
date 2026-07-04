@@ -1,5 +1,5 @@
 {
-  "scope": "Public GEBCO scenes only; diagnostic planning-parameter sensitivity, not field validation.",
+  "scope": "Public GEBCO scenes only; diagnostic planning-parameter sensitivity, not deployment validation.",
   "beam_angles_deg": [
     100.0,
     110.0,

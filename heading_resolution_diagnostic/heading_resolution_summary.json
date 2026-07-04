@@ -186,7 +186,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "heading_set": "15deg",
       "heading_step_deg": 15,
       "method": "Simple Greedy",
@@ -202,7 +202,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "heading_set": "15deg",
       "heading_step_deg": 15,
       "method": "Adaptive Spacing w/o GA",
@@ -218,7 +218,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "heading_set": "5deg",
       "heading_step_deg": 5,
       "method": "Simple Greedy",
@@ -234,7 +234,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "heading_set": "5deg",
       "heading_step_deg": 5,
       "method": "Adaptive Spacing w/o GA",

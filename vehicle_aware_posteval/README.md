@@ -1,6 +1,6 @@
 # Vehicle-Aware Post-Evaluation
 
-This diagnostic converts planned line-family outputs into a first-order vehicle-execution proxy. It adds semicircular line-change arcs for declared minimum turn radii and converts distance into time using 1.5 m/s for survey/transit distance and 0.75 m/s for turn arcs. The diagnostic is not a Dubins controller, current model, SLAM replay, or sea-trial validation.
+This diagnostic converts planned line-family outputs into a first-order vehicle-execution proxy. It adds semicircular line-change arcs for declared minimum turn radii and converts distance into time using 1.5 m/s for survey/transit distance and 0.75 m/s for turn arcs. The diagnostic is not a Dubins controller, current model, SLAM replay, or deployment validation.
 
 ## Selected R=100 m Results
 

@@ -35,5 +35,5 @@ This diagnostic responds to the reviewer risk that the manuscript only compares 
 ## Interpretation boundary
 
 - The audit is a compact external-style baseline layer; it is not an implementation of a full Zhao/Bai-style multi-objective, vehicle-dynamics, or field-validated planner.
-- If an external heuristic wins a scene, that result should be reported rather than hidden; the manuscript claim is terrain-aware fixed-line spacing, not global SOTA dominance.
+- If an external heuristic wins a scene, that result should be reported rather than hidden; the manuscript claim is terrain-aware fixed-line spacing, not global dominance across all baselines.
 - The main comparator remains the deterministic Adaptive Spacing layout, with Hybrid GA treated as local seed-0 cleanup in this audit and as a 50-seed method in the main benchmark.

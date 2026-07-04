@@ -24,4 +24,4 @@ This extension rebuilds the two primary GEBCO scenes and the USGS high-complexit
 - The default 97%/3% benchmark gate is not equivalent to a stricter hydrographic acceptance rule.
 - The USGS high-complexity crop remains the strongest positive case because Fixed-Spacing carries a very large overlap burden while Hybrid remains feasible under the default gate.
 - Under stricter 99%/2% screening, the GEBCO Hybrid layouts are not uniformly accepted, which should be reported as margin limitation rather than hidden.
-- Largest uncovered-patch and p99-overlap metrics help expose local failure that scene-level means can obscure; they remain numerical raster-evaluator diagnostics, not survey-grade QA.
+- Largest uncovered-patch and p99-overlap metrics help expose local failure that scene-level means can obscure; they remain numerical raster-evaluator diagnostics, not public-grid QA.

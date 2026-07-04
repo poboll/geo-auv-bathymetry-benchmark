@@ -9,7 +9,7 @@
   ],
   "survey_speed_mps": 1.5,
   "turn_speed_mps": 0.75,
-  "interpretation_boundary": "Deterministic execution-cost proxy only; not a Dubins controller, hydrodynamic simulation, mission-log replay, field validation, raw MBES product validation, or hydrographic QA.",
+  "interpretation_boundary": "Deterministic execution-cost proxy only; not a Dubins controller, hydrodynamic simulation, mission-log replay, deployment validation, raw MBES product validation, or hydrographic QA.",
   "summary_rows": [
     {
       "method": "Fixed-Spacing",
@@ -3730,7 +3730,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -3752,7 +3752,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -3774,7 +3774,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -3796,7 +3796,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -3818,7 +3818,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -3840,7 +3840,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -3862,7 +3862,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -3884,7 +3884,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -3906,7 +3906,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -3928,7 +3928,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -3950,7 +3950,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -3972,7 +3972,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -3994,7 +3994,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4016,7 +4016,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4038,7 +4038,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4060,7 +4060,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4082,7 +4082,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4104,7 +4104,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4126,7 +4126,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4148,7 +4148,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4170,7 +4170,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4192,7 +4192,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4214,7 +4214,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4236,7 +4236,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_label": "USGS Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4258,7 +4258,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4280,7 +4280,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4302,7 +4302,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4324,7 +4324,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4346,7 +4346,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4368,7 +4368,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4390,7 +4390,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4412,7 +4412,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4434,7 +4434,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -4456,7 +4456,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -4478,7 +4478,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -4500,7 +4500,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -4522,7 +4522,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4544,7 +4544,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4566,7 +4566,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4588,7 +4588,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -4610,7 +4610,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4632,7 +4632,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4654,7 +4654,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4676,7 +4676,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -4698,7 +4698,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4720,7 +4720,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4742,7 +4742,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4764,7 +4764,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_label": "USGS Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -4786,7 +4786,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4808,7 +4808,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4830,7 +4830,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4852,7 +4852,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Fixed-Spacing",
       "method_label": "Fixed",
       "method_family": "paper_reference",
@@ -4874,7 +4874,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4896,7 +4896,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4918,7 +4918,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4940,7 +4940,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Min-Span Boustrophedon",
       "method_label": "Min-span",
       "method_family": "external_heuristic",
@@ -4962,7 +4962,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -4984,7 +4984,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -5006,7 +5006,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -5028,7 +5028,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Contour-Parallel Fixed-Width",
       "method_label": "Contour",
       "method_family": "external_heuristic",
@@ -5050,7 +5050,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -5072,7 +5072,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -5094,7 +5094,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -5116,7 +5116,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Geometry-Shortest Fixed-Width",
       "method_label": "Geom-short",
       "method_family": "external_heuristic",
@@ -5138,7 +5138,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -5160,7 +5160,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -5182,7 +5182,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -5204,7 +5204,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "method_family": "paper_reference",
@@ -5226,7 +5226,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -5248,7 +5248,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -5270,7 +5270,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",
@@ -5292,7 +5292,7 @@
     {
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_label": "USGS High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Hybrid GA Seed-0",
       "method_label": "Hybrid s0",
       "method_family": "paper_reference",

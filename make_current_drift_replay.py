@@ -458,7 +458,7 @@ def make_figure(summary_rows: list[dict[str, Any]]) -> None:
     fig.text(
         0.032,
         0.026,
-        "This replay is an execution-risk diagnostic, not a hydrodynamic simulator or sea trial. Bordered cells flag feasibility loss, negative P05 coverage margin, P95 overlap above the 3% gate, or large residual drift.",
+        "This replay is an execution-risk diagnostic, not a hydrodynamic simulator or deployment. Bordered cells flag feasibility loss, negative P05 coverage margin, P95 overlap above the 3% gate, or large residual drift.",
         ha="left",
         va="bottom",
         fontsize=4.65,

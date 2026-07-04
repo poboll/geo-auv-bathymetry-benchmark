@@ -216,7 +216,7 @@ def make_figure(rows: list[dict[str, Any]]) -> None:
     fig.text(
         0.012,
         0.013,
-        "Mission-time proxy: geometric path at 1.5 m/s plus semicircular line-change arcs at 0.75 m/s; no controller or sea-trial claim.",
+        "Mission-time proxy: geometric path at 1.5 m/s plus semicircular line-change arcs at 0.75 m/s; no controller or deployment claim.",
         ha="left",
         va="bottom",
         fontsize=6.15,
@@ -240,7 +240,7 @@ def write_readme(summary_rows: list[dict[str, Any]]) -> None:
         f"- Survey/transit speed: {SURVEY_SPEED_MPS:.2f} m/s.\n",
         f"- Turn-arc speed: {TURN_SPEED_MPS:.2f} m/s.\n",
         "- Coverage and overlap feasibility are not recomputed because the line family is unchanged; this is a post-planning execution-cost audit only.\n",
-        "- The proxy is not a Dubins controller, hydrodynamic model, mission-log replay, field validation, or hydrographic QA.\n\n",
+        "- The proxy is not a Dubins controller, hydrodynamic model, mission-log replay, deployment validation, or hydrographic QA.\n\n",
         "## Summary at R100 and R200\n\n",
         "| Method | Feasible windows | Median mission-time gain R100 (%) | Positive windows R100 | Median mission-time gain R200 (%) | Positive windows R200 | Median turn-arc share R100 (%) |\n",
         "|---|---:|---:|---:|---:|---:|---:|\n",
@@ -274,7 +274,7 @@ def main() -> None:
             "turn_speed_mps": TURN_SPEED_MPS,
             "interpretation_boundary": (
                 "Deterministic execution-cost proxy only; not a Dubins controller, hydrodynamic simulation, "
-                "mission-log replay, field validation, raw MBES product validation, or hydrographic QA."
+                "mission-log replay, deployment validation, raw MBES product validation, or hydrographic QA."
             ),
             "summary_rows": summary_rows,
             "raw_rows": rows,

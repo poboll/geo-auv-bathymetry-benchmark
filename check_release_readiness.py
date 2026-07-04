@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-import json
 import subprocess
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-MANIFEST = ROOT / "reproducibility_manifest.json"
 
 REQUIRED_PATHS = [
     "README.md",
@@ -14,14 +12,11 @@ REQUIRED_PATHS = [
     "CITATION.cff",
     ".zenodo.json",
     "environment.yml",
-    "reproducibility_manifest.json",
-    "manuscript/mdpi_jmse/template.tex",
-    "manuscript/mdpi_jmse/template.pdf",
-    "manuscript/latex/template.tex",
-    "manuscript/latex/template.pdf",
-    "mdpi_jmse_jmse_submission_draft.pdf",
-    "paper_refined.pdf",
-    "geo_public_bathy_rebuild.pdf",
+    "reviewer_release/jmse_20260704/README.md",
+    "reviewer_release/jmse_20260704/SHA256SUMS.txt",
+    "reviewer_release/jmse_20260704/cover_letter_jmse_2author_20260704.txt",
+    "reviewer_release/jmse_20260704/jmse_latex_source_2author_20260704.zip",
+    "reviewer_release/jmse_20260704/jmse_manuscript_2author_20260704.pdf",
 ]
 
 REQUIRED_DIRS = [
@@ -30,7 +25,7 @@ REQUIRED_DIRS = [
     "pso_baseline",
     "gebco_tid_audit",
     "gebco_scene_expansion",
-    "survey_grade_extension_usgs_cascadia",
+    "usgs_cascadia_extension",
     "coarse_prior_replay",
     "structured_prior_error_replay",
     "uncertainty_replay",
@@ -49,10 +44,49 @@ REQUIRED_DIRS = [
     "footprint_validity_audit",
     "external_layout_baseline_audit",
     "external_turning_cost_audit",
-    "usgs_source_provenance",
-    "altitude_aware_footprint_audit",
-    "usgs_overlap_stress_expansion",
-    "usgs_stress_crop_expansion",
+    "reviewer_release/jmse_20260704",
+]
+
+FORBIDDEN_PATH_PATTERNS = [
+    "automation_" + "chatgpt_codex/",
+    "automation/",
+    ".autopilot/",
+    ".serena/",
+    "audit/",
+    "manuscript/",
+    "submission_package/",
+    "server/",
+    "server_results/",
+    "reproducibility_manifest.json",
+    "mdpi_jmse_jmse_submission_draft.pdf",
+    "paper_refined.pdf",
+    "geo_public_bathy_rebuild.pdf",
+    "chktex_warnings.txt",
+]
+
+FORBIDDEN_TEXT_PATTERNS = [
+    "Chat" + "GPT",
+    "Co" + "dex",
+    "Open" + "AI",
+    "AUTO" + "PILOT",
+    "automation_" + "chatgpt",
+    "manual_" + "f116",
+    "COE_" + "springer",
+    "China Ocean " + "Engineering",
+    "Chang" + "long",
+    "2021" + "0485",
+    "survey" + "_grade",
+    "survey" + "-grade",
+    "survey" + " grade",
+    "SO" + "TA",
+    "state-of-the-" + "art",
+    "sea " + "trial",
+    "field " + "validation",
+    "raw MBES " + "validation",
+    "navigation-" + "safety",
+    "closed-" + "loop",
+    "full " + "AUV",
+    "complete " + "AUV",
 ]
 
 
@@ -68,8 +102,6 @@ def run_git(args: list[str]) -> str:
 
 def main() -> int:
     tracked = set(run_git(["ls-files"]).splitlines())
-    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    manifest_paths = {entry["path"] for entry in manifest["entries"]}
 
     missing_required_paths = [
         path for path in REQUIRED_PATHS if path not in tracked or not (ROOT / path).is_file()
@@ -77,21 +109,25 @@ def main() -> int:
     empty_required_dirs = [
         path for path in REQUIRED_DIRS if not any(p.startswith(f"{path}/") for p in tracked)
     ]
-    untracked_manifest_entries = sorted(path for path in manifest_paths if path not in tracked)
-    tracked_not_in_manifest_core = sorted(
+    forbidden_paths = sorted(
         path
         for path in tracked
-        if (
-            path.startswith(tuple(f"{d}/" for d in REQUIRED_DIRS))
-            or path.startswith("manuscript/mdpi_jmse/")
-            or path.startswith("manuscript/latex/")
-        )
-        and Path(path).suffix.lower() in {".csv", ".json", ".md", ".png", ".pdf", ".tex", ".yml"}
-        and path not in manifest_paths
-        and not any(token in path for token in [".aux", ".log", ".xdv"])
+        if any(path == pattern.rstrip("/") or path.startswith(pattern) for pattern in FORBIDDEN_PATH_PATTERNS)
+        or path.endswith((".log", ".aux", ".fls", ".fdb_latexmk", ".synctex.gz", ".xdv"))
     )
+    text_hits = []
+    text_files = [
+        path
+        for path in tracked
+        if Path(path).suffix.lower()
+        in {".py", ".md", ".txt", ".tex", ".csv", ".json", ".yml", ".yaml", ".cff"}
+    ]
+    for path in text_files:
+        data = (ROOT / path).read_text(encoding="utf-8", errors="ignore")
+        for pattern in FORBIDDEN_TEXT_PATTERNS:
+            if pattern in data:
+                text_hits.append((path, pattern))
 
-    print(f"manifest_entries={len(manifest_paths)}")
     print(f"tracked_files={len(tracked)}")
     print(f"missing_required_paths={len(missing_required_paths)}")
     for path in missing_required_paths:
@@ -99,14 +135,14 @@ def main() -> int:
     print(f"empty_required_dirs={len(empty_required_dirs)}")
     for path in empty_required_dirs:
         print(f"  EMPTY_DIR {path}")
-    print(f"untracked_manifest_entries={len(untracked_manifest_entries)}")
-    for path in untracked_manifest_entries:
-        print(f"  UNTRACKED_MANIFEST {path}")
-    print(f"tracked_core_files_not_in_manifest={len(tracked_not_in_manifest_core)}")
-    for path in tracked_not_in_manifest_core[:80]:
-        print(f"  NOT_IN_MANIFEST {path}")
+    print(f"forbidden_tracked_paths={len(forbidden_paths)}")
+    for path in forbidden_paths:
+        print(f"  FORBIDDEN_PATH {path}")
+    print(f"forbidden_text_hits={len(text_hits)}")
+    for path, pattern in text_hits[:80]:
+        print(f"  FORBIDDEN_TEXT {path}: {pattern}")
 
-    return 1 if missing_required_paths or empty_required_dirs or untracked_manifest_entries else 0
+    return 1 if missing_required_paths or empty_required_dirs or forbidden_paths or text_hits else 0
 
 
 if __name__ == "__main__":

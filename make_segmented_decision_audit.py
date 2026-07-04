@@ -171,7 +171,7 @@ def write_json(rows: list[dict[str, object]]) -> None:
         "scope": "decision audit derived from segmented-heading raw rows",
         "claim_boundary": (
             "Public-grid numerical fixed-line planning audit; not a controller, "
-            "mission-log replay, sea trial, hydrographic QA, or navigation-safety claim."
+            "mission-log replay, deployment, hydrographic QA, or operational-safety claim."
         ),
         "summary": rows,
     }
@@ -191,8 +191,8 @@ def write_readme(rows: list[dict[str, object]]) -> None:
         "coverage-preserving but transition-cost-dominated alternative.",
         "",
         "The audit is a public-grid numerical planning artifact. It is not an AUV",
-        "controller, Dubins planner, mission-log replay, sea/lake/field validation,",
-        "hydrographic QA, or navigation-safety result.",
+        "controller, Dubins planner, mission-log replay, sea/lake/deployment validation,",
+        "hydrographic QA, or operational-safety result.",
         "",
         "## Key results",
         "",

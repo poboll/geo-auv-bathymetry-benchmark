@@ -19,8 +19,8 @@ from PIL import Image
 
 import geo_public_bathy_benchmark as geo
 import journal_heatmap_style as jhs
-import make_survey_grade_extension as usgs_extension
-import make_survey_grade_pilot as usgs_pilot
+import make_usgs_cascadia_extension as usgs_extension
+import make_usgs_cascadia_pilot as usgs_pilot
 
 
 ROOT = Path(__file__).resolve().parent
@@ -464,7 +464,7 @@ def write_report(summary_rows: list[dict[str, Any]], seed_count: int, include_us
             f"{float(row['prior_rmse_m_mean']):.1f} |\n"
         )
     lines.append(
-        "\nInterpretation: this is a prior-map robustness stress test, not a field validation. "
+        "\nInterpretation: this is a prior-map robustness stress test, not a deployment validation. "
         "It is intended to identify whether the geometry-aware line family survives spatially structured map error before stronger mission-log or simulator evidence is available.\n"
     )
     (OUT / "README.md").write_text("".join(lines), encoding="utf-8")

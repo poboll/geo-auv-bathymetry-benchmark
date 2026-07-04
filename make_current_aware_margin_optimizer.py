@@ -498,7 +498,7 @@ def write_report(summary_rows: list[dict[str, Any]], selected_rows: list[dict[st
     lines = [
         "# Current-aware Margin Optimizer\n\n",
         "This experiment moves the current-drift proxy from post-hoc replay into pre-mission margin selection.\n\n",
-        "CA-Hybrid sweeps target-overlap and swath-quantile margins, scores each candidate under cross-current and adverse-current replay, then evaluates the selected layout with independent Monte Carlo seeds. It remains a margin selector, not closed-loop control or hydrodynamic simulation.\n\n",
+        "CA-Hybrid sweeps target-overlap and swath-quantile margins, scores each candidate under cross-current and adverse-current replay, then evaluates the selected layout with independent Monte Carlo seeds. It remains a margin selector, not feedback-control or hydrodynamic simulation.\n\n",
         "## UA/CA Convergence Check\n\n",
         f"With common random numbers across methods, the maximum absolute UA-Hybrid versus CA-Hybrid delta across feasible rate, P05 coverage, P95 excess overlap, path length, and path-cost metrics is {max_ua_ca_delta:.6g}. ",
     ]

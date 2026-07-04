@@ -246,7 +246,7 @@ def main() -> None:
     with (OUT / "penalty_weight_sensitivity.json").open("w", encoding="utf-8") as fp:
         json.dump(
             {
-                "scope": "Public GEBCO scenes only; objective-weight diagnostic, not field validation.",
+                "scope": "Public GEBCO scenes only; objective-weight diagnostic, not deployment validation.",
                 "coverage_penalty_weights": list(COVERAGE_WEIGHTS),
                 "overlap_penalty_weights": list(OVERLAP_WEIGHTS),
                 "hybrid_ga_seeds": list(SEEDS),

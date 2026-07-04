@@ -21,7 +21,7 @@ from rasterio.windows import from_bounds
 
 import geo_public_bathy_benchmark as geo
 import journal_heatmap_style as jhs
-import make_survey_grade_pilot as pilot
+import make_usgs_cascadia_pilot as pilot
 
 
 ROOT = Path(__file__).resolve().parent
@@ -30,7 +30,7 @@ PIC_DIRS = (
     ROOT / "manuscript" / "latex" / "pic",
     ROOT / "manuscript" / "mdpi_jmse" / "pic",
 )
-USGS_MANIFEST = ROOT / "survey_grade_extension_usgs_cascadia" / "public_scene_manifest.json"
+USGS_MANIFEST = ROOT / "usgs_cascadia_extension" / "public_scene_manifest.json"
 
 COVERAGE_THRESHOLDS = (95.0, 97.0, 98.0, 99.0, 99.5)
 OVERLAP_GATES = (1.0, 2.0, 3.0, 5.0)
@@ -383,7 +383,7 @@ def write_report(summary_rows: list[dict[str, Any]], seed_count: int) -> None:
             "- The default 97%/3% benchmark gate is not equivalent to a stricter hydrographic acceptance rule.\n",
             "- The USGS high-complexity crop remains the strongest positive case because Fixed-Spacing carries a very large overlap burden while Hybrid remains feasible under the default gate.\n",
             "- Under stricter 99%/2% screening, the GEBCO Hybrid layouts are not uniformly accepted, which should be reported as margin limitation rather than hidden.\n",
-            "- Largest uncovered-patch and p99-overlap metrics help expose local failure that scene-level means can obscure; they remain numerical raster-evaluator diagnostics, not survey-grade QA.\n",
+            "- Largest uncovered-patch and p99-overlap metrics help expose local failure that scene-level means can obscure; they remain numerical raster-evaluator diagnostics, not public-grid QA.\n",
         ]
     )
     (OUT / "README.md").write_text("".join(lines), encoding="utf-8")

@@ -1,5 +1,5 @@
 {
-  "scope": "Public GEBCO scenes only; diagnostic grid-resolution sensitivity, not field validation.",
+  "scope": "Public GEBCO scenes only; diagnostic grid-resolution sensitivity, not deployment validation.",
   "resolution_strides": [
     1,
     2,

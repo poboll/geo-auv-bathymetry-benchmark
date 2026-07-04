@@ -26,7 +26,7 @@ PIC_DIRS = (
 SOURCE_FILES = (
     ("main_gebco_pair", ROOT / "run_5" / "benchmark_method_statistics.csv", {"gebco_cascadia_margin_moderate", "gebco_monterey_canyon_complex"}),
     ("supplemental_gebco_four", ROOT / "gebco_scene_expansion" / "gebco_scene_expansion_summary.csv", None),
-    ("usgs_three_crops", ROOT / "survey_grade_extension_usgs_cascadia" / "benchmark_method_statistics.csv", None),
+    ("usgs_three_crops", ROOT / "usgs_cascadia_extension" / "benchmark_method_statistics.csv", None),
 )
 METHODS = ("Adaptive Spacing w/o GA", "Full Geometry-Aware Hybrid GA")
 METHOD_LABELS = {

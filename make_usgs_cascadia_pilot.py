@@ -18,7 +18,7 @@ import geo_public_bathy_benchmark as geo
 
 
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT / "survey_grade_pilot_usgs_cascadia"
+OUT = ROOT / "usgs_cascadia_pilot"
 ZIP_PATH = ROOT / "public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.zip"
 EXTRACT_DIR = ROOT / "public_bathy/raw/usgs/SouthernCascadia_30m_bathy_UTM10N_NAD83_v2"
 RASTER_PATH = EXTRACT_DIR / "SouthernCascadia_30m_bathy_UTM10N_NAD83_v2.tif"
@@ -110,7 +110,7 @@ def choose_physical_crop(dataset: rasterio.io.DatasetReader) -> tuple[Window, di
             candidates.append((metrics["complexity"], window, metrics))
 
     if not candidates:
-        raise RuntimeError("No fully valid survey-grade pilot crop found.")
+        raise RuntimeError("No fully valid public-grid pilot crop found.")
     candidates.sort(key=lambda item: item[0])
     # Pick a high-complexity but not extreme crop so the pilot is informative without being a pathological edge case.
     idx = int(round(0.72 * (len(candidates) - 1)))
@@ -159,11 +159,11 @@ def load_usgs_scene() -> geo.TerrainScene:
             },
             "planner_grid_resolution_m": round(max(width_m / max(geo.GRID_NX - 1, 1), height_m / max(geo.GRID_NY - 1, 1)), 3),
             "depth_range_m": [float(np.nanmin(depth)), float(np.nanmax(depth))],
-            "terrain_class": "survey_grade_cascadia_pilot",
+            "terrain_class": "usgs_cascadia_pilot",
             "selection_metrics": metrics,
             "missing_value_handling": fill_info,
             "provider": "USGS",
-            "pilot_policy": "Not mixed into run_5; used only to test survey-grade grid ingestion feasibility.",
+            "pilot_policy": "Not mixed into run_5; used only to test public-grid ingestion feasibility.",
         }
     return geo.TerrainScene(
         scene_id=manifest["scene_id"],
@@ -216,7 +216,7 @@ def save_preview(scene: geo.TerrainScene, results: list[geo.PlanResult]) -> None
         ax.set_xlabel("NM")
     axes[0].set_ylabel("NM")
     fig.tight_layout()
-    fig.savefig(OUT / "survey_grade_pilot_layouts.png", dpi=240, bbox_inches="tight")
+    fig.savefig(OUT / "usgs_cascadia_pilot_layouts.png", dpi=240, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -233,11 +233,11 @@ def main() -> None:
     save_preview(scene, results)
     (OUT / "README.md").write_text(
         "# USGS Southern Cascadia 30 m pilot\n\n"
-        "This is a survey-grade grid ingestion feasibility probe. It is not mixed into `run_5` and is not yet a manuscript result.\n\n"
+        "This is a public-grid ingestion feasibility probe. It is not mixed into `run_5` and is not yet a manuscript result.\n\n"
         f"- Source raster: `{RASTER_PATH}`\n"
         "- Source DOI: https://doi.org/10.5066/P9C5DBMR\n"
         "- Seeds: 0--4 for stochastic GA methods\n"
-        "- Output: `benchmark_method_statistics.csv`, `benchmark_results.csv`, `public_scene_manifest.json`, and `survey_grade_pilot_layouts.png`\n",
+        "- Output: `benchmark_method_statistics.csv`, `benchmark_results.csv`, `public_scene_manifest.json`, and `usgs_cascadia_pilot_layouts.png`\n",
         encoding="utf-8",
     )
     print(json.dumps({"out_dir": str(OUT), "means": means, "manifest": scene.manifest_entry}, indent=2))

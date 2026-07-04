@@ -2,7 +2,7 @@
 
 This experiment moves the current-drift proxy from post-hoc replay into pre-mission margin selection.
 
-CA-Hybrid sweeps target-overlap and swath-quantile margins, scores each candidate under cross-current and adverse-current replay, then evaluates the selected layout with independent Monte Carlo seeds. It remains a margin selector, not closed-loop control or hydrodynamic simulation.
+CA-Hybrid sweeps target-overlap and swath-quantile margins, scores each candidate under cross-current and adverse-current replay, then evaluates the selected layout with independent Monte Carlo seeds. It remains a margin selector, not feedback-control or hydrodynamic simulation.
 
 ## UA/CA Convergence Check
 

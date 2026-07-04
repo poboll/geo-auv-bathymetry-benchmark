@@ -512,7 +512,7 @@ def write_report(summary_rows: list[dict[str, Any]], selected_rows: list[dict[st
     lines = [
         "# Uncertainty-aware Margin Replay\n\n",
         "This experiment asks whether a declared execution-error envelope can be used to select an execution-aware pre-mission line-layout margin before field execution.\n\n",
-        "It does not claim closed-loop vehicle control. It selects target-overlap and swath-quantile margins, optionally accepting GA cleanup only when nominal coverage and overlap gates are preserved.\n\n",
+        "It does not claim feedback-control vehicle control. It selects target-overlap and swath-quantile margins, optionally accepting GA cleanup only when nominal coverage and overlap gates are preserved.\n\n",
         "## Selected Margins\n\n",
         "| Scene | Target overlap | Quantile | GA cleanup | Lines | Nominal coverage | Nominal excess overlap |\n",
         "|---|---:|---:|---:|---:|---:|---:|\n",

@@ -20,7 +20,7 @@ This release packages the manuscript-specific code, derived outputs, figures, an
 
 ## Evidence Boundary
 
-This is a public-bathymetry numerical benchmark and reproducibility package. It does not claim sea-trial validation, mission-log validation, hydrographic survey certification, or navigation-safety readiness.
+This is a public-bathymetry numerical benchmark and reproducibility package. It does not claim deployment validation, mission-log validation, hydrographic certification, or operational-safety readiness.
 
 ## Source Data
 

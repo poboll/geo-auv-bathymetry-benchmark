@@ -21,7 +21,7 @@
       569.05810546875,
       834.4691162109375
     ],
-    "terrain_class": "survey_grade_cascadia_low",
+    "terrain_class": "usgs_cascadia_low",
     "selection_metrics": {
       "valid_fraction": 1.0,
       "slope_mean": 0.02706821513581937,
@@ -41,7 +41,7 @@
       "fill_strategy": "none"
     },
     "provider": "USGS",
-    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+    "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5."
   },
   {
     "scene_id": "usgs_southern_cascadia_30m_medium",
@@ -65,7 +65,7 @@
       820.5799560546875,
       1339.02392578125
     ],
-    "terrain_class": "survey_grade_cascadia_medium",
+    "terrain_class": "usgs_cascadia_medium",
     "selection_metrics": {
       "valid_fraction": 1.0,
       "slope_mean": 0.1254618397628207,
@@ -85,7 +85,7 @@
       "fill_strategy": "none"
     },
     "provider": "USGS",
-    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+    "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5."
   },
   {
     "scene_id": "usgs_southern_cascadia_30m_high",
@@ -109,7 +109,7 @@
       146.3936004638672,
       1131.604248046875
     ],
-    "terrain_class": "survey_grade_cascadia_high",
+    "terrain_class": "usgs_cascadia_high",
     "selection_metrics": {
       "valid_fraction": 0.9861640658779136,
       "slope_mean": 0.1412861155217056,
@@ -129,6 +129,6 @@
       "fill_strategy": "local_median_fill"
     },
     "provider": "USGS",
-    "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5."
+    "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5."
   }
 ]

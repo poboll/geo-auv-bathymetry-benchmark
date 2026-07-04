@@ -3,7 +3,7 @@
   "source_files": [
     "run_5/benchmark_method_statistics.csv",
     "gebco_scene_expansion/gebco_scene_expansion_summary.csv",
-    "survey_grade_extension_usgs_cascadia/benchmark_method_statistics.csv"
+    "usgs_cascadia_extension/benchmark_method_statistics.csv"
   ],
   "paired_rows": [
     {
@@ -238,7 +238,7 @@
       "source_group": "usgs_three_crops",
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_name": "USGS Cascadia 30 m High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "fixed_path_km": 97.254304852,
@@ -257,7 +257,7 @@
       "source_group": "usgs_three_crops",
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_name": "USGS Cascadia 30 m High",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "method": "Full Geometry-Aware Hybrid GA",
       "method_label": "Hybrid",
       "fixed_path_km": 97.254304852,
@@ -276,7 +276,7 @@
       "source_group": "usgs_three_crops",
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_name": "USGS Cascadia 30 m Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "fixed_path_km": 51.93,
@@ -295,7 +295,7 @@
       "source_group": "usgs_three_crops",
       "scene_id": "usgs_southern_cascadia_30m_low",
       "scene_name": "USGS Cascadia 30 m Low",
-      "terrain_class": "survey_grade_cascadia_low",
+      "terrain_class": "usgs_cascadia_low",
       "method": "Full Geometry-Aware Hybrid GA",
       "method_label": "Hybrid",
       "fixed_path_km": 51.93,
@@ -314,7 +314,7 @@
       "source_group": "usgs_three_crops",
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_name": "USGS Cascadia 30 m Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Adaptive Spacing w/o GA",
       "method_label": "Adaptive",
       "fixed_path_km": 51.93,
@@ -333,7 +333,7 @@
       "source_group": "usgs_three_crops",
       "scene_id": "usgs_southern_cascadia_30m_medium",
       "scene_name": "USGS Cascadia 30 m Medium",
-      "terrain_class": "survey_grade_cascadia_medium",
+      "terrain_class": "usgs_cascadia_medium",
       "method": "Full Geometry-Aware Hybrid GA",
       "method_label": "Hybrid",
       "fixed_path_km": 51.93,

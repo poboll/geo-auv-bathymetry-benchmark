@@ -30,7 +30,7 @@ PIC_DIRS = [
     ROOT / "manuscript" / "coe_double_blind" / "pic",
 ]
 PIC = PIC_DIRS[0]
-EXT = ROOT / "survey_grade_extension_usgs_cascadia"
+EXT = ROOT / "usgs_cascadia_extension"
 PUBLIC_MANIFEST = {
     row["scene_id"]: row for row in json.loads((RUN / "public_scene_manifest.json").read_text(encoding="utf-8"))
 }

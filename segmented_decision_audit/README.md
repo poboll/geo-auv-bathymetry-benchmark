@@ -7,8 +7,8 @@ segmented-heading layout is accepted, rejected, or used only as a
 coverage-preserving but transition-cost-dominated alternative.
 
 The audit is a public-grid numerical planning artifact. It is not an AUV
-controller, Dubins planner, mission-log replay, sea/lake/field validation,
-hydrographic QA, or navigation-safety result.
+controller, Dubins planner, mission-log replay, sea/lake/deployment validation,
+hydrographic QA, or operational-safety result.
 
 ## Key results
 

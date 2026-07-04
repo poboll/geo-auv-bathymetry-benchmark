@@ -1,7 +1,7 @@
 {
   "source": "segmented_heading_extension/segmented_heading_raw.csv",
   "scope": "decision audit derived from segmented-heading raw rows",
-  "claim_boundary": "Public-grid numerical fixed-line planning audit; not a controller, mission-log replay, sea trial, hydrographic QA, or navigation-safety claim.",
+  "claim_boundary": "Public-grid numerical fixed-line planning audit; not a controller, mission-log replay, deployment, hydrographic QA, or operational-safety claim.",
   "summary": [
     {
       "scene_id": "synthetic_complex",
@@ -163,7 +163,7 @@
       "scene_id": "usgs_southern_cascadia_30m_high",
       "scene_name": "USGS Cascadia 30 m High",
       "scene_group": "public",
-      "terrain_class": "survey_grade_cascadia_high",
+      "terrain_class": "usgs_cascadia_high",
       "n_seeds": 30,
       "single_feasible_rate": 1.0,
       "ta_feasible_rate": 1.0,

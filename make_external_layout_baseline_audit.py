@@ -20,7 +20,7 @@ from rasterio.windows import from_bounds
 import geo_public_bathy_benchmark as geo
 import journal_heatmap_style as jhs
 import make_gebco_scene_expansion as gebco_expansion
-import make_survey_grade_pilot as pilot
+import make_usgs_cascadia_pilot as pilot
 
 
 ROOT = Path(__file__).resolve().parent
@@ -29,7 +29,7 @@ PIC_DIRS = (
     ROOT / "manuscript" / "latex" / "pic",
     ROOT / "manuscript" / "mdpi_jmse" / "pic",
 )
-USGS_MANIFEST = ROOT / "survey_grade_extension_usgs_cascadia" / "public_scene_manifest.json"
+USGS_MANIFEST = ROOT / "usgs_cascadia_extension" / "public_scene_manifest.json"
 
 HEADING_CANDIDATES_5 = tuple(range(0, 180, 5))
 FIXED_WIDTH_QUANTILE = 0.30
@@ -491,7 +491,7 @@ def write_report(summary_rows: list[dict[str, Any]], rows: list[dict[str, Any]])
         [
             "\n## Interpretation boundary\n\n",
             "- The audit is a compact external-style baseline layer; it is not an implementation of a full Zhao/Bai-style multi-objective, vehicle-dynamics, or field-validated planner.\n",
-            "- If an external heuristic wins a scene, that result should be reported rather than hidden; the manuscript claim is terrain-aware fixed-line spacing, not global SOTA dominance.\n",
+            "- If an external heuristic wins a scene, that result should be reported rather than hidden; the manuscript claim is terrain-aware fixed-line spacing, not global broad-baseline dominance.\n",
             "- The main comparator remains the deterministic Adaptive Spacing layout, with Hybrid GA treated as local seed-0 cleanup in this audit and as a 50-seed method in the main benchmark.\n",
         ]
     )
@@ -518,7 +518,7 @@ def main() -> None:
         {
             "scope": (
                 "External-style deterministic fixed-width survey-layout heuristic audit on nine public-grid windows; "
-                "not a full reproduction of broader CPP systems or a field validation."
+                "not a full reproduction of broader CPP systems or a deployment validation."
             ),
             "heading_grid_deg": 5,
             "fixed_width_quantile": FIXED_WIDTH_QUANTILE,

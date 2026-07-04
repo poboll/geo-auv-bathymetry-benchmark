@@ -2,7 +2,7 @@
 
 This diagnostic moves part of the current/heading/footprint execution risk into candidate-layout refinement rather than using it only as post-hoc replay.
 
-ER-Hybrid should be treated as a numerical stress-objective check. It does not model closed-loop control, hydrodynamics, sound-speed uncertainty, or mission logs.
+ER-Hybrid should be treated as a numerical stress-objective check. It does not model feedback-control, hydrodynamics, sound-speed uncertainty, or mission logs.
 
 ## Selected Layouts
 

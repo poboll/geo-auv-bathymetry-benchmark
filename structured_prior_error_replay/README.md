@@ -45,4 +45,4 @@ This diagnostic plans on spatially perturbed prior bathymetry and replays the sa
 | USGS Cascadia 30 m High | Local wall bias | Adaptive | 0.95 | +1.91 | 2.51 | 23.28 | 28.6 |
 | USGS Cascadia 30 m High | Local wall bias | Hybrid | 1.00 | +1.82 | 1.76 | 24.38 | 28.6 |
 
-Interpretation: this is a prior-map robustness stress test, not a field validation. It is intended to identify whether the geometry-aware line family survives spatially structured map error before stronger mission-log or simulator evidence is available.
+Interpretation: this is a prior-map robustness stress test, not a deployment validation. It is intended to identify whether the geometry-aware line family survives spatially structured map error before stronger mission-log or simulator evidence is available.

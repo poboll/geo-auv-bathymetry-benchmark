@@ -1,5 +1,5 @@
 {
-  "scope": "Public GEBCO scenes only; diagnostic design-margin sensitivity, not field validation.",
+  "scope": "Public GEBCO scenes only; diagnostic design-margin sensitivity, not deployment validation.",
   "target_overlap_values": [
     0.1,
     0.15,

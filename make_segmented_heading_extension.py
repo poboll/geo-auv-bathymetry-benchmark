@@ -203,10 +203,10 @@ def load_usgs_extension_scene(scene_id: str) -> geo.TerrainScene:
     try:
         import rasterio
 
-        import make_survey_grade_extension as extension
-        import make_survey_grade_pilot as pilot
+        import make_usgs_cascadia_extension as extension
+        import make_usgs_cascadia_pilot as pilot
     except Exception as exc:  # pragma: no cover - exercised only when optional GIS deps are absent.
-        raise RuntimeError("USGS segmented scene loading requires rasterio and the survey-grade extension scripts.") from exc
+        raise RuntimeError("USGS segmented scene loading requires rasterio and the public-grid extension scripts.") from exc
 
     pilot.ensure_extracted()
     with rasterio.open(pilot.RASTER_PATH) as dataset:
@@ -1082,7 +1082,7 @@ def write_report(
         "- Acceptance gate: global coverage >= 97%, global excess overlap <= 3%, and no coverage regression relative to the single-heading Hybrid GA unless segmentation changes an infeasible single-heading layout into a feasible one.\n",
         "- Coverage-preserving selector after the acceptance gate: choose the lower path-plus-overlap score, `L + 3 O_ex`, between the single-heading layout and accepted segmented candidates.\n",
         f"- Transition-aware selector after the acceptance gate: choose the lower mission-time proxy at `R_min={min_turn_radius_m:.0f} m`, including survey/transit distance at {SURVEY_SPEED_MPS:.1f} m/s, heading-change arcs and line-change arcs at {TURN_SPEED_MPS:.2f} m/s, plus a small overlap tie-breaker.\n",
-        "- Boundary: numerical geometry diagnostic, not AUV controller validation or sea-trial evidence.\n\n",
+        "- Boundary: numerical geometry diagnostic, not AUV controller validation or deployment evidence.\n\n",
         "## Summary\n\n",
         "| Scene | Method | Segments | Runs | Path km | Mission proxy h | Coverage % | Excess overlap % | Feasible rate |\n",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|\n",
@@ -1159,7 +1159,7 @@ def main() -> None:
     _safe_json_dump(
         OUT / "segmented_heading_summary.json",
         {
-            "scope": "Segmented-heading geometry diagnostic for complex terrain; not sea-trial evidence.",
+            "scope": "Segmented-heading geometry diagnostic for complex terrain; not deployment evidence.",
             "elapsed_s": time.perf_counter() - start,
             "scenes": [scene.manifest_entry for scene in scenes],
             "hybrid_ga_seeds": list(seeds),

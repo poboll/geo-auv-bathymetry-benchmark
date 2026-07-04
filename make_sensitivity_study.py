@@ -852,7 +852,7 @@ def main() -> None:
     with (OUT / "beam_angle_sensitivity.json").open("w", encoding="utf-8") as fp:
         json.dump(
             {
-                "scope": "Public GEBCO scenes only; diagnostic planning-parameter sensitivity, not field validation.",
+                "scope": "Public GEBCO scenes only; diagnostic planning-parameter sensitivity, not deployment validation.",
                 "beam_angles_deg": list(BEAM_ANGLES),
                 "hybrid_ga_seeds": list(SENSITIVITY_SEEDS),
                 "raw_rows": raw_rows,
@@ -890,7 +890,7 @@ def main() -> None:
     with (OUT / "target_overlap_sensitivity.json").open("w", encoding="utf-8") as fp:
         json.dump(
             {
-                "scope": "Public GEBCO scenes only; diagnostic design-margin sensitivity, not field validation.",
+                "scope": "Public GEBCO scenes only; diagnostic design-margin sensitivity, not deployment validation.",
                 "target_overlap_values": list(OVERLAP_TARGETS),
                 "hybrid_ga_seeds": list(SENSITIVITY_SEEDS),
                 "raw_rows": overlap_raw_rows,
@@ -925,7 +925,7 @@ def main() -> None:
     with (OUT / "resolution_sensitivity.json").open("w", encoding="utf-8") as fp:
         json.dump(
             {
-                "scope": "Public GEBCO scenes only; diagnostic grid-resolution sensitivity, not field validation.",
+                "scope": "Public GEBCO scenes only; diagnostic grid-resolution sensitivity, not deployment validation.",
                 "resolution_strides": list(RESOLUTION_STRIDES),
                 "hybrid_ga_seeds": list(SENSITIVITY_SEEDS),
                 "raw_rows": resolution_raw_rows,

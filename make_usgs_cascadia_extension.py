@@ -19,11 +19,11 @@ from rasterio.enums import Resampling
 from rasterio.windows import Window
 
 import geo_public_bathy_benchmark as geo
-import make_survey_grade_pilot as pilot
+import make_usgs_cascadia_pilot as pilot
 
 
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT / "survey_grade_extension_usgs_cascadia"
+OUT = ROOT / "usgs_cascadia_extension"
 PIC_DIRS = (
     ROOT / "manuscript" / "latex" / "pic",
     ROOT / "manuscript" / "mdpi_jmse" / "pic",
@@ -150,11 +150,11 @@ def scene_from_window(
         },
         "planner_grid_resolution_m": round(max(width_m / max(geo.GRID_NX - 1, 1), height_m / max(geo.GRID_NY - 1, 1)), 3),
         "depth_range_m": [float(np.nanmin(depth)), float(np.nanmax(depth))],
-        "terrain_class": f"survey_grade_cascadia_{label}",
+        "terrain_class": f"usgs_cascadia_{label}",
         "selection_metrics": metrics,
         "missing_value_handling": fill_info,
         "provider": "USGS",
-        "extension_policy": "Separate survey-grade public grid extension; not mixed into run_5.",
+        "extension_policy": "Separate USGS Cascadia public-grid extension; not mixed into run_5.",
     }
     return geo.TerrainScene(
         scene_id=scene_id,
@@ -427,7 +427,7 @@ def save_extension_preview(scenes: list[geo.TerrainScene], results: list[geo.Pla
                 )
 
     fig.subplots_adjust(left=0.050, right=0.990, top=0.925, bottom=0.070)
-    output_paths = [OUT / "survey_grade_extension_journal.png"]
+    output_paths = [OUT / "usgs_cascadia_extension_journal.png"]
     for pic_dir in PIC_DIRS:
         pic_dir.mkdir(parents=True, exist_ok=True)
         output_paths.append(pic_dir / "journal_usgs_extension.png")
@@ -444,7 +444,7 @@ def write_extension_report(summary_rows: list[dict], scenes: list[geo.TerrainSce
     lookup = {(row["scene_id"], row["method"]): row for row in summary_rows}
     lines = [
         "# USGS Southern Cascadia Multi-crop Extension\n",
-        "This is a separate survey-grade public grid extension. It is not mixed into the primary benchmark.\n",
+        "This is a separate USGS Cascadia public-grid extension. It is not mixed into the primary benchmark.\n",
         f"- Source: USGS Southern Cascadia 30 m composite bathymetry, v2 ({scenes[0].download_url})\n",
         f"- Crops: {len(scenes)}\n",
         f"- Stochastic seeds: {seeds[0]}--{seeds[-1]}\n\n",

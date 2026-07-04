@@ -1,5 +1,5 @@
 {
-  "scope": "Public GEBCO scenes only; objective-weight diagnostic, not field validation.",
+  "scope": "Public GEBCO scenes only; objective-weight diagnostic, not deployment validation.",
   "coverage_penalty_weights": [
     40.0,
     80.0,

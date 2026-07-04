@@ -1,5 +1,5 @@
 # USGS Southern Cascadia Multi-crop Extension
-This is a separate survey-grade public grid extension. It is not mixed into the primary benchmark.
+This is a separate USGS Cascadia public-grid extension. It is not mixed into the primary benchmark.
 - Source: USGS Southern Cascadia 30 m composite bathymetry, v2 (https://doi.org/10.5066/P9C5DBMR)
 - Crops: 3
 - Stochastic seeds: 0--19

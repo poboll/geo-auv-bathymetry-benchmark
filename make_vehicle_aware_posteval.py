@@ -22,7 +22,7 @@ PIC_DIRS = [
 ]
 
 MAIN_RESULTS = ROOT / "run_5" / "benchmark_results.csv"
-USGS_RESULTS = ROOT / "survey_grade_extension_usgs_cascadia" / "benchmark_results.csv"
+USGS_RESULTS = ROOT / "usgs_cascadia_extension" / "benchmark_results.csv"
 SEGMENTED_RESULTS = ROOT / "segmented_heading_extension" / "segmented_heading_raw.csv"
 
 RADIUS_VALUES_M = (25.0, 50.0, 100.0)
@@ -504,7 +504,7 @@ def make_figure(summary: pd.DataFrame) -> None:
         0.070,
         0.040,
         f"Diagnostic only: base path is evaluated at {SURVEY_SPEED_MPS:.1f} m/s; turn arcs at {TURN_SPEED_MPS:.2f} m/s. "
-        "It does not include current, controller, SLAM, or sea-trial logs.",
+        "It does not include current, controller, SLAM, or deployment logs.",
         ha="left",
         color=MUTED,
         fontsize=5.90,
@@ -545,7 +545,7 @@ def write_report(summary: pd.DataFrame) -> None:
         "This diagnostic converts planned line-family outputs into a first-order vehicle-execution proxy. ",
         "It adds semicircular line-change arcs for declared minimum turn radii and converts distance into time ",
         f"using {SURVEY_SPEED_MPS:.1f} m/s for survey/transit distance and {TURN_SPEED_MPS:.2f} m/s for turn arcs. ",
-        "The diagnostic is not a Dubins controller, current model, SLAM replay, or sea-trial validation.\n\n",
+        "The diagnostic is not a Dubins controller, current model, SLAM replay, or deployment validation.\n\n",
         "## Selected R=100 m Results\n\n",
         "| Evidence block | Scene | Method | Runs | Feasible | Lines | Turn changes | Effective length (km) | Mission time (h) | Time gain vs Fixed (%) |\n",
         "|---|---|---|---:|---:|---:|---:|---:|---:|---:|\n",

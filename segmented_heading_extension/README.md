@@ -10,7 +10,7 @@ This diagnostic targets the main algorithmic weakness exposed by the current man
 - Acceptance gate: global coverage >= 97%, global excess overlap <= 3%, and no coverage regression relative to the single-heading Hybrid GA unless segmentation changes an infeasible single-heading layout into a feasible one.
 - Coverage-preserving selector after the acceptance gate: choose the lower path-plus-overlap score, `L + 3 O_ex`, between the single-heading layout and accepted segmented candidates.
 - Transition-aware selector after the acceptance gate: choose the lower mission-time proxy at `R_min=100 m`, including survey/transit distance at 1.5 m/s, heading-change arcs and line-change arcs at 0.75 m/s, plus a small overlap tie-breaker.
-- Boundary: numerical geometry diagnostic, not AUV controller validation or sea-trial evidence.
+- Boundary: numerical geometry diagnostic, not AUV controller validation or deployment evidence.
 
 ## Summary
 

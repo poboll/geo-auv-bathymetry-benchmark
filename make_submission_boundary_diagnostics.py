@@ -288,7 +288,7 @@ def _write_report(
             "- Changing the declared Wmax cap changes absolute line density and path totals, so the cap must remain a declared evaluator parameter.\n",
             "- The qualitative regime interpretation is the main object of this audit: GEBCO remains a low-overlap public-prior benchmark, whereas USGS High remains the overlap-stressed transfer case.\n",
             "- The conservative gate generally prevents raw GA seeds from being interpreted as operationally superior unless their route reduction is not purchased by lower coverage or higher overlap.\n",
-            "- These outputs should be cited as reproducibility artifacts and boundary diagnostics, not as field validation.\n",
+            "- These outputs should be cited as reproducibility artifacts and boundary diagnostics, not as deployment validation.\n",
         ]
     )
     (OUT / "README.md").write_text("".join(lines), encoding="utf-8")

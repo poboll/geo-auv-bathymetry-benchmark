@@ -788,7 +788,7 @@ def write_report(summary_rows: list[dict[str, Any]], selected_rows: list[dict[st
     lines = [
         "# Execution-risk-aware Refinement\n\n",
         "This diagnostic moves part of the current/heading/footprint execution risk into candidate-layout refinement rather than using it only as post-hoc replay.\n\n",
-        "ER-Hybrid should be treated as a numerical stress-objective check. It does not model closed-loop control, hydrodynamics, sound-speed uncertainty, or mission logs.\n\n",
+        "ER-Hybrid should be treated as a numerical stress-objective check. It does not model feedback-control, hydrodynamics, sound-speed uncertainty, or mission logs.\n\n",
         "## Selected Layouts\n\n",
         "| Scene | Heading | Lines | Path km | Nominal coverage | Nominal excess overlap | Stress min coverage | Stress max overlap |\n",
         "|---|---:|---:|---:|---:|---:|---:|---:|\n",

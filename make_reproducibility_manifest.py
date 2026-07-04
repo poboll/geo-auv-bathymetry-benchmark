@@ -16,10 +16,10 @@ PATTERNS = {
         "run_5/*.png",
     ],
     "extension_outputs": [
-        "survey_grade_extension_usgs_cascadia/*.csv",
-        "survey_grade_extension_usgs_cascadia/*.json",
-        "survey_grade_extension_usgs_cascadia/*.md",
-        "survey_grade_extension_usgs_cascadia/*.png",
+        "usgs_cascadia_extension/*.csv",
+        "usgs_cascadia_extension/*.json",
+        "usgs_cascadia_extension/*.md",
+        "usgs_cascadia_extension/*.png",
     ],
     "gebco_tid_audit_outputs": [
         "gebco_tid_audit/*.csv",
@@ -245,7 +245,7 @@ PATTERNS = {
         "make_sensitivity_study.py",
         "make_penalty_weight_sensitivity.py",
         "make_uncertainty_replay.py",
-        "make_survey_grade_extension.py",
+        "make_usgs_cascadia_extension.py",
         "make_turning_aware_posteval.py",
         "make_vehicle_aware_posteval.py",
         "make_segmented_heading_extension.py",

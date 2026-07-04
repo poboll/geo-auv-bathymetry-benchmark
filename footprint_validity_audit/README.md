@@ -6,7 +6,7 @@ This directory records the planning-evaluator validity audit added for the v25 m
 
 The main manuscript evaluator uses a total-width raster proxy for predicted MBES coverage and adjacent-spacing overlap. This audit checks whether preserving separate port and starboard footprint reach estimates changes the benchmark interpretation on representative layouts.
 
-The audit is a planning-layer check. It is not beam-level acoustic ray tracing, raw MBES line-product validation, a sea trial, or hydrographic quality assurance.
+The audit is a planning-layer check. It is not beam-level acoustic ray tracing, raw MBES line-product validation, a deployment, or hydrographic quality assurance.
 
 ## Command
 
