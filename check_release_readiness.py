@@ -49,6 +49,10 @@ REQUIRED_DIRS = [
     "footprint_validity_audit",
     "external_layout_baseline_audit",
     "external_turning_cost_audit",
+    "usgs_source_provenance",
+    "altitude_aware_footprint_audit",
+    "usgs_overlap_stress_expansion",
+    "usgs_stress_crop_expansion",
 ]
 
 

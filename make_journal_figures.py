@@ -26,6 +26,8 @@ RUN = ROOT / "run_5"
 PIC_DIRS = [
     ROOT / "manuscript" / "latex" / "pic",
     ROOT / "manuscript" / "mdpi_jmse" / "pic",
+    ROOT / "manuscript" / "coe_springer" / "pic",
+    ROOT / "manuscript" / "coe_double_blind" / "pic",
 ]
 PIC = PIC_DIRS[0]
 EXT = ROOT / "survey_grade_extension_usgs_cascadia"
@@ -42,14 +44,14 @@ SPEC.loader.exec_module(geo)
 plt.rcParams.update(
     {
         "font.family": "sans-serif",
-        "font.sans-serif": ["Helvetica", "Arial", "DejaVu Sans"],
+        "font.sans-serif": ["Arial", "Helvetica Neue", "Helvetica", "DejaVu Sans"],
         "mathtext.fontset": "dejavusans",
-        "font.size": 7.15,
-        "axes.titlesize": 7.65,
-        "axes.labelsize": 6.85,
-        "xtick.labelsize": 6.25,
-        "ytick.labelsize": 6.25,
-        "legend.fontsize": 6.75,
+        "font.size": 7.55,
+        "axes.titlesize": 8.10,
+        "axes.labelsize": 7.25,
+        "xtick.labelsize": 6.85,
+        "ytick.labelsize": 6.85,
+        "legend.fontsize": 6.95,
         "axes.linewidth": 0.45,
         "savefig.dpi": 420,
     }
@@ -114,19 +116,19 @@ DETAIL_BATHY = LinearSegmentedColormap.from_list(
 )
 PATH_GAIN_CMAP = LinearSegmentedColormap.from_list(
     "journal_path_gain",
-    ["#f8fbfb", "#e7f0ef", "#c2dad8", "#7fb3b2", "#2f7580"],
+    ["#f7fbfb", "#d7ece9", "#8fcac2", "#3f9697", "#0b5f73"],
 )
 COVERAGE_CMAP = LinearSegmentedColormap.from_list(
     "journal_coverage",
-    ["#bb765f", "#dfbea2", "#f8f4ea", "#bfd9d3", "#4c8b8d"],
+    ["#a45a46", "#d5aa83", "#f6f1e4", "#a9d3c9", "#2f7f86"],
 )
 OVERLAP_CMAP = LinearSegmentedColormap.from_list(
     "journal_overlap",
-    ["#fffaf0", "#f0dfba", "#d9a66f", "#ae6150", "#74393a"],
+    ["#fff9ed", "#edd7a3", "#d79759", "#a04c43", "#5d2632"],
 )
 TIME_CMAP = LinearSegmentedColormap.from_list(
     "journal_time",
-    ["#fbfbfa", "#e6e4df", "#c3c7c3", "#879997", "#465b61"],
+    ["#fbfbf7", "#e6e3d8", "#b8c3bd", "#718e8d", "#314b56"],
 )
 LIGHT = LightSource(azdeg=318, altdeg=42)
 
@@ -751,25 +753,25 @@ def make_scene_summary_strip(
     ax.axis("off")
     ax.set_xlim(0.0, 1.0)
     ax.set_ylim(0.0, 1.0)
-    ax.text(0.0, 0.985, "(d) Layout summary", transform=ax.transAxes, ha="left", va="top", color=TEXT, fontweight="bold", fontsize=7.05)
+    ax.text(0.0, 0.985, "(d) Full-layout metrics", transform=ax.transAxes, ha="left", va="top", color=TEXT, fontweight="bold", fontsize=7.65)
     ax.text(
         0.0,
-        0.905,
-        "full-scene metrics; the three map cards above show the same layouts in a compact zoom window",
+        0.880,
+        "values are computed on the full benchmark layout; map cards above show a common zoom only",
         transform=ax.transAxes,
         ha="left",
         va="top",
-        fontsize=5.80,
+        fontsize=6.15,
         color=MUTED,
     )
     ledger = FancyBboxPatch(
-        (0.0, 0.13),
+        (0.0, 0.10),
         1.0,
-        0.56,
-        boxstyle="round,pad=0.010,rounding_size=0.016",
-        linewidth=0.42,
-        edgecolor="#d7e2eb",
-        facecolor="#fbfdfe",
+        0.61,
+        boxstyle="round,pad=0.006,rounding_size=0.010",
+        linewidth=0.36,
+        edgecolor="#c8d6df",
+        facecolor="#f8fbfc",
         transform=ax.transAxes,
     )
     ax.add_patch(ledger)
@@ -779,36 +781,48 @@ def make_scene_summary_strip(
         "Full Geometry-Aware Hybrid GA": "Hybrid",
     }
     x_method = 0.045
-    x_cols = [0.39, 0.50, 0.68, 0.84, 0.97]
-    for xpos, label in zip(x_cols, ["psi", "n", "L km", "C %", "O %"]):
+    x_cols = [0.35, 0.48, 0.68, 0.84, 0.97]
+    for xpos, label in zip(x_cols, ["heading", "lines", "L (km)", "C (%)", "Oex (%)"]):
         ax.text(
             xpos,
-            0.60,
+            0.615,
             label,
             transform=ax.transAxes,
             ha="right",
             va="center",
-            fontsize=5.80,
+            fontsize=6.15,
             color=MUTED,
             fontweight="bold",
         )
-    ax.plot([0.04, 0.97], [0.55, 0.55], transform=ax.transAxes, color="#d7e2eb", linewidth=0.42)
-    row_y = [0.47, 0.33, 0.19]
+    ax.plot([0.035, 0.97], [0.555, 0.555], transform=ax.transAxes, color="#cfdbe3", linewidth=0.48)
+    row_y = [0.465, 0.315, 0.165]
     for idx, (method, ypos) in enumerate(zip(methods, row_y)):
+        row_face = "#ffffff" if idx % 2 == 0 else "#edf5f6"
         ax.add_patch(
             Rectangle(
-                (0.025, ypos - 0.055),
-                0.945,
-                0.11,
+                (0.020, ypos - 0.060),
+                0.958,
+                0.122,
                 transform=ax.transAxes,
-                facecolor="#ffffff" if idx % 2 == 0 else "#f5f9fb",
+                facecolor=row_face,
                 edgecolor="none",
                 zorder=0,
             )
         )
+        ax.add_patch(
+            Rectangle(
+                (0.026, ypos - 0.043),
+                0.010,
+                0.086,
+                transform=ax.transAxes,
+                facecolor=METHOD_COLORS[method],
+                edgecolor="none",
+                zorder=2,
+            )
+        )
         row = lookup[(scene_id, method)]
         if idx:
-            ax.plot([0.04, 0.97], [ypos + 0.07, ypos + 0.07], transform=ax.transAxes, color="#e6edf3", linewidth=0.34)
+            ax.plot([0.035, 0.97], [ypos + 0.074, ypos + 0.074], transform=ax.transAxes, color="#dce6ec", linewidth=0.34)
         ax.text(
             x_method,
             ypos,
@@ -816,7 +830,7 @@ def make_scene_summary_strip(
             transform=ax.transAxes,
             ha="left",
             va="center",
-            fontsize=6.15,
+            fontsize=6.45,
             color=METHOD_COLORS[method],
             fontweight="bold",
         )
@@ -835,7 +849,7 @@ def make_scene_summary_strip(
                 transform=ax.transAxes,
                 ha="right",
                 va="center",
-                fontsize=6.05,
+                fontsize=6.40,
                 color=TEXT,
             )
 
@@ -953,13 +967,13 @@ def make_single_public_route_figure(
     scene = layouts[scene_id]["scene"]
     plot_methods = ["Fixed-Spacing", "Adaptive Spacing w/o GA", "Full Geometry-Aware Hybrid GA"]
 
-    fig = plt.figure(figsize=(7.05, 4.56), facecolor=BG)
+    fig = plt.figure(figsize=(7.20, 4.38), facecolor=BG)
     gs = fig.add_gridspec(
         2,
         3,
-        height_ratios=[1.0, 0.44],
-        wspace=0.055,
-        hspace=0.080,
+        height_ratios=[1.0, 0.39],
+        wspace=0.046,
+        hspace=0.055,
     )
     ax_fixed = fig.add_subplot(gs[0, 0])
     ax_adaptive = fig.add_subplot(gs[0, 1])
@@ -972,7 +986,7 @@ def make_single_public_route_figure(
         f"{short_name(scene_label)} public-scene comparison",
         ha="left",
         va="top",
-        fontsize=9.35,
+        fontsize=9.55,
         fontweight="bold",
         color=TEXT,
     )
@@ -982,7 +996,7 @@ def make_single_public_route_figure(
         "Zoom panels emphasize terrain-structured line placement; metrics remain full-scene benchmark values.",
         ha="left",
         va="top",
-        fontsize=6.25,
+        fontsize=6.35,
         color=MUTED,
     )
 
@@ -1020,7 +1034,7 @@ def make_single_public_route_figure(
         show_metrics=False,
     )
     make_scene_summary_strip(ax_summary, lookup, scene_id, plot_methods, {method: layouts[scene_id][method] for method in plot_methods})
-    fig.subplots_adjust(left=0.026, right=0.994, top=0.905, bottom=0.050)
+    fig.subplots_adjust(left=0.020, right=0.994, top=0.900, bottom=0.044)
     fig.savefig(PIC / output_name, bbox_inches="tight", facecolor="white", pad_inches=0.014)
     plt.close(fig)
 
@@ -1074,14 +1088,15 @@ def annotate_heatmap(ax, im, data: np.ndarray, fmt: str, mark_bad=None) -> None:
     for i in range(data.shape[0]):
         for j in range(data.shape[1]):
             value = data[i, j]
+            bad = bool(mark_bad(value)) if mark_bad is not None else False
             ax.text(
                 j,
                 i,
                 fmt.format(value),
                 ha="center",
                 va="center",
-                fontsize=7.08,
-                fontweight="normal",
+                fontsize=6.95,
+                fontweight="bold" if bad else "normal",
                 color=cell_text_color(im, value),
             )
 
@@ -1092,29 +1107,32 @@ def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
         name.replace("GEBCO ", "").replace(" Seafloor", "").replace(" Terrain", " terrain")
         for _, name, _ in scenes
     ]
-    method_labels = ["Fixed", "Greedy", "Adapt.", "Fix-swath", "Hybrid"]
+    method_labels = ["Fixed", "Greedy", "Adapt.", "Fix-sw.", "Hybrid"]
     coverage_matrix = matrices["coverage"]
     metric_specs = [
         (
             matrices["path_gain"],
             PATH_GAIN_CMAP,
             Normalize(vmin=0.0, vmax=float(np.max(matrices["path_gain"]))),
-            "(a) Path gain vs Fixed (%)",
+            "(a) Path gain (%)",
             "{:.1f}",
+            None,
         ),
         (
             coverage_matrix,
             COVERAGE_CMAP,
             TwoSlopeNorm(vmin=float(np.min(coverage_matrix)), vcenter=97.0, vmax=float(np.max(coverage_matrix))),
-            "(b) Predicted coverage (%)",
+            "(b) Coverage (%)",
             "{:.1f}",
+            lambda value: value < 97.0,
         ),
         (
             matrices["excess"],
             OVERLAP_CMAP,
             Normalize(vmin=0.0, vmax=float(np.max(matrices["excess"]))),
-            "(c) Excess-overlap violation (%)",
+            "(c) Excess overlap (%)",
             "{:.1f}",
+            lambda value: value > 3.0,
         ),
         (
             matrices["time"],
@@ -1122,33 +1140,59 @@ def make_metric_heatmap(summary_rows: list[dict[str, str]]) -> None:
             Normalize(vmin=float(np.min(matrices["time"])), vmax=float(np.max(matrices["time"]))),
             "(d) Planning time (s)",
             "{:.2f}",
+            None,
         ),
     ]
 
-    fig, axes = plt.subplots(2, 2, figsize=(7.35, 4.78), facecolor=BG)
-    for panel_idx, (ax, (data, cmap, norm, title, fmt)) in enumerate(zip(axes.ravel(), metric_specs)):
+    fig, axes = plt.subplots(4, 1, figsize=(7.18, 5.62), facecolor=BG)
+    for panel_idx, (ax, (data, cmap, norm, title, fmt, mark_bad)) in enumerate(zip(np.ravel(axes), metric_specs)):
         im = ax.imshow(data, cmap=cmap, norm=norm, aspect="auto", interpolation="nearest")
-        ax.set_title(title, loc="left", color=TEXT, fontweight="semibold", fontsize=8.25, pad=2.9)
+        ax.set_title(title, loc="left", color=TEXT, fontweight="semibold", fontsize=8.05, pad=2.0)
         ax.set_xticks(np.arange(len(METHODS)))
-        ax.set_xticklabels(method_labels, color=TEXT)
+        ax.set_xticklabels(method_labels if panel_idx == 0 else [], color=TEXT)
         for tick in ax.get_xticklabels():
-            tick.set_fontweight("normal")
+            tick.set_fontweight("semibold")
         ax.xaxis.tick_top()
-        ax.tick_params(axis="x", top=True, labeltop=True, bottom=False, labelbottom=False, pad=0.85, length=0.0)
+        ax.tick_params(axis="x", top=True, labeltop=panel_idx == 0, bottom=False, labelbottom=False, pad=0.80, length=0.0)
         ax.set_yticks(np.arange(len(scene_labels)))
-        if panel_idx in (0, 2):
-            ax.set_yticklabels(scene_labels, color=TEXT)
-            for tick, (_, _, group) in zip(ax.get_yticklabels(), scenes):
-                tick.set_color(PUBLIC if group == "public" else SYNTH)
-                tick.set_fontweight("bold" if group == "public" else "normal")
-        else:
-            ax.set_yticklabels([])
+        ax.set_yticklabels(scene_labels, color=TEXT)
+        for tick, (_, _, group) in zip(ax.get_yticklabels(), scenes):
+            tick.set_color(PUBLIC if group == "public" else SYNTH)
+            tick.set_fontweight("bold" if group == "public" else "normal")
         for spine in ax.spines.values():
             spine.set_visible(False)
+        ax.set_xticks(np.arange(-0.5, len(METHODS), 1), minor=True)
+        ax.set_yticks(np.arange(-0.5, len(scene_labels), 1), minor=True)
+        ax.grid(which="minor", color="white", linewidth=1.15)
         ax.tick_params(which="minor", bottom=False, left=False)
-        annotate_heatmap(ax, im, data, fmt)
-    fig.subplots_adjust(left=0.098, right=0.998, top=0.940, bottom=0.046, wspace=0.045, hspace=0.122)
-    fig.savefig(PIC / "journal_metric_heatmap.png", bbox_inches="tight", facecolor="white", pad_inches=0.010)
+        ax.tick_params(axis="y", length=0.0, pad=3.0)
+        annotate_heatmap(ax, im, data, fmt, mark_bad=mark_bad)
+        if panel_idx in (1, 2):
+            for i in range(data.shape[0]):
+                for j in range(data.shape[1]):
+                    if mark_bad is not None and mark_bad(float(data[i, j])):
+                        ax.add_patch(
+                            Rectangle(
+                                (j - 0.49, i - 0.49),
+                                0.98,
+                                0.98,
+                                fill=False,
+                                edgecolor="#1e2c34",
+                                linewidth=0.58,
+                                zorder=4,
+                            )
+                        )
+    fig.text(
+        0.020,
+        0.018,
+        "Public scenes are teal; synthetic mechanism tests are rust. Dark outlines mark cells outside the C97/O3 benchmark gate.",
+        ha="left",
+        va="bottom",
+        fontsize=6.05,
+        color=MUTED,
+    )
+    fig.subplots_adjust(left=0.168, right=0.995, top=0.923, bottom=0.076, hspace=0.230)
+    fig.savefig(PIC / "journal_metric_heatmap.png", bbox_inches="tight", facecolor="white", pad_inches=0.012)
     plt.close(fig)
 
 
