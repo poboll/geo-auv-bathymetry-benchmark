@@ -15,6 +15,12 @@ public_bathy/raw/
 *.zip
 *.tif
 *.tiff
+geo_public_bathy_rebuild.pdf
+mdpi_jmse_jmse_submission_draft.pdf
+paper_refined.pdf
+reproducibility_manifest.json
+manuscript/latex/
+manuscript/mdpi_jmse/
 
 # Local planning and agent-supervision notes; keep them out of public releases.
 task_plan.md

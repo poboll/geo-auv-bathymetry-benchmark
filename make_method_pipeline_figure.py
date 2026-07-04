@@ -23,11 +23,12 @@ def main() -> None:
 
     run(["xelatex", "-interaction=nonstopmode", SOURCE.name], LATEX_PIC)
 
-    MDPI_PIC.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(PDF, MDPI_PIC / "method_pipeline.pdf")
-    shutil.copy2(SOURCE, MDPI_PIC / "method_pipeline.tex")
+    for pic_dir in [MDPI_PIC]:
+        pic_dir.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(PDF, pic_dir / "method_pipeline.pdf")
+        shutil.copy2(SOURCE, pic_dir / "method_pipeline.tex")
 
-    # Optional raster preview for quick visual QA in the Codex app.
+    # Optional raster preview for quick visual QA.
     if shutil.which("gs"):
         run(
             [
