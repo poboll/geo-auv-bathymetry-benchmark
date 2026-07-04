@@ -10,6 +10,7 @@ __pycache__/
 *.fdb_latexmk
 *.bbl
 *.blg
+chktex_warnings.txt
 public_bathy/raw/
 *.zip
 *.tif
@@ -19,6 +20,7 @@ public_bathy/raw/
 task_plan.md
 progress.md
 findings.md
+audit/
 audit/*.md
 submission_package/*checklist*.md
 submission_package/*risk*.md
