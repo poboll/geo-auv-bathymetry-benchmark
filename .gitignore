@@ -14,3 +14,13 @@ public_bathy/raw/
 *.zip
 *.tif
 *.tiff
+
+# Local planning and agent-supervision notes; keep them out of public releases.
+task_plan.md
+progress.md
+findings.md
+audit/*.md
+submission_package/*checklist*.md
+submission_package/*risk*.md
+submission_package/*cover_letter_draft*.md
+submission_package/*decision*.md

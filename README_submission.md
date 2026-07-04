@@ -1,128 +1,39 @@
-# Submission Reproducibility Notes
+# JMSE Submission Notes
 
-This file is a compact submission-facing map for the JMSE manuscript package. It records the environment, key commands, and evidence artifacts used by the current manuscript version.
+This file records the public-facing package identity for the current JMSE submission.
 
-## Environment
+## Clean Reviewer Package
 
-The local Conda environment is `uu`. The environment specification is recorded in `environment.yml`.
+Current package directory:
 
-```bash
-conda env update -n uu -f environment.yml
-conda run -n uu python --version
-```
+`reviewer_release/jmse_20260704/`
 
-## Core Commands
+Contents:
 
-Run the main public-grid benchmark only if the full evidence package needs to be regenerated:
+- `jmse_manuscript_2author_20260704.pdf`
+- `jmse_latex_source_2author_20260704.zip`
+- `cover_letter_jmse_2author_20260704.txt`
+- `SHA256SUMS.txt`
 
-```bash
-conda run -n uu python geo_public_bathy_benchmark.py
-```
+## Authorship And Declarations
 
-Regenerate the submission-boundary diagnostics added for the final teacher-review checklist:
+- Authors: Zengye Su and Yudan Nie.
+- Corresponding author: Zengye Su.
+- Funding statement: This research received no external funding.
+- Competing interests: The authors declare no conflicts of interest.
 
-```bash
-conda run -n uu python make_submission_boundary_diagnostics.py --seed-count 20
-```
+## Public Data
 
-Regenerate the heading-resolution and paired public-window statistics diagnostics:
+The manuscript uses public bathymetric source products:
 
-```bash
-conda run -n uu python make_heading_resolution_diagnostic.py --scenes all
-conda run -n uu python make_public_window_statistics.py
-```
+- GEBCO 2025 Grid, DOI: `10.5285/37c52e96-24ea-67ce-e063-7086abc05f29`.
+- USGS Southern Cascadia 30 m composite bathymetry, DOI: `10.5066/P9C5DBMR`.
 
-Regenerate the side-specific footprint validity audit:
+The archived reproducibility package is available from Zenodo:
 
-```bash
-conda run -n uu python make_footprint_validity_audit.py
-```
+- Concept DOI: <https://doi.org/10.5281/zenodo.19919505>
+- Version DOI: <https://doi.org/10.5281/zenodo.19919506>
 
-Regenerate the external survey-layout and turning-cost audits:
+## Evidence Boundary
 
-```bash
-conda run -n uu python make_external_layout_baseline_audit.py
-conda run -n uu python make_external_turning_cost_audit.py
-```
-
-Regenerate the gate-aware blockwise fixed-line decision audit:
-
-```bash
-conda run -n uu python make_segmented_decision_audit.py
-```
-
-Refresh the reproducibility manifest with SHA-256 checksums:
-
-```bash
-conda run -n uu python make_reproducibility_manifest.py
-```
-
-Check that the manifest and the submission-critical evidence directories are
-actually tracked by Git before creating a GitHub release:
-
-```bash
-python check_release_readiness.py
-```
-
-Compile the MDPI/JMSE manuscript:
-
-```bash
-cd manuscript/mdpi_jmse
-xelatex -interaction=nonstopmode template.tex
-xelatex -interaction=nonstopmode template.tex
-```
-
-Compile the synchronized working copy:
-
-```bash
-cd manuscript/latex
-xelatex -interaction=nonstopmode template.tex
-xelatex -interaction=nonstopmode template.tex
-```
-
-## Evidence Artifacts
-
-- `run_5/`: main benchmark outputs.
-- `gebco_tid_audit/`: GEBCO TID provenance audit.
-- `threshold_local_failure_extension/`: strict-threshold and local-tail diagnostics.
-- `submission_boundary_diagnostics/`: \(W_{\max}\) cap sensitivity, raw Hybrid GA vs Adaptive Spacing practical deltas, and conservative GA gate diagnostics.
-- `heading_resolution_diagnostic/`: \(15^{\circ}\) versus \(5^{\circ}\) deterministic heading-resolution audit.
-- `public_window_statistics/`: paired statistics across the two main GEBCO windows, four supplemental GEBCO windows, and three USGS 30 m crops.
-- `footprint_validity_audit/`: total-width proxy versus side-specific port/starboard footprint validity audit.
-- `external_layout_baseline_audit/`: deterministic external fixed-width survey-layout heuristic audit on nine public-grid windows.
-- `external_turning_cost_audit/`: minimum-turn-radius and mission-time proxy post-evaluation for the same external-layout audit rows.
-- `segmented_decision_audit/`: gate-aware blockwise fixed-line decision audit, including coverage-preserving and transition-aware selector outcomes.
-- `survey_grade_extension_usgs_cascadia/`: USGS 30 m public-grid extension.
-- `coarse_prior_replay/`, `structured_prior_error_replay/`, `uncertainty_replay/`, `uncertainty_margin_replay/`, and `current_drift_replay/`: transfer and execution-boundary diagnostics.
-- `reproducibility_manifest.json`: file inventory and SHA-256 checksums for the current workspace.
-- `check_release_readiness.py`: release-gate audit that flags missing required
-  manuscript artifacts, empty evidence directories, and manifest entries that
-  are not tracked by Git.
-
-## Claim Boundary
-
-The manuscript is a depth-referenced MBES fixed-line public-grid planning benchmark with a gate-aware blockwise repair extension. The current title/framing is `Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors`. The side-specific footprint audit is a planning-evaluator validity check, the external turning-cost audit is a deterministic post-planning mission-time proxy, and the blockwise repair is a fixed-line stress-case extension. None of these is beam-level acoustic ray tracing, raw MBES product validation, controller simulation, mission-log replay, sea/lake/field validation, hydrographic-quality assurance, navigation-safety readiness, or altitude-controlled AUV execution.
-
-### Additional v21 Diagnostics
-
-Regenerate the GA surrogate-audit diagnostic used to answer the stride-3 evaluator question:
-
-```bash
-conda run -n uu python make_ga_surrogate_audit.py --scenes all --seeds 12 --candidates-per-seed 12
-```
-
-Regenerate the Figure 1 TikZ workflow used by both manuscript tracks:
-
-```bash
-conda run -n uu python make_method_pipeline_figure.py
-```
-
-## Release Gate
-
-Do not mint a Zenodo-triggering GitHub release until `python
-check_release_readiness.py` exits with code 0, both manuscript PDFs compile
-cleanly, and the checklist in
-`submission_package/final_submission_checklist.md` records the exact release
-tag and DOI. The initial archived DOI is `10.5281/zenodo.19919506`; a new
-GitHub release should only be created when the current manuscript package is
-ready to be frozen as a new version.
+The package supports a planning-stage fixed-line MBES numerical benchmark from public bathymetric priors. The submitted manuscript does not extend the claim to execution-stage vehicle validation or charting-product assessment.

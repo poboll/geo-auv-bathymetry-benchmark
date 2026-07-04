@@ -1,13 +1,8 @@
 {
-  "title": "Terrain-Aware Fixed-Line MBES Survey Planning with Gate-Aware Blockwise Repair Using Public Bathymetric Priors",
+  "title": "Terrain-Aware MBES Survey-Line Planning with Public Bathymetric Priors: A Pre-Mission Ocean-Engineering Numerical Benchmark",
   "upload_type": "software",
-  "description": "Manuscript-specific code, derived public-bathymetry benchmark outputs, figure-generation scripts, LaTeX sources, compiled PDFs, and SHA-256 reproducibility manifest for a public-grid numerical benchmark of terrain-aware depth-referenced MBES fixed-line planning with gate-aware blockwise repair. The package supports public GEBCO 2025 scenes, synthetic stress tests, a USGS Southern Cascadia 30 m public-grid extension, coarse-prior/fine-grid replay, execution-uncertainty replay, PSO and GA diagnostics, segmented decision auditing, and sensitivity analyses. It does not claim sea-trial validation, mission-log validation, hydrographic-survey certification, navigation-safety readiness, or altitude-aware AUV execution.",
+  "description": "Manuscript-specific code, derived public-bathymetry benchmark outputs, figure-generation scripts, LaTeX sources, compiled PDFs, and SHA-256 reproducibility manifest for a public-grid numerical benchmark of terrain-aware depth-referenced MBES fixed-line planning with gate-aware blockwise repair. The package supports public GEBCO 2025 scenes, synthetic stress tests, a USGS Southern Cascadia 30 m public-grid extension, coarse-prior/fine-grid replay, execution-uncertainty replay, PSO and GA diagnostics, segmented decision auditing, and sensitivity analyses. The package is scoped to planning-stage fixed-line MBES survey-layout evidence; execution-stage vehicle validation and charting-product assessment are outside this release.",
   "creators": [
-    {
-      "name": "Li, Changlong",
-      "affiliation": "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China",
-      "orcid": "0000-0003-2892-3993"
-    },
     {
       "name": "Su, Zengye",
       "affiliation": "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China"
@@ -31,7 +26,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/poboll/geo-auv-bathymetry-benchmark",
+      "identifier": "https://github.com/poboll/geo-auv-bathymetry-benchmark/tree/main/reviewer_release/jmse_20260704",
       "relation": "isSupplementTo",
       "scheme": "url",
       "resource_type": "software"

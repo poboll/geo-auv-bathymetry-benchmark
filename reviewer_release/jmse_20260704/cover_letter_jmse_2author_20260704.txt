@@ -1,0 +1,20 @@
+Dear Editors of Journal of Marine Science and Engineering,
+
+We are pleased to submit our manuscript entitled "Terrain-Aware MBES Survey-Line Planning with Public Bathymetric Priors: A Pre-Mission Ocean-Engineering Numerical Benchmark" for consideration as an article in Journal of Marine Science and Engineering.
+
+This manuscript presents a reproducible planning-stage benchmark for terrain-aware multibeam echo sounder (MBES) fixed-line survey planning from public bathymetric grids. The work addresses a practical marine-science-and-engineering question: when a public or project-specific bathymetric prior is available before vehicle-specific execution is designed, can terrain-dependent swath geometry improve an auditable fixed-line survey layout while preserving a reviewable planning record?
+
+The study combines a depth-referenced footprint approximation, deterministic heading search, quantile-based adaptive spacing, gated local GA refinement, and blockwise repair for single-heading failures. The benchmark uses GEBCO 2025 public-prior windows, synthetic mechanism tests, and USGS Southern Cascadia 30 m public-grid stress windows. On the primary GEBCO scenes, terrain-aware layouts retain 98.99-99.55% predicted coverage, reduce mean excess-overlap violation from about 0.81% to 0.113%, and shorten mean path length by 0.75% relative to fixed spacing. Across nine public windows, overlap cleanup is positive in all cases. In a fixed-overlap USGS stress screen, Adaptive Spacing and the representative Hybrid layout pass all eight selected high-burden windows, whereas fixed-spacing and local fixed-width baselines pass three.
+
+We believe the manuscript fits JMSE because it contributes a transparent marine survey-planning benchmark and keeps the evidence boundary clear: the paper evaluates planning-stage fixed-line geometry from public-prior grids, while execution-stage validation remains a separate follow-up task.
+
+This manuscript has not been published previously and is not under consideration by any other journal. All authors have approved the manuscript and agree with its submission to Journal of Marine Science and Engineering. The authors declare no conflicts of interest. This research received no external funding.
+
+Thank you for considering our manuscript.
+
+Sincerely,
+
+Zengye Su
+Corresponding Author
+School of Information Technology and Engineering, Guangzhou College of Commerce
+Email: szy@xs.gcc.edu.cn
