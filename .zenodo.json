@@ -1,7 +1,7 @@
 {
-  "title": "Terrain-Aware MBES Survey-Line Planning with Public Bathymetric Priors: A Pre-Mission Ocean-Engineering Numerical Benchmark",
+  "title": "Terrain-aware multibeam survey-line planning from public bathymetric priors",
   "upload_type": "software",
-  "description": "Manuscript-specific code, derived public-bathymetry benchmark outputs, figure-generation scripts, LaTeX sources, compiled PDFs, and SHA-256 reproducibility manifest for a public-grid numerical benchmark of terrain-aware depth-referenced MBES fixed-line planning with gate-aware blockwise repair. The package supports public GEBCO 2025 scenes, synthetic stress tests, a USGS Southern Cascadia 30 m public-grid extension, coarse-prior/fine-grid replay, execution-uncertainty replay, PSO and GA diagnostics, segmented decision auditing, and sensitivity analyses. The package is scoped to planning-stage fixed-line MBES survey-layout evidence; execution-stage vehicle validation and charting-product assessment are outside this release.",
+  "description": "Analysis code, benchmark definitions, and derived outputs for a public-grid numerical benchmark of terrain-aware depth-referenced MBES fixed-line planning. The package supports public GEBCO 2025 scenes, synthetic stress tests, a USGS Southern Cascadia 30 m public-grid extension, coarse-prior/fine-grid replay, execution-uncertainty replay, optimization diagnostics, segmented decision auditing, and sensitivity analyses. The package is scoped to planning-stage fixed-line MBES survey-layout evidence; realized survey execution, raw MBES product validation, and charting-product assessment are outside this release.",
   "creators": [
     {
       "name": "Su, Zengye",
@@ -26,7 +26,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/poboll/geo-auv-bathymetry-benchmark/tree/main/reviewer_release/jmse_20260704",
+      "identifier": "https://github.com/poboll/geo-auv-bathymetry-benchmark",
       "relation": "isSupplementTo",
       "scheme": "url",
       "resource_type": "software"

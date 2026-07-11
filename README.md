@@ -1,46 +1,67 @@
-# Terrain-Aware MBES Survey-Line Planning Benchmark
+# Terrain-Aware Multibeam Survey-Line Planning Benchmark
 
-This repository supports the manuscript:
+This repository contains the analysis code, benchmark definitions, and derived
+outputs supporting the manuscript:
 
-**Terrain-Aware MBES Survey-Line Planning with Public Bathymetric Priors: A Pre-Mission Ocean-Engineering Numerical Benchmark**
-
-For the current JMSE two-author submission package, use the clean reviewer-facing release directory:
-
-<https://github.com/poboll/geo-auv-bathymetry-benchmark/tree/main/reviewer_release/jmse_20260704>
+**Terrain-aware multibeam survey-line planning from public bathymetric priors**
 
 ## Scope
 
-The study is a planning-stage numerical benchmark for depth-referenced multibeam echo sounder (MBES) fixed-line survey planning from public bathymetric priors. It evaluates line orientation, spacing, overlap control, local refinement, and stress-case repair within a reproducible public-grid setting.
+The study is a planning-stage numerical benchmark for depth-referenced
+multibeam echosounder (MBES) fixed-line survey planning from public bathymetric
+priors. It evaluates line orientation, nonuniform spacing, predicted coverage,
+excess overlap, local refinement, and constrained stress-case repair within a
+reproducible public-grid setting.
 
-The manuscript is intentionally scoped to pre-mission line-layout evidence. Execution-stage vehicle validation, controller-level transfer, and charting-product assessment are outside the claims of this repository release.
+The evidence is intentionally limited to pre-mission line-layout analysis.
+Realized survey execution, controller-level transfer, raw MBES product
+validation, and charting-product assessment are outside the claims supported by
+this repository.
 
-## Current Submission Package
+## Repository contents
 
-The current reviewer package contains:
+- `run_5/`: primary public-grid benchmark outputs.
+- `sensitivity/`: beam-angle, overlap-target, prior-error, resolution, and
+  penalty-weight diagnostics.
+- `gebco_scene_expansion/` and `public_window_statistics/`: additional public
+  GEBCO windows and scene statistics.
+- `usgs_cascadia_extension/`: high-resolution Southern Cascadia public-grid
+  extension.
+- `coarse_prior_replay/`, `structured_prior_error_replay/`, and
+  `uncertainty_replay/`: prior-resolution and perturbation checks.
+- `uncertainty_margin_replay/`, `current_drift_replay/`, and
+  `execution_risk_refinement/`: planning-to-execution stress diagnostics.
+- `segmented_heading_extension/`, `segmented_decision_audit/`, and
+  `threshold_local_failure_extension/`: constrained repair and failure-boundary
+  tests.
+- `make_*.py`: figure and analysis entry points for the corresponding outputs.
 
-- current two-author manuscript PDF,
-- LaTeX source ZIP with figures and template files,
-- JMSE cover-letter text,
-- SHA-256 checksums.
+## Public source data
 
-## Public Source Data
+The benchmark uses the following public bathymetric products:
 
-Primary public source data:
+- GEBCO 2025 Grid: <https://doi.org/10.5285/37c52e96-24ea-67ce-e063-7086abc05f29>
+- USGS Southern Cascadia 30 m composite bathymetry:
+  <https://doi.org/10.5066/P9C5DBMR>
 
-- GEBCO 2025 Grid, DOI: `10.5285/37c52e96-24ea-67ce-e063-7086abc05f29`.
-- USGS Southern Cascadia 30 m composite bathymetry, DOI: `10.5066/P9C5DBMR`.
+Large raw bathymetry archives are not committed. Re-download them from the
+official DOI landing pages when rerunning raw-data ingestion.
 
-Large raw bathymetry archives are not committed to this repository. Re-download the raw products from the official DOI landing pages if rerunning raw-data ingestion.
+## Environment and reproducibility
 
-## Reproducibility Archive
+Create the recorded environment with:
 
-The DOI-bearing reproducibility archive series is hosted on Zenodo:
+```bash
+conda env create -f environment.yml
+conda activate geo-auv-benchmark
+```
 
-- Concept DOI: <https://doi.org/10.5281/zenodo.19919505>
-- Version DOI: <https://doi.org/10.5281/zenodo.19919506>
-
-The current LaTeX submission source is supplied to the journal through the source ZIP in the reviewer release directory.
+The derived CSV, JSON, and figure outputs are retained beside their generating
+scripts so that numerical claims can be traced without treating the repository
+as a survey-product archive.
 
 ## Citation
 
-Use `CITATION.cff` for software/package citation metadata. The repository name is historical; the submitted paper frames the package as an MBES fixed-line planning benchmark.
+Use `CITATION.cff` for software citation metadata. The repository name is
+historical; the manuscript and this README define the supported contribution as
+a fixed-line MBES planning benchmark.

@@ -8,15 +8,9 @@ ROOT = Path(__file__).resolve().parent
 
 REQUIRED_PATHS = [
     "README.md",
-    "README_submission.md",
     "CITATION.cff",
     ".zenodo.json",
     "environment.yml",
-    "reviewer_release/jmse_20260704/README.md",
-    "reviewer_release/jmse_20260704/SHA256SUMS.txt",
-    "reviewer_release/jmse_20260704/cover_letter_jmse_2author_20260704.txt",
-    "reviewer_release/jmse_20260704/jmse_latex_source_2author_20260704.zip",
-    "reviewer_release/jmse_20260704/jmse_manuscript_2author_20260704.pdf",
 ]
 
 REQUIRED_DIRS = [
@@ -44,7 +38,6 @@ REQUIRED_DIRS = [
     "footprint_validity_audit",
     "external_layout_baseline_audit",
     "external_turning_cost_audit",
-    "reviewer_release/jmse_20260704",
 ]
 
 FORBIDDEN_PATH_PATTERNS = [

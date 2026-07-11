@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this benchmark package, please cite the archived release series and the associated manuscript."
-title: "Terrain-Aware MBES Survey-Line Planning with Public Bathymetric Priors: A Pre-Mission Ocean-Engineering Numerical Benchmark"
+message: "If you use this benchmark package, please cite the software repository and the associated manuscript."
+title: "Terrain-aware multibeam survey-line planning from public bathymetric priors"
 type: software
 authors:
   - family-names: Su
@@ -10,11 +10,9 @@ authors:
     given-names: Yudan
     affiliation: "School of Information Technology and Engineering, Guangzhou College of Commerce, Guangzhou 511363, China"
 repository-code: "https://github.com/poboll/geo-auv-bathymetry-benchmark"
-doi: "10.5281/zenodo.19919506"
-url: "https://github.com/poboll/geo-auv-bathymetry-benchmark/tree/main/reviewer_release/jmse_20260704"
+url: "https://github.com/poboll/geo-auv-bathymetry-benchmark"
 license: "CC-BY-4.0"
 version: "0.1.0"
-date-released: "2026-04-30"
 keywords:
   - depth-referenced MBES fixed-line planning
   - autonomous maritime systems
