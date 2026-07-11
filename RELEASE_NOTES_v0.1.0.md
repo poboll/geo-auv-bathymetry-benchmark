@@ -1,35 +1,28 @@
-# v0.1.0 - Pre-submission reproducibility package
+# v0.1.0 - Public-bathymetry benchmark package
 
-This release packages the manuscript-specific code, derived outputs, figures, and LaTeX artifacts for the Geo/JMSE draft:
+This release records the code, derived outputs, and figure-generation workflow
+for the terrain-aware fixed-line MBES planning benchmark.
 
-**Terrain-Aware AUV Survey-Line Planning for Multibeam Bathymetric Mapping Using Public Bathymetry Benchmarks**
+## Included evidence
 
-## Included Evidence
+- Primary and expanded public GEBCO benchmark outputs.
+- USGS Southern Cascadia 30 m public-grid extension.
+- Coarse-prior/fine-grid and structured prior-error replays.
+- Execution-uncertainty, current-drift, and margin-selection diagnostics.
+- Equal-budget optimization and turning-cost diagnostics.
+- Threshold, local-failure, and segmented-decision audits.
+- Beam-angle, overlap-target, grid-resolution, and penalty-weight sensitivity.
 
-- Main `run_5` public GEBCO benchmark outputs.
-- Supplemental four-window GEBCO scene-expansion check.
-- Independent USGS Southern Cascadia 30 m public-grid extension.
-- Coarse-prior to fine-grid replay.
-- Execution-uncertainty replay.
-- Equal-budget PSO local-refinement diagnostic.
-- Turning-aware post-evaluation.
-- Bootstrap confidence intervals.
-- Objective penalty-weight sensitivity.
-- MDPI/JMSE LaTeX draft and compiled PDFs.
-- SHA-256 reproducibility manifest.
+## Evidence boundary
 
-## Evidence Boundary
+This package supports planning-stage numerical evidence for fixed-line MBES
+survey layouts. It does not establish realized survey execution performance,
+raw MBES product validity, hydrographic certification, or operational readiness.
 
-This is a public-bathymetry numerical benchmark and reproducibility package. It does not claim deployment validation, mission-log validation, hydrographic certification, or operational-safety readiness.
+## Source data
 
-## Source Data
+- GEBCO 2025 Grid: `10.5285/37c52e96-24ea-67ce-e063-7086abc05f29`.
+- USGS Southern Cascadia 30 m composite bathymetry: `10.5066/P9C5DBMR`.
 
-- GEBCO 2025 Grid, DOI: `10.5285/37c52e96-24ea-67ce-e063-7086abc05f29`.
-- USGS Southern Cascadia 30 m composite bathymetry, DOI: `10.5066/P9C5DBMR`.
-
-Large raw source bathymetry archives are not committed; the release includes small processed caches and derived CSV/JSON outputs.
-
-## Archive DOI
-
-- Zenodo concept DOI for the release series: <https://doi.org/10.5281/zenodo.19919505>.
-- Initial `v0.1.0` archive DOI: <https://doi.org/10.5281/zenodo.19919506>.
+Large raw source bathymetry archives are not committed; the release retains
+small processed caches and derived CSV/JSON outputs required for traceability.
